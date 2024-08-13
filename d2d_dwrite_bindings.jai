@@ -55,8 +55,6 @@ D3D_SHADER_FEATURE_SAMPLER_DESCRIPTOR_HEAP_INDEXING :: 0x4000000;
 D3D_SHADER_FEATURE_WAVE_MMA :: 0x8000000;
 D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE :: 0x10000000;
 
-INTERFACE :: ID3DInclude;
-
 D3D_COMPONENT_MASK_X :: 1;
 D3D_COMPONENT_MASK_Y :: 2;
 D3D_COMPONENT_MASK_Z :: 4;
@@ -702,30 +700,6 @@ _D3D_SHADER_MACRO :: struct {
     Definition: *u8;
 }
 
-D3D_SHADER_MACRO :: _D3D_SHADER_MACRO;
-
-
-ID3D10Blob_UUID :: "8BA5FB08-5195-40e2-AC58-0D989C3A0102";
-ID3D10Blob :: struct {
-    #as using iunknown: IUnknown;
-    #place iunknown; id3d10blob_vtable: *ID3D10Blob_VTable;
-}
-ID3D10Blob_VTable :: struct #type_info_none {
-    using iunknown: IUnknown_VTable;
-    GetBufferPointer: (this: *ID3D10Blob) -> *void #cpp_method;
-
-    GetBufferSize: (this: *ID3D10Blob) -> SIZE_T #cpp_method;
-}
-
-ID3D10Blob_GetBufferPointer :: inline (this: *ID3D10Blob) -> *void { return this.id3d10blob_vtable.GetBufferPointer(this); }
-
-ID3D10Blob_GetBufferSize :: inline (this: *ID3D10Blob) -> SIZE_T { return this.id3d10blob_vtable.GetBufferSize(this); }
-
-vtable :: (obj: *ID3D10Blob) -> *ID3D10Blob_VTable { return obj.id3d10blob_vtable; }
-
-
-ID3DBlob :: ID3D10Blob;
-
 PFN_DESTRUCTION_CALLBACK :: #type (pData: *void) -> void #c_call;
 
 
@@ -761,22 +735,6 @@ _D3D_INCLUDE_TYPE :: enum s32 {
     D3D10_INCLUDE_SYSTEM    :: _10_INCLUDE_SYSTEM;
     D3D_INCLUDE_FORCE_DWORD :: INCLUDE_FORCE_DWORD;
 }
-
-D3D_INCLUDE_TYPE :: _D3D_INCLUDE_TYPE;
-
-ID3DInclude :: struct {
-    vtable: *ID3DInclude_VTable;
-}
-ID3DInclude_VTable :: struct #type_info_none {
-    Open: (this: *ID3DInclude, IncludeType: D3D_INCLUDE_TYPE, pFileName: *u8, pParentData: *void, ppData: **void, pBytes: *u32) -> HRESULT #cpp_method;
-    Close: (this: *ID3DInclude, pData: *void) -> HRESULT #cpp_method;
-}
-
-ID3DInclude_Open :: inline (this: *ID3DInclude, IncludeType: D3D_INCLUDE_TYPE, pFileName: *u8, pParentData: *void, ppData: **void, pBytes: *u32) -> HRESULT { return this.vtable.Open(this, IncludeType, pFileName, pParentData, ppData, pBytes); }
-ID3DInclude_Close :: inline (this: *ID3DInclude, pData: *void) -> HRESULT { return this.vtable.Close(this, pData); }
-
-vtable :: (obj: *ID3DInclude) -> *ID3DInclude_VTable { return obj.vtable; }
-
 
 _D3D_SHADER_VARIABLE_CLASS :: enum s32 {
     SVC_SCALAR                :: 0;
@@ -1472,7 +1430,6 @@ _D3D_PARAMETER_FLAGS :: enum s32 {
 
 D3D_PARAMETER_FLAGS :: _D3D_PARAMETER_FLAGS;
 
-WKPDID_D3DDebugObjectName: GUID;
 WKPDID_D3DDebugObjectNameW: GUID;
 WKPDID_CommentStringW: GUID;
 WKPDID_D3D12UniqueObjectId: GUID;
@@ -9717,6 +9674,11 @@ IDWriteFactory_CreateGlyphRunAnalysis :: inline (this: *IDWriteFactory, glyphRun
 vtable :: (obj: *IDWriteFactory) -> *IDWriteFactory_VTable { return obj.idwritefactory_vtable; }
 
 
+DWriteCreateFactory :: (factoryType: DWRITE_FACTORY_TYPE, iid: *IID, factory: **IUnknown) -> HRESULT #foreign dwrite;
+DWriteCreateFactory :: (factoryType: DWRITE_FACTORY_TYPE, iid: IID, factory: **IUnknown) -> HRESULT #no_context {
+    return DWriteCreateFactory(factoryType, *iid, factory);
+}
+
 DWRITE_PANOSE_FAMILY :: enum s32 {
     ANY          :: 0;
     NO_FIT       :: 1;
@@ -12959,6 +12921,7 @@ vtable :: (obj: *IDWriteBitmapRenderTarget3) -> *IDWriteBitmapRenderTarget3_VTab
 #import "Basic"; // For assert
 
 d2d1 :: #library,system "d2d1";
+dwrite :: #library,system "dwrite";
 
 #run {
     {
@@ -13082,11 +13045,7 @@ d2d1 :: #library,system "d2d1";
         assert(size_of(_D3D_SHADER_MACRO) == 16, "_D3D_SHADER_MACRO has size % instead of 16", size_of(_D3D_SHADER_MACRO));
     }
 
-    assert(size_of(ID3D10Blob) == 8, "ID3D10Blob has size % instead of 8", size_of(ID3D10Blob));
-
     assert(size_of(ID3DDestructionNotifier) == 8, "ID3DDestructionNotifier has size % instead of 8", size_of(ID3DDestructionNotifier));
-
-    assert(size_of(ID3DInclude) == 8, "ID3DInclude has size % instead of 8", size_of(ID3DInclude));
 
     {
         instance: D2D1_BITMAP_PROPERTIES;
@@ -14777,6 +14736,7 @@ d2d1 :: #library,system "d2d1";
 
 #import "Windows";
 #import "dxgi";
+#import "d3d_compiler";
 
 // Win32 additions:
 

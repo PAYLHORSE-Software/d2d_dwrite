@@ -7,6 +7,21 @@ PREFIXES_FOR_TYPES_TO_OMIT :: string.[
     "__MIDL_",
 ];
 
+TYPES_TO_OMIT :: string.[
+    "WKPDID_D3DDebugObjectName", // Defined manually
+    "INTERFACE", // Frequently re-declared macro
+
+     // We want these to be part of module "d3d_compiler" instead.
+    "ID3D10Blob",
+    "ID3D11Linker",
+    "ID3D11Module",
+    "ID3D11ModuleInstance",
+    "ID3DBlob",
+    "ID3DInclude",
+    "D3D_INCLUDE_TYPE",
+    "D3D_SHADER_MACRO",
+];
+
 #if AT_COMPILE_TIME {
     #run,stallable {
         set_build_options_dc(.{do_output=false});
@@ -36,6 +51,7 @@ generate_bindings :: (args: [] string) -> bool {
         using opts;
 
 	array_add(*libnames, "d2d1.dll");
+	array_add(*libnames, "dwrite.dll");
 
 	array_add(*source_files, "d2d1_3.h");
 	array_add(*source_files, "dwrite_3.h");
@@ -74,6 +90,12 @@ generate_bindings :: (args: [] string) -> bool {
 
 d2d_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
     if !parent_decl {
+
+        if array_find(TYPES_TO_OMIT, decl.name) {
+            decl.decl_flags |= .OMIT_FROM_OUTPUT;
+            return .STOP;
+        }
+	
         for PREFIXES_FOR_TYPES_TO_OMIT {
             if begins_with(decl.name, it) {
                 decl.decl_flags |= .OMIT_FROM_OUTPUT;
@@ -105,6 +127,7 @@ DONE
 FOOTER :: #string DONE
 #import "Windows";
 #import "dxgi";
+#import "d3d_compiler";
 
 // Win32 additions:
 
