@@ -2999,6 +2999,19 @@ ID2D1Factory_CreateDCRenderTarget :: inline (this: *ID2D1Factory, renderTargetPr
 vtable :: (obj: *ID2D1Factory) -> *ID2D1Factory_VTable { return obj.id2d1factory_vtable; }
 
 
+D2D1CreateFactory :: (factoryType: D2D1_FACTORY_TYPE, riid: *IID, pFactoryOptions: *D2D1_FACTORY_OPTIONS, ppIFactory: **void) -> HRESULT #foreign d2d1;
+D2D1CreateFactory :: (factoryType: D2D1_FACTORY_TYPE, riid: IID, pFactoryOptions: *D2D1_FACTORY_OPTIONS, ppIFactory: **void) -> HRESULT #no_context {
+    return D2D1CreateFactory(factoryType, *riid, pFactoryOptions, ppIFactory);
+}
+
+D2D1MakeRotateMatrix :: (angle: float, center: D2D1_POINT_2F, matrix: *D2D1_MATRIX_3X2_F) -> void #foreign d2d1;
+
+D2D1MakeSkewMatrix :: (angleX: float, angleY: float, center: D2D1_POINT_2F, matrix: *D2D1_MATRIX_3X2_F) -> void #foreign d2d1;
+
+D2D1IsMatrixInvertible :: (matrix: *D2D1_MATRIX_3X2_F) -> BOOL #foreign d2d1;
+
+D2D1InvertMatrix :: (matrix: *D2D1_MATRIX_3X2_F) -> BOOL #foreign d2d1;
+
 CLSID_D2D12DAffineTransform: GUID;
 CLSID_D2D13DPerspectiveTransform: GUID;
 CLSID_D2D13DTransform: GUID;
@@ -5539,6 +5552,18 @@ ID2D1Multithread_Leave :: inline (this: *ID2D1Multithread) { this.id2d1multithre
 vtable :: (obj: *ID2D1Multithread) -> *ID2D1Multithread_VTable { return obj.id2d1multithread_vtable; }
 
 
+D2D1CreateDevice :: (dxgiDevice: *IDXGIDevice, creationProperties: *D2D1_CREATION_PROPERTIES, d2dDevice: **ID2D1Device) -> HRESULT #foreign d2d1;
+
+D2D1CreateDeviceContext :: (dxgiSurface: *IDXGISurface, creationProperties: *D2D1_CREATION_PROPERTIES, d2dDeviceContext: **ID2D1DeviceContext) -> HRESULT #foreign d2d1;
+
+D2D1ConvertColorSpace :: (sourceColorSpace: D2D1_COLOR_SPACE, destinationColorSpace: D2D1_COLOR_SPACE, color: *D2D1_COLOR_F) -> D2D1_COLOR_F #foreign d2d1;
+
+D2D1SinCos :: (angle: float, s: *float, c: *float) -> void #foreign d2d1;
+
+D2D1Tan :: (angle: float) -> float #foreign d2d1;
+
+D2D1Vec3Length :: (x: float, y: float, z: float) -> float #foreign d2d1;
+
 CLSID_D2D1YCbCr: GUID;
 
 D2D1_YCBCR_PROP :: enum s32 {
@@ -5674,6 +5699,8 @@ ID2D1CommandSink1_SetPrimitiveBlend1 :: inline (this: *ID2D1CommandSink1, primit
 
 vtable :: (obj: *ID2D1CommandSink1) -> *ID2D1CommandSink1_VTable { return obj.id2d1commandsink1_vtable; }
 
+
+D2D1ComputeMaximumScaleFactor :: (matrix: *D2D1_MATRIX_3X2_F) -> float #foreign d2d1;
 
 CLSID_D2D1Contrast: GUID;
 CLSID_D2D1RgbToHue: GUID;
@@ -7649,6 +7676,8 @@ ID2D1Factory8_CreateDevice_7 :: inline (this: *ID2D1Factory8, dxgiDevice: *IDXGI
 
 vtable :: (obj: *ID2D1Factory8) -> *ID2D1Factory8_VTable { return obj.id2d1factory8_vtable; }
 
+
+D2D1GetGradientMeshInteriorPointsFromCoonsPatch :: (pPoint0: *D2D1_POINT_2F, pPoint1: *D2D1_POINT_2F, pPoint2: *D2D1_POINT_2F, pPoint3: *D2D1_POINT_2F, pPoint4: *D2D1_POINT_2F, pPoint5: *D2D1_POINT_2F, pPoint6: *D2D1_POINT_2F, pPoint7: *D2D1_POINT_2F, pPoint8: *D2D1_POINT_2F, pPoint9: *D2D1_POINT_2F, pPoint10: *D2D1_POINT_2F, pPoint11: *D2D1_POINT_2F, pTensorPoint11: *D2D1_POINT_2F, pTensorPoint12: *D2D1_POINT_2F, pTensorPoint21: *D2D1_POINT_2F, pTensorPoint22: *D2D1_POINT_2F) -> void #foreign d2d1;
 
 DWRITE_FONT_FILE_TYPE :: enum s32 {
     UNKNOWN             :: 0;
@@ -12929,6 +12958,7 @@ vtable :: (obj: *IDWriteBitmapRenderTarget3) -> *IDWriteBitmapRenderTarget3_VTab
 
 #import "Basic"; // For assert
 
+d2d1 :: #library,system "d2d1";
 
 #run {
     {
