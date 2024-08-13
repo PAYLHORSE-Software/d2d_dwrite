@@ -1,0 +1,14783 @@
+//
+// This file was auto-generated using the following command:
+//
+// jai generate.jai
+//
+//  ---------------------------------
+// | Direct2D & DirectWrite BINDINGS |
+//  ---------------------------------
+
+
+
+D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION :: 2048;
+D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION :: 4096;
+D3D_FL9_1_REQ_TEXTURE2D_U_OR_V_DIMENSION :: 2048;
+D3D_FL9_3_REQ_TEXTURE2D_U_OR_V_DIMENSION :: 4096;
+D3D_FL9_1_REQ_TEXTURECUBE_DIMENSION :: 512;
+D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION :: 4096;
+D3D_FL9_1_REQ_TEXTURE3D_U_V_OR_W_DIMENSION :: 256;
+D3D_FL9_1_DEFAULT_MAX_ANISOTROPY :: 2;
+D3D_FL9_1_IA_PRIMITIVE_MAX_COUNT :: 65535;
+D3D_FL9_2_IA_PRIMITIVE_MAX_COUNT :: 1048575;
+D3D_FL9_1_SIMULTANEOUS_RENDER_TARGET_COUNT :: 1;
+D3D_FL9_3_SIMULTANEOUS_RENDER_TARGET_COUNT :: 4;
+D3D_FL9_1_MAX_TEXTURE_REPEAT :: 128;
+D3D_FL9_2_MAX_TEXTURE_REPEAT :: 2048;
+D3D_FL9_3_MAX_TEXTURE_REPEAT :: 8192;
+
+D3D_SHADER_FEATURE_DOUBLES :: 0x00001;
+D3D_SHADER_FEATURE_COMPUTE_SHADERS_PLUS_RAW_AND_STRUCTURED_BUFFERS_VIA_SHADER_4_X :: 0x00002;
+D3D_SHADER_FEATURE_UAVS_AT_EVERY_STAGE :: 0x00004;
+D3D_SHADER_FEATURE_64_UAVS :: 0x00008;
+D3D_SHADER_FEATURE_MINIMUM_PRECISION :: 0x00010;
+D3D_SHADER_FEATURE_11_1_DOUBLE_EXTENSIONS :: 0x00020;
+D3D_SHADER_FEATURE_11_1_SHADER_EXTENSIONS :: 0x00040;
+D3D_SHADER_FEATURE_LEVEL_9_COMPARISON_FILTERING :: 0x00080;
+D3D_SHADER_FEATURE_TILED_RESOURCES :: 0x00100;
+D3D_SHADER_FEATURE_STENCIL_REF :: 0x00200;
+D3D_SHADER_FEATURE_INNER_COVERAGE :: 0x00400;
+D3D_SHADER_FEATURE_TYPED_UAV_LOAD_ADDITIONAL_FORMATS :: 0x00800;
+D3D_SHADER_FEATURE_ROVS :: 0x01000;
+D3D_SHADER_FEATURE_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER :: 0x02000;
+D3D_SHADER_FEATURE_WAVE_OPS :: 0x04000;
+D3D_SHADER_FEATURE_INT64_OPS :: 0x08000;
+D3D_SHADER_FEATURE_VIEW_ID :: 0x10000;
+D3D_SHADER_FEATURE_BARYCENTRICS :: 0x20000;
+D3D_SHADER_FEATURE_NATIVE_16BIT_OPS :: 0x40000;
+D3D_SHADER_FEATURE_SHADING_RATE :: 0x80000;
+D3D_SHADER_FEATURE_RAYTRACING_TIER_1_1 :: 0x100000;
+D3D_SHADER_FEATURE_SAMPLER_FEEDBACK :: 0x200000;
+D3D_SHADER_FEATURE_ATOMIC_INT64_ON_TYPED_RESOURCE :: 0x400000;
+D3D_SHADER_FEATURE_ATOMIC_INT64_ON_GROUP_SHARED :: 0x800000;
+D3D_SHADER_FEATURE_DERIVATIVES_IN_MESH_AND_AMPLIFICATION_SHADERS :: 0x1000000;
+D3D_SHADER_FEATURE_RESOURCE_DESCRIPTOR_HEAP_INDEXING :: 0x2000000;
+D3D_SHADER_FEATURE_SAMPLER_DESCRIPTOR_HEAP_INDEXING :: 0x4000000;
+D3D_SHADER_FEATURE_WAVE_MMA :: 0x8000000;
+D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE :: 0x10000000;
+
+INTERFACE :: ID3DInclude;
+
+D3D_COMPONENT_MASK_X :: 1;
+D3D_COMPONENT_MASK_Y :: 2;
+D3D_COMPONENT_MASK_Z :: 4;
+D3D_COMPONENT_MASK_W :: 8;
+
+D2D1_DEFAULT_FLATTENING_TOLERANCE :: 0.25;
+
+D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL :: 80.0;
+
+DWRITE_ALPHA_MAX :: 255;
+
+FACILITY_DWRITE :: 0x898;
+DWRITE_ERR_BASE :: 0x5000;
+
+DWRITE_NO_PALETTE_INDEX :: 0xFFFF;
+
+DWRITE_STANDARD_FONT_AXIS_COUNT :: 5;
+
+DWRITE_MEASURING_MODE :: enum s32 {
+    NATURAL     :: 0;
+
+    GDI_CLASSIC :: 1;
+
+    GDI_NATURAL :: 2;
+
+    DWRITE_MEASURING_MODE_NATURAL     :: NATURAL;
+
+    DWRITE_MEASURING_MODE_GDI_CLASSIC :: GDI_CLASSIC;
+
+    DWRITE_MEASURING_MODE_GDI_NATURAL :: GDI_NATURAL;
+}
+
+DWRITE_GLYPH_IMAGE_FORMATS :: enum s32 {
+    NONE                   :: 0;
+
+    TRUETYPE               :: 1;
+
+    CFF                    :: 2;
+
+    COLR                   :: 4;
+
+    SVG                    :: 8;
+
+    PNG                    :: 16;
+
+    JPEG                   :: 32;
+
+    TIFF                   :: 64;
+
+    PREMULTIPLIED_B8G8R8A8 :: 128;
+
+    COLR_PAINT_TREE        :: 256;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_NONE                   :: NONE;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_TRUETYPE               :: TRUETYPE;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_CFF                    :: CFF;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_COLR                   :: COLR;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_SVG                    :: SVG;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_PNG                    :: PNG;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_JPEG                   :: JPEG;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_TIFF                   :: TIFF;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8 :: PREMULTIPLIED_B8G8R8A8;
+
+    DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE        :: COLR_PAINT_TREE;
+}
+
+D2D1_ALPHA_MODE :: enum s32 {
+    UNKNOWN       :: 0;
+
+    PREMULTIPLIED :: 1;
+
+    STRAIGHT      :: 2;
+
+    IGNORE        :: 3;
+
+    FORCE_DWORD   :: -1;
+
+    D2D1_ALPHA_MODE_UNKNOWN       :: UNKNOWN;
+
+    D2D1_ALPHA_MODE_PREMULTIPLIED :: PREMULTIPLIED;
+
+    D2D1_ALPHA_MODE_STRAIGHT      :: STRAIGHT;
+
+    D2D1_ALPHA_MODE_IGNORE        :: IGNORE;
+
+    D2D1_ALPHA_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_PIXEL_FORMAT :: struct {
+    format:    DXGI_FORMAT;
+    alphaMode: D2D1_ALPHA_MODE;
+}
+
+D2D_POINT_2U :: struct {
+    x: u32;
+    y: u32;
+}
+
+D2D_POINT_2F :: struct {
+    x: float;
+    y: float;
+}
+
+D2D_POINT_2L :: POINT;
+
+D2D_VECTOR_2F :: struct {
+    x: float;
+    y: float;
+}
+
+D2D_VECTOR_3F :: struct {
+    x: float;
+    y: float;
+    z: float;
+}
+
+D2D_VECTOR_4F :: struct {
+    x: float;
+    y: float;
+    z: float;
+    w: float;
+}
+
+D2D_RECT_F :: struct {
+    left:   float;
+    top:    float;
+    right:  float;
+    bottom: float;
+}
+
+D2D_RECT_U :: struct {
+    left:   u32;
+    top:    u32;
+    right:  u32;
+    bottom: u32;
+}
+
+D2D_RECT_L :: RECT;
+
+D2D_SIZE_F :: struct {
+    width:  float;
+    height: float;
+}
+
+D2D_SIZE_U :: struct {
+    width:  u32;
+    height: u32;
+}
+
+D2D_MATRIX_3X2_F :: struct {
+    union {
+        struct {
+            m11: float;
+
+            m12: float;
+
+            m21: float;
+
+            m22: float;
+
+            dx:  float;
+
+            dy:  float;
+        }
+
+        struct {
+            _11: float;
+            _12: float;
+            _21: float;
+            _22: float;
+            _31: float;
+            _32: float;
+        }
+
+        m: [3] [2] float;
+    }
+}
+
+D2D_MATRIX_4X3_F :: struct {
+    union {
+        struct {
+            _11: float;
+            _12: float;
+            _13: float;
+            _21: float;
+            _22: float;
+            _23: float;
+            _31: float;
+            _32: float;
+            _33: float;
+            _41: float;
+            _42: float;
+            _43: float;
+        }
+
+        m: [4] [3] float;
+    }
+}
+
+D2D_MATRIX_4X4_F :: struct {
+    union {
+        struct {
+            _11: float;
+            _12: float;
+            _13: float;
+            _14: float;
+            _21: float;
+            _22: float;
+            _23: float;
+            _24: float;
+            _31: float;
+            _32: float;
+            _33: float;
+            _34: float;
+            _41: float;
+            _42: float;
+            _43: float;
+            _44: float;
+        }
+
+        m: [4] [4] float;
+    }
+}
+
+D2D_MATRIX_5X4_F :: struct {
+    union {
+        struct {
+            _11: float;
+            _12: float;
+            _13: float;
+            _14: float;
+            _21: float;
+            _22: float;
+            _23: float;
+            _24: float;
+            _31: float;
+            _32: float;
+            _33: float;
+            _34: float;
+            _41: float;
+            _42: float;
+            _43: float;
+            _44: float;
+            _51: float;
+            _52: float;
+            _53: float;
+            _54: float;
+        }
+
+        m: [5] [4] float;
+    }
+}
+
+D2D1_POINT_2F :: D2D_POINT_2F;
+D2D1_POINT_2U :: D2D_POINT_2U;
+D2D1_POINT_2L :: D2D_POINT_2L;
+D2D1_RECT_F :: D2D_RECT_F;
+D2D1_RECT_U :: D2D_RECT_U;
+D2D1_RECT_L :: D2D_RECT_L;
+D2D1_SIZE_F :: D2D_SIZE_F;
+D2D1_SIZE_U :: D2D_SIZE_U;
+D2D1_MATRIX_3X2_F :: D2D_MATRIX_3X2_F;
+
+D2D_COLOR_F :: D3DCOLORVALUE;
+
+D3D_DRIVER_TYPE :: enum s32 {
+    UNKNOWN   :: 0;
+    HARDWARE  :: 1;
+    REFERENCE :: 2;
+    NULL      :: 3;
+    SOFTWARE  :: 4;
+    WARP      :: 5;
+
+    D3D_DRIVER_TYPE_UNKNOWN   :: UNKNOWN;
+    D3D_DRIVER_TYPE_HARDWARE  :: HARDWARE;
+    D3D_DRIVER_TYPE_REFERENCE :: REFERENCE;
+    D3D_DRIVER_TYPE_NULL      :: NULL;
+    D3D_DRIVER_TYPE_SOFTWARE  :: SOFTWARE;
+    D3D_DRIVER_TYPE_WARP      :: WARP;
+}
+
+D3D_FEATURE_LEVEL :: enum s32 {
+    _1_0_CORE :: 4096;
+    _9_1      :: 37120;
+    _9_2      :: 37376;
+    _9_3      :: 37632;
+    _10_0     :: 40960;
+    _10_1     :: 41216;
+    _11_0     :: 45056;
+    _11_1     :: 45312;
+    _12_0     :: 49152;
+    _12_1     :: 49408;
+    _12_2     :: 49664;
+
+    D3D_FEATURE_LEVEL_1_0_CORE :: _1_0_CORE;
+    D3D_FEATURE_LEVEL_9_1      :: _9_1;
+    D3D_FEATURE_LEVEL_9_2      :: _9_2;
+    D3D_FEATURE_LEVEL_9_3      :: _9_3;
+    D3D_FEATURE_LEVEL_10_0     :: _10_0;
+    D3D_FEATURE_LEVEL_10_1     :: _10_1;
+    D3D_FEATURE_LEVEL_11_0     :: _11_0;
+    D3D_FEATURE_LEVEL_11_1     :: _11_1;
+    D3D_FEATURE_LEVEL_12_0     :: _12_0;
+    D3D_FEATURE_LEVEL_12_1     :: _12_1;
+    D3D_FEATURE_LEVEL_12_2     :: _12_2;
+}
+
+D3D_PRIMITIVE_TOPOLOGY :: enum s32 {
+    UNDEFINED                                           :: 0;
+    POINTLIST                                           :: 1;
+    LINELIST                                            :: 2;
+    LINESTRIP                                           :: 3;
+    TRIANGLELIST                                        :: 4;
+    TRIANGLESTRIP                                       :: 5;
+    LINELIST_ADJ                                        :: 10;
+    LINESTRIP_ADJ                                       :: 11;
+    TRIANGLELIST_ADJ                                    :: 12;
+    TRIANGLESTRIP_ADJ                                   :: 13;
+    _1_CONTROL_POINT_PATCHLIST                          :: 33;
+    _2_CONTROL_POINT_PATCHLIST                          :: 34;
+    _3_CONTROL_POINT_PATCHLIST                          :: 35;
+    _4_CONTROL_POINT_PATCHLIST                          :: 36;
+    _5_CONTROL_POINT_PATCHLIST                          :: 37;
+    _6_CONTROL_POINT_PATCHLIST                          :: 38;
+    _7_CONTROL_POINT_PATCHLIST                          :: 39;
+    _8_CONTROL_POINT_PATCHLIST                          :: 40;
+    _9_CONTROL_POINT_PATCHLIST                          :: 41;
+    _10_CONTROL_POINT_PATCHLIST                         :: 42;
+    _11_CONTROL_POINT_PATCHLIST                         :: 43;
+    _12_CONTROL_POINT_PATCHLIST                         :: 44;
+    _13_CONTROL_POINT_PATCHLIST                         :: 45;
+    _14_CONTROL_POINT_PATCHLIST                         :: 46;
+    _15_CONTROL_POINT_PATCHLIST                         :: 47;
+    _16_CONTROL_POINT_PATCHLIST                         :: 48;
+    _17_CONTROL_POINT_PATCHLIST                         :: 49;
+    _18_CONTROL_POINT_PATCHLIST                         :: 50;
+    _19_CONTROL_POINT_PATCHLIST                         :: 51;
+    _20_CONTROL_POINT_PATCHLIST                         :: 52;
+    _21_CONTROL_POINT_PATCHLIST                         :: 53;
+    _22_CONTROL_POINT_PATCHLIST                         :: 54;
+    _23_CONTROL_POINT_PATCHLIST                         :: 55;
+    _24_CONTROL_POINT_PATCHLIST                         :: 56;
+    _25_CONTROL_POINT_PATCHLIST                         :: 57;
+    _26_CONTROL_POINT_PATCHLIST                         :: 58;
+    _27_CONTROL_POINT_PATCHLIST                         :: 59;
+    _28_CONTROL_POINT_PATCHLIST                         :: 60;
+    _29_CONTROL_POINT_PATCHLIST                         :: 61;
+    _30_CONTROL_POINT_PATCHLIST                         :: 62;
+    _31_CONTROL_POINT_PATCHLIST                         :: 63;
+    _32_CONTROL_POINT_PATCHLIST                         :: 64;
+    D3D10_PRIMITIVE_TOPOLOGY_UNDEFINED                  :: 0;
+    D3D10_PRIMITIVE_TOPOLOGY_POINTLIST                  :: 1;
+    D3D10_PRIMITIVE_TOPOLOGY_LINELIST                   :: 2;
+    D3D10_PRIMITIVE_TOPOLOGY_LINESTRIP                  :: 3;
+    D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST               :: 4;
+    D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP              :: 5;
+    D3D10_PRIMITIVE_TOPOLOGY_LINELIST_ADJ               :: 10;
+    D3D10_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ              :: 11;
+    D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST_ADJ           :: 12;
+    D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP_ADJ          :: 13;
+    D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED                  :: 0;
+    D3D11_PRIMITIVE_TOPOLOGY_POINTLIST                  :: 1;
+    D3D11_PRIMITIVE_TOPOLOGY_LINELIST                   :: 2;
+    D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP                  :: 3;
+    D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST               :: 4;
+    D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP              :: 5;
+    D3D11_PRIMITIVE_TOPOLOGY_LINELIST_ADJ               :: 10;
+    D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ              :: 11;
+    D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST_ADJ           :: 12;
+    D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP_ADJ          :: 13;
+    D3D11_PRIMITIVE_TOPOLOGY_1_CONTROL_POINT_PATCHLIST  :: 33;
+    D3D11_PRIMITIVE_TOPOLOGY_2_CONTROL_POINT_PATCHLIST  :: 34;
+    D3D11_PRIMITIVE_TOPOLOGY_3_CONTROL_POINT_PATCHLIST  :: 35;
+    D3D11_PRIMITIVE_TOPOLOGY_4_CONTROL_POINT_PATCHLIST  :: 36;
+    D3D11_PRIMITIVE_TOPOLOGY_5_CONTROL_POINT_PATCHLIST  :: 37;
+    D3D11_PRIMITIVE_TOPOLOGY_6_CONTROL_POINT_PATCHLIST  :: 38;
+    D3D11_PRIMITIVE_TOPOLOGY_7_CONTROL_POINT_PATCHLIST  :: 39;
+    D3D11_PRIMITIVE_TOPOLOGY_8_CONTROL_POINT_PATCHLIST  :: 40;
+    D3D11_PRIMITIVE_TOPOLOGY_9_CONTROL_POINT_PATCHLIST  :: 41;
+    D3D11_PRIMITIVE_TOPOLOGY_10_CONTROL_POINT_PATCHLIST :: 42;
+    D3D11_PRIMITIVE_TOPOLOGY_11_CONTROL_POINT_PATCHLIST :: 43;
+    D3D11_PRIMITIVE_TOPOLOGY_12_CONTROL_POINT_PATCHLIST :: 44;
+    D3D11_PRIMITIVE_TOPOLOGY_13_CONTROL_POINT_PATCHLIST :: 45;
+    D3D11_PRIMITIVE_TOPOLOGY_14_CONTROL_POINT_PATCHLIST :: 46;
+    D3D11_PRIMITIVE_TOPOLOGY_15_CONTROL_POINT_PATCHLIST :: 47;
+    D3D11_PRIMITIVE_TOPOLOGY_16_CONTROL_POINT_PATCHLIST :: 48;
+    D3D11_PRIMITIVE_TOPOLOGY_17_CONTROL_POINT_PATCHLIST :: 49;
+    D3D11_PRIMITIVE_TOPOLOGY_18_CONTROL_POINT_PATCHLIST :: 50;
+    D3D11_PRIMITIVE_TOPOLOGY_19_CONTROL_POINT_PATCHLIST :: 51;
+    D3D11_PRIMITIVE_TOPOLOGY_20_CONTROL_POINT_PATCHLIST :: 52;
+    D3D11_PRIMITIVE_TOPOLOGY_21_CONTROL_POINT_PATCHLIST :: 53;
+    D3D11_PRIMITIVE_TOPOLOGY_22_CONTROL_POINT_PATCHLIST :: 54;
+    D3D11_PRIMITIVE_TOPOLOGY_23_CONTROL_POINT_PATCHLIST :: 55;
+    D3D11_PRIMITIVE_TOPOLOGY_24_CONTROL_POINT_PATCHLIST :: 56;
+    D3D11_PRIMITIVE_TOPOLOGY_25_CONTROL_POINT_PATCHLIST :: 57;
+    D3D11_PRIMITIVE_TOPOLOGY_26_CONTROL_POINT_PATCHLIST :: 58;
+    D3D11_PRIMITIVE_TOPOLOGY_27_CONTROL_POINT_PATCHLIST :: 59;
+    D3D11_PRIMITIVE_TOPOLOGY_28_CONTROL_POINT_PATCHLIST :: 60;
+    D3D11_PRIMITIVE_TOPOLOGY_29_CONTROL_POINT_PATCHLIST :: 61;
+    D3D11_PRIMITIVE_TOPOLOGY_30_CONTROL_POINT_PATCHLIST :: 62;
+    D3D11_PRIMITIVE_TOPOLOGY_31_CONTROL_POINT_PATCHLIST :: 63;
+    D3D11_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST :: 64;
+
+    D3D_PRIMITIVE_TOPOLOGY_UNDEFINED                  :: UNDEFINED;
+    D3D_PRIMITIVE_TOPOLOGY_POINTLIST                  :: POINTLIST;
+    D3D_PRIMITIVE_TOPOLOGY_LINELIST                   :: LINELIST;
+    D3D_PRIMITIVE_TOPOLOGY_LINESTRIP                  :: LINESTRIP;
+    D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST               :: TRIANGLELIST;
+    D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP              :: TRIANGLESTRIP;
+    D3D_PRIMITIVE_TOPOLOGY_LINELIST_ADJ               :: LINELIST_ADJ;
+    D3D_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ              :: LINESTRIP_ADJ;
+    D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST_ADJ           :: TRIANGLELIST_ADJ;
+    D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP_ADJ          :: TRIANGLESTRIP_ADJ;
+    D3D_PRIMITIVE_TOPOLOGY_1_CONTROL_POINT_PATCHLIST  :: _1_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_2_CONTROL_POINT_PATCHLIST  :: _2_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_3_CONTROL_POINT_PATCHLIST  :: _3_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_4_CONTROL_POINT_PATCHLIST  :: _4_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_5_CONTROL_POINT_PATCHLIST  :: _5_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_6_CONTROL_POINT_PATCHLIST  :: _6_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_7_CONTROL_POINT_PATCHLIST  :: _7_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_8_CONTROL_POINT_PATCHLIST  :: _8_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_9_CONTROL_POINT_PATCHLIST  :: _9_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_10_CONTROL_POINT_PATCHLIST :: _10_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_11_CONTROL_POINT_PATCHLIST :: _11_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_12_CONTROL_POINT_PATCHLIST :: _12_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_13_CONTROL_POINT_PATCHLIST :: _13_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_14_CONTROL_POINT_PATCHLIST :: _14_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_15_CONTROL_POINT_PATCHLIST :: _15_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_16_CONTROL_POINT_PATCHLIST :: _16_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_17_CONTROL_POINT_PATCHLIST :: _17_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_18_CONTROL_POINT_PATCHLIST :: _18_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_19_CONTROL_POINT_PATCHLIST :: _19_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_20_CONTROL_POINT_PATCHLIST :: _20_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_21_CONTROL_POINT_PATCHLIST :: _21_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_22_CONTROL_POINT_PATCHLIST :: _22_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_23_CONTROL_POINT_PATCHLIST :: _23_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_24_CONTROL_POINT_PATCHLIST :: _24_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_25_CONTROL_POINT_PATCHLIST :: _25_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_26_CONTROL_POINT_PATCHLIST :: _26_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_27_CONTROL_POINT_PATCHLIST :: _27_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_28_CONTROL_POINT_PATCHLIST :: _28_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_29_CONTROL_POINT_PATCHLIST :: _29_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_30_CONTROL_POINT_PATCHLIST :: _30_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_31_CONTROL_POINT_PATCHLIST :: _31_CONTROL_POINT_PATCHLIST;
+    D3D_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST :: _32_CONTROL_POINT_PATCHLIST;
+}
+
+D3D_PRIMITIVE :: enum s32 {
+    UNDEFINED                              :: 0;
+    POINT                                  :: 1;
+    LINE                                   :: 2;
+    TRIANGLE                               :: 3;
+    LINE_ADJ                               :: 6;
+    TRIANGLE_ADJ                           :: 7;
+    _1_CONTROL_POINT_PATCH                 :: 8;
+    _2_CONTROL_POINT_PATCH                 :: 9;
+    _3_CONTROL_POINT_PATCH                 :: 10;
+    _4_CONTROL_POINT_PATCH                 :: 11;
+    _5_CONTROL_POINT_PATCH                 :: 12;
+    _6_CONTROL_POINT_PATCH                 :: 13;
+    _7_CONTROL_POINT_PATCH                 :: 14;
+    _8_CONTROL_POINT_PATCH                 :: 15;
+    _9_CONTROL_POINT_PATCH                 :: 16;
+    _10_CONTROL_POINT_PATCH                :: 17;
+    _11_CONTROL_POINT_PATCH                :: 18;
+    _12_CONTROL_POINT_PATCH                :: 19;
+    _13_CONTROL_POINT_PATCH                :: 20;
+    _14_CONTROL_POINT_PATCH                :: 21;
+    _15_CONTROL_POINT_PATCH                :: 22;
+    _16_CONTROL_POINT_PATCH                :: 23;
+    _17_CONTROL_POINT_PATCH                :: 24;
+    _18_CONTROL_POINT_PATCH                :: 25;
+    _19_CONTROL_POINT_PATCH                :: 26;
+    _20_CONTROL_POINT_PATCH                :: 27;
+    _21_CONTROL_POINT_PATCH                :: 28;
+    _22_CONTROL_POINT_PATCH                :: 29;
+    _23_CONTROL_POINT_PATCH                :: 30;
+    _24_CONTROL_POINT_PATCH                :: 31;
+    _25_CONTROL_POINT_PATCH                :: 32;
+    _26_CONTROL_POINT_PATCH                :: 33;
+    _27_CONTROL_POINT_PATCH                :: 34;
+    _28_CONTROL_POINT_PATCH                :: 35;
+    _29_CONTROL_POINT_PATCH                :: 36;
+    _30_CONTROL_POINT_PATCH                :: 37;
+    _31_CONTROL_POINT_PATCH                :: 38;
+    _32_CONTROL_POINT_PATCH                :: 39;
+    D3D10_PRIMITIVE_UNDEFINED              :: 0;
+    D3D10_PRIMITIVE_POINT                  :: 1;
+    D3D10_PRIMITIVE_LINE                   :: 2;
+    D3D10_PRIMITIVE_TRIANGLE               :: 3;
+    D3D10_PRIMITIVE_LINE_ADJ               :: 6;
+    D3D10_PRIMITIVE_TRIANGLE_ADJ           :: 7;
+    D3D11_PRIMITIVE_UNDEFINED              :: 0;
+    D3D11_PRIMITIVE_POINT                  :: 1;
+    D3D11_PRIMITIVE_LINE                   :: 2;
+    D3D11_PRIMITIVE_TRIANGLE               :: 3;
+    D3D11_PRIMITIVE_LINE_ADJ               :: 6;
+    D3D11_PRIMITIVE_TRIANGLE_ADJ           :: 7;
+    D3D11_PRIMITIVE_1_CONTROL_POINT_PATCH  :: 8;
+    D3D11_PRIMITIVE_2_CONTROL_POINT_PATCH  :: 9;
+    D3D11_PRIMITIVE_3_CONTROL_POINT_PATCH  :: 10;
+    D3D11_PRIMITIVE_4_CONTROL_POINT_PATCH  :: 11;
+    D3D11_PRIMITIVE_5_CONTROL_POINT_PATCH  :: 12;
+    D3D11_PRIMITIVE_6_CONTROL_POINT_PATCH  :: 13;
+    D3D11_PRIMITIVE_7_CONTROL_POINT_PATCH  :: 14;
+    D3D11_PRIMITIVE_8_CONTROL_POINT_PATCH  :: 15;
+    D3D11_PRIMITIVE_9_CONTROL_POINT_PATCH  :: 16;
+    D3D11_PRIMITIVE_10_CONTROL_POINT_PATCH :: 17;
+    D3D11_PRIMITIVE_11_CONTROL_POINT_PATCH :: 18;
+    D3D11_PRIMITIVE_12_CONTROL_POINT_PATCH :: 19;
+    D3D11_PRIMITIVE_13_CONTROL_POINT_PATCH :: 20;
+    D3D11_PRIMITIVE_14_CONTROL_POINT_PATCH :: 21;
+    D3D11_PRIMITIVE_15_CONTROL_POINT_PATCH :: 22;
+    D3D11_PRIMITIVE_16_CONTROL_POINT_PATCH :: 23;
+    D3D11_PRIMITIVE_17_CONTROL_POINT_PATCH :: 24;
+    D3D11_PRIMITIVE_18_CONTROL_POINT_PATCH :: 25;
+    D3D11_PRIMITIVE_19_CONTROL_POINT_PATCH :: 26;
+    D3D11_PRIMITIVE_20_CONTROL_POINT_PATCH :: 27;
+    D3D11_PRIMITIVE_21_CONTROL_POINT_PATCH :: 28;
+    D3D11_PRIMITIVE_22_CONTROL_POINT_PATCH :: 29;
+    D3D11_PRIMITIVE_23_CONTROL_POINT_PATCH :: 30;
+    D3D11_PRIMITIVE_24_CONTROL_POINT_PATCH :: 31;
+    D3D11_PRIMITIVE_25_CONTROL_POINT_PATCH :: 32;
+    D3D11_PRIMITIVE_26_CONTROL_POINT_PATCH :: 33;
+    D3D11_PRIMITIVE_27_CONTROL_POINT_PATCH :: 34;
+    D3D11_PRIMITIVE_28_CONTROL_POINT_PATCH :: 35;
+    D3D11_PRIMITIVE_29_CONTROL_POINT_PATCH :: 36;
+    D3D11_PRIMITIVE_30_CONTROL_POINT_PATCH :: 37;
+    D3D11_PRIMITIVE_31_CONTROL_POINT_PATCH :: 38;
+    D3D11_PRIMITIVE_32_CONTROL_POINT_PATCH :: 39;
+
+    D3D_PRIMITIVE_UNDEFINED              :: UNDEFINED;
+    D3D_PRIMITIVE_POINT                  :: POINT;
+    D3D_PRIMITIVE_LINE                   :: LINE;
+    D3D_PRIMITIVE_TRIANGLE               :: TRIANGLE;
+    D3D_PRIMITIVE_LINE_ADJ               :: LINE_ADJ;
+    D3D_PRIMITIVE_TRIANGLE_ADJ           :: TRIANGLE_ADJ;
+    D3D_PRIMITIVE_1_CONTROL_POINT_PATCH  :: _1_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_2_CONTROL_POINT_PATCH  :: _2_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_3_CONTROL_POINT_PATCH  :: _3_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_4_CONTROL_POINT_PATCH  :: _4_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_5_CONTROL_POINT_PATCH  :: _5_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_6_CONTROL_POINT_PATCH  :: _6_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_7_CONTROL_POINT_PATCH  :: _7_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_8_CONTROL_POINT_PATCH  :: _8_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_9_CONTROL_POINT_PATCH  :: _9_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_10_CONTROL_POINT_PATCH :: _10_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_11_CONTROL_POINT_PATCH :: _11_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_12_CONTROL_POINT_PATCH :: _12_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_13_CONTROL_POINT_PATCH :: _13_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_14_CONTROL_POINT_PATCH :: _14_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_15_CONTROL_POINT_PATCH :: _15_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_16_CONTROL_POINT_PATCH :: _16_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_17_CONTROL_POINT_PATCH :: _17_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_18_CONTROL_POINT_PATCH :: _18_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_19_CONTROL_POINT_PATCH :: _19_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_20_CONTROL_POINT_PATCH :: _20_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_21_CONTROL_POINT_PATCH :: _21_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_22_CONTROL_POINT_PATCH :: _22_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_23_CONTROL_POINT_PATCH :: _23_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_24_CONTROL_POINT_PATCH :: _24_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_25_CONTROL_POINT_PATCH :: _25_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_26_CONTROL_POINT_PATCH :: _26_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_27_CONTROL_POINT_PATCH :: _27_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_28_CONTROL_POINT_PATCH :: _28_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_29_CONTROL_POINT_PATCH :: _29_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_30_CONTROL_POINT_PATCH :: _30_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_31_CONTROL_POINT_PATCH :: _31_CONTROL_POINT_PATCH;
+    D3D_PRIMITIVE_32_CONTROL_POINT_PATCH :: _32_CONTROL_POINT_PATCH;
+}
+
+D3D_SRV_DIMENSION :: enum s32 {
+    UNKNOWN                                :: 0;
+    BUFFER                                 :: 1;
+    TEXTURE1D                              :: 2;
+    TEXTURE1DARRAY                         :: 3;
+    TEXTURE2D                              :: 4;
+    TEXTURE2DARRAY                         :: 5;
+    TEXTURE2DMS                            :: 6;
+    TEXTURE2DMSARRAY                       :: 7;
+    TEXTURE3D                              :: 8;
+    TEXTURECUBE                            :: 9;
+    TEXTURECUBEARRAY                       :: 10;
+    BUFFEREX                               :: 11;
+    D3D10_SRV_DIMENSION_UNKNOWN            :: 0;
+    D3D10_SRV_DIMENSION_BUFFER             :: 1;
+    D3D10_SRV_DIMENSION_TEXTURE1D          :: 2;
+    D3D10_SRV_DIMENSION_TEXTURE1DARRAY     :: 3;
+    D3D10_SRV_DIMENSION_TEXTURE2D          :: 4;
+    D3D10_SRV_DIMENSION_TEXTURE2DARRAY     :: 5;
+    D3D10_SRV_DIMENSION_TEXTURE2DMS        :: 6;
+    D3D10_SRV_DIMENSION_TEXTURE2DMSARRAY   :: 7;
+    D3D10_SRV_DIMENSION_TEXTURE3D          :: 8;
+    D3D10_SRV_DIMENSION_TEXTURECUBE        :: 9;
+    D3D10_1_SRV_DIMENSION_UNKNOWN          :: 0;
+    D3D10_1_SRV_DIMENSION_BUFFER           :: 1;
+    D3D10_1_SRV_DIMENSION_TEXTURE1D        :: 2;
+    D3D10_1_SRV_DIMENSION_TEXTURE1DARRAY   :: 3;
+    D3D10_1_SRV_DIMENSION_TEXTURE2D        :: 4;
+    D3D10_1_SRV_DIMENSION_TEXTURE2DARRAY   :: 5;
+    D3D10_1_SRV_DIMENSION_TEXTURE2DMS      :: 6;
+    D3D10_1_SRV_DIMENSION_TEXTURE2DMSARRAY :: 7;
+    D3D10_1_SRV_DIMENSION_TEXTURE3D        :: 8;
+    D3D10_1_SRV_DIMENSION_TEXTURECUBE      :: 9;
+    D3D10_1_SRV_DIMENSION_TEXTURECUBEARRAY :: 10;
+    D3D11_SRV_DIMENSION_UNKNOWN            :: 0;
+    D3D11_SRV_DIMENSION_BUFFER             :: 1;
+    D3D11_SRV_DIMENSION_TEXTURE1D          :: 2;
+    D3D11_SRV_DIMENSION_TEXTURE1DARRAY     :: 3;
+    D3D11_SRV_DIMENSION_TEXTURE2D          :: 4;
+    D3D11_SRV_DIMENSION_TEXTURE2DARRAY     :: 5;
+    D3D11_SRV_DIMENSION_TEXTURE2DMS        :: 6;
+    D3D11_SRV_DIMENSION_TEXTURE2DMSARRAY   :: 7;
+    D3D11_SRV_DIMENSION_TEXTURE3D          :: 8;
+    D3D11_SRV_DIMENSION_TEXTURECUBE        :: 9;
+    D3D11_SRV_DIMENSION_TEXTURECUBEARRAY   :: 10;
+    D3D11_SRV_DIMENSION_BUFFEREX           :: 11;
+
+    D3D_SRV_DIMENSION_UNKNOWN          :: UNKNOWN;
+    D3D_SRV_DIMENSION_BUFFER           :: BUFFER;
+    D3D_SRV_DIMENSION_TEXTURE1D        :: TEXTURE1D;
+    D3D_SRV_DIMENSION_TEXTURE1DARRAY   :: TEXTURE1DARRAY;
+    D3D_SRV_DIMENSION_TEXTURE2D        :: TEXTURE2D;
+    D3D_SRV_DIMENSION_TEXTURE2DARRAY   :: TEXTURE2DARRAY;
+    D3D_SRV_DIMENSION_TEXTURE2DMS      :: TEXTURE2DMS;
+    D3D_SRV_DIMENSION_TEXTURE2DMSARRAY :: TEXTURE2DMSARRAY;
+    D3D_SRV_DIMENSION_TEXTURE3D        :: TEXTURE3D;
+    D3D_SRV_DIMENSION_TEXTURECUBE      :: TEXTURECUBE;
+    D3D_SRV_DIMENSION_TEXTURECUBEARRAY :: TEXTURECUBEARRAY;
+    D3D_SRV_DIMENSION_BUFFEREX         :: BUFFEREX;
+}
+
+_D3D_SHADER_MACRO :: struct {
+    Name:       *u8;
+    Definition: *u8;
+}
+
+D3D_SHADER_MACRO :: _D3D_SHADER_MACRO;
+
+
+ID3D10Blob_UUID :: "8BA5FB08-5195-40e2-AC58-0D989C3A0102";
+ID3D10Blob :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id3d10blob_vtable: *ID3D10Blob_VTable;
+}
+ID3D10Blob_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetBufferPointer: (this: *ID3D10Blob) -> *void #cpp_method;
+
+    GetBufferSize: (this: *ID3D10Blob) -> SIZE_T #cpp_method;
+}
+
+ID3D10Blob_GetBufferPointer :: inline (this: *ID3D10Blob) -> *void { return this.id3d10blob_vtable.GetBufferPointer(this); }
+
+ID3D10Blob_GetBufferSize :: inline (this: *ID3D10Blob) -> SIZE_T { return this.id3d10blob_vtable.GetBufferSize(this); }
+
+vtable :: (obj: *ID3D10Blob) -> *ID3D10Blob_VTable { return obj.id3d10blob_vtable; }
+
+
+ID3DBlob :: ID3D10Blob;
+
+PFN_DESTRUCTION_CALLBACK :: #type (pData: *void) -> void #c_call;
+
+
+ID3DDestructionNotifier_UUID :: "a06eb39a-50da-425b-8c31-4eecd6c270f3";
+ID3DDestructionNotifier :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id3ddestructionnotifier_vtable: *ID3DDestructionNotifier_VTable;
+}
+ID3DDestructionNotifier_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    RegisterDestructionCallback: (this: *ID3DDestructionNotifier, callbackFn: PFN_DESTRUCTION_CALLBACK, pData: *void, pCallbackID: *u32) -> HRESULT #cpp_method;
+
+    UnregisterDestructionCallback: (this: *ID3DDestructionNotifier, callbackID: u32) -> HRESULT #cpp_method;
+}
+
+ID3DDestructionNotifier_RegisterDestructionCallback :: inline (this: *ID3DDestructionNotifier, callbackFn: PFN_DESTRUCTION_CALLBACK, pData: *void, pCallbackID: *u32) -> HRESULT { return this.id3ddestructionnotifier_vtable.RegisterDestructionCallback(this, callbackFn, pData, pCallbackID); }
+
+ID3DDestructionNotifier_UnregisterDestructionCallback :: inline (this: *ID3DDestructionNotifier, callbackID: u32) -> HRESULT { return this.id3ddestructionnotifier_vtable.UnregisterDestructionCallback(this, callbackID); }
+
+vtable :: (obj: *ID3DDestructionNotifier) -> *ID3DDestructionNotifier_VTable { return obj.id3ddestructionnotifier_vtable; }
+
+
+_D3D_INCLUDE_TYPE :: enum s32 {
+    INCLUDE_LOCAL       :: 0;
+    INCLUDE_SYSTEM      :: 1;
+    _10_INCLUDE_LOCAL   :: 0;
+    _10_INCLUDE_SYSTEM  :: 1;
+    INCLUDE_FORCE_DWORD :: 2147483647;
+
+    D3D_INCLUDE_LOCAL       :: INCLUDE_LOCAL;
+    D3D_INCLUDE_SYSTEM      :: INCLUDE_SYSTEM;
+    D3D10_INCLUDE_LOCAL     :: _10_INCLUDE_LOCAL;
+    D3D10_INCLUDE_SYSTEM    :: _10_INCLUDE_SYSTEM;
+    D3D_INCLUDE_FORCE_DWORD :: INCLUDE_FORCE_DWORD;
+}
+
+D3D_INCLUDE_TYPE :: _D3D_INCLUDE_TYPE;
+
+ID3DInclude :: struct {
+    vtable: *ID3DInclude_VTable;
+}
+ID3DInclude_VTable :: struct #type_info_none {
+    Open: (this: *ID3DInclude, IncludeType: D3D_INCLUDE_TYPE, pFileName: *u8, pParentData: *void, ppData: **void, pBytes: *u32) -> HRESULT #cpp_method;
+    Close: (this: *ID3DInclude, pData: *void) -> HRESULT #cpp_method;
+}
+
+ID3DInclude_Open :: inline (this: *ID3DInclude, IncludeType: D3D_INCLUDE_TYPE, pFileName: *u8, pParentData: *void, ppData: **void, pBytes: *u32) -> HRESULT { return this.vtable.Open(this, IncludeType, pFileName, pParentData, ppData, pBytes); }
+ID3DInclude_Close :: inline (this: *ID3DInclude, pData: *void) -> HRESULT { return this.vtable.Close(this, pData); }
+
+vtable :: (obj: *ID3DInclude) -> *ID3DInclude_VTable { return obj.vtable; }
+
+
+_D3D_SHADER_VARIABLE_CLASS :: enum s32 {
+    SVC_SCALAR                :: 0;
+    SVC_VECTOR                :: 1;
+    SVC_MATRIX_ROWS           :: 2;
+    SVC_MATRIX_COLUMNS        :: 3;
+    SVC_OBJECT                :: 4;
+    SVC_STRUCT                :: 5;
+    SVC_INTERFACE_CLASS       :: 6;
+    SVC_INTERFACE_POINTER     :: 7;
+    _10_SVC_SCALAR            :: 0;
+    _10_SVC_VECTOR            :: 1;
+    _10_SVC_MATRIX_ROWS       :: 2;
+    _10_SVC_MATRIX_COLUMNS    :: 3;
+    _10_SVC_OBJECT            :: 4;
+    _10_SVC_STRUCT            :: 5;
+    _11_SVC_INTERFACE_CLASS   :: 6;
+    _11_SVC_INTERFACE_POINTER :: 7;
+    SVC_FORCE_DWORD           :: 2147483647;
+
+    D3D_SVC_SCALAR              :: SVC_SCALAR;
+    D3D_SVC_VECTOR              :: SVC_VECTOR;
+    D3D_SVC_MATRIX_ROWS         :: SVC_MATRIX_ROWS;
+    D3D_SVC_MATRIX_COLUMNS      :: SVC_MATRIX_COLUMNS;
+    D3D_SVC_OBJECT              :: SVC_OBJECT;
+    D3D_SVC_STRUCT              :: SVC_STRUCT;
+    D3D_SVC_INTERFACE_CLASS     :: SVC_INTERFACE_CLASS;
+    D3D_SVC_INTERFACE_POINTER   :: SVC_INTERFACE_POINTER;
+    D3D10_SVC_SCALAR            :: _10_SVC_SCALAR;
+    D3D10_SVC_VECTOR            :: _10_SVC_VECTOR;
+    D3D10_SVC_MATRIX_ROWS       :: _10_SVC_MATRIX_ROWS;
+    D3D10_SVC_MATRIX_COLUMNS    :: _10_SVC_MATRIX_COLUMNS;
+    D3D10_SVC_OBJECT            :: _10_SVC_OBJECT;
+    D3D10_SVC_STRUCT            :: _10_SVC_STRUCT;
+    D3D11_SVC_INTERFACE_CLASS   :: _11_SVC_INTERFACE_CLASS;
+    D3D11_SVC_INTERFACE_POINTER :: _11_SVC_INTERFACE_POINTER;
+    D3D_SVC_FORCE_DWORD         :: SVC_FORCE_DWORD;
+}
+
+D3D_SHADER_VARIABLE_CLASS :: _D3D_SHADER_VARIABLE_CLASS;
+
+_D3D_SHADER_VARIABLE_FLAGS :: enum s32 {
+    SVF_USERPACKED              :: 1;
+    SVF_USED                    :: 2;
+    SVF_INTERFACE_POINTER       :: 4;
+    SVF_INTERFACE_PARAMETER     :: 8;
+    _10_SVF_USERPACKED          :: 1;
+    _10_SVF_USED                :: 2;
+    _11_SVF_INTERFACE_POINTER   :: 4;
+    _11_SVF_INTERFACE_PARAMETER :: 8;
+    SVF_FORCE_DWORD             :: 2147483647;
+
+    D3D_SVF_USERPACKED            :: SVF_USERPACKED;
+    D3D_SVF_USED                  :: SVF_USED;
+    D3D_SVF_INTERFACE_POINTER     :: SVF_INTERFACE_POINTER;
+    D3D_SVF_INTERFACE_PARAMETER   :: SVF_INTERFACE_PARAMETER;
+    D3D10_SVF_USERPACKED          :: _10_SVF_USERPACKED;
+    D3D10_SVF_USED                :: _10_SVF_USED;
+    D3D11_SVF_INTERFACE_POINTER   :: _11_SVF_INTERFACE_POINTER;
+    D3D11_SVF_INTERFACE_PARAMETER :: _11_SVF_INTERFACE_PARAMETER;
+    D3D_SVF_FORCE_DWORD           :: SVF_FORCE_DWORD;
+}
+
+D3D_SHADER_VARIABLE_FLAGS :: _D3D_SHADER_VARIABLE_FLAGS;
+
+_D3D_SHADER_VARIABLE_TYPE :: enum s32 {
+    SVT_VOID                          :: 0;
+    SVT_BOOL                          :: 1;
+    SVT_INT                           :: 2;
+    SVT_FLOAT                         :: 3;
+    SVT_STRING                        :: 4;
+    SVT_TEXTURE                       :: 5;
+    SVT_TEXTURE1D                     :: 6;
+    SVT_TEXTURE2D                     :: 7;
+    SVT_TEXTURE3D                     :: 8;
+    SVT_TEXTURECUBE                   :: 9;
+    SVT_SAMPLER                       :: 10;
+    SVT_SAMPLER1D                     :: 11;
+    SVT_SAMPLER2D                     :: 12;
+    SVT_SAMPLER3D                     :: 13;
+    SVT_SAMPLERCUBE                   :: 14;
+    SVT_PIXELSHADER                   :: 15;
+    SVT_VERTEXSHADER                  :: 16;
+    SVT_PIXELFRAGMENT                 :: 17;
+    SVT_VERTEXFRAGMENT                :: 18;
+    SVT_UINT                          :: 19;
+    SVT_UINT8                         :: 20;
+    SVT_GEOMETRYSHADER                :: 21;
+    SVT_RASTERIZER                    :: 22;
+    SVT_DEPTHSTENCIL                  :: 23;
+    SVT_BLEND                         :: 24;
+    SVT_BUFFER                        :: 25;
+    SVT_CBUFFER                       :: 26;
+    SVT_TBUFFER                       :: 27;
+    SVT_TEXTURE1DARRAY                :: 28;
+    SVT_TEXTURE2DARRAY                :: 29;
+    SVT_RENDERTARGETVIEW              :: 30;
+    SVT_DEPTHSTENCILVIEW              :: 31;
+    SVT_TEXTURE2DMS                   :: 32;
+    SVT_TEXTURE2DMSARRAY              :: 33;
+    SVT_TEXTURECUBEARRAY              :: 34;
+    SVT_HULLSHADER                    :: 35;
+    SVT_DOMAINSHADER                  :: 36;
+    SVT_INTERFACE_POINTER             :: 37;
+    SVT_COMPUTESHADER                 :: 38;
+    SVT_DOUBLE                        :: 39;
+    SVT_RWTEXTURE1D                   :: 40;
+    SVT_RWTEXTURE1DARRAY              :: 41;
+    SVT_RWTEXTURE2D                   :: 42;
+    SVT_RWTEXTURE2DARRAY              :: 43;
+    SVT_RWTEXTURE3D                   :: 44;
+    SVT_RWBUFFER                      :: 45;
+    SVT_BYTEADDRESS_BUFFER            :: 46;
+    SVT_RWBYTEADDRESS_BUFFER          :: 47;
+    SVT_STRUCTURED_BUFFER             :: 48;
+    SVT_RWSTRUCTURED_BUFFER           :: 49;
+    SVT_APPEND_STRUCTURED_BUFFER      :: 50;
+    SVT_CONSUME_STRUCTURED_BUFFER     :: 51;
+    SVT_MIN8FLOAT                     :: 52;
+    SVT_MIN10FLOAT                    :: 53;
+    SVT_MIN16FLOAT                    :: 54;
+    SVT_MIN12INT                      :: 55;
+    SVT_MIN16INT                      :: 56;
+    SVT_MIN16UINT                     :: 57;
+    SVT_INT16                         :: 58;
+    SVT_UINT16                        :: 59;
+    SVT_FLOAT16                       :: 60;
+    SVT_INT64                         :: 61;
+    SVT_UINT64                        :: 62;
+    _10_SVT_VOID                      :: 0;
+    _10_SVT_BOOL                      :: 1;
+    _10_SVT_INT                       :: 2;
+    _10_SVT_FLOAT                     :: 3;
+    _10_SVT_STRING                    :: 4;
+    _10_SVT_TEXTURE                   :: 5;
+    _10_SVT_TEXTURE1D                 :: 6;
+    _10_SVT_TEXTURE2D                 :: 7;
+    _10_SVT_TEXTURE3D                 :: 8;
+    _10_SVT_TEXTURECUBE               :: 9;
+    _10_SVT_SAMPLER                   :: 10;
+    _10_SVT_SAMPLER1D                 :: 11;
+    _10_SVT_SAMPLER2D                 :: 12;
+    _10_SVT_SAMPLER3D                 :: 13;
+    _10_SVT_SAMPLERCUBE               :: 14;
+    _10_SVT_PIXELSHADER               :: 15;
+    _10_SVT_VERTEXSHADER              :: 16;
+    _10_SVT_PIXELFRAGMENT             :: 17;
+    _10_SVT_VERTEXFRAGMENT            :: 18;
+    _10_SVT_UINT                      :: 19;
+    _10_SVT_UINT8                     :: 20;
+    _10_SVT_GEOMETRYSHADER            :: 21;
+    _10_SVT_RASTERIZER                :: 22;
+    _10_SVT_DEPTHSTENCIL              :: 23;
+    _10_SVT_BLEND                     :: 24;
+    _10_SVT_BUFFER                    :: 25;
+    _10_SVT_CBUFFER                   :: 26;
+    _10_SVT_TBUFFER                   :: 27;
+    _10_SVT_TEXTURE1DARRAY            :: 28;
+    _10_SVT_TEXTURE2DARRAY            :: 29;
+    _10_SVT_RENDERTARGETVIEW          :: 30;
+    _10_SVT_DEPTHSTENCILVIEW          :: 31;
+    _10_SVT_TEXTURE2DMS               :: 32;
+    _10_SVT_TEXTURE2DMSARRAY          :: 33;
+    _10_SVT_TEXTURECUBEARRAY          :: 34;
+    _11_SVT_HULLSHADER                :: 35;
+    _11_SVT_DOMAINSHADER              :: 36;
+    _11_SVT_INTERFACE_POINTER         :: 37;
+    _11_SVT_COMPUTESHADER             :: 38;
+    _11_SVT_DOUBLE                    :: 39;
+    _11_SVT_RWTEXTURE1D               :: 40;
+    _11_SVT_RWTEXTURE1DARRAY          :: 41;
+    _11_SVT_RWTEXTURE2D               :: 42;
+    _11_SVT_RWTEXTURE2DARRAY          :: 43;
+    _11_SVT_RWTEXTURE3D               :: 44;
+    _11_SVT_RWBUFFER                  :: 45;
+    _11_SVT_BYTEADDRESS_BUFFER        :: 46;
+    _11_SVT_RWBYTEADDRESS_BUFFER      :: 47;
+    _11_SVT_STRUCTURED_BUFFER         :: 48;
+    _11_SVT_RWSTRUCTURED_BUFFER       :: 49;
+    _11_SVT_APPEND_STRUCTURED_BUFFER  :: 50;
+    _11_SVT_CONSUME_STRUCTURED_BUFFER :: 51;
+    SVT_FORCE_DWORD                   :: 2147483647;
+
+    D3D_SVT_VOID                        :: SVT_VOID;
+    D3D_SVT_BOOL                        :: SVT_BOOL;
+    D3D_SVT_INT                         :: SVT_INT;
+    D3D_SVT_FLOAT                       :: SVT_FLOAT;
+    D3D_SVT_STRING                      :: SVT_STRING;
+    D3D_SVT_TEXTURE                     :: SVT_TEXTURE;
+    D3D_SVT_TEXTURE1D                   :: SVT_TEXTURE1D;
+    D3D_SVT_TEXTURE2D                   :: SVT_TEXTURE2D;
+    D3D_SVT_TEXTURE3D                   :: SVT_TEXTURE3D;
+    D3D_SVT_TEXTURECUBE                 :: SVT_TEXTURECUBE;
+    D3D_SVT_SAMPLER                     :: SVT_SAMPLER;
+    D3D_SVT_SAMPLER1D                   :: SVT_SAMPLER1D;
+    D3D_SVT_SAMPLER2D                   :: SVT_SAMPLER2D;
+    D3D_SVT_SAMPLER3D                   :: SVT_SAMPLER3D;
+    D3D_SVT_SAMPLERCUBE                 :: SVT_SAMPLERCUBE;
+    D3D_SVT_PIXELSHADER                 :: SVT_PIXELSHADER;
+    D3D_SVT_VERTEXSHADER                :: SVT_VERTEXSHADER;
+    D3D_SVT_PIXELFRAGMENT               :: SVT_PIXELFRAGMENT;
+    D3D_SVT_VERTEXFRAGMENT              :: SVT_VERTEXFRAGMENT;
+    D3D_SVT_UINT                        :: SVT_UINT;
+    D3D_SVT_UINT8                       :: SVT_UINT8;
+    D3D_SVT_GEOMETRYSHADER              :: SVT_GEOMETRYSHADER;
+    D3D_SVT_RASTERIZER                  :: SVT_RASTERIZER;
+    D3D_SVT_DEPTHSTENCIL                :: SVT_DEPTHSTENCIL;
+    D3D_SVT_BLEND                       :: SVT_BLEND;
+    D3D_SVT_BUFFER                      :: SVT_BUFFER;
+    D3D_SVT_CBUFFER                     :: SVT_CBUFFER;
+    D3D_SVT_TBUFFER                     :: SVT_TBUFFER;
+    D3D_SVT_TEXTURE1DARRAY              :: SVT_TEXTURE1DARRAY;
+    D3D_SVT_TEXTURE2DARRAY              :: SVT_TEXTURE2DARRAY;
+    D3D_SVT_RENDERTARGETVIEW            :: SVT_RENDERTARGETVIEW;
+    D3D_SVT_DEPTHSTENCILVIEW            :: SVT_DEPTHSTENCILVIEW;
+    D3D_SVT_TEXTURE2DMS                 :: SVT_TEXTURE2DMS;
+    D3D_SVT_TEXTURE2DMSARRAY            :: SVT_TEXTURE2DMSARRAY;
+    D3D_SVT_TEXTURECUBEARRAY            :: SVT_TEXTURECUBEARRAY;
+    D3D_SVT_HULLSHADER                  :: SVT_HULLSHADER;
+    D3D_SVT_DOMAINSHADER                :: SVT_DOMAINSHADER;
+    D3D_SVT_INTERFACE_POINTER           :: SVT_INTERFACE_POINTER;
+    D3D_SVT_COMPUTESHADER               :: SVT_COMPUTESHADER;
+    D3D_SVT_DOUBLE                      :: SVT_DOUBLE;
+    D3D_SVT_RWTEXTURE1D                 :: SVT_RWTEXTURE1D;
+    D3D_SVT_RWTEXTURE1DARRAY            :: SVT_RWTEXTURE1DARRAY;
+    D3D_SVT_RWTEXTURE2D                 :: SVT_RWTEXTURE2D;
+    D3D_SVT_RWTEXTURE2DARRAY            :: SVT_RWTEXTURE2DARRAY;
+    D3D_SVT_RWTEXTURE3D                 :: SVT_RWTEXTURE3D;
+    D3D_SVT_RWBUFFER                    :: SVT_RWBUFFER;
+    D3D_SVT_BYTEADDRESS_BUFFER          :: SVT_BYTEADDRESS_BUFFER;
+    D3D_SVT_RWBYTEADDRESS_BUFFER        :: SVT_RWBYTEADDRESS_BUFFER;
+    D3D_SVT_STRUCTURED_BUFFER           :: SVT_STRUCTURED_BUFFER;
+    D3D_SVT_RWSTRUCTURED_BUFFER         :: SVT_RWSTRUCTURED_BUFFER;
+    D3D_SVT_APPEND_STRUCTURED_BUFFER    :: SVT_APPEND_STRUCTURED_BUFFER;
+    D3D_SVT_CONSUME_STRUCTURED_BUFFER   :: SVT_CONSUME_STRUCTURED_BUFFER;
+    D3D_SVT_MIN8FLOAT                   :: SVT_MIN8FLOAT;
+    D3D_SVT_MIN10FLOAT                  :: SVT_MIN10FLOAT;
+    D3D_SVT_MIN16FLOAT                  :: SVT_MIN16FLOAT;
+    D3D_SVT_MIN12INT                    :: SVT_MIN12INT;
+    D3D_SVT_MIN16INT                    :: SVT_MIN16INT;
+    D3D_SVT_MIN16UINT                   :: SVT_MIN16UINT;
+    D3D_SVT_INT16                       :: SVT_INT16;
+    D3D_SVT_UINT16                      :: SVT_UINT16;
+    D3D_SVT_FLOAT16                     :: SVT_FLOAT16;
+    D3D_SVT_INT64                       :: SVT_INT64;
+    D3D_SVT_UINT64                      :: SVT_UINT64;
+    D3D10_SVT_VOID                      :: _10_SVT_VOID;
+    D3D10_SVT_BOOL                      :: _10_SVT_BOOL;
+    D3D10_SVT_INT                       :: _10_SVT_INT;
+    D3D10_SVT_FLOAT                     :: _10_SVT_FLOAT;
+    D3D10_SVT_STRING                    :: _10_SVT_STRING;
+    D3D10_SVT_TEXTURE                   :: _10_SVT_TEXTURE;
+    D3D10_SVT_TEXTURE1D                 :: _10_SVT_TEXTURE1D;
+    D3D10_SVT_TEXTURE2D                 :: _10_SVT_TEXTURE2D;
+    D3D10_SVT_TEXTURE3D                 :: _10_SVT_TEXTURE3D;
+    D3D10_SVT_TEXTURECUBE               :: _10_SVT_TEXTURECUBE;
+    D3D10_SVT_SAMPLER                   :: _10_SVT_SAMPLER;
+    D3D10_SVT_SAMPLER1D                 :: _10_SVT_SAMPLER1D;
+    D3D10_SVT_SAMPLER2D                 :: _10_SVT_SAMPLER2D;
+    D3D10_SVT_SAMPLER3D                 :: _10_SVT_SAMPLER3D;
+    D3D10_SVT_SAMPLERCUBE               :: _10_SVT_SAMPLERCUBE;
+    D3D10_SVT_PIXELSHADER               :: _10_SVT_PIXELSHADER;
+    D3D10_SVT_VERTEXSHADER              :: _10_SVT_VERTEXSHADER;
+    D3D10_SVT_PIXELFRAGMENT             :: _10_SVT_PIXELFRAGMENT;
+    D3D10_SVT_VERTEXFRAGMENT            :: _10_SVT_VERTEXFRAGMENT;
+    D3D10_SVT_UINT                      :: _10_SVT_UINT;
+    D3D10_SVT_UINT8                     :: _10_SVT_UINT8;
+    D3D10_SVT_GEOMETRYSHADER            :: _10_SVT_GEOMETRYSHADER;
+    D3D10_SVT_RASTERIZER                :: _10_SVT_RASTERIZER;
+    D3D10_SVT_DEPTHSTENCIL              :: _10_SVT_DEPTHSTENCIL;
+    D3D10_SVT_BLEND                     :: _10_SVT_BLEND;
+    D3D10_SVT_BUFFER                    :: _10_SVT_BUFFER;
+    D3D10_SVT_CBUFFER                   :: _10_SVT_CBUFFER;
+    D3D10_SVT_TBUFFER                   :: _10_SVT_TBUFFER;
+    D3D10_SVT_TEXTURE1DARRAY            :: _10_SVT_TEXTURE1DARRAY;
+    D3D10_SVT_TEXTURE2DARRAY            :: _10_SVT_TEXTURE2DARRAY;
+    D3D10_SVT_RENDERTARGETVIEW          :: _10_SVT_RENDERTARGETVIEW;
+    D3D10_SVT_DEPTHSTENCILVIEW          :: _10_SVT_DEPTHSTENCILVIEW;
+    D3D10_SVT_TEXTURE2DMS               :: _10_SVT_TEXTURE2DMS;
+    D3D10_SVT_TEXTURE2DMSARRAY          :: _10_SVT_TEXTURE2DMSARRAY;
+    D3D10_SVT_TEXTURECUBEARRAY          :: _10_SVT_TEXTURECUBEARRAY;
+    D3D11_SVT_HULLSHADER                :: _11_SVT_HULLSHADER;
+    D3D11_SVT_DOMAINSHADER              :: _11_SVT_DOMAINSHADER;
+    D3D11_SVT_INTERFACE_POINTER         :: _11_SVT_INTERFACE_POINTER;
+    D3D11_SVT_COMPUTESHADER             :: _11_SVT_COMPUTESHADER;
+    D3D11_SVT_DOUBLE                    :: _11_SVT_DOUBLE;
+    D3D11_SVT_RWTEXTURE1D               :: _11_SVT_RWTEXTURE1D;
+    D3D11_SVT_RWTEXTURE1DARRAY          :: _11_SVT_RWTEXTURE1DARRAY;
+    D3D11_SVT_RWTEXTURE2D               :: _11_SVT_RWTEXTURE2D;
+    D3D11_SVT_RWTEXTURE2DARRAY          :: _11_SVT_RWTEXTURE2DARRAY;
+    D3D11_SVT_RWTEXTURE3D               :: _11_SVT_RWTEXTURE3D;
+    D3D11_SVT_RWBUFFER                  :: _11_SVT_RWBUFFER;
+    D3D11_SVT_BYTEADDRESS_BUFFER        :: _11_SVT_BYTEADDRESS_BUFFER;
+    D3D11_SVT_RWBYTEADDRESS_BUFFER      :: _11_SVT_RWBYTEADDRESS_BUFFER;
+    D3D11_SVT_STRUCTURED_BUFFER         :: _11_SVT_STRUCTURED_BUFFER;
+    D3D11_SVT_RWSTRUCTURED_BUFFER       :: _11_SVT_RWSTRUCTURED_BUFFER;
+    D3D11_SVT_APPEND_STRUCTURED_BUFFER  :: _11_SVT_APPEND_STRUCTURED_BUFFER;
+    D3D11_SVT_CONSUME_STRUCTURED_BUFFER :: _11_SVT_CONSUME_STRUCTURED_BUFFER;
+    D3D_SVT_FORCE_DWORD                 :: SVT_FORCE_DWORD;
+}
+
+D3D_SHADER_VARIABLE_TYPE :: _D3D_SHADER_VARIABLE_TYPE;
+
+_D3D_SHADER_INPUT_FLAGS :: enum s32 {
+    SIF_USERPACKED              :: 1;
+    SIF_COMPARISON_SAMPLER      :: 2;
+    SIF_TEXTURE_COMPONENT_0     :: 4;
+    SIF_TEXTURE_COMPONENT_1     :: 8;
+    SIF_TEXTURE_COMPONENTS      :: 12;
+    SIF_UNUSED                  :: 16;
+    _10_SIF_USERPACKED          :: 1;
+    _10_SIF_COMPARISON_SAMPLER  :: 2;
+    _10_SIF_TEXTURE_COMPONENT_0 :: 4;
+    _10_SIF_TEXTURE_COMPONENT_1 :: 8;
+    _10_SIF_TEXTURE_COMPONENTS  :: 12;
+    SIF_FORCE_DWORD             :: 2147483647;
+
+    D3D_SIF_USERPACKED            :: SIF_USERPACKED;
+    D3D_SIF_COMPARISON_SAMPLER    :: SIF_COMPARISON_SAMPLER;
+    D3D_SIF_TEXTURE_COMPONENT_0   :: SIF_TEXTURE_COMPONENT_0;
+    D3D_SIF_TEXTURE_COMPONENT_1   :: SIF_TEXTURE_COMPONENT_1;
+    D3D_SIF_TEXTURE_COMPONENTS    :: SIF_TEXTURE_COMPONENTS;
+    D3D_SIF_UNUSED                :: SIF_UNUSED;
+    D3D10_SIF_USERPACKED          :: _10_SIF_USERPACKED;
+    D3D10_SIF_COMPARISON_SAMPLER  :: _10_SIF_COMPARISON_SAMPLER;
+    D3D10_SIF_TEXTURE_COMPONENT_0 :: _10_SIF_TEXTURE_COMPONENT_0;
+    D3D10_SIF_TEXTURE_COMPONENT_1 :: _10_SIF_TEXTURE_COMPONENT_1;
+    D3D10_SIF_TEXTURE_COMPONENTS  :: _10_SIF_TEXTURE_COMPONENTS;
+    D3D_SIF_FORCE_DWORD           :: SIF_FORCE_DWORD;
+}
+
+D3D_SHADER_INPUT_FLAGS :: _D3D_SHADER_INPUT_FLAGS;
+
+_D3D_SHADER_INPUT_TYPE :: enum s32 {
+    SIT_CBUFFER                           :: 0;
+    SIT_TBUFFER                           :: 1;
+    SIT_TEXTURE                           :: 2;
+    SIT_SAMPLER                           :: 3;
+    SIT_UAV_RWTYPED                       :: 4;
+    SIT_STRUCTURED                        :: 5;
+    SIT_UAV_RWSTRUCTURED                  :: 6;
+    SIT_BYTEADDRESS                       :: 7;
+    SIT_UAV_RWBYTEADDRESS                 :: 8;
+    SIT_UAV_APPEND_STRUCTURED             :: 9;
+    SIT_UAV_CONSUME_STRUCTURED            :: 10;
+    SIT_UAV_RWSTRUCTURED_WITH_COUNTER     :: 11;
+    SIT_RTACCELERATIONSTRUCTURE           :: 12;
+    SIT_UAV_FEEDBACKTEXTURE               :: 13;
+    _10_SIT_CBUFFER                       :: 0;
+    _10_SIT_TBUFFER                       :: 1;
+    _10_SIT_TEXTURE                       :: 2;
+    _10_SIT_SAMPLER                       :: 3;
+    _11_SIT_UAV_RWTYPED                   :: 4;
+    _11_SIT_STRUCTURED                    :: 5;
+    _11_SIT_UAV_RWSTRUCTURED              :: 6;
+    _11_SIT_BYTEADDRESS                   :: 7;
+    _11_SIT_UAV_RWBYTEADDRESS             :: 8;
+    _11_SIT_UAV_APPEND_STRUCTURED         :: 9;
+    _11_SIT_UAV_CONSUME_STRUCTURED        :: 10;
+    _11_SIT_UAV_RWSTRUCTURED_WITH_COUNTER :: 11;
+
+    D3D_SIT_CBUFFER                         :: SIT_CBUFFER;
+    D3D_SIT_TBUFFER                         :: SIT_TBUFFER;
+    D3D_SIT_TEXTURE                         :: SIT_TEXTURE;
+    D3D_SIT_SAMPLER                         :: SIT_SAMPLER;
+    D3D_SIT_UAV_RWTYPED                     :: SIT_UAV_RWTYPED;
+    D3D_SIT_STRUCTURED                      :: SIT_STRUCTURED;
+    D3D_SIT_UAV_RWSTRUCTURED                :: SIT_UAV_RWSTRUCTURED;
+    D3D_SIT_BYTEADDRESS                     :: SIT_BYTEADDRESS;
+    D3D_SIT_UAV_RWBYTEADDRESS               :: SIT_UAV_RWBYTEADDRESS;
+    D3D_SIT_UAV_APPEND_STRUCTURED           :: SIT_UAV_APPEND_STRUCTURED;
+    D3D_SIT_UAV_CONSUME_STRUCTURED          :: SIT_UAV_CONSUME_STRUCTURED;
+    D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER   :: SIT_UAV_RWSTRUCTURED_WITH_COUNTER;
+    D3D_SIT_RTACCELERATIONSTRUCTURE         :: SIT_RTACCELERATIONSTRUCTURE;
+    D3D_SIT_UAV_FEEDBACKTEXTURE             :: SIT_UAV_FEEDBACKTEXTURE;
+    D3D10_SIT_CBUFFER                       :: _10_SIT_CBUFFER;
+    D3D10_SIT_TBUFFER                       :: _10_SIT_TBUFFER;
+    D3D10_SIT_TEXTURE                       :: _10_SIT_TEXTURE;
+    D3D10_SIT_SAMPLER                       :: _10_SIT_SAMPLER;
+    D3D11_SIT_UAV_RWTYPED                   :: _11_SIT_UAV_RWTYPED;
+    D3D11_SIT_STRUCTURED                    :: _11_SIT_STRUCTURED;
+    D3D11_SIT_UAV_RWSTRUCTURED              :: _11_SIT_UAV_RWSTRUCTURED;
+    D3D11_SIT_BYTEADDRESS                   :: _11_SIT_BYTEADDRESS;
+    D3D11_SIT_UAV_RWBYTEADDRESS             :: _11_SIT_UAV_RWBYTEADDRESS;
+    D3D11_SIT_UAV_APPEND_STRUCTURED         :: _11_SIT_UAV_APPEND_STRUCTURED;
+    D3D11_SIT_UAV_CONSUME_STRUCTURED        :: _11_SIT_UAV_CONSUME_STRUCTURED;
+    D3D11_SIT_UAV_RWSTRUCTURED_WITH_COUNTER :: _11_SIT_UAV_RWSTRUCTURED_WITH_COUNTER;
+}
+
+D3D_SHADER_INPUT_TYPE :: _D3D_SHADER_INPUT_TYPE;
+
+_D3D_SHADER_CBUFFER_FLAGS :: enum s32 {
+    CBF_USERPACKED     :: 1;
+    _10_CBF_USERPACKED :: 1;
+    CBF_FORCE_DWORD    :: 2147483647;
+
+    D3D_CBF_USERPACKED   :: CBF_USERPACKED;
+    D3D10_CBF_USERPACKED :: _10_CBF_USERPACKED;
+    D3D_CBF_FORCE_DWORD  :: CBF_FORCE_DWORD;
+}
+
+D3D_SHADER_CBUFFER_FLAGS :: _D3D_SHADER_CBUFFER_FLAGS;
+
+_D3D_CBUFFER_TYPE :: enum s32 {
+    CT_CBUFFER                :: 0;
+    CT_TBUFFER                :: 1;
+    CT_INTERFACE_POINTERS     :: 2;
+    CT_RESOURCE_BIND_INFO     :: 3;
+    _10_CT_CBUFFER            :: 0;
+    _10_CT_TBUFFER            :: 1;
+    _11_CT_CBUFFER            :: 0;
+    _11_CT_TBUFFER            :: 1;
+    _11_CT_INTERFACE_POINTERS :: 2;
+    _11_CT_RESOURCE_BIND_INFO :: 3;
+
+    D3D_CT_CBUFFER              :: CT_CBUFFER;
+    D3D_CT_TBUFFER              :: CT_TBUFFER;
+    D3D_CT_INTERFACE_POINTERS   :: CT_INTERFACE_POINTERS;
+    D3D_CT_RESOURCE_BIND_INFO   :: CT_RESOURCE_BIND_INFO;
+    D3D10_CT_CBUFFER            :: _10_CT_CBUFFER;
+    D3D10_CT_TBUFFER            :: _10_CT_TBUFFER;
+    D3D11_CT_CBUFFER            :: _11_CT_CBUFFER;
+    D3D11_CT_TBUFFER            :: _11_CT_TBUFFER;
+    D3D11_CT_INTERFACE_POINTERS :: _11_CT_INTERFACE_POINTERS;
+    D3D11_CT_RESOURCE_BIND_INFO :: _11_CT_RESOURCE_BIND_INFO;
+}
+
+D3D_CBUFFER_TYPE :: _D3D_CBUFFER_TYPE;
+
+D3D_NAME :: enum s32 {
+    UNDEFINED                                :: 0;
+    POSITION                                 :: 1;
+    CLIP_DISTANCE                            :: 2;
+    CULL_DISTANCE                            :: 3;
+    RENDER_TARGET_ARRAY_INDEX                :: 4;
+    VIEWPORT_ARRAY_INDEX                     :: 5;
+    VERTEX_ID                                :: 6;
+    PRIMITIVE_ID                             :: 7;
+    INSTANCE_ID                              :: 8;
+    IS_FRONT_FACE                            :: 9;
+    SAMPLE_INDEX                             :: 10;
+    FINAL_QUAD_EDGE_TESSFACTOR               :: 11;
+    FINAL_QUAD_INSIDE_TESSFACTOR             :: 12;
+    FINAL_TRI_EDGE_TESSFACTOR                :: 13;
+    FINAL_TRI_INSIDE_TESSFACTOR              :: 14;
+    FINAL_LINE_DETAIL_TESSFACTOR             :: 15;
+    FINAL_LINE_DENSITY_TESSFACTOR            :: 16;
+    BARYCENTRICS                             :: 23;
+    SHADINGRATE                              :: 24;
+    CULLPRIMITIVE                            :: 25;
+    TARGET                                   :: 64;
+    DEPTH                                    :: 65;
+    COVERAGE                                 :: 66;
+    DEPTH_GREATER_EQUAL                      :: 67;
+    DEPTH_LESS_EQUAL                         :: 68;
+    STENCIL_REF                              :: 69;
+    INNER_COVERAGE                           :: 70;
+    D3D10_NAME_UNDEFINED                     :: 0;
+    D3D10_NAME_POSITION                      :: 1;
+    D3D10_NAME_CLIP_DISTANCE                 :: 2;
+    D3D10_NAME_CULL_DISTANCE                 :: 3;
+    D3D10_NAME_RENDER_TARGET_ARRAY_INDEX     :: 4;
+    D3D10_NAME_VIEWPORT_ARRAY_INDEX          :: 5;
+    D3D10_NAME_VERTEX_ID                     :: 6;
+    D3D10_NAME_PRIMITIVE_ID                  :: 7;
+    D3D10_NAME_INSTANCE_ID                   :: 8;
+    D3D10_NAME_IS_FRONT_FACE                 :: 9;
+    D3D10_NAME_SAMPLE_INDEX                  :: 10;
+    D3D10_NAME_TARGET                        :: 64;
+    D3D10_NAME_DEPTH                         :: 65;
+    D3D10_NAME_COVERAGE                      :: 66;
+    D3D11_NAME_FINAL_QUAD_EDGE_TESSFACTOR    :: 11;
+    D3D11_NAME_FINAL_QUAD_INSIDE_TESSFACTOR  :: 12;
+    D3D11_NAME_FINAL_TRI_EDGE_TESSFACTOR     :: 13;
+    D3D11_NAME_FINAL_TRI_INSIDE_TESSFACTOR   :: 14;
+    D3D11_NAME_FINAL_LINE_DETAIL_TESSFACTOR  :: 15;
+    D3D11_NAME_FINAL_LINE_DENSITY_TESSFACTOR :: 16;
+    D3D11_NAME_DEPTH_GREATER_EQUAL           :: 67;
+    D3D11_NAME_DEPTH_LESS_EQUAL              :: 68;
+    D3D11_NAME_STENCIL_REF                   :: 69;
+    D3D11_NAME_INNER_COVERAGE                :: 70;
+    D3D12_NAME_BARYCENTRICS                  :: 23;
+    D3D12_NAME_SHADINGRATE                   :: 24;
+    D3D12_NAME_CULLPRIMITIVE                 :: 25;
+
+    D3D_NAME_UNDEFINED                     :: UNDEFINED;
+    D3D_NAME_POSITION                      :: POSITION;
+    D3D_NAME_CLIP_DISTANCE                 :: CLIP_DISTANCE;
+    D3D_NAME_CULL_DISTANCE                 :: CULL_DISTANCE;
+    D3D_NAME_RENDER_TARGET_ARRAY_INDEX     :: RENDER_TARGET_ARRAY_INDEX;
+    D3D_NAME_VIEWPORT_ARRAY_INDEX          :: VIEWPORT_ARRAY_INDEX;
+    D3D_NAME_VERTEX_ID                     :: VERTEX_ID;
+    D3D_NAME_PRIMITIVE_ID                  :: PRIMITIVE_ID;
+    D3D_NAME_INSTANCE_ID                   :: INSTANCE_ID;
+    D3D_NAME_IS_FRONT_FACE                 :: IS_FRONT_FACE;
+    D3D_NAME_SAMPLE_INDEX                  :: SAMPLE_INDEX;
+    D3D_NAME_FINAL_QUAD_EDGE_TESSFACTOR    :: FINAL_QUAD_EDGE_TESSFACTOR;
+    D3D_NAME_FINAL_QUAD_INSIDE_TESSFACTOR  :: FINAL_QUAD_INSIDE_TESSFACTOR;
+    D3D_NAME_FINAL_TRI_EDGE_TESSFACTOR     :: FINAL_TRI_EDGE_TESSFACTOR;
+    D3D_NAME_FINAL_TRI_INSIDE_TESSFACTOR   :: FINAL_TRI_INSIDE_TESSFACTOR;
+    D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR  :: FINAL_LINE_DETAIL_TESSFACTOR;
+    D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR :: FINAL_LINE_DENSITY_TESSFACTOR;
+    D3D_NAME_BARYCENTRICS                  :: BARYCENTRICS;
+    D3D_NAME_SHADINGRATE                   :: SHADINGRATE;
+    D3D_NAME_CULLPRIMITIVE                 :: CULLPRIMITIVE;
+    D3D_NAME_TARGET                        :: TARGET;
+    D3D_NAME_DEPTH                         :: DEPTH;
+    D3D_NAME_COVERAGE                      :: COVERAGE;
+    D3D_NAME_DEPTH_GREATER_EQUAL           :: DEPTH_GREATER_EQUAL;
+    D3D_NAME_DEPTH_LESS_EQUAL              :: DEPTH_LESS_EQUAL;
+    D3D_NAME_STENCIL_REF                   :: STENCIL_REF;
+    D3D_NAME_INNER_COVERAGE                :: INNER_COVERAGE;
+}
+
+D3D_RESOURCE_RETURN_TYPE :: enum s32 {
+    RETURN_TYPE_UNORM         :: 1;
+    RETURN_TYPE_SNORM         :: 2;
+    RETURN_TYPE_SINT          :: 3;
+    RETURN_TYPE_UINT          :: 4;
+    RETURN_TYPE_FLOAT         :: 5;
+    RETURN_TYPE_MIXED         :: 6;
+    RETURN_TYPE_DOUBLE        :: 7;
+    RETURN_TYPE_CONTINUED     :: 8;
+    _10_RETURN_TYPE_UNORM     :: 1;
+    _10_RETURN_TYPE_SNORM     :: 2;
+    _10_RETURN_TYPE_SINT      :: 3;
+    _10_RETURN_TYPE_UINT      :: 4;
+    _10_RETURN_TYPE_FLOAT     :: 5;
+    _10_RETURN_TYPE_MIXED     :: 6;
+    _11_RETURN_TYPE_UNORM     :: 1;
+    _11_RETURN_TYPE_SNORM     :: 2;
+    _11_RETURN_TYPE_SINT      :: 3;
+    _11_RETURN_TYPE_UINT      :: 4;
+    _11_RETURN_TYPE_FLOAT     :: 5;
+    _11_RETURN_TYPE_MIXED     :: 6;
+    _11_RETURN_TYPE_DOUBLE    :: 7;
+    _11_RETURN_TYPE_CONTINUED :: 8;
+
+    D3D_RETURN_TYPE_UNORM       :: RETURN_TYPE_UNORM;
+    D3D_RETURN_TYPE_SNORM       :: RETURN_TYPE_SNORM;
+    D3D_RETURN_TYPE_SINT        :: RETURN_TYPE_SINT;
+    D3D_RETURN_TYPE_UINT        :: RETURN_TYPE_UINT;
+    D3D_RETURN_TYPE_FLOAT       :: RETURN_TYPE_FLOAT;
+    D3D_RETURN_TYPE_MIXED       :: RETURN_TYPE_MIXED;
+    D3D_RETURN_TYPE_DOUBLE      :: RETURN_TYPE_DOUBLE;
+    D3D_RETURN_TYPE_CONTINUED   :: RETURN_TYPE_CONTINUED;
+    D3D10_RETURN_TYPE_UNORM     :: _10_RETURN_TYPE_UNORM;
+    D3D10_RETURN_TYPE_SNORM     :: _10_RETURN_TYPE_SNORM;
+    D3D10_RETURN_TYPE_SINT      :: _10_RETURN_TYPE_SINT;
+    D3D10_RETURN_TYPE_UINT      :: _10_RETURN_TYPE_UINT;
+    D3D10_RETURN_TYPE_FLOAT     :: _10_RETURN_TYPE_FLOAT;
+    D3D10_RETURN_TYPE_MIXED     :: _10_RETURN_TYPE_MIXED;
+    D3D11_RETURN_TYPE_UNORM     :: _11_RETURN_TYPE_UNORM;
+    D3D11_RETURN_TYPE_SNORM     :: _11_RETURN_TYPE_SNORM;
+    D3D11_RETURN_TYPE_SINT      :: _11_RETURN_TYPE_SINT;
+    D3D11_RETURN_TYPE_UINT      :: _11_RETURN_TYPE_UINT;
+    D3D11_RETURN_TYPE_FLOAT     :: _11_RETURN_TYPE_FLOAT;
+    D3D11_RETURN_TYPE_MIXED     :: _11_RETURN_TYPE_MIXED;
+    D3D11_RETURN_TYPE_DOUBLE    :: _11_RETURN_TYPE_DOUBLE;
+    D3D11_RETURN_TYPE_CONTINUED :: _11_RETURN_TYPE_CONTINUED;
+}
+
+D3D_REGISTER_COMPONENT_TYPE :: enum s32 {
+    REGISTER_COMPONENT_UNKNOWN     :: 0;
+    REGISTER_COMPONENT_UINT32      :: 1;
+    REGISTER_COMPONENT_SINT32      :: 2;
+    REGISTER_COMPONENT_FLOAT32     :: 3;
+    _10_REGISTER_COMPONENT_UNKNOWN :: 0;
+    _10_REGISTER_COMPONENT_UINT32  :: 1;
+    _10_REGISTER_COMPONENT_SINT32  :: 2;
+    _10_REGISTER_COMPONENT_FLOAT32 :: 3;
+
+    D3D_REGISTER_COMPONENT_UNKNOWN   :: REGISTER_COMPONENT_UNKNOWN;
+    D3D_REGISTER_COMPONENT_UINT32    :: REGISTER_COMPONENT_UINT32;
+    D3D_REGISTER_COMPONENT_SINT32    :: REGISTER_COMPONENT_SINT32;
+    D3D_REGISTER_COMPONENT_FLOAT32   :: REGISTER_COMPONENT_FLOAT32;
+    D3D10_REGISTER_COMPONENT_UNKNOWN :: _10_REGISTER_COMPONENT_UNKNOWN;
+    D3D10_REGISTER_COMPONENT_UINT32  :: _10_REGISTER_COMPONENT_UINT32;
+    D3D10_REGISTER_COMPONENT_SINT32  :: _10_REGISTER_COMPONENT_SINT32;
+    D3D10_REGISTER_COMPONENT_FLOAT32 :: _10_REGISTER_COMPONENT_FLOAT32;
+}
+
+D3D_TESSELLATOR_DOMAIN :: enum s32 {
+    UNDEFINED                          :: 0;
+    ISOLINE                            :: 1;
+    TRI                                :: 2;
+    QUAD                               :: 3;
+    D3D11_TESSELLATOR_DOMAIN_UNDEFINED :: 0;
+    D3D11_TESSELLATOR_DOMAIN_ISOLINE   :: 1;
+    D3D11_TESSELLATOR_DOMAIN_TRI       :: 2;
+    D3D11_TESSELLATOR_DOMAIN_QUAD      :: 3;
+
+    D3D_TESSELLATOR_DOMAIN_UNDEFINED :: UNDEFINED;
+    D3D_TESSELLATOR_DOMAIN_ISOLINE   :: ISOLINE;
+    D3D_TESSELLATOR_DOMAIN_TRI       :: TRI;
+    D3D_TESSELLATOR_DOMAIN_QUAD      :: QUAD;
+}
+
+D3D_TESSELLATOR_PARTITIONING :: enum s32 {
+    UNDEFINED                                      :: 0;
+    INTEGER                                        :: 1;
+    POW2                                           :: 2;
+    FRACTIONAL_ODD                                 :: 3;
+    FRACTIONAL_EVEN                                :: 4;
+    D3D11_TESSELLATOR_PARTITIONING_UNDEFINED       :: 0;
+    D3D11_TESSELLATOR_PARTITIONING_INTEGER         :: 1;
+    D3D11_TESSELLATOR_PARTITIONING_POW2            :: 2;
+    D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD  :: 3;
+    D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN :: 4;
+
+    D3D_TESSELLATOR_PARTITIONING_UNDEFINED       :: UNDEFINED;
+    D3D_TESSELLATOR_PARTITIONING_INTEGER         :: INTEGER;
+    D3D_TESSELLATOR_PARTITIONING_POW2            :: POW2;
+    D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD  :: FRACTIONAL_ODD;
+    D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN :: FRACTIONAL_EVEN;
+}
+
+D3D_TESSELLATOR_OUTPUT_PRIMITIVE :: enum s32 {
+    TESSELLATOR_OUTPUT_UNDEFINED        :: 0;
+    TESSELLATOR_OUTPUT_POINT            :: 1;
+    TESSELLATOR_OUTPUT_LINE             :: 2;
+    TESSELLATOR_OUTPUT_TRIANGLE_CW      :: 3;
+    TESSELLATOR_OUTPUT_TRIANGLE_CCW     :: 4;
+    _11_TESSELLATOR_OUTPUT_UNDEFINED    :: 0;
+    _11_TESSELLATOR_OUTPUT_POINT        :: 1;
+    _11_TESSELLATOR_OUTPUT_LINE         :: 2;
+    _11_TESSELLATOR_OUTPUT_TRIANGLE_CW  :: 3;
+    _11_TESSELLATOR_OUTPUT_TRIANGLE_CCW :: 4;
+
+    D3D_TESSELLATOR_OUTPUT_UNDEFINED      :: TESSELLATOR_OUTPUT_UNDEFINED;
+    D3D_TESSELLATOR_OUTPUT_POINT          :: TESSELLATOR_OUTPUT_POINT;
+    D3D_TESSELLATOR_OUTPUT_LINE           :: TESSELLATOR_OUTPUT_LINE;
+    D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW    :: TESSELLATOR_OUTPUT_TRIANGLE_CW;
+    D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW   :: TESSELLATOR_OUTPUT_TRIANGLE_CCW;
+    D3D11_TESSELLATOR_OUTPUT_UNDEFINED    :: _11_TESSELLATOR_OUTPUT_UNDEFINED;
+    D3D11_TESSELLATOR_OUTPUT_POINT        :: _11_TESSELLATOR_OUTPUT_POINT;
+    D3D11_TESSELLATOR_OUTPUT_LINE         :: _11_TESSELLATOR_OUTPUT_LINE;
+    D3D11_TESSELLATOR_OUTPUT_TRIANGLE_CW  :: _11_TESSELLATOR_OUTPUT_TRIANGLE_CW;
+    D3D11_TESSELLATOR_OUTPUT_TRIANGLE_CCW :: _11_TESSELLATOR_OUTPUT_TRIANGLE_CCW;
+}
+
+D3D_MIN_PRECISION :: enum s32 {
+    DEFAULT   :: 0;
+    FLOAT_16  :: 1;
+    FLOAT_2_8 :: 2;
+    RESERVED  :: 3;
+    SINT_16   :: 4;
+    UINT_16   :: 5;
+    ANY_16    :: 240;
+    ANY_10    :: 241;
+
+    D3D_MIN_PRECISION_DEFAULT   :: DEFAULT;
+    D3D_MIN_PRECISION_FLOAT_16  :: FLOAT_16;
+    D3D_MIN_PRECISION_FLOAT_2_8 :: FLOAT_2_8;
+    D3D_MIN_PRECISION_RESERVED  :: RESERVED;
+    D3D_MIN_PRECISION_SINT_16   :: SINT_16;
+    D3D_MIN_PRECISION_UINT_16   :: UINT_16;
+    D3D_MIN_PRECISION_ANY_16    :: ANY_16;
+    D3D_MIN_PRECISION_ANY_10    :: ANY_10;
+}
+
+D3D_INTERPOLATION_MODE :: enum s32 {
+    UNDEFINED                     :: 0;
+    CONSTANT                      :: 1;
+    LINEAR                        :: 2;
+    LINEAR_CENTROID               :: 3;
+    LINEAR_NOPERSPECTIVE          :: 4;
+    LINEAR_NOPERSPECTIVE_CENTROID :: 5;
+    LINEAR_SAMPLE                 :: 6;
+    LINEAR_NOPERSPECTIVE_SAMPLE   :: 7;
+
+    D3D_INTERPOLATION_UNDEFINED                     :: UNDEFINED;
+    D3D_INTERPOLATION_CONSTANT                      :: CONSTANT;
+    D3D_INTERPOLATION_LINEAR                        :: LINEAR;
+    D3D_INTERPOLATION_LINEAR_CENTROID               :: LINEAR_CENTROID;
+    D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE          :: LINEAR_NOPERSPECTIVE;
+    D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID :: LINEAR_NOPERSPECTIVE_CENTROID;
+    D3D_INTERPOLATION_LINEAR_SAMPLE                 :: LINEAR_SAMPLE;
+    D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE   :: LINEAR_NOPERSPECTIVE_SAMPLE;
+}
+
+_D3D_PARAMETER_FLAGS :: enum s32 {
+    NONE        :: 0;
+    IN          :: 1;
+    OUT         :: 2;
+    FORCE_DWORD :: 2147483647;
+
+    D3D_PF_NONE        :: NONE;
+    D3D_PF_IN          :: IN;
+    D3D_PF_OUT         :: OUT;
+    D3D_PF_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D3D_PARAMETER_FLAGS :: _D3D_PARAMETER_FLAGS;
+
+WKPDID_D3DDebugObjectName: GUID;
+WKPDID_D3DDebugObjectNameW: GUID;
+WKPDID_CommentStringW: GUID;
+WKPDID_D3D12UniqueObjectId: GUID;
+
+D3D_TEXTURE_LAYOUT_ROW_MAJOR: GUID;
+D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE: GUID;
+
+IWICBitmap :: struct {}
+IWICBitmapSource :: struct {}
+
+D2D1_INTERPOLATION_MODE_DEFINITION :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FANT                :: 6;
+    MIPMAP_LINEAR       :: 7;
+
+    D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR              :: LINEAR;
+    D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC               :: CUBIC;
+    D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_INTERPOLATION_MODE_DEFINITION_FANT                :: FANT;
+    D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR       :: MIPMAP_LINEAR;
+}
+
+D2D1_GAMMA :: enum s32 {
+    _2_2        :: 0;
+
+    _1_0        :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_GAMMA_2_2         :: _2_2;
+
+    D2D1_GAMMA_1_0         :: _1_0;
+    D2D1_GAMMA_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_OPACITY_MASK_CONTENT :: enum s32 {
+    GRAPHICS            :: 0;
+
+    TEXT_NATURAL        :: 1;
+
+    TEXT_GDI_COMPATIBLE :: 2;
+    FORCE_DWORD         :: -1;
+
+    D2D1_OPACITY_MASK_CONTENT_GRAPHICS            :: GRAPHICS;
+
+    D2D1_OPACITY_MASK_CONTENT_TEXT_NATURAL        :: TEXT_NATURAL;
+
+    D2D1_OPACITY_MASK_CONTENT_TEXT_GDI_COMPATIBLE :: TEXT_GDI_COMPATIBLE;
+    D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_EXTEND_MODE :: enum s32 {
+    CLAMP       :: 0;
+
+    WRAP        :: 1;
+
+    MIRROR      :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_EXTEND_MODE_CLAMP       :: CLAMP;
+
+    D2D1_EXTEND_MODE_WRAP        :: WRAP;
+
+    D2D1_EXTEND_MODE_MIRROR      :: MIRROR;
+    D2D1_EXTEND_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_ANTIALIAS_MODE :: enum s32 {
+    PER_PRIMITIVE :: 0;
+
+    ALIASED       :: 1;
+    FORCE_DWORD   :: -1;
+
+    D2D1_ANTIALIAS_MODE_PER_PRIMITIVE :: PER_PRIMITIVE;
+
+    D2D1_ANTIALIAS_MODE_ALIASED       :: ALIASED;
+    D2D1_ANTIALIAS_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_TEXT_ANTIALIAS_MODE :: enum s32 {
+    DEFAULT     :: 0;
+
+    CLEARTYPE   :: 1;
+
+    GRAYSCALE   :: 2;
+
+    ALIASED     :: 3;
+    FORCE_DWORD :: -1;
+
+    D2D1_TEXT_ANTIALIAS_MODE_DEFAULT     :: DEFAULT;
+
+    D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE   :: CLEARTYPE;
+
+    D2D1_TEXT_ANTIALIAS_MODE_GRAYSCALE   :: GRAYSCALE;
+
+    D2D1_TEXT_ANTIALIAS_MODE_ALIASED     :: ALIASED;
+    D2D1_TEXT_ANTIALIAS_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BITMAP_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR :: 0;
+
+    LINEAR           :: 1;
+    FORCE_DWORD      :: -1;
+
+    D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR :: NEAREST_NEIGHBOR;
+
+    D2D1_BITMAP_INTERPOLATION_MODE_LINEAR           :: LINEAR;
+    D2D1_BITMAP_INTERPOLATION_MODE_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_DRAW_TEXT_OPTIONS :: enum s32 {
+    NO_SNAP                       :: 1;
+
+    CLIP                          :: 2;
+
+    ENABLE_COLOR_FONT             :: 4;
+
+    DISABLE_COLOR_BITMAP_SNAPPING :: 8;
+    NONE                          :: 0;
+    FORCE_DWORD                   :: -1;
+
+    D2D1_DRAW_TEXT_OPTIONS_NO_SNAP                       :: NO_SNAP;
+
+    D2D1_DRAW_TEXT_OPTIONS_CLIP                          :: CLIP;
+
+    D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT             :: ENABLE_COLOR_FONT;
+
+    D2D1_DRAW_TEXT_OPTIONS_DISABLE_COLOR_BITMAP_SNAPPING :: DISABLE_COLOR_BITMAP_SNAPPING;
+    D2D1_DRAW_TEXT_OPTIONS_NONE                          :: NONE;
+    D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD                   :: FORCE_DWORD;
+}
+
+D2D1_COLOR_F :: D2D_COLOR_F;
+
+D2D1_TAG :: u64;
+
+D2D1_BITMAP_PROPERTIES :: struct {
+    pixelFormat: D2D1_PIXEL_FORMAT;
+    dpiX:        float;
+    dpiY:        float;
+}
+
+D2D1_GRADIENT_STOP :: struct {
+    position: float;
+    color:    D2D1_COLOR_F;
+}
+
+D2D1_BRUSH_PROPERTIES :: struct {
+    opacity:   float;
+    transform: D2D1_MATRIX_3X2_F;
+}
+
+D2D1_BITMAP_BRUSH_PROPERTIES :: struct {
+    extendModeX:       D2D1_EXTEND_MODE;
+    extendModeY:       D2D1_EXTEND_MODE;
+    interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE;
+}
+
+D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES :: struct {
+    startPoint: D2D1_POINT_2F;
+    endPoint:   D2D1_POINT_2F;
+}
+
+D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES :: struct {
+    center:               D2D1_POINT_2F;
+    gradientOriginOffset: D2D1_POINT_2F;
+    radiusX:              float;
+    radiusY:              float;
+}
+
+D2D1_ARC_SIZE :: enum s32 {
+    SMALL       :: 0;
+    LARGE       :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_ARC_SIZE_SMALL       :: SMALL;
+    D2D1_ARC_SIZE_LARGE       :: LARGE;
+    D2D1_ARC_SIZE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_CAP_STYLE :: enum s32 {
+    FLAT        :: 0;
+
+    SQUARE      :: 1;
+
+    ROUND       :: 2;
+
+    TRIANGLE    :: 3;
+    FORCE_DWORD :: -1;
+
+    D2D1_CAP_STYLE_FLAT        :: FLAT;
+
+    D2D1_CAP_STYLE_SQUARE      :: SQUARE;
+
+    D2D1_CAP_STYLE_ROUND       :: ROUND;
+
+    D2D1_CAP_STYLE_TRIANGLE    :: TRIANGLE;
+    D2D1_CAP_STYLE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DASH_STYLE :: enum s32 {
+    SOLID        :: 0;
+    DASH         :: 1;
+    DOT          :: 2;
+    DASH_DOT     :: 3;
+    DASH_DOT_DOT :: 4;
+    CUSTOM       :: 5;
+    FORCE_DWORD  :: -1;
+
+    D2D1_DASH_STYLE_SOLID        :: SOLID;
+    D2D1_DASH_STYLE_DASH         :: DASH;
+    D2D1_DASH_STYLE_DOT          :: DOT;
+    D2D1_DASH_STYLE_DASH_DOT     :: DASH_DOT;
+    D2D1_DASH_STYLE_DASH_DOT_DOT :: DASH_DOT_DOT;
+    D2D1_DASH_STYLE_CUSTOM       :: CUSTOM;
+    D2D1_DASH_STYLE_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_LINE_JOIN :: enum s32 {
+    MITER          :: 0;
+
+    BEVEL          :: 1;
+
+    ROUND          :: 2;
+
+    MITER_OR_BEVEL :: 3;
+    FORCE_DWORD    :: -1;
+
+    D2D1_LINE_JOIN_MITER          :: MITER;
+
+    D2D1_LINE_JOIN_BEVEL          :: BEVEL;
+
+    D2D1_LINE_JOIN_ROUND          :: ROUND;
+
+    D2D1_LINE_JOIN_MITER_OR_BEVEL :: MITER_OR_BEVEL;
+    D2D1_LINE_JOIN_FORCE_DWORD    :: FORCE_DWORD;
+}
+
+D2D1_COMBINE_MODE :: enum s32 {
+    UNION       :: 0;
+
+    INTERSECT   :: 1;
+
+    XOR         :: 2;
+
+    EXCLUDE     :: 3;
+    FORCE_DWORD :: -1;
+
+    D2D1_COMBINE_MODE_UNION       :: UNION;
+
+    D2D1_COMBINE_MODE_INTERSECT   :: INTERSECT;
+
+    D2D1_COMBINE_MODE_XOR         :: XOR;
+
+    D2D1_COMBINE_MODE_EXCLUDE     :: EXCLUDE;
+    D2D1_COMBINE_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_GEOMETRY_RELATION :: enum s32 {
+    UNKNOWN      :: 0;
+
+    DISJOINT     :: 1;
+
+    IS_CONTAINED :: 2;
+
+    CONTAINS     :: 3;
+
+    OVERLAP      :: 4;
+    FORCE_DWORD  :: -1;
+
+    D2D1_GEOMETRY_RELATION_UNKNOWN      :: UNKNOWN;
+
+    D2D1_GEOMETRY_RELATION_DISJOINT     :: DISJOINT;
+
+    D2D1_GEOMETRY_RELATION_IS_CONTAINED :: IS_CONTAINED;
+
+    D2D1_GEOMETRY_RELATION_CONTAINS     :: CONTAINS;
+
+    D2D1_GEOMETRY_RELATION_OVERLAP      :: OVERLAP;
+    D2D1_GEOMETRY_RELATION_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_GEOMETRY_SIMPLIFICATION_OPTION :: enum s32 {
+    CUBICS_AND_LINES :: 0;
+    LINES            :: 1;
+    FORCE_DWORD      :: -1;
+
+    D2D1_GEOMETRY_SIMPLIFICATION_OPTION_CUBICS_AND_LINES :: CUBICS_AND_LINES;
+    D2D1_GEOMETRY_SIMPLIFICATION_OPTION_LINES            :: LINES;
+    D2D1_GEOMETRY_SIMPLIFICATION_OPTION_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_FIGURE_BEGIN :: enum s32 {
+    FILLED      :: 0;
+    HOLLOW      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_FIGURE_BEGIN_FILLED      :: FILLED;
+    D2D1_FIGURE_BEGIN_HOLLOW      :: HOLLOW;
+    D2D1_FIGURE_BEGIN_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_FIGURE_END :: enum s32 {
+    OPEN        :: 0;
+    CLOSED      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_FIGURE_END_OPEN        :: OPEN;
+    D2D1_FIGURE_END_CLOSED      :: CLOSED;
+    D2D1_FIGURE_END_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BEZIER_SEGMENT :: struct {
+    point1: D2D1_POINT_2F;
+    point2: D2D1_POINT_2F;
+    point3: D2D1_POINT_2F;
+}
+
+D2D1_TRIANGLE :: struct {
+    point1: D2D1_POINT_2F;
+    point2: D2D1_POINT_2F;
+    point3: D2D1_POINT_2F;
+}
+
+D2D1_PATH_SEGMENT :: enum s32 {
+    NONE                  :: 0;
+    FORCE_UNSTROKED       :: 1;
+    FORCE_ROUND_LINE_JOIN :: 2;
+    FORCE_DWORD           :: -1;
+
+    D2D1_PATH_SEGMENT_NONE                  :: NONE;
+    D2D1_PATH_SEGMENT_FORCE_UNSTROKED       :: FORCE_UNSTROKED;
+    D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN :: FORCE_ROUND_LINE_JOIN;
+    D2D1_PATH_SEGMENT_FORCE_DWORD           :: FORCE_DWORD;
+}
+
+D2D1_SWEEP_DIRECTION :: enum s32 {
+    COUNTER_CLOCKWISE :: 0;
+    CLOCKWISE         :: 1;
+    FORCE_DWORD       :: -1;
+
+    D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE :: COUNTER_CLOCKWISE;
+    D2D1_SWEEP_DIRECTION_CLOCKWISE         :: CLOCKWISE;
+    D2D1_SWEEP_DIRECTION_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_FILL_MODE :: enum s32 {
+    ALTERNATE   :: 0;
+    WINDING     :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_FILL_MODE_ALTERNATE   :: ALTERNATE;
+    D2D1_FILL_MODE_WINDING     :: WINDING;
+    D2D1_FILL_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_ARC_SEGMENT :: struct {
+    point:          D2D1_POINT_2F;
+    size:           D2D1_SIZE_F;
+    rotationAngle:  float;
+    sweepDirection: D2D1_SWEEP_DIRECTION;
+    arcSize:        D2D1_ARC_SIZE;
+}
+
+D2D1_QUADRATIC_BEZIER_SEGMENT :: struct {
+    point1: D2D1_POINT_2F;
+    point2: D2D1_POINT_2F;
+}
+
+D2D1_ELLIPSE :: struct {
+    point:   D2D1_POINT_2F;
+    radiusX: float;
+    radiusY: float;
+}
+
+D2D1_ROUNDED_RECT :: struct {
+    rect:    D2D1_RECT_F;
+    radiusX: float;
+    radiusY: float;
+}
+
+D2D1_STROKE_STYLE_PROPERTIES :: struct {
+    startCap:   D2D1_CAP_STYLE;
+    endCap:     D2D1_CAP_STYLE;
+    dashCap:    D2D1_CAP_STYLE;
+    lineJoin:   D2D1_LINE_JOIN;
+    miterLimit: float;
+    dashStyle:  D2D1_DASH_STYLE;
+    dashOffset: float;
+}
+
+D2D1_LAYER_OPTIONS :: enum s32 {
+    NONE                     :: 0;
+
+    INITIALIZE_FOR_CLEARTYPE :: 1;
+    FORCE_DWORD              :: -1;
+
+    D2D1_LAYER_OPTIONS_NONE                     :: NONE;
+
+    D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE :: INITIALIZE_FOR_CLEARTYPE;
+    D2D1_LAYER_OPTIONS_FORCE_DWORD              :: FORCE_DWORD;
+}
+
+D2D1_LAYER_PARAMETERS :: struct {
+    contentBounds:     D2D1_RECT_F;
+
+    geometricMask:     *ID2D1Geometry;
+
+    maskAntialiasMode: D2D1_ANTIALIAS_MODE;
+
+    maskTransform:     D2D1_MATRIX_3X2_F;
+
+    opacity:           float;
+
+    opacityBrush:      *ID2D1Brush;
+
+    layerOptions:      D2D1_LAYER_OPTIONS;
+}
+
+D2D1_WINDOW_STATE :: enum s32 {
+    NONE        :: 0;
+    OCCLUDED    :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_WINDOW_STATE_NONE        :: NONE;
+    D2D1_WINDOW_STATE_OCCLUDED    :: OCCLUDED;
+    D2D1_WINDOW_STATE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_RENDER_TARGET_TYPE :: enum s32 {
+    DEFAULT     :: 0;
+
+    SOFTWARE    :: 1;
+
+    HARDWARE    :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_RENDER_TARGET_TYPE_DEFAULT     :: DEFAULT;
+
+    D2D1_RENDER_TARGET_TYPE_SOFTWARE    :: SOFTWARE;
+
+    D2D1_RENDER_TARGET_TYPE_HARDWARE    :: HARDWARE;
+    D2D1_RENDER_TARGET_TYPE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_FEATURE_LEVEL :: enum s32 {
+    DEFAULT     :: 0;
+
+    _9          :: 37120;
+
+    _10         :: 40960;
+    FORCE_DWORD :: -1;
+
+    D2D1_FEATURE_LEVEL_DEFAULT     :: DEFAULT;
+
+    D2D1_FEATURE_LEVEL_9           :: _9;
+
+    D2D1_FEATURE_LEVEL_10          :: _10;
+    D2D1_FEATURE_LEVEL_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_RENDER_TARGET_USAGE :: enum s32 {
+    NONE                  :: 0;
+
+    FORCE_BITMAP_REMOTING :: 1;
+
+    GDI_COMPATIBLE        :: 2;
+    FORCE_DWORD           :: -1;
+
+    D2D1_RENDER_TARGET_USAGE_NONE                  :: NONE;
+
+    D2D1_RENDER_TARGET_USAGE_FORCE_BITMAP_REMOTING :: FORCE_BITMAP_REMOTING;
+
+    D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE        :: GDI_COMPATIBLE;
+    D2D1_RENDER_TARGET_USAGE_FORCE_DWORD           :: FORCE_DWORD;
+}
+
+D2D1_PRESENT_OPTIONS :: enum s32 {
+    NONE            :: 0;
+
+    RETAIN_CONTENTS :: 1;
+
+    IMMEDIATELY     :: 2;
+    FORCE_DWORD     :: -1;
+
+    D2D1_PRESENT_OPTIONS_NONE            :: NONE;
+
+    D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS :: RETAIN_CONTENTS;
+
+    D2D1_PRESENT_OPTIONS_IMMEDIATELY     :: IMMEDIATELY;
+    D2D1_PRESENT_OPTIONS_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_RENDER_TARGET_PROPERTIES :: struct {
+    type:        D2D1_RENDER_TARGET_TYPE;
+    pixelFormat: D2D1_PIXEL_FORMAT;
+    dpiX:        float;
+    dpiY:        float;
+    usage:       D2D1_RENDER_TARGET_USAGE;
+    minLevel:    D2D1_FEATURE_LEVEL;
+}
+
+D2D1_HWND_RENDER_TARGET_PROPERTIES :: struct {
+    hwnd:           HWND;
+    pixelSize:      D2D1_SIZE_U;
+    presentOptions: D2D1_PRESENT_OPTIONS;
+}
+
+D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS :: enum s32 {
+    NONE           :: 0;
+
+    GDI_COMPATIBLE :: 1;
+    FORCE_DWORD    :: -1;
+
+    D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE           :: NONE;
+
+    D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_GDI_COMPATIBLE :: GDI_COMPATIBLE;
+    D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_FORCE_DWORD    :: FORCE_DWORD;
+}
+
+D2D1_DRAWING_STATE_DESCRIPTION :: struct {
+    antialiasMode:     D2D1_ANTIALIAS_MODE;
+    textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE;
+    tag1:              D2D1_TAG;
+    tag2:              D2D1_TAG;
+    transform:         D2D1_MATRIX_3X2_F;
+}
+
+D2D1_DC_INITIALIZE_MODE :: enum s32 {
+    COPY        :: 0;
+
+    CLEAR       :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_DC_INITIALIZE_MODE_COPY        :: COPY;
+
+    D2D1_DC_INITIALIZE_MODE_CLEAR       :: CLEAR;
+    D2D1_DC_INITIALIZE_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DEBUG_LEVEL :: enum s32 {
+    NONE        :: 0;
+    ERROR       :: 1;
+    WARNING     :: 2;
+    INFORMATION :: 3;
+    FORCE_DWORD :: -1;
+
+    D2D1_DEBUG_LEVEL_NONE        :: NONE;
+    D2D1_DEBUG_LEVEL_ERROR       :: ERROR;
+    D2D1_DEBUG_LEVEL_WARNING     :: WARNING;
+    D2D1_DEBUG_LEVEL_INFORMATION :: INFORMATION;
+    D2D1_DEBUG_LEVEL_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_FACTORY_TYPE :: enum s32 {
+    SINGLE_THREADED :: 0;
+
+    MULTI_THREADED  :: 1;
+    FORCE_DWORD     :: -1;
+
+    D2D1_FACTORY_TYPE_SINGLE_THREADED :: SINGLE_THREADED;
+
+    D2D1_FACTORY_TYPE_MULTI_THREADED  :: MULTI_THREADED;
+    D2D1_FACTORY_TYPE_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_FACTORY_OPTIONS :: struct {
+    debugLevel: D2D1_DEBUG_LEVEL;
+}
+
+ID2D1Resource :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1resource_vtable: *ID2D1Resource_VTable;
+}
+ID2D1Resource_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFactory: (this: *ID2D1Resource, factory: **ID2D1Factory) -> void #cpp_method;
+}
+ID2D1Resource_GetFactory :: inline (this: *ID2D1Resource, factory: **ID2D1Factory) { this.id2d1resource_vtable.GetFactory(this, factory); }
+
+vtable :: (obj: *ID2D1Resource) -> *ID2D1Resource_VTable { return obj.id2d1resource_vtable; }
+
+
+ID2D1Image :: struct {
+    #as using id2d1resource: ID2D1Resource;
+}
+
+ID2D1Bitmap :: struct {
+    #as using id2d1image: ID2D1Image;
+    #place id2d1image; id2d1bitmap_vtable: *ID2D1Bitmap_VTable;
+}
+ID2D1Bitmap_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetSize: (this: *ID2D1Bitmap) -> D2D1_SIZE_F #cpp_method;
+
+    GetPixelSize: (this: *ID2D1Bitmap) -> D2D1_SIZE_U #cpp_method;
+
+    GetPixelFormat: (this: *ID2D1Bitmap) -> D2D1_PIXEL_FORMAT #cpp_method;
+
+    GetDpi: (this: *ID2D1Bitmap, dpiX: *float, dpiY: *float) -> void #cpp_method;
+
+    CopyFromBitmap: (this: *ID2D1Bitmap, destPoint: *D2D1_POINT_2U, bitmap: *ID2D1Bitmap, srcRect: *D2D1_RECT_U) -> HRESULT #cpp_method;
+
+    CopyFromRenderTarget: (this: *ID2D1Bitmap, destPoint: *D2D1_POINT_2U, renderTarget: *ID2D1RenderTarget, srcRect: *D2D1_RECT_U) -> HRESULT #cpp_method;
+
+    CopyFromMemory: (this: *ID2D1Bitmap, dstRect: *D2D1_RECT_U, srcData: *void, pitch: u32) -> HRESULT #cpp_method;
+}
+
+ID2D1Bitmap_GetSize :: inline (this: *ID2D1Bitmap) -> D2D1_SIZE_F { return this.id2d1bitmap_vtable.GetSize(this); }
+
+ID2D1Bitmap_GetPixelSize :: inline (this: *ID2D1Bitmap) -> D2D1_SIZE_U { return this.id2d1bitmap_vtable.GetPixelSize(this); }
+
+ID2D1Bitmap_GetPixelFormat :: inline (this: *ID2D1Bitmap) -> D2D1_PIXEL_FORMAT { return this.id2d1bitmap_vtable.GetPixelFormat(this); }
+
+ID2D1Bitmap_GetDpi :: inline (this: *ID2D1Bitmap, dpiX: *float, dpiY: *float) { this.id2d1bitmap_vtable.GetDpi(this, dpiX, dpiY); }
+
+ID2D1Bitmap_CopyFromBitmap :: inline (this: *ID2D1Bitmap, destPoint: *D2D1_POINT_2U, bitmap: *ID2D1Bitmap, srcRect: *D2D1_RECT_U) -> HRESULT { return this.id2d1bitmap_vtable.CopyFromBitmap(this, destPoint, bitmap, srcRect); }
+
+ID2D1Bitmap_CopyFromRenderTarget :: inline (this: *ID2D1Bitmap, destPoint: *D2D1_POINT_2U, renderTarget: *ID2D1RenderTarget, srcRect: *D2D1_RECT_U) -> HRESULT { return this.id2d1bitmap_vtable.CopyFromRenderTarget(this, destPoint, renderTarget, srcRect); }
+
+ID2D1Bitmap_CopyFromMemory :: inline (this: *ID2D1Bitmap, dstRect: *D2D1_RECT_U, srcData: *void, pitch: u32) -> HRESULT { return this.id2d1bitmap_vtable.CopyFromMemory(this, dstRect, srcData, pitch); }
+
+vtable :: (obj: *ID2D1Bitmap) -> *ID2D1Bitmap_VTable { return obj.id2d1bitmap_vtable; }
+
+
+ID2D1GradientStopCollection :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1gradientstopcollection_vtable: *ID2D1GradientStopCollection_VTable;
+}
+ID2D1GradientStopCollection_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetGradientStopCount: (this: *ID2D1GradientStopCollection) -> u32 #cpp_method;
+
+    GetGradientStops: (this: *ID2D1GradientStopCollection, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32) -> void #cpp_method;
+
+    GetColorInterpolationGamma: (this: *ID2D1GradientStopCollection) -> D2D1_GAMMA #cpp_method;
+
+    GetExtendMode: (this: *ID2D1GradientStopCollection) -> D2D1_EXTEND_MODE #cpp_method;
+}
+
+ID2D1GradientStopCollection_GetGradientStopCount :: inline (this: *ID2D1GradientStopCollection) -> u32 { return this.id2d1gradientstopcollection_vtable.GetGradientStopCount(this); }
+
+ID2D1GradientStopCollection_GetGradientStops :: inline (this: *ID2D1GradientStopCollection, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32) { this.id2d1gradientstopcollection_vtable.GetGradientStops(this, gradientStops, gradientStopsCount); }
+
+ID2D1GradientStopCollection_GetColorInterpolationGamma :: inline (this: *ID2D1GradientStopCollection) -> D2D1_GAMMA { return this.id2d1gradientstopcollection_vtable.GetColorInterpolationGamma(this); }
+
+ID2D1GradientStopCollection_GetExtendMode :: inline (this: *ID2D1GradientStopCollection) -> D2D1_EXTEND_MODE { return this.id2d1gradientstopcollection_vtable.GetExtendMode(this); }
+
+vtable :: (obj: *ID2D1GradientStopCollection) -> *ID2D1GradientStopCollection_VTable { return obj.id2d1gradientstopcollection_vtable; }
+
+
+ID2D1Brush :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1brush_vtable: *ID2D1Brush_VTable;
+}
+ID2D1Brush_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    SetOpacity: (this: *ID2D1Brush, opacity: float) -> void #cpp_method;
+
+    SetTransform: (this: *ID2D1Brush, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+
+    GetOpacity: (this: *ID2D1Brush) -> float #cpp_method;
+
+    GetTransform: (this: *ID2D1Brush, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+}
+
+ID2D1Brush_SetOpacity :: inline (this: *ID2D1Brush, opacity: float) { this.id2d1brush_vtable.SetOpacity(this, opacity); }
+
+ID2D1Brush_SetTransform :: inline (this: *ID2D1Brush, transform: *D2D1_MATRIX_3X2_F) { this.id2d1brush_vtable.SetTransform(this, transform); }
+
+ID2D1Brush_GetOpacity :: inline (this: *ID2D1Brush) -> float { return this.id2d1brush_vtable.GetOpacity(this); }
+
+ID2D1Brush_GetTransform :: inline (this: *ID2D1Brush, transform: *D2D1_MATRIX_3X2_F) { this.id2d1brush_vtable.GetTransform(this, transform); }
+
+vtable :: (obj: *ID2D1Brush) -> *ID2D1Brush_VTable { return obj.id2d1brush_vtable; }
+
+
+ID2D1BitmapBrush :: struct {
+    #as using id2d1brush: ID2D1Brush;
+    #place id2d1brush; id2d1bitmapbrush_vtable: *ID2D1BitmapBrush_VTable;
+}
+ID2D1BitmapBrush_VTable :: struct #type_info_none {
+    using id2d1brush: ID2D1Brush_VTable;
+    SetExtendModeX: (this: *ID2D1BitmapBrush, extendModeX: D2D1_EXTEND_MODE) -> void #cpp_method;
+
+    SetExtendModeY: (this: *ID2D1BitmapBrush, extendModeY: D2D1_EXTEND_MODE) -> void #cpp_method;
+
+    SetInterpolationMode: (this: *ID2D1BitmapBrush, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE) -> void #cpp_method;
+
+    SetBitmap: (this: *ID2D1BitmapBrush, bitmap: *ID2D1Bitmap) -> void #cpp_method;
+
+    GetExtendModeX: (this: *ID2D1BitmapBrush) -> D2D1_EXTEND_MODE #cpp_method;
+
+    GetExtendModeY: (this: *ID2D1BitmapBrush) -> D2D1_EXTEND_MODE #cpp_method;
+
+    GetInterpolationMode: (this: *ID2D1BitmapBrush) -> D2D1_BITMAP_INTERPOLATION_MODE #cpp_method;
+
+    GetBitmap: (this: *ID2D1BitmapBrush, bitmap: **ID2D1Bitmap) -> void #cpp_method;
+}
+
+ID2D1BitmapBrush_SetExtendModeX :: inline (this: *ID2D1BitmapBrush, extendModeX: D2D1_EXTEND_MODE) { this.id2d1bitmapbrush_vtable.SetExtendModeX(this, extendModeX); }
+
+ID2D1BitmapBrush_SetExtendModeY :: inline (this: *ID2D1BitmapBrush, extendModeY: D2D1_EXTEND_MODE) { this.id2d1bitmapbrush_vtable.SetExtendModeY(this, extendModeY); }
+
+ID2D1BitmapBrush_SetInterpolationMode :: inline (this: *ID2D1BitmapBrush, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE) { this.id2d1bitmapbrush_vtable.SetInterpolationMode(this, interpolationMode); }
+
+ID2D1BitmapBrush_SetBitmap :: inline (this: *ID2D1BitmapBrush, bitmap: *ID2D1Bitmap) { this.id2d1bitmapbrush_vtable.SetBitmap(this, bitmap); }
+
+ID2D1BitmapBrush_GetExtendModeX :: inline (this: *ID2D1BitmapBrush) -> D2D1_EXTEND_MODE { return this.id2d1bitmapbrush_vtable.GetExtendModeX(this); }
+
+ID2D1BitmapBrush_GetExtendModeY :: inline (this: *ID2D1BitmapBrush) -> D2D1_EXTEND_MODE { return this.id2d1bitmapbrush_vtable.GetExtendModeY(this); }
+
+ID2D1BitmapBrush_GetInterpolationMode :: inline (this: *ID2D1BitmapBrush) -> D2D1_BITMAP_INTERPOLATION_MODE { return this.id2d1bitmapbrush_vtable.GetInterpolationMode(this); }
+
+ID2D1BitmapBrush_GetBitmap :: inline (this: *ID2D1BitmapBrush, bitmap: **ID2D1Bitmap) { this.id2d1bitmapbrush_vtable.GetBitmap(this, bitmap); }
+
+vtable :: (obj: *ID2D1BitmapBrush) -> *ID2D1BitmapBrush_VTable { return obj.id2d1bitmapbrush_vtable; }
+
+
+ID2D1SolidColorBrush :: struct {
+    #as using id2d1brush: ID2D1Brush;
+    #place id2d1brush; id2d1solidcolorbrush_vtable: *ID2D1SolidColorBrush_VTable;
+}
+ID2D1SolidColorBrush_VTable :: struct #type_info_none {
+    using id2d1brush: ID2D1Brush_VTable;
+    SetColor: (this: *ID2D1SolidColorBrush, color: *D2D1_COLOR_F) -> void #cpp_method;
+
+    GetColor: (this: *ID2D1SolidColorBrush) -> D2D1_COLOR_F #cpp_method;
+}
+
+ID2D1SolidColorBrush_SetColor :: inline (this: *ID2D1SolidColorBrush, color: *D2D1_COLOR_F) { this.id2d1solidcolorbrush_vtable.SetColor(this, color); }
+
+ID2D1SolidColorBrush_GetColor :: inline (this: *ID2D1SolidColorBrush) -> D2D1_COLOR_F { return this.id2d1solidcolorbrush_vtable.GetColor(this); }
+
+vtable :: (obj: *ID2D1SolidColorBrush) -> *ID2D1SolidColorBrush_VTable { return obj.id2d1solidcolorbrush_vtable; }
+
+
+ID2D1LinearGradientBrush :: struct {
+    #as using id2d1brush: ID2D1Brush;
+    #place id2d1brush; id2d1lineargradientbrush_vtable: *ID2D1LinearGradientBrush_VTable;
+}
+ID2D1LinearGradientBrush_VTable :: struct #type_info_none {
+    using id2d1brush: ID2D1Brush_VTable;
+    SetStartPoint: (this: *ID2D1LinearGradientBrush, startPoint: D2D1_POINT_2F) -> void #cpp_method;
+
+    SetEndPoint: (this: *ID2D1LinearGradientBrush, endPoint: D2D1_POINT_2F) -> void #cpp_method;
+
+    GetStartPoint: (this: *ID2D1LinearGradientBrush) -> D2D1_POINT_2F #cpp_method;
+
+    GetEndPoint: (this: *ID2D1LinearGradientBrush) -> D2D1_POINT_2F #cpp_method;
+
+    GetGradientStopCollection: (this: *ID2D1LinearGradientBrush, gradientStopCollection: **ID2D1GradientStopCollection) -> void #cpp_method;
+}
+
+ID2D1LinearGradientBrush_SetStartPoint :: inline (this: *ID2D1LinearGradientBrush, startPoint: D2D1_POINT_2F) { this.id2d1lineargradientbrush_vtable.SetStartPoint(this, startPoint); }
+
+ID2D1LinearGradientBrush_SetEndPoint :: inline (this: *ID2D1LinearGradientBrush, endPoint: D2D1_POINT_2F) { this.id2d1lineargradientbrush_vtable.SetEndPoint(this, endPoint); }
+
+ID2D1LinearGradientBrush_GetStartPoint :: inline (this: *ID2D1LinearGradientBrush) -> D2D1_POINT_2F { return this.id2d1lineargradientbrush_vtable.GetStartPoint(this); }
+
+ID2D1LinearGradientBrush_GetEndPoint :: inline (this: *ID2D1LinearGradientBrush) -> D2D1_POINT_2F { return this.id2d1lineargradientbrush_vtable.GetEndPoint(this); }
+
+ID2D1LinearGradientBrush_GetGradientStopCollection :: inline (this: *ID2D1LinearGradientBrush, gradientStopCollection: **ID2D1GradientStopCollection) { this.id2d1lineargradientbrush_vtable.GetGradientStopCollection(this, gradientStopCollection); }
+
+vtable :: (obj: *ID2D1LinearGradientBrush) -> *ID2D1LinearGradientBrush_VTable { return obj.id2d1lineargradientbrush_vtable; }
+
+
+ID2D1RadialGradientBrush :: struct {
+    #as using id2d1brush: ID2D1Brush;
+    #place id2d1brush; id2d1radialgradientbrush_vtable: *ID2D1RadialGradientBrush_VTable;
+}
+ID2D1RadialGradientBrush_VTable :: struct #type_info_none {
+    using id2d1brush: ID2D1Brush_VTable;
+    SetCenter: (this: *ID2D1RadialGradientBrush, center: D2D1_POINT_2F) -> void #cpp_method;
+
+    SetGradientOriginOffset: (this: *ID2D1RadialGradientBrush, gradientOriginOffset: D2D1_POINT_2F) -> void #cpp_method;
+
+    SetRadiusX: (this: *ID2D1RadialGradientBrush, radiusX: float) -> void #cpp_method;
+
+    SetRadiusY: (this: *ID2D1RadialGradientBrush, radiusY: float) -> void #cpp_method;
+
+    GetCenter: (this: *ID2D1RadialGradientBrush) -> D2D1_POINT_2F #cpp_method;
+
+    GetGradientOriginOffset: (this: *ID2D1RadialGradientBrush) -> D2D1_POINT_2F #cpp_method;
+
+    GetRadiusX: (this: *ID2D1RadialGradientBrush) -> float #cpp_method;
+
+    GetRadiusY: (this: *ID2D1RadialGradientBrush) -> float #cpp_method;
+
+    GetGradientStopCollection: (this: *ID2D1RadialGradientBrush, gradientStopCollection: **ID2D1GradientStopCollection) -> void #cpp_method;
+}
+
+ID2D1RadialGradientBrush_SetCenter :: inline (this: *ID2D1RadialGradientBrush, center: D2D1_POINT_2F) { this.id2d1radialgradientbrush_vtable.SetCenter(this, center); }
+
+ID2D1RadialGradientBrush_SetGradientOriginOffset :: inline (this: *ID2D1RadialGradientBrush, gradientOriginOffset: D2D1_POINT_2F) { this.id2d1radialgradientbrush_vtable.SetGradientOriginOffset(this, gradientOriginOffset); }
+
+ID2D1RadialGradientBrush_SetRadiusX :: inline (this: *ID2D1RadialGradientBrush, radiusX: float) { this.id2d1radialgradientbrush_vtable.SetRadiusX(this, radiusX); }
+
+ID2D1RadialGradientBrush_SetRadiusY :: inline (this: *ID2D1RadialGradientBrush, radiusY: float) { this.id2d1radialgradientbrush_vtable.SetRadiusY(this, radiusY); }
+
+ID2D1RadialGradientBrush_GetCenter :: inline (this: *ID2D1RadialGradientBrush) -> D2D1_POINT_2F { return this.id2d1radialgradientbrush_vtable.GetCenter(this); }
+
+ID2D1RadialGradientBrush_GetGradientOriginOffset :: inline (this: *ID2D1RadialGradientBrush) -> D2D1_POINT_2F { return this.id2d1radialgradientbrush_vtable.GetGradientOriginOffset(this); }
+
+ID2D1RadialGradientBrush_GetRadiusX :: inline (this: *ID2D1RadialGradientBrush) -> float { return this.id2d1radialgradientbrush_vtable.GetRadiusX(this); }
+
+ID2D1RadialGradientBrush_GetRadiusY :: inline (this: *ID2D1RadialGradientBrush) -> float { return this.id2d1radialgradientbrush_vtable.GetRadiusY(this); }
+
+ID2D1RadialGradientBrush_GetGradientStopCollection :: inline (this: *ID2D1RadialGradientBrush, gradientStopCollection: **ID2D1GradientStopCollection) { this.id2d1radialgradientbrush_vtable.GetGradientStopCollection(this, gradientStopCollection); }
+
+vtable :: (obj: *ID2D1RadialGradientBrush) -> *ID2D1RadialGradientBrush_VTable { return obj.id2d1radialgradientbrush_vtable; }
+
+
+ID2D1StrokeStyle :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1strokestyle_vtable: *ID2D1StrokeStyle_VTable;
+}
+ID2D1StrokeStyle_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetStartCap: (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE #cpp_method;
+
+    GetEndCap: (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE #cpp_method;
+
+    GetDashCap: (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE #cpp_method;
+
+    GetMiterLimit: (this: *ID2D1StrokeStyle) -> float #cpp_method;
+
+    GetLineJoin: (this: *ID2D1StrokeStyle) -> D2D1_LINE_JOIN #cpp_method;
+
+    GetDashOffset: (this: *ID2D1StrokeStyle) -> float #cpp_method;
+
+    GetDashStyle: (this: *ID2D1StrokeStyle) -> D2D1_DASH_STYLE #cpp_method;
+
+    GetDashesCount: (this: *ID2D1StrokeStyle) -> u32 #cpp_method;
+
+    GetDashes: (this: *ID2D1StrokeStyle, dashes: *float, dashesCount: u32) -> void #cpp_method;
+}
+
+ID2D1StrokeStyle_GetStartCap :: inline (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE { return this.id2d1strokestyle_vtable.GetStartCap(this); }
+
+ID2D1StrokeStyle_GetEndCap :: inline (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE { return this.id2d1strokestyle_vtable.GetEndCap(this); }
+
+ID2D1StrokeStyle_GetDashCap :: inline (this: *ID2D1StrokeStyle) -> D2D1_CAP_STYLE { return this.id2d1strokestyle_vtable.GetDashCap(this); }
+
+ID2D1StrokeStyle_GetMiterLimit :: inline (this: *ID2D1StrokeStyle) -> float { return this.id2d1strokestyle_vtable.GetMiterLimit(this); }
+
+ID2D1StrokeStyle_GetLineJoin :: inline (this: *ID2D1StrokeStyle) -> D2D1_LINE_JOIN { return this.id2d1strokestyle_vtable.GetLineJoin(this); }
+
+ID2D1StrokeStyle_GetDashOffset :: inline (this: *ID2D1StrokeStyle) -> float { return this.id2d1strokestyle_vtable.GetDashOffset(this); }
+
+ID2D1StrokeStyle_GetDashStyle :: inline (this: *ID2D1StrokeStyle) -> D2D1_DASH_STYLE { return this.id2d1strokestyle_vtable.GetDashStyle(this); }
+
+ID2D1StrokeStyle_GetDashesCount :: inline (this: *ID2D1StrokeStyle) -> u32 { return this.id2d1strokestyle_vtable.GetDashesCount(this); }
+
+ID2D1StrokeStyle_GetDashes :: inline (this: *ID2D1StrokeStyle, dashes: *float, dashesCount: u32) { this.id2d1strokestyle_vtable.GetDashes(this, dashes, dashesCount); }
+
+vtable :: (obj: *ID2D1StrokeStyle) -> *ID2D1StrokeStyle_VTable { return obj.id2d1strokestyle_vtable; }
+
+
+ID2D1Geometry :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1geometry_vtable: *ID2D1Geometry_VTable;
+}
+ID2D1Geometry_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetBounds: (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    GetWidenedBounds: (this: *ID2D1Geometry, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    StrokeContainsPoint: (this: *ID2D1Geometry, point: D2D1_POINT_2F, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, contains: *BOOL) -> HRESULT #cpp_method;
+
+    FillContainsPoint: (this: *ID2D1Geometry, point: D2D1_POINT_2F, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, contains: *BOOL) -> HRESULT #cpp_method;
+
+    CompareWithGeometry: (this: *ID2D1Geometry, inputGeometry: *ID2D1Geometry, inputGeometryTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, relation: *D2D1_GEOMETRY_RELATION) -> HRESULT #cpp_method;
+
+    Simplify: (this: *ID2D1Geometry, simplificationOption: D2D1_GEOMETRY_SIMPLIFICATION_OPTION, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+
+    Tessellate: (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, tessellationSink: *ID2D1TessellationSink) -> HRESULT #cpp_method;
+
+    CombineWithGeometry: (this: *ID2D1Geometry, inputGeometry: *ID2D1Geometry, combineMode: D2D1_COMBINE_MODE, inputGeometryTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+
+    Outline: (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+
+    ComputeArea: (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, area: *float) -> HRESULT #cpp_method;
+
+    ComputeLength: (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, length: *float) -> HRESULT #cpp_method;
+
+    ComputePointAtLength: (this: *ID2D1Geometry, length: float, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, point: *D2D1_POINT_2F, unitTangentVector: *D2D1_POINT_2F) -> HRESULT #cpp_method;
+
+    Widen: (this: *ID2D1Geometry, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+}
+
+ID2D1Geometry_GetBounds :: inline (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1geometry_vtable.GetBounds(this, worldTransform, bounds); }
+
+ID2D1Geometry_GetWidenedBounds :: inline (this: *ID2D1Geometry, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1geometry_vtable.GetWidenedBounds(this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds); }
+
+ID2D1Geometry_StrokeContainsPoint :: inline (this: *ID2D1Geometry, point: D2D1_POINT_2F, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, contains: *BOOL) -> HRESULT { return this.id2d1geometry_vtable.StrokeContainsPoint(this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains); }
+
+ID2D1Geometry_FillContainsPoint :: inline (this: *ID2D1Geometry, point: D2D1_POINT_2F, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, contains: *BOOL) -> HRESULT { return this.id2d1geometry_vtable.FillContainsPoint(this, point, worldTransform, flatteningTolerance, contains); }
+
+ID2D1Geometry_CompareWithGeometry :: inline (this: *ID2D1Geometry, inputGeometry: *ID2D1Geometry, inputGeometryTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, relation: *D2D1_GEOMETRY_RELATION) -> HRESULT { return this.id2d1geometry_vtable.CompareWithGeometry(this, inputGeometry, inputGeometryTransform, flatteningTolerance, relation); }
+
+ID2D1Geometry_Simplify :: inline (this: *ID2D1Geometry, simplificationOption: D2D1_GEOMETRY_SIMPLIFICATION_OPTION, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1geometry_vtable.Simplify(this, simplificationOption, worldTransform, flatteningTolerance, geometrySink); }
+
+ID2D1Geometry_Tessellate :: inline (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, tessellationSink: *ID2D1TessellationSink) -> HRESULT { return this.id2d1geometry_vtable.Tessellate(this, worldTransform, flatteningTolerance, tessellationSink); }
+
+ID2D1Geometry_CombineWithGeometry :: inline (this: *ID2D1Geometry, inputGeometry: *ID2D1Geometry, combineMode: D2D1_COMBINE_MODE, inputGeometryTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1geometry_vtable.CombineWithGeometry(this, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink); }
+
+ID2D1Geometry_Outline :: inline (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1geometry_vtable.Outline(this, worldTransform, flatteningTolerance, geometrySink); }
+
+ID2D1Geometry_ComputeArea :: inline (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, area: *float) -> HRESULT { return this.id2d1geometry_vtable.ComputeArea(this, worldTransform, flatteningTolerance, area); }
+
+ID2D1Geometry_ComputeLength :: inline (this: *ID2D1Geometry, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, length: *float) -> HRESULT { return this.id2d1geometry_vtable.ComputeLength(this, worldTransform, flatteningTolerance, length); }
+
+ID2D1Geometry_ComputePointAtLength :: inline (this: *ID2D1Geometry, length: float, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, point: *D2D1_POINT_2F, unitTangentVector: *D2D1_POINT_2F) -> HRESULT { return this.id2d1geometry_vtable.ComputePointAtLength(this, length, worldTransform, flatteningTolerance, point, unitTangentVector); }
+
+ID2D1Geometry_Widen :: inline (this: *ID2D1Geometry, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1geometry_vtable.Widen(this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink); }
+
+vtable :: (obj: *ID2D1Geometry) -> *ID2D1Geometry_VTable { return obj.id2d1geometry_vtable; }
+
+
+ID2D1RectangleGeometry :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1rectanglegeometry_vtable: *ID2D1RectangleGeometry_VTable;
+}
+ID2D1RectangleGeometry_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    GetRect: (this: *ID2D1RectangleGeometry, rect: *D2D1_RECT_F) -> void #cpp_method;
+}
+ID2D1RectangleGeometry_GetRect :: inline (this: *ID2D1RectangleGeometry, rect: *D2D1_RECT_F) { this.id2d1rectanglegeometry_vtable.GetRect(this, rect); }
+
+vtable :: (obj: *ID2D1RectangleGeometry) -> *ID2D1RectangleGeometry_VTable { return obj.id2d1rectanglegeometry_vtable; }
+
+
+ID2D1RoundedRectangleGeometry :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1roundedrectanglegeometry_vtable: *ID2D1RoundedRectangleGeometry_VTable;
+}
+ID2D1RoundedRectangleGeometry_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    GetRoundedRect: (this: *ID2D1RoundedRectangleGeometry, roundedRect: *D2D1_ROUNDED_RECT) -> void #cpp_method;
+}
+ID2D1RoundedRectangleGeometry_GetRoundedRect :: inline (this: *ID2D1RoundedRectangleGeometry, roundedRect: *D2D1_ROUNDED_RECT) { this.id2d1roundedrectanglegeometry_vtable.GetRoundedRect(this, roundedRect); }
+
+vtable :: (obj: *ID2D1RoundedRectangleGeometry) -> *ID2D1RoundedRectangleGeometry_VTable { return obj.id2d1roundedrectanglegeometry_vtable; }
+
+
+ID2D1EllipseGeometry :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1ellipsegeometry_vtable: *ID2D1EllipseGeometry_VTable;
+}
+ID2D1EllipseGeometry_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    GetEllipse: (this: *ID2D1EllipseGeometry, ellipse: *D2D1_ELLIPSE) -> void #cpp_method;
+}
+ID2D1EllipseGeometry_GetEllipse :: inline (this: *ID2D1EllipseGeometry, ellipse: *D2D1_ELLIPSE) { this.id2d1ellipsegeometry_vtable.GetEllipse(this, ellipse); }
+
+vtable :: (obj: *ID2D1EllipseGeometry) -> *ID2D1EllipseGeometry_VTable { return obj.id2d1ellipsegeometry_vtable; }
+
+
+ID2D1GeometryGroup :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1geometrygroup_vtable: *ID2D1GeometryGroup_VTable;
+}
+ID2D1GeometryGroup_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    GetFillMode: (this: *ID2D1GeometryGroup) -> D2D1_FILL_MODE #cpp_method;
+
+    GetSourceGeometryCount: (this: *ID2D1GeometryGroup) -> u32 #cpp_method;
+
+    GetSourceGeometries: (this: *ID2D1GeometryGroup, geometries: **ID2D1Geometry, geometriesCount: u32) -> void #cpp_method;
+}
+
+ID2D1GeometryGroup_GetFillMode :: inline (this: *ID2D1GeometryGroup) -> D2D1_FILL_MODE { return this.id2d1geometrygroup_vtable.GetFillMode(this); }
+
+ID2D1GeometryGroup_GetSourceGeometryCount :: inline (this: *ID2D1GeometryGroup) -> u32 { return this.id2d1geometrygroup_vtable.GetSourceGeometryCount(this); }
+
+ID2D1GeometryGroup_GetSourceGeometries :: inline (this: *ID2D1GeometryGroup, geometries: **ID2D1Geometry, geometriesCount: u32) { this.id2d1geometrygroup_vtable.GetSourceGeometries(this, geometries, geometriesCount); }
+
+vtable :: (obj: *ID2D1GeometryGroup) -> *ID2D1GeometryGroup_VTable { return obj.id2d1geometrygroup_vtable; }
+
+
+ID2D1TransformedGeometry :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1transformedgeometry_vtable: *ID2D1TransformedGeometry_VTable;
+}
+ID2D1TransformedGeometry_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    GetSourceGeometry: (this: *ID2D1TransformedGeometry, sourceGeometry: **ID2D1Geometry) -> void #cpp_method;
+
+    GetTransform: (this: *ID2D1TransformedGeometry, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+}
+
+ID2D1TransformedGeometry_GetSourceGeometry :: inline (this: *ID2D1TransformedGeometry, sourceGeometry: **ID2D1Geometry) { this.id2d1transformedgeometry_vtable.GetSourceGeometry(this, sourceGeometry); }
+
+ID2D1TransformedGeometry_GetTransform :: inline (this: *ID2D1TransformedGeometry, transform: *D2D1_MATRIX_3X2_F) { this.id2d1transformedgeometry_vtable.GetTransform(this, transform); }
+
+vtable :: (obj: *ID2D1TransformedGeometry) -> *ID2D1TransformedGeometry_VTable { return obj.id2d1transformedgeometry_vtable; }
+
+
+ID2D1SimplifiedGeometrySink :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1simplifiedgeometrysink_vtable: *ID2D1SimplifiedGeometrySink_VTable;
+}
+ID2D1SimplifiedGeometrySink_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    SetFillMode: (this: *ID2D1SimplifiedGeometrySink, fillMode: D2D1_FILL_MODE) -> void #cpp_method;
+
+    SetSegmentFlags: (this: *ID2D1SimplifiedGeometrySink, vertexFlags: D2D1_PATH_SEGMENT) -> void #cpp_method;
+
+    BeginFigure: (this: *ID2D1SimplifiedGeometrySink, startPoint: D2D1_POINT_2F, figureBegin: D2D1_FIGURE_BEGIN) -> void #cpp_method;
+
+    AddLines: (this: *ID2D1SimplifiedGeometrySink, points: *D2D1_POINT_2F, pointsCount: u32) -> void #cpp_method;
+
+    AddBeziers: (this: *ID2D1SimplifiedGeometrySink, beziers: *D2D1_BEZIER_SEGMENT, beziersCount: u32) -> void #cpp_method;
+
+    EndFigure: (this: *ID2D1SimplifiedGeometrySink, figureEnd: D2D1_FIGURE_END) -> void #cpp_method;
+
+    Close: (this: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+}
+
+ID2D1SimplifiedGeometrySink_SetFillMode :: inline (this: *ID2D1SimplifiedGeometrySink, fillMode: D2D1_FILL_MODE) { this.id2d1simplifiedgeometrysink_vtable.SetFillMode(this, fillMode); }
+
+ID2D1SimplifiedGeometrySink_SetSegmentFlags :: inline (this: *ID2D1SimplifiedGeometrySink, vertexFlags: D2D1_PATH_SEGMENT) { this.id2d1simplifiedgeometrysink_vtable.SetSegmentFlags(this, vertexFlags); }
+
+ID2D1SimplifiedGeometrySink_BeginFigure :: inline (this: *ID2D1SimplifiedGeometrySink, startPoint: D2D1_POINT_2F, figureBegin: D2D1_FIGURE_BEGIN) { this.id2d1simplifiedgeometrysink_vtable.BeginFigure(this, startPoint, figureBegin); }
+
+ID2D1SimplifiedGeometrySink_AddLines :: inline (this: *ID2D1SimplifiedGeometrySink, points: *D2D1_POINT_2F, pointsCount: u32) { this.id2d1simplifiedgeometrysink_vtable.AddLines(this, points, pointsCount); }
+
+ID2D1SimplifiedGeometrySink_AddBeziers :: inline (this: *ID2D1SimplifiedGeometrySink, beziers: *D2D1_BEZIER_SEGMENT, beziersCount: u32) { this.id2d1simplifiedgeometrysink_vtable.AddBeziers(this, beziers, beziersCount); }
+
+ID2D1SimplifiedGeometrySink_EndFigure :: inline (this: *ID2D1SimplifiedGeometrySink, figureEnd: D2D1_FIGURE_END) { this.id2d1simplifiedgeometrysink_vtable.EndFigure(this, figureEnd); }
+
+ID2D1SimplifiedGeometrySink_Close :: inline (this: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1simplifiedgeometrysink_vtable.Close(this); }
+
+vtable :: (obj: *ID2D1SimplifiedGeometrySink) -> *ID2D1SimplifiedGeometrySink_VTable { return obj.id2d1simplifiedgeometrysink_vtable; }
+
+
+ID2D1GeometrySink :: struct {
+    #as using id2d1simplifiedgeometrysink: ID2D1SimplifiedGeometrySink;
+    #place id2d1simplifiedgeometrysink; id2d1geometrysink_vtable: *ID2D1GeometrySink_VTable;
+}
+ID2D1GeometrySink_VTable :: struct #type_info_none {
+    using id2d1simplifiedgeometrysink: ID2D1SimplifiedGeometrySink_VTable;
+    AddLine: (this: *ID2D1GeometrySink, point: D2D1_POINT_2F) -> void #cpp_method;
+
+    AddBezier: (this: *ID2D1GeometrySink, bezier: *D2D1_BEZIER_SEGMENT) -> void #cpp_method;
+
+    AddQuadraticBezier: (this: *ID2D1GeometrySink, bezier: *D2D1_QUADRATIC_BEZIER_SEGMENT) -> void #cpp_method;
+
+    AddQuadraticBeziers: (this: *ID2D1GeometrySink, beziers: *D2D1_QUADRATIC_BEZIER_SEGMENT, beziersCount: u32) -> void #cpp_method;
+
+    AddArc: (this: *ID2D1GeometrySink, arc: *D2D1_ARC_SEGMENT) -> void #cpp_method;
+}
+
+ID2D1GeometrySink_AddLine :: inline (this: *ID2D1GeometrySink, point: D2D1_POINT_2F) { this.id2d1geometrysink_vtable.AddLine(this, point); }
+
+ID2D1GeometrySink_AddBezier :: inline (this: *ID2D1GeometrySink, bezier: *D2D1_BEZIER_SEGMENT) { this.id2d1geometrysink_vtable.AddBezier(this, bezier); }
+
+ID2D1GeometrySink_AddQuadraticBezier :: inline (this: *ID2D1GeometrySink, bezier: *D2D1_QUADRATIC_BEZIER_SEGMENT) { this.id2d1geometrysink_vtable.AddQuadraticBezier(this, bezier); }
+
+ID2D1GeometrySink_AddQuadraticBeziers :: inline (this: *ID2D1GeometrySink, beziers: *D2D1_QUADRATIC_BEZIER_SEGMENT, beziersCount: u32) { this.id2d1geometrysink_vtable.AddQuadraticBeziers(this, beziers, beziersCount); }
+
+ID2D1GeometrySink_AddArc :: inline (this: *ID2D1GeometrySink, arc: *D2D1_ARC_SEGMENT) { this.id2d1geometrysink_vtable.AddArc(this, arc); }
+
+vtable :: (obj: *ID2D1GeometrySink) -> *ID2D1GeometrySink_VTable { return obj.id2d1geometrysink_vtable; }
+
+
+ID2D1TessellationSink :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1tessellationsink_vtable: *ID2D1TessellationSink_VTable;
+}
+ID2D1TessellationSink_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddTriangles: (this: *ID2D1TessellationSink, triangles: *D2D1_TRIANGLE, trianglesCount: u32) -> void #cpp_method;
+
+    Close: (this: *ID2D1TessellationSink) -> HRESULT #cpp_method;
+}
+
+ID2D1TessellationSink_AddTriangles :: inline (this: *ID2D1TessellationSink, triangles: *D2D1_TRIANGLE, trianglesCount: u32) { this.id2d1tessellationsink_vtable.AddTriangles(this, triangles, trianglesCount); }
+
+ID2D1TessellationSink_Close :: inline (this: *ID2D1TessellationSink) -> HRESULT { return this.id2d1tessellationsink_vtable.Close(this); }
+
+vtable :: (obj: *ID2D1TessellationSink) -> *ID2D1TessellationSink_VTable { return obj.id2d1tessellationsink_vtable; }
+
+
+ID2D1PathGeometry :: struct {
+    #as using id2d1geometry: ID2D1Geometry;
+    #place id2d1geometry; id2d1pathgeometry_vtable: *ID2D1PathGeometry_VTable;
+}
+ID2D1PathGeometry_VTable :: struct #type_info_none {
+    using id2d1geometry: ID2D1Geometry_VTable;
+    Open: (this: *ID2D1PathGeometry, geometrySink: **ID2D1GeometrySink) -> HRESULT #cpp_method;
+
+    Stream: (this: *ID2D1PathGeometry, geometrySink: *ID2D1GeometrySink) -> HRESULT #cpp_method;
+
+    GetSegmentCount: (this: *ID2D1PathGeometry, count: *u32) -> HRESULT #cpp_method;
+
+    GetFigureCount: (this: *ID2D1PathGeometry, count: *u32) -> HRESULT #cpp_method;
+}
+
+ID2D1PathGeometry_Open :: inline (this: *ID2D1PathGeometry, geometrySink: **ID2D1GeometrySink) -> HRESULT { return this.id2d1pathgeometry_vtable.Open(this, geometrySink); }
+
+ID2D1PathGeometry_Stream :: inline (this: *ID2D1PathGeometry, geometrySink: *ID2D1GeometrySink) -> HRESULT { return this.id2d1pathgeometry_vtable.Stream(this, geometrySink); }
+
+ID2D1PathGeometry_GetSegmentCount :: inline (this: *ID2D1PathGeometry, count: *u32) -> HRESULT { return this.id2d1pathgeometry_vtable.GetSegmentCount(this, count); }
+
+ID2D1PathGeometry_GetFigureCount :: inline (this: *ID2D1PathGeometry, count: *u32) -> HRESULT { return this.id2d1pathgeometry_vtable.GetFigureCount(this, count); }
+
+vtable :: (obj: *ID2D1PathGeometry) -> *ID2D1PathGeometry_VTable { return obj.id2d1pathgeometry_vtable; }
+
+
+ID2D1Mesh :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1mesh_vtable: *ID2D1Mesh_VTable;
+}
+ID2D1Mesh_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    Open: (this: *ID2D1Mesh, tessellationSink: **ID2D1TessellationSink) -> HRESULT #cpp_method;
+}
+ID2D1Mesh_Open :: inline (this: *ID2D1Mesh, tessellationSink: **ID2D1TessellationSink) -> HRESULT { return this.id2d1mesh_vtable.Open(this, tessellationSink); }
+
+vtable :: (obj: *ID2D1Mesh) -> *ID2D1Mesh_VTable { return obj.id2d1mesh_vtable; }
+
+
+ID2D1Layer :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1layer_vtable: *ID2D1Layer_VTable;
+}
+ID2D1Layer_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetSize: (this: *ID2D1Layer) -> D2D1_SIZE_F #cpp_method;
+}
+ID2D1Layer_GetSize :: inline (this: *ID2D1Layer) -> D2D1_SIZE_F { return this.id2d1layer_vtable.GetSize(this); }
+
+vtable :: (obj: *ID2D1Layer) -> *ID2D1Layer_VTable { return obj.id2d1layer_vtable; }
+
+
+ID2D1DrawingStateBlock :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1drawingstateblock_vtable: *ID2D1DrawingStateBlock_VTable;
+}
+ID2D1DrawingStateBlock_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetDescription: (this: *ID2D1DrawingStateBlock, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION) -> void #cpp_method;
+
+    SetDescription: (this: *ID2D1DrawingStateBlock, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION) -> void #cpp_method;
+
+    SetTextRenderingParams: (this: *ID2D1DrawingStateBlock, textRenderingParams: *IDWriteRenderingParams = null) -> void #cpp_method;
+
+    GetTextRenderingParams: (this: *ID2D1DrawingStateBlock, textRenderingParams: **IDWriteRenderingParams) -> void #cpp_method;
+}
+
+ID2D1DrawingStateBlock_GetDescription :: inline (this: *ID2D1DrawingStateBlock, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION) { this.id2d1drawingstateblock_vtable.GetDescription(this, stateDescription); }
+
+ID2D1DrawingStateBlock_SetDescription :: inline (this: *ID2D1DrawingStateBlock, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION) { this.id2d1drawingstateblock_vtable.SetDescription(this, stateDescription); }
+
+ID2D1DrawingStateBlock_SetTextRenderingParams :: inline (this: *ID2D1DrawingStateBlock, textRenderingParams: *IDWriteRenderingParams = null) { this.id2d1drawingstateblock_vtable.SetTextRenderingParams(this, textRenderingParams); }
+
+ID2D1DrawingStateBlock_GetTextRenderingParams :: inline (this: *ID2D1DrawingStateBlock, textRenderingParams: **IDWriteRenderingParams) { this.id2d1drawingstateblock_vtable.GetTextRenderingParams(this, textRenderingParams); }
+
+vtable :: (obj: *ID2D1DrawingStateBlock) -> *ID2D1DrawingStateBlock_VTable { return obj.id2d1drawingstateblock_vtable; }
+
+
+ID2D1RenderTarget :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1rendertarget_vtable: *ID2D1RenderTarget_VTable;
+}
+ID2D1RenderTarget_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    CreateBitmap: (this: *ID2D1RenderTarget, size: D2D1_SIZE_U, srcData: *void, pitch: u32, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT #cpp_method;
+
+    CreateBitmapFromWicBitmap: (this: *ID2D1RenderTarget, wicBitmapSource: *IWICBitmapSource, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT #cpp_method;
+
+    CreateSharedBitmap: (this: *ID2D1RenderTarget, riid: *IID, data: *void, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT #cpp_method;
+
+    CreateBitmapBrush: (this: *ID2D1RenderTarget, bitmap: *ID2D1Bitmap, bitmapBrushProperties: *D2D1_BITMAP_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, bitmapBrush: **ID2D1BitmapBrush) -> HRESULT #cpp_method;
+
+    CreateSolidColorBrush: (this: *ID2D1RenderTarget, color: *D2D1_COLOR_F, brushProperties: *D2D1_BRUSH_PROPERTIES, solidColorBrush: **ID2D1SolidColorBrush) -> HRESULT #cpp_method;
+
+    CreateGradientStopCollection: (this: *ID2D1RenderTarget, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32, colorInterpolationGamma: D2D1_GAMMA, extendMode: D2D1_EXTEND_MODE, gradientStopCollection: **ID2D1GradientStopCollection) -> HRESULT #cpp_method;
+
+    CreateLinearGradientBrush: (this: *ID2D1RenderTarget, linearGradientBrushProperties: *D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, gradientStopCollection: *ID2D1GradientStopCollection, linearGradientBrush: **ID2D1LinearGradientBrush) -> HRESULT #cpp_method;
+
+    CreateRadialGradientBrush: (this: *ID2D1RenderTarget, radialGradientBrushProperties: *D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, gradientStopCollection: *ID2D1GradientStopCollection, radialGradientBrush: **ID2D1RadialGradientBrush) -> HRESULT #cpp_method;
+
+    CreateCompatibleRenderTarget: (this: *ID2D1RenderTarget, desiredSize: *D2D1_SIZE_F, desiredPixelSize: *D2D1_SIZE_U, desiredFormat: *D2D1_PIXEL_FORMAT, options: D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS, bitmapRenderTarget: **ID2D1BitmapRenderTarget) -> HRESULT #cpp_method;
+
+    CreateLayer: (this: *ID2D1RenderTarget, size: *D2D1_SIZE_F, layer: **ID2D1Layer) -> HRESULT #cpp_method;
+
+    CreateMesh: (this: *ID2D1RenderTarget, mesh: **ID2D1Mesh) -> HRESULT #cpp_method;
+
+    DrawLine: (this: *ID2D1RenderTarget, point0: D2D1_POINT_2F, point1: D2D1_POINT_2F, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) -> void #cpp_method;
+
+    DrawRectangle: (this: *ID2D1RenderTarget, rect: *D2D1_RECT_F, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) -> void #cpp_method;
+
+    FillRectangle: (this: *ID2D1RenderTarget, rect: *D2D1_RECT_F, brush: *ID2D1Brush) -> void #cpp_method;
+
+    DrawRoundedRectangle: (this: *ID2D1RenderTarget, roundedRect: *D2D1_ROUNDED_RECT, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) -> void #cpp_method;
+
+    FillRoundedRectangle: (this: *ID2D1RenderTarget, roundedRect: *D2D1_ROUNDED_RECT, brush: *ID2D1Brush) -> void #cpp_method;
+
+    DrawEllipse: (this: *ID2D1RenderTarget, ellipse: *D2D1_ELLIPSE, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) -> void #cpp_method;
+
+    FillEllipse: (this: *ID2D1RenderTarget, ellipse: *D2D1_ELLIPSE, brush: *ID2D1Brush) -> void #cpp_method;
+
+    DrawGeometry: (this: *ID2D1RenderTarget, geometry: *ID2D1Geometry, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) -> void #cpp_method;
+
+    FillGeometry: (this: *ID2D1RenderTarget, geometry: *ID2D1Geometry, brush: *ID2D1Brush, opacityBrush: *ID2D1Brush = null) -> void #cpp_method;
+
+    FillMesh: (this: *ID2D1RenderTarget, mesh: *ID2D1Mesh, brush: *ID2D1Brush) -> void #cpp_method;
+
+    FillOpacityMask: (this: *ID2D1RenderTarget, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, content: D2D1_OPACITY_MASK_CONTENT, destinationRectangle: *D2D1_RECT_F = null, sourceRectangle: *D2D1_RECT_F = null) -> void #cpp_method;
+
+    DrawBitmap: (this: *ID2D1RenderTarget, bitmap: *ID2D1Bitmap, destinationRectangle: *D2D1_RECT_F = null, opacity: float = 1.0, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE = .LINEAR, sourceRectangle: *D2D1_RECT_F = null) -> void #cpp_method;
+
+    DrawTextA: (this: *ID2D1RenderTarget, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutRect: *D2D1_RECT_F, defaultFillBrush: *ID2D1Brush, options: D2D1_DRAW_TEXT_OPTIONS = .NONE, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    DrawTextLayout: (this: *ID2D1RenderTarget, origin: D2D1_POINT_2F, textLayout: *IDWriteTextLayout, defaultFillBrush: *ID2D1Brush, options: D2D1_DRAW_TEXT_OPTIONS = .NONE) -> void #cpp_method;
+
+    DrawGlyphRun: (this: *ID2D1RenderTarget, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    SetTransform: (this: *ID2D1RenderTarget, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+
+    GetTransform: (this: *ID2D1RenderTarget, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+
+    SetAntialiasMode: (this: *ID2D1RenderTarget, antialiasMode: D2D1_ANTIALIAS_MODE) -> void #cpp_method;
+
+    GetAntialiasMode: (this: *ID2D1RenderTarget) -> D2D1_ANTIALIAS_MODE #cpp_method;
+
+    SetTextAntialiasMode: (this: *ID2D1RenderTarget, textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE) -> void #cpp_method;
+
+    GetTextAntialiasMode: (this: *ID2D1RenderTarget) -> D2D1_TEXT_ANTIALIAS_MODE #cpp_method;
+
+    SetTextRenderingParams: (this: *ID2D1RenderTarget, textRenderingParams: *IDWriteRenderingParams = null) -> void #cpp_method;
+
+    GetTextRenderingParams: (this: *ID2D1RenderTarget, textRenderingParams: **IDWriteRenderingParams) -> void #cpp_method;
+
+    SetTags: (this: *ID2D1RenderTarget, tag1: D2D1_TAG, tag2: D2D1_TAG) -> void #cpp_method;
+
+    GetTags: (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> void #cpp_method;
+
+    PushLayer: (this: *ID2D1RenderTarget, layerParameters: *D2D1_LAYER_PARAMETERS, layer: *ID2D1Layer) -> void #cpp_method;
+
+    PopLayer: (this: *ID2D1RenderTarget) -> void #cpp_method;
+
+    Flush: (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT #cpp_method;
+
+    SaveDrawingState: (this: *ID2D1RenderTarget, drawingStateBlock: *ID2D1DrawingStateBlock) -> void #cpp_method;
+
+    RestoreDrawingState: (this: *ID2D1RenderTarget, drawingStateBlock: *ID2D1DrawingStateBlock) -> void #cpp_method;
+
+    PushAxisAlignedClip: (this: *ID2D1RenderTarget, clipRect: *D2D1_RECT_F, antialiasMode: D2D1_ANTIALIAS_MODE) -> void #cpp_method;
+
+    PopAxisAlignedClip: (this: *ID2D1RenderTarget) -> void #cpp_method;
+
+    Clear: (this: *ID2D1RenderTarget, clearColor: *D2D1_COLOR_F = null) -> void #cpp_method;
+
+    BeginDraw: (this: *ID2D1RenderTarget) -> void #cpp_method;
+
+    EndDraw: (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT #cpp_method;
+
+    GetPixelFormat: (this: *ID2D1RenderTarget) -> D2D1_PIXEL_FORMAT #cpp_method;
+
+    SetDpi: (this: *ID2D1RenderTarget, dpiX: float, dpiY: float) -> void #cpp_method;
+
+    GetDpi: (this: *ID2D1RenderTarget, dpiX: *float, dpiY: *float) -> void #cpp_method;
+
+    GetSize: (this: *ID2D1RenderTarget) -> D2D1_SIZE_F #cpp_method;
+
+    GetPixelSize: (this: *ID2D1RenderTarget) -> D2D1_SIZE_U #cpp_method;
+
+    GetMaximumBitmapSize: (this: *ID2D1RenderTarget) -> u32 #cpp_method;
+
+    IsSupported: (this: *ID2D1RenderTarget, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES) -> BOOL #cpp_method;
+}
+
+ID2D1RenderTarget_CreateBitmap :: inline (this: *ID2D1RenderTarget, size: D2D1_SIZE_U, srcData: *void, pitch: u32, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT { return this.id2d1rendertarget_vtable.CreateBitmap(this, size, srcData, pitch, bitmapProperties, bitmap); }
+
+ID2D1RenderTarget_CreateBitmapFromWicBitmap :: inline (this: *ID2D1RenderTarget, wicBitmapSource: *IWICBitmapSource, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT { return this.id2d1rendertarget_vtable.CreateBitmapFromWicBitmap(this, wicBitmapSource, bitmapProperties, bitmap); }
+
+ID2D1RenderTarget_CreateSharedBitmap :: inline (this: *ID2D1RenderTarget, riid: *IID, data: *void, bitmapProperties: *D2D1_BITMAP_PROPERTIES, bitmap: **ID2D1Bitmap) -> HRESULT { return this.id2d1rendertarget_vtable.CreateSharedBitmap(this, riid, data, bitmapProperties, bitmap); }
+
+ID2D1RenderTarget_CreateBitmapBrush :: inline (this: *ID2D1RenderTarget, bitmap: *ID2D1Bitmap, bitmapBrushProperties: *D2D1_BITMAP_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, bitmapBrush: **ID2D1BitmapBrush) -> HRESULT { return this.id2d1rendertarget_vtable.CreateBitmapBrush(this, bitmap, bitmapBrushProperties, brushProperties, bitmapBrush); }
+
+ID2D1RenderTarget_CreateSolidColorBrush :: inline (this: *ID2D1RenderTarget, color: *D2D1_COLOR_F, brushProperties: *D2D1_BRUSH_PROPERTIES, solidColorBrush: **ID2D1SolidColorBrush) -> HRESULT { return this.id2d1rendertarget_vtable.CreateSolidColorBrush(this, color, brushProperties, solidColorBrush); }
+
+ID2D1RenderTarget_CreateGradientStopCollection :: inline (this: *ID2D1RenderTarget, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32, colorInterpolationGamma: D2D1_GAMMA, extendMode: D2D1_EXTEND_MODE, gradientStopCollection: **ID2D1GradientStopCollection) -> HRESULT { return this.id2d1rendertarget_vtable.CreateGradientStopCollection(this, gradientStops, gradientStopsCount, colorInterpolationGamma, extendMode, gradientStopCollection); }
+
+ID2D1RenderTarget_CreateLinearGradientBrush :: inline (this: *ID2D1RenderTarget, linearGradientBrushProperties: *D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, gradientStopCollection: *ID2D1GradientStopCollection, linearGradientBrush: **ID2D1LinearGradientBrush) -> HRESULT { return this.id2d1rendertarget_vtable.CreateLinearGradientBrush(this, linearGradientBrushProperties, brushProperties, gradientStopCollection, linearGradientBrush); }
+
+ID2D1RenderTarget_CreateRadialGradientBrush :: inline (this: *ID2D1RenderTarget, radialGradientBrushProperties: *D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, gradientStopCollection: *ID2D1GradientStopCollection, radialGradientBrush: **ID2D1RadialGradientBrush) -> HRESULT { return this.id2d1rendertarget_vtable.CreateRadialGradientBrush(this, radialGradientBrushProperties, brushProperties, gradientStopCollection, radialGradientBrush); }
+
+ID2D1RenderTarget_CreateCompatibleRenderTarget :: inline (this: *ID2D1RenderTarget, desiredSize: *D2D1_SIZE_F, desiredPixelSize: *D2D1_SIZE_U, desiredFormat: *D2D1_PIXEL_FORMAT, options: D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS, bitmapRenderTarget: **ID2D1BitmapRenderTarget) -> HRESULT { return this.id2d1rendertarget_vtable.CreateCompatibleRenderTarget(this, desiredSize, desiredPixelSize, desiredFormat, options, bitmapRenderTarget); }
+
+ID2D1RenderTarget_CreateLayer :: inline (this: *ID2D1RenderTarget, size: *D2D1_SIZE_F, layer: **ID2D1Layer) -> HRESULT { return this.id2d1rendertarget_vtable.CreateLayer(this, size, layer); }
+
+ID2D1RenderTarget_CreateMesh :: inline (this: *ID2D1RenderTarget, mesh: **ID2D1Mesh) -> HRESULT { return this.id2d1rendertarget_vtable.CreateMesh(this, mesh); }
+
+ID2D1RenderTarget_DrawLine :: inline (this: *ID2D1RenderTarget, point0: D2D1_POINT_2F, point1: D2D1_POINT_2F, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) { this.id2d1rendertarget_vtable.DrawLine(this, point0, point1, brush, strokeWidth, strokeStyle); }
+
+ID2D1RenderTarget_DrawRectangle :: inline (this: *ID2D1RenderTarget, rect: *D2D1_RECT_F, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) { this.id2d1rendertarget_vtable.DrawRectangle(this, rect, brush, strokeWidth, strokeStyle); }
+
+ID2D1RenderTarget_FillRectangle :: inline (this: *ID2D1RenderTarget, rect: *D2D1_RECT_F, brush: *ID2D1Brush) { this.id2d1rendertarget_vtable.FillRectangle(this, rect, brush); }
+
+ID2D1RenderTarget_DrawRoundedRectangle :: inline (this: *ID2D1RenderTarget, roundedRect: *D2D1_ROUNDED_RECT, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) { this.id2d1rendertarget_vtable.DrawRoundedRectangle(this, roundedRect, brush, strokeWidth, strokeStyle); }
+
+ID2D1RenderTarget_FillRoundedRectangle :: inline (this: *ID2D1RenderTarget, roundedRect: *D2D1_ROUNDED_RECT, brush: *ID2D1Brush) { this.id2d1rendertarget_vtable.FillRoundedRectangle(this, roundedRect, brush); }
+
+ID2D1RenderTarget_DrawEllipse :: inline (this: *ID2D1RenderTarget, ellipse: *D2D1_ELLIPSE, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) { this.id2d1rendertarget_vtable.DrawEllipse(this, ellipse, brush, strokeWidth, strokeStyle); }
+
+ID2D1RenderTarget_FillEllipse :: inline (this: *ID2D1RenderTarget, ellipse: *D2D1_ELLIPSE, brush: *ID2D1Brush) { this.id2d1rendertarget_vtable.FillEllipse(this, ellipse, brush); }
+
+ID2D1RenderTarget_DrawGeometry :: inline (this: *ID2D1RenderTarget, geometry: *ID2D1Geometry, brush: *ID2D1Brush, strokeWidth: float = 1.0, strokeStyle: *ID2D1StrokeStyle = null) { this.id2d1rendertarget_vtable.DrawGeometry(this, geometry, brush, strokeWidth, strokeStyle); }
+
+ID2D1RenderTarget_FillGeometry :: inline (this: *ID2D1RenderTarget, geometry: *ID2D1Geometry, brush: *ID2D1Brush, opacityBrush: *ID2D1Brush = null) { this.id2d1rendertarget_vtable.FillGeometry(this, geometry, brush, opacityBrush); }
+
+ID2D1RenderTarget_FillMesh :: inline (this: *ID2D1RenderTarget, mesh: *ID2D1Mesh, brush: *ID2D1Brush) { this.id2d1rendertarget_vtable.FillMesh(this, mesh, brush); }
+
+ID2D1RenderTarget_FillOpacityMask :: inline (this: *ID2D1RenderTarget, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, content: D2D1_OPACITY_MASK_CONTENT, destinationRectangle: *D2D1_RECT_F = null, sourceRectangle: *D2D1_RECT_F = null) { this.id2d1rendertarget_vtable.FillOpacityMask(this, opacityMask, brush, content, destinationRectangle, sourceRectangle); }
+
+ID2D1RenderTarget_DrawBitmap :: inline (this: *ID2D1RenderTarget, bitmap: *ID2D1Bitmap, destinationRectangle: *D2D1_RECT_F = null, opacity: float = 1.0, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE = .LINEAR, sourceRectangle: *D2D1_RECT_F = null) { this.id2d1rendertarget_vtable.DrawBitmap(this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle); }
+
+ID2D1RenderTarget_DrawTextA :: inline (this: *ID2D1RenderTarget, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutRect: *D2D1_RECT_F, defaultFillBrush: *ID2D1Brush, options: D2D1_DRAW_TEXT_OPTIONS = .NONE, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1rendertarget_vtable.DrawTextA(this, _string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode); }
+
+ID2D1RenderTarget_DrawTextLayout :: inline (this: *ID2D1RenderTarget, origin: D2D1_POINT_2F, textLayout: *IDWriteTextLayout, defaultFillBrush: *ID2D1Brush, options: D2D1_DRAW_TEXT_OPTIONS = .NONE) { this.id2d1rendertarget_vtable.DrawTextLayout(this, origin, textLayout, defaultFillBrush, options); }
+
+ID2D1RenderTarget_DrawGlyphRun :: inline (this: *ID2D1RenderTarget, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1rendertarget_vtable.DrawGlyphRun(this, baselineOrigin, glyphRun, foregroundBrush, measuringMode); }
+
+ID2D1RenderTarget_SetTransform :: inline (this: *ID2D1RenderTarget, transform: *D2D1_MATRIX_3X2_F) { this.id2d1rendertarget_vtable.SetTransform(this, transform); }
+
+ID2D1RenderTarget_GetTransform :: inline (this: *ID2D1RenderTarget, transform: *D2D1_MATRIX_3X2_F) { this.id2d1rendertarget_vtable.GetTransform(this, transform); }
+
+ID2D1RenderTarget_SetAntialiasMode :: inline (this: *ID2D1RenderTarget, antialiasMode: D2D1_ANTIALIAS_MODE) { this.id2d1rendertarget_vtable.SetAntialiasMode(this, antialiasMode); }
+
+ID2D1RenderTarget_GetAntialiasMode :: inline (this: *ID2D1RenderTarget) -> D2D1_ANTIALIAS_MODE { return this.id2d1rendertarget_vtable.GetAntialiasMode(this); }
+
+ID2D1RenderTarget_SetTextAntialiasMode :: inline (this: *ID2D1RenderTarget, textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE) { this.id2d1rendertarget_vtable.SetTextAntialiasMode(this, textAntialiasMode); }
+
+ID2D1RenderTarget_GetTextAntialiasMode :: inline (this: *ID2D1RenderTarget) -> D2D1_TEXT_ANTIALIAS_MODE { return this.id2d1rendertarget_vtable.GetTextAntialiasMode(this); }
+
+ID2D1RenderTarget_SetTextRenderingParams :: inline (this: *ID2D1RenderTarget, textRenderingParams: *IDWriteRenderingParams = null) { this.id2d1rendertarget_vtable.SetTextRenderingParams(this, textRenderingParams); }
+
+ID2D1RenderTarget_GetTextRenderingParams :: inline (this: *ID2D1RenderTarget, textRenderingParams: **IDWriteRenderingParams) { this.id2d1rendertarget_vtable.GetTextRenderingParams(this, textRenderingParams); }
+
+ID2D1RenderTarget_SetTags :: inline (this: *ID2D1RenderTarget, tag1: D2D1_TAG, tag2: D2D1_TAG) { this.id2d1rendertarget_vtable.SetTags(this, tag1, tag2); }
+
+ID2D1RenderTarget_GetTags :: inline (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) { this.id2d1rendertarget_vtable.GetTags(this, tag1, tag2); }
+
+ID2D1RenderTarget_PushLayer :: inline (this: *ID2D1RenderTarget, layerParameters: *D2D1_LAYER_PARAMETERS, layer: *ID2D1Layer) { this.id2d1rendertarget_vtable.PushLayer(this, layerParameters, layer); }
+
+ID2D1RenderTarget_PopLayer :: inline (this: *ID2D1RenderTarget) { this.id2d1rendertarget_vtable.PopLayer(this); }
+
+ID2D1RenderTarget_Flush :: inline (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT { return this.id2d1rendertarget_vtable.Flush(this, tag1, tag2); }
+
+ID2D1RenderTarget_SaveDrawingState :: inline (this: *ID2D1RenderTarget, drawingStateBlock: *ID2D1DrawingStateBlock) { this.id2d1rendertarget_vtable.SaveDrawingState(this, drawingStateBlock); }
+
+ID2D1RenderTarget_RestoreDrawingState :: inline (this: *ID2D1RenderTarget, drawingStateBlock: *ID2D1DrawingStateBlock) { this.id2d1rendertarget_vtable.RestoreDrawingState(this, drawingStateBlock); }
+
+ID2D1RenderTarget_PushAxisAlignedClip :: inline (this: *ID2D1RenderTarget, clipRect: *D2D1_RECT_F, antialiasMode: D2D1_ANTIALIAS_MODE) { this.id2d1rendertarget_vtable.PushAxisAlignedClip(this, clipRect, antialiasMode); }
+
+ID2D1RenderTarget_PopAxisAlignedClip :: inline (this: *ID2D1RenderTarget) { this.id2d1rendertarget_vtable.PopAxisAlignedClip(this); }
+
+ID2D1RenderTarget_Clear :: inline (this: *ID2D1RenderTarget, clearColor: *D2D1_COLOR_F = null) { this.id2d1rendertarget_vtable.Clear(this, clearColor); }
+
+ID2D1RenderTarget_BeginDraw :: inline (this: *ID2D1RenderTarget) { this.id2d1rendertarget_vtable.BeginDraw(this); }
+
+ID2D1RenderTarget_EndDraw :: inline (this: *ID2D1RenderTarget, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT { return this.id2d1rendertarget_vtable.EndDraw(this, tag1, tag2); }
+
+ID2D1RenderTarget_GetPixelFormat :: inline (this: *ID2D1RenderTarget) -> D2D1_PIXEL_FORMAT { return this.id2d1rendertarget_vtable.GetPixelFormat(this); }
+
+ID2D1RenderTarget_SetDpi :: inline (this: *ID2D1RenderTarget, dpiX: float, dpiY: float) { this.id2d1rendertarget_vtable.SetDpi(this, dpiX, dpiY); }
+
+ID2D1RenderTarget_GetDpi :: inline (this: *ID2D1RenderTarget, dpiX: *float, dpiY: *float) { this.id2d1rendertarget_vtable.GetDpi(this, dpiX, dpiY); }
+
+ID2D1RenderTarget_GetSize :: inline (this: *ID2D1RenderTarget) -> D2D1_SIZE_F { return this.id2d1rendertarget_vtable.GetSize(this); }
+
+ID2D1RenderTarget_GetPixelSize :: inline (this: *ID2D1RenderTarget) -> D2D1_SIZE_U { return this.id2d1rendertarget_vtable.GetPixelSize(this); }
+
+ID2D1RenderTarget_GetMaximumBitmapSize :: inline (this: *ID2D1RenderTarget) -> u32 { return this.id2d1rendertarget_vtable.GetMaximumBitmapSize(this); }
+
+ID2D1RenderTarget_IsSupported :: inline (this: *ID2D1RenderTarget, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES) -> BOOL { return this.id2d1rendertarget_vtable.IsSupported(this, renderTargetProperties); }
+
+vtable :: (obj: *ID2D1RenderTarget) -> *ID2D1RenderTarget_VTable { return obj.id2d1rendertarget_vtable; }
+
+
+ID2D1BitmapRenderTarget :: struct {
+    #as using id2d1rendertarget: ID2D1RenderTarget;
+    #place id2d1rendertarget; id2d1bitmaprendertarget_vtable: *ID2D1BitmapRenderTarget_VTable;
+}
+ID2D1BitmapRenderTarget_VTable :: struct #type_info_none {
+    using id2d1rendertarget: ID2D1RenderTarget_VTable;
+    GetBitmap: (this: *ID2D1BitmapRenderTarget, bitmap: **ID2D1Bitmap) -> HRESULT #cpp_method;
+}
+ID2D1BitmapRenderTarget_GetBitmap :: inline (this: *ID2D1BitmapRenderTarget, bitmap: **ID2D1Bitmap) -> HRESULT { return this.id2d1bitmaprendertarget_vtable.GetBitmap(this, bitmap); }
+
+vtable :: (obj: *ID2D1BitmapRenderTarget) -> *ID2D1BitmapRenderTarget_VTable { return obj.id2d1bitmaprendertarget_vtable; }
+
+
+ID2D1HwndRenderTarget :: struct {
+    #as using id2d1rendertarget: ID2D1RenderTarget;
+    #place id2d1rendertarget; id2d1hwndrendertarget_vtable: *ID2D1HwndRenderTarget_VTable;
+}
+ID2D1HwndRenderTarget_VTable :: struct #type_info_none {
+    using id2d1rendertarget: ID2D1RenderTarget_VTable;
+    CheckWindowState: (this: *ID2D1HwndRenderTarget) -> D2D1_WINDOW_STATE #cpp_method;
+
+    Resize: (this: *ID2D1HwndRenderTarget, pixelSize: *D2D1_SIZE_U) -> HRESULT #cpp_method;
+
+    GetHwnd: (this: *ID2D1HwndRenderTarget) -> HWND #cpp_method;
+}
+
+ID2D1HwndRenderTarget_CheckWindowState :: inline (this: *ID2D1HwndRenderTarget) -> D2D1_WINDOW_STATE { return this.id2d1hwndrendertarget_vtable.CheckWindowState(this); }
+
+ID2D1HwndRenderTarget_Resize :: inline (this: *ID2D1HwndRenderTarget, pixelSize: *D2D1_SIZE_U) -> HRESULT { return this.id2d1hwndrendertarget_vtable.Resize(this, pixelSize); }
+
+ID2D1HwndRenderTarget_GetHwnd :: inline (this: *ID2D1HwndRenderTarget) -> HWND { return this.id2d1hwndrendertarget_vtable.GetHwnd(this); }
+
+vtable :: (obj: *ID2D1HwndRenderTarget) -> *ID2D1HwndRenderTarget_VTable { return obj.id2d1hwndrendertarget_vtable; }
+
+
+ID2D1GdiInteropRenderTarget :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1gdiinteroprendertarget_vtable: *ID2D1GdiInteropRenderTarget_VTable;
+}
+ID2D1GdiInteropRenderTarget_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetDC: (this: *ID2D1GdiInteropRenderTarget, mode: D2D1_DC_INITIALIZE_MODE, hdc: *HDC) -> HRESULT #cpp_method;
+
+    ReleaseDC: (this: *ID2D1GdiInteropRenderTarget, update: *RECT) -> HRESULT #cpp_method;
+}
+
+ID2D1GdiInteropRenderTarget_GetDC :: inline (this: *ID2D1GdiInteropRenderTarget, mode: D2D1_DC_INITIALIZE_MODE, hdc: *HDC) -> HRESULT { return this.id2d1gdiinteroprendertarget_vtable.GetDC(this, mode, hdc); }
+
+ID2D1GdiInteropRenderTarget_ReleaseDC :: inline (this: *ID2D1GdiInteropRenderTarget, update: *RECT) -> HRESULT { return this.id2d1gdiinteroprendertarget_vtable.ReleaseDC(this, update); }
+
+vtable :: (obj: *ID2D1GdiInteropRenderTarget) -> *ID2D1GdiInteropRenderTarget_VTable { return obj.id2d1gdiinteroprendertarget_vtable; }
+
+
+ID2D1DCRenderTarget :: struct {
+    #as using id2d1rendertarget: ID2D1RenderTarget;
+    #place id2d1rendertarget; id2d1dcrendertarget_vtable: *ID2D1DCRenderTarget_VTable;
+}
+ID2D1DCRenderTarget_VTable :: struct #type_info_none {
+    using id2d1rendertarget: ID2D1RenderTarget_VTable;
+    BindDC: (this: *ID2D1DCRenderTarget, hDC: HDC, pSubRect: *RECT) -> HRESULT #cpp_method;
+}
+ID2D1DCRenderTarget_BindDC :: inline (this: *ID2D1DCRenderTarget, hDC: HDC, pSubRect: *RECT) -> HRESULT { return this.id2d1dcrendertarget_vtable.BindDC(this, hDC, pSubRect); }
+
+vtable :: (obj: *ID2D1DCRenderTarget) -> *ID2D1DCRenderTarget_VTable { return obj.id2d1dcrendertarget_vtable; }
+
+
+ID2D1Factory :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1factory_vtable: *ID2D1Factory_VTable;
+}
+ID2D1Factory_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    ReloadSystemMetrics: (this: *ID2D1Factory) -> HRESULT #cpp_method;
+
+    GetDesktopDpi: (this: *ID2D1Factory, dpiX: *float, dpiY: *float) -> void #cpp_method;
+
+    CreateRectangleGeometry: (this: *ID2D1Factory, rectangle: *D2D1_RECT_F, rectangleGeometry: **ID2D1RectangleGeometry) -> HRESULT #cpp_method;
+
+    CreateRoundedRectangleGeometry: (this: *ID2D1Factory, roundedRectangle: *D2D1_ROUNDED_RECT, roundedRectangleGeometry: **ID2D1RoundedRectangleGeometry) -> HRESULT #cpp_method;
+
+    CreateEllipseGeometry: (this: *ID2D1Factory, ellipse: *D2D1_ELLIPSE, ellipseGeometry: **ID2D1EllipseGeometry) -> HRESULT #cpp_method;
+
+    CreateGeometryGroup: (this: *ID2D1Factory, fillMode: D2D1_FILL_MODE, geometries: **ID2D1Geometry, geometriesCount: u32, geometryGroup: **ID2D1GeometryGroup) -> HRESULT #cpp_method;
+
+    CreateTransformedGeometry: (this: *ID2D1Factory, sourceGeometry: *ID2D1Geometry, transform: *D2D1_MATRIX_3X2_F, transformedGeometry: **ID2D1TransformedGeometry) -> HRESULT #cpp_method;
+
+    CreatePathGeometry: (this: *ID2D1Factory, pathGeometry: **ID2D1PathGeometry) -> HRESULT #cpp_method;
+
+    CreateStrokeStyle: (this: *ID2D1Factory, strokeStyleProperties: *D2D1_STROKE_STYLE_PROPERTIES, dashes: *float, dashesCount: u32, strokeStyle: **ID2D1StrokeStyle) -> HRESULT #cpp_method;
+
+    CreateDrawingStateBlock: (this: *ID2D1Factory, drawingStateDescription: *D2D1_DRAWING_STATE_DESCRIPTION, textRenderingParams: *IDWriteRenderingParams, drawingStateBlock: **ID2D1DrawingStateBlock) -> HRESULT #cpp_method;
+
+    CreateWicBitmapRenderTarget: (this: *ID2D1Factory, target: *IWICBitmap, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, renderTarget: **ID2D1RenderTarget) -> HRESULT #cpp_method;
+
+    CreateHwndRenderTarget: (this: *ID2D1Factory, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, hwndRenderTargetProperties: *D2D1_HWND_RENDER_TARGET_PROPERTIES, hwndRenderTarget: **ID2D1HwndRenderTarget) -> HRESULT #cpp_method;
+
+    CreateDxgiSurfaceRenderTarget: (this: *ID2D1Factory, dxgiSurface: *IDXGISurface, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, renderTarget: **ID2D1RenderTarget) -> HRESULT #cpp_method;
+
+    CreateDCRenderTarget: (this: *ID2D1Factory, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, dcRenderTarget: **ID2D1DCRenderTarget) -> HRESULT #cpp_method;
+}
+
+ID2D1Factory_ReloadSystemMetrics :: inline (this: *ID2D1Factory) -> HRESULT { return this.id2d1factory_vtable.ReloadSystemMetrics(this); }
+
+ID2D1Factory_GetDesktopDpi :: inline (this: *ID2D1Factory, dpiX: *float, dpiY: *float) { this.id2d1factory_vtable.GetDesktopDpi(this, dpiX, dpiY); }
+
+ID2D1Factory_CreateRectangleGeometry :: inline (this: *ID2D1Factory, rectangle: *D2D1_RECT_F, rectangleGeometry: **ID2D1RectangleGeometry) -> HRESULT { return this.id2d1factory_vtable.CreateRectangleGeometry(this, rectangle, rectangleGeometry); }
+
+ID2D1Factory_CreateRoundedRectangleGeometry :: inline (this: *ID2D1Factory, roundedRectangle: *D2D1_ROUNDED_RECT, roundedRectangleGeometry: **ID2D1RoundedRectangleGeometry) -> HRESULT { return this.id2d1factory_vtable.CreateRoundedRectangleGeometry(this, roundedRectangle, roundedRectangleGeometry); }
+
+ID2D1Factory_CreateEllipseGeometry :: inline (this: *ID2D1Factory, ellipse: *D2D1_ELLIPSE, ellipseGeometry: **ID2D1EllipseGeometry) -> HRESULT { return this.id2d1factory_vtable.CreateEllipseGeometry(this, ellipse, ellipseGeometry); }
+
+ID2D1Factory_CreateGeometryGroup :: inline (this: *ID2D1Factory, fillMode: D2D1_FILL_MODE, geometries: **ID2D1Geometry, geometriesCount: u32, geometryGroup: **ID2D1GeometryGroup) -> HRESULT { return this.id2d1factory_vtable.CreateGeometryGroup(this, fillMode, geometries, geometriesCount, geometryGroup); }
+
+ID2D1Factory_CreateTransformedGeometry :: inline (this: *ID2D1Factory, sourceGeometry: *ID2D1Geometry, transform: *D2D1_MATRIX_3X2_F, transformedGeometry: **ID2D1TransformedGeometry) -> HRESULT { return this.id2d1factory_vtable.CreateTransformedGeometry(this, sourceGeometry, transform, transformedGeometry); }
+
+ID2D1Factory_CreatePathGeometry :: inline (this: *ID2D1Factory, pathGeometry: **ID2D1PathGeometry) -> HRESULT { return this.id2d1factory_vtable.CreatePathGeometry(this, pathGeometry); }
+
+ID2D1Factory_CreateStrokeStyle :: inline (this: *ID2D1Factory, strokeStyleProperties: *D2D1_STROKE_STYLE_PROPERTIES, dashes: *float, dashesCount: u32, strokeStyle: **ID2D1StrokeStyle) -> HRESULT { return this.id2d1factory_vtable.CreateStrokeStyle(this, strokeStyleProperties, dashes, dashesCount, strokeStyle); }
+
+ID2D1Factory_CreateDrawingStateBlock :: inline (this: *ID2D1Factory, drawingStateDescription: *D2D1_DRAWING_STATE_DESCRIPTION, textRenderingParams: *IDWriteRenderingParams, drawingStateBlock: **ID2D1DrawingStateBlock) -> HRESULT { return this.id2d1factory_vtable.CreateDrawingStateBlock(this, drawingStateDescription, textRenderingParams, drawingStateBlock); }
+
+ID2D1Factory_CreateWicBitmapRenderTarget :: inline (this: *ID2D1Factory, target: *IWICBitmap, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, renderTarget: **ID2D1RenderTarget) -> HRESULT { return this.id2d1factory_vtable.CreateWicBitmapRenderTarget(this, target, renderTargetProperties, renderTarget); }
+
+ID2D1Factory_CreateHwndRenderTarget :: inline (this: *ID2D1Factory, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, hwndRenderTargetProperties: *D2D1_HWND_RENDER_TARGET_PROPERTIES, hwndRenderTarget: **ID2D1HwndRenderTarget) -> HRESULT { return this.id2d1factory_vtable.CreateHwndRenderTarget(this, renderTargetProperties, hwndRenderTargetProperties, hwndRenderTarget); }
+
+ID2D1Factory_CreateDxgiSurfaceRenderTarget :: inline (this: *ID2D1Factory, dxgiSurface: *IDXGISurface, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, renderTarget: **ID2D1RenderTarget) -> HRESULT { return this.id2d1factory_vtable.CreateDxgiSurfaceRenderTarget(this, dxgiSurface, renderTargetProperties, renderTarget); }
+
+ID2D1Factory_CreateDCRenderTarget :: inline (this: *ID2D1Factory, renderTargetProperties: *D2D1_RENDER_TARGET_PROPERTIES, dcRenderTarget: **ID2D1DCRenderTarget) -> HRESULT { return this.id2d1factory_vtable.CreateDCRenderTarget(this, renderTargetProperties, dcRenderTarget); }
+
+vtable :: (obj: *ID2D1Factory) -> *ID2D1Factory_VTable { return obj.id2d1factory_vtable; }
+
+
+CLSID_D2D12DAffineTransform: GUID;
+CLSID_D2D13DPerspectiveTransform: GUID;
+CLSID_D2D13DTransform: GUID;
+CLSID_D2D1ArithmeticComposite: GUID;
+CLSID_D2D1Atlas: GUID;
+CLSID_D2D1BitmapSource: GUID;
+CLSID_D2D1Blend: GUID;
+CLSID_D2D1Border: GUID;
+CLSID_D2D1Brightness: GUID;
+CLSID_D2D1ColorManagement: GUID;
+CLSID_D2D1ColorMatrix: GUID;
+CLSID_D2D1Composite: GUID;
+CLSID_D2D1ConvolveMatrix: GUID;
+CLSID_D2D1Crop: GUID;
+CLSID_D2D1DirectionalBlur: GUID;
+CLSID_D2D1DiscreteTransfer: GUID;
+CLSID_D2D1DisplacementMap: GUID;
+CLSID_D2D1DistantDiffuse: GUID;
+CLSID_D2D1DistantSpecular: GUID;
+CLSID_D2D1DpiCompensation: GUID;
+CLSID_D2D1Flood: GUID;
+CLSID_D2D1GammaTransfer: GUID;
+CLSID_D2D1GaussianBlur: GUID;
+CLSID_D2D1Scale: GUID;
+CLSID_D2D1Histogram: GUID;
+CLSID_D2D1HueRotation: GUID;
+CLSID_D2D1LinearTransfer: GUID;
+CLSID_D2D1LuminanceToAlpha: GUID;
+CLSID_D2D1Morphology: GUID;
+CLSID_D2D1OpacityMetadata: GUID;
+CLSID_D2D1PointDiffuse: GUID;
+CLSID_D2D1PointSpecular: GUID;
+CLSID_D2D1Premultiply: GUID;
+CLSID_D2D1Saturation: GUID;
+CLSID_D2D1Shadow: GUID;
+CLSID_D2D1SpotDiffuse: GUID;
+CLSID_D2D1SpotSpecular: GUID;
+CLSID_D2D1TableTransfer: GUID;
+CLSID_D2D1Tile: GUID;
+CLSID_D2D1Turbulence: GUID;
+CLSID_D2D1UnPremultiply: GUID;
+
+D2D1_BORDER_MODE :: enum s32 {
+    SOFT        :: 0;
+    HARD        :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_BORDER_MODE_SOFT        :: SOFT;
+    D2D1_BORDER_MODE_HARD        :: HARD;
+    D2D1_BORDER_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_CHANNEL_SELECTOR :: enum s32 {
+    R           :: 0;
+    G           :: 1;
+    B           :: 2;
+    A           :: 3;
+    FORCE_DWORD :: -1;
+
+    D2D1_CHANNEL_SELECTOR_R           :: R;
+    D2D1_CHANNEL_SELECTOR_G           :: G;
+    D2D1_CHANNEL_SELECTOR_B           :: B;
+    D2D1_CHANNEL_SELECTOR_A           :: A;
+    D2D1_CHANNEL_SELECTOR_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BITMAPSOURCE_ORIENTATION :: enum s32 {
+    DEFAULT                             :: 1;
+    FLIP_HORIZONTAL                     :: 2;
+    ROTATE_CLOCKWISE180                 :: 3;
+    ROTATE_CLOCKWISE180_FLIP_HORIZONTAL :: 4;
+    ROTATE_CLOCKWISE270_FLIP_HORIZONTAL :: 5;
+    ROTATE_CLOCKWISE90                  :: 6;
+    ROTATE_CLOCKWISE90_FLIP_HORIZONTAL  :: 7;
+    ROTATE_CLOCKWISE270                 :: 8;
+    FORCE_DWORD                         :: -1;
+
+    D2D1_BITMAPSOURCE_ORIENTATION_DEFAULT                             :: DEFAULT;
+    D2D1_BITMAPSOURCE_ORIENTATION_FLIP_HORIZONTAL                     :: FLIP_HORIZONTAL;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE180                 :: ROTATE_CLOCKWISE180;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE180_FLIP_HORIZONTAL :: ROTATE_CLOCKWISE180_FLIP_HORIZONTAL;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE270_FLIP_HORIZONTAL :: ROTATE_CLOCKWISE270_FLIP_HORIZONTAL;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE90                  :: ROTATE_CLOCKWISE90;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE90_FLIP_HORIZONTAL  :: ROTATE_CLOCKWISE90_FLIP_HORIZONTAL;
+    D2D1_BITMAPSOURCE_ORIENTATION_ROTATE_CLOCKWISE270                 :: ROTATE_CLOCKWISE270;
+    D2D1_BITMAPSOURCE_ORIENTATION_FORCE_DWORD                         :: FORCE_DWORD;
+}
+
+D2D1_GAUSSIANBLUR_PROP :: enum s32 {
+    STANDARD_DEVIATION :: 0;
+
+    OPTIMIZATION       :: 1;
+
+    BORDER_MODE        :: 2;
+    FORCE_DWORD        :: -1;
+
+    D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION :: STANDARD_DEVIATION;
+
+    D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION       :: OPTIMIZATION;
+
+    D2D1_GAUSSIANBLUR_PROP_BORDER_MODE        :: BORDER_MODE;
+    D2D1_GAUSSIANBLUR_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_GAUSSIANBLUR_OPTIMIZATION :: enum s32 {
+    SPEED       :: 0;
+    BALANCED    :: 1;
+    QUALITY     :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_GAUSSIANBLUR_OPTIMIZATION_SPEED       :: SPEED;
+    D2D1_GAUSSIANBLUR_OPTIMIZATION_BALANCED    :: BALANCED;
+    D2D1_GAUSSIANBLUR_OPTIMIZATION_QUALITY     :: QUALITY;
+    D2D1_GAUSSIANBLUR_OPTIMIZATION_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DIRECTIONALBLUR_PROP :: enum s32 {
+    STANDARD_DEVIATION :: 0;
+
+    ANGLE              :: 1;
+
+    OPTIMIZATION       :: 2;
+
+    BORDER_MODE        :: 3;
+    FORCE_DWORD        :: -1;
+
+    D2D1_DIRECTIONALBLUR_PROP_STANDARD_DEVIATION :: STANDARD_DEVIATION;
+
+    D2D1_DIRECTIONALBLUR_PROP_ANGLE              :: ANGLE;
+
+    D2D1_DIRECTIONALBLUR_PROP_OPTIMIZATION       :: OPTIMIZATION;
+
+    D2D1_DIRECTIONALBLUR_PROP_BORDER_MODE        :: BORDER_MODE;
+    D2D1_DIRECTIONALBLUR_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_DIRECTIONALBLUR_OPTIMIZATION :: enum s32 {
+    SPEED       :: 0;
+    BALANCED    :: 1;
+    QUALITY     :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_DIRECTIONALBLUR_OPTIMIZATION_SPEED       :: SPEED;
+    D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED    :: BALANCED;
+    D2D1_DIRECTIONALBLUR_OPTIMIZATION_QUALITY     :: QUALITY;
+    D2D1_DIRECTIONALBLUR_OPTIMIZATION_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SHADOW_PROP :: enum s32 {
+    BLUR_STANDARD_DEVIATION :: 0;
+
+    COLOR                   :: 1;
+
+    OPTIMIZATION            :: 2;
+    FORCE_DWORD             :: -1;
+
+    D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION :: BLUR_STANDARD_DEVIATION;
+
+    D2D1_SHADOW_PROP_COLOR                   :: COLOR;
+
+    D2D1_SHADOW_PROP_OPTIMIZATION            :: OPTIMIZATION;
+    D2D1_SHADOW_PROP_FORCE_DWORD             :: FORCE_DWORD;
+}
+
+D2D1_SHADOW_OPTIMIZATION :: enum s32 {
+    SPEED       :: 0;
+    BALANCED    :: 1;
+    QUALITY     :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_SHADOW_OPTIMIZATION_SPEED       :: SPEED;
+    D2D1_SHADOW_OPTIMIZATION_BALANCED    :: BALANCED;
+    D2D1_SHADOW_OPTIMIZATION_QUALITY     :: QUALITY;
+    D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BLEND_PROP :: enum s32 {
+    MODE        :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_BLEND_PROP_MODE        :: MODE;
+    D2D1_BLEND_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BLEND_MODE :: enum s32 {
+    MULTIPLY      :: 0;
+    SCREEN        :: 1;
+    DARKEN        :: 2;
+    LIGHTEN       :: 3;
+    DISSOLVE      :: 4;
+    COLOR_BURN    :: 5;
+    LINEAR_BURN   :: 6;
+    DARKER_COLOR  :: 7;
+    LIGHTER_COLOR :: 8;
+    COLOR_DODGE   :: 9;
+    LINEAR_DODGE  :: 10;
+    OVERLAY       :: 11;
+    SOFT_LIGHT    :: 12;
+    HARD_LIGHT    :: 13;
+    VIVID_LIGHT   :: 14;
+    LINEAR_LIGHT  :: 15;
+    PIN_LIGHT     :: 16;
+    HARD_MIX      :: 17;
+    DIFFERENCE    :: 18;
+    EXCLUSION     :: 19;
+    HUE           :: 20;
+    SATURATION    :: 21;
+    COLOR         :: 22;
+    LUMINOSITY    :: 23;
+    SUBTRACT      :: 24;
+    DIVISION      :: 25;
+    FORCE_DWORD   :: -1;
+
+    D2D1_BLEND_MODE_MULTIPLY      :: MULTIPLY;
+    D2D1_BLEND_MODE_SCREEN        :: SCREEN;
+    D2D1_BLEND_MODE_DARKEN        :: DARKEN;
+    D2D1_BLEND_MODE_LIGHTEN       :: LIGHTEN;
+    D2D1_BLEND_MODE_DISSOLVE      :: DISSOLVE;
+    D2D1_BLEND_MODE_COLOR_BURN    :: COLOR_BURN;
+    D2D1_BLEND_MODE_LINEAR_BURN   :: LINEAR_BURN;
+    D2D1_BLEND_MODE_DARKER_COLOR  :: DARKER_COLOR;
+    D2D1_BLEND_MODE_LIGHTER_COLOR :: LIGHTER_COLOR;
+    D2D1_BLEND_MODE_COLOR_DODGE   :: COLOR_DODGE;
+    D2D1_BLEND_MODE_LINEAR_DODGE  :: LINEAR_DODGE;
+    D2D1_BLEND_MODE_OVERLAY       :: OVERLAY;
+    D2D1_BLEND_MODE_SOFT_LIGHT    :: SOFT_LIGHT;
+    D2D1_BLEND_MODE_HARD_LIGHT    :: HARD_LIGHT;
+    D2D1_BLEND_MODE_VIVID_LIGHT   :: VIVID_LIGHT;
+    D2D1_BLEND_MODE_LINEAR_LIGHT  :: LINEAR_LIGHT;
+    D2D1_BLEND_MODE_PIN_LIGHT     :: PIN_LIGHT;
+    D2D1_BLEND_MODE_HARD_MIX      :: HARD_MIX;
+    D2D1_BLEND_MODE_DIFFERENCE    :: DIFFERENCE;
+    D2D1_BLEND_MODE_EXCLUSION     :: EXCLUSION;
+    D2D1_BLEND_MODE_HUE           :: HUE;
+    D2D1_BLEND_MODE_SATURATION    :: SATURATION;
+    D2D1_BLEND_MODE_COLOR         :: COLOR;
+    D2D1_BLEND_MODE_LUMINOSITY    :: LUMINOSITY;
+    D2D1_BLEND_MODE_SUBTRACT      :: SUBTRACT;
+    D2D1_BLEND_MODE_DIVISION      :: DIVISION;
+    D2D1_BLEND_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_SATURATION_PROP :: enum s32 {
+    SATURATION  :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_SATURATION_PROP_SATURATION  :: SATURATION;
+    D2D1_SATURATION_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_HUEROTATION_PROP :: enum s32 {
+    ANGLE       :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_HUEROTATION_PROP_ANGLE       :: ANGLE;
+    D2D1_HUEROTATION_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_COLORMATRIX_PROP :: enum s32 {
+    COLOR_MATRIX :: 0;
+
+    ALPHA_MODE   :: 1;
+
+    CLAMP_OUTPUT :: 2;
+    FORCE_DWORD  :: -1;
+
+    D2D1_COLORMATRIX_PROP_COLOR_MATRIX :: COLOR_MATRIX;
+
+    D2D1_COLORMATRIX_PROP_ALPHA_MODE   :: ALPHA_MODE;
+
+    D2D1_COLORMATRIX_PROP_CLAMP_OUTPUT :: CLAMP_OUTPUT;
+    D2D1_COLORMATRIX_PROP_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_COLORMATRIX_ALPHA_MODE :: enum s32 {
+    PREMULTIPLIED :: 1;
+    STRAIGHT      :: 2;
+    FORCE_DWORD   :: -1;
+
+    D2D1_COLORMATRIX_ALPHA_MODE_PREMULTIPLIED :: PREMULTIPLIED;
+    D2D1_COLORMATRIX_ALPHA_MODE_STRAIGHT      :: STRAIGHT;
+    D2D1_COLORMATRIX_ALPHA_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_BITMAPSOURCE_PROP :: enum s32 {
+    WIC_BITMAP_SOURCE     :: 0;
+
+    SCALE                 :: 1;
+
+    INTERPOLATION_MODE    :: 2;
+
+    ENABLE_DPI_CORRECTION :: 3;
+
+    ALPHA_MODE            :: 4;
+
+    ORIENTATION           :: 5;
+    FORCE_DWORD           :: -1;
+
+    D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE     :: WIC_BITMAP_SOURCE;
+
+    D2D1_BITMAPSOURCE_PROP_SCALE                 :: SCALE;
+
+    D2D1_BITMAPSOURCE_PROP_INTERPOLATION_MODE    :: INTERPOLATION_MODE;
+
+    D2D1_BITMAPSOURCE_PROP_ENABLE_DPI_CORRECTION :: ENABLE_DPI_CORRECTION;
+
+    D2D1_BITMAPSOURCE_PROP_ALPHA_MODE            :: ALPHA_MODE;
+
+    D2D1_BITMAPSOURCE_PROP_ORIENTATION           :: ORIENTATION;
+    D2D1_BITMAPSOURCE_PROP_FORCE_DWORD           :: FORCE_DWORD;
+}
+
+D2D1_BITMAPSOURCE_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR :: 0;
+    LINEAR           :: 1;
+    CUBIC            :: 2;
+    FANT             :: 6;
+    MIPMAP_LINEAR    :: 7;
+    FORCE_DWORD      :: -1;
+
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_NEAREST_NEIGHBOR :: NEAREST_NEIGHBOR;
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_LINEAR           :: LINEAR;
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_CUBIC            :: CUBIC;
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_FANT             :: FANT;
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_MIPMAP_LINEAR    :: MIPMAP_LINEAR;
+    D2D1_BITMAPSOURCE_INTERPOLATION_MODE_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_BITMAPSOURCE_ALPHA_MODE :: enum s32 {
+    PREMULTIPLIED :: 1;
+    STRAIGHT      :: 2;
+    FORCE_DWORD   :: -1;
+
+    D2D1_BITMAPSOURCE_ALPHA_MODE_PREMULTIPLIED :: PREMULTIPLIED;
+    D2D1_BITMAPSOURCE_ALPHA_MODE_STRAIGHT      :: STRAIGHT;
+    D2D1_BITMAPSOURCE_ALPHA_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_COMPOSITE_PROP :: enum s32 {
+    MODE        :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_COMPOSITE_PROP_MODE        :: MODE;
+    D2D1_COMPOSITE_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_3DTRANSFORM_PROP :: enum s32 {
+    INTERPOLATION_MODE :: 0;
+
+    BORDER_MODE        :: 1;
+
+    TRANSFORM_MATRIX   :: 2;
+    FORCE_DWORD        :: -1;
+
+    D2D1_3DTRANSFORM_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+
+    D2D1_3DTRANSFORM_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_3DTRANSFORM_PROP_TRANSFORM_MATRIX   :: TRANSFORM_MATRIX;
+    D2D1_3DTRANSFORM_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_3DTRANSFORM_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    FORCE_DWORD         :: -1;
+
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_3DTRANSFORM_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_3DPERSPECTIVETRANSFORM_PROP :: enum s32 {
+    INTERPOLATION_MODE :: 0;
+
+    BORDER_MODE        :: 1;
+
+    DEPTH              :: 2;
+
+    PERSPECTIVE_ORIGIN :: 3;
+
+    LOCAL_OFFSET       :: 4;
+
+    GLOBAL_OFFSET      :: 5;
+
+    ROTATION_ORIGIN    :: 6;
+
+    ROTATION           :: 7;
+    FORCE_DWORD        :: -1;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_DEPTH              :: DEPTH;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_PERSPECTIVE_ORIGIN :: PERSPECTIVE_ORIGIN;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_LOCAL_OFFSET       :: LOCAL_OFFSET;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_GLOBAL_OFFSET      :: GLOBAL_OFFSET;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_ROTATION_ORIGIN    :: ROTATION_ORIGIN;
+
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_ROTATION           :: ROTATION;
+    D2D1_3DPERSPECTIVETRANSFORM_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    FORCE_DWORD         :: -1;
+
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_2DAFFINETRANSFORM_PROP :: enum s32 {
+    INTERPOLATION_MODE :: 0;
+
+    BORDER_MODE        :: 1;
+
+    TRANSFORM_MATRIX   :: 2;
+
+    SHARPNESS          :: 3;
+    FORCE_DWORD        :: -1;
+
+    D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+
+    D2D1_2DAFFINETRANSFORM_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_2DAFFINETRANSFORM_PROP_TRANSFORM_MATRIX   :: TRANSFORM_MATRIX;
+
+    D2D1_2DAFFINETRANSFORM_PROP_SHARPNESS          :: SHARPNESS;
+    D2D1_2DAFFINETRANSFORM_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_DPICOMPENSATION_PROP :: enum s32 {
+    INTERPOLATION_MODE :: 0;
+
+    BORDER_MODE        :: 1;
+
+    INPUT_DPI          :: 2;
+    FORCE_DWORD        :: -1;
+
+    D2D1_DPICOMPENSATION_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+
+    D2D1_DPICOMPENSATION_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_DPICOMPENSATION_PROP_INPUT_DPI          :: INPUT_DPI;
+    D2D1_DPICOMPENSATION_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_DPICOMPENSATION_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_DPICOMPENSATION_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SCALE_PROP :: enum s32 {
+    SCALE              :: 0;
+
+    CENTER_POINT       :: 1;
+
+    INTERPOLATION_MODE :: 2;
+
+    BORDER_MODE        :: 3;
+
+    SHARPNESS          :: 4;
+    FORCE_DWORD        :: -1;
+
+    D2D1_SCALE_PROP_SCALE              :: SCALE;
+
+    D2D1_SCALE_PROP_CENTER_POINT       :: CENTER_POINT;
+
+    D2D1_SCALE_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+
+    D2D1_SCALE_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_SCALE_PROP_SHARPNESS          :: SHARPNESS;
+    D2D1_SCALE_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_SCALE_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SCALE_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_SCALE_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_SCALE_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_SCALE_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_SCALE_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_SCALE_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_SCALE_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_TURBULENCE_PROP :: enum s32 {
+    OFFSET         :: 0;
+
+    SIZE           :: 1;
+
+    BASE_FREQUENCY :: 2;
+
+    NUM_OCTAVES    :: 3;
+
+    SEED           :: 4;
+
+    NOISE          :: 5;
+
+    STITCHABLE     :: 6;
+    FORCE_DWORD    :: -1;
+
+    D2D1_TURBULENCE_PROP_OFFSET         :: OFFSET;
+
+    D2D1_TURBULENCE_PROP_SIZE           :: SIZE;
+
+    D2D1_TURBULENCE_PROP_BASE_FREQUENCY :: BASE_FREQUENCY;
+
+    D2D1_TURBULENCE_PROP_NUM_OCTAVES    :: NUM_OCTAVES;
+
+    D2D1_TURBULENCE_PROP_SEED           :: SEED;
+
+    D2D1_TURBULENCE_PROP_NOISE          :: NOISE;
+
+    D2D1_TURBULENCE_PROP_STITCHABLE     :: STITCHABLE;
+    D2D1_TURBULENCE_PROP_FORCE_DWORD    :: FORCE_DWORD;
+}
+
+D2D1_TURBULENCE_NOISE :: enum s32 {
+    FRACTAL_SUM :: 0;
+    TURBULENCE  :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_TURBULENCE_NOISE_FRACTAL_SUM :: FRACTAL_SUM;
+    D2D1_TURBULENCE_NOISE_TURBULENCE  :: TURBULENCE;
+    D2D1_TURBULENCE_NOISE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DISPLACEMENTMAP_PROP :: enum s32 {
+    SCALE            :: 0;
+
+    X_CHANNEL_SELECT :: 1;
+
+    Y_CHANNEL_SELECT :: 2;
+    FORCE_DWORD      :: -1;
+
+    D2D1_DISPLACEMENTMAP_PROP_SCALE            :: SCALE;
+
+    D2D1_DISPLACEMENTMAP_PROP_X_CHANNEL_SELECT :: X_CHANNEL_SELECT;
+
+    D2D1_DISPLACEMENTMAP_PROP_Y_CHANNEL_SELECT :: Y_CHANNEL_SELECT;
+    D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_COLORMANAGEMENT_PROP :: enum s32 {
+    SOURCE_COLOR_CONTEXT         :: 0;
+
+    SOURCE_RENDERING_INTENT      :: 1;
+
+    DESTINATION_COLOR_CONTEXT    :: 2;
+
+    DESTINATION_RENDERING_INTENT :: 3;
+
+    ALPHA_MODE                   :: 4;
+
+    QUALITY                      :: 5;
+    FORCE_DWORD                  :: -1;
+
+    D2D1_COLORMANAGEMENT_PROP_SOURCE_COLOR_CONTEXT         :: SOURCE_COLOR_CONTEXT;
+
+    D2D1_COLORMANAGEMENT_PROP_SOURCE_RENDERING_INTENT      :: SOURCE_RENDERING_INTENT;
+
+    D2D1_COLORMANAGEMENT_PROP_DESTINATION_COLOR_CONTEXT    :: DESTINATION_COLOR_CONTEXT;
+
+    D2D1_COLORMANAGEMENT_PROP_DESTINATION_RENDERING_INTENT :: DESTINATION_RENDERING_INTENT;
+
+    D2D1_COLORMANAGEMENT_PROP_ALPHA_MODE                   :: ALPHA_MODE;
+
+    D2D1_COLORMANAGEMENT_PROP_QUALITY                      :: QUALITY;
+    D2D1_COLORMANAGEMENT_PROP_FORCE_DWORD                  :: FORCE_DWORD;
+}
+
+D2D1_COLORMANAGEMENT_ALPHA_MODE :: enum s32 {
+    PREMULTIPLIED :: 1;
+    STRAIGHT      :: 2;
+    FORCE_DWORD   :: -1;
+
+    D2D1_COLORMANAGEMENT_ALPHA_MODE_PREMULTIPLIED :: PREMULTIPLIED;
+    D2D1_COLORMANAGEMENT_ALPHA_MODE_STRAIGHT      :: STRAIGHT;
+    D2D1_COLORMANAGEMENT_ALPHA_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_COLORMANAGEMENT_QUALITY :: enum s32 {
+    PROOF       :: 0;
+    NORMAL      :: 1;
+    BEST        :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_COLORMANAGEMENT_QUALITY_PROOF       :: PROOF;
+    D2D1_COLORMANAGEMENT_QUALITY_NORMAL      :: NORMAL;
+    D2D1_COLORMANAGEMENT_QUALITY_BEST        :: BEST;
+    D2D1_COLORMANAGEMENT_QUALITY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_COLORMANAGEMENT_RENDERING_INTENT :: enum s32 {
+    PERCEPTUAL            :: 0;
+    RELATIVE_COLORIMETRIC :: 1;
+    SATURATION            :: 2;
+    ABSOLUTE_COLORIMETRIC :: 3;
+    FORCE_DWORD           :: -1;
+
+    D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL            :: PERCEPTUAL;
+    D2D1_COLORMANAGEMENT_RENDERING_INTENT_RELATIVE_COLORIMETRIC :: RELATIVE_COLORIMETRIC;
+    D2D1_COLORMANAGEMENT_RENDERING_INTENT_SATURATION            :: SATURATION;
+    D2D1_COLORMANAGEMENT_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC :: ABSOLUTE_COLORIMETRIC;
+    D2D1_COLORMANAGEMENT_RENDERING_INTENT_FORCE_DWORD           :: FORCE_DWORD;
+}
+
+D2D1_HISTOGRAM_PROP :: enum s32 {
+    NUM_BINS         :: 0;
+
+    CHANNEL_SELECT   :: 1;
+
+    HISTOGRAM_OUTPUT :: 2;
+    FORCE_DWORD      :: -1;
+
+    D2D1_HISTOGRAM_PROP_NUM_BINS         :: NUM_BINS;
+
+    D2D1_HISTOGRAM_PROP_CHANNEL_SELECT   :: CHANNEL_SELECT;
+
+    D2D1_HISTOGRAM_PROP_HISTOGRAM_OUTPUT :: HISTOGRAM_OUTPUT;
+    D2D1_HISTOGRAM_PROP_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_POINTSPECULAR_PROP :: enum s32 {
+    LIGHT_POSITION     :: 0;
+
+    SPECULAR_EXPONENT  :: 1;
+
+    SPECULAR_CONSTANT  :: 2;
+
+    SURFACE_SCALE      :: 3;
+
+    COLOR              :: 4;
+
+    KERNEL_UNIT_LENGTH :: 5;
+
+    SCALE_MODE         :: 6;
+    FORCE_DWORD        :: -1;
+
+    D2D1_POINTSPECULAR_PROP_LIGHT_POSITION     :: LIGHT_POSITION;
+
+    D2D1_POINTSPECULAR_PROP_SPECULAR_EXPONENT  :: SPECULAR_EXPONENT;
+
+    D2D1_POINTSPECULAR_PROP_SPECULAR_CONSTANT  :: SPECULAR_CONSTANT;
+
+    D2D1_POINTSPECULAR_PROP_SURFACE_SCALE      :: SURFACE_SCALE;
+
+    D2D1_POINTSPECULAR_PROP_COLOR              :: COLOR;
+
+    D2D1_POINTSPECULAR_PROP_KERNEL_UNIT_LENGTH :: KERNEL_UNIT_LENGTH;
+
+    D2D1_POINTSPECULAR_PROP_SCALE_MODE         :: SCALE_MODE;
+    D2D1_POINTSPECULAR_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_POINTSPECULAR_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_POINTSPECULAR_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_POINTSPECULAR_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_POINTSPECULAR_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_POINTSPECULAR_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_POINTSPECULAR_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_POINTSPECULAR_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_POINTSPECULAR_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SPOTSPECULAR_PROP :: enum s32 {
+    LIGHT_POSITION      :: 0;
+
+    POINTS_AT           :: 1;
+
+    FOCUS               :: 2;
+
+    LIMITING_CONE_ANGLE :: 3;
+
+    SPECULAR_EXPONENT   :: 4;
+
+    SPECULAR_CONSTANT   :: 5;
+
+    SURFACE_SCALE       :: 6;
+
+    COLOR               :: 7;
+
+    KERNEL_UNIT_LENGTH  :: 8;
+
+    SCALE_MODE          :: 9;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SPOTSPECULAR_PROP_LIGHT_POSITION      :: LIGHT_POSITION;
+
+    D2D1_SPOTSPECULAR_PROP_POINTS_AT           :: POINTS_AT;
+
+    D2D1_SPOTSPECULAR_PROP_FOCUS               :: FOCUS;
+
+    D2D1_SPOTSPECULAR_PROP_LIMITING_CONE_ANGLE :: LIMITING_CONE_ANGLE;
+
+    D2D1_SPOTSPECULAR_PROP_SPECULAR_EXPONENT   :: SPECULAR_EXPONENT;
+
+    D2D1_SPOTSPECULAR_PROP_SPECULAR_CONSTANT   :: SPECULAR_CONSTANT;
+
+    D2D1_SPOTSPECULAR_PROP_SURFACE_SCALE       :: SURFACE_SCALE;
+
+    D2D1_SPOTSPECULAR_PROP_COLOR               :: COLOR;
+
+    D2D1_SPOTSPECULAR_PROP_KERNEL_UNIT_LENGTH  :: KERNEL_UNIT_LENGTH;
+
+    D2D1_SPOTSPECULAR_PROP_SCALE_MODE          :: SCALE_MODE;
+    D2D1_SPOTSPECULAR_PROP_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SPOTSPECULAR_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SPOTSPECULAR_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_SPOTSPECULAR_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_SPOTSPECULAR_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_SPOTSPECULAR_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_SPOTSPECULAR_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_SPOTSPECULAR_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_SPOTSPECULAR_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_DISTANTSPECULAR_PROP :: enum s32 {
+    AZIMUTH            :: 0;
+
+    ELEVATION          :: 1;
+
+    SPECULAR_EXPONENT  :: 2;
+
+    SPECULAR_CONSTANT  :: 3;
+
+    SURFACE_SCALE      :: 4;
+
+    COLOR              :: 5;
+
+    KERNEL_UNIT_LENGTH :: 6;
+
+    SCALE_MODE         :: 7;
+    FORCE_DWORD        :: -1;
+
+    D2D1_DISTANTSPECULAR_PROP_AZIMUTH            :: AZIMUTH;
+
+    D2D1_DISTANTSPECULAR_PROP_ELEVATION          :: ELEVATION;
+
+    D2D1_DISTANTSPECULAR_PROP_SPECULAR_EXPONENT  :: SPECULAR_EXPONENT;
+
+    D2D1_DISTANTSPECULAR_PROP_SPECULAR_CONSTANT  :: SPECULAR_CONSTANT;
+
+    D2D1_DISTANTSPECULAR_PROP_SURFACE_SCALE      :: SURFACE_SCALE;
+
+    D2D1_DISTANTSPECULAR_PROP_COLOR              :: COLOR;
+
+    D2D1_DISTANTSPECULAR_PROP_KERNEL_UNIT_LENGTH :: KERNEL_UNIT_LENGTH;
+
+    D2D1_DISTANTSPECULAR_PROP_SCALE_MODE         :: SCALE_MODE;
+    D2D1_DISTANTSPECULAR_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_DISTANTSPECULAR_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_DISTANTSPECULAR_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_DISTANTSPECULAR_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_POINTDIFFUSE_PROP :: enum s32 {
+    LIGHT_POSITION     :: 0;
+
+    DIFFUSE_CONSTANT   :: 1;
+
+    SURFACE_SCALE      :: 2;
+
+    COLOR              :: 3;
+
+    KERNEL_UNIT_LENGTH :: 4;
+
+    SCALE_MODE         :: 5;
+    FORCE_DWORD        :: -1;
+
+    D2D1_POINTDIFFUSE_PROP_LIGHT_POSITION     :: LIGHT_POSITION;
+
+    D2D1_POINTDIFFUSE_PROP_DIFFUSE_CONSTANT   :: DIFFUSE_CONSTANT;
+
+    D2D1_POINTDIFFUSE_PROP_SURFACE_SCALE      :: SURFACE_SCALE;
+
+    D2D1_POINTDIFFUSE_PROP_COLOR              :: COLOR;
+
+    D2D1_POINTDIFFUSE_PROP_KERNEL_UNIT_LENGTH :: KERNEL_UNIT_LENGTH;
+
+    D2D1_POINTDIFFUSE_PROP_SCALE_MODE         :: SCALE_MODE;
+    D2D1_POINTDIFFUSE_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_POINTDIFFUSE_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_POINTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_POINTDIFFUSE_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_POINTDIFFUSE_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_POINTDIFFUSE_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_POINTDIFFUSE_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_POINTDIFFUSE_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_POINTDIFFUSE_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SPOTDIFFUSE_PROP :: enum s32 {
+    LIGHT_POSITION      :: 0;
+
+    POINTS_AT           :: 1;
+
+    FOCUS               :: 2;
+
+    LIMITING_CONE_ANGLE :: 3;
+
+    DIFFUSE_CONSTANT    :: 4;
+
+    SURFACE_SCALE       :: 5;
+
+    COLOR               :: 6;
+
+    KERNEL_UNIT_LENGTH  :: 7;
+
+    SCALE_MODE          :: 8;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SPOTDIFFUSE_PROP_LIGHT_POSITION      :: LIGHT_POSITION;
+
+    D2D1_SPOTDIFFUSE_PROP_POINTS_AT           :: POINTS_AT;
+
+    D2D1_SPOTDIFFUSE_PROP_FOCUS               :: FOCUS;
+
+    D2D1_SPOTDIFFUSE_PROP_LIMITING_CONE_ANGLE :: LIMITING_CONE_ANGLE;
+
+    D2D1_SPOTDIFFUSE_PROP_DIFFUSE_CONSTANT    :: DIFFUSE_CONSTANT;
+
+    D2D1_SPOTDIFFUSE_PROP_SURFACE_SCALE       :: SURFACE_SCALE;
+
+    D2D1_SPOTDIFFUSE_PROP_COLOR               :: COLOR;
+
+    D2D1_SPOTDIFFUSE_PROP_KERNEL_UNIT_LENGTH  :: KERNEL_UNIT_LENGTH;
+
+    D2D1_SPOTDIFFUSE_PROP_SCALE_MODE          :: SCALE_MODE;
+    D2D1_SPOTDIFFUSE_PROP_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SPOTDIFFUSE_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SPOTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_SPOTDIFFUSE_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_DISTANTDIFFUSE_PROP :: enum s32 {
+    AZIMUTH            :: 0;
+
+    ELEVATION          :: 1;
+
+    DIFFUSE_CONSTANT   :: 2;
+
+    SURFACE_SCALE      :: 3;
+
+    COLOR              :: 4;
+
+    KERNEL_UNIT_LENGTH :: 5;
+
+    SCALE_MODE         :: 6;
+    FORCE_DWORD        :: -1;
+
+    D2D1_DISTANTDIFFUSE_PROP_AZIMUTH            :: AZIMUTH;
+
+    D2D1_DISTANTDIFFUSE_PROP_ELEVATION          :: ELEVATION;
+
+    D2D1_DISTANTDIFFUSE_PROP_DIFFUSE_CONSTANT   :: DIFFUSE_CONSTANT;
+
+    D2D1_DISTANTDIFFUSE_PROP_SURFACE_SCALE      :: SURFACE_SCALE;
+
+    D2D1_DISTANTDIFFUSE_PROP_COLOR              :: COLOR;
+
+    D2D1_DISTANTDIFFUSE_PROP_KERNEL_UNIT_LENGTH :: KERNEL_UNIT_LENGTH;
+
+    D2D1_DISTANTDIFFUSE_PROP_SCALE_MODE         :: SCALE_MODE;
+    D2D1_DISTANTDIFFUSE_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_DISTANTDIFFUSE_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_DISTANTDIFFUSE_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_FLOOD_PROP :: enum s32 {
+    COLOR       :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_FLOOD_PROP_COLOR       :: COLOR;
+    D2D1_FLOOD_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_LINEARTRANSFER_PROP :: enum s32 {
+    RED_Y_INTERCEPT   :: 0;
+
+    RED_SLOPE         :: 1;
+
+    RED_DISABLE       :: 2;
+
+    GREEN_Y_INTERCEPT :: 3;
+
+    GREEN_SLOPE       :: 4;
+
+    GREEN_DISABLE     :: 5;
+
+    BLUE_Y_INTERCEPT  :: 6;
+
+    BLUE_SLOPE        :: 7;
+
+    BLUE_DISABLE      :: 8;
+
+    ALPHA_Y_INTERCEPT :: 9;
+
+    ALPHA_SLOPE       :: 10;
+
+    ALPHA_DISABLE     :: 11;
+
+    CLAMP_OUTPUT      :: 12;
+    FORCE_DWORD       :: -1;
+
+    D2D1_LINEARTRANSFER_PROP_RED_Y_INTERCEPT   :: RED_Y_INTERCEPT;
+
+    D2D1_LINEARTRANSFER_PROP_RED_SLOPE         :: RED_SLOPE;
+
+    D2D1_LINEARTRANSFER_PROP_RED_DISABLE       :: RED_DISABLE;
+
+    D2D1_LINEARTRANSFER_PROP_GREEN_Y_INTERCEPT :: GREEN_Y_INTERCEPT;
+
+    D2D1_LINEARTRANSFER_PROP_GREEN_SLOPE       :: GREEN_SLOPE;
+
+    D2D1_LINEARTRANSFER_PROP_GREEN_DISABLE     :: GREEN_DISABLE;
+
+    D2D1_LINEARTRANSFER_PROP_BLUE_Y_INTERCEPT  :: BLUE_Y_INTERCEPT;
+
+    D2D1_LINEARTRANSFER_PROP_BLUE_SLOPE        :: BLUE_SLOPE;
+
+    D2D1_LINEARTRANSFER_PROP_BLUE_DISABLE      :: BLUE_DISABLE;
+
+    D2D1_LINEARTRANSFER_PROP_ALPHA_Y_INTERCEPT :: ALPHA_Y_INTERCEPT;
+
+    D2D1_LINEARTRANSFER_PROP_ALPHA_SLOPE       :: ALPHA_SLOPE;
+
+    D2D1_LINEARTRANSFER_PROP_ALPHA_DISABLE     :: ALPHA_DISABLE;
+
+    D2D1_LINEARTRANSFER_PROP_CLAMP_OUTPUT      :: CLAMP_OUTPUT;
+    D2D1_LINEARTRANSFER_PROP_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_GAMMATRANSFER_PROP :: enum s32 {
+    RED_AMPLITUDE   :: 0;
+
+    RED_EXPONENT    :: 1;
+
+    RED_OFFSET      :: 2;
+
+    RED_DISABLE     :: 3;
+
+    GREEN_AMPLITUDE :: 4;
+
+    GREEN_EXPONENT  :: 5;
+
+    GREEN_OFFSET    :: 6;
+
+    GREEN_DISABLE   :: 7;
+
+    BLUE_AMPLITUDE  :: 8;
+
+    BLUE_EXPONENT   :: 9;
+
+    BLUE_OFFSET     :: 10;
+
+    BLUE_DISABLE    :: 11;
+
+    ALPHA_AMPLITUDE :: 12;
+
+    ALPHA_EXPONENT  :: 13;
+
+    ALPHA_OFFSET    :: 14;
+
+    ALPHA_DISABLE   :: 15;
+
+    CLAMP_OUTPUT    :: 16;
+    FORCE_DWORD     :: -1;
+
+    D2D1_GAMMATRANSFER_PROP_RED_AMPLITUDE   :: RED_AMPLITUDE;
+
+    D2D1_GAMMATRANSFER_PROP_RED_EXPONENT    :: RED_EXPONENT;
+
+    D2D1_GAMMATRANSFER_PROP_RED_OFFSET      :: RED_OFFSET;
+
+    D2D1_GAMMATRANSFER_PROP_RED_DISABLE     :: RED_DISABLE;
+
+    D2D1_GAMMATRANSFER_PROP_GREEN_AMPLITUDE :: GREEN_AMPLITUDE;
+
+    D2D1_GAMMATRANSFER_PROP_GREEN_EXPONENT  :: GREEN_EXPONENT;
+
+    D2D1_GAMMATRANSFER_PROP_GREEN_OFFSET    :: GREEN_OFFSET;
+
+    D2D1_GAMMATRANSFER_PROP_GREEN_DISABLE   :: GREEN_DISABLE;
+
+    D2D1_GAMMATRANSFER_PROP_BLUE_AMPLITUDE  :: BLUE_AMPLITUDE;
+
+    D2D1_GAMMATRANSFER_PROP_BLUE_EXPONENT   :: BLUE_EXPONENT;
+
+    D2D1_GAMMATRANSFER_PROP_BLUE_OFFSET     :: BLUE_OFFSET;
+
+    D2D1_GAMMATRANSFER_PROP_BLUE_DISABLE    :: BLUE_DISABLE;
+
+    D2D1_GAMMATRANSFER_PROP_ALPHA_AMPLITUDE :: ALPHA_AMPLITUDE;
+
+    D2D1_GAMMATRANSFER_PROP_ALPHA_EXPONENT  :: ALPHA_EXPONENT;
+
+    D2D1_GAMMATRANSFER_PROP_ALPHA_OFFSET    :: ALPHA_OFFSET;
+
+    D2D1_GAMMATRANSFER_PROP_ALPHA_DISABLE   :: ALPHA_DISABLE;
+
+    D2D1_GAMMATRANSFER_PROP_CLAMP_OUTPUT    :: CLAMP_OUTPUT;
+    D2D1_GAMMATRANSFER_PROP_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_TABLETRANSFER_PROP :: enum s32 {
+    RED_TABLE     :: 0;
+
+    RED_DISABLE   :: 1;
+
+    GREEN_TABLE   :: 2;
+
+    GREEN_DISABLE :: 3;
+
+    BLUE_TABLE    :: 4;
+
+    BLUE_DISABLE  :: 5;
+
+    ALPHA_TABLE   :: 6;
+
+    ALPHA_DISABLE :: 7;
+
+    CLAMP_OUTPUT  :: 8;
+    FORCE_DWORD   :: -1;
+
+    D2D1_TABLETRANSFER_PROP_RED_TABLE     :: RED_TABLE;
+
+    D2D1_TABLETRANSFER_PROP_RED_DISABLE   :: RED_DISABLE;
+
+    D2D1_TABLETRANSFER_PROP_GREEN_TABLE   :: GREEN_TABLE;
+
+    D2D1_TABLETRANSFER_PROP_GREEN_DISABLE :: GREEN_DISABLE;
+
+    D2D1_TABLETRANSFER_PROP_BLUE_TABLE    :: BLUE_TABLE;
+
+    D2D1_TABLETRANSFER_PROP_BLUE_DISABLE  :: BLUE_DISABLE;
+
+    D2D1_TABLETRANSFER_PROP_ALPHA_TABLE   :: ALPHA_TABLE;
+
+    D2D1_TABLETRANSFER_PROP_ALPHA_DISABLE :: ALPHA_DISABLE;
+
+    D2D1_TABLETRANSFER_PROP_CLAMP_OUTPUT  :: CLAMP_OUTPUT;
+    D2D1_TABLETRANSFER_PROP_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_DISCRETETRANSFER_PROP :: enum s32 {
+    RED_TABLE     :: 0;
+
+    RED_DISABLE   :: 1;
+
+    GREEN_TABLE   :: 2;
+
+    GREEN_DISABLE :: 3;
+
+    BLUE_TABLE    :: 4;
+
+    BLUE_DISABLE  :: 5;
+
+    ALPHA_TABLE   :: 6;
+
+    ALPHA_DISABLE :: 7;
+
+    CLAMP_OUTPUT  :: 8;
+    FORCE_DWORD   :: -1;
+
+    D2D1_DISCRETETRANSFER_PROP_RED_TABLE     :: RED_TABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_RED_DISABLE   :: RED_DISABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_GREEN_TABLE   :: GREEN_TABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_GREEN_DISABLE :: GREEN_DISABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_BLUE_TABLE    :: BLUE_TABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_BLUE_DISABLE  :: BLUE_DISABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_ALPHA_TABLE   :: ALPHA_TABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_ALPHA_DISABLE :: ALPHA_DISABLE;
+
+    D2D1_DISCRETETRANSFER_PROP_CLAMP_OUTPUT  :: CLAMP_OUTPUT;
+    D2D1_DISCRETETRANSFER_PROP_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_CONVOLVEMATRIX_PROP :: enum s32 {
+    KERNEL_UNIT_LENGTH :: 0;
+
+    SCALE_MODE         :: 1;
+
+    KERNEL_SIZE_X      :: 2;
+
+    KERNEL_SIZE_Y      :: 3;
+
+    KERNEL_MATRIX      :: 4;
+
+    DIVISOR            :: 5;
+
+    BIAS               :: 6;
+
+    KERNEL_OFFSET      :: 7;
+
+    PRESERVE_ALPHA     :: 8;
+
+    BORDER_MODE        :: 9;
+
+    CLAMP_OUTPUT       :: 10;
+    FORCE_DWORD        :: -1;
+
+    D2D1_CONVOLVEMATRIX_PROP_KERNEL_UNIT_LENGTH :: KERNEL_UNIT_LENGTH;
+
+    D2D1_CONVOLVEMATRIX_PROP_SCALE_MODE         :: SCALE_MODE;
+
+    D2D1_CONVOLVEMATRIX_PROP_KERNEL_SIZE_X      :: KERNEL_SIZE_X;
+
+    D2D1_CONVOLVEMATRIX_PROP_KERNEL_SIZE_Y      :: KERNEL_SIZE_Y;
+
+    D2D1_CONVOLVEMATRIX_PROP_KERNEL_MATRIX      :: KERNEL_MATRIX;
+
+    D2D1_CONVOLVEMATRIX_PROP_DIVISOR            :: DIVISOR;
+
+    D2D1_CONVOLVEMATRIX_PROP_BIAS               :: BIAS;
+
+    D2D1_CONVOLVEMATRIX_PROP_KERNEL_OFFSET      :: KERNEL_OFFSET;
+
+    D2D1_CONVOLVEMATRIX_PROP_PRESERVE_ALPHA     :: PRESERVE_ALPHA;
+
+    D2D1_CONVOLVEMATRIX_PROP_BORDER_MODE        :: BORDER_MODE;
+
+    D2D1_CONVOLVEMATRIX_PROP_CLAMP_OUTPUT       :: CLAMP_OUTPUT;
+    D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_CONVOLVEMATRIX_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_CONVOLVEMATRIX_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_BRIGHTNESS_PROP :: enum s32 {
+    WHITE_POINT :: 0;
+
+    BLACK_POINT :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_BRIGHTNESS_PROP_WHITE_POINT :: WHITE_POINT;
+
+    D2D1_BRIGHTNESS_PROP_BLACK_POINT :: BLACK_POINT;
+    D2D1_BRIGHTNESS_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_ARITHMETICCOMPOSITE_PROP :: enum s32 {
+    COEFFICIENTS :: 0;
+
+    CLAMP_OUTPUT :: 1;
+    FORCE_DWORD  :: -1;
+
+    D2D1_ARITHMETICCOMPOSITE_PROP_COEFFICIENTS :: COEFFICIENTS;
+
+    D2D1_ARITHMETICCOMPOSITE_PROP_CLAMP_OUTPUT :: CLAMP_OUTPUT;
+    D2D1_ARITHMETICCOMPOSITE_PROP_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_CROP_PROP :: enum s32 {
+    RECT        :: 0;
+
+    BORDER_MODE :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_CROP_PROP_RECT        :: RECT;
+
+    D2D1_CROP_PROP_BORDER_MODE :: BORDER_MODE;
+    D2D1_CROP_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BORDER_PROP :: enum s32 {
+    EDGE_MODE_X :: 0;
+
+    EDGE_MODE_Y :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_BORDER_PROP_EDGE_MODE_X :: EDGE_MODE_X;
+
+    D2D1_BORDER_PROP_EDGE_MODE_Y :: EDGE_MODE_Y;
+    D2D1_BORDER_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BORDER_EDGE_MODE :: enum s32 {
+    CLAMP       :: 0;
+    WRAP        :: 1;
+    MIRROR      :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_BORDER_EDGE_MODE_CLAMP       :: CLAMP;
+    D2D1_BORDER_EDGE_MODE_WRAP        :: WRAP;
+    D2D1_BORDER_EDGE_MODE_MIRROR      :: MIRROR;
+    D2D1_BORDER_EDGE_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_MORPHOLOGY_PROP :: enum s32 {
+    MODE        :: 0;
+
+    WIDTH       :: 1;
+
+    HEIGHT      :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_MORPHOLOGY_PROP_MODE        :: MODE;
+
+    D2D1_MORPHOLOGY_PROP_WIDTH       :: WIDTH;
+
+    D2D1_MORPHOLOGY_PROP_HEIGHT      :: HEIGHT;
+    D2D1_MORPHOLOGY_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_MORPHOLOGY_MODE :: enum s32 {
+    ERODE       :: 0;
+    DILATE      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_MORPHOLOGY_MODE_ERODE       :: ERODE;
+    D2D1_MORPHOLOGY_MODE_DILATE      :: DILATE;
+    D2D1_MORPHOLOGY_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_TILE_PROP :: enum s32 {
+    RECT        :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_TILE_PROP_RECT        :: RECT;
+    D2D1_TILE_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_ATLAS_PROP :: enum s32 {
+    INPUT_RECT         :: 0;
+
+    INPUT_PADDING_RECT :: 1;
+    FORCE_DWORD        :: -1;
+
+    D2D1_ATLAS_PROP_INPUT_RECT         :: INPUT_RECT;
+
+    D2D1_ATLAS_PROP_INPUT_PADDING_RECT :: INPUT_PADDING_RECT;
+    D2D1_ATLAS_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_OPACITYMETADATA_PROP :: enum s32 {
+    INPUT_OPAQUE_RECT :: 0;
+    FORCE_DWORD       :: -1;
+
+    D2D1_OPACITYMETADATA_PROP_INPUT_OPAQUE_RECT :: INPUT_OPAQUE_RECT;
+    D2D1_OPACITYMETADATA_PROP_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+IWICColorContext :: struct {}
+IWICImagingFactory :: struct {}
+IPrintDocumentPackageTarget :: struct {}
+
+D2D1_PROPERTY_BINDING :: struct {}
+
+PD2D1_EFFECT_FACTORY :: #type (effectImpl: **IUnknown) -> HRESULT #c_call;
+
+D2D1_PROPERTY_TYPE :: enum s32 {
+    UNKNOWN       :: 0;
+    STRING        :: 1;
+    BOOL          :: 2;
+    UINT32        :: 3;
+    INT32         :: 4;
+    FLOAT         :: 5;
+    VECTOR2       :: 6;
+    VECTOR3       :: 7;
+    VECTOR4       :: 8;
+    BLOB          :: 9;
+    IUNKNOWN      :: 10;
+    ENUM          :: 11;
+    ARRAY         :: 12;
+    CLSID         :: 13;
+    MATRIX_3X2    :: 14;
+    MATRIX_4X3    :: 15;
+    MATRIX_4X4    :: 16;
+    MATRIX_5X4    :: 17;
+    COLOR_CONTEXT :: 18;
+    FORCE_DWORD   :: -1;
+
+    D2D1_PROPERTY_TYPE_UNKNOWN       :: UNKNOWN;
+    D2D1_PROPERTY_TYPE_STRING        :: STRING;
+    D2D1_PROPERTY_TYPE_BOOL          :: BOOL;
+    D2D1_PROPERTY_TYPE_UINT32        :: UINT32;
+    D2D1_PROPERTY_TYPE_INT32         :: INT32;
+    D2D1_PROPERTY_TYPE_FLOAT         :: FLOAT;
+    D2D1_PROPERTY_TYPE_VECTOR2       :: VECTOR2;
+    D2D1_PROPERTY_TYPE_VECTOR3       :: VECTOR3;
+    D2D1_PROPERTY_TYPE_VECTOR4       :: VECTOR4;
+    D2D1_PROPERTY_TYPE_BLOB          :: BLOB;
+    D2D1_PROPERTY_TYPE_IUNKNOWN      :: IUNKNOWN;
+    D2D1_PROPERTY_TYPE_ENUM          :: ENUM;
+    D2D1_PROPERTY_TYPE_ARRAY         :: ARRAY;
+    D2D1_PROPERTY_TYPE_CLSID         :: CLSID;
+    D2D1_PROPERTY_TYPE_MATRIX_3X2    :: MATRIX_3X2;
+    D2D1_PROPERTY_TYPE_MATRIX_4X3    :: MATRIX_4X3;
+    D2D1_PROPERTY_TYPE_MATRIX_4X4    :: MATRIX_4X4;
+    D2D1_PROPERTY_TYPE_MATRIX_5X4    :: MATRIX_5X4;
+    D2D1_PROPERTY_TYPE_COLOR_CONTEXT :: COLOR_CONTEXT;
+    D2D1_PROPERTY_TYPE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_PROPERTY :: enum s32 {
+    CLSID       :: -2147483648;
+    DISPLAYNAME :: -2147483647;
+    AUTHOR      :: -2147483646;
+    CATEGORY    :: -2147483645;
+    DESCRIPTION :: -2147483644;
+    INPUTS      :: -2147483643;
+    CACHED      :: -2147483642;
+    PRECISION   :: -2147483641;
+    MIN_INPUTS  :: -2147483640;
+    MAX_INPUTS  :: -2147483639;
+    FORCE_DWORD :: -1;
+
+    D2D1_PROPERTY_CLSID       :: CLSID;
+    D2D1_PROPERTY_DISPLAYNAME :: DISPLAYNAME;
+    D2D1_PROPERTY_AUTHOR      :: AUTHOR;
+    D2D1_PROPERTY_CATEGORY    :: CATEGORY;
+    D2D1_PROPERTY_DESCRIPTION :: DESCRIPTION;
+    D2D1_PROPERTY_INPUTS      :: INPUTS;
+    D2D1_PROPERTY_CACHED      :: CACHED;
+    D2D1_PROPERTY_PRECISION   :: PRECISION;
+    D2D1_PROPERTY_MIN_INPUTS  :: MIN_INPUTS;
+    D2D1_PROPERTY_MAX_INPUTS  :: MAX_INPUTS;
+    D2D1_PROPERTY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SUBPROPERTY :: enum s32 {
+    DISPLAYNAME :: -2147483648;
+    ISREADONLY  :: -2147483647;
+    MIN         :: -2147483646;
+    MAX         :: -2147483645;
+    DEFAULT     :: -2147483644;
+    FIELDS      :: -2147483643;
+    INDEX       :: -2147483642;
+    FORCE_DWORD :: -1;
+
+    D2D1_SUBPROPERTY_DISPLAYNAME :: DISPLAYNAME;
+    D2D1_SUBPROPERTY_ISREADONLY  :: ISREADONLY;
+    D2D1_SUBPROPERTY_MIN         :: MIN;
+    D2D1_SUBPROPERTY_MAX         :: MAX;
+    D2D1_SUBPROPERTY_DEFAULT     :: DEFAULT;
+    D2D1_SUBPROPERTY_FIELDS      :: FIELDS;
+    D2D1_SUBPROPERTY_INDEX       :: INDEX;
+    D2D1_SUBPROPERTY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_BITMAP_OPTIONS :: enum s32 {
+    NONE           :: 0;
+
+    TARGET         :: 1;
+
+    CANNOT_DRAW    :: 2;
+
+    CPU_READ       :: 4;
+
+    GDI_COMPATIBLE :: 8;
+    FORCE_DWORD    :: -1;
+
+    D2D1_BITMAP_OPTIONS_NONE           :: NONE;
+
+    D2D1_BITMAP_OPTIONS_TARGET         :: TARGET;
+
+    D2D1_BITMAP_OPTIONS_CANNOT_DRAW    :: CANNOT_DRAW;
+
+    D2D1_BITMAP_OPTIONS_CPU_READ       :: CPU_READ;
+
+    D2D1_BITMAP_OPTIONS_GDI_COMPATIBLE :: GDI_COMPATIBLE;
+    D2D1_BITMAP_OPTIONS_FORCE_DWORD    :: FORCE_DWORD;
+}
+
+D2D1_COMPOSITE_MODE :: enum s32 {
+    SOURCE_OVER         :: 0;
+    DESTINATION_OVER    :: 1;
+    SOURCE_IN           :: 2;
+    DESTINATION_IN      :: 3;
+    SOURCE_OUT          :: 4;
+    DESTINATION_OUT     :: 5;
+    SOURCE_ATOP         :: 6;
+    DESTINATION_ATOP    :: 7;
+    XOR                 :: 8;
+    PLUS                :: 9;
+    SOURCE_COPY         :: 10;
+    BOUNDED_SOURCE_COPY :: 11;
+    MASK_INVERT         :: 12;
+    FORCE_DWORD         :: -1;
+
+    D2D1_COMPOSITE_MODE_SOURCE_OVER         :: SOURCE_OVER;
+    D2D1_COMPOSITE_MODE_DESTINATION_OVER    :: DESTINATION_OVER;
+    D2D1_COMPOSITE_MODE_SOURCE_IN           :: SOURCE_IN;
+    D2D1_COMPOSITE_MODE_DESTINATION_IN      :: DESTINATION_IN;
+    D2D1_COMPOSITE_MODE_SOURCE_OUT          :: SOURCE_OUT;
+    D2D1_COMPOSITE_MODE_DESTINATION_OUT     :: DESTINATION_OUT;
+    D2D1_COMPOSITE_MODE_SOURCE_ATOP         :: SOURCE_ATOP;
+    D2D1_COMPOSITE_MODE_DESTINATION_ATOP    :: DESTINATION_ATOP;
+    D2D1_COMPOSITE_MODE_XOR                 :: XOR;
+    D2D1_COMPOSITE_MODE_PLUS                :: PLUS;
+    D2D1_COMPOSITE_MODE_SOURCE_COPY         :: SOURCE_COPY;
+    D2D1_COMPOSITE_MODE_BOUNDED_SOURCE_COPY :: BOUNDED_SOURCE_COPY;
+    D2D1_COMPOSITE_MODE_MASK_INVERT         :: MASK_INVERT;
+    D2D1_COMPOSITE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_BUFFER_PRECISION :: enum s32 {
+    UNKNOWN          :: 0;
+    _8BPC_UNORM      :: 1;
+    _8BPC_UNORM_SRGB :: 2;
+    _16BPC_UNORM     :: 3;
+    _16BPC_FLOAT     :: 4;
+    _32BPC_FLOAT     :: 5;
+    FORCE_DWORD      :: -1;
+
+    D2D1_BUFFER_PRECISION_UNKNOWN         :: UNKNOWN;
+    D2D1_BUFFER_PRECISION_8BPC_UNORM      :: _8BPC_UNORM;
+    D2D1_BUFFER_PRECISION_8BPC_UNORM_SRGB :: _8BPC_UNORM_SRGB;
+    D2D1_BUFFER_PRECISION_16BPC_UNORM     :: _16BPC_UNORM;
+    D2D1_BUFFER_PRECISION_16BPC_FLOAT     :: _16BPC_FLOAT;
+    D2D1_BUFFER_PRECISION_32BPC_FLOAT     :: _32BPC_FLOAT;
+    D2D1_BUFFER_PRECISION_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_MAP_OPTIONS :: enum s32 {
+    NONE        :: 0;
+
+    READ        :: 1;
+
+    WRITE       :: 2;
+
+    DISCARD     :: 4;
+    FORCE_DWORD :: -1;
+
+    D2D1_MAP_OPTIONS_NONE        :: NONE;
+
+    D2D1_MAP_OPTIONS_READ        :: READ;
+
+    D2D1_MAP_OPTIONS_WRITE       :: WRITE;
+
+    D2D1_MAP_OPTIONS_DISCARD     :: DISCARD;
+    D2D1_MAP_OPTIONS_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_UNIT_MODE :: enum s32 {
+    DIPS        :: 0;
+    PIXELS      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_UNIT_MODE_DIPS        :: DIPS;
+    D2D1_UNIT_MODE_PIXELS      :: PIXELS;
+    D2D1_UNIT_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_COLOR_SPACE :: enum s32 {
+    CUSTOM      :: 0;
+
+    SRGB        :: 1;
+
+    SCRGB       :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_COLOR_SPACE_CUSTOM      :: CUSTOM;
+
+    D2D1_COLOR_SPACE_SRGB        :: SRGB;
+
+    D2D1_COLOR_SPACE_SCRGB       :: SCRGB;
+    D2D1_COLOR_SPACE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DEVICE_CONTEXT_OPTIONS :: enum s32 {
+    NONE                               :: 0;
+
+    ENABLE_MULTITHREADED_OPTIMIZATIONS :: 1;
+    FORCE_DWORD                        :: -1;
+
+    D2D1_DEVICE_CONTEXT_OPTIONS_NONE                               :: NONE;
+
+    D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS :: ENABLE_MULTITHREADED_OPTIMIZATIONS;
+    D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD                        :: FORCE_DWORD;
+}
+
+D2D1_STROKE_TRANSFORM_TYPE :: enum s32 {
+    NORMAL      :: 0;
+
+    FIXED       :: 1;
+
+    HAIRLINE    :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_STROKE_TRANSFORM_TYPE_NORMAL      :: NORMAL;
+
+    D2D1_STROKE_TRANSFORM_TYPE_FIXED       :: FIXED;
+
+    D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE    :: HAIRLINE;
+    D2D1_STROKE_TRANSFORM_TYPE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_PRIMITIVE_BLEND :: enum s32 {
+    SOURCE_OVER :: 0;
+    COPY        :: 1;
+    MIN         :: 2;
+    ADD         :: 3;
+    MAX         :: 4;
+    FORCE_DWORD :: -1;
+
+    D2D1_PRIMITIVE_BLEND_SOURCE_OVER :: SOURCE_OVER;
+    D2D1_PRIMITIVE_BLEND_COPY        :: COPY;
+    D2D1_PRIMITIVE_BLEND_MIN         :: MIN;
+    D2D1_PRIMITIVE_BLEND_ADD         :: ADD;
+    D2D1_PRIMITIVE_BLEND_MAX         :: MAX;
+    D2D1_PRIMITIVE_BLEND_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_THREADING_MODE :: enum s32 {
+    SINGLE_THREADED :: 0;
+
+    MULTI_THREADED  :: 1;
+    FORCE_DWORD     :: -1;
+
+    D2D1_THREADING_MODE_SINGLE_THREADED :: SINGLE_THREADED;
+
+    D2D1_THREADING_MODE_MULTI_THREADED  :: MULTI_THREADED;
+    D2D1_THREADING_MODE_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_COLOR_INTERPOLATION_MODE :: enum s32 {
+    STRAIGHT      :: 0;
+
+    PREMULTIPLIED :: 1;
+    FORCE_DWORD   :: -1;
+
+    D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT      :: STRAIGHT;
+
+    D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED :: PREMULTIPLIED;
+    D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_VECTOR_2F :: D2D_VECTOR_2F;
+D2D1_VECTOR_3F :: D2D_VECTOR_3F;
+D2D1_VECTOR_4F :: D2D_VECTOR_4F;
+
+D2D1_BITMAP_PROPERTIES1 :: struct {
+    pixelFormat:   D2D1_PIXEL_FORMAT;
+    dpiX:          float;
+    dpiY:          float;
+
+    bitmapOptions: D2D1_BITMAP_OPTIONS;
+    colorContext:  *ID2D1ColorContext;
+}
+
+D2D1_MAPPED_RECT :: struct {
+    pitch: u32;
+    bits:  *u8;
+}
+
+D2D1_RENDERING_CONTROLS :: struct {
+    bufferPrecision: D2D1_BUFFER_PRECISION;
+
+    tileSize:        D2D1_SIZE_U;
+}
+
+D2D1_EFFECT_INPUT_DESCRIPTION :: struct {
+    effect:         *ID2D1Effect;
+
+    inputIndex:     u32;
+
+    inputRectangle: D2D1_RECT_F;
+}
+
+D2D1_MATRIX_4X3_F :: D2D_MATRIX_4X3_F;
+D2D1_MATRIX_4X4_F :: D2D_MATRIX_4X4_F;
+D2D1_MATRIX_5X4_F :: D2D_MATRIX_5X4_F;
+
+D2D1_POINT_DESCRIPTION :: struct {
+    point:              D2D1_POINT_2F;
+    unitTangentVector:  D2D1_POINT_2F;
+    endSegment:         u32;
+    endFigure:          u32;
+    lengthToEndSegment: float;
+}
+
+D2D1_IMAGE_BRUSH_PROPERTIES :: struct {
+    sourceRectangle:   D2D1_RECT_F;
+    extendModeX:       D2D1_EXTEND_MODE;
+    extendModeY:       D2D1_EXTEND_MODE;
+    interpolationMode: D2D1_INTERPOLATION_MODE;
+}
+
+D2D1_BITMAP_BRUSH_PROPERTIES1 :: struct {
+    extendModeX:       D2D1_EXTEND_MODE;
+    extendModeY:       D2D1_EXTEND_MODE;
+    interpolationMode: D2D1_INTERPOLATION_MODE;
+}
+
+D2D1_STROKE_STYLE_PROPERTIES1 :: struct {
+    startCap:      D2D1_CAP_STYLE;
+    endCap:        D2D1_CAP_STYLE;
+    dashCap:       D2D1_CAP_STYLE;
+    lineJoin:      D2D1_LINE_JOIN;
+    miterLimit:    float;
+    dashStyle:     D2D1_DASH_STYLE;
+    dashOffset:    float;
+
+    transformType: D2D1_STROKE_TRANSFORM_TYPE;
+}
+
+D2D1_LAYER_OPTIONS1 :: enum s32 {
+    NONE                       :: 0;
+    INITIALIZE_FROM_BACKGROUND :: 1;
+    IGNORE_ALPHA               :: 2;
+    FORCE_DWORD                :: -1;
+
+    D2D1_LAYER_OPTIONS1_NONE                       :: NONE;
+    D2D1_LAYER_OPTIONS1_INITIALIZE_FROM_BACKGROUND :: INITIALIZE_FROM_BACKGROUND;
+    D2D1_LAYER_OPTIONS1_IGNORE_ALPHA               :: IGNORE_ALPHA;
+    D2D1_LAYER_OPTIONS1_FORCE_DWORD                :: FORCE_DWORD;
+}
+
+D2D1_LAYER_PARAMETERS1 :: struct {
+    contentBounds:     D2D1_RECT_F;
+    geometricMask:     *ID2D1Geometry;
+    maskAntialiasMode: D2D1_ANTIALIAS_MODE;
+    maskTransform:     D2D1_MATRIX_3X2_F;
+    opacity:           float;
+    opacityBrush:      *ID2D1Brush;
+    layerOptions:      D2D1_LAYER_OPTIONS1;
+}
+
+D2D1_PRINT_FONT_SUBSET_MODE :: enum s32 {
+    DEFAULT     :: 0;
+
+    EACHPAGE    :: 1;
+
+    NONE        :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT     :: DEFAULT;
+
+    D2D1_PRINT_FONT_SUBSET_MODE_EACHPAGE    :: EACHPAGE;
+
+    D2D1_PRINT_FONT_SUBSET_MODE_NONE        :: NONE;
+    D2D1_PRINT_FONT_SUBSET_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_DRAWING_STATE_DESCRIPTION1 :: struct {
+    antialiasMode:     D2D1_ANTIALIAS_MODE;
+    textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE;
+    tag1:              D2D1_TAG;
+    tag2:              D2D1_TAG;
+    transform:         D2D1_MATRIX_3X2_F;
+    primitiveBlend:    D2D1_PRIMITIVE_BLEND;
+    unitMode:          D2D1_UNIT_MODE;
+}
+
+D2D1_PRINT_CONTROL_PROPERTIES :: struct {
+    fontSubset: D2D1_PRINT_FONT_SUBSET_MODE;
+
+    rasterDPI:  float;
+
+    colorSpace: D2D1_COLOR_SPACE;
+}
+
+D2D1_CREATION_PROPERTIES :: struct {
+    threadingMode: D2D1_THREADING_MODE;
+    debugLevel:    D2D1_DEBUG_LEVEL;
+    options:       D2D1_DEVICE_CONTEXT_OPTIONS;
+}
+
+ID2D1GdiMetafileSink :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1gdimetafilesink_vtable: *ID2D1GdiMetafileSink_VTable;
+}
+ID2D1GdiMetafileSink_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    ProcessRecord: (this: *ID2D1GdiMetafileSink, recordType: u32, recordData: *void, recordDataSize: u32) -> HRESULT #cpp_method;
+}
+ID2D1GdiMetafileSink_ProcessRecord :: inline (this: *ID2D1GdiMetafileSink, recordType: u32, recordData: *void, recordDataSize: u32) -> HRESULT { return this.id2d1gdimetafilesink_vtable.ProcessRecord(this, recordType, recordData, recordDataSize); }
+
+vtable :: (obj: *ID2D1GdiMetafileSink) -> *ID2D1GdiMetafileSink_VTable { return obj.id2d1gdimetafilesink_vtable; }
+
+
+ID2D1GdiMetafile :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1gdimetafile_vtable: *ID2D1GdiMetafile_VTable;
+}
+ID2D1GdiMetafile_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    Stream: (this: *ID2D1GdiMetafile, sink: *ID2D1GdiMetafileSink) -> HRESULT #cpp_method;
+
+    GetBounds: (this: *ID2D1GdiMetafile, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+}
+
+ID2D1GdiMetafile_Stream :: inline (this: *ID2D1GdiMetafile, sink: *ID2D1GdiMetafileSink) -> HRESULT { return this.id2d1gdimetafile_vtable.Stream(this, sink); }
+
+ID2D1GdiMetafile_GetBounds :: inline (this: *ID2D1GdiMetafile, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1gdimetafile_vtable.GetBounds(this, bounds); }
+
+vtable :: (obj: *ID2D1GdiMetafile) -> *ID2D1GdiMetafile_VTable { return obj.id2d1gdimetafile_vtable; }
+
+
+ID2D1CommandSink :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1commandsink_vtable: *ID2D1CommandSink_VTable;
+}
+ID2D1CommandSink_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    BeginDraw: (this: *ID2D1CommandSink) -> HRESULT #cpp_method;
+
+    EndDraw: (this: *ID2D1CommandSink) -> HRESULT #cpp_method;
+
+    SetAntialiasMode: (this: *ID2D1CommandSink, antialiasMode: D2D1_ANTIALIAS_MODE) -> HRESULT #cpp_method;
+
+    SetTags: (this: *ID2D1CommandSink, tag1: D2D1_TAG, tag2: D2D1_TAG) -> HRESULT #cpp_method;
+
+    SetTextAntialiasMode: (this: *ID2D1CommandSink, textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE) -> HRESULT #cpp_method;
+
+    SetTextRenderingParams: (this: *ID2D1CommandSink, textRenderingParams: *IDWriteRenderingParams) -> HRESULT #cpp_method;
+
+    SetTransform: (this: *ID2D1CommandSink, transform: *D2D1_MATRIX_3X2_F) -> HRESULT #cpp_method;
+
+    SetPrimitiveBlend: (this: *ID2D1CommandSink, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT #cpp_method;
+
+    SetUnitMode: (this: *ID2D1CommandSink, unitMode: D2D1_UNIT_MODE) -> HRESULT #cpp_method;
+
+    Clear: (this: *ID2D1CommandSink, color: *D2D1_COLOR_F) -> HRESULT #cpp_method;
+
+    DrawGlyphRun: (this: *ID2D1CommandSink, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE) -> HRESULT #cpp_method;
+
+    DrawLine: (this: *ID2D1CommandSink, point0: D2D1_POINT_2F, point1: D2D1_POINT_2F, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT #cpp_method;
+
+    DrawGeometry: (this: *ID2D1CommandSink, geometry: *ID2D1Geometry, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT #cpp_method;
+
+    DrawRectangle: (this: *ID2D1CommandSink, rect: *D2D1_RECT_F, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT #cpp_method;
+
+    DrawBitmap: (this: *ID2D1CommandSink, bitmap: *ID2D1Bitmap, destinationRectangle: *D2D1_RECT_F, opacity: float, interpolationMode: D2D1_INTERPOLATION_MODE, sourceRectangle: *D2D1_RECT_F, perspectiveTransform: *D2D1_MATRIX_4X4_F) -> HRESULT #cpp_method;
+
+    DrawImage: (this: *ID2D1CommandSink, image: *ID2D1Image, targetOffset: *D2D1_POINT_2F, imageRectangle: *D2D1_RECT_F, interpolationMode: D2D1_INTERPOLATION_MODE, compositeMode: D2D1_COMPOSITE_MODE) -> HRESULT #cpp_method;
+
+    DrawGdiMetafile: (this: *ID2D1CommandSink, gdiMetafile: *ID2D1GdiMetafile, targetOffset: *D2D1_POINT_2F) -> HRESULT #cpp_method;
+
+    FillMesh: (this: *ID2D1CommandSink, mesh: *ID2D1Mesh, brush: *ID2D1Brush) -> HRESULT #cpp_method;
+
+    FillOpacityMask: (this: *ID2D1CommandSink, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, destinationRectangle: *D2D1_RECT_F, sourceRectangle: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    FillGeometry: (this: *ID2D1CommandSink, geometry: *ID2D1Geometry, brush: *ID2D1Brush, opacityBrush: *ID2D1Brush) -> HRESULT #cpp_method;
+
+    FillRectangle: (this: *ID2D1CommandSink, rect: *D2D1_RECT_F, brush: *ID2D1Brush) -> HRESULT #cpp_method;
+
+    PushAxisAlignedClip: (this: *ID2D1CommandSink, clipRect: *D2D1_RECT_F, antialiasMode: D2D1_ANTIALIAS_MODE) -> HRESULT #cpp_method;
+
+    PushLayer: (this: *ID2D1CommandSink, layerParameters1: *D2D1_LAYER_PARAMETERS1, layer: *ID2D1Layer) -> HRESULT #cpp_method;
+
+    PopAxisAlignedClip: (this: *ID2D1CommandSink) -> HRESULT #cpp_method;
+
+    PopLayer: (this: *ID2D1CommandSink) -> HRESULT #cpp_method;
+}
+
+ID2D1CommandSink_BeginDraw :: inline (this: *ID2D1CommandSink) -> HRESULT { return this.id2d1commandsink_vtable.BeginDraw(this); }
+
+ID2D1CommandSink_EndDraw :: inline (this: *ID2D1CommandSink) -> HRESULT { return this.id2d1commandsink_vtable.EndDraw(this); }
+
+ID2D1CommandSink_SetAntialiasMode :: inline (this: *ID2D1CommandSink, antialiasMode: D2D1_ANTIALIAS_MODE) -> HRESULT { return this.id2d1commandsink_vtable.SetAntialiasMode(this, antialiasMode); }
+
+ID2D1CommandSink_SetTags :: inline (this: *ID2D1CommandSink, tag1: D2D1_TAG, tag2: D2D1_TAG) -> HRESULT { return this.id2d1commandsink_vtable.SetTags(this, tag1, tag2); }
+
+ID2D1CommandSink_SetTextAntialiasMode :: inline (this: *ID2D1CommandSink, textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE) -> HRESULT { return this.id2d1commandsink_vtable.SetTextAntialiasMode(this, textAntialiasMode); }
+
+ID2D1CommandSink_SetTextRenderingParams :: inline (this: *ID2D1CommandSink, textRenderingParams: *IDWriteRenderingParams) -> HRESULT { return this.id2d1commandsink_vtable.SetTextRenderingParams(this, textRenderingParams); }
+
+ID2D1CommandSink_SetTransform :: inline (this: *ID2D1CommandSink, transform: *D2D1_MATRIX_3X2_F) -> HRESULT { return this.id2d1commandsink_vtable.SetTransform(this, transform); }
+
+ID2D1CommandSink_SetPrimitiveBlend :: inline (this: *ID2D1CommandSink, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT { return this.id2d1commandsink_vtable.SetPrimitiveBlend(this, primitiveBlend); }
+
+ID2D1CommandSink_SetUnitMode :: inline (this: *ID2D1CommandSink, unitMode: D2D1_UNIT_MODE) -> HRESULT { return this.id2d1commandsink_vtable.SetUnitMode(this, unitMode); }
+
+ID2D1CommandSink_Clear :: inline (this: *ID2D1CommandSink, color: *D2D1_COLOR_F) -> HRESULT { return this.id2d1commandsink_vtable.Clear(this, color); }
+
+ID2D1CommandSink_DrawGlyphRun :: inline (this: *ID2D1CommandSink, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE) -> HRESULT { return this.id2d1commandsink_vtable.DrawGlyphRun(this, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode); }
+
+ID2D1CommandSink_DrawLine :: inline (this: *ID2D1CommandSink, point0: D2D1_POINT_2F, point1: D2D1_POINT_2F, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT { return this.id2d1commandsink_vtable.DrawLine(this, point0, point1, brush, strokeWidth, strokeStyle); }
+
+ID2D1CommandSink_DrawGeometry :: inline (this: *ID2D1CommandSink, geometry: *ID2D1Geometry, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT { return this.id2d1commandsink_vtable.DrawGeometry(this, geometry, brush, strokeWidth, strokeStyle); }
+
+ID2D1CommandSink_DrawRectangle :: inline (this: *ID2D1CommandSink, rect: *D2D1_RECT_F, brush: *ID2D1Brush, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle) -> HRESULT { return this.id2d1commandsink_vtable.DrawRectangle(this, rect, brush, strokeWidth, strokeStyle); }
+
+ID2D1CommandSink_DrawBitmap :: inline (this: *ID2D1CommandSink, bitmap: *ID2D1Bitmap, destinationRectangle: *D2D1_RECT_F, opacity: float, interpolationMode: D2D1_INTERPOLATION_MODE, sourceRectangle: *D2D1_RECT_F, perspectiveTransform: *D2D1_MATRIX_4X4_F) -> HRESULT { return this.id2d1commandsink_vtable.DrawBitmap(this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform); }
+
+ID2D1CommandSink_DrawImage :: inline (this: *ID2D1CommandSink, image: *ID2D1Image, targetOffset: *D2D1_POINT_2F, imageRectangle: *D2D1_RECT_F, interpolationMode: D2D1_INTERPOLATION_MODE, compositeMode: D2D1_COMPOSITE_MODE) -> HRESULT { return this.id2d1commandsink_vtable.DrawImage(this, image, targetOffset, imageRectangle, interpolationMode, compositeMode); }
+
+ID2D1CommandSink_DrawGdiMetafile :: inline (this: *ID2D1CommandSink, gdiMetafile: *ID2D1GdiMetafile, targetOffset: *D2D1_POINT_2F) -> HRESULT { return this.id2d1commandsink_vtable.DrawGdiMetafile(this, gdiMetafile, targetOffset); }
+
+ID2D1CommandSink_FillMesh :: inline (this: *ID2D1CommandSink, mesh: *ID2D1Mesh, brush: *ID2D1Brush) -> HRESULT { return this.id2d1commandsink_vtable.FillMesh(this, mesh, brush); }
+
+ID2D1CommandSink_FillOpacityMask :: inline (this: *ID2D1CommandSink, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, destinationRectangle: *D2D1_RECT_F, sourceRectangle: *D2D1_RECT_F) -> HRESULT { return this.id2d1commandsink_vtable.FillOpacityMask(this, opacityMask, brush, destinationRectangle, sourceRectangle); }
+
+ID2D1CommandSink_FillGeometry :: inline (this: *ID2D1CommandSink, geometry: *ID2D1Geometry, brush: *ID2D1Brush, opacityBrush: *ID2D1Brush) -> HRESULT { return this.id2d1commandsink_vtable.FillGeometry(this, geometry, brush, opacityBrush); }
+
+ID2D1CommandSink_FillRectangle :: inline (this: *ID2D1CommandSink, rect: *D2D1_RECT_F, brush: *ID2D1Brush) -> HRESULT { return this.id2d1commandsink_vtable.FillRectangle(this, rect, brush); }
+
+ID2D1CommandSink_PushAxisAlignedClip :: inline (this: *ID2D1CommandSink, clipRect: *D2D1_RECT_F, antialiasMode: D2D1_ANTIALIAS_MODE) -> HRESULT { return this.id2d1commandsink_vtable.PushAxisAlignedClip(this, clipRect, antialiasMode); }
+
+ID2D1CommandSink_PushLayer :: inline (this: *ID2D1CommandSink, layerParameters1: *D2D1_LAYER_PARAMETERS1, layer: *ID2D1Layer) -> HRESULT { return this.id2d1commandsink_vtable.PushLayer(this, layerParameters1, layer); }
+
+ID2D1CommandSink_PopAxisAlignedClip :: inline (this: *ID2D1CommandSink) -> HRESULT { return this.id2d1commandsink_vtable.PopAxisAlignedClip(this); }
+
+ID2D1CommandSink_PopLayer :: inline (this: *ID2D1CommandSink) -> HRESULT { return this.id2d1commandsink_vtable.PopLayer(this); }
+
+vtable :: (obj: *ID2D1CommandSink) -> *ID2D1CommandSink_VTable { return obj.id2d1commandsink_vtable; }
+
+
+ID2D1CommandList :: struct {
+    #as using id2d1image: ID2D1Image;
+    #place id2d1image; id2d1commandlist_vtable: *ID2D1CommandList_VTable;
+}
+ID2D1CommandList_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    Stream: (this: *ID2D1CommandList, sink: *ID2D1CommandSink) -> HRESULT #cpp_method;
+
+    Close: (this: *ID2D1CommandList) -> HRESULT #cpp_method;
+}
+
+ID2D1CommandList_Stream :: inline (this: *ID2D1CommandList, sink: *ID2D1CommandSink) -> HRESULT { return this.id2d1commandlist_vtable.Stream(this, sink); }
+
+ID2D1CommandList_Close :: inline (this: *ID2D1CommandList) -> HRESULT { return this.id2d1commandlist_vtable.Close(this); }
+
+vtable :: (obj: *ID2D1CommandList) -> *ID2D1CommandList_VTable { return obj.id2d1commandlist_vtable; }
+
+
+ID2D1PrintControl :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1printcontrol_vtable: *ID2D1PrintControl_VTable;
+}
+ID2D1PrintControl_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddPage: (this: *ID2D1PrintControl, commandList: *ID2D1CommandList, pageSize: D2D_SIZE_F, pagePrintTicketStream: *IStream, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT #cpp_method;
+
+    Close: (this: *ID2D1PrintControl) -> HRESULT #cpp_method;
+}
+
+ID2D1PrintControl_AddPage :: inline (this: *ID2D1PrintControl, commandList: *ID2D1CommandList, pageSize: D2D_SIZE_F, pagePrintTicketStream: *IStream, tag1: *D2D1_TAG = null, tag2: *D2D1_TAG = null) -> HRESULT { return this.id2d1printcontrol_vtable.AddPage(this, commandList, pageSize, pagePrintTicketStream, tag1, tag2); }
+
+ID2D1PrintControl_Close :: inline (this: *ID2D1PrintControl) -> HRESULT { return this.id2d1printcontrol_vtable.Close(this); }
+
+vtable :: (obj: *ID2D1PrintControl) -> *ID2D1PrintControl_VTable { return obj.id2d1printcontrol_vtable; }
+
+
+ID2D1ImageBrush :: struct {
+    #as using id2d1brush: ID2D1Brush;
+    #place id2d1brush; id2d1imagebrush_vtable: *ID2D1ImageBrush_VTable;
+}
+ID2D1ImageBrush_VTable :: struct #type_info_none {
+    using id2d1brush: ID2D1Brush_VTable;
+    SetImage: (this: *ID2D1ImageBrush, image: *ID2D1Image) -> void #cpp_method;
+
+    SetExtendModeX: (this: *ID2D1ImageBrush, extendModeX: D2D1_EXTEND_MODE) -> void #cpp_method;
+
+    SetExtendModeY: (this: *ID2D1ImageBrush, extendModeY: D2D1_EXTEND_MODE) -> void #cpp_method;
+
+    SetInterpolationMode: (this: *ID2D1ImageBrush, interpolationMode: D2D1_INTERPOLATION_MODE) -> void #cpp_method;
+
+    SetSourceRectangle: (this: *ID2D1ImageBrush, sourceRectangle: *D2D1_RECT_F) -> void #cpp_method;
+
+    GetImage: (this: *ID2D1ImageBrush, image: **ID2D1Image) -> void #cpp_method;
+
+    GetExtendModeX: (this: *ID2D1ImageBrush) -> D2D1_EXTEND_MODE #cpp_method;
+
+    GetExtendModeY: (this: *ID2D1ImageBrush) -> D2D1_EXTEND_MODE #cpp_method;
+
+    GetInterpolationMode: (this: *ID2D1ImageBrush) -> D2D1_INTERPOLATION_MODE #cpp_method;
+
+    GetSourceRectangle: (this: *ID2D1ImageBrush, sourceRectangle: *D2D1_RECT_F) -> void #cpp_method;
+}
+
+ID2D1ImageBrush_SetImage :: inline (this: *ID2D1ImageBrush, image: *ID2D1Image) { this.id2d1imagebrush_vtable.SetImage(this, image); }
+
+ID2D1ImageBrush_SetExtendModeX :: inline (this: *ID2D1ImageBrush, extendModeX: D2D1_EXTEND_MODE) { this.id2d1imagebrush_vtable.SetExtendModeX(this, extendModeX); }
+
+ID2D1ImageBrush_SetExtendModeY :: inline (this: *ID2D1ImageBrush, extendModeY: D2D1_EXTEND_MODE) { this.id2d1imagebrush_vtable.SetExtendModeY(this, extendModeY); }
+
+ID2D1ImageBrush_SetInterpolationMode :: inline (this: *ID2D1ImageBrush, interpolationMode: D2D1_INTERPOLATION_MODE) { this.id2d1imagebrush_vtable.SetInterpolationMode(this, interpolationMode); }
+
+ID2D1ImageBrush_SetSourceRectangle :: inline (this: *ID2D1ImageBrush, sourceRectangle: *D2D1_RECT_F) { this.id2d1imagebrush_vtable.SetSourceRectangle(this, sourceRectangle); }
+
+ID2D1ImageBrush_GetImage :: inline (this: *ID2D1ImageBrush, image: **ID2D1Image) { this.id2d1imagebrush_vtable.GetImage(this, image); }
+
+ID2D1ImageBrush_GetExtendModeX :: inline (this: *ID2D1ImageBrush) -> D2D1_EXTEND_MODE { return this.id2d1imagebrush_vtable.GetExtendModeX(this); }
+
+ID2D1ImageBrush_GetExtendModeY :: inline (this: *ID2D1ImageBrush) -> D2D1_EXTEND_MODE { return this.id2d1imagebrush_vtable.GetExtendModeY(this); }
+
+ID2D1ImageBrush_GetInterpolationMode :: inline (this: *ID2D1ImageBrush) -> D2D1_INTERPOLATION_MODE { return this.id2d1imagebrush_vtable.GetInterpolationMode(this); }
+
+ID2D1ImageBrush_GetSourceRectangle :: inline (this: *ID2D1ImageBrush, sourceRectangle: *D2D1_RECT_F) { this.id2d1imagebrush_vtable.GetSourceRectangle(this, sourceRectangle); }
+
+vtable :: (obj: *ID2D1ImageBrush) -> *ID2D1ImageBrush_VTable { return obj.id2d1imagebrush_vtable; }
+
+
+ID2D1BitmapBrush1 :: struct {
+    #as using id2d1bitmapbrush: ID2D1BitmapBrush;
+    #place id2d1bitmapbrush; id2d1bitmapbrush1_vtable: *ID2D1BitmapBrush1_VTable;
+}
+ID2D1BitmapBrush1_VTable :: struct #type_info_none {
+    using id2d1bitmapbrush: ID2D1BitmapBrush_VTable;
+    SetInterpolationMode1: (this: *ID2D1BitmapBrush1, interpolationMode: D2D1_INTERPOLATION_MODE) -> void #cpp_method;
+
+    GetInterpolationMode1: (this: *ID2D1BitmapBrush1) -> D2D1_INTERPOLATION_MODE #cpp_method;
+}
+
+ID2D1BitmapBrush1_SetInterpolationMode1 :: inline (this: *ID2D1BitmapBrush1, interpolationMode: D2D1_INTERPOLATION_MODE) { this.id2d1bitmapbrush1_vtable.SetInterpolationMode1(this, interpolationMode); }
+
+ID2D1BitmapBrush1_GetInterpolationMode1 :: inline (this: *ID2D1BitmapBrush1) -> D2D1_INTERPOLATION_MODE { return this.id2d1bitmapbrush1_vtable.GetInterpolationMode1(this); }
+
+vtable :: (obj: *ID2D1BitmapBrush1) -> *ID2D1BitmapBrush1_VTable { return obj.id2d1bitmapbrush1_vtable; }
+
+
+ID2D1StrokeStyle1 :: struct {
+    #as using id2d1strokestyle: ID2D1StrokeStyle;
+    #place id2d1strokestyle; id2d1strokestyle1_vtable: *ID2D1StrokeStyle1_VTable;
+}
+ID2D1StrokeStyle1_VTable :: struct #type_info_none {
+    using id2d1strokestyle: ID2D1StrokeStyle_VTable;
+    GetStrokeTransformType: (this: *ID2D1StrokeStyle1) -> D2D1_STROKE_TRANSFORM_TYPE #cpp_method;
+}
+ID2D1StrokeStyle1_GetStrokeTransformType :: inline (this: *ID2D1StrokeStyle1) -> D2D1_STROKE_TRANSFORM_TYPE { return this.id2d1strokestyle1_vtable.GetStrokeTransformType(this); }
+
+vtable :: (obj: *ID2D1StrokeStyle1) -> *ID2D1StrokeStyle1_VTable { return obj.id2d1strokestyle1_vtable; }
+
+
+ID2D1PathGeometry1 :: struct {
+    #as using id2d1pathgeometry: ID2D1PathGeometry;
+    #place id2d1pathgeometry; id2d1pathgeometry1_vtable: *ID2D1PathGeometry1_VTable;
+}
+ID2D1PathGeometry1_VTable :: struct #type_info_none {
+    using id2d1pathgeometry: ID2D1PathGeometry_VTable;
+    ComputePointAndSegmentAtLength: (this: *ID2D1PathGeometry1, length: float, startSegment: u32, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, pointDescription: *D2D1_POINT_DESCRIPTION) -> HRESULT #cpp_method;
+}
+ID2D1PathGeometry1_ComputePointAndSegmentAtLength :: inline (this: *ID2D1PathGeometry1, length: float, startSegment: u32, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, pointDescription: *D2D1_POINT_DESCRIPTION) -> HRESULT { return this.id2d1pathgeometry1_vtable.ComputePointAndSegmentAtLength(this, length, startSegment, worldTransform, flatteningTolerance, pointDescription); }
+
+vtable :: (obj: *ID2D1PathGeometry1) -> *ID2D1PathGeometry1_VTable { return obj.id2d1pathgeometry1_vtable; }
+
+
+ID2D1Properties :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1properties_vtable: *ID2D1Properties_VTable;
+}
+ID2D1Properties_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetPropertyCount: (this: *ID2D1Properties) -> u32 #cpp_method;
+
+    GetPropertyName: (this: *ID2D1Properties, index: u32, name: *s16, nameCount: u32) -> HRESULT #cpp_method;
+
+    GetPropertyNameLength: (this: *ID2D1Properties, index: u32) -> u32 #cpp_method;
+
+    GetType: (this: *ID2D1Properties, index: u32) -> D2D1_PROPERTY_TYPE #cpp_method;
+
+    GetPropertyIndex: (this: *ID2D1Properties, name: PCWSTR) -> u32 #cpp_method;
+
+    SetValueByName: (this: *ID2D1Properties, name: PCWSTR, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT #cpp_method;
+
+    SetValue: (this: *ID2D1Properties, index: u32, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT #cpp_method;
+
+    GetValueByName: (this: *ID2D1Properties, name: PCWSTR, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT #cpp_method;
+
+    GetValue: (this: *ID2D1Properties, index: u32, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT #cpp_method;
+
+    GetValueSize: (this: *ID2D1Properties, index: u32) -> u32 #cpp_method;
+
+    GetSubProperties: (this: *ID2D1Properties, index: u32, subProperties: **ID2D1Properties) -> HRESULT #cpp_method;
+}
+
+ID2D1Properties_GetPropertyCount :: inline (this: *ID2D1Properties) -> u32 { return this.id2d1properties_vtable.GetPropertyCount(this); }
+
+ID2D1Properties_GetPropertyName :: inline (this: *ID2D1Properties, index: u32, name: *s16, nameCount: u32) -> HRESULT { return this.id2d1properties_vtable.GetPropertyName(this, index, name, nameCount); }
+
+ID2D1Properties_GetPropertyNameLength :: inline (this: *ID2D1Properties, index: u32) -> u32 { return this.id2d1properties_vtable.GetPropertyNameLength(this, index); }
+
+ID2D1Properties_GetType :: inline (this: *ID2D1Properties, index: u32) -> D2D1_PROPERTY_TYPE { return this.id2d1properties_vtable.GetType(this, index); }
+
+ID2D1Properties_GetPropertyIndex :: inline (this: *ID2D1Properties, name: PCWSTR) -> u32 { return this.id2d1properties_vtable.GetPropertyIndex(this, name); }
+
+ID2D1Properties_SetValueByName :: inline (this: *ID2D1Properties, name: PCWSTR, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT { return this.id2d1properties_vtable.SetValueByName(this, name, type, data, dataSize); }
+
+ID2D1Properties_SetValue :: inline (this: *ID2D1Properties, index: u32, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT { return this.id2d1properties_vtable.SetValue(this, index, type, data, dataSize); }
+
+ID2D1Properties_GetValueByName :: inline (this: *ID2D1Properties, name: PCWSTR, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT { return this.id2d1properties_vtable.GetValueByName(this, name, type, data, dataSize); }
+
+ID2D1Properties_GetValue :: inline (this: *ID2D1Properties, index: u32, type: D2D1_PROPERTY_TYPE, data: *u8, dataSize: u32) -> HRESULT { return this.id2d1properties_vtable.GetValue(this, index, type, data, dataSize); }
+
+ID2D1Properties_GetValueSize :: inline (this: *ID2D1Properties, index: u32) -> u32 { return this.id2d1properties_vtable.GetValueSize(this, index); }
+
+ID2D1Properties_GetSubProperties :: inline (this: *ID2D1Properties, index: u32, subProperties: **ID2D1Properties) -> HRESULT { return this.id2d1properties_vtable.GetSubProperties(this, index, subProperties); }
+
+vtable :: (obj: *ID2D1Properties) -> *ID2D1Properties_VTable { return obj.id2d1properties_vtable; }
+
+
+ID2D1Effect :: struct {
+    #as using id2d1properties: ID2D1Properties;
+    #place id2d1properties; id2d1effect_vtable: *ID2D1Effect_VTable;
+}
+ID2D1Effect_VTable :: struct #type_info_none {
+    using id2d1properties: ID2D1Properties_VTable;
+    SetInput: (this: *ID2D1Effect, index: u32, input: *ID2D1Image, invalidate: BOOL = 1) -> void #cpp_method;
+
+    SetInputCount: (this: *ID2D1Effect, inputCount: u32) -> HRESULT #cpp_method;
+
+    GetInput: (this: *ID2D1Effect, index: u32, input: **ID2D1Image) -> void #cpp_method;
+
+    GetInputCount: (this: *ID2D1Effect) -> u32 #cpp_method;
+
+    GetOutput: (this: *ID2D1Effect, outputImage: **ID2D1Image) -> void #cpp_method;
+}
+
+ID2D1Effect_SetInput :: inline (this: *ID2D1Effect, index: u32, input: *ID2D1Image, invalidate: BOOL = 1) { this.id2d1effect_vtable.SetInput(this, index, input, invalidate); }
+
+ID2D1Effect_SetInputCount :: inline (this: *ID2D1Effect, inputCount: u32) -> HRESULT { return this.id2d1effect_vtable.SetInputCount(this, inputCount); }
+
+ID2D1Effect_GetInput :: inline (this: *ID2D1Effect, index: u32, input: **ID2D1Image) { this.id2d1effect_vtable.GetInput(this, index, input); }
+
+ID2D1Effect_GetInputCount :: inline (this: *ID2D1Effect) -> u32 { return this.id2d1effect_vtable.GetInputCount(this); }
+
+ID2D1Effect_GetOutput :: inline (this: *ID2D1Effect, outputImage: **ID2D1Image) { this.id2d1effect_vtable.GetOutput(this, outputImage); }
+
+vtable :: (obj: *ID2D1Effect) -> *ID2D1Effect_VTable { return obj.id2d1effect_vtable; }
+
+
+ID2D1Bitmap1 :: struct {
+    #as using id2d1bitmap: ID2D1Bitmap;
+    #place id2d1bitmap; id2d1bitmap1_vtable: *ID2D1Bitmap1_VTable;
+}
+ID2D1Bitmap1_VTable :: struct #type_info_none {
+    using id2d1bitmap: ID2D1Bitmap_VTable;
+    GetColorContext: (this: *ID2D1Bitmap1, colorContext: **ID2D1ColorContext) -> void #cpp_method;
+
+    GetOptions: (this: *ID2D1Bitmap1) -> D2D1_BITMAP_OPTIONS #cpp_method;
+
+    GetSurface: (this: *ID2D1Bitmap1, dxgiSurface: **IDXGISurface) -> HRESULT #cpp_method;
+
+    Map: (this: *ID2D1Bitmap1, options: D2D1_MAP_OPTIONS, mappedRect: *D2D1_MAPPED_RECT) -> HRESULT #cpp_method;
+
+    Unmap: (this: *ID2D1Bitmap1) -> HRESULT #cpp_method;
+}
+
+ID2D1Bitmap1_GetColorContext :: inline (this: *ID2D1Bitmap1, colorContext: **ID2D1ColorContext) { this.id2d1bitmap1_vtable.GetColorContext(this, colorContext); }
+
+ID2D1Bitmap1_GetOptions :: inline (this: *ID2D1Bitmap1) -> D2D1_BITMAP_OPTIONS { return this.id2d1bitmap1_vtable.GetOptions(this); }
+
+ID2D1Bitmap1_GetSurface :: inline (this: *ID2D1Bitmap1, dxgiSurface: **IDXGISurface) -> HRESULT { return this.id2d1bitmap1_vtable.GetSurface(this, dxgiSurface); }
+
+ID2D1Bitmap1_Map :: inline (this: *ID2D1Bitmap1, options: D2D1_MAP_OPTIONS, mappedRect: *D2D1_MAPPED_RECT) -> HRESULT { return this.id2d1bitmap1_vtable.Map(this, options, mappedRect); }
+
+ID2D1Bitmap1_Unmap :: inline (this: *ID2D1Bitmap1) -> HRESULT { return this.id2d1bitmap1_vtable.Unmap(this); }
+
+vtable :: (obj: *ID2D1Bitmap1) -> *ID2D1Bitmap1_VTable { return obj.id2d1bitmap1_vtable; }
+
+
+ID2D1ColorContext :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1colorcontext_vtable: *ID2D1ColorContext_VTable;
+}
+ID2D1ColorContext_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetColorSpace: (this: *ID2D1ColorContext) -> D2D1_COLOR_SPACE #cpp_method;
+
+    GetProfileSize: (this: *ID2D1ColorContext) -> u32 #cpp_method;
+
+    GetProfile: (this: *ID2D1ColorContext, profile: *u8, profileSize: u32) -> HRESULT #cpp_method;
+}
+
+ID2D1ColorContext_GetColorSpace :: inline (this: *ID2D1ColorContext) -> D2D1_COLOR_SPACE { return this.id2d1colorcontext_vtable.GetColorSpace(this); }
+
+ID2D1ColorContext_GetProfileSize :: inline (this: *ID2D1ColorContext) -> u32 { return this.id2d1colorcontext_vtable.GetProfileSize(this); }
+
+ID2D1ColorContext_GetProfile :: inline (this: *ID2D1ColorContext, profile: *u8, profileSize: u32) -> HRESULT { return this.id2d1colorcontext_vtable.GetProfile(this, profile, profileSize); }
+
+vtable :: (obj: *ID2D1ColorContext) -> *ID2D1ColorContext_VTable { return obj.id2d1colorcontext_vtable; }
+
+
+ID2D1GradientStopCollection1 :: struct {
+    #as using id2d1gradientstopcollection: ID2D1GradientStopCollection;
+    #place id2d1gradientstopcollection; id2d1gradientstopcollection1_vtable: *ID2D1GradientStopCollection1_VTable;
+}
+ID2D1GradientStopCollection1_VTable :: struct #type_info_none {
+    using id2d1gradientstopcollection: ID2D1GradientStopCollection_VTable;
+    GetGradientStops1: (this: *ID2D1GradientStopCollection1, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32) -> void #cpp_method;
+
+    GetPreInterpolationSpace: (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_SPACE #cpp_method;
+
+    GetPostInterpolationSpace: (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_SPACE #cpp_method;
+
+    GetBufferPrecision: (this: *ID2D1GradientStopCollection1) -> D2D1_BUFFER_PRECISION #cpp_method;
+
+    GetColorInterpolationMode: (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_INTERPOLATION_MODE #cpp_method;
+}
+
+ID2D1GradientStopCollection1_GetGradientStops1 :: inline (this: *ID2D1GradientStopCollection1, gradientStops: *D2D1_GRADIENT_STOP, gradientStopsCount: u32) { this.id2d1gradientstopcollection1_vtable.GetGradientStops1(this, gradientStops, gradientStopsCount); }
+
+ID2D1GradientStopCollection1_GetPreInterpolationSpace :: inline (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_SPACE { return this.id2d1gradientstopcollection1_vtable.GetPreInterpolationSpace(this); }
+
+ID2D1GradientStopCollection1_GetPostInterpolationSpace :: inline (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_SPACE { return this.id2d1gradientstopcollection1_vtable.GetPostInterpolationSpace(this); }
+
+ID2D1GradientStopCollection1_GetBufferPrecision :: inline (this: *ID2D1GradientStopCollection1) -> D2D1_BUFFER_PRECISION { return this.id2d1gradientstopcollection1_vtable.GetBufferPrecision(this); }
+
+ID2D1GradientStopCollection1_GetColorInterpolationMode :: inline (this: *ID2D1GradientStopCollection1) -> D2D1_COLOR_INTERPOLATION_MODE { return this.id2d1gradientstopcollection1_vtable.GetColorInterpolationMode(this); }
+
+vtable :: (obj: *ID2D1GradientStopCollection1) -> *ID2D1GradientStopCollection1_VTable { return obj.id2d1gradientstopcollection1_vtable; }
+
+
+ID2D1DrawingStateBlock1 :: struct {
+    #as using id2d1drawingstateblock: ID2D1DrawingStateBlock;
+    #place id2d1drawingstateblock; id2d1drawingstateblock1_vtable: *ID2D1DrawingStateBlock1_VTable;
+}
+ID2D1DrawingStateBlock1_VTable :: struct #type_info_none {
+    using id2d1drawingstateblock: ID2D1DrawingStateBlock_VTable;
+    GetDescription_1: (this: /*const*/ *ID2D1DrawingStateBlock1, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION1) -> void #cpp_method;
+
+    SetDescription_1: (this: *ID2D1DrawingStateBlock1, stateDescription: /*const*/ *D2D1_DRAWING_STATE_DESCRIPTION1) -> void #cpp_method;
+}
+
+ID2D1DrawingStateBlock1_GetDescription_1 :: inline (this: /*const*/ *ID2D1DrawingStateBlock1, stateDescription: *D2D1_DRAWING_STATE_DESCRIPTION1) { this.id2d1drawingstateblock1_vtable.GetDescription_1(this, stateDescription); }
+
+ID2D1DrawingStateBlock1_SetDescription_1 :: inline (this: *ID2D1DrawingStateBlock1, stateDescription: /*const*/ *D2D1_DRAWING_STATE_DESCRIPTION1) { this.id2d1drawingstateblock1_vtable.SetDescription_1(this, stateDescription); }
+
+vtable :: (obj: *ID2D1DrawingStateBlock1) -> *ID2D1DrawingStateBlock1_VTable { return obj.id2d1drawingstateblock1_vtable; }
+
+
+ID2D1DeviceContext :: struct {
+    #as using id2d1rendertarget: ID2D1RenderTarget;
+    #place id2d1rendertarget; id2d1devicecontext_vtable: *ID2D1DeviceContext_VTable;
+}
+ID2D1DeviceContext_VTable :: struct #type_info_none {
+    using id2d1rendertarget: ID2D1RenderTarget_VTable;
+    CreateBitmap_1: (this: *ID2D1DeviceContext, size: D2D1_SIZE_U, sourceData: /*const*/ *void, pitch: u32, bitmapProperties: /*const*/ *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT #cpp_method;
+
+    CreateBitmapFromWicBitmap_1: (this: *ID2D1DeviceContext, wicBitmapSource: *IWICBitmapSource, bitmapProperties: /*const*/ *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT #cpp_method;
+
+    CreateColorContext: (this: *ID2D1DeviceContext, space: D2D1_COLOR_SPACE, profile: *u8, profileSize: u32, colorContext: **ID2D1ColorContext) -> HRESULT #cpp_method;
+
+    CreateColorContextFromFilename: (this: *ID2D1DeviceContext, filename: PCWSTR, colorContext: **ID2D1ColorContext) -> HRESULT #cpp_method;
+
+    CreateColorContextFromWicColorContext: (this: *ID2D1DeviceContext, wicColorContext: *IWICColorContext, colorContext: **ID2D1ColorContext) -> HRESULT #cpp_method;
+
+    CreateBitmapFromDxgiSurface: (this: *ID2D1DeviceContext, surface: *IDXGISurface, bitmapProperties: *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT #cpp_method;
+
+    CreateEffect: (this: *ID2D1DeviceContext, effectId: *IID, effect: **ID2D1Effect) -> HRESULT #cpp_method;
+
+    CreateGradientStopCollection_1: (this: *ID2D1DeviceContext, straightAlphaGradientStops: /*const*/ *D2D1_GRADIENT_STOP, straightAlphaGradientStopsCount: u32, preInterpolationSpace: D2D1_COLOR_SPACE, postInterpolationSpace: D2D1_COLOR_SPACE, bufferPrecision: D2D1_BUFFER_PRECISION, extendMode: D2D1_EXTEND_MODE, colorInterpolationMode: D2D1_COLOR_INTERPOLATION_MODE, gradientStopCollection1: **ID2D1GradientStopCollection1) -> HRESULT #cpp_method;
+
+    CreateImageBrush: (this: *ID2D1DeviceContext, image: *ID2D1Image, imageBrushProperties: *D2D1_IMAGE_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, imageBrush: **ID2D1ImageBrush) -> HRESULT #cpp_method;
+
+    CreateBitmapBrush_1: (this: *ID2D1DeviceContext, bitmap: *ID2D1Bitmap, bitmapBrushProperties: /*const*/ *D2D1_BITMAP_BRUSH_PROPERTIES1, brushProperties: /*const*/ *D2D1_BRUSH_PROPERTIES, bitmapBrush: **ID2D1BitmapBrush1) -> HRESULT #cpp_method;
+
+    CreateCommandList: (this: *ID2D1DeviceContext, commandList: **ID2D1CommandList) -> HRESULT #cpp_method;
+
+    IsDxgiFormatSupported: (this: *ID2D1DeviceContext, format: DXGI_FORMAT) -> BOOL #cpp_method;
+
+    IsBufferPrecisionSupported: (this: *ID2D1DeviceContext, bufferPrecision: D2D1_BUFFER_PRECISION) -> BOOL #cpp_method;
+
+    GetImageLocalBounds: (this: *ID2D1DeviceContext, image: *ID2D1Image, localBounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    GetImageWorldBounds: (this: *ID2D1DeviceContext, image: *ID2D1Image, worldBounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    GetGlyphRunWorldBounds: (this: *ID2D1DeviceContext, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    GetDevice: (this: *ID2D1DeviceContext, device: **ID2D1Device) -> void #cpp_method;
+
+    SetTarget: (this: *ID2D1DeviceContext, image: *ID2D1Image) -> void #cpp_method;
+
+    GetTarget: (this: *ID2D1DeviceContext, image: **ID2D1Image) -> void #cpp_method;
+
+    SetRenderingControls: (this: *ID2D1DeviceContext, renderingControls: *D2D1_RENDERING_CONTROLS) -> void #cpp_method;
+
+    GetRenderingControls: (this: *ID2D1DeviceContext, renderingControls: *D2D1_RENDERING_CONTROLS) -> void #cpp_method;
+
+    SetPrimitiveBlend: (this: *ID2D1DeviceContext, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> void #cpp_method;
+
+    GetPrimitiveBlend: (this: *ID2D1DeviceContext) -> D2D1_PRIMITIVE_BLEND #cpp_method;
+
+    SetUnitMode: (this: *ID2D1DeviceContext, unitMode: D2D1_UNIT_MODE) -> void #cpp_method;
+
+    GetUnitMode: (this: *ID2D1DeviceContext) -> D2D1_UNIT_MODE #cpp_method;
+
+    DrawGlyphRun_1: (this: *ID2D1DeviceContext, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    DrawImage: (this: *ID2D1DeviceContext, image: *ID2D1Image, targetOffset: *D2D1_POINT_2F = null, imageRectangle: *D2D1_RECT_F = null, interpolationMode: D2D1_INTERPOLATION_MODE = .LINEAR, compositeMode: D2D1_COMPOSITE_MODE = .SOURCE_OVER) -> void #cpp_method;
+
+    DrawGdiMetafile: (this: *ID2D1DeviceContext, gdiMetafile: *ID2D1GdiMetafile, targetOffset: *D2D1_POINT_2F = null) -> void #cpp_method;
+
+    DrawBitmap_1: (this: *ID2D1DeviceContext, bitmap: *ID2D1Bitmap, destinationRectangle: /*const*/ *D2D1_RECT_F, opacity: float, interpolationMode: D2D1_INTERPOLATION_MODE, sourceRectangle: /*const*/ *D2D1_RECT_F = null, perspectiveTransform: /*const*/ *D2D1_MATRIX_4X4_F = null) -> void #cpp_method;
+
+    PushLayer_1: (this: *ID2D1DeviceContext, layerParameters: /*const*/ *D2D1_LAYER_PARAMETERS1, layer: *ID2D1Layer) -> void #cpp_method;
+
+    InvalidateEffectInputRectangle: (this: *ID2D1DeviceContext, effect: *ID2D1Effect, input: u32, inputRectangle: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    GetEffectInvalidRectangleCount: (this: *ID2D1DeviceContext, effect: *ID2D1Effect, rectangleCount: *u32) -> HRESULT #cpp_method;
+
+    GetEffectInvalidRectangles: (this: *ID2D1DeviceContext, effect: *ID2D1Effect, rectangles: *D2D1_RECT_F, rectanglesCount: u32) -> HRESULT #cpp_method;
+
+    GetEffectRequiredInputRectangles: (this: *ID2D1DeviceContext, renderEffect: *ID2D1Effect, renderImageRectangle: *D2D1_RECT_F, inputDescriptions: *D2D1_EFFECT_INPUT_DESCRIPTION, requiredInputRects: *D2D1_RECT_F, inputCount: u32) -> HRESULT #cpp_method;
+
+    FillOpacityMask_1: (this: *ID2D1DeviceContext, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, destinationRectangle: /*const*/ *D2D1_RECT_F = null, sourceRectangle: /*const*/ *D2D1_RECT_F = null) -> void #cpp_method;
+}
+
+ID2D1DeviceContext_CreateBitmap_1 :: inline (this: *ID2D1DeviceContext, size: D2D1_SIZE_U, sourceData: /*const*/ *void, pitch: u32, bitmapProperties: /*const*/ *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT { return this.id2d1devicecontext_vtable.CreateBitmap_1(this, size, sourceData, pitch, bitmapProperties, bitmap); }
+
+ID2D1DeviceContext_CreateBitmapFromWicBitmap_1 :: inline (this: *ID2D1DeviceContext, wicBitmapSource: *IWICBitmapSource, bitmapProperties: /*const*/ *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT { return this.id2d1devicecontext_vtable.CreateBitmapFromWicBitmap_1(this, wicBitmapSource, bitmapProperties, bitmap); }
+
+ID2D1DeviceContext_CreateColorContext :: inline (this: *ID2D1DeviceContext, space: D2D1_COLOR_SPACE, profile: *u8, profileSize: u32, colorContext: **ID2D1ColorContext) -> HRESULT { return this.id2d1devicecontext_vtable.CreateColorContext(this, space, profile, profileSize, colorContext); }
+
+ID2D1DeviceContext_CreateColorContextFromFilename :: inline (this: *ID2D1DeviceContext, filename: PCWSTR, colorContext: **ID2D1ColorContext) -> HRESULT { return this.id2d1devicecontext_vtable.CreateColorContextFromFilename(this, filename, colorContext); }
+
+ID2D1DeviceContext_CreateColorContextFromWicColorContext :: inline (this: *ID2D1DeviceContext, wicColorContext: *IWICColorContext, colorContext: **ID2D1ColorContext) -> HRESULT { return this.id2d1devicecontext_vtable.CreateColorContextFromWicColorContext(this, wicColorContext, colorContext); }
+
+ID2D1DeviceContext_CreateBitmapFromDxgiSurface :: inline (this: *ID2D1DeviceContext, surface: *IDXGISurface, bitmapProperties: *D2D1_BITMAP_PROPERTIES1, bitmap: **ID2D1Bitmap1) -> HRESULT { return this.id2d1devicecontext_vtable.CreateBitmapFromDxgiSurface(this, surface, bitmapProperties, bitmap); }
+
+ID2D1DeviceContext_CreateEffect :: inline (this: *ID2D1DeviceContext, effectId: *IID, effect: **ID2D1Effect) -> HRESULT { return this.id2d1devicecontext_vtable.CreateEffect(this, effectId, effect); }
+
+ID2D1DeviceContext_CreateGradientStopCollection_1 :: inline (this: *ID2D1DeviceContext, straightAlphaGradientStops: /*const*/ *D2D1_GRADIENT_STOP, straightAlphaGradientStopsCount: u32, preInterpolationSpace: D2D1_COLOR_SPACE, postInterpolationSpace: D2D1_COLOR_SPACE, bufferPrecision: D2D1_BUFFER_PRECISION, extendMode: D2D1_EXTEND_MODE, colorInterpolationMode: D2D1_COLOR_INTERPOLATION_MODE, gradientStopCollection1: **ID2D1GradientStopCollection1) -> HRESULT { return this.id2d1devicecontext_vtable.CreateGradientStopCollection_1(this, straightAlphaGradientStops, straightAlphaGradientStopsCount, preInterpolationSpace, postInterpolationSpace, bufferPrecision, extendMode, colorInterpolationMode, gradientStopCollection1); }
+
+ID2D1DeviceContext_CreateImageBrush :: inline (this: *ID2D1DeviceContext, image: *ID2D1Image, imageBrushProperties: *D2D1_IMAGE_BRUSH_PROPERTIES, brushProperties: *D2D1_BRUSH_PROPERTIES, imageBrush: **ID2D1ImageBrush) -> HRESULT { return this.id2d1devicecontext_vtable.CreateImageBrush(this, image, imageBrushProperties, brushProperties, imageBrush); }
+
+ID2D1DeviceContext_CreateBitmapBrush_1 :: inline (this: *ID2D1DeviceContext, bitmap: *ID2D1Bitmap, bitmapBrushProperties: /*const*/ *D2D1_BITMAP_BRUSH_PROPERTIES1, brushProperties: /*const*/ *D2D1_BRUSH_PROPERTIES, bitmapBrush: **ID2D1BitmapBrush1) -> HRESULT { return this.id2d1devicecontext_vtable.CreateBitmapBrush_1(this, bitmap, bitmapBrushProperties, brushProperties, bitmapBrush); }
+
+ID2D1DeviceContext_CreateCommandList :: inline (this: *ID2D1DeviceContext, commandList: **ID2D1CommandList) -> HRESULT { return this.id2d1devicecontext_vtable.CreateCommandList(this, commandList); }
+
+ID2D1DeviceContext_IsDxgiFormatSupported :: inline (this: *ID2D1DeviceContext, format: DXGI_FORMAT) -> BOOL { return this.id2d1devicecontext_vtable.IsDxgiFormatSupported(this, format); }
+
+ID2D1DeviceContext_IsBufferPrecisionSupported :: inline (this: *ID2D1DeviceContext, bufferPrecision: D2D1_BUFFER_PRECISION) -> BOOL { return this.id2d1devicecontext_vtable.IsBufferPrecisionSupported(this, bufferPrecision); }
+
+ID2D1DeviceContext_GetImageLocalBounds :: inline (this: *ID2D1DeviceContext, image: *ID2D1Image, localBounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1devicecontext_vtable.GetImageLocalBounds(this, image, localBounds); }
+
+ID2D1DeviceContext_GetImageWorldBounds :: inline (this: *ID2D1DeviceContext, image: *ID2D1Image, worldBounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1devicecontext_vtable.GetImageWorldBounds(this, image, worldBounds); }
+
+ID2D1DeviceContext_GetGlyphRunWorldBounds :: inline (this: *ID2D1DeviceContext, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1devicecontext_vtable.GetGlyphRunWorldBounds(this, baselineOrigin, glyphRun, measuringMode, bounds); }
+
+ID2D1DeviceContext_GetDevice :: inline (this: *ID2D1DeviceContext, device: **ID2D1Device) { this.id2d1devicecontext_vtable.GetDevice(this, device); }
+
+ID2D1DeviceContext_SetTarget :: inline (this: *ID2D1DeviceContext, image: *ID2D1Image) { this.id2d1devicecontext_vtable.SetTarget(this, image); }
+
+ID2D1DeviceContext_GetTarget :: inline (this: *ID2D1DeviceContext, image: **ID2D1Image) { this.id2d1devicecontext_vtable.GetTarget(this, image); }
+
+ID2D1DeviceContext_SetRenderingControls :: inline (this: *ID2D1DeviceContext, renderingControls: *D2D1_RENDERING_CONTROLS) { this.id2d1devicecontext_vtable.SetRenderingControls(this, renderingControls); }
+
+ID2D1DeviceContext_GetRenderingControls :: inline (this: *ID2D1DeviceContext, renderingControls: *D2D1_RENDERING_CONTROLS) { this.id2d1devicecontext_vtable.GetRenderingControls(this, renderingControls); }
+
+ID2D1DeviceContext_SetPrimitiveBlend :: inline (this: *ID2D1DeviceContext, primitiveBlend: D2D1_PRIMITIVE_BLEND) { this.id2d1devicecontext_vtable.SetPrimitiveBlend(this, primitiveBlend); }
+
+ID2D1DeviceContext_GetPrimitiveBlend :: inline (this: *ID2D1DeviceContext) -> D2D1_PRIMITIVE_BLEND { return this.id2d1devicecontext_vtable.GetPrimitiveBlend(this); }
+
+ID2D1DeviceContext_SetUnitMode :: inline (this: *ID2D1DeviceContext, unitMode: D2D1_UNIT_MODE) { this.id2d1devicecontext_vtable.SetUnitMode(this, unitMode); }
+
+ID2D1DeviceContext_GetUnitMode :: inline (this: *ID2D1DeviceContext) -> D2D1_UNIT_MODE { return this.id2d1devicecontext_vtable.GetUnitMode(this); }
+
+ID2D1DeviceContext_DrawGlyphRun_1 :: inline (this: *ID2D1DeviceContext, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1devicecontext_vtable.DrawGlyphRun_1(this, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode); }
+
+ID2D1DeviceContext_DrawImage :: inline (this: *ID2D1DeviceContext, image: *ID2D1Image, targetOffset: *D2D1_POINT_2F = null, imageRectangle: *D2D1_RECT_F = null, interpolationMode: D2D1_INTERPOLATION_MODE = .LINEAR, compositeMode: D2D1_COMPOSITE_MODE = .SOURCE_OVER) { this.id2d1devicecontext_vtable.DrawImage(this, image, targetOffset, imageRectangle, interpolationMode, compositeMode); }
+
+ID2D1DeviceContext_DrawGdiMetafile :: inline (this: *ID2D1DeviceContext, gdiMetafile: *ID2D1GdiMetafile, targetOffset: *D2D1_POINT_2F = null) { this.id2d1devicecontext_vtable.DrawGdiMetafile(this, gdiMetafile, targetOffset); }
+
+ID2D1DeviceContext_DrawBitmap_1 :: inline (this: *ID2D1DeviceContext, bitmap: *ID2D1Bitmap, destinationRectangle: /*const*/ *D2D1_RECT_F, opacity: float, interpolationMode: D2D1_INTERPOLATION_MODE, sourceRectangle: /*const*/ *D2D1_RECT_F = null, perspectiveTransform: /*const*/ *D2D1_MATRIX_4X4_F = null) { this.id2d1devicecontext_vtable.DrawBitmap_1(this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform); }
+
+ID2D1DeviceContext_PushLayer_1 :: inline (this: *ID2D1DeviceContext, layerParameters: /*const*/ *D2D1_LAYER_PARAMETERS1, layer: *ID2D1Layer) { this.id2d1devicecontext_vtable.PushLayer_1(this, layerParameters, layer); }
+
+ID2D1DeviceContext_InvalidateEffectInputRectangle :: inline (this: *ID2D1DeviceContext, effect: *ID2D1Effect, input: u32, inputRectangle: *D2D1_RECT_F) -> HRESULT { return this.id2d1devicecontext_vtable.InvalidateEffectInputRectangle(this, effect, input, inputRectangle); }
+
+ID2D1DeviceContext_GetEffectInvalidRectangleCount :: inline (this: *ID2D1DeviceContext, effect: *ID2D1Effect, rectangleCount: *u32) -> HRESULT { return this.id2d1devicecontext_vtable.GetEffectInvalidRectangleCount(this, effect, rectangleCount); }
+
+ID2D1DeviceContext_GetEffectInvalidRectangles :: inline (this: *ID2D1DeviceContext, effect: *ID2D1Effect, rectangles: *D2D1_RECT_F, rectanglesCount: u32) -> HRESULT { return this.id2d1devicecontext_vtable.GetEffectInvalidRectangles(this, effect, rectangles, rectanglesCount); }
+
+ID2D1DeviceContext_GetEffectRequiredInputRectangles :: inline (this: *ID2D1DeviceContext, renderEffect: *ID2D1Effect, renderImageRectangle: *D2D1_RECT_F, inputDescriptions: *D2D1_EFFECT_INPUT_DESCRIPTION, requiredInputRects: *D2D1_RECT_F, inputCount: u32) -> HRESULT { return this.id2d1devicecontext_vtable.GetEffectRequiredInputRectangles(this, renderEffect, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount); }
+
+ID2D1DeviceContext_FillOpacityMask_1 :: inline (this: *ID2D1DeviceContext, opacityMask: *ID2D1Bitmap, brush: *ID2D1Brush, destinationRectangle: /*const*/ *D2D1_RECT_F = null, sourceRectangle: /*const*/ *D2D1_RECT_F = null) { this.id2d1devicecontext_vtable.FillOpacityMask_1(this, opacityMask, brush, destinationRectangle, sourceRectangle); }
+
+vtable :: (obj: *ID2D1DeviceContext) -> *ID2D1DeviceContext_VTable { return obj.id2d1devicecontext_vtable; }
+
+
+ID2D1Device :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1device_vtable: *ID2D1Device_VTable;
+}
+ID2D1Device_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    CreateDeviceContext: (this: *ID2D1Device, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext: **ID2D1DeviceContext) -> HRESULT #cpp_method;
+
+    CreatePrintControl: (this: *ID2D1Device, wicFactory: *IWICImagingFactory, documentTarget: *IPrintDocumentPackageTarget, printControlProperties: *D2D1_PRINT_CONTROL_PROPERTIES, printControl: **ID2D1PrintControl) -> HRESULT #cpp_method;
+
+    SetMaximumTextureMemory: (this: *ID2D1Device, maximumInBytes: u64) -> void #cpp_method;
+
+    GetMaximumTextureMemory: (this: *ID2D1Device) -> u64 #cpp_method;
+
+    ClearResources: (this: *ID2D1Device, millisecondsSinceUse: u32 = 0) -> void #cpp_method;
+}
+
+ID2D1Device_CreateDeviceContext :: inline (this: *ID2D1Device, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext: **ID2D1DeviceContext) -> HRESULT { return this.id2d1device_vtable.CreateDeviceContext(this, options, deviceContext); }
+
+ID2D1Device_CreatePrintControl :: inline (this: *ID2D1Device, wicFactory: *IWICImagingFactory, documentTarget: *IPrintDocumentPackageTarget, printControlProperties: *D2D1_PRINT_CONTROL_PROPERTIES, printControl: **ID2D1PrintControl) -> HRESULT { return this.id2d1device_vtable.CreatePrintControl(this, wicFactory, documentTarget, printControlProperties, printControl); }
+
+ID2D1Device_SetMaximumTextureMemory :: inline (this: *ID2D1Device, maximumInBytes: u64) { this.id2d1device_vtable.SetMaximumTextureMemory(this, maximumInBytes); }
+
+ID2D1Device_GetMaximumTextureMemory :: inline (this: *ID2D1Device) -> u64 { return this.id2d1device_vtable.GetMaximumTextureMemory(this); }
+
+ID2D1Device_ClearResources :: inline (this: *ID2D1Device, millisecondsSinceUse: u32 = 0) { this.id2d1device_vtable.ClearResources(this, millisecondsSinceUse); }
+
+vtable :: (obj: *ID2D1Device) -> *ID2D1Device_VTable { return obj.id2d1device_vtable; }
+
+
+ID2D1Factory1 :: struct {
+    #as using id2d1factory: ID2D1Factory;
+    #place id2d1factory; id2d1factory1_vtable: *ID2D1Factory1_VTable;
+}
+ID2D1Factory1_VTable :: struct #type_info_none {
+    using id2d1factory: ID2D1Factory_VTable;
+    CreateDevice: (this: *ID2D1Factory1, dxgiDevice: *IDXGIDevice, d2dDevice: **ID2D1Device) -> HRESULT #cpp_method;
+
+    CreateStrokeStyle_1: (this: *ID2D1Factory1, strokeStyleProperties: /*const*/ *D2D1_STROKE_STYLE_PROPERTIES1, dashes: /*const*/ *float, dashesCount: u32, strokeStyle: **ID2D1StrokeStyle1) -> HRESULT #cpp_method;
+
+    CreatePathGeometry_1: (this: *ID2D1Factory1, pathGeometry: **ID2D1PathGeometry1) -> HRESULT #cpp_method;
+
+    CreateDrawingStateBlock_1: (this: *ID2D1Factory1, drawingStateDescription: /*const*/ *D2D1_DRAWING_STATE_DESCRIPTION1, textRenderingParams: *IDWriteRenderingParams, drawingStateBlock: **ID2D1DrawingStateBlock1) -> HRESULT #cpp_method;
+
+    CreateGdiMetafile: (this: *ID2D1Factory1, metafileStream: *IStream, metafile: **ID2D1GdiMetafile) -> HRESULT #cpp_method;
+
+    RegisterEffectFromStream: (this: *ID2D1Factory1, classId: *IID, propertyXml: *IStream, bindings: *D2D1_PROPERTY_BINDING, bindingsCount: u32, effectFactory: PD2D1_EFFECT_FACTORY) -> HRESULT #cpp_method;
+
+    RegisterEffectFromString: (this: *ID2D1Factory1, classId: *IID, propertyXml: PCWSTR, bindings: *D2D1_PROPERTY_BINDING, bindingsCount: u32, effectFactory: PD2D1_EFFECT_FACTORY) -> HRESULT #cpp_method;
+
+    UnregisterEffect: (this: *ID2D1Factory1, classId: *IID) -> HRESULT #cpp_method;
+
+    GetRegisteredEffects: (this: *ID2D1Factory1, effects: *CLSID, effectsCount: u32, effectsReturned: *u32, effectsRegistered: *u32) -> HRESULT #cpp_method;
+
+    GetEffectProperties: (this: *ID2D1Factory1, effectId: *IID, properties: **ID2D1Properties) -> HRESULT #cpp_method;
+}
+
+ID2D1Factory1_CreateDevice :: inline (this: *ID2D1Factory1, dxgiDevice: *IDXGIDevice, d2dDevice: **ID2D1Device) -> HRESULT { return this.id2d1factory1_vtable.CreateDevice(this, dxgiDevice, d2dDevice); }
+
+ID2D1Factory1_CreateStrokeStyle_1 :: inline (this: *ID2D1Factory1, strokeStyleProperties: /*const*/ *D2D1_STROKE_STYLE_PROPERTIES1, dashes: /*const*/ *float, dashesCount: u32, strokeStyle: **ID2D1StrokeStyle1) -> HRESULT { return this.id2d1factory1_vtable.CreateStrokeStyle_1(this, strokeStyleProperties, dashes, dashesCount, strokeStyle); }
+
+ID2D1Factory1_CreatePathGeometry_1 :: inline (this: *ID2D1Factory1, pathGeometry: **ID2D1PathGeometry1) -> HRESULT { return this.id2d1factory1_vtable.CreatePathGeometry_1(this, pathGeometry); }
+
+ID2D1Factory1_CreateDrawingStateBlock_1 :: inline (this: *ID2D1Factory1, drawingStateDescription: /*const*/ *D2D1_DRAWING_STATE_DESCRIPTION1, textRenderingParams: *IDWriteRenderingParams, drawingStateBlock: **ID2D1DrawingStateBlock1) -> HRESULT { return this.id2d1factory1_vtable.CreateDrawingStateBlock_1(this, drawingStateDescription, textRenderingParams, drawingStateBlock); }
+
+ID2D1Factory1_CreateGdiMetafile :: inline (this: *ID2D1Factory1, metafileStream: *IStream, metafile: **ID2D1GdiMetafile) -> HRESULT { return this.id2d1factory1_vtable.CreateGdiMetafile(this, metafileStream, metafile); }
+
+ID2D1Factory1_RegisterEffectFromStream :: inline (this: *ID2D1Factory1, classId: *IID, propertyXml: *IStream, bindings: *D2D1_PROPERTY_BINDING, bindingsCount: u32, effectFactory: PD2D1_EFFECT_FACTORY) -> HRESULT { return this.id2d1factory1_vtable.RegisterEffectFromStream(this, classId, propertyXml, bindings, bindingsCount, effectFactory); }
+
+ID2D1Factory1_RegisterEffectFromString :: inline (this: *ID2D1Factory1, classId: *IID, propertyXml: PCWSTR, bindings: *D2D1_PROPERTY_BINDING, bindingsCount: u32, effectFactory: PD2D1_EFFECT_FACTORY) -> HRESULT { return this.id2d1factory1_vtable.RegisterEffectFromString(this, classId, propertyXml, bindings, bindingsCount, effectFactory); }
+
+ID2D1Factory1_UnregisterEffect :: inline (this: *ID2D1Factory1, classId: *IID) -> HRESULT { return this.id2d1factory1_vtable.UnregisterEffect(this, classId); }
+
+ID2D1Factory1_GetRegisteredEffects :: inline (this: *ID2D1Factory1, effects: *CLSID, effectsCount: u32, effectsReturned: *u32, effectsRegistered: *u32) -> HRESULT { return this.id2d1factory1_vtable.GetRegisteredEffects(this, effects, effectsCount, effectsReturned, effectsRegistered); }
+
+ID2D1Factory1_GetEffectProperties :: inline (this: *ID2D1Factory1, effectId: *IID, properties: **ID2D1Properties) -> HRESULT { return this.id2d1factory1_vtable.GetEffectProperties(this, effectId, properties); }
+
+vtable :: (obj: *ID2D1Factory1) -> *ID2D1Factory1_VTable { return obj.id2d1factory1_vtable; }
+
+
+ID2D1Multithread :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; id2d1multithread_vtable: *ID2D1Multithread_VTable;
+}
+ID2D1Multithread_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetMultithreadProtected: (this: *ID2D1Multithread) -> BOOL #cpp_method;
+
+    Enter: (this: *ID2D1Multithread) -> void #cpp_method;
+
+    Leave: (this: *ID2D1Multithread) -> void #cpp_method;
+}
+
+ID2D1Multithread_GetMultithreadProtected :: inline (this: *ID2D1Multithread) -> BOOL { return this.id2d1multithread_vtable.GetMultithreadProtected(this); }
+
+ID2D1Multithread_Enter :: inline (this: *ID2D1Multithread) { this.id2d1multithread_vtable.Enter(this); }
+
+ID2D1Multithread_Leave :: inline (this: *ID2D1Multithread) { this.id2d1multithread_vtable.Leave(this); }
+
+vtable :: (obj: *ID2D1Multithread) -> *ID2D1Multithread_VTable { return obj.id2d1multithread_vtable; }
+
+
+CLSID_D2D1YCbCr: GUID;
+
+D2D1_YCBCR_PROP :: enum s32 {
+    CHROMA_SUBSAMPLING :: 0;
+
+    TRANSFORM_MATRIX   :: 1;
+
+    INTERPOLATION_MODE :: 2;
+    FORCE_DWORD        :: -1;
+
+    D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING :: CHROMA_SUBSAMPLING;
+
+    D2D1_YCBCR_PROP_TRANSFORM_MATRIX   :: TRANSFORM_MATRIX;
+
+    D2D1_YCBCR_PROP_INTERPOLATION_MODE :: INTERPOLATION_MODE;
+    D2D1_YCBCR_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_YCBCR_CHROMA_SUBSAMPLING :: enum s32 {
+    AUTO        :: 0;
+    _420        :: 1;
+    _422        :: 2;
+    _444        :: 3;
+    _440        :: 4;
+    FORCE_DWORD :: -1;
+
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO        :: AUTO;
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_420         :: _420;
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_422         :: _422;
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_444         :: _444;
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_440         :: _440;
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_YCBCR_INTERPOLATION_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    HIGH_QUALITY_CUBIC  :: 5;
+    FORCE_DWORD         :: -1;
+
+    D2D1_YCBCR_INTERPOLATION_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_YCBCR_INTERPOLATION_MODE_LINEAR              :: LINEAR;
+    D2D1_YCBCR_INTERPOLATION_MODE_CUBIC               :: CUBIC;
+    D2D1_YCBCR_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_YCBCR_INTERPOLATION_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_YCBCR_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC  :: HIGH_QUALITY_CUBIC;
+    D2D1_YCBCR_INTERPOLATION_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_RENDERING_PRIORITY :: enum s32 {
+    NORMAL      :: 0;
+    LOW         :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_RENDERING_PRIORITY_NORMAL      :: NORMAL;
+    D2D1_RENDERING_PRIORITY_LOW         :: LOW;
+    D2D1_RENDERING_PRIORITY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+ID2D1GeometryRealization :: struct {
+    #as using id2d1resource: ID2D1Resource;
+}
+
+ID2D1DeviceContext1 :: struct {
+    #as using id2d1devicecontext: ID2D1DeviceContext;
+    #place id2d1devicecontext; id2d1devicecontext1_vtable: *ID2D1DeviceContext1_VTable;
+}
+ID2D1DeviceContext1_VTable :: struct #type_info_none {
+    using id2d1devicecontext: ID2D1DeviceContext_VTable;
+    CreateFilledGeometryRealization: (this: *ID2D1DeviceContext1, geometry: *ID2D1Geometry, flatteningTolerance: float, geometryRealization: **ID2D1GeometryRealization) -> HRESULT #cpp_method;
+
+    CreateStrokedGeometryRealization: (this: *ID2D1DeviceContext1, geometry: *ID2D1Geometry, flatteningTolerance: float, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, geometryRealization: **ID2D1GeometryRealization) -> HRESULT #cpp_method;
+
+    DrawGeometryRealization: (this: *ID2D1DeviceContext1, geometryRealization: *ID2D1GeometryRealization, brush: *ID2D1Brush) -> void #cpp_method;
+}
+
+ID2D1DeviceContext1_CreateFilledGeometryRealization :: inline (this: *ID2D1DeviceContext1, geometry: *ID2D1Geometry, flatteningTolerance: float, geometryRealization: **ID2D1GeometryRealization) -> HRESULT { return this.id2d1devicecontext1_vtable.CreateFilledGeometryRealization(this, geometry, flatteningTolerance, geometryRealization); }
+
+ID2D1DeviceContext1_CreateStrokedGeometryRealization :: inline (this: *ID2D1DeviceContext1, geometry: *ID2D1Geometry, flatteningTolerance: float, strokeWidth: float, strokeStyle: *ID2D1StrokeStyle, geometryRealization: **ID2D1GeometryRealization) -> HRESULT { return this.id2d1devicecontext1_vtable.CreateStrokedGeometryRealization(this, geometry, flatteningTolerance, strokeWidth, strokeStyle, geometryRealization); }
+
+ID2D1DeviceContext1_DrawGeometryRealization :: inline (this: *ID2D1DeviceContext1, geometryRealization: *ID2D1GeometryRealization, brush: *ID2D1Brush) { this.id2d1devicecontext1_vtable.DrawGeometryRealization(this, geometryRealization, brush); }
+
+vtable :: (obj: *ID2D1DeviceContext1) -> *ID2D1DeviceContext1_VTable { return obj.id2d1devicecontext1_vtable; }
+
+
+ID2D1Device1 :: struct {
+    #as using id2d1device: ID2D1Device;
+    #place id2d1device; id2d1device1_vtable: *ID2D1Device1_VTable;
+}
+ID2D1Device1_VTable :: struct #type_info_none {
+    using id2d1device: ID2D1Device_VTable;
+    GetRenderingPriority: (this: *ID2D1Device1) -> D2D1_RENDERING_PRIORITY #cpp_method;
+
+    SetRenderingPriority: (this: *ID2D1Device1, renderingPriority: D2D1_RENDERING_PRIORITY) -> void #cpp_method;
+
+    CreateDeviceContext_1: (this: *ID2D1Device1, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext1: **ID2D1DeviceContext1) -> HRESULT #cpp_method;
+}
+
+ID2D1Device1_GetRenderingPriority :: inline (this: *ID2D1Device1) -> D2D1_RENDERING_PRIORITY { return this.id2d1device1_vtable.GetRenderingPriority(this); }
+
+ID2D1Device1_SetRenderingPriority :: inline (this: *ID2D1Device1, renderingPriority: D2D1_RENDERING_PRIORITY) { this.id2d1device1_vtable.SetRenderingPriority(this, renderingPriority); }
+
+ID2D1Device1_CreateDeviceContext_1 :: inline (this: *ID2D1Device1, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext1: **ID2D1DeviceContext1) -> HRESULT { return this.id2d1device1_vtable.CreateDeviceContext_1(this, options, deviceContext1); }
+
+vtable :: (obj: *ID2D1Device1) -> *ID2D1Device1_VTable { return obj.id2d1device1_vtable; }
+
+
+ID2D1Factory2 :: struct {
+    #as using id2d1factory1: ID2D1Factory1;
+    #place id2d1factory1; id2d1factory2_vtable: *ID2D1Factory2_VTable;
+}
+ID2D1Factory2_VTable :: struct #type_info_none {
+    using id2d1factory1: ID2D1Factory1_VTable;
+    CreateDevice_1: (this: *ID2D1Factory2, dxgiDevice: *IDXGIDevice, d2dDevice1: **ID2D1Device1) -> HRESULT #cpp_method;
+}
+ID2D1Factory2_CreateDevice_1 :: inline (this: *ID2D1Factory2, dxgiDevice: *IDXGIDevice, d2dDevice1: **ID2D1Device1) -> HRESULT { return this.id2d1factory2_vtable.CreateDevice_1(this, dxgiDevice, d2dDevice1); }
+
+vtable :: (obj: *ID2D1Factory2) -> *ID2D1Factory2_VTable { return obj.id2d1factory2_vtable; }
+
+
+ID2D1CommandSink1 :: struct {
+    #as using id2d1commandsink: ID2D1CommandSink;
+    #place id2d1commandsink; id2d1commandsink1_vtable: *ID2D1CommandSink1_VTable;
+}
+ID2D1CommandSink1_VTable :: struct #type_info_none {
+    using id2d1commandsink: ID2D1CommandSink_VTable;
+    SetPrimitiveBlend1: (this: *ID2D1CommandSink1, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT #cpp_method;
+}
+ID2D1CommandSink1_SetPrimitiveBlend1 :: inline (this: *ID2D1CommandSink1, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT { return this.id2d1commandsink1_vtable.SetPrimitiveBlend1(this, primitiveBlend); }
+
+vtable :: (obj: *ID2D1CommandSink1) -> *ID2D1CommandSink1_VTable { return obj.id2d1commandsink1_vtable; }
+
+
+CLSID_D2D1Contrast: GUID;
+CLSID_D2D1RgbToHue: GUID;
+CLSID_D2D1HueToRgb: GUID;
+CLSID_D2D1ChromaKey: GUID;
+CLSID_D2D1Emboss: GUID;
+CLSID_D2D1Exposure: GUID;
+CLSID_D2D1Grayscale: GUID;
+CLSID_D2D1Invert: GUID;
+CLSID_D2D1Posterize: GUID;
+CLSID_D2D1Sepia: GUID;
+CLSID_D2D1Sharpen: GUID;
+CLSID_D2D1Straighten: GUID;
+CLSID_D2D1TemperatureTint: GUID;
+CLSID_D2D1Vignette: GUID;
+CLSID_D2D1EdgeDetection: GUID;
+CLSID_D2D1HighlightsShadows: GUID;
+CLSID_D2D1LookupTable3D: GUID;
+
+CLSID_D2D1Opacity: GUID;
+CLSID_D2D1AlphaMask: GUID;
+CLSID_D2D1CrossFade: GUID;
+CLSID_D2D1Tint: GUID;
+
+CLSID_D2D1WhiteLevelAdjustment: GUID;
+CLSID_D2D1HdrToneMap: GUID;
+
+D2D1_CONTRAST_PROP :: enum s32 {
+    CONTRAST    :: 0;
+
+    CLAMP_INPUT :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_CONTRAST_PROP_CONTRAST    :: CONTRAST;
+
+    D2D1_CONTRAST_PROP_CLAMP_INPUT :: CLAMP_INPUT;
+    D2D1_CONTRAST_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_RGBTOHUE_PROP :: enum s32 {
+    OUTPUT_COLOR_SPACE :: 0;
+    FORCE_DWORD        :: -1;
+
+    D2D1_RGBTOHUE_PROP_OUTPUT_COLOR_SPACE :: OUTPUT_COLOR_SPACE;
+    D2D1_RGBTOHUE_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE :: enum s32 {
+    HUE_SATURATION_VALUE     :: 0;
+    HUE_SATURATION_LIGHTNESS :: 1;
+    FORCE_DWORD              :: -1;
+
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_VALUE     :: HUE_SATURATION_VALUE;
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS :: HUE_SATURATION_LIGHTNESS;
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_FORCE_DWORD              :: FORCE_DWORD;
+}
+
+D2D1_HUETORGB_PROP :: enum s32 {
+    INPUT_COLOR_SPACE :: 0;
+    FORCE_DWORD       :: -1;
+
+    D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE :: INPUT_COLOR_SPACE;
+    D2D1_HUETORGB_PROP_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_HUETORGB_INPUT_COLOR_SPACE :: enum s32 {
+    HUE_SATURATION_VALUE     :: 0;
+    HUE_SATURATION_LIGHTNESS :: 1;
+    FORCE_DWORD              :: -1;
+
+    D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_VALUE     :: HUE_SATURATION_VALUE;
+    D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS :: HUE_SATURATION_LIGHTNESS;
+    D2D1_HUETORGB_INPUT_COLOR_SPACE_FORCE_DWORD              :: FORCE_DWORD;
+}
+
+D2D1_CHROMAKEY_PROP :: enum s32 {
+    COLOR        :: 0;
+
+    TOLERANCE    :: 1;
+
+    INVERT_ALPHA :: 2;
+
+    FEATHER      :: 3;
+    FORCE_DWORD  :: -1;
+
+    D2D1_CHROMAKEY_PROP_COLOR        :: COLOR;
+
+    D2D1_CHROMAKEY_PROP_TOLERANCE    :: TOLERANCE;
+
+    D2D1_CHROMAKEY_PROP_INVERT_ALPHA :: INVERT_ALPHA;
+
+    D2D1_CHROMAKEY_PROP_FEATHER      :: FEATHER;
+    D2D1_CHROMAKEY_PROP_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_EMBOSS_PROP :: enum s32 {
+    HEIGHT      :: 0;
+
+    DIRECTION   :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_EMBOSS_PROP_HEIGHT      :: HEIGHT;
+
+    D2D1_EMBOSS_PROP_DIRECTION   :: DIRECTION;
+    D2D1_EMBOSS_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_EXPOSURE_PROP :: enum s32 {
+    EXPOSURE_VALUE :: 0;
+    FORCE_DWORD    :: -1;
+
+    D2D1_EXPOSURE_PROP_EXPOSURE_VALUE :: EXPOSURE_VALUE;
+    D2D1_EXPOSURE_PROP_FORCE_DWORD    :: FORCE_DWORD;
+}
+
+D2D1_POSTERIZE_PROP :: enum s32 {
+    RED_VALUE_COUNT   :: 0;
+
+    GREEN_VALUE_COUNT :: 1;
+
+    BLUE_VALUE_COUNT  :: 2;
+    FORCE_DWORD       :: -1;
+
+    D2D1_POSTERIZE_PROP_RED_VALUE_COUNT   :: RED_VALUE_COUNT;
+
+    D2D1_POSTERIZE_PROP_GREEN_VALUE_COUNT :: GREEN_VALUE_COUNT;
+
+    D2D1_POSTERIZE_PROP_BLUE_VALUE_COUNT  :: BLUE_VALUE_COUNT;
+    D2D1_POSTERIZE_PROP_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_SEPIA_PROP :: enum s32 {
+    INTENSITY   :: 0;
+
+    ALPHA_MODE  :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SEPIA_PROP_INTENSITY   :: INTENSITY;
+
+    D2D1_SEPIA_PROP_ALPHA_MODE  :: ALPHA_MODE;
+    D2D1_SEPIA_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SHARPEN_PROP :: enum s32 {
+    SHARPNESS   :: 0;
+
+    THRESHOLD   :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SHARPEN_PROP_SHARPNESS   :: SHARPNESS;
+
+    D2D1_SHARPEN_PROP_THRESHOLD   :: THRESHOLD;
+    D2D1_SHARPEN_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_STRAIGHTEN_PROP :: enum s32 {
+    ANGLE         :: 0;
+
+    MAINTAIN_SIZE :: 1;
+
+    SCALE_MODE    :: 2;
+    FORCE_DWORD   :: -1;
+
+    D2D1_STRAIGHTEN_PROP_ANGLE         :: ANGLE;
+
+    D2D1_STRAIGHTEN_PROP_MAINTAIN_SIZE :: MAINTAIN_SIZE;
+
+    D2D1_STRAIGHTEN_PROP_SCALE_MODE    :: SCALE_MODE;
+    D2D1_STRAIGHTEN_PROP_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_STRAIGHTEN_SCALE_MODE :: enum s32 {
+    NEAREST_NEIGHBOR    :: 0;
+    LINEAR              :: 1;
+    CUBIC               :: 2;
+    MULTI_SAMPLE_LINEAR :: 3;
+    ANISOTROPIC         :: 4;
+    FORCE_DWORD         :: -1;
+
+    D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR    :: NEAREST_NEIGHBOR;
+    D2D1_STRAIGHTEN_SCALE_MODE_LINEAR              :: LINEAR;
+    D2D1_STRAIGHTEN_SCALE_MODE_CUBIC               :: CUBIC;
+    D2D1_STRAIGHTEN_SCALE_MODE_MULTI_SAMPLE_LINEAR :: MULTI_SAMPLE_LINEAR;
+    D2D1_STRAIGHTEN_SCALE_MODE_ANISOTROPIC         :: ANISOTROPIC;
+    D2D1_STRAIGHTEN_SCALE_MODE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_TEMPERATUREANDTINT_PROP :: enum s32 {
+    TEMPERATURE :: 0;
+
+    TINT        :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_TEMPERATUREANDTINT_PROP_TEMPERATURE :: TEMPERATURE;
+
+    D2D1_TEMPERATUREANDTINT_PROP_TINT        :: TINT;
+    D2D1_TEMPERATUREANDTINT_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_VIGNETTE_PROP :: enum s32 {
+    COLOR           :: 0;
+
+    TRANSITION_SIZE :: 1;
+
+    STRENGTH        :: 2;
+    FORCE_DWORD     :: -1;
+
+    D2D1_VIGNETTE_PROP_COLOR           :: COLOR;
+
+    D2D1_VIGNETTE_PROP_TRANSITION_SIZE :: TRANSITION_SIZE;
+
+    D2D1_VIGNETTE_PROP_STRENGTH        :: STRENGTH;
+    D2D1_VIGNETTE_PROP_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_EDGEDETECTION_PROP :: enum s32 {
+    STRENGTH      :: 0;
+
+    BLUR_RADIUS   :: 1;
+
+    MODE          :: 2;
+
+    OVERLAY_EDGES :: 3;
+
+    ALPHA_MODE    :: 4;
+    FORCE_DWORD   :: -1;
+
+    D2D1_EDGEDETECTION_PROP_STRENGTH      :: STRENGTH;
+
+    D2D1_EDGEDETECTION_PROP_BLUR_RADIUS   :: BLUR_RADIUS;
+
+    D2D1_EDGEDETECTION_PROP_MODE          :: MODE;
+
+    D2D1_EDGEDETECTION_PROP_OVERLAY_EDGES :: OVERLAY_EDGES;
+
+    D2D1_EDGEDETECTION_PROP_ALPHA_MODE    :: ALPHA_MODE;
+    D2D1_EDGEDETECTION_PROP_FORCE_DWORD   :: FORCE_DWORD;
+}
+
+D2D1_EDGEDETECTION_MODE :: enum s32 {
+    SOBEL       :: 0;
+    PREWITT     :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_EDGEDETECTION_MODE_SOBEL       :: SOBEL;
+    D2D1_EDGEDETECTION_MODE_PREWITT     :: PREWITT;
+    D2D1_EDGEDETECTION_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_HIGHLIGHTSANDSHADOWS_PROP :: enum s32 {
+    HIGHLIGHTS       :: 0;
+
+    SHADOWS          :: 1;
+
+    CLARITY          :: 2;
+
+    INPUT_GAMMA      :: 3;
+
+    MASK_BLUR_RADIUS :: 4;
+    FORCE_DWORD      :: -1;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_HIGHLIGHTS       :: HIGHLIGHTS;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_SHADOWS          :: SHADOWS;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_CLARITY          :: CLARITY;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_INPUT_GAMMA      :: INPUT_GAMMA;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_MASK_BLUR_RADIUS :: MASK_BLUR_RADIUS;
+    D2D1_HIGHLIGHTSANDSHADOWS_PROP_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA :: enum s32 {
+    LINEAR      :: 0;
+    SRGB        :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_LINEAR      :: LINEAR;
+    D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_SRGB        :: SRGB;
+    D2D1_HIGHLIGHTSANDSHADOWS_INPUT_GAMMA_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_LOOKUPTABLE3D_PROP :: enum s32 {
+    LUT         :: 0;
+
+    ALPHA_MODE  :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_LOOKUPTABLE3D_PROP_LUT         :: LUT;
+
+    D2D1_LOOKUPTABLE3D_PROP_ALPHA_MODE  :: ALPHA_MODE;
+    D2D1_LOOKUPTABLE3D_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_OPACITY_PROP :: enum s32 {
+    OPACITY     :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_OPACITY_PROP_OPACITY     :: OPACITY;
+    D2D1_OPACITY_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_CROSSFADE_PROP :: enum s32 {
+    WEIGHT      :: 0;
+    FORCE_DWORD :: -1;
+
+    D2D1_CROSSFADE_PROP_WEIGHT      :: WEIGHT;
+    D2D1_CROSSFADE_PROP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_TINT_PROP :: enum s32 {
+    COLOR        :: 0;
+
+    CLAMP_OUTPUT :: 1;
+    FORCE_DWORD  :: -1;
+
+    D2D1_TINT_PROP_COLOR        :: COLOR;
+
+    D2D1_TINT_PROP_CLAMP_OUTPUT :: CLAMP_OUTPUT;
+    D2D1_TINT_PROP_FORCE_DWORD  :: FORCE_DWORD;
+}
+
+D2D1_WHITELEVELADJUSTMENT_PROP :: enum s32 {
+    INPUT_WHITE_LEVEL  :: 0;
+
+    OUTPUT_WHITE_LEVEL :: 1;
+    FORCE_DWORD        :: -1;
+
+    D2D1_WHITELEVELADJUSTMENT_PROP_INPUT_WHITE_LEVEL  :: INPUT_WHITE_LEVEL;
+
+    D2D1_WHITELEVELADJUSTMENT_PROP_OUTPUT_WHITE_LEVEL :: OUTPUT_WHITE_LEVEL;
+    D2D1_WHITELEVELADJUSTMENT_PROP_FORCE_DWORD        :: FORCE_DWORD;
+}
+
+D2D1_HDRTONEMAP_PROP :: enum s32 {
+    INPUT_MAX_LUMINANCE  :: 0;
+
+    OUTPUT_MAX_LUMINANCE :: 1;
+
+    DISPLAY_MODE         :: 2;
+    FORCE_DWORD          :: -1;
+
+    D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE  :: INPUT_MAX_LUMINANCE;
+
+    D2D1_HDRTONEMAP_PROP_OUTPUT_MAX_LUMINANCE :: OUTPUT_MAX_LUMINANCE;
+
+    D2D1_HDRTONEMAP_PROP_DISPLAY_MODE         :: DISPLAY_MODE;
+    D2D1_HDRTONEMAP_PROP_FORCE_DWORD          :: FORCE_DWORD;
+}
+
+D2D1_HDRTONEMAP_DISPLAY_MODE :: enum s32 {
+    SDR         :: 0;
+    HDR         :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_HDRTONEMAP_DISPLAY_MODE_SDR         :: SDR;
+    D2D1_HDRTONEMAP_DISPLAY_MODE_HDR         :: HDR;
+    D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_PAINT_TYPE :: enum s32 {
+    NONE              :: 0;
+
+    COLOR             :: 1;
+
+    CURRENT_COLOR     :: 2;
+
+    URI               :: 3;
+
+    URI_NONE          :: 4;
+
+    URI_COLOR         :: 5;
+
+    URI_CURRENT_COLOR :: 6;
+    FORCE_DWORD       :: -1;
+
+    D2D1_SVG_PAINT_TYPE_NONE              :: NONE;
+
+    D2D1_SVG_PAINT_TYPE_COLOR             :: COLOR;
+
+    D2D1_SVG_PAINT_TYPE_CURRENT_COLOR     :: CURRENT_COLOR;
+
+    D2D1_SVG_PAINT_TYPE_URI               :: URI;
+
+    D2D1_SVG_PAINT_TYPE_URI_NONE          :: URI_NONE;
+
+    D2D1_SVG_PAINT_TYPE_URI_COLOR         :: URI_COLOR;
+
+    D2D1_SVG_PAINT_TYPE_URI_CURRENT_COLOR :: URI_CURRENT_COLOR;
+    D2D1_SVG_PAINT_TYPE_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_SVG_LENGTH_UNITS :: enum s32 {
+    NUMBER      :: 0;
+
+    PERCENTAGE  :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_LENGTH_UNITS_NUMBER      :: NUMBER;
+
+    D2D1_SVG_LENGTH_UNITS_PERCENTAGE  :: PERCENTAGE;
+    D2D1_SVG_LENGTH_UNITS_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_DISPLAY :: enum s32 {
+    INLINE      :: 0;
+
+    NONE        :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_DISPLAY_INLINE      :: INLINE;
+
+    D2D1_SVG_DISPLAY_NONE        :: NONE;
+    D2D1_SVG_DISPLAY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_VISIBILITY :: enum s32 {
+    VISIBLE     :: 0;
+
+    HIDDEN      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_VISIBILITY_VISIBLE     :: VISIBLE;
+
+    D2D1_SVG_VISIBILITY_HIDDEN      :: HIDDEN;
+    D2D1_SVG_VISIBILITY_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_OVERFLOW :: enum s32 {
+    VISIBLE     :: 0;
+
+    HIDDEN      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_OVERFLOW_VISIBLE     :: VISIBLE;
+
+    D2D1_SVG_OVERFLOW_HIDDEN      :: HIDDEN;
+    D2D1_SVG_OVERFLOW_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_LINE_CAP :: enum s32 {
+    BUTT        :: 0;
+
+    SQUARE      :: 1;
+
+    ROUND       :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_LINE_CAP_BUTT        :: BUTT;
+
+    D2D1_SVG_LINE_CAP_SQUARE      :: SQUARE;
+
+    D2D1_SVG_LINE_CAP_ROUND       :: ROUND;
+    D2D1_SVG_LINE_CAP_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_LINE_JOIN :: enum s32 {
+    BEVEL       :: 1;
+
+    MITER       :: 3;
+
+    ROUND       :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_LINE_JOIN_BEVEL       :: BEVEL;
+
+    D2D1_SVG_LINE_JOIN_MITER       :: MITER;
+
+    D2D1_SVG_LINE_JOIN_ROUND       :: ROUND;
+    D2D1_SVG_LINE_JOIN_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_ASPECT_ALIGN :: enum s32 {
+    NONE        :: 0;
+
+    X_MIN_Y_MIN :: 1;
+
+    X_MID_Y_MIN :: 2;
+
+    X_MAX_Y_MIN :: 3;
+
+    X_MIN_Y_MID :: 4;
+
+    X_MID_Y_MID :: 5;
+
+    X_MAX_Y_MID :: 6;
+
+    X_MIN_Y_MAX :: 7;
+
+    X_MID_Y_MAX :: 8;
+
+    X_MAX_Y_MAX :: 9;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_ASPECT_ALIGN_NONE        :: NONE;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MIN :: X_MIN_Y_MIN;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MIN :: X_MID_Y_MIN;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MIN :: X_MAX_Y_MIN;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MID :: X_MIN_Y_MID;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MID :: X_MID_Y_MID;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MID :: X_MAX_Y_MID;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MAX :: X_MIN_Y_MAX;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MAX :: X_MID_Y_MAX;
+
+    D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MAX :: X_MAX_Y_MAX;
+    D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_ASPECT_SCALING :: enum s32 {
+    MEET        :: 0;
+
+    SLICE       :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_ASPECT_SCALING_MEET        :: MEET;
+
+    D2D1_SVG_ASPECT_SCALING_SLICE       :: SLICE;
+    D2D1_SVG_ASPECT_SCALING_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_PATH_COMMAND :: enum s32 {
+    CLOSE_PATH                :: 0;
+
+    MOVE_ABSOLUTE             :: 1;
+
+    MOVE_RELATIVE             :: 2;
+
+    LINE_ABSOLUTE             :: 3;
+
+    LINE_RELATIVE             :: 4;
+
+    CUBIC_ABSOLUTE            :: 5;
+
+    CUBIC_RELATIVE            :: 6;
+
+    QUADRADIC_ABSOLUTE        :: 7;
+
+    QUADRADIC_RELATIVE        :: 8;
+
+    ARC_ABSOLUTE              :: 9;
+
+    ARC_RELATIVE              :: 10;
+
+    HORIZONTAL_ABSOLUTE       :: 11;
+
+    HORIZONTAL_RELATIVE       :: 12;
+
+    VERTICAL_ABSOLUTE         :: 13;
+
+    VERTICAL_RELATIVE         :: 14;
+
+    CUBIC_SMOOTH_ABSOLUTE     :: 15;
+
+    CUBIC_SMOOTH_RELATIVE     :: 16;
+
+    QUADRADIC_SMOOTH_ABSOLUTE :: 17;
+
+    QUADRADIC_SMOOTH_RELATIVE :: 18;
+    FORCE_DWORD               :: -1;
+
+    D2D1_SVG_PATH_COMMAND_CLOSE_PATH                :: CLOSE_PATH;
+
+    D2D1_SVG_PATH_COMMAND_MOVE_ABSOLUTE             :: MOVE_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_MOVE_RELATIVE             :: MOVE_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_LINE_ABSOLUTE             :: LINE_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_LINE_RELATIVE             :: LINE_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_CUBIC_ABSOLUTE            :: CUBIC_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_CUBIC_RELATIVE            :: CUBIC_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_QUADRADIC_ABSOLUTE        :: QUADRADIC_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_QUADRADIC_RELATIVE        :: QUADRADIC_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_ARC_ABSOLUTE              :: ARC_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_ARC_RELATIVE              :: ARC_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_HORIZONTAL_ABSOLUTE       :: HORIZONTAL_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_HORIZONTAL_RELATIVE       :: HORIZONTAL_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_VERTICAL_ABSOLUTE         :: VERTICAL_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_VERTICAL_RELATIVE         :: VERTICAL_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_CUBIC_SMOOTH_ABSOLUTE     :: CUBIC_SMOOTH_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_CUBIC_SMOOTH_RELATIVE     :: CUBIC_SMOOTH_RELATIVE;
+
+    D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_ABSOLUTE :: QUADRADIC_SMOOTH_ABSOLUTE;
+
+    D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_RELATIVE :: QUADRADIC_SMOOTH_RELATIVE;
+    D2D1_SVG_PATH_COMMAND_FORCE_DWORD               :: FORCE_DWORD;
+}
+
+D2D1_SVG_UNIT_TYPE :: enum s32 {
+    USER_SPACE_ON_USE   :: 0;
+
+    OBJECT_BOUNDING_BOX :: 1;
+    FORCE_DWORD         :: -1;
+
+    D2D1_SVG_UNIT_TYPE_USER_SPACE_ON_USE   :: USER_SPACE_ON_USE;
+
+    D2D1_SVG_UNIT_TYPE_OBJECT_BOUNDING_BOX :: OBJECT_BOUNDING_BOX;
+    D2D1_SVG_UNIT_TYPE_FORCE_DWORD         :: FORCE_DWORD;
+}
+
+D2D1_SVG_ATTRIBUTE_STRING_TYPE :: enum s32 {
+    SVG         :: 0;
+
+    ID          :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_SVG_ATTRIBUTE_STRING_TYPE_SVG         :: SVG;
+
+    D2D1_SVG_ATTRIBUTE_STRING_TYPE_ID          :: ID;
+    D2D1_SVG_ATTRIBUTE_STRING_TYPE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SVG_ATTRIBUTE_POD_TYPE :: enum s32 {
+    FLOAT                 :: 0;
+
+    COLOR                 :: 1;
+
+    FILL_MODE             :: 2;
+
+    DISPLAY               :: 3;
+
+    OVERFLOW              :: 4;
+
+    LINE_CAP              :: 5;
+
+    LINE_JOIN             :: 6;
+
+    VISIBILITY            :: 7;
+
+    MATRIX                :: 8;
+
+    UNIT_TYPE             :: 9;
+
+    EXTEND_MODE           :: 10;
+
+    PRESERVE_ASPECT_RATIO :: 11;
+
+    VIEWBOX               :: 12;
+
+    LENGTH                :: 13;
+    FORCE_DWORD           :: -1;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT                 :: FLOAT;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR                 :: COLOR;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE             :: FILL_MODE;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY               :: DISPLAY;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW              :: OVERFLOW;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP              :: LINE_CAP;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN             :: LINE_JOIN;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY            :: VISIBILITY;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX                :: MATRIX;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE             :: UNIT_TYPE;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE           :: EXTEND_MODE;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO :: PRESERVE_ASPECT_RATIO;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_VIEWBOX               :: VIEWBOX;
+
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH                :: LENGTH;
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_FORCE_DWORD           :: FORCE_DWORD;
+}
+
+D2D1_SVG_LENGTH :: struct {
+    value: float;
+    units: D2D1_SVG_LENGTH_UNITS;
+}
+
+D2D1_SVG_PRESERVE_ASPECT_RATIO :: struct {
+    _defer:      BOOL;
+
+    align:       D2D1_SVG_ASPECT_ALIGN;
+
+    meetOrSlice: D2D1_SVG_ASPECT_SCALING;
+}
+
+D2D1_SVG_VIEWBOX :: struct {
+    x:      float;
+    y:      float;
+    width:  float;
+    height: float;
+}
+
+ID2D1SvgAttribute :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1svgattribute_vtable: *ID2D1SvgAttribute_VTable;
+}
+ID2D1SvgAttribute_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetElement: (this: *ID2D1SvgAttribute, element: **ID2D1SvgElement) -> void #cpp_method;
+
+    Clone: (this: *ID2D1SvgAttribute, attribute: **ID2D1SvgAttribute) -> HRESULT #cpp_method;
+}
+
+ID2D1SvgAttribute_GetElement :: inline (this: *ID2D1SvgAttribute, element: **ID2D1SvgElement) { this.id2d1svgattribute_vtable.GetElement(this, element); }
+
+ID2D1SvgAttribute_Clone :: inline (this: *ID2D1SvgAttribute, attribute: **ID2D1SvgAttribute) -> HRESULT { return this.id2d1svgattribute_vtable.Clone(this, attribute); }
+
+vtable :: (obj: *ID2D1SvgAttribute) -> *ID2D1SvgAttribute_VTable { return obj.id2d1svgattribute_vtable; }
+
+
+ID2D1SvgPaint :: struct {
+    #as using id2d1svgattribute: ID2D1SvgAttribute;
+    #place id2d1svgattribute; id2d1svgpaint_vtable: *ID2D1SvgPaint_VTable;
+}
+ID2D1SvgPaint_VTable :: struct #type_info_none {
+    using id2d1svgattribute: ID2D1SvgAttribute_VTable;
+    SetPaintType: (this: *ID2D1SvgPaint, paintType: D2D1_SVG_PAINT_TYPE) -> HRESULT #cpp_method;
+
+    GetPaintType: (this: *ID2D1SvgPaint) -> D2D1_SVG_PAINT_TYPE #cpp_method;
+
+    SetColor: (this: *ID2D1SvgPaint, color: *D2D1_COLOR_F) -> HRESULT #cpp_method;
+
+    GetColor: (this: *ID2D1SvgPaint, color: *D2D1_COLOR_F) -> void #cpp_method;
+
+    SetId: (this: *ID2D1SvgPaint, id: PCWSTR) -> HRESULT #cpp_method;
+
+    GetId: (this: *ID2D1SvgPaint, id: *s16, idCount: u32) -> HRESULT #cpp_method;
+
+    GetIdLength: (this: *ID2D1SvgPaint) -> u32 #cpp_method;
+}
+
+ID2D1SvgPaint_SetPaintType :: inline (this: *ID2D1SvgPaint, paintType: D2D1_SVG_PAINT_TYPE) -> HRESULT { return this.id2d1svgpaint_vtable.SetPaintType(this, paintType); }
+
+ID2D1SvgPaint_GetPaintType :: inline (this: *ID2D1SvgPaint) -> D2D1_SVG_PAINT_TYPE { return this.id2d1svgpaint_vtable.GetPaintType(this); }
+
+ID2D1SvgPaint_SetColor :: inline (this: *ID2D1SvgPaint, color: *D2D1_COLOR_F) -> HRESULT { return this.id2d1svgpaint_vtable.SetColor(this, color); }
+
+ID2D1SvgPaint_GetColor :: inline (this: *ID2D1SvgPaint, color: *D2D1_COLOR_F) { this.id2d1svgpaint_vtable.GetColor(this, color); }
+
+ID2D1SvgPaint_SetId :: inline (this: *ID2D1SvgPaint, id: PCWSTR) -> HRESULT { return this.id2d1svgpaint_vtable.SetId(this, id); }
+
+ID2D1SvgPaint_GetId :: inline (this: *ID2D1SvgPaint, id: *s16, idCount: u32) -> HRESULT { return this.id2d1svgpaint_vtable.GetId(this, id, idCount); }
+
+ID2D1SvgPaint_GetIdLength :: inline (this: *ID2D1SvgPaint) -> u32 { return this.id2d1svgpaint_vtable.GetIdLength(this); }
+
+vtable :: (obj: *ID2D1SvgPaint) -> *ID2D1SvgPaint_VTable { return obj.id2d1svgpaint_vtable; }
+
+
+ID2D1SvgStrokeDashArray :: struct {
+    #as using id2d1svgattribute: ID2D1SvgAttribute;
+    #place id2d1svgattribute; id2d1svgstrokedasharray_vtable: *ID2D1SvgStrokeDashArray_VTable;
+}
+ID2D1SvgStrokeDashArray_VTable :: struct #type_info_none {
+    using id2d1svgattribute: ID2D1SvgAttribute_VTable;
+    RemoveDashesAtEnd: (this: *ID2D1SvgStrokeDashArray, dashesCount: u32) -> HRESULT #cpp_method;
+
+    UpdateDashes: (this: *ID2D1SvgStrokeDashArray, dashes: *D2D1_SVG_LENGTH, dashesCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    UpdateDashes_1: (this: *ID2D1SvgStrokeDashArray, dashes: /*const*/ *float, dashesCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetDashes: (this: *ID2D1SvgStrokeDashArray, dashes: *D2D1_SVG_LENGTH, dashesCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetDashes_1: (this: *ID2D1SvgStrokeDashArray, dashes: *float, dashesCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetDashesCount: (this: *ID2D1SvgStrokeDashArray) -> u32 #cpp_method;
+}
+
+ID2D1SvgStrokeDashArray_RemoveDashesAtEnd :: inline (this: *ID2D1SvgStrokeDashArray, dashesCount: u32) -> HRESULT { return this.id2d1svgstrokedasharray_vtable.RemoveDashesAtEnd(this, dashesCount); }
+
+ID2D1SvgStrokeDashArray_UpdateDashes :: inline (this: *ID2D1SvgStrokeDashArray, dashes: /*const*/ *D2D1_SVG_LENGTH, dashesCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgstrokedasharray_vtable.UpdateDashes(this, dashes, dashesCount, startIndex); }
+
+ID2D1SvgStrokeDashArray_UpdateDashes_1 :: inline (this: *ID2D1SvgStrokeDashArray, dashes: /*const*/ *float, dashesCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgstrokedasharray_vtable.UpdateDashes_1(this, dashes, dashesCount, startIndex); }
+
+ID2D1SvgStrokeDashArray_GetDashes :: inline (this: *ID2D1SvgStrokeDashArray, dashes: *D2D1_SVG_LENGTH, dashesCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgstrokedasharray_vtable.GetDashes(this, dashes, dashesCount, startIndex); }
+
+ID2D1SvgStrokeDashArray_GetDashes_1 :: inline (this: *ID2D1SvgStrokeDashArray, dashes: *float, dashesCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgstrokedasharray_vtable.GetDashes_1(this, dashes, dashesCount, startIndex); }
+
+ID2D1SvgStrokeDashArray_GetDashesCount :: inline (this: *ID2D1SvgStrokeDashArray) -> u32 { return this.id2d1svgstrokedasharray_vtable.GetDashesCount(this); }
+
+vtable :: (obj: *ID2D1SvgStrokeDashArray) -> *ID2D1SvgStrokeDashArray_VTable { return obj.id2d1svgstrokedasharray_vtable; }
+
+
+ID2D1SvgPointCollection :: struct {
+    #as using id2d1svgattribute: ID2D1SvgAttribute;
+    #place id2d1svgattribute; id2d1svgpointcollection_vtable: *ID2D1SvgPointCollection_VTable;
+}
+ID2D1SvgPointCollection_VTable :: struct #type_info_none {
+    using id2d1svgattribute: ID2D1SvgAttribute_VTable;
+    RemovePointsAtEnd: (this: *ID2D1SvgPointCollection, pointsCount: u32) -> HRESULT #cpp_method;
+
+    UpdatePoints: (this: *ID2D1SvgPointCollection, points: *D2D1_POINT_2F, pointsCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetPoints: (this: *ID2D1SvgPointCollection, points: *D2D1_POINT_2F, pointsCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetPointsCount: (this: *ID2D1SvgPointCollection) -> u32 #cpp_method;
+}
+
+ID2D1SvgPointCollection_RemovePointsAtEnd :: inline (this: *ID2D1SvgPointCollection, pointsCount: u32) -> HRESULT { return this.id2d1svgpointcollection_vtable.RemovePointsAtEnd(this, pointsCount); }
+
+ID2D1SvgPointCollection_UpdatePoints :: inline (this: *ID2D1SvgPointCollection, points: *D2D1_POINT_2F, pointsCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpointcollection_vtable.UpdatePoints(this, points, pointsCount, startIndex); }
+
+ID2D1SvgPointCollection_GetPoints :: inline (this: *ID2D1SvgPointCollection, points: *D2D1_POINT_2F, pointsCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpointcollection_vtable.GetPoints(this, points, pointsCount, startIndex); }
+
+ID2D1SvgPointCollection_GetPointsCount :: inline (this: *ID2D1SvgPointCollection) -> u32 { return this.id2d1svgpointcollection_vtable.GetPointsCount(this); }
+
+vtable :: (obj: *ID2D1SvgPointCollection) -> *ID2D1SvgPointCollection_VTable { return obj.id2d1svgpointcollection_vtable; }
+
+
+ID2D1SvgPathData :: struct {
+    #as using id2d1svgattribute: ID2D1SvgAttribute;
+    #place id2d1svgattribute; id2d1svgpathdata_vtable: *ID2D1SvgPathData_VTable;
+}
+ID2D1SvgPathData_VTable :: struct #type_info_none {
+    using id2d1svgattribute: ID2D1SvgAttribute_VTable;
+    RemoveSegmentDataAtEnd: (this: *ID2D1SvgPathData, dataCount: u32) -> HRESULT #cpp_method;
+
+    UpdateSegmentData: (this: *ID2D1SvgPathData, data: *float, dataCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetSegmentData: (this: *ID2D1SvgPathData, data: *float, dataCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetSegmentDataCount: (this: *ID2D1SvgPathData) -> u32 #cpp_method;
+
+    RemoveCommandsAtEnd: (this: *ID2D1SvgPathData, commandsCount: u32) -> HRESULT #cpp_method;
+
+    UpdateCommands: (this: *ID2D1SvgPathData, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetCommands: (this: *ID2D1SvgPathData, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, startIndex: u32 = 0) -> HRESULT #cpp_method;
+
+    GetCommandsCount: (this: *ID2D1SvgPathData) -> u32 #cpp_method;
+
+    CreatePathGeometry: (this: *ID2D1SvgPathData, fillMode: D2D1_FILL_MODE, pathGeometry: **ID2D1PathGeometry1) -> HRESULT #cpp_method;
+}
+
+ID2D1SvgPathData_RemoveSegmentDataAtEnd :: inline (this: *ID2D1SvgPathData, dataCount: u32) -> HRESULT { return this.id2d1svgpathdata_vtable.RemoveSegmentDataAtEnd(this, dataCount); }
+
+ID2D1SvgPathData_UpdateSegmentData :: inline (this: *ID2D1SvgPathData, data: *float, dataCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpathdata_vtable.UpdateSegmentData(this, data, dataCount, startIndex); }
+
+ID2D1SvgPathData_GetSegmentData :: inline (this: *ID2D1SvgPathData, data: *float, dataCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpathdata_vtable.GetSegmentData(this, data, dataCount, startIndex); }
+
+ID2D1SvgPathData_GetSegmentDataCount :: inline (this: *ID2D1SvgPathData) -> u32 { return this.id2d1svgpathdata_vtable.GetSegmentDataCount(this); }
+
+ID2D1SvgPathData_RemoveCommandsAtEnd :: inline (this: *ID2D1SvgPathData, commandsCount: u32) -> HRESULT { return this.id2d1svgpathdata_vtable.RemoveCommandsAtEnd(this, commandsCount); }
+
+ID2D1SvgPathData_UpdateCommands :: inline (this: *ID2D1SvgPathData, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpathdata_vtable.UpdateCommands(this, commands, commandsCount, startIndex); }
+
+ID2D1SvgPathData_GetCommands :: inline (this: *ID2D1SvgPathData, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, startIndex: u32 = 0) -> HRESULT { return this.id2d1svgpathdata_vtable.GetCommands(this, commands, commandsCount, startIndex); }
+
+ID2D1SvgPathData_GetCommandsCount :: inline (this: *ID2D1SvgPathData) -> u32 { return this.id2d1svgpathdata_vtable.GetCommandsCount(this); }
+
+ID2D1SvgPathData_CreatePathGeometry :: inline (this: *ID2D1SvgPathData, fillMode: D2D1_FILL_MODE, pathGeometry: **ID2D1PathGeometry1) -> HRESULT { return this.id2d1svgpathdata_vtable.CreatePathGeometry(this, fillMode, pathGeometry); }
+
+vtable :: (obj: *ID2D1SvgPathData) -> *ID2D1SvgPathData_VTable { return obj.id2d1svgpathdata_vtable; }
+
+
+ID2D1SvgElement :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1svgelement_vtable: *ID2D1SvgElement_VTable;
+}
+ID2D1SvgElement_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetDocument: (this: *ID2D1SvgElement, document: **ID2D1SvgDocument) -> void #cpp_method;
+
+    GetTagName: (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT #cpp_method;
+
+    GetTagNameLength: (this: *ID2D1SvgElement) -> u32 #cpp_method;
+
+    IsTextContent: (this: *ID2D1SvgElement) -> BOOL #cpp_method;
+
+    GetParent: (this: *ID2D1SvgElement, parent: **ID2D1SvgElement) -> void #cpp_method;
+
+    HasChildren: (this: *ID2D1SvgElement) -> BOOL #cpp_method;
+
+    GetFirstChild: (this: *ID2D1SvgElement, child: **ID2D1SvgElement) -> void #cpp_method;
+
+    GetLastChild: (this: *ID2D1SvgElement, child: **ID2D1SvgElement) -> void #cpp_method;
+
+    GetPreviousChild: (this: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement, previousChild: **ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    GetNextChild: (this: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement, nextChild: **ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    InsertChildBefore: (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement = null) -> HRESULT #cpp_method;
+
+    AppendChild: (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    ReplaceChild: (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement, oldChild: *ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    RemoveChild: (this: *ID2D1SvgElement, oldChild: *ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    CreateChild: (this: *ID2D1SvgElement, tagName: PCWSTR, newChild: **ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    IsAttributeSpecified: (this: *ID2D1SvgElement, name: PCWSTR, inherited: *BOOL = null) -> BOOL #cpp_method;
+
+    GetSpecifiedAttributeCount: (this: *ID2D1SvgElement) -> u32 #cpp_method;
+
+    GetSpecifiedAttributeName: (this: *ID2D1SvgElement, index: u32, name: *s16, nameCount: u32, inherited: *BOOL = null) -> HRESULT #cpp_method;
+
+    GetSpecifiedAttributeNameLength: (this: *ID2D1SvgElement, index: u32, nameLength: *u32, inherited: *BOOL = null) -> HRESULT #cpp_method;
+
+    RemoveAttribute: (this: *ID2D1SvgElement, name: PCWSTR) -> HRESULT #cpp_method;
+
+    SetTextValue: (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT #cpp_method;
+
+    GetTextValue: (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT #cpp_method;
+
+    GetTextValueLength: (this: *ID2D1SvgElement) -> u32 #cpp_method;
+
+    SetAttributeValue: (this: *ID2D1SvgElement, name: PCWSTR, value: *ID2D1SvgAttribute) -> HRESULT #cpp_method;
+
+    SetAttributeValue_1: (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_POD_TYPE, value: /*const*/ *void, valueSizeInBytes: u32) -> HRESULT #cpp_method;
+
+    SetAttributeValue_2: (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, value: PCWSTR) -> HRESULT #cpp_method;
+
+    GetAttributeValue: (this: *ID2D1SvgElement, name: PCWSTR, riid: *IID, value: **void) -> HRESULT #cpp_method;
+
+    GetAttributeValue_1: (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_POD_TYPE, value: *void, valueSizeInBytes: u32) -> HRESULT #cpp_method;
+
+    GetAttributeValue_2: (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, value: *s16, valueCount: u32) -> HRESULT #cpp_method;
+
+    GetAttributeValueLength: (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, valueLength: *u32) -> HRESULT #cpp_method;
+}
+
+ID2D1SvgElement_GetDocument :: inline (this: *ID2D1SvgElement, document: **ID2D1SvgDocument) { this.id2d1svgelement_vtable.GetDocument(this, document); }
+
+ID2D1SvgElement_GetTagName :: inline (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT { return this.id2d1svgelement_vtable.GetTagName(this, name, nameCount); }
+
+ID2D1SvgElement_GetTagNameLength :: inline (this: *ID2D1SvgElement) -> u32 { return this.id2d1svgelement_vtable.GetTagNameLength(this); }
+
+ID2D1SvgElement_IsTextContent :: inline (this: *ID2D1SvgElement) -> BOOL { return this.id2d1svgelement_vtable.IsTextContent(this); }
+
+ID2D1SvgElement_GetParent :: inline (this: *ID2D1SvgElement, parent: **ID2D1SvgElement) { this.id2d1svgelement_vtable.GetParent(this, parent); }
+
+ID2D1SvgElement_HasChildren :: inline (this: *ID2D1SvgElement) -> BOOL { return this.id2d1svgelement_vtable.HasChildren(this); }
+
+ID2D1SvgElement_GetFirstChild :: inline (this: *ID2D1SvgElement, child: **ID2D1SvgElement) { this.id2d1svgelement_vtable.GetFirstChild(this, child); }
+
+ID2D1SvgElement_GetLastChild :: inline (this: *ID2D1SvgElement, child: **ID2D1SvgElement) { this.id2d1svgelement_vtable.GetLastChild(this, child); }
+
+ID2D1SvgElement_GetPreviousChild :: inline (this: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement, previousChild: **ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.GetPreviousChild(this, referenceChild, previousChild); }
+
+ID2D1SvgElement_GetNextChild :: inline (this: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement, nextChild: **ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.GetNextChild(this, referenceChild, nextChild); }
+
+ID2D1SvgElement_InsertChildBefore :: inline (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement, referenceChild: *ID2D1SvgElement = null) -> HRESULT { return this.id2d1svgelement_vtable.InsertChildBefore(this, newChild, referenceChild); }
+
+ID2D1SvgElement_AppendChild :: inline (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.AppendChild(this, newChild); }
+
+ID2D1SvgElement_ReplaceChild :: inline (this: *ID2D1SvgElement, newChild: *ID2D1SvgElement, oldChild: *ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.ReplaceChild(this, newChild, oldChild); }
+
+ID2D1SvgElement_RemoveChild :: inline (this: *ID2D1SvgElement, oldChild: *ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.RemoveChild(this, oldChild); }
+
+ID2D1SvgElement_CreateChild :: inline (this: *ID2D1SvgElement, tagName: PCWSTR, newChild: **ID2D1SvgElement) -> HRESULT { return this.id2d1svgelement_vtable.CreateChild(this, tagName, newChild); }
+
+ID2D1SvgElement_IsAttributeSpecified :: inline (this: *ID2D1SvgElement, name: PCWSTR, inherited: *BOOL = null) -> BOOL { return this.id2d1svgelement_vtable.IsAttributeSpecified(this, name, inherited); }
+
+ID2D1SvgElement_GetSpecifiedAttributeCount :: inline (this: *ID2D1SvgElement) -> u32 { return this.id2d1svgelement_vtable.GetSpecifiedAttributeCount(this); }
+
+ID2D1SvgElement_GetSpecifiedAttributeName :: inline (this: *ID2D1SvgElement, index: u32, name: *s16, nameCount: u32, inherited: *BOOL = null) -> HRESULT { return this.id2d1svgelement_vtable.GetSpecifiedAttributeName(this, index, name, nameCount, inherited); }
+
+ID2D1SvgElement_GetSpecifiedAttributeNameLength :: inline (this: *ID2D1SvgElement, index: u32, nameLength: *u32, inherited: *BOOL = null) -> HRESULT { return this.id2d1svgelement_vtable.GetSpecifiedAttributeNameLength(this, index, nameLength, inherited); }
+
+ID2D1SvgElement_RemoveAttribute :: inline (this: *ID2D1SvgElement, name: PCWSTR) -> HRESULT { return this.id2d1svgelement_vtable.RemoveAttribute(this, name); }
+
+ID2D1SvgElement_SetTextValue :: inline (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT { return this.id2d1svgelement_vtable.SetTextValue(this, name, nameCount); }
+
+ID2D1SvgElement_GetTextValue :: inline (this: *ID2D1SvgElement, name: *s16, nameCount: u32) -> HRESULT { return this.id2d1svgelement_vtable.GetTextValue(this, name, nameCount); }
+
+ID2D1SvgElement_GetTextValueLength :: inline (this: *ID2D1SvgElement) -> u32 { return this.id2d1svgelement_vtable.GetTextValueLength(this); }
+
+ID2D1SvgElement_SetAttributeValue :: inline (this: *ID2D1SvgElement, name: PCWSTR, value: *ID2D1SvgAttribute) -> HRESULT { return this.id2d1svgelement_vtable.SetAttributeValue(this, name, value); }
+
+ID2D1SvgElement_SetAttributeValue_1 :: inline (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_POD_TYPE, value: /*const*/ *void, valueSizeInBytes: u32) -> HRESULT { return this.id2d1svgelement_vtable.SetAttributeValue_1(this, name, type, value, valueSizeInBytes); }
+
+ID2D1SvgElement_SetAttributeValue_2 :: inline (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, value: PCWSTR) -> HRESULT { return this.id2d1svgelement_vtable.SetAttributeValue_2(this, name, type, value); }
+
+ID2D1SvgElement_GetAttributeValue :: inline (this: *ID2D1SvgElement, name: PCWSTR, riid: /*const reference*/ *IID, value: **void) -> HRESULT { return this.id2d1svgelement_vtable.GetAttributeValue(this, name, riid, value); }
+
+ID2D1SvgElement_GetAttributeValue_1 :: inline (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_POD_TYPE, value: *void, valueSizeInBytes: u32) -> HRESULT { return this.id2d1svgelement_vtable.GetAttributeValue_1(this, name, type, value, valueSizeInBytes); }
+
+ID2D1SvgElement_GetAttributeValue_2 :: inline (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, value: *s16, valueCount: u32) -> HRESULT { return this.id2d1svgelement_vtable.GetAttributeValue_2(this, name, type, value, valueCount); }
+
+ID2D1SvgElement_GetAttributeValueLength :: inline (this: *ID2D1SvgElement, name: PCWSTR, type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, valueLength: *u32) -> HRESULT { return this.id2d1svgelement_vtable.GetAttributeValueLength(this, name, type, valueLength); }
+
+vtable :: (obj: *ID2D1SvgElement) -> *ID2D1SvgElement_VTable { return obj.id2d1svgelement_vtable; }
+
+
+ID2D1SvgDocument :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1svgdocument_vtable: *ID2D1SvgDocument_VTable;
+}
+ID2D1SvgDocument_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    SetViewportSize: (this: *ID2D1SvgDocument, viewportSize: D2D1_SIZE_F) -> HRESULT #cpp_method;
+
+    GetViewportSize: (this: *ID2D1SvgDocument) -> D2D1_SIZE_F #cpp_method;
+
+    SetRoot: (this: *ID2D1SvgDocument, root: *ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    GetRoot: (this: *ID2D1SvgDocument, root: **ID2D1SvgElement) -> void #cpp_method;
+
+    FindElementById: (this: *ID2D1SvgDocument, id: PCWSTR, svgElement: **ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    Serialize: (this: *ID2D1SvgDocument, outputXmlStream: *IStream, subtree: *ID2D1SvgElement = null) -> HRESULT #cpp_method;
+
+    Deserialize: (this: *ID2D1SvgDocument, inputXmlStream: *IStream, subtree: **ID2D1SvgElement) -> HRESULT #cpp_method;
+
+    CreatePaint: (this: *ID2D1SvgDocument, paintType: D2D1_SVG_PAINT_TYPE, color: *D2D1_COLOR_F, id: PCWSTR, paint: **ID2D1SvgPaint) -> HRESULT #cpp_method;
+
+    CreateStrokeDashArray: (this: *ID2D1SvgDocument, dashes: *D2D1_SVG_LENGTH, dashesCount: u32, strokeDashArray: **ID2D1SvgStrokeDashArray) -> HRESULT #cpp_method;
+
+    CreatePointCollection: (this: *ID2D1SvgDocument, points: *D2D1_POINT_2F, pointsCount: u32, pointCollection: **ID2D1SvgPointCollection) -> HRESULT #cpp_method;
+
+    CreatePathData: (this: *ID2D1SvgDocument, segmentData: *float, segmentDataCount: u32, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, pathData: **ID2D1SvgPathData) -> HRESULT #cpp_method;
+}
+
+ID2D1SvgDocument_SetViewportSize :: inline (this: *ID2D1SvgDocument, viewportSize: D2D1_SIZE_F) -> HRESULT { return this.id2d1svgdocument_vtable.SetViewportSize(this, viewportSize); }
+
+ID2D1SvgDocument_GetViewportSize :: inline (this: *ID2D1SvgDocument) -> D2D1_SIZE_F { return this.id2d1svgdocument_vtable.GetViewportSize(this); }
+
+ID2D1SvgDocument_SetRoot :: inline (this: *ID2D1SvgDocument, root: *ID2D1SvgElement) -> HRESULT { return this.id2d1svgdocument_vtable.SetRoot(this, root); }
+
+ID2D1SvgDocument_GetRoot :: inline (this: *ID2D1SvgDocument, root: **ID2D1SvgElement) { this.id2d1svgdocument_vtable.GetRoot(this, root); }
+
+ID2D1SvgDocument_FindElementById :: inline (this: *ID2D1SvgDocument, id: PCWSTR, svgElement: **ID2D1SvgElement) -> HRESULT { return this.id2d1svgdocument_vtable.FindElementById(this, id, svgElement); }
+
+ID2D1SvgDocument_Serialize :: inline (this: *ID2D1SvgDocument, outputXmlStream: *IStream, subtree: *ID2D1SvgElement = null) -> HRESULT { return this.id2d1svgdocument_vtable.Serialize(this, outputXmlStream, subtree); }
+
+ID2D1SvgDocument_Deserialize :: inline (this: *ID2D1SvgDocument, inputXmlStream: *IStream, subtree: **ID2D1SvgElement) -> HRESULT { return this.id2d1svgdocument_vtable.Deserialize(this, inputXmlStream, subtree); }
+
+ID2D1SvgDocument_CreatePaint :: inline (this: *ID2D1SvgDocument, paintType: D2D1_SVG_PAINT_TYPE, color: *D2D1_COLOR_F, id: PCWSTR, paint: **ID2D1SvgPaint) -> HRESULT { return this.id2d1svgdocument_vtable.CreatePaint(this, paintType, color, id, paint); }
+
+ID2D1SvgDocument_CreateStrokeDashArray :: inline (this: *ID2D1SvgDocument, dashes: *D2D1_SVG_LENGTH, dashesCount: u32, strokeDashArray: **ID2D1SvgStrokeDashArray) -> HRESULT { return this.id2d1svgdocument_vtable.CreateStrokeDashArray(this, dashes, dashesCount, strokeDashArray); }
+
+ID2D1SvgDocument_CreatePointCollection :: inline (this: *ID2D1SvgDocument, points: *D2D1_POINT_2F, pointsCount: u32, pointCollection: **ID2D1SvgPointCollection) -> HRESULT { return this.id2d1svgdocument_vtable.CreatePointCollection(this, points, pointsCount, pointCollection); }
+
+ID2D1SvgDocument_CreatePathData :: inline (this: *ID2D1SvgDocument, segmentData: *float, segmentDataCount: u32, commands: *D2D1_SVG_PATH_COMMAND, commandsCount: u32, pathData: **ID2D1SvgPathData) -> HRESULT { return this.id2d1svgdocument_vtable.CreatePathData(this, segmentData, segmentDataCount, commands, commandsCount, pathData); }
+
+vtable :: (obj: *ID2D1SvgDocument) -> *ID2D1SvgDocument_VTable { return obj.id2d1svgdocument_vtable; }
+
+
+IWICBitmapFrameDecode :: struct {}
+
+D2D1_INK_NIB_SHAPE :: enum s32 {
+    ROUND       :: 0;
+    SQUARE      :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_INK_NIB_SHAPE_ROUND       :: ROUND;
+    D2D1_INK_NIB_SHAPE_SQUARE      :: SQUARE;
+    D2D1_INK_NIB_SHAPE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_ORIENTATION :: enum s32 {
+    DEFAULT                             :: 1;
+    FLIP_HORIZONTAL                     :: 2;
+    ROTATE_CLOCKWISE180                 :: 3;
+    ROTATE_CLOCKWISE180_FLIP_HORIZONTAL :: 4;
+    ROTATE_CLOCKWISE90_FLIP_HORIZONTAL  :: 5;
+    ROTATE_CLOCKWISE270                 :: 6;
+    ROTATE_CLOCKWISE270_FLIP_HORIZONTAL :: 7;
+    ROTATE_CLOCKWISE90                  :: 8;
+    FORCE_DWORD                         :: -1;
+
+    D2D1_ORIENTATION_DEFAULT                             :: DEFAULT;
+    D2D1_ORIENTATION_FLIP_HORIZONTAL                     :: FLIP_HORIZONTAL;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE180                 :: ROTATE_CLOCKWISE180;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE180_FLIP_HORIZONTAL :: ROTATE_CLOCKWISE180_FLIP_HORIZONTAL;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE90_FLIP_HORIZONTAL  :: ROTATE_CLOCKWISE90_FLIP_HORIZONTAL;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE270                 :: ROTATE_CLOCKWISE270;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE270_FLIP_HORIZONTAL :: ROTATE_CLOCKWISE270_FLIP_HORIZONTAL;
+    D2D1_ORIENTATION_ROTATE_CLOCKWISE90                  :: ROTATE_CLOCKWISE90;
+    D2D1_ORIENTATION_FORCE_DWORD                         :: FORCE_DWORD;
+}
+
+D2D1_IMAGE_SOURCE_LOADING_OPTIONS :: enum s32 {
+    NONE            :: 0;
+    RELEASE_SOURCE  :: 1;
+    CACHE_ON_DEMAND :: 2;
+    FORCE_DWORD     :: -1;
+
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE            :: NONE;
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE  :: RELEASE_SOURCE;
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND :: CACHE_ON_DEMAND;
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_FORCE_DWORD     :: FORCE_DWORD;
+}
+
+D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS :: enum s32 {
+    NONE                           :: 0;
+    LOW_QUALITY_PRIMARY_CONVERSION :: 1;
+    FORCE_DWORD                    :: -1;
+
+    D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE                           :: NONE;
+    D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_LOW_QUALITY_PRIMARY_CONVERSION :: LOW_QUALITY_PRIMARY_CONVERSION;
+    D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_FORCE_DWORD                    :: FORCE_DWORD;
+}
+
+D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS :: enum s32 {
+    NONE              :: 0;
+
+    DISABLE_DPI_SCALE :: 1;
+    FORCE_DWORD       :: -1;
+
+    D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_NONE              :: NONE;
+
+    D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_DISABLE_DPI_SCALE :: DISABLE_DPI_SCALE;
+    D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS_FORCE_DWORD       :: FORCE_DWORD;
+}
+
+D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES :: struct {
+    orientation:       D2D1_ORIENTATION;
+
+    scaleX:            float;
+
+    scaleY:            float;
+
+    interpolationMode: D2D1_INTERPOLATION_MODE;
+
+    options:           D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS;
+}
+
+D2D1_INK_POINT :: struct {
+    x:      float;
+    y:      float;
+    radius: float;
+}
+
+D2D1_INK_BEZIER_SEGMENT :: struct {
+    point1: D2D1_INK_POINT;
+    point2: D2D1_INK_POINT;
+    point3: D2D1_INK_POINT;
+}
+
+D2D1_INK_STYLE_PROPERTIES :: struct {
+    nibShape:     D2D1_INK_NIB_SHAPE;
+
+    nibTransform: D2D1_MATRIX_3X2_F;
+}
+
+D2D1_PATCH_EDGE_MODE :: enum s32 {
+    ALIASED          :: 0;
+
+    ANTIALIASED      :: 1;
+
+    ALIASED_INFLATED :: 2;
+    FORCE_DWORD      :: -1;
+
+    D2D1_PATCH_EDGE_MODE_ALIASED          :: ALIASED;
+
+    D2D1_PATCH_EDGE_MODE_ANTIALIASED      :: ANTIALIASED;
+
+    D2D1_PATCH_EDGE_MODE_ALIASED_INFLATED :: ALIASED_INFLATED;
+    D2D1_PATCH_EDGE_MODE_FORCE_DWORD      :: FORCE_DWORD;
+}
+
+D2D1_GRADIENT_MESH_PATCH :: struct {
+    point00:        D2D1_POINT_2F;
+
+    point01:        D2D1_POINT_2F;
+
+    point02:        D2D1_POINT_2F;
+
+    point03:        D2D1_POINT_2F;
+
+    point10:        D2D1_POINT_2F;
+
+    point11:        D2D1_POINT_2F;
+
+    point12:        D2D1_POINT_2F;
+
+    point13:        D2D1_POINT_2F;
+
+    point20:        D2D1_POINT_2F;
+
+    point21:        D2D1_POINT_2F;
+
+    point22:        D2D1_POINT_2F;
+
+    point23:        D2D1_POINT_2F;
+
+    point30:        D2D1_POINT_2F;
+
+    point31:        D2D1_POINT_2F;
+
+    point32:        D2D1_POINT_2F;
+
+    point33:        D2D1_POINT_2F;
+
+    color00:        D2D1_COLOR_F;
+
+    color03:        D2D1_COLOR_F;
+
+    color30:        D2D1_COLOR_F;
+
+    color33:        D2D1_COLOR_F;
+
+    topEdgeMode:    D2D1_PATCH_EDGE_MODE;
+
+    leftEdgeMode:   D2D1_PATCH_EDGE_MODE;
+
+    bottomEdgeMode: D2D1_PATCH_EDGE_MODE;
+
+    rightEdgeMode:  D2D1_PATCH_EDGE_MODE;
+}
+
+D2D1_SPRITE_OPTIONS :: enum s32 {
+    NONE                      :: 0;
+
+    CLAMP_TO_SOURCE_RECTANGLE :: 1;
+    FORCE_DWORD               :: -1;
+
+    D2D1_SPRITE_OPTIONS_NONE                      :: NONE;
+
+    D2D1_SPRITE_OPTIONS_CLAMP_TO_SOURCE_RECTANGLE :: CLAMP_TO_SOURCE_RECTANGLE;
+    D2D1_SPRITE_OPTIONS_FORCE_DWORD               :: FORCE_DWORD;
+}
+
+D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION :: enum s32 {
+    DEFAULT     :: 0;
+
+    DISABLE     :: 1;
+    FORCE_DWORD :: -1;
+
+    D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DEFAULT     :: DEFAULT;
+
+    D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DISABLE     :: DISABLE;
+    D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_GAMMA1 :: enum s32 {
+    G22         :: 0;
+
+    G10         :: 1;
+
+    G2084       :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_GAMMA1_G22         :: G22;
+
+    D2D1_GAMMA1_G10         :: G10;
+
+    D2D1_GAMMA1_G2084       :: G2084;
+    D2D1_GAMMA1_FORCE_DWORD :: FORCE_DWORD;
+}
+
+D2D1_SIMPLE_COLOR_PROFILE :: struct {
+    redPrimary:   D2D1_POINT_2F;
+
+    greenPrimary: D2D1_POINT_2F;
+
+    bluePrimary:  D2D1_POINT_2F;
+
+    whitePointXZ: D2D1_POINT_2F;
+
+    gamma:        D2D1_GAMMA1;
+}
+
+D2D1_COLOR_CONTEXT_TYPE :: enum s32 {
+    ICC         :: 0;
+    SIMPLE      :: 1;
+    DXGI        :: 2;
+    FORCE_DWORD :: -1;
+
+    D2D1_COLOR_CONTEXT_TYPE_ICC         :: ICC;
+    D2D1_COLOR_CONTEXT_TYPE_SIMPLE      :: SIMPLE;
+    D2D1_COLOR_CONTEXT_TYPE_DXGI        :: DXGI;
+    D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD :: FORCE_DWORD;
+}
+
+ID2D1InkStyle :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1inkstyle_vtable: *ID2D1InkStyle_VTable;
+}
+ID2D1InkStyle_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    SetNibTransform: (this: *ID2D1InkStyle, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+
+    GetNibTransform: (this: *ID2D1InkStyle, transform: *D2D1_MATRIX_3X2_F) -> void #cpp_method;
+
+    SetNibShape: (this: *ID2D1InkStyle, nibShape: D2D1_INK_NIB_SHAPE) -> void #cpp_method;
+
+    GetNibShape: (this: *ID2D1InkStyle) -> D2D1_INK_NIB_SHAPE #cpp_method;
+}
+
+ID2D1InkStyle_SetNibTransform :: inline (this: *ID2D1InkStyle, transform: *D2D1_MATRIX_3X2_F) { this.id2d1inkstyle_vtable.SetNibTransform(this, transform); }
+
+ID2D1InkStyle_GetNibTransform :: inline (this: *ID2D1InkStyle, transform: *D2D1_MATRIX_3X2_F) { this.id2d1inkstyle_vtable.GetNibTransform(this, transform); }
+
+ID2D1InkStyle_SetNibShape :: inline (this: *ID2D1InkStyle, nibShape: D2D1_INK_NIB_SHAPE) { this.id2d1inkstyle_vtable.SetNibShape(this, nibShape); }
+
+ID2D1InkStyle_GetNibShape :: inline (this: *ID2D1InkStyle) -> D2D1_INK_NIB_SHAPE { return this.id2d1inkstyle_vtable.GetNibShape(this); }
+
+vtable :: (obj: *ID2D1InkStyle) -> *ID2D1InkStyle_VTable { return obj.id2d1inkstyle_vtable; }
+
+
+ID2D1Ink :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1ink_vtable: *ID2D1Ink_VTable;
+}
+ID2D1Ink_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    SetStartPoint: (this: *ID2D1Ink, startPoint: *D2D1_INK_POINT) -> void #cpp_method;
+
+    GetStartPoint: (this: *ID2D1Ink) -> D2D1_INK_POINT #cpp_method;
+
+    AddSegments: (this: *ID2D1Ink, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT #cpp_method;
+
+    RemoveSegmentsAtEnd: (this: *ID2D1Ink, segmentsCount: u32) -> HRESULT #cpp_method;
+
+    SetSegments: (this: *ID2D1Ink, startSegment: u32, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT #cpp_method;
+
+    SetSegmentAtEnd: (this: *ID2D1Ink, segment: *D2D1_INK_BEZIER_SEGMENT) -> HRESULT #cpp_method;
+
+    GetSegmentCount: (this: *ID2D1Ink) -> u32 #cpp_method;
+
+    GetSegments: (this: *ID2D1Ink, startSegment: u32, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT #cpp_method;
+
+    StreamAsGeometry: (this: *ID2D1Ink, inkStyle: *ID2D1InkStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT #cpp_method;
+
+    GetBounds: (this: *ID2D1Ink, inkStyle: *ID2D1InkStyle, worldTransform: *D2D1_MATRIX_3X2_F, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+}
+
+ID2D1Ink_SetStartPoint :: inline (this: *ID2D1Ink, startPoint: *D2D1_INK_POINT) { this.id2d1ink_vtable.SetStartPoint(this, startPoint); }
+
+ID2D1Ink_GetStartPoint :: inline (this: *ID2D1Ink) -> D2D1_INK_POINT { return this.id2d1ink_vtable.GetStartPoint(this); }
+
+ID2D1Ink_AddSegments :: inline (this: *ID2D1Ink, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT { return this.id2d1ink_vtable.AddSegments(this, segments, segmentsCount); }
+
+ID2D1Ink_RemoveSegmentsAtEnd :: inline (this: *ID2D1Ink, segmentsCount: u32) -> HRESULT { return this.id2d1ink_vtable.RemoveSegmentsAtEnd(this, segmentsCount); }
+
+ID2D1Ink_SetSegments :: inline (this: *ID2D1Ink, startSegment: u32, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT { return this.id2d1ink_vtable.SetSegments(this, startSegment, segments, segmentsCount); }
+
+ID2D1Ink_SetSegmentAtEnd :: inline (this: *ID2D1Ink, segment: *D2D1_INK_BEZIER_SEGMENT) -> HRESULT { return this.id2d1ink_vtable.SetSegmentAtEnd(this, segment); }
+
+ID2D1Ink_GetSegmentCount :: inline (this: *ID2D1Ink) -> u32 { return this.id2d1ink_vtable.GetSegmentCount(this); }
+
+ID2D1Ink_GetSegments :: inline (this: *ID2D1Ink, startSegment: u32, segments: *D2D1_INK_BEZIER_SEGMENT, segmentsCount: u32) -> HRESULT { return this.id2d1ink_vtable.GetSegments(this, startSegment, segments, segmentsCount); }
+
+ID2D1Ink_StreamAsGeometry :: inline (this: *ID2D1Ink, inkStyle: *ID2D1InkStyle, worldTransform: *D2D1_MATRIX_3X2_F, flatteningTolerance: float, geometrySink: *ID2D1SimplifiedGeometrySink) -> HRESULT { return this.id2d1ink_vtable.StreamAsGeometry(this, inkStyle, worldTransform, flatteningTolerance, geometrySink); }
+
+ID2D1Ink_GetBounds :: inline (this: *ID2D1Ink, inkStyle: *ID2D1InkStyle, worldTransform: *D2D1_MATRIX_3X2_F, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1ink_vtable.GetBounds(this, inkStyle, worldTransform, bounds); }
+
+vtable :: (obj: *ID2D1Ink) -> *ID2D1Ink_VTable { return obj.id2d1ink_vtable; }
+
+
+ID2D1GradientMesh :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1gradientmesh_vtable: *ID2D1GradientMesh_VTable;
+}
+ID2D1GradientMesh_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetPatchCount: (this: *ID2D1GradientMesh) -> u32 #cpp_method;
+
+    GetPatches: (this: *ID2D1GradientMesh, startIndex: u32, patches: *D2D1_GRADIENT_MESH_PATCH, patchesCount: u32) -> HRESULT #cpp_method;
+}
+
+ID2D1GradientMesh_GetPatchCount :: inline (this: *ID2D1GradientMesh) -> u32 { return this.id2d1gradientmesh_vtable.GetPatchCount(this); }
+
+ID2D1GradientMesh_GetPatches :: inline (this: *ID2D1GradientMesh, startIndex: u32, patches: *D2D1_GRADIENT_MESH_PATCH, patchesCount: u32) -> HRESULT { return this.id2d1gradientmesh_vtable.GetPatches(this, startIndex, patches, patchesCount); }
+
+vtable :: (obj: *ID2D1GradientMesh) -> *ID2D1GradientMesh_VTable { return obj.id2d1gradientmesh_vtable; }
+
+
+ID2D1ImageSource :: struct {
+    #as using id2d1image: ID2D1Image;
+    #place id2d1image; id2d1imagesource_vtable: *ID2D1ImageSource_VTable;
+}
+ID2D1ImageSource_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    OfferResources: (this: *ID2D1ImageSource) -> HRESULT #cpp_method;
+
+    TryReclaimResources: (this: *ID2D1ImageSource, resourcesDiscarded: *BOOL) -> HRESULT #cpp_method;
+}
+
+ID2D1ImageSource_OfferResources :: inline (this: *ID2D1ImageSource) -> HRESULT { return this.id2d1imagesource_vtable.OfferResources(this); }
+
+ID2D1ImageSource_TryReclaimResources :: inline (this: *ID2D1ImageSource, resourcesDiscarded: *BOOL) -> HRESULT { return this.id2d1imagesource_vtable.TryReclaimResources(this, resourcesDiscarded); }
+
+vtable :: (obj: *ID2D1ImageSource) -> *ID2D1ImageSource_VTable { return obj.id2d1imagesource_vtable; }
+
+
+ID2D1ImageSourceFromWic :: struct {
+    #as using id2d1imagesource: ID2D1ImageSource;
+    #place id2d1imagesource; id2d1imagesourcefromwic_vtable: *ID2D1ImageSourceFromWic_VTable;
+}
+ID2D1ImageSourceFromWic_VTable :: struct #type_info_none {
+    using id2d1imagesource: ID2D1ImageSource_VTable;
+    EnsureCached: (this: *ID2D1ImageSourceFromWic, rectangleToFill: *D2D1_RECT_U) -> HRESULT #cpp_method;
+
+    TrimCache: (this: *ID2D1ImageSourceFromWic, rectangleToPreserve: *D2D1_RECT_U) -> HRESULT #cpp_method;
+
+    GetSource: (this: *ID2D1ImageSourceFromWic, wicBitmapSource: **IWICBitmapSource) -> void #cpp_method;
+}
+
+ID2D1ImageSourceFromWic_EnsureCached :: inline (this: *ID2D1ImageSourceFromWic, rectangleToFill: *D2D1_RECT_U) -> HRESULT { return this.id2d1imagesourcefromwic_vtable.EnsureCached(this, rectangleToFill); }
+
+ID2D1ImageSourceFromWic_TrimCache :: inline (this: *ID2D1ImageSourceFromWic, rectangleToPreserve: *D2D1_RECT_U) -> HRESULT { return this.id2d1imagesourcefromwic_vtable.TrimCache(this, rectangleToPreserve); }
+
+ID2D1ImageSourceFromWic_GetSource :: inline (this: *ID2D1ImageSourceFromWic, wicBitmapSource: **IWICBitmapSource) { this.id2d1imagesourcefromwic_vtable.GetSource(this, wicBitmapSource); }
+
+vtable :: (obj: *ID2D1ImageSourceFromWic) -> *ID2D1ImageSourceFromWic_VTable { return obj.id2d1imagesourcefromwic_vtable; }
+
+
+ID2D1TransformedImageSource :: struct {
+    #as using id2d1image: ID2D1Image;
+    #place id2d1image; id2d1transformedimagesource_vtable: *ID2D1TransformedImageSource_VTable;
+}
+ID2D1TransformedImageSource_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    GetSource: (this: *ID2D1TransformedImageSource, imageSource: **ID2D1ImageSource) -> void #cpp_method;
+
+    GetProperties: (this: *ID2D1TransformedImageSource, properties: *D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES) -> void #cpp_method;
+}
+
+ID2D1TransformedImageSource_GetSource :: inline (this: *ID2D1TransformedImageSource, imageSource: **ID2D1ImageSource) { this.id2d1transformedimagesource_vtable.GetSource(this, imageSource); }
+
+ID2D1TransformedImageSource_GetProperties :: inline (this: *ID2D1TransformedImageSource, properties: *D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES) { this.id2d1transformedimagesource_vtable.GetProperties(this, properties); }
+
+vtable :: (obj: *ID2D1TransformedImageSource) -> *ID2D1TransformedImageSource_VTable { return obj.id2d1transformedimagesource_vtable; }
+
+
+ID2D1LookupTable3D :: struct {
+    #as using id2d1resource: ID2D1Resource;
+}
+
+ID2D1DeviceContext2 :: struct {
+    #as using id2d1devicecontext1: ID2D1DeviceContext1;
+    #place id2d1devicecontext1; id2d1devicecontext2_vtable: *ID2D1DeviceContext2_VTable;
+}
+ID2D1DeviceContext2_VTable :: struct #type_info_none {
+    using id2d1devicecontext1: ID2D1DeviceContext1_VTable;
+    CreateInk: (this: *ID2D1DeviceContext2, startPoint: *D2D1_INK_POINT, ink: **ID2D1Ink) -> HRESULT #cpp_method;
+
+    CreateInkStyle: (this: *ID2D1DeviceContext2, inkStyleProperties: *D2D1_INK_STYLE_PROPERTIES, inkStyle: **ID2D1InkStyle) -> HRESULT #cpp_method;
+
+    CreateGradientMesh: (this: *ID2D1DeviceContext2, patches: *D2D1_GRADIENT_MESH_PATCH, patchesCount: u32, gradientMesh: **ID2D1GradientMesh) -> HRESULT #cpp_method;
+
+    CreateImageSourceFromWic: (this: *ID2D1DeviceContext2, wicBitmapSource: *IWICBitmapSource, loadingOptions: D2D1_IMAGE_SOURCE_LOADING_OPTIONS, alphaMode: D2D1_ALPHA_MODE, imageSource: **ID2D1ImageSourceFromWic) -> HRESULT #cpp_method;
+
+    CreateLookupTable3D: (this: *ID2D1DeviceContext2, precision: D2D1_BUFFER_PRECISION, extents: *u32, data: *u8, dataCount: u32, strides: *u32, lookupTable: **ID2D1LookupTable3D) -> HRESULT #cpp_method;
+
+    CreateImageSourceFromDxgi: (this: *ID2D1DeviceContext2, surfaces: **IDXGISurface, surfaceCount: u32, colorSpace: DXGI_COLOR_SPACE_TYPE, options: D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS, imageSource: **ID2D1ImageSource) -> HRESULT #cpp_method;
+
+    GetGradientMeshWorldBounds: (this: *ID2D1DeviceContext2, gradientMesh: *ID2D1GradientMesh, pBounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+
+    DrawInk: (this: *ID2D1DeviceContext2, ink: *ID2D1Ink, brush: *ID2D1Brush, inkStyle: *ID2D1InkStyle) -> void #cpp_method;
+
+    DrawGradientMesh: (this: *ID2D1DeviceContext2, gradientMesh: *ID2D1GradientMesh) -> void #cpp_method;
+
+    DrawGdiMetafile_1: (this: *ID2D1DeviceContext2, gdiMetafile: *ID2D1GdiMetafile, destinationRectangle: /*const*/ *D2D1_RECT_F, sourceRectangle: /*const*/ *D2D1_RECT_F = null) -> void #cpp_method;
+
+    CreateTransformedImageSource: (this: *ID2D1DeviceContext2, imageSource: *ID2D1ImageSource, properties: *D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES, transformedImageSource: **ID2D1TransformedImageSource) -> HRESULT #cpp_method;
+}
+
+ID2D1DeviceContext2_CreateInk :: inline (this: *ID2D1DeviceContext2, startPoint: *D2D1_INK_POINT, ink: **ID2D1Ink) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateInk(this, startPoint, ink); }
+
+ID2D1DeviceContext2_CreateInkStyle :: inline (this: *ID2D1DeviceContext2, inkStyleProperties: *D2D1_INK_STYLE_PROPERTIES, inkStyle: **ID2D1InkStyle) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateInkStyle(this, inkStyleProperties, inkStyle); }
+
+ID2D1DeviceContext2_CreateGradientMesh :: inline (this: *ID2D1DeviceContext2, patches: *D2D1_GRADIENT_MESH_PATCH, patchesCount: u32, gradientMesh: **ID2D1GradientMesh) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateGradientMesh(this, patches, patchesCount, gradientMesh); }
+
+ID2D1DeviceContext2_CreateImageSourceFromWic :: inline (this: *ID2D1DeviceContext2, wicBitmapSource: *IWICBitmapSource, loadingOptions: D2D1_IMAGE_SOURCE_LOADING_OPTIONS, alphaMode: D2D1_ALPHA_MODE, imageSource: **ID2D1ImageSourceFromWic) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateImageSourceFromWic(this, wicBitmapSource, loadingOptions, alphaMode, imageSource); }
+
+ID2D1DeviceContext2_CreateLookupTable3D :: inline (this: *ID2D1DeviceContext2, precision: D2D1_BUFFER_PRECISION, extents: *u32, data: *u8, dataCount: u32, strides: *u32, lookupTable: **ID2D1LookupTable3D) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateLookupTable3D(this, precision, extents, data, dataCount, strides, lookupTable); }
+
+ID2D1DeviceContext2_CreateImageSourceFromDxgi :: inline (this: *ID2D1DeviceContext2, surfaces: **IDXGISurface, surfaceCount: u32, colorSpace: DXGI_COLOR_SPACE_TYPE, options: D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS, imageSource: **ID2D1ImageSource) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateImageSourceFromDxgi(this, surfaces, surfaceCount, colorSpace, options, imageSource); }
+
+ID2D1DeviceContext2_GetGradientMeshWorldBounds :: inline (this: *ID2D1DeviceContext2, gradientMesh: *ID2D1GradientMesh, pBounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1devicecontext2_vtable.GetGradientMeshWorldBounds(this, gradientMesh, pBounds); }
+
+ID2D1DeviceContext2_DrawInk :: inline (this: *ID2D1DeviceContext2, ink: *ID2D1Ink, brush: *ID2D1Brush, inkStyle: *ID2D1InkStyle) { this.id2d1devicecontext2_vtable.DrawInk(this, ink, brush, inkStyle); }
+
+ID2D1DeviceContext2_DrawGradientMesh :: inline (this: *ID2D1DeviceContext2, gradientMesh: *ID2D1GradientMesh) { this.id2d1devicecontext2_vtable.DrawGradientMesh(this, gradientMesh); }
+
+ID2D1DeviceContext2_DrawGdiMetafile_1 :: inline (this: *ID2D1DeviceContext2, gdiMetafile: *ID2D1GdiMetafile, destinationRectangle: /*const*/ *D2D1_RECT_F, sourceRectangle: /*const*/ *D2D1_RECT_F = null) { this.id2d1devicecontext2_vtable.DrawGdiMetafile_1(this, gdiMetafile, destinationRectangle, sourceRectangle); }
+
+ID2D1DeviceContext2_CreateTransformedImageSource :: inline (this: *ID2D1DeviceContext2, imageSource: *ID2D1ImageSource, properties: *D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES, transformedImageSource: **ID2D1TransformedImageSource) -> HRESULT { return this.id2d1devicecontext2_vtable.CreateTransformedImageSource(this, imageSource, properties, transformedImageSource); }
+
+vtable :: (obj: *ID2D1DeviceContext2) -> *ID2D1DeviceContext2_VTable { return obj.id2d1devicecontext2_vtable; }
+
+
+ID2D1Device2 :: struct {
+    #as using id2d1device1: ID2D1Device1;
+    #place id2d1device1; id2d1device2_vtable: *ID2D1Device2_VTable;
+}
+ID2D1Device2_VTable :: struct #type_info_none {
+    using id2d1device1: ID2D1Device1_VTable;
+    CreateDeviceContext_2: (this: *ID2D1Device2, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext2: **ID2D1DeviceContext2) -> HRESULT #cpp_method;
+
+    FlushDeviceContexts: (this: *ID2D1Device2, bitmap: *ID2D1Bitmap) -> void #cpp_method;
+
+    GetDxgiDevice: (this: *ID2D1Device2, dxgiDevice: **IDXGIDevice) -> HRESULT #cpp_method;
+}
+
+ID2D1Device2_CreateDeviceContext_2 :: inline (this: *ID2D1Device2, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext2: **ID2D1DeviceContext2) -> HRESULT { return this.id2d1device2_vtable.CreateDeviceContext_2(this, options, deviceContext2); }
+
+ID2D1Device2_FlushDeviceContexts :: inline (this: *ID2D1Device2, bitmap: *ID2D1Bitmap) { this.id2d1device2_vtable.FlushDeviceContexts(this, bitmap); }
+
+ID2D1Device2_GetDxgiDevice :: inline (this: *ID2D1Device2, dxgiDevice: **IDXGIDevice) -> HRESULT { return this.id2d1device2_vtable.GetDxgiDevice(this, dxgiDevice); }
+
+vtable :: (obj: *ID2D1Device2) -> *ID2D1Device2_VTable { return obj.id2d1device2_vtable; }
+
+
+ID2D1Factory3 :: struct {
+    #as using id2d1factory2: ID2D1Factory2;
+    #place id2d1factory2; id2d1factory3_vtable: *ID2D1Factory3_VTable;
+}
+ID2D1Factory3_VTable :: struct #type_info_none {
+    using id2d1factory2: ID2D1Factory2_VTable;
+    CreateDevice_2: (this: *ID2D1Factory3, dxgiDevice: *IDXGIDevice, d2dDevice2: **ID2D1Device2) -> HRESULT #cpp_method;
+}
+ID2D1Factory3_CreateDevice_2 :: inline (this: *ID2D1Factory3, dxgiDevice: *IDXGIDevice, d2dDevice2: **ID2D1Device2) -> HRESULT { return this.id2d1factory3_vtable.CreateDevice_2(this, dxgiDevice, d2dDevice2); }
+
+vtable :: (obj: *ID2D1Factory3) -> *ID2D1Factory3_VTable { return obj.id2d1factory3_vtable; }
+
+
+ID2D1CommandSink2 :: struct {
+    #as using id2d1commandsink1: ID2D1CommandSink1;
+    #place id2d1commandsink1; id2d1commandsink2_vtable: *ID2D1CommandSink2_VTable;
+}
+ID2D1CommandSink2_VTable :: struct #type_info_none {
+    using id2d1commandsink1: ID2D1CommandSink1_VTable;
+    DrawInk: (this: *ID2D1CommandSink2, ink: *ID2D1Ink, brush: *ID2D1Brush, inkStyle: *ID2D1InkStyle) -> HRESULT #cpp_method;
+
+    DrawGradientMesh: (this: *ID2D1CommandSink2, gradientMesh: *ID2D1GradientMesh) -> HRESULT #cpp_method;
+
+    DrawGdiMetafile_1: (this: *ID2D1CommandSink2, gdiMetafile: *ID2D1GdiMetafile, destinationRectangle: /*const*/ *D2D1_RECT_F, sourceRectangle: /*const*/ *D2D1_RECT_F) -> HRESULT #cpp_method;
+}
+
+ID2D1CommandSink2_DrawInk :: inline (this: *ID2D1CommandSink2, ink: *ID2D1Ink, brush: *ID2D1Brush, inkStyle: *ID2D1InkStyle) -> HRESULT { return this.id2d1commandsink2_vtable.DrawInk(this, ink, brush, inkStyle); }
+
+ID2D1CommandSink2_DrawGradientMesh :: inline (this: *ID2D1CommandSink2, gradientMesh: *ID2D1GradientMesh) -> HRESULT { return this.id2d1commandsink2_vtable.DrawGradientMesh(this, gradientMesh); }
+
+ID2D1CommandSink2_DrawGdiMetafile_1 :: inline (this: *ID2D1CommandSink2, gdiMetafile: *ID2D1GdiMetafile, destinationRectangle: /*const*/ *D2D1_RECT_F, sourceRectangle: /*const*/ *D2D1_RECT_F) -> HRESULT { return this.id2d1commandsink2_vtable.DrawGdiMetafile_1(this, gdiMetafile, destinationRectangle, sourceRectangle); }
+
+vtable :: (obj: *ID2D1CommandSink2) -> *ID2D1CommandSink2_VTable { return obj.id2d1commandsink2_vtable; }
+
+
+ID2D1GdiMetafile1 :: struct {
+    #as using id2d1gdimetafile: ID2D1GdiMetafile;
+    #place id2d1gdimetafile; id2d1gdimetafile1_vtable: *ID2D1GdiMetafile1_VTable;
+}
+ID2D1GdiMetafile1_VTable :: struct #type_info_none {
+    using id2d1gdimetafile: ID2D1GdiMetafile_VTable;
+    GetDpi: (this: *ID2D1GdiMetafile1, dpiX: *float, dpiY: *float) -> HRESULT #cpp_method;
+
+    GetSourceBounds: (this: *ID2D1GdiMetafile1, bounds: *D2D1_RECT_F) -> HRESULT #cpp_method;
+}
+
+ID2D1GdiMetafile1_GetDpi :: inline (this: *ID2D1GdiMetafile1, dpiX: *float, dpiY: *float) -> HRESULT { return this.id2d1gdimetafile1_vtable.GetDpi(this, dpiX, dpiY); }
+
+ID2D1GdiMetafile1_GetSourceBounds :: inline (this: *ID2D1GdiMetafile1, bounds: *D2D1_RECT_F) -> HRESULT { return this.id2d1gdimetafile1_vtable.GetSourceBounds(this, bounds); }
+
+vtable :: (obj: *ID2D1GdiMetafile1) -> *ID2D1GdiMetafile1_VTable { return obj.id2d1gdimetafile1_vtable; }
+
+
+ID2D1GdiMetafileSink1 :: struct {
+    #as using id2d1gdimetafilesink: ID2D1GdiMetafileSink;
+    #place id2d1gdimetafilesink; id2d1gdimetafilesink1_vtable: *ID2D1GdiMetafileSink1_VTable;
+}
+ID2D1GdiMetafileSink1_VTable :: struct #type_info_none {
+    using id2d1gdimetafilesink: ID2D1GdiMetafileSink_VTable;
+    ProcessRecord_1: (this: *ID2D1GdiMetafileSink1, recordType: u32, recordData: /*const*/ *void, recordDataSize: u32, flags: u32) -> HRESULT #cpp_method;
+}
+ID2D1GdiMetafileSink1_ProcessRecord_1 :: inline (this: *ID2D1GdiMetafileSink1, recordType: u32, recordData: /*const*/ *void, recordDataSize: u32, flags: u32) -> HRESULT { return this.id2d1gdimetafilesink1_vtable.ProcessRecord_1(this, recordType, recordData, recordDataSize, flags); }
+
+vtable :: (obj: *ID2D1GdiMetafileSink1) -> *ID2D1GdiMetafileSink1_VTable { return obj.id2d1gdimetafilesink1_vtable; }
+
+
+ID2D1SpriteBatch :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1spritebatch_vtable: *ID2D1SpriteBatch_VTable;
+}
+ID2D1SpriteBatch_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    AddSprites: (this: *ID2D1SpriteBatch, spriteCount: u32, destinationRectangles: *D2D1_RECT_F, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null, destinationRectanglesStride: u32 = 16, sourceRectanglesStride: u32 = 16, colorsStride: u32 = 16, transformsStride: u32 = 24) -> HRESULT #cpp_method;
+
+    SetSprites: (this: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, destinationRectangles: *D2D1_RECT_F = null, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null, destinationRectanglesStride: u32 = 16, sourceRectanglesStride: u32 = 16, colorsStride: u32 = 16, transformsStride: u32 = 24) -> HRESULT #cpp_method;
+
+    GetSprites: (this: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, destinationRectangles: *D2D1_RECT_F = null, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null) -> HRESULT #cpp_method;
+
+    GetSpriteCount: (this: *ID2D1SpriteBatch) -> u32 #cpp_method;
+
+    Clear: (this: *ID2D1SpriteBatch) -> void #cpp_method;
+}
+
+ID2D1SpriteBatch_AddSprites :: inline (this: *ID2D1SpriteBatch, spriteCount: u32, destinationRectangles: *D2D1_RECT_F, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null, destinationRectanglesStride: u32 = 16, sourceRectanglesStride: u32 = 16, colorsStride: u32 = 16, transformsStride: u32 = 24) -> HRESULT { return this.id2d1spritebatch_vtable.AddSprites(this, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride); }
+
+ID2D1SpriteBatch_SetSprites :: inline (this: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, destinationRectangles: *D2D1_RECT_F = null, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null, destinationRectanglesStride: u32 = 16, sourceRectanglesStride: u32 = 16, colorsStride: u32 = 16, transformsStride: u32 = 24) -> HRESULT { return this.id2d1spritebatch_vtable.SetSprites(this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride); }
+
+ID2D1SpriteBatch_GetSprites :: inline (this: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, destinationRectangles: *D2D1_RECT_F = null, sourceRectangles: *D2D1_RECT_U = null, colors: *D2D1_COLOR_F = null, transforms: *D2D1_MATRIX_3X2_F = null) -> HRESULT { return this.id2d1spritebatch_vtable.GetSprites(this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms); }
+
+ID2D1SpriteBatch_GetSpriteCount :: inline (this: *ID2D1SpriteBatch) -> u32 { return this.id2d1spritebatch_vtable.GetSpriteCount(this); }
+
+ID2D1SpriteBatch_Clear :: inline (this: *ID2D1SpriteBatch) { this.id2d1spritebatch_vtable.Clear(this); }
+
+vtable :: (obj: *ID2D1SpriteBatch) -> *ID2D1SpriteBatch_VTable { return obj.id2d1spritebatch_vtable; }
+
+
+ID2D1DeviceContext3 :: struct {
+    #as using id2d1devicecontext2: ID2D1DeviceContext2;
+    #place id2d1devicecontext2; id2d1devicecontext3_vtable: *ID2D1DeviceContext3_VTable;
+}
+ID2D1DeviceContext3_VTable :: struct #type_info_none {
+    using id2d1devicecontext2: ID2D1DeviceContext2_VTable;
+    CreateSpriteBatch: (this: *ID2D1DeviceContext3, spriteBatch: **ID2D1SpriteBatch) -> HRESULT #cpp_method;
+
+    DrawSpriteBatch: (this: *ID2D1DeviceContext3, spriteBatch: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, bitmap: *ID2D1Bitmap, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE = .LINEAR, spriteOptions: D2D1_SPRITE_OPTIONS = .NONE) -> void #cpp_method;
+}
+
+ID2D1DeviceContext3_CreateSpriteBatch :: inline (this: *ID2D1DeviceContext3, spriteBatch: **ID2D1SpriteBatch) -> HRESULT { return this.id2d1devicecontext3_vtable.CreateSpriteBatch(this, spriteBatch); }
+
+ID2D1DeviceContext3_DrawSpriteBatch :: inline (this: *ID2D1DeviceContext3, spriteBatch: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, bitmap: *ID2D1Bitmap, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE = .LINEAR, spriteOptions: D2D1_SPRITE_OPTIONS = .NONE) { this.id2d1devicecontext3_vtable.DrawSpriteBatch(this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions); }
+
+vtable :: (obj: *ID2D1DeviceContext3) -> *ID2D1DeviceContext3_VTable { return obj.id2d1devicecontext3_vtable; }
+
+
+ID2D1Device3 :: struct {
+    #as using id2d1device2: ID2D1Device2;
+    #place id2d1device2; id2d1device3_vtable: *ID2D1Device3_VTable;
+}
+ID2D1Device3_VTable :: struct #type_info_none {
+    using id2d1device2: ID2D1Device2_VTable;
+    CreateDeviceContext_3: (this: *ID2D1Device3, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext3: **ID2D1DeviceContext3) -> HRESULT #cpp_method;
+}
+ID2D1Device3_CreateDeviceContext_3 :: inline (this: *ID2D1Device3, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext3: **ID2D1DeviceContext3) -> HRESULT { return this.id2d1device3_vtable.CreateDeviceContext_3(this, options, deviceContext3); }
+
+vtable :: (obj: *ID2D1Device3) -> *ID2D1Device3_VTable { return obj.id2d1device3_vtable; }
+
+
+ID2D1Factory4 :: struct {
+    #as using id2d1factory3: ID2D1Factory3;
+    #place id2d1factory3; id2d1factory4_vtable: *ID2D1Factory4_VTable;
+}
+ID2D1Factory4_VTable :: struct #type_info_none {
+    using id2d1factory3: ID2D1Factory3_VTable;
+    CreateDevice_3: (this: *ID2D1Factory4, dxgiDevice: *IDXGIDevice, d2dDevice3: **ID2D1Device3) -> HRESULT #cpp_method;
+}
+ID2D1Factory4_CreateDevice_3 :: inline (this: *ID2D1Factory4, dxgiDevice: *IDXGIDevice, d2dDevice3: **ID2D1Device3) -> HRESULT { return this.id2d1factory4_vtable.CreateDevice_3(this, dxgiDevice, d2dDevice3); }
+
+vtable :: (obj: *ID2D1Factory4) -> *ID2D1Factory4_VTable { return obj.id2d1factory4_vtable; }
+
+
+ID2D1CommandSink3 :: struct {
+    #as using id2d1commandsink2: ID2D1CommandSink2;
+    #place id2d1commandsink2; id2d1commandsink3_vtable: *ID2D1CommandSink3_VTable;
+}
+ID2D1CommandSink3_VTable :: struct #type_info_none {
+    using id2d1commandsink2: ID2D1CommandSink2_VTable;
+    DrawSpriteBatch: (this: *ID2D1CommandSink3, spriteBatch: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, bitmap: *ID2D1Bitmap, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE, spriteOptions: D2D1_SPRITE_OPTIONS) -> HRESULT #cpp_method;
+}
+ID2D1CommandSink3_DrawSpriteBatch :: inline (this: *ID2D1CommandSink3, spriteBatch: *ID2D1SpriteBatch, startIndex: u32, spriteCount: u32, bitmap: *ID2D1Bitmap, interpolationMode: D2D1_BITMAP_INTERPOLATION_MODE, spriteOptions: D2D1_SPRITE_OPTIONS) -> HRESULT { return this.id2d1commandsink3_vtable.DrawSpriteBatch(this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions); }
+
+vtable :: (obj: *ID2D1CommandSink3) -> *ID2D1CommandSink3_VTable { return obj.id2d1commandsink3_vtable; }
+
+
+ID2D1SvgGlyphStyle :: struct {
+    #as using id2d1resource: ID2D1Resource;
+    #place id2d1resource; id2d1svgglyphstyle_vtable: *ID2D1SvgGlyphStyle_VTable;
+}
+ID2D1SvgGlyphStyle_VTable :: struct #type_info_none {
+    using id2d1resource: ID2D1Resource_VTable;
+    SetFill: (this: *ID2D1SvgGlyphStyle, brush: *ID2D1Brush) -> HRESULT #cpp_method;
+
+    GetFill: (this: *ID2D1SvgGlyphStyle, brush: **ID2D1Brush) -> void #cpp_method;
+
+    SetStroke: (this: *ID2D1SvgGlyphStyle, brush: *ID2D1Brush, strokeWidth: float = 1.0, dashes: *float = null, dashesCount: u32 = 0, dashOffset: float = 1.0) -> HRESULT #cpp_method;
+
+    GetStrokeDashesCount: (this: *ID2D1SvgGlyphStyle) -> u32 #cpp_method;
+
+    GetStroke: (this: *ID2D1SvgGlyphStyle, brush: **ID2D1Brush, strokeWidth: *float = null, dashes: *float = null, dashesCount: u32 = 0, dashOffset: *float = null) -> void #cpp_method;
+}
+
+ID2D1SvgGlyphStyle_SetFill :: inline (this: *ID2D1SvgGlyphStyle, brush: *ID2D1Brush) -> HRESULT { return this.id2d1svgglyphstyle_vtable.SetFill(this, brush); }
+
+ID2D1SvgGlyphStyle_GetFill :: inline (this: *ID2D1SvgGlyphStyle, brush: **ID2D1Brush) { this.id2d1svgglyphstyle_vtable.GetFill(this, brush); }
+
+ID2D1SvgGlyphStyle_SetStroke :: inline (this: *ID2D1SvgGlyphStyle, brush: *ID2D1Brush, strokeWidth: float = 1.0, dashes: *float = null, dashesCount: u32 = 0, dashOffset: float = 1.0) -> HRESULT { return this.id2d1svgglyphstyle_vtable.SetStroke(this, brush, strokeWidth, dashes, dashesCount, dashOffset); }
+
+ID2D1SvgGlyphStyle_GetStrokeDashesCount :: inline (this: *ID2D1SvgGlyphStyle) -> u32 { return this.id2d1svgglyphstyle_vtable.GetStrokeDashesCount(this); }
+
+ID2D1SvgGlyphStyle_GetStroke :: inline (this: *ID2D1SvgGlyphStyle, brush: **ID2D1Brush, strokeWidth: *float = null, dashes: *float = null, dashesCount: u32 = 0, dashOffset: *float = null) { this.id2d1svgglyphstyle_vtable.GetStroke(this, brush, strokeWidth, dashes, dashesCount, dashOffset); }
+
+vtable :: (obj: *ID2D1SvgGlyphStyle) -> *ID2D1SvgGlyphStyle_VTable { return obj.id2d1svgglyphstyle_vtable; }
+
+
+ID2D1DeviceContext4 :: struct {
+    #as using id2d1devicecontext3: ID2D1DeviceContext3;
+    #place id2d1devicecontext3; id2d1devicecontext4_vtable: *ID2D1DeviceContext4_VTable;
+}
+ID2D1DeviceContext4_VTable :: struct #type_info_none {
+    using id2d1devicecontext3: ID2D1DeviceContext3_VTable;
+    CreateSvgGlyphStyle: (this: *ID2D1DeviceContext4, svgGlyphStyle: **ID2D1SvgGlyphStyle) -> HRESULT #cpp_method;
+
+    DrawTextA_1: (this: *ID2D1DeviceContext4, _string: /*const*/ *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutRect: /*const*/ *D2D1_RECT_F, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, options: D2D1_DRAW_TEXT_OPTIONS = .ENABLE_COLOR_FONT, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    DrawTextLayout_1: (this: *ID2D1DeviceContext4, origin: D2D1_POINT_2F, textLayout: *IDWriteTextLayout, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, options: D2D1_DRAW_TEXT_OPTIONS = .ENABLE_COLOR_FONT) -> void #cpp_method;
+
+    DrawColorBitmapGlyphRun: (this: *ID2D1DeviceContext4, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE = .NATURAL, bitmapSnapOption: D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION = .DEFAULT) -> void #cpp_method;
+
+    DrawSvgGlyphRun: (this: *ID2D1DeviceContext4, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, defaultFillBrush: *ID2D1Brush = null, svgGlyphStyle: *ID2D1SvgGlyphStyle = null, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    GetColorBitmapGlyphImage: (this: *ID2D1DeviceContext4, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, glyphOrigin: D2D1_POINT_2F, fontFace: *IDWriteFontFace, fontEmSize: float, glyphIndex: u16, isSideways: BOOL, worldTransform: *D2D1_MATRIX_3X2_F, dpiX: float, dpiY: float, glyphTransform: *D2D1_MATRIX_3X2_F, glyphImage: **ID2D1Image) -> HRESULT #cpp_method;
+
+    GetSvgGlyphImage: (this: *ID2D1DeviceContext4, glyphOrigin: D2D1_POINT_2F, fontFace: *IDWriteFontFace, fontEmSize: float, glyphIndex: u16, isSideways: BOOL, worldTransform: *D2D1_MATRIX_3X2_F, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32, glyphTransform: *D2D1_MATRIX_3X2_F, glyphImage: **ID2D1CommandList) -> HRESULT #cpp_method;
+}
+
+ID2D1DeviceContext4_CreateSvgGlyphStyle :: inline (this: *ID2D1DeviceContext4, svgGlyphStyle: **ID2D1SvgGlyphStyle) -> HRESULT { return this.id2d1devicecontext4_vtable.CreateSvgGlyphStyle(this, svgGlyphStyle); }
+
+ID2D1DeviceContext4_DrawTextA_1 :: inline (this: *ID2D1DeviceContext4, _string: /*const*/ *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutRect: /*const*/ *D2D1_RECT_F, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, options: D2D1_DRAW_TEXT_OPTIONS = .ENABLE_COLOR_FONT, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1devicecontext4_vtable.DrawTextA_1(this, _string, stringLength, textFormat, layoutRect, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options, measuringMode); }
+
+ID2D1DeviceContext4_DrawTextLayout_1 :: inline (this: *ID2D1DeviceContext4, origin: D2D1_POINT_2F, textLayout: *IDWriteTextLayout, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, options: D2D1_DRAW_TEXT_OPTIONS = .ENABLE_COLOR_FONT) { this.id2d1devicecontext4_vtable.DrawTextLayout_1(this, origin, textLayout, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, options); }
+
+ID2D1DeviceContext4_DrawColorBitmapGlyphRun :: inline (this: *ID2D1DeviceContext4, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE = .NATURAL, bitmapSnapOption: D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION = .DEFAULT) { this.id2d1devicecontext4_vtable.DrawColorBitmapGlyphRun(this, glyphImageFormat, baselineOrigin, glyphRun, measuringMode, bitmapSnapOption); }
+
+ID2D1DeviceContext4_DrawSvgGlyphRun :: inline (this: *ID2D1DeviceContext4, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, defaultFillBrush: *ID2D1Brush = null, svgGlyphStyle: *ID2D1SvgGlyphStyle = null, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1devicecontext4_vtable.DrawSvgGlyphRun(this, baselineOrigin, glyphRun, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, measuringMode); }
+
+ID2D1DeviceContext4_GetColorBitmapGlyphImage :: inline (this: *ID2D1DeviceContext4, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, glyphOrigin: D2D1_POINT_2F, fontFace: *IDWriteFontFace, fontEmSize: float, glyphIndex: u16, isSideways: BOOL, worldTransform: *D2D1_MATRIX_3X2_F, dpiX: float, dpiY: float, glyphTransform: *D2D1_MATRIX_3X2_F, glyphImage: **ID2D1Image) -> HRESULT { return this.id2d1devicecontext4_vtable.GetColorBitmapGlyphImage(this, glyphImageFormat, glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, dpiX, dpiY, glyphTransform, glyphImage); }
+
+ID2D1DeviceContext4_GetSvgGlyphImage :: inline (this: *ID2D1DeviceContext4, glyphOrigin: D2D1_POINT_2F, fontFace: *IDWriteFontFace, fontEmSize: float, glyphIndex: u16, isSideways: BOOL, worldTransform: *D2D1_MATRIX_3X2_F, defaultFillBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32, glyphTransform: *D2D1_MATRIX_3X2_F, glyphImage: **ID2D1CommandList) -> HRESULT { return this.id2d1devicecontext4_vtable.GetSvgGlyphImage(this, glyphOrigin, fontFace, fontEmSize, glyphIndex, isSideways, worldTransform, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, glyphTransform, glyphImage); }
+
+vtable :: (obj: *ID2D1DeviceContext4) -> *ID2D1DeviceContext4_VTable { return obj.id2d1devicecontext4_vtable; }
+
+
+ID2D1Device4 :: struct {
+    #as using id2d1device3: ID2D1Device3;
+    #place id2d1device3; id2d1device4_vtable: *ID2D1Device4_VTable;
+}
+ID2D1Device4_VTable :: struct #type_info_none {
+    using id2d1device3: ID2D1Device3_VTable;
+    CreateDeviceContext_4: (this: *ID2D1Device4, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext4: **ID2D1DeviceContext4) -> HRESULT #cpp_method;
+
+    SetMaximumColorGlyphCacheMemory: (this: *ID2D1Device4, maximumInBytes: u64) -> void #cpp_method;
+
+    GetMaximumColorGlyphCacheMemory: (this: *ID2D1Device4) -> u64 #cpp_method;
+}
+
+ID2D1Device4_CreateDeviceContext_4 :: inline (this: *ID2D1Device4, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext4: **ID2D1DeviceContext4) -> HRESULT { return this.id2d1device4_vtable.CreateDeviceContext_4(this, options, deviceContext4); }
+
+ID2D1Device4_SetMaximumColorGlyphCacheMemory :: inline (this: *ID2D1Device4, maximumInBytes: u64) { this.id2d1device4_vtable.SetMaximumColorGlyphCacheMemory(this, maximumInBytes); }
+
+ID2D1Device4_GetMaximumColorGlyphCacheMemory :: inline (this: *ID2D1Device4) -> u64 { return this.id2d1device4_vtable.GetMaximumColorGlyphCacheMemory(this); }
+
+vtable :: (obj: *ID2D1Device4) -> *ID2D1Device4_VTable { return obj.id2d1device4_vtable; }
+
+
+ID2D1Factory5 :: struct {
+    #as using id2d1factory4: ID2D1Factory4;
+    #place id2d1factory4; id2d1factory5_vtable: *ID2D1Factory5_VTable;
+}
+ID2D1Factory5_VTable :: struct #type_info_none {
+    using id2d1factory4: ID2D1Factory4_VTable;
+    CreateDevice_4: (this: *ID2D1Factory5, dxgiDevice: *IDXGIDevice, d2dDevice4: **ID2D1Device4) -> HRESULT #cpp_method;
+}
+ID2D1Factory5_CreateDevice_4 :: inline (this: *ID2D1Factory5, dxgiDevice: *IDXGIDevice, d2dDevice4: **ID2D1Device4) -> HRESULT { return this.id2d1factory5_vtable.CreateDevice_4(this, dxgiDevice, d2dDevice4); }
+
+vtable :: (obj: *ID2D1Factory5) -> *ID2D1Factory5_VTable { return obj.id2d1factory5_vtable; }
+
+
+ID2D1CommandSink4 :: struct {
+    #as using id2d1commandsink3: ID2D1CommandSink3;
+    #place id2d1commandsink3; id2d1commandsink4_vtable: *ID2D1CommandSink4_VTable;
+}
+ID2D1CommandSink4_VTable :: struct #type_info_none {
+    using id2d1commandsink3: ID2D1CommandSink3_VTable;
+    SetPrimitiveBlend2: (this: *ID2D1CommandSink4, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT #cpp_method;
+}
+ID2D1CommandSink4_SetPrimitiveBlend2 :: inline (this: *ID2D1CommandSink4, primitiveBlend: D2D1_PRIMITIVE_BLEND) -> HRESULT { return this.id2d1commandsink4_vtable.SetPrimitiveBlend2(this, primitiveBlend); }
+
+vtable :: (obj: *ID2D1CommandSink4) -> *ID2D1CommandSink4_VTable { return obj.id2d1commandsink4_vtable; }
+
+
+ID2D1ColorContext1 :: struct {
+    #as using id2d1colorcontext: ID2D1ColorContext;
+    #place id2d1colorcontext; id2d1colorcontext1_vtable: *ID2D1ColorContext1_VTable;
+}
+ID2D1ColorContext1_VTable :: struct #type_info_none {
+    using id2d1colorcontext: ID2D1ColorContext_VTable;
+    GetColorContextType: (this: *ID2D1ColorContext1) -> D2D1_COLOR_CONTEXT_TYPE #cpp_method;
+
+    GetDXGIColorSpace: (this: *ID2D1ColorContext1) -> DXGI_COLOR_SPACE_TYPE #cpp_method;
+
+    GetSimpleColorProfile: (this: *ID2D1ColorContext1, simpleProfile: *D2D1_SIMPLE_COLOR_PROFILE) -> HRESULT #cpp_method;
+}
+
+ID2D1ColorContext1_GetColorContextType :: inline (this: *ID2D1ColorContext1) -> D2D1_COLOR_CONTEXT_TYPE { return this.id2d1colorcontext1_vtable.GetColorContextType(this); }
+
+ID2D1ColorContext1_GetDXGIColorSpace :: inline (this: *ID2D1ColorContext1) -> DXGI_COLOR_SPACE_TYPE { return this.id2d1colorcontext1_vtable.GetDXGIColorSpace(this); }
+
+ID2D1ColorContext1_GetSimpleColorProfile :: inline (this: *ID2D1ColorContext1, simpleProfile: *D2D1_SIMPLE_COLOR_PROFILE) -> HRESULT { return this.id2d1colorcontext1_vtable.GetSimpleColorProfile(this, simpleProfile); }
+
+vtable :: (obj: *ID2D1ColorContext1) -> *ID2D1ColorContext1_VTable { return obj.id2d1colorcontext1_vtable; }
+
+
+ID2D1DeviceContext5 :: struct {
+    #as using id2d1devicecontext4: ID2D1DeviceContext4;
+    #place id2d1devicecontext4; id2d1devicecontext5_vtable: *ID2D1DeviceContext5_VTable;
+}
+ID2D1DeviceContext5_VTable :: struct #type_info_none {
+    using id2d1devicecontext4: ID2D1DeviceContext4_VTable;
+    CreateSvgDocument: (this: *ID2D1DeviceContext5, inputXmlStream: *IStream, viewportSize: D2D1_SIZE_F, svgDocument: **ID2D1SvgDocument) -> HRESULT #cpp_method;
+
+    DrawSvgDocument: (this: *ID2D1DeviceContext5, svgDocument: *ID2D1SvgDocument) -> void #cpp_method;
+
+    CreateColorContextFromDxgiColorSpace: (this: *ID2D1DeviceContext5, colorSpace: DXGI_COLOR_SPACE_TYPE, colorContext: **ID2D1ColorContext1) -> HRESULT #cpp_method;
+
+    CreateColorContextFromSimpleColorProfile: (this: *ID2D1DeviceContext5, simpleProfile: *D2D1_SIMPLE_COLOR_PROFILE, colorContext: **ID2D1ColorContext1) -> HRESULT #cpp_method;
+}
+
+ID2D1DeviceContext5_CreateSvgDocument :: inline (this: *ID2D1DeviceContext5, inputXmlStream: *IStream, viewportSize: D2D1_SIZE_F, svgDocument: **ID2D1SvgDocument) -> HRESULT { return this.id2d1devicecontext5_vtable.CreateSvgDocument(this, inputXmlStream, viewportSize, svgDocument); }
+
+ID2D1DeviceContext5_DrawSvgDocument :: inline (this: *ID2D1DeviceContext5, svgDocument: *ID2D1SvgDocument) { this.id2d1devicecontext5_vtable.DrawSvgDocument(this, svgDocument); }
+
+ID2D1DeviceContext5_CreateColorContextFromDxgiColorSpace :: inline (this: *ID2D1DeviceContext5, colorSpace: DXGI_COLOR_SPACE_TYPE, colorContext: **ID2D1ColorContext1) -> HRESULT { return this.id2d1devicecontext5_vtable.CreateColorContextFromDxgiColorSpace(this, colorSpace, colorContext); }
+
+ID2D1DeviceContext5_CreateColorContextFromSimpleColorProfile :: inline (this: *ID2D1DeviceContext5, simpleProfile: *D2D1_SIMPLE_COLOR_PROFILE, colorContext: **ID2D1ColorContext1) -> HRESULT { return this.id2d1devicecontext5_vtable.CreateColorContextFromSimpleColorProfile(this, simpleProfile, colorContext); }
+
+vtable :: (obj: *ID2D1DeviceContext5) -> *ID2D1DeviceContext5_VTable { return obj.id2d1devicecontext5_vtable; }
+
+
+ID2D1Device5 :: struct {
+    #as using id2d1device4: ID2D1Device4;
+    #place id2d1device4; id2d1device5_vtable: *ID2D1Device5_VTable;
+}
+ID2D1Device5_VTable :: struct #type_info_none {
+    using id2d1device4: ID2D1Device4_VTable;
+    CreateDeviceContext_5: (this: *ID2D1Device5, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext5: **ID2D1DeviceContext5) -> HRESULT #cpp_method;
+}
+ID2D1Device5_CreateDeviceContext_5 :: inline (this: *ID2D1Device5, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext5: **ID2D1DeviceContext5) -> HRESULT { return this.id2d1device5_vtable.CreateDeviceContext_5(this, options, deviceContext5); }
+
+vtable :: (obj: *ID2D1Device5) -> *ID2D1Device5_VTable { return obj.id2d1device5_vtable; }
+
+
+ID2D1Factory6 :: struct {
+    #as using id2d1factory5: ID2D1Factory5;
+    #place id2d1factory5; id2d1factory6_vtable: *ID2D1Factory6_VTable;
+}
+ID2D1Factory6_VTable :: struct #type_info_none {
+    using id2d1factory5: ID2D1Factory5_VTable;
+    CreateDevice_5: (this: *ID2D1Factory6, dxgiDevice: *IDXGIDevice, d2dDevice5: **ID2D1Device5) -> HRESULT #cpp_method;
+}
+ID2D1Factory6_CreateDevice_5 :: inline (this: *ID2D1Factory6, dxgiDevice: *IDXGIDevice, d2dDevice5: **ID2D1Device5) -> HRESULT { return this.id2d1factory6_vtable.CreateDevice_5(this, dxgiDevice, d2dDevice5); }
+
+vtable :: (obj: *ID2D1Factory6) -> *ID2D1Factory6_VTable { return obj.id2d1factory6_vtable; }
+
+
+ID2D1CommandSink5 :: struct {
+    #as using id2d1commandsink4: ID2D1CommandSink4;
+    #place id2d1commandsink4; id2d1commandsink5_vtable: *ID2D1CommandSink5_VTable;
+}
+ID2D1CommandSink5_VTable :: struct #type_info_none {
+    using id2d1commandsink4: ID2D1CommandSink4_VTable;
+    BlendImage: (this: *ID2D1CommandSink5, image: *ID2D1Image, blendMode: D2D1_BLEND_MODE, targetOffset: *D2D1_POINT_2F, imageRectangle: *D2D1_RECT_F, interpolationMode: D2D1_INTERPOLATION_MODE) -> HRESULT #cpp_method;
+}
+ID2D1CommandSink5_BlendImage :: inline (this: *ID2D1CommandSink5, image: *ID2D1Image, blendMode: D2D1_BLEND_MODE, targetOffset: *D2D1_POINT_2F, imageRectangle: *D2D1_RECT_F, interpolationMode: D2D1_INTERPOLATION_MODE) -> HRESULT { return this.id2d1commandsink5_vtable.BlendImage(this, image, blendMode, targetOffset, imageRectangle, interpolationMode); }
+
+vtable :: (obj: *ID2D1CommandSink5) -> *ID2D1CommandSink5_VTable { return obj.id2d1commandsink5_vtable; }
+
+
+ID2D1DeviceContext6 :: struct {
+    #as using id2d1devicecontext5: ID2D1DeviceContext5;
+    #place id2d1devicecontext5; id2d1devicecontext6_vtable: *ID2D1DeviceContext6_VTable;
+}
+ID2D1DeviceContext6_VTable :: struct #type_info_none {
+    using id2d1devicecontext5: ID2D1DeviceContext5_VTable;
+    BlendImage: (this: *ID2D1DeviceContext6, image: *ID2D1Image, blendMode: D2D1_BLEND_MODE, targetOffset: *D2D1_POINT_2F = null, imageRectangle: *D2D1_RECT_F = null, interpolationMode: D2D1_INTERPOLATION_MODE = .LINEAR) -> void #cpp_method;
+}
+ID2D1DeviceContext6_BlendImage :: inline (this: *ID2D1DeviceContext6, image: *ID2D1Image, blendMode: D2D1_BLEND_MODE, targetOffset: *D2D1_POINT_2F = null, imageRectangle: *D2D1_RECT_F = null, interpolationMode: D2D1_INTERPOLATION_MODE = .LINEAR) { this.id2d1devicecontext6_vtable.BlendImage(this, image, blendMode, targetOffset, imageRectangle, interpolationMode); }
+
+vtable :: (obj: *ID2D1DeviceContext6) -> *ID2D1DeviceContext6_VTable { return obj.id2d1devicecontext6_vtable; }
+
+
+ID2D1Device6 :: struct {
+    #as using id2d1device5: ID2D1Device5;
+    #place id2d1device5; id2d1device6_vtable: *ID2D1Device6_VTable;
+}
+ID2D1Device6_VTable :: struct #type_info_none {
+    using id2d1device5: ID2D1Device5_VTable;
+    CreateDeviceContext_6: (this: *ID2D1Device6, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext6: **ID2D1DeviceContext6) -> HRESULT #cpp_method;
+}
+ID2D1Device6_CreateDeviceContext_6 :: inline (this: *ID2D1Device6, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext6: **ID2D1DeviceContext6) -> HRESULT { return this.id2d1device6_vtable.CreateDeviceContext_6(this, options, deviceContext6); }
+
+vtable :: (obj: *ID2D1Device6) -> *ID2D1Device6_VTable { return obj.id2d1device6_vtable; }
+
+
+ID2D1Factory7 :: struct {
+    #as using id2d1factory6: ID2D1Factory6;
+    #place id2d1factory6; id2d1factory7_vtable: *ID2D1Factory7_VTable;
+}
+ID2D1Factory7_VTable :: struct #type_info_none {
+    using id2d1factory6: ID2D1Factory6_VTable;
+    CreateDevice_6: (this: *ID2D1Factory7, dxgiDevice: *IDXGIDevice, d2dDevice6: **ID2D1Device6) -> HRESULT #cpp_method;
+}
+ID2D1Factory7_CreateDevice_6 :: inline (this: *ID2D1Factory7, dxgiDevice: *IDXGIDevice, d2dDevice6: **ID2D1Device6) -> HRESULT { return this.id2d1factory7_vtable.CreateDevice_6(this, dxgiDevice, d2dDevice6); }
+
+vtable :: (obj: *ID2D1Factory7) -> *ID2D1Factory7_VTable { return obj.id2d1factory7_vtable; }
+
+
+DWRITE_PAINT_FEATURE_LEVEL :: enum s32 {
+    NONE    :: 0;
+
+    COLR_V0 :: 1;
+
+    COLR_V1 :: 2;
+
+    DWRITE_PAINT_FEATURE_LEVEL_NONE    :: NONE;
+
+    DWRITE_PAINT_FEATURE_LEVEL_COLR_V0 :: COLR_V0;
+
+    DWRITE_PAINT_FEATURE_LEVEL_COLR_V1 :: COLR_V1;
+}
+
+ID2D1DeviceContext7 :: struct {
+    #as using id2d1devicecontext6: ID2D1DeviceContext6;
+    #place id2d1devicecontext6; id2d1devicecontext7_vtable: *ID2D1DeviceContext7_VTable;
+}
+ID2D1DeviceContext7_VTable :: struct #type_info_none {
+    using id2d1devicecontext6: ID2D1DeviceContext6_VTable;
+    GetPaintFeatureLevel: (this: *ID2D1DeviceContext7) -> DWRITE_PAINT_FEATURE_LEVEL #cpp_method;
+
+    DrawPaintGlyphRun: (this: *ID2D1DeviceContext7, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, defaultFillBrush: *ID2D1Brush = null, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) -> void #cpp_method;
+
+    DrawGlyphRunWithColorSupport: (this: *ID2D1DeviceContext7, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL, bitmapSnapOption: D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION = .DEFAULT) -> void #cpp_method;
+}
+
+ID2D1DeviceContext7_GetPaintFeatureLevel :: inline (this: *ID2D1DeviceContext7) -> DWRITE_PAINT_FEATURE_LEVEL { return this.id2d1devicecontext7_vtable.GetPaintFeatureLevel(this); }
+
+ID2D1DeviceContext7_DrawPaintGlyphRun :: inline (this: *ID2D1DeviceContext7, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, defaultFillBrush: *ID2D1Brush = null, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL) { this.id2d1devicecontext7_vtable.DrawPaintGlyphRun(this, baselineOrigin, glyphRun, defaultFillBrush, colorPaletteIndex, measuringMode); }
+
+ID2D1DeviceContext7_DrawGlyphRunWithColorSupport :: inline (this: *ID2D1DeviceContext7, baselineOrigin: D2D1_POINT_2F, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, foregroundBrush: *ID2D1Brush, svgGlyphStyle: *ID2D1SvgGlyphStyle, colorPaletteIndex: u32 = 0, measuringMode: DWRITE_MEASURING_MODE = .NATURAL, bitmapSnapOption: D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION = .DEFAULT) { this.id2d1devicecontext7_vtable.DrawGlyphRunWithColorSupport(this, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, svgGlyphStyle, colorPaletteIndex, measuringMode, bitmapSnapOption); }
+
+vtable :: (obj: *ID2D1DeviceContext7) -> *ID2D1DeviceContext7_VTable { return obj.id2d1devicecontext7_vtable; }
+
+
+ID2D1Device7 :: struct {
+    #as using id2d1device6: ID2D1Device6;
+    #place id2d1device6; id2d1device7_vtable: *ID2D1Device7_VTable;
+}
+ID2D1Device7_VTable :: struct #type_info_none {
+    using id2d1device6: ID2D1Device6_VTable;
+    CreateDeviceContext_7: (this: *ID2D1Device7, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext: **ID2D1DeviceContext7) -> HRESULT #cpp_method;
+}
+ID2D1Device7_CreateDeviceContext_7 :: inline (this: *ID2D1Device7, options: D2D1_DEVICE_CONTEXT_OPTIONS, deviceContext: **ID2D1DeviceContext7) -> HRESULT { return this.id2d1device7_vtable.CreateDeviceContext_7(this, options, deviceContext); }
+
+vtable :: (obj: *ID2D1Device7) -> *ID2D1Device7_VTable { return obj.id2d1device7_vtable; }
+
+
+ID2D1Factory8 :: struct {
+    #as using id2d1factory7: ID2D1Factory7;
+    #place id2d1factory7; id2d1factory8_vtable: *ID2D1Factory8_VTable;
+}
+ID2D1Factory8_VTable :: struct #type_info_none {
+    using id2d1factory7: ID2D1Factory7_VTable;
+    CreateDevice_7: (this: *ID2D1Factory8, dxgiDevice: *IDXGIDevice, d2dDevice6: **ID2D1Device7) -> HRESULT #cpp_method;
+}
+ID2D1Factory8_CreateDevice_7 :: inline (this: *ID2D1Factory8, dxgiDevice: *IDXGIDevice, d2dDevice6: **ID2D1Device7) -> HRESULT { return this.id2d1factory8_vtable.CreateDevice_7(this, dxgiDevice, d2dDevice6); }
+
+vtable :: (obj: *ID2D1Factory8) -> *ID2D1Factory8_VTable { return obj.id2d1factory8_vtable; }
+
+
+DWRITE_FONT_FILE_TYPE :: enum s32 {
+    UNKNOWN             :: 0;
+
+    CFF                 :: 1;
+
+    TRUETYPE            :: 2;
+
+    OPENTYPE_COLLECTION :: 3;
+
+    TYPE1_PFM           :: 4;
+
+    TYPE1_PFB           :: 5;
+
+    VECTOR              :: 6;
+
+    BITMAP              :: 7;
+
+    TRUETYPE_COLLECTION :: 3;
+
+    DWRITE_FONT_FILE_TYPE_UNKNOWN             :: UNKNOWN;
+
+    DWRITE_FONT_FILE_TYPE_CFF                 :: CFF;
+
+    DWRITE_FONT_FILE_TYPE_TRUETYPE            :: TRUETYPE;
+
+    DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION :: OPENTYPE_COLLECTION;
+
+    DWRITE_FONT_FILE_TYPE_TYPE1_PFM           :: TYPE1_PFM;
+
+    DWRITE_FONT_FILE_TYPE_TYPE1_PFB           :: TYPE1_PFB;
+
+    DWRITE_FONT_FILE_TYPE_VECTOR              :: VECTOR;
+
+    DWRITE_FONT_FILE_TYPE_BITMAP              :: BITMAP;
+
+    DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION :: TRUETYPE_COLLECTION;
+}
+
+DWRITE_FONT_FACE_TYPE :: enum s32 {
+    CFF                 :: 0;
+
+    TRUETYPE            :: 1;
+
+    OPENTYPE_COLLECTION :: 2;
+
+    TYPE1               :: 3;
+
+    VECTOR              :: 4;
+
+    BITMAP              :: 5;
+
+    UNKNOWN             :: 6;
+
+    RAW_CFF             :: 7;
+
+    TRUETYPE_COLLECTION :: 2;
+
+    DWRITE_FONT_FACE_TYPE_CFF                 :: CFF;
+
+    DWRITE_FONT_FACE_TYPE_TRUETYPE            :: TRUETYPE;
+
+    DWRITE_FONT_FACE_TYPE_OPENTYPE_COLLECTION :: OPENTYPE_COLLECTION;
+
+    DWRITE_FONT_FACE_TYPE_TYPE1               :: TYPE1;
+
+    DWRITE_FONT_FACE_TYPE_VECTOR              :: VECTOR;
+
+    DWRITE_FONT_FACE_TYPE_BITMAP              :: BITMAP;
+
+    DWRITE_FONT_FACE_TYPE_UNKNOWN             :: UNKNOWN;
+
+    DWRITE_FONT_FACE_TYPE_RAW_CFF             :: RAW_CFF;
+
+    DWRITE_FONT_FACE_TYPE_TRUETYPE_COLLECTION :: TRUETYPE_COLLECTION;
+}
+
+DWRITE_FONT_SIMULATIONS :: enum s32 {
+    NONE    :: 0;
+
+    BOLD    :: 1;
+
+    OBLIQUE :: 2;
+
+    DWRITE_FONT_SIMULATIONS_NONE    :: NONE;
+
+    DWRITE_FONT_SIMULATIONS_BOLD    :: BOLD;
+
+    DWRITE_FONT_SIMULATIONS_OBLIQUE :: OBLIQUE;
+}
+
+DWRITE_FONT_WEIGHT :: enum s32 {
+    THIN        :: 100;
+
+    EXTRA_LIGHT :: 200;
+
+    ULTRA_LIGHT :: 200;
+
+    LIGHT       :: 300;
+
+    SEMI_LIGHT  :: 350;
+
+    NORMAL      :: 400;
+
+    REGULAR     :: 400;
+
+    MEDIUM      :: 500;
+
+    DEMI_BOLD   :: 600;
+
+    SEMI_BOLD   :: 600;
+
+    BOLD        :: 700;
+
+    EXTRA_BOLD  :: 800;
+
+    ULTRA_BOLD  :: 800;
+
+    BLACK       :: 900;
+
+    HEAVY       :: 900;
+
+    EXTRA_BLACK :: 950;
+
+    ULTRA_BLACK :: 950;
+
+    DWRITE_FONT_WEIGHT_THIN        :: THIN;
+
+    DWRITE_FONT_WEIGHT_EXTRA_LIGHT :: EXTRA_LIGHT;
+
+    DWRITE_FONT_WEIGHT_ULTRA_LIGHT :: ULTRA_LIGHT;
+
+    DWRITE_FONT_WEIGHT_LIGHT       :: LIGHT;
+
+    DWRITE_FONT_WEIGHT_SEMI_LIGHT  :: SEMI_LIGHT;
+
+    DWRITE_FONT_WEIGHT_NORMAL      :: NORMAL;
+
+    DWRITE_FONT_WEIGHT_REGULAR     :: REGULAR;
+
+    DWRITE_FONT_WEIGHT_MEDIUM      :: MEDIUM;
+
+    DWRITE_FONT_WEIGHT_DEMI_BOLD   :: DEMI_BOLD;
+
+    DWRITE_FONT_WEIGHT_SEMI_BOLD   :: SEMI_BOLD;
+
+    DWRITE_FONT_WEIGHT_BOLD        :: BOLD;
+
+    DWRITE_FONT_WEIGHT_EXTRA_BOLD  :: EXTRA_BOLD;
+
+    DWRITE_FONT_WEIGHT_ULTRA_BOLD  :: ULTRA_BOLD;
+
+    DWRITE_FONT_WEIGHT_BLACK       :: BLACK;
+
+    DWRITE_FONT_WEIGHT_HEAVY       :: HEAVY;
+
+    DWRITE_FONT_WEIGHT_EXTRA_BLACK :: EXTRA_BLACK;
+
+    DWRITE_FONT_WEIGHT_ULTRA_BLACK :: ULTRA_BLACK;
+}
+
+DWRITE_FONT_STRETCH :: enum s32 {
+    UNDEFINED       :: 0;
+
+    ULTRA_CONDENSED :: 1;
+
+    EXTRA_CONDENSED :: 2;
+
+    CONDENSED       :: 3;
+
+    SEMI_CONDENSED  :: 4;
+
+    NORMAL          :: 5;
+
+    MEDIUM          :: 5;
+
+    SEMI_EXPANDED   :: 6;
+
+    EXPANDED        :: 7;
+
+    EXTRA_EXPANDED  :: 8;
+
+    ULTRA_EXPANDED  :: 9;
+
+    DWRITE_FONT_STRETCH_UNDEFINED       :: UNDEFINED;
+
+    DWRITE_FONT_STRETCH_ULTRA_CONDENSED :: ULTRA_CONDENSED;
+
+    DWRITE_FONT_STRETCH_EXTRA_CONDENSED :: EXTRA_CONDENSED;
+
+    DWRITE_FONT_STRETCH_CONDENSED       :: CONDENSED;
+
+    DWRITE_FONT_STRETCH_SEMI_CONDENSED  :: SEMI_CONDENSED;
+
+    DWRITE_FONT_STRETCH_NORMAL          :: NORMAL;
+
+    DWRITE_FONT_STRETCH_MEDIUM          :: MEDIUM;
+
+    DWRITE_FONT_STRETCH_SEMI_EXPANDED   :: SEMI_EXPANDED;
+
+    DWRITE_FONT_STRETCH_EXPANDED        :: EXPANDED;
+
+    DWRITE_FONT_STRETCH_EXTRA_EXPANDED  :: EXTRA_EXPANDED;
+
+    DWRITE_FONT_STRETCH_ULTRA_EXPANDED  :: ULTRA_EXPANDED;
+}
+
+DWRITE_FONT_STYLE :: enum s32 {
+    NORMAL  :: 0;
+
+    OBLIQUE :: 1;
+
+    ITALIC  :: 2;
+
+    DWRITE_FONT_STYLE_NORMAL  :: NORMAL;
+
+    DWRITE_FONT_STYLE_OBLIQUE :: OBLIQUE;
+
+    DWRITE_FONT_STYLE_ITALIC  :: ITALIC;
+}
+
+DWRITE_INFORMATIONAL_STRING_ID :: enum s32 {
+    NONE                             :: 0;
+
+    COPYRIGHT_NOTICE                 :: 1;
+
+    VERSION_STRINGS                  :: 2;
+
+    TRADEMARK                        :: 3;
+
+    MANUFACTURER                     :: 4;
+
+    DESIGNER                         :: 5;
+
+    DESIGNER_URL                     :: 6;
+
+    DESCRIPTION                      :: 7;
+
+    FONT_VENDOR_URL                  :: 8;
+
+    LICENSE_DESCRIPTION              :: 9;
+
+    LICENSE_INFO_URL                 :: 10;
+
+    WIN32_FAMILY_NAMES               :: 11;
+
+    WIN32_SUBFAMILY_NAMES            :: 12;
+
+    TYPOGRAPHIC_FAMILY_NAMES         :: 13;
+
+    TYPOGRAPHIC_SUBFAMILY_NAMES      :: 14;
+
+    SAMPLE_TEXT                      :: 15;
+
+    FULL_NAME                        :: 16;
+
+    POSTSCRIPT_NAME                  :: 17;
+
+    POSTSCRIPT_CID_NAME              :: 18;
+
+    WEIGHT_STRETCH_STYLE_FAMILY_NAME :: 19;
+
+    DESIGN_SCRIPT_LANGUAGE_TAG       :: 20;
+
+    SUPPORTED_SCRIPT_LANGUAGE_TAG    :: 21;
+
+    PREFERRED_FAMILY_NAMES           :: 13;
+    PREFERRED_SUBFAMILY_NAMES        :: 14;
+    WWS_FAMILY_NAME                  :: 19;
+
+    DWRITE_INFORMATIONAL_STRING_NONE                             :: NONE;
+
+    DWRITE_INFORMATIONAL_STRING_COPYRIGHT_NOTICE                 :: COPYRIGHT_NOTICE;
+
+    DWRITE_INFORMATIONAL_STRING_VERSION_STRINGS                  :: VERSION_STRINGS;
+
+    DWRITE_INFORMATIONAL_STRING_TRADEMARK                        :: TRADEMARK;
+
+    DWRITE_INFORMATIONAL_STRING_MANUFACTURER                     :: MANUFACTURER;
+
+    DWRITE_INFORMATIONAL_STRING_DESIGNER                         :: DESIGNER;
+
+    DWRITE_INFORMATIONAL_STRING_DESIGNER_URL                     :: DESIGNER_URL;
+
+    DWRITE_INFORMATIONAL_STRING_DESCRIPTION                      :: DESCRIPTION;
+
+    DWRITE_INFORMATIONAL_STRING_FONT_VENDOR_URL                  :: FONT_VENDOR_URL;
+
+    DWRITE_INFORMATIONAL_STRING_LICENSE_DESCRIPTION              :: LICENSE_DESCRIPTION;
+
+    DWRITE_INFORMATIONAL_STRING_LICENSE_INFO_URL                 :: LICENSE_INFO_URL;
+
+    DWRITE_INFORMATIONAL_STRING_WIN32_FAMILY_NAMES               :: WIN32_FAMILY_NAMES;
+
+    DWRITE_INFORMATIONAL_STRING_WIN32_SUBFAMILY_NAMES            :: WIN32_SUBFAMILY_NAMES;
+
+    DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_FAMILY_NAMES         :: TYPOGRAPHIC_FAMILY_NAMES;
+
+    DWRITE_INFORMATIONAL_STRING_TYPOGRAPHIC_SUBFAMILY_NAMES      :: TYPOGRAPHIC_SUBFAMILY_NAMES;
+
+    DWRITE_INFORMATIONAL_STRING_SAMPLE_TEXT                      :: SAMPLE_TEXT;
+
+    DWRITE_INFORMATIONAL_STRING_FULL_NAME                        :: FULL_NAME;
+
+    DWRITE_INFORMATIONAL_STRING_POSTSCRIPT_NAME                  :: POSTSCRIPT_NAME;
+
+    DWRITE_INFORMATIONAL_STRING_POSTSCRIPT_CID_NAME              :: POSTSCRIPT_CID_NAME;
+
+    DWRITE_INFORMATIONAL_STRING_WEIGHT_STRETCH_STYLE_FAMILY_NAME :: WEIGHT_STRETCH_STYLE_FAMILY_NAME;
+
+    DWRITE_INFORMATIONAL_STRING_DESIGN_SCRIPT_LANGUAGE_TAG       :: DESIGN_SCRIPT_LANGUAGE_TAG;
+
+    DWRITE_INFORMATIONAL_STRING_SUPPORTED_SCRIPT_LANGUAGE_TAG    :: SUPPORTED_SCRIPT_LANGUAGE_TAG;
+
+    DWRITE_INFORMATIONAL_STRING_PREFERRED_FAMILY_NAMES           :: PREFERRED_FAMILY_NAMES;
+    DWRITE_INFORMATIONAL_STRING_PREFERRED_SUBFAMILY_NAMES        :: PREFERRED_SUBFAMILY_NAMES;
+    DWRITE_INFORMATIONAL_STRING_WWS_FAMILY_NAME                  :: WWS_FAMILY_NAME;
+}
+
+DWRITE_FONT_METRICS :: struct {
+    designUnitsPerEm:       u16;
+
+    ascent:                 u16;
+
+    descent:                u16;
+
+    lineGap:                s16;
+
+    capHeight:              u16;
+
+    xHeight:                u16;
+
+    underlinePosition:      s16;
+
+    underlineThickness:     u16;
+
+    strikethroughPosition:  s16;
+
+    strikethroughThickness: u16;
+}
+
+DWRITE_GLYPH_METRICS :: struct {
+    leftSideBearing:   s32;
+
+    advanceWidth:      u32;
+
+    rightSideBearing:  s32;
+
+    topSideBearing:    s32;
+
+    advanceHeight:     u32;
+
+    bottomSideBearing: s32;
+
+    verticalOriginY:   s32;
+}
+
+DWRITE_GLYPH_OFFSET :: struct {
+    advanceOffset:  float;
+
+    ascenderOffset: float;
+}
+
+DWRITE_FACTORY_TYPE :: enum s32 {
+    SHARED   :: 0;
+
+    ISOLATED :: 1;
+
+    DWRITE_FACTORY_TYPE_SHARED   :: SHARED;
+
+    DWRITE_FACTORY_TYPE_ISOLATED :: ISOLATED;
+}
+
+IDWriteFontFileLoader :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfileloader_vtable: *IDWriteFontFileLoader_VTable;
+}
+IDWriteFontFileLoader_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    CreateStreamFromKey: (this: *IDWriteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileStream: **IDWriteFontFileStream) -> HRESULT #cpp_method;
+}
+IDWriteFontFileLoader_CreateStreamFromKey :: inline (this: *IDWriteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileStream: **IDWriteFontFileStream) -> HRESULT { return this.idwritefontfileloader_vtable.CreateStreamFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream); }
+
+vtable :: (obj: *IDWriteFontFileLoader) -> *IDWriteFontFileLoader_VTable { return obj.idwritefontfileloader_vtable; }
+
+
+IDWriteLocalFontFileLoader :: struct {
+    #as using idwritefontfileloader: IDWriteFontFileLoader;
+    #place idwritefontfileloader; idwritelocalfontfileloader_vtable: *IDWriteLocalFontFileLoader_VTable;
+}
+IDWriteLocalFontFileLoader_VTable :: struct #type_info_none {
+    using idwritefontfileloader: IDWriteFontFileLoader_VTable;
+    GetFilePathLengthFromKey: (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, filePathLength: *u32) -> HRESULT #cpp_method;
+
+    GetFilePathFromKey: (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, filePath: *s16, filePathSize: u32) -> HRESULT #cpp_method;
+
+    GetLastWriteTimeFromKey: (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, lastWriteTime: *FILETIME) -> HRESULT #cpp_method;
+}
+
+IDWriteLocalFontFileLoader_GetFilePathLengthFromKey :: inline (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, filePathLength: *u32) -> HRESULT { return this.idwritelocalfontfileloader_vtable.GetFilePathLengthFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, filePathLength); }
+
+IDWriteLocalFontFileLoader_GetFilePathFromKey :: inline (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, filePath: *s16, filePathSize: u32) -> HRESULT { return this.idwritelocalfontfileloader_vtable.GetFilePathFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, filePath, filePathSize); }
+
+IDWriteLocalFontFileLoader_GetLastWriteTimeFromKey :: inline (this: *IDWriteLocalFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, lastWriteTime: *FILETIME) -> HRESULT { return this.idwritelocalfontfileloader_vtable.GetLastWriteTimeFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime); }
+
+vtable :: (obj: *IDWriteLocalFontFileLoader) -> *IDWriteLocalFontFileLoader_VTable { return obj.idwritelocalfontfileloader_vtable; }
+
+
+IDWriteFontFileStream :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfilestream_vtable: *IDWriteFontFileStream_VTable;
+}
+IDWriteFontFileStream_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    ReadFileFragment: (this: *IDWriteFontFileStream, fragmentStart: **void, fileOffset: u64, fragmentSize: u64, fragmentContext: **void) -> HRESULT #cpp_method;
+
+    ReleaseFileFragment: (this: *IDWriteFontFileStream, fragmentContext: *void) -> void #cpp_method;
+
+    GetFileSize: (this: *IDWriteFontFileStream, fileSize: *u64) -> HRESULT #cpp_method;
+
+    GetLastWriteTime: (this: *IDWriteFontFileStream, lastWriteTime: *u64) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFileStream_ReadFileFragment :: inline (this: *IDWriteFontFileStream, fragmentStart: **void, fileOffset: u64, fragmentSize: u64, fragmentContext: **void) -> HRESULT { return this.idwritefontfilestream_vtable.ReadFileFragment(this, fragmentStart, fileOffset, fragmentSize, fragmentContext); }
+
+IDWriteFontFileStream_ReleaseFileFragment :: inline (this: *IDWriteFontFileStream, fragmentContext: *void) { this.idwritefontfilestream_vtable.ReleaseFileFragment(this, fragmentContext); }
+
+IDWriteFontFileStream_GetFileSize :: inline (this: *IDWriteFontFileStream, fileSize: *u64) -> HRESULT { return this.idwritefontfilestream_vtable.GetFileSize(this, fileSize); }
+
+IDWriteFontFileStream_GetLastWriteTime :: inline (this: *IDWriteFontFileStream, lastWriteTime: *u64) -> HRESULT { return this.idwritefontfilestream_vtable.GetLastWriteTime(this, lastWriteTime); }
+
+vtable :: (obj: *IDWriteFontFileStream) -> *IDWriteFontFileStream_VTable { return obj.idwritefontfilestream_vtable; }
+
+
+IDWriteFontFile :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfile_vtable: *IDWriteFontFile_VTable;
+}
+IDWriteFontFile_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetReferenceKey: (this: *IDWriteFontFile, fontFileReferenceKey: **void, fontFileReferenceKeySize: *u32) -> HRESULT #cpp_method;
+
+    GetLoader: (this: *IDWriteFontFile, fontFileLoader: **IDWriteFontFileLoader) -> HRESULT #cpp_method;
+
+    Analyze: (this: *IDWriteFontFile, isSupportedFontType: *BOOL, fontFileType: *DWRITE_FONT_FILE_TYPE, fontFaceType: *DWRITE_FONT_FACE_TYPE, numberOfFaces: *u32) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFile_GetReferenceKey :: inline (this: *IDWriteFontFile, fontFileReferenceKey: **void, fontFileReferenceKeySize: *u32) -> HRESULT { return this.idwritefontfile_vtable.GetReferenceKey(this, fontFileReferenceKey, fontFileReferenceKeySize); }
+
+IDWriteFontFile_GetLoader :: inline (this: *IDWriteFontFile, fontFileLoader: **IDWriteFontFileLoader) -> HRESULT { return this.idwritefontfile_vtable.GetLoader(this, fontFileLoader); }
+
+IDWriteFontFile_Analyze :: inline (this: *IDWriteFontFile, isSupportedFontType: *BOOL, fontFileType: *DWRITE_FONT_FILE_TYPE, fontFaceType: *DWRITE_FONT_FACE_TYPE, numberOfFaces: *u32) -> HRESULT { return this.idwritefontfile_vtable.Analyze(this, isSupportedFontType, fontFileType, fontFaceType, numberOfFaces); }
+
+vtable :: (obj: *IDWriteFontFile) -> *IDWriteFontFile_VTable { return obj.idwritefontfile_vtable; }
+
+
+DWRITE_PIXEL_GEOMETRY :: enum s32 {
+    FLAT :: 0;
+
+    RGB  :: 1;
+
+    BGR  :: 2;
+
+    DWRITE_PIXEL_GEOMETRY_FLAT :: FLAT;
+
+    DWRITE_PIXEL_GEOMETRY_RGB  :: RGB;
+
+    DWRITE_PIXEL_GEOMETRY_BGR  :: BGR;
+}
+
+DWRITE_RENDERING_MODE :: enum s32 {
+    DEFAULT                     :: 0;
+
+    ALIASED                     :: 1;
+
+    GDI_CLASSIC                 :: 2;
+
+    GDI_NATURAL                 :: 3;
+
+    NATURAL                     :: 4;
+
+    NATURAL_SYMMETRIC           :: 5;
+
+    OUTLINE                     :: 6;
+
+    CLEARTYPE_GDI_CLASSIC       :: 2;
+    CLEARTYPE_GDI_NATURAL       :: 3;
+    CLEARTYPE_NATURAL           :: 4;
+    CLEARTYPE_NATURAL_SYMMETRIC :: 5;
+
+    DWRITE_RENDERING_MODE_DEFAULT                     :: DEFAULT;
+
+    DWRITE_RENDERING_MODE_ALIASED                     :: ALIASED;
+
+    DWRITE_RENDERING_MODE_GDI_CLASSIC                 :: GDI_CLASSIC;
+
+    DWRITE_RENDERING_MODE_GDI_NATURAL                 :: GDI_NATURAL;
+
+    DWRITE_RENDERING_MODE_NATURAL                     :: NATURAL;
+
+    DWRITE_RENDERING_MODE_NATURAL_SYMMETRIC           :: NATURAL_SYMMETRIC;
+
+    DWRITE_RENDERING_MODE_OUTLINE                     :: OUTLINE;
+
+    DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC       :: CLEARTYPE_GDI_CLASSIC;
+    DWRITE_RENDERING_MODE_CLEARTYPE_GDI_NATURAL       :: CLEARTYPE_GDI_NATURAL;
+    DWRITE_RENDERING_MODE_CLEARTYPE_NATURAL           :: CLEARTYPE_NATURAL;
+    DWRITE_RENDERING_MODE_CLEARTYPE_NATURAL_SYMMETRIC :: CLEARTYPE_NATURAL_SYMMETRIC;
+}
+
+DWRITE_MATRIX :: struct {
+    m11: float;
+
+    m12: float;
+
+    m21: float;
+
+    m22: float;
+
+    dx:  float;
+
+    dy:  float;
+}
+
+IDWriteRenderingParams :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwriterenderingparams_vtable: *IDWriteRenderingParams_VTable;
+}
+IDWriteRenderingParams_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetGamma: (this: *IDWriteRenderingParams) -> float #cpp_method;
+
+    GetEnhancedContrast: (this: *IDWriteRenderingParams) -> float #cpp_method;
+
+    GetClearTypeLevel: (this: *IDWriteRenderingParams) -> float #cpp_method;
+
+    GetPixelGeometry: (this: *IDWriteRenderingParams) -> DWRITE_PIXEL_GEOMETRY #cpp_method;
+
+    GetRenderingMode: (this: *IDWriteRenderingParams) -> DWRITE_RENDERING_MODE #cpp_method;
+}
+
+IDWriteRenderingParams_GetGamma :: inline (this: *IDWriteRenderingParams) -> float { return this.idwriterenderingparams_vtable.GetGamma(this); }
+
+IDWriteRenderingParams_GetEnhancedContrast :: inline (this: *IDWriteRenderingParams) -> float { return this.idwriterenderingparams_vtable.GetEnhancedContrast(this); }
+
+IDWriteRenderingParams_GetClearTypeLevel :: inline (this: *IDWriteRenderingParams) -> float { return this.idwriterenderingparams_vtable.GetClearTypeLevel(this); }
+
+IDWriteRenderingParams_GetPixelGeometry :: inline (this: *IDWriteRenderingParams) -> DWRITE_PIXEL_GEOMETRY { return this.idwriterenderingparams_vtable.GetPixelGeometry(this); }
+
+IDWriteRenderingParams_GetRenderingMode :: inline (this: *IDWriteRenderingParams) -> DWRITE_RENDERING_MODE { return this.idwriterenderingparams_vtable.GetRenderingMode(this); }
+
+vtable :: (obj: *IDWriteRenderingParams) -> *IDWriteRenderingParams_VTable { return obj.idwriterenderingparams_vtable; }
+
+
+IDWriteGeometrySink :: ID2D1SimplifiedGeometrySink;
+
+IDWriteFontFace :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontface_vtable: *IDWriteFontFace_VTable;
+}
+IDWriteFontFace_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetType: (this: *IDWriteFontFace) -> DWRITE_FONT_FACE_TYPE #cpp_method;
+
+    GetFiles: (this: *IDWriteFontFace, numberOfFiles: *u32, fontFiles: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    GetIndex: (this: *IDWriteFontFace) -> u32 #cpp_method;
+
+    GetSimulations: (this: *IDWriteFontFace) -> DWRITE_FONT_SIMULATIONS #cpp_method;
+
+    IsSymbolFont: (this: *IDWriteFontFace) -> BOOL #cpp_method;
+
+    GetMetrics: (this: *IDWriteFontFace, fontFaceMetrics: *DWRITE_FONT_METRICS) -> void #cpp_method;
+
+    GetGlyphCount: (this: *IDWriteFontFace) -> u16 #cpp_method;
+
+    GetDesignGlyphMetrics: (this: *IDWriteFontFace, glyphIndices: *u16, glyphCount: u32, glyphMetrics: *DWRITE_GLYPH_METRICS, isSideways: BOOL = 0) -> HRESULT #cpp_method;
+
+    GetGlyphIndicesA: (this: *IDWriteFontFace, codePoints: *u32, codePointCount: u32, glyphIndices: *u16) -> HRESULT #cpp_method;
+
+    TryGetFontTable: (this: *IDWriteFontFace, openTypeTableTag: u32, tableData: **void, tableSize: *u32, tableContext: **void, exists: *BOOL) -> HRESULT #cpp_method;
+
+    ReleaseFontTable: (this: *IDWriteFontFace, tableContext: *void) -> void #cpp_method;
+
+    GetGlyphRunOutline: (this: *IDWriteFontFace, emSize: float, glyphIndices: *u16, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, glyphCount: u32, isSideways: BOOL, isRightToLeft: BOOL, geometrySink: *IDWriteGeometrySink) -> HRESULT #cpp_method;
+
+    GetRecommendedRenderingMode: (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE) -> HRESULT #cpp_method;
+
+    GetGdiCompatibleMetrics: (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, fontFaceMetrics: *DWRITE_FONT_METRICS) -> HRESULT #cpp_method;
+
+    GetGdiCompatibleGlyphMetrics: (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, glyphIndices: *u16, glyphCount: u32, glyphMetrics: *DWRITE_GLYPH_METRICS, isSideways: BOOL = 0) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFace_GetType :: inline (this: *IDWriteFontFace) -> DWRITE_FONT_FACE_TYPE { return this.idwritefontface_vtable.GetType(this); }
+
+IDWriteFontFace_GetFiles :: inline (this: *IDWriteFontFace, numberOfFiles: *u32, fontFiles: **IDWriteFontFile) -> HRESULT { return this.idwritefontface_vtable.GetFiles(this, numberOfFiles, fontFiles); }
+
+IDWriteFontFace_GetIndex :: inline (this: *IDWriteFontFace) -> u32 { return this.idwritefontface_vtable.GetIndex(this); }
+
+IDWriteFontFace_GetSimulations :: inline (this: *IDWriteFontFace) -> DWRITE_FONT_SIMULATIONS { return this.idwritefontface_vtable.GetSimulations(this); }
+
+IDWriteFontFace_IsSymbolFont :: inline (this: *IDWriteFontFace) -> BOOL { return this.idwritefontface_vtable.IsSymbolFont(this); }
+
+IDWriteFontFace_GetMetrics :: inline (this: *IDWriteFontFace, fontFaceMetrics: *DWRITE_FONT_METRICS) { this.idwritefontface_vtable.GetMetrics(this, fontFaceMetrics); }
+
+IDWriteFontFace_GetGlyphCount :: inline (this: *IDWriteFontFace) -> u16 { return this.idwritefontface_vtable.GetGlyphCount(this); }
+
+IDWriteFontFace_GetDesignGlyphMetrics :: inline (this: *IDWriteFontFace, glyphIndices: *u16, glyphCount: u32, glyphMetrics: *DWRITE_GLYPH_METRICS, isSideways: BOOL = 0) -> HRESULT { return this.idwritefontface_vtable.GetDesignGlyphMetrics(this, glyphIndices, glyphCount, glyphMetrics, isSideways); }
+
+IDWriteFontFace_GetGlyphIndicesA :: inline (this: *IDWriteFontFace, codePoints: *u32, codePointCount: u32, glyphIndices: *u16) -> HRESULT { return this.idwritefontface_vtable.GetGlyphIndicesA(this, codePoints, codePointCount, glyphIndices); }
+
+IDWriteFontFace_TryGetFontTable :: inline (this: *IDWriteFontFace, openTypeTableTag: u32, tableData: **void, tableSize: *u32, tableContext: **void, exists: *BOOL) -> HRESULT { return this.idwritefontface_vtable.TryGetFontTable(this, openTypeTableTag, tableData, tableSize, tableContext, exists); }
+
+IDWriteFontFace_ReleaseFontTable :: inline (this: *IDWriteFontFace, tableContext: *void) { this.idwritefontface_vtable.ReleaseFontTable(this, tableContext); }
+
+IDWriteFontFace_GetGlyphRunOutline :: inline (this: *IDWriteFontFace, emSize: float, glyphIndices: *u16, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, glyphCount: u32, isSideways: BOOL, isRightToLeft: BOOL, geometrySink: *IDWriteGeometrySink) -> HRESULT { return this.idwritefontface_vtable.GetGlyphRunOutline(this, emSize, glyphIndices, glyphAdvances, glyphOffsets, glyphCount, isSideways, isRightToLeft, geometrySink); }
+
+IDWriteFontFace_GetRecommendedRenderingMode :: inline (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE) -> HRESULT { return this.idwritefontface_vtable.GetRecommendedRenderingMode(this, emSize, pixelsPerDip, measuringMode, renderingParams, renderingMode); }
+
+IDWriteFontFace_GetGdiCompatibleMetrics :: inline (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, fontFaceMetrics: *DWRITE_FONT_METRICS) -> HRESULT { return this.idwritefontface_vtable.GetGdiCompatibleMetrics(this, emSize, pixelsPerDip, transform, fontFaceMetrics); }
+
+IDWriteFontFace_GetGdiCompatibleGlyphMetrics :: inline (this: *IDWriteFontFace, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, glyphIndices: *u16, glyphCount: u32, glyphMetrics: *DWRITE_GLYPH_METRICS, isSideways: BOOL = 0) -> HRESULT { return this.idwritefontface_vtable.GetGdiCompatibleGlyphMetrics(this, emSize, pixelsPerDip, transform, useGdiNatural, glyphIndices, glyphCount, glyphMetrics, isSideways); }
+
+vtable :: (obj: *IDWriteFontFace) -> *IDWriteFontFace_VTable { return obj.idwritefontface_vtable; }
+
+
+IDWriteFontCollectionLoader :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontcollectionloader_vtable: *IDWriteFontCollectionLoader_VTable;
+}
+IDWriteFontCollectionLoader_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    CreateEnumeratorFromKey: (this: *IDWriteFontCollectionLoader, factory: *IDWriteFactory, collectionKey: *void, collectionKeySize: u32, fontFileEnumerator: **IDWriteFontFileEnumerator) -> HRESULT #cpp_method;
+}
+IDWriteFontCollectionLoader_CreateEnumeratorFromKey :: inline (this: *IDWriteFontCollectionLoader, factory: *IDWriteFactory, collectionKey: *void, collectionKeySize: u32, fontFileEnumerator: **IDWriteFontFileEnumerator) -> HRESULT { return this.idwritefontcollectionloader_vtable.CreateEnumeratorFromKey(this, factory, collectionKey, collectionKeySize, fontFileEnumerator); }
+
+vtable :: (obj: *IDWriteFontCollectionLoader) -> *IDWriteFontCollectionLoader_VTable { return obj.idwritefontcollectionloader_vtable; }
+
+
+IDWriteFontFileEnumerator :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfileenumerator_vtable: *IDWriteFontFileEnumerator_VTable;
+}
+IDWriteFontFileEnumerator_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    MoveNext: (this: *IDWriteFontFileEnumerator, hasCurrentFile: *BOOL) -> HRESULT #cpp_method;
+
+    GetCurrentFontFile: (this: *IDWriteFontFileEnumerator, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFileEnumerator_MoveNext :: inline (this: *IDWriteFontFileEnumerator, hasCurrentFile: *BOOL) -> HRESULT { return this.idwritefontfileenumerator_vtable.MoveNext(this, hasCurrentFile); }
+
+IDWriteFontFileEnumerator_GetCurrentFontFile :: inline (this: *IDWriteFontFileEnumerator, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwritefontfileenumerator_vtable.GetCurrentFontFile(this, fontFile); }
+
+vtable :: (obj: *IDWriteFontFileEnumerator) -> *IDWriteFontFileEnumerator_VTable { return obj.idwritefontfileenumerator_vtable; }
+
+
+IDWriteLocalizedStrings :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritelocalizedstrings_vtable: *IDWriteLocalizedStrings_VTable;
+}
+IDWriteLocalizedStrings_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetCount: (this: *IDWriteLocalizedStrings) -> u32 #cpp_method;
+
+    FindLocaleName: (this: *IDWriteLocalizedStrings, localeName: *s16, index: *u32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    GetLocaleNameLength: (this: *IDWriteLocalizedStrings, index: u32, length: *u32) -> HRESULT #cpp_method;
+
+    GetLocaleName: (this: *IDWriteLocalizedStrings, index: u32, localeName: *s16, size: u32) -> HRESULT #cpp_method;
+
+    GetStringLength: (this: *IDWriteLocalizedStrings, index: u32, length: *u32) -> HRESULT #cpp_method;
+
+    GetString: (this: *IDWriteLocalizedStrings, index: u32, stringBuffer: *s16, size: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteLocalizedStrings_GetCount :: inline (this: *IDWriteLocalizedStrings) -> u32 { return this.idwritelocalizedstrings_vtable.GetCount(this); }
+
+IDWriteLocalizedStrings_FindLocaleName :: inline (this: *IDWriteLocalizedStrings, localeName: *s16, index: *u32, exists: *BOOL) -> HRESULT { return this.idwritelocalizedstrings_vtable.FindLocaleName(this, localeName, index, exists); }
+
+IDWriteLocalizedStrings_GetLocaleNameLength :: inline (this: *IDWriteLocalizedStrings, index: u32, length: *u32) -> HRESULT { return this.idwritelocalizedstrings_vtable.GetLocaleNameLength(this, index, length); }
+
+IDWriteLocalizedStrings_GetLocaleName :: inline (this: *IDWriteLocalizedStrings, index: u32, localeName: *s16, size: u32) -> HRESULT { return this.idwritelocalizedstrings_vtable.GetLocaleName(this, index, localeName, size); }
+
+IDWriteLocalizedStrings_GetStringLength :: inline (this: *IDWriteLocalizedStrings, index: u32, length: *u32) -> HRESULT { return this.idwritelocalizedstrings_vtable.GetStringLength(this, index, length); }
+
+IDWriteLocalizedStrings_GetString :: inline (this: *IDWriteLocalizedStrings, index: u32, stringBuffer: *s16, size: u32) -> HRESULT { return this.idwritelocalizedstrings_vtable.GetString(this, index, stringBuffer, size); }
+
+vtable :: (obj: *IDWriteLocalizedStrings) -> *IDWriteLocalizedStrings_VTable { return obj.idwritelocalizedstrings_vtable; }
+
+
+IDWriteFontCollection :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontcollection_vtable: *IDWriteFontCollection_VTable;
+}
+IDWriteFontCollection_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFontFamilyCount: (this: *IDWriteFontCollection) -> u32 #cpp_method;
+
+    GetFontFamily: (this: *IDWriteFontCollection, index: u32, fontFamily: **IDWriteFontFamily) -> HRESULT #cpp_method;
+
+    FindFamilyName: (this: *IDWriteFontCollection, familyName: *s16, index: *u32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    GetFontFromFontFace: (this: *IDWriteFontCollection, fontFace: *IDWriteFontFace, font: **IDWriteFont) -> HRESULT #cpp_method;
+}
+
+IDWriteFontCollection_GetFontFamilyCount :: inline (this: *IDWriteFontCollection) -> u32 { return this.idwritefontcollection_vtable.GetFontFamilyCount(this); }
+
+IDWriteFontCollection_GetFontFamily :: inline (this: *IDWriteFontCollection, index: u32, fontFamily: **IDWriteFontFamily) -> HRESULT { return this.idwritefontcollection_vtable.GetFontFamily(this, index, fontFamily); }
+
+IDWriteFontCollection_FindFamilyName :: inline (this: *IDWriteFontCollection, familyName: *s16, index: *u32, exists: *BOOL) -> HRESULT { return this.idwritefontcollection_vtable.FindFamilyName(this, familyName, index, exists); }
+
+IDWriteFontCollection_GetFontFromFontFace :: inline (this: *IDWriteFontCollection, fontFace: *IDWriteFontFace, font: **IDWriteFont) -> HRESULT { return this.idwritefontcollection_vtable.GetFontFromFontFace(this, fontFace, font); }
+
+vtable :: (obj: *IDWriteFontCollection) -> *IDWriteFontCollection_VTable { return obj.idwritefontcollection_vtable; }
+
+
+IDWriteFontList :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontlist_vtable: *IDWriteFontList_VTable;
+}
+IDWriteFontList_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFontCollection: (this: *IDWriteFontList, fontCollection: **IDWriteFontCollection) -> HRESULT #cpp_method;
+
+    GetFontCount: (this: *IDWriteFontList) -> u32 #cpp_method;
+
+    GetFont: (this: *IDWriteFontList, index: u32, font: **IDWriteFont) -> HRESULT #cpp_method;
+}
+
+IDWriteFontList_GetFontCollection :: inline (this: *IDWriteFontList, fontCollection: **IDWriteFontCollection) -> HRESULT { return this.idwritefontlist_vtable.GetFontCollection(this, fontCollection); }
+
+IDWriteFontList_GetFontCount :: inline (this: *IDWriteFontList) -> u32 { return this.idwritefontlist_vtable.GetFontCount(this); }
+
+IDWriteFontList_GetFont :: inline (this: *IDWriteFontList, index: u32, font: **IDWriteFont) -> HRESULT { return this.idwritefontlist_vtable.GetFont(this, index, font); }
+
+vtable :: (obj: *IDWriteFontList) -> *IDWriteFontList_VTable { return obj.idwritefontlist_vtable; }
+
+
+IDWriteFontFamily :: struct {
+    #as using idwritefontlist: IDWriteFontList;
+    #place idwritefontlist; idwritefontfamily_vtable: *IDWriteFontFamily_VTable;
+}
+IDWriteFontFamily_VTable :: struct #type_info_none {
+    using idwritefontlist: IDWriteFontList_VTable;
+    GetFamilyNames: (this: *IDWriteFontFamily, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetFirstMatchingFont: (this: *IDWriteFontFamily, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingFont: **IDWriteFont) -> HRESULT #cpp_method;
+
+    GetMatchingFonts: (this: *IDWriteFontFamily, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingFonts: **IDWriteFontList) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFamily_GetFamilyNames :: inline (this: *IDWriteFontFamily, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontfamily_vtable.GetFamilyNames(this, names); }
+
+IDWriteFontFamily_GetFirstMatchingFont :: inline (this: *IDWriteFontFamily, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingFont: **IDWriteFont) -> HRESULT { return this.idwritefontfamily_vtable.GetFirstMatchingFont(this, weight, stretch, style, matchingFont); }
+
+IDWriteFontFamily_GetMatchingFonts :: inline (this: *IDWriteFontFamily, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingFonts: **IDWriteFontList) -> HRESULT { return this.idwritefontfamily_vtable.GetMatchingFonts(this, weight, stretch, style, matchingFonts); }
+
+vtable :: (obj: *IDWriteFontFamily) -> *IDWriteFontFamily_VTable { return obj.idwritefontfamily_vtable; }
+
+
+IDWriteFont :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefont_vtable: *IDWriteFont_VTable;
+}
+IDWriteFont_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFontFamily: (this: *IDWriteFont, fontFamily: **IDWriteFontFamily) -> HRESULT #cpp_method;
+
+    GetWeight: (this: *IDWriteFont) -> DWRITE_FONT_WEIGHT #cpp_method;
+
+    GetStretch: (this: *IDWriteFont) -> DWRITE_FONT_STRETCH #cpp_method;
+
+    GetStyle: (this: *IDWriteFont) -> DWRITE_FONT_STYLE #cpp_method;
+
+    IsSymbolFont: (this: *IDWriteFont) -> BOOL #cpp_method;
+
+    GetFaceNames: (this: *IDWriteFont, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetInformationalStrings: (this: *IDWriteFont, informationalStringID: DWRITE_INFORMATIONAL_STRING_ID, informationalStrings: **IDWriteLocalizedStrings, exists: *BOOL) -> HRESULT #cpp_method;
+
+    GetSimulations: (this: *IDWriteFont) -> DWRITE_FONT_SIMULATIONS #cpp_method;
+
+    GetMetrics: (this: *IDWriteFont, fontMetrics: *DWRITE_FONT_METRICS) -> void #cpp_method;
+
+    HasCharacter: (this: *IDWriteFont, unicodeValue: u32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    CreateFontFace: (this: *IDWriteFont, fontFace: **IDWriteFontFace) -> HRESULT #cpp_method;
+}
+
+IDWriteFont_GetFontFamily :: inline (this: *IDWriteFont, fontFamily: **IDWriteFontFamily) -> HRESULT { return this.idwritefont_vtable.GetFontFamily(this, fontFamily); }
+
+IDWriteFont_GetWeight :: inline (this: *IDWriteFont) -> DWRITE_FONT_WEIGHT { return this.idwritefont_vtable.GetWeight(this); }
+
+IDWriteFont_GetStretch :: inline (this: *IDWriteFont) -> DWRITE_FONT_STRETCH { return this.idwritefont_vtable.GetStretch(this); }
+
+IDWriteFont_GetStyle :: inline (this: *IDWriteFont) -> DWRITE_FONT_STYLE { return this.idwritefont_vtable.GetStyle(this); }
+
+IDWriteFont_IsSymbolFont :: inline (this: *IDWriteFont) -> BOOL { return this.idwritefont_vtable.IsSymbolFont(this); }
+
+IDWriteFont_GetFaceNames :: inline (this: *IDWriteFont, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefont_vtable.GetFaceNames(this, names); }
+
+IDWriteFont_GetInformationalStrings :: inline (this: *IDWriteFont, informationalStringID: DWRITE_INFORMATIONAL_STRING_ID, informationalStrings: **IDWriteLocalizedStrings, exists: *BOOL) -> HRESULT { return this.idwritefont_vtable.GetInformationalStrings(this, informationalStringID, informationalStrings, exists); }
+
+IDWriteFont_GetSimulations :: inline (this: *IDWriteFont) -> DWRITE_FONT_SIMULATIONS { return this.idwritefont_vtable.GetSimulations(this); }
+
+IDWriteFont_GetMetrics :: inline (this: *IDWriteFont, fontMetrics: *DWRITE_FONT_METRICS) { this.idwritefont_vtable.GetMetrics(this, fontMetrics); }
+
+IDWriteFont_HasCharacter :: inline (this: *IDWriteFont, unicodeValue: u32, exists: *BOOL) -> HRESULT { return this.idwritefont_vtable.HasCharacter(this, unicodeValue, exists); }
+
+IDWriteFont_CreateFontFace :: inline (this: *IDWriteFont, fontFace: **IDWriteFontFace) -> HRESULT { return this.idwritefont_vtable.CreateFontFace(this, fontFace); }
+
+vtable :: (obj: *IDWriteFont) -> *IDWriteFont_VTable { return obj.idwritefont_vtable; }
+
+
+DWRITE_READING_DIRECTION :: enum s32 {
+    LEFT_TO_RIGHT :: 0;
+
+    RIGHT_TO_LEFT :: 1;
+
+    TOP_TO_BOTTOM :: 2;
+
+    BOTTOM_TO_TOP :: 3;
+
+    DWRITE_READING_DIRECTION_LEFT_TO_RIGHT :: LEFT_TO_RIGHT;
+
+    DWRITE_READING_DIRECTION_RIGHT_TO_LEFT :: RIGHT_TO_LEFT;
+
+    DWRITE_READING_DIRECTION_TOP_TO_BOTTOM :: TOP_TO_BOTTOM;
+
+    DWRITE_READING_DIRECTION_BOTTOM_TO_TOP :: BOTTOM_TO_TOP;
+}
+
+DWRITE_FLOW_DIRECTION :: enum s32 {
+    TOP_TO_BOTTOM :: 0;
+
+    BOTTOM_TO_TOP :: 1;
+
+    LEFT_TO_RIGHT :: 2;
+
+    RIGHT_TO_LEFT :: 3;
+
+    DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM :: TOP_TO_BOTTOM;
+
+    DWRITE_FLOW_DIRECTION_BOTTOM_TO_TOP :: BOTTOM_TO_TOP;
+
+    DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT :: LEFT_TO_RIGHT;
+
+    DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT :: RIGHT_TO_LEFT;
+}
+
+DWRITE_TEXT_ALIGNMENT :: enum s32 {
+    LEADING   :: 0;
+
+    TRAILING  :: 1;
+
+    CENTER    :: 2;
+
+    JUSTIFIED :: 3;
+
+    DWRITE_TEXT_ALIGNMENT_LEADING   :: LEADING;
+
+    DWRITE_TEXT_ALIGNMENT_TRAILING  :: TRAILING;
+
+    DWRITE_TEXT_ALIGNMENT_CENTER    :: CENTER;
+
+    DWRITE_TEXT_ALIGNMENT_JUSTIFIED :: JUSTIFIED;
+}
+
+DWRITE_PARAGRAPH_ALIGNMENT :: enum s32 {
+    NEAR   :: 0;
+
+    FAR    :: 1;
+
+    CENTER :: 2;
+
+    DWRITE_PARAGRAPH_ALIGNMENT_NEAR   :: NEAR;
+
+    DWRITE_PARAGRAPH_ALIGNMENT_FAR    :: FAR;
+
+    DWRITE_PARAGRAPH_ALIGNMENT_CENTER :: CENTER;
+}
+
+DWRITE_WORD_WRAPPING :: enum s32 {
+    WRAP            :: 0;
+
+    NO_WRAP         :: 1;
+
+    EMERGENCY_BREAK :: 2;
+
+    WHOLE_WORD      :: 3;
+
+    CHARACTER       :: 4;
+
+    DWRITE_WORD_WRAPPING_WRAP            :: WRAP;
+
+    DWRITE_WORD_WRAPPING_NO_WRAP         :: NO_WRAP;
+
+    DWRITE_WORD_WRAPPING_EMERGENCY_BREAK :: EMERGENCY_BREAK;
+
+    DWRITE_WORD_WRAPPING_WHOLE_WORD      :: WHOLE_WORD;
+
+    DWRITE_WORD_WRAPPING_CHARACTER       :: CHARACTER;
+}
+
+DWRITE_LINE_SPACING_METHOD :: enum s32 {
+    DEFAULT      :: 0;
+
+    UNIFORM      :: 1;
+
+    PROPORTIONAL :: 2;
+
+    DWRITE_LINE_SPACING_METHOD_DEFAULT      :: DEFAULT;
+
+    DWRITE_LINE_SPACING_METHOD_UNIFORM      :: UNIFORM;
+
+    DWRITE_LINE_SPACING_METHOD_PROPORTIONAL :: PROPORTIONAL;
+}
+
+DWRITE_TRIMMING_GRANULARITY :: enum s32 {
+    NONE      :: 0;
+
+    CHARACTER :: 1;
+
+    WORD      :: 2;
+
+    DWRITE_TRIMMING_GRANULARITY_NONE      :: NONE;
+
+    DWRITE_TRIMMING_GRANULARITY_CHARACTER :: CHARACTER;
+
+    DWRITE_TRIMMING_GRANULARITY_WORD      :: WORD;
+}
+
+DWRITE_FONT_FEATURE_TAG :: enum s32 {
+    ALTERNATIVE_FRACTIONS            :: 1668441697;
+    PETITE_CAPITALS_FROM_CAPITALS    :: 1668297315;
+    SMALL_CAPITALS_FROM_CAPITALS     :: 1668493923;
+    CONTEXTUAL_ALTERNATES            :: 1953259875;
+    CASE_SENSITIVE_FORMS             :: 1702060387;
+    GLYPH_COMPOSITION_DECOMPOSITION  :: 1886217059;
+    CONTEXTUAL_LIGATURES             :: 1734962275;
+    CAPITAL_SPACING                  :: 1886613603;
+    CONTEXTUAL_SWASH                 :: 1752658787;
+    CURSIVE_POSITIONING              :: 1936880995;
+    DEFAULT                          :: 1953261156;
+    DISCRETIONARY_LIGATURES          :: 1734962276;
+    EXPERT_FORMS                     :: 1953527909;
+    FRACTIONS                        :: 1667330662;
+    FULL_WIDTH                       :: 1684633446;
+    HALF_FORMS                       :: 1718378856;
+    HALANT_FORMS                     :: 1852596584;
+    ALTERNATE_HALF_WIDTH             :: 1953259880;
+    HISTORICAL_FORMS                 :: 1953720680;
+    HORIZONTAL_KANA_ALTERNATES       :: 1634626408;
+    HISTORICAL_LIGATURES             :: 1734962280;
+    HALF_WIDTH                       :: 1684633448;
+    HOJO_KANJI_FORMS                 :: 1869246312;
+    JIS04_FORMS                      :: 875589738;
+    JIS78_FORMS                      :: 943157354;
+    JIS83_FORMS                      :: 859336810;
+    JIS90_FORMS                      :: 809070698;
+    KERNING                          :: 1852990827;
+    STANDARD_LIGATURES               :: 1634167148;
+    LINING_FIGURES                   :: 1836412524;
+    LOCALIZED_FORMS                  :: 1818455916;
+    MARK_POSITIONING                 :: 1802658157;
+    MATHEMATICAL_GREEK               :: 1802659693;
+    MARK_TO_MARK_POSITIONING         :: 1802333037;
+    ALTERNATE_ANNOTATION_FORMS       :: 1953259886;
+    NLC_KANJI_FORMS                  :: 1801677934;
+    OLD_STYLE_FIGURES                :: 1836412527;
+    ORDINALS                         :: 1852076655;
+    PROPORTIONAL_ALTERNATE_WIDTH     :: 1953259888;
+    PETITE_CAPITALS                  :: 1885430640;
+    PROPORTIONAL_FIGURES             :: 1836412528;
+    PROPORTIONAL_WIDTHS              :: 1684633456;
+    QUARTER_WIDTHS                   :: 1684633457;
+    REQUIRED_LIGATURES               :: 1734962290;
+    RUBY_NOTATION_FORMS              :: 2036495730;
+    STYLISTIC_ALTERNATES             :: 1953259891;
+    SCIENTIFIC_INFERIORS             :: 1718511987;
+    SMALL_CAPITALS                   :: 1885564275;
+    SIMPLIFIED_FORMS                 :: 1819307379;
+    STYLISTIC_SET_1                  :: 825258867;
+    STYLISTIC_SET_2                  :: 842036083;
+    STYLISTIC_SET_3                  :: 858813299;
+    STYLISTIC_SET_4                  :: 875590515;
+    STYLISTIC_SET_5                  :: 892367731;
+    STYLISTIC_SET_6                  :: 909144947;
+    STYLISTIC_SET_7                  :: 925922163;
+    STYLISTIC_SET_8                  :: 942699379;
+    STYLISTIC_SET_9                  :: 959476595;
+    STYLISTIC_SET_10                 :: 808547187;
+    STYLISTIC_SET_11                 :: 825324403;
+    STYLISTIC_SET_12                 :: 842101619;
+    STYLISTIC_SET_13                 :: 858878835;
+    STYLISTIC_SET_14                 :: 875656051;
+    STYLISTIC_SET_15                 :: 892433267;
+    STYLISTIC_SET_16                 :: 909210483;
+    STYLISTIC_SET_17                 :: 925987699;
+    STYLISTIC_SET_18                 :: 942764915;
+    STYLISTIC_SET_19                 :: 959542131;
+    STYLISTIC_SET_20                 :: 808612723;
+    SUBSCRIPT                        :: 1935832435;
+    SUPERSCRIPT                      :: 1936749939;
+    SWASH                            :: 1752397683;
+    TITLING                          :: 1819568500;
+    TRADITIONAL_NAME_FORMS           :: 1835101812;
+    TABULAR_FIGURES                  :: 1836412532;
+    TRADITIONAL_FORMS                :: 1684107892;
+    THIRD_WIDTHS                     :: 1684633460;
+    UNICASE                          :: 1667853941;
+    VERTICAL_WRITING                 :: 1953654134;
+    VERTICAL_ALTERNATES_AND_ROTATION :: 846492278;
+    SLASHED_ZERO                     :: 1869768058;
+
+    DWRITE_FONT_FEATURE_TAG_ALTERNATIVE_FRACTIONS            :: ALTERNATIVE_FRACTIONS;
+    DWRITE_FONT_FEATURE_TAG_PETITE_CAPITALS_FROM_CAPITALS    :: PETITE_CAPITALS_FROM_CAPITALS;
+    DWRITE_FONT_FEATURE_TAG_SMALL_CAPITALS_FROM_CAPITALS     :: SMALL_CAPITALS_FROM_CAPITALS;
+    DWRITE_FONT_FEATURE_TAG_CONTEXTUAL_ALTERNATES            :: CONTEXTUAL_ALTERNATES;
+    DWRITE_FONT_FEATURE_TAG_CASE_SENSITIVE_FORMS             :: CASE_SENSITIVE_FORMS;
+    DWRITE_FONT_FEATURE_TAG_GLYPH_COMPOSITION_DECOMPOSITION  :: GLYPH_COMPOSITION_DECOMPOSITION;
+    DWRITE_FONT_FEATURE_TAG_CONTEXTUAL_LIGATURES             :: CONTEXTUAL_LIGATURES;
+    DWRITE_FONT_FEATURE_TAG_CAPITAL_SPACING                  :: CAPITAL_SPACING;
+    DWRITE_FONT_FEATURE_TAG_CONTEXTUAL_SWASH                 :: CONTEXTUAL_SWASH;
+    DWRITE_FONT_FEATURE_TAG_CURSIVE_POSITIONING              :: CURSIVE_POSITIONING;
+    DWRITE_FONT_FEATURE_TAG_DEFAULT                          :: DEFAULT;
+    DWRITE_FONT_FEATURE_TAG_DISCRETIONARY_LIGATURES          :: DISCRETIONARY_LIGATURES;
+    DWRITE_FONT_FEATURE_TAG_EXPERT_FORMS                     :: EXPERT_FORMS;
+    DWRITE_FONT_FEATURE_TAG_FRACTIONS                        :: FRACTIONS;
+    DWRITE_FONT_FEATURE_TAG_FULL_WIDTH                       :: FULL_WIDTH;
+    DWRITE_FONT_FEATURE_TAG_HALF_FORMS                       :: HALF_FORMS;
+    DWRITE_FONT_FEATURE_TAG_HALANT_FORMS                     :: HALANT_FORMS;
+    DWRITE_FONT_FEATURE_TAG_ALTERNATE_HALF_WIDTH             :: ALTERNATE_HALF_WIDTH;
+    DWRITE_FONT_FEATURE_TAG_HISTORICAL_FORMS                 :: HISTORICAL_FORMS;
+    DWRITE_FONT_FEATURE_TAG_HORIZONTAL_KANA_ALTERNATES       :: HORIZONTAL_KANA_ALTERNATES;
+    DWRITE_FONT_FEATURE_TAG_HISTORICAL_LIGATURES             :: HISTORICAL_LIGATURES;
+    DWRITE_FONT_FEATURE_TAG_HALF_WIDTH                       :: HALF_WIDTH;
+    DWRITE_FONT_FEATURE_TAG_HOJO_KANJI_FORMS                 :: HOJO_KANJI_FORMS;
+    DWRITE_FONT_FEATURE_TAG_JIS04_FORMS                      :: JIS04_FORMS;
+    DWRITE_FONT_FEATURE_TAG_JIS78_FORMS                      :: JIS78_FORMS;
+    DWRITE_FONT_FEATURE_TAG_JIS83_FORMS                      :: JIS83_FORMS;
+    DWRITE_FONT_FEATURE_TAG_JIS90_FORMS                      :: JIS90_FORMS;
+    DWRITE_FONT_FEATURE_TAG_KERNING                          :: KERNING;
+    DWRITE_FONT_FEATURE_TAG_STANDARD_LIGATURES               :: STANDARD_LIGATURES;
+    DWRITE_FONT_FEATURE_TAG_LINING_FIGURES                   :: LINING_FIGURES;
+    DWRITE_FONT_FEATURE_TAG_LOCALIZED_FORMS                  :: LOCALIZED_FORMS;
+    DWRITE_FONT_FEATURE_TAG_MARK_POSITIONING                 :: MARK_POSITIONING;
+    DWRITE_FONT_FEATURE_TAG_MATHEMATICAL_GREEK               :: MATHEMATICAL_GREEK;
+    DWRITE_FONT_FEATURE_TAG_MARK_TO_MARK_POSITIONING         :: MARK_TO_MARK_POSITIONING;
+    DWRITE_FONT_FEATURE_TAG_ALTERNATE_ANNOTATION_FORMS       :: ALTERNATE_ANNOTATION_FORMS;
+    DWRITE_FONT_FEATURE_TAG_NLC_KANJI_FORMS                  :: NLC_KANJI_FORMS;
+    DWRITE_FONT_FEATURE_TAG_OLD_STYLE_FIGURES                :: OLD_STYLE_FIGURES;
+    DWRITE_FONT_FEATURE_TAG_ORDINALS                         :: ORDINALS;
+    DWRITE_FONT_FEATURE_TAG_PROPORTIONAL_ALTERNATE_WIDTH     :: PROPORTIONAL_ALTERNATE_WIDTH;
+    DWRITE_FONT_FEATURE_TAG_PETITE_CAPITALS                  :: PETITE_CAPITALS;
+    DWRITE_FONT_FEATURE_TAG_PROPORTIONAL_FIGURES             :: PROPORTIONAL_FIGURES;
+    DWRITE_FONT_FEATURE_TAG_PROPORTIONAL_WIDTHS              :: PROPORTIONAL_WIDTHS;
+    DWRITE_FONT_FEATURE_TAG_QUARTER_WIDTHS                   :: QUARTER_WIDTHS;
+    DWRITE_FONT_FEATURE_TAG_REQUIRED_LIGATURES               :: REQUIRED_LIGATURES;
+    DWRITE_FONT_FEATURE_TAG_RUBY_NOTATION_FORMS              :: RUBY_NOTATION_FORMS;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_ALTERNATES             :: STYLISTIC_ALTERNATES;
+    DWRITE_FONT_FEATURE_TAG_SCIENTIFIC_INFERIORS             :: SCIENTIFIC_INFERIORS;
+    DWRITE_FONT_FEATURE_TAG_SMALL_CAPITALS                   :: SMALL_CAPITALS;
+    DWRITE_FONT_FEATURE_TAG_SIMPLIFIED_FORMS                 :: SIMPLIFIED_FORMS;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_1                  :: STYLISTIC_SET_1;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_2                  :: STYLISTIC_SET_2;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_3                  :: STYLISTIC_SET_3;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_4                  :: STYLISTIC_SET_4;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_5                  :: STYLISTIC_SET_5;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_6                  :: STYLISTIC_SET_6;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_7                  :: STYLISTIC_SET_7;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_8                  :: STYLISTIC_SET_8;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_9                  :: STYLISTIC_SET_9;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_10                 :: STYLISTIC_SET_10;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_11                 :: STYLISTIC_SET_11;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_12                 :: STYLISTIC_SET_12;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_13                 :: STYLISTIC_SET_13;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_14                 :: STYLISTIC_SET_14;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_15                 :: STYLISTIC_SET_15;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_16                 :: STYLISTIC_SET_16;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_17                 :: STYLISTIC_SET_17;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_18                 :: STYLISTIC_SET_18;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_19                 :: STYLISTIC_SET_19;
+    DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_20                 :: STYLISTIC_SET_20;
+    DWRITE_FONT_FEATURE_TAG_SUBSCRIPT                        :: SUBSCRIPT;
+    DWRITE_FONT_FEATURE_TAG_SUPERSCRIPT                      :: SUPERSCRIPT;
+    DWRITE_FONT_FEATURE_TAG_SWASH                            :: SWASH;
+    DWRITE_FONT_FEATURE_TAG_TITLING                          :: TITLING;
+    DWRITE_FONT_FEATURE_TAG_TRADITIONAL_NAME_FORMS           :: TRADITIONAL_NAME_FORMS;
+    DWRITE_FONT_FEATURE_TAG_TABULAR_FIGURES                  :: TABULAR_FIGURES;
+    DWRITE_FONT_FEATURE_TAG_TRADITIONAL_FORMS                :: TRADITIONAL_FORMS;
+    DWRITE_FONT_FEATURE_TAG_THIRD_WIDTHS                     :: THIRD_WIDTHS;
+    DWRITE_FONT_FEATURE_TAG_UNICASE                          :: UNICASE;
+    DWRITE_FONT_FEATURE_TAG_VERTICAL_WRITING                 :: VERTICAL_WRITING;
+    DWRITE_FONT_FEATURE_TAG_VERTICAL_ALTERNATES_AND_ROTATION :: VERTICAL_ALTERNATES_AND_ROTATION;
+    DWRITE_FONT_FEATURE_TAG_SLASHED_ZERO                     :: SLASHED_ZERO;
+}
+
+DWRITE_TEXT_RANGE :: struct {
+    startPosition: u32;
+
+    length:        u32;
+}
+
+DWRITE_FONT_FEATURE :: struct {
+    nameTag:   DWRITE_FONT_FEATURE_TAG;
+
+    parameter: u32;
+}
+
+DWRITE_TYPOGRAPHIC_FEATURES :: struct {
+    features:     *DWRITE_FONT_FEATURE;
+
+    featureCount: u32;
+}
+
+DWRITE_TRIMMING :: struct {
+    granularity:    DWRITE_TRIMMING_GRANULARITY;
+
+    delimiter:      u32;
+
+    delimiterCount: u32;
+}
+
+IDWriteTextFormat :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritetextformat_vtable: *IDWriteTextFormat_VTable;
+}
+IDWriteTextFormat_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    SetTextAlignment: (this: *IDWriteTextFormat, textAlignment: DWRITE_TEXT_ALIGNMENT) -> HRESULT #cpp_method;
+
+    SetParagraphAlignment: (this: *IDWriteTextFormat, paragraphAlignment: DWRITE_PARAGRAPH_ALIGNMENT) -> HRESULT #cpp_method;
+
+    SetWordWrapping: (this: *IDWriteTextFormat, wordWrapping: DWRITE_WORD_WRAPPING) -> HRESULT #cpp_method;
+
+    SetReadingDirection: (this: *IDWriteTextFormat, readingDirection: DWRITE_READING_DIRECTION) -> HRESULT #cpp_method;
+
+    SetFlowDirection: (this: *IDWriteTextFormat, flowDirection: DWRITE_FLOW_DIRECTION) -> HRESULT #cpp_method;
+
+    SetIncrementalTabStop: (this: *IDWriteTextFormat, incrementalTabStop: float) -> HRESULT #cpp_method;
+
+    SetTrimming: (this: *IDWriteTextFormat, trimmingOptions: *DWRITE_TRIMMING, trimmingSign: *IDWriteInlineObject) -> HRESULT #cpp_method;
+
+    SetLineSpacing: (this: *IDWriteTextFormat, lineSpacingMethod: DWRITE_LINE_SPACING_METHOD, lineSpacing: float, baseline: float) -> HRESULT #cpp_method;
+
+    GetTextAlignment: (this: *IDWriteTextFormat) -> DWRITE_TEXT_ALIGNMENT #cpp_method;
+
+    GetParagraphAlignment: (this: *IDWriteTextFormat) -> DWRITE_PARAGRAPH_ALIGNMENT #cpp_method;
+
+    GetWordWrapping: (this: *IDWriteTextFormat) -> DWRITE_WORD_WRAPPING #cpp_method;
+
+    GetReadingDirection: (this: *IDWriteTextFormat) -> DWRITE_READING_DIRECTION #cpp_method;
+
+    GetFlowDirection: (this: *IDWriteTextFormat) -> DWRITE_FLOW_DIRECTION #cpp_method;
+
+    GetIncrementalTabStop: (this: *IDWriteTextFormat) -> float #cpp_method;
+
+    GetTrimming: (this: *IDWriteTextFormat, trimmingOptions: *DWRITE_TRIMMING, trimmingSign: **IDWriteInlineObject) -> HRESULT #cpp_method;
+
+    GetLineSpacing: (this: *IDWriteTextFormat, lineSpacingMethod: *DWRITE_LINE_SPACING_METHOD, lineSpacing: *float, baseline: *float) -> HRESULT #cpp_method;
+
+    GetFontCollection: (this: *IDWriteTextFormat, fontCollection: **IDWriteFontCollection) -> HRESULT #cpp_method;
+
+    GetFontFamilyNameLength: (this: *IDWriteTextFormat) -> u32 #cpp_method;
+
+    GetFontFamilyName: (this: *IDWriteTextFormat, fontFamilyName: *s16, nameSize: u32) -> HRESULT #cpp_method;
+
+    GetFontWeight: (this: *IDWriteTextFormat) -> DWRITE_FONT_WEIGHT #cpp_method;
+
+    GetFontStyle: (this: *IDWriteTextFormat) -> DWRITE_FONT_STYLE #cpp_method;
+
+    GetFontStretch: (this: *IDWriteTextFormat) -> DWRITE_FONT_STRETCH #cpp_method;
+
+    GetFontSize: (this: *IDWriteTextFormat) -> float #cpp_method;
+
+    GetLocaleNameLength: (this: *IDWriteTextFormat) -> u32 #cpp_method;
+
+    GetLocaleName: (this: *IDWriteTextFormat, localeName: *s16, nameSize: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteTextFormat_SetTextAlignment :: inline (this: *IDWriteTextFormat, textAlignment: DWRITE_TEXT_ALIGNMENT) -> HRESULT { return this.idwritetextformat_vtable.SetTextAlignment(this, textAlignment); }
+
+IDWriteTextFormat_SetParagraphAlignment :: inline (this: *IDWriteTextFormat, paragraphAlignment: DWRITE_PARAGRAPH_ALIGNMENT) -> HRESULT { return this.idwritetextformat_vtable.SetParagraphAlignment(this, paragraphAlignment); }
+
+IDWriteTextFormat_SetWordWrapping :: inline (this: *IDWriteTextFormat, wordWrapping: DWRITE_WORD_WRAPPING) -> HRESULT { return this.idwritetextformat_vtable.SetWordWrapping(this, wordWrapping); }
+
+IDWriteTextFormat_SetReadingDirection :: inline (this: *IDWriteTextFormat, readingDirection: DWRITE_READING_DIRECTION) -> HRESULT { return this.idwritetextformat_vtable.SetReadingDirection(this, readingDirection); }
+
+IDWriteTextFormat_SetFlowDirection :: inline (this: *IDWriteTextFormat, flowDirection: DWRITE_FLOW_DIRECTION) -> HRESULT { return this.idwritetextformat_vtable.SetFlowDirection(this, flowDirection); }
+
+IDWriteTextFormat_SetIncrementalTabStop :: inline (this: *IDWriteTextFormat, incrementalTabStop: float) -> HRESULT { return this.idwritetextformat_vtable.SetIncrementalTabStop(this, incrementalTabStop); }
+
+IDWriteTextFormat_SetTrimming :: inline (this: *IDWriteTextFormat, trimmingOptions: *DWRITE_TRIMMING, trimmingSign: *IDWriteInlineObject) -> HRESULT { return this.idwritetextformat_vtable.SetTrimming(this, trimmingOptions, trimmingSign); }
+
+IDWriteTextFormat_SetLineSpacing :: inline (this: *IDWriteTextFormat, lineSpacingMethod: DWRITE_LINE_SPACING_METHOD, lineSpacing: float, baseline: float) -> HRESULT { return this.idwritetextformat_vtable.SetLineSpacing(this, lineSpacingMethod, lineSpacing, baseline); }
+
+IDWriteTextFormat_GetTextAlignment :: inline (this: *IDWriteTextFormat) -> DWRITE_TEXT_ALIGNMENT { return this.idwritetextformat_vtable.GetTextAlignment(this); }
+
+IDWriteTextFormat_GetParagraphAlignment :: inline (this: *IDWriteTextFormat) -> DWRITE_PARAGRAPH_ALIGNMENT { return this.idwritetextformat_vtable.GetParagraphAlignment(this); }
+
+IDWriteTextFormat_GetWordWrapping :: inline (this: *IDWriteTextFormat) -> DWRITE_WORD_WRAPPING { return this.idwritetextformat_vtable.GetWordWrapping(this); }
+
+IDWriteTextFormat_GetReadingDirection :: inline (this: *IDWriteTextFormat) -> DWRITE_READING_DIRECTION { return this.idwritetextformat_vtable.GetReadingDirection(this); }
+
+IDWriteTextFormat_GetFlowDirection :: inline (this: *IDWriteTextFormat) -> DWRITE_FLOW_DIRECTION { return this.idwritetextformat_vtable.GetFlowDirection(this); }
+
+IDWriteTextFormat_GetIncrementalTabStop :: inline (this: *IDWriteTextFormat) -> float { return this.idwritetextformat_vtable.GetIncrementalTabStop(this); }
+
+IDWriteTextFormat_GetTrimming :: inline (this: *IDWriteTextFormat, trimmingOptions: *DWRITE_TRIMMING, trimmingSign: **IDWriteInlineObject) -> HRESULT { return this.idwritetextformat_vtable.GetTrimming(this, trimmingOptions, trimmingSign); }
+
+IDWriteTextFormat_GetLineSpacing :: inline (this: *IDWriteTextFormat, lineSpacingMethod: *DWRITE_LINE_SPACING_METHOD, lineSpacing: *float, baseline: *float) -> HRESULT { return this.idwritetextformat_vtable.GetLineSpacing(this, lineSpacingMethod, lineSpacing, baseline); }
+
+IDWriteTextFormat_GetFontCollection :: inline (this: *IDWriteTextFormat, fontCollection: **IDWriteFontCollection) -> HRESULT { return this.idwritetextformat_vtable.GetFontCollection(this, fontCollection); }
+
+IDWriteTextFormat_GetFontFamilyNameLength :: inline (this: *IDWriteTextFormat) -> u32 { return this.idwritetextformat_vtable.GetFontFamilyNameLength(this); }
+
+IDWriteTextFormat_GetFontFamilyName :: inline (this: *IDWriteTextFormat, fontFamilyName: *s16, nameSize: u32) -> HRESULT { return this.idwritetextformat_vtable.GetFontFamilyName(this, fontFamilyName, nameSize); }
+
+IDWriteTextFormat_GetFontWeight :: inline (this: *IDWriteTextFormat) -> DWRITE_FONT_WEIGHT { return this.idwritetextformat_vtable.GetFontWeight(this); }
+
+IDWriteTextFormat_GetFontStyle :: inline (this: *IDWriteTextFormat) -> DWRITE_FONT_STYLE { return this.idwritetextformat_vtable.GetFontStyle(this); }
+
+IDWriteTextFormat_GetFontStretch :: inline (this: *IDWriteTextFormat) -> DWRITE_FONT_STRETCH { return this.idwritetextformat_vtable.GetFontStretch(this); }
+
+IDWriteTextFormat_GetFontSize :: inline (this: *IDWriteTextFormat) -> float { return this.idwritetextformat_vtable.GetFontSize(this); }
+
+IDWriteTextFormat_GetLocaleNameLength :: inline (this: *IDWriteTextFormat) -> u32 { return this.idwritetextformat_vtable.GetLocaleNameLength(this); }
+
+IDWriteTextFormat_GetLocaleName :: inline (this: *IDWriteTextFormat, localeName: *s16, nameSize: u32) -> HRESULT { return this.idwritetextformat_vtable.GetLocaleName(this, localeName, nameSize); }
+
+vtable :: (obj: *IDWriteTextFormat) -> *IDWriteTextFormat_VTable { return obj.idwritetextformat_vtable; }
+
+
+IDWriteTypography :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritetypography_vtable: *IDWriteTypography_VTable;
+}
+IDWriteTypography_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddFontFeature: (this: *IDWriteTypography, fontFeature: DWRITE_FONT_FEATURE) -> HRESULT #cpp_method;
+
+    GetFontFeatureCount: (this: *IDWriteTypography) -> u32 #cpp_method;
+
+    GetFontFeature: (this: *IDWriteTypography, fontFeatureIndex: u32, fontFeature: *DWRITE_FONT_FEATURE) -> HRESULT #cpp_method;
+}
+
+IDWriteTypography_AddFontFeature :: inline (this: *IDWriteTypography, fontFeature: DWRITE_FONT_FEATURE) -> HRESULT { return this.idwritetypography_vtable.AddFontFeature(this, fontFeature); }
+
+IDWriteTypography_GetFontFeatureCount :: inline (this: *IDWriteTypography) -> u32 { return this.idwritetypography_vtable.GetFontFeatureCount(this); }
+
+IDWriteTypography_GetFontFeature :: inline (this: *IDWriteTypography, fontFeatureIndex: u32, fontFeature: *DWRITE_FONT_FEATURE) -> HRESULT { return this.idwritetypography_vtable.GetFontFeature(this, fontFeatureIndex, fontFeature); }
+
+vtable :: (obj: *IDWriteTypography) -> *IDWriteTypography_VTable { return obj.idwritetypography_vtable; }
+
+
+DWRITE_SCRIPT_SHAPES :: enum s32 {
+    DEFAULT   :: 0;
+
+    NO_VISUAL :: 1;
+
+    DWRITE_SCRIPT_SHAPES_DEFAULT   :: DEFAULT;
+
+    DWRITE_SCRIPT_SHAPES_NO_VISUAL :: NO_VISUAL;
+}
+
+DWRITE_SCRIPT_ANALYSIS :: struct {
+    script: u16;
+
+    shapes: DWRITE_SCRIPT_SHAPES;
+}
+
+DWRITE_BREAK_CONDITION :: enum s32 {
+    NEUTRAL       :: 0;
+
+    CAN_BREAK     :: 1;
+
+    MAY_NOT_BREAK :: 2;
+
+    MUST_BREAK    :: 3;
+
+    DWRITE_BREAK_CONDITION_NEUTRAL       :: NEUTRAL;
+
+    DWRITE_BREAK_CONDITION_CAN_BREAK     :: CAN_BREAK;
+
+    DWRITE_BREAK_CONDITION_MAY_NOT_BREAK :: MAY_NOT_BREAK;
+
+    DWRITE_BREAK_CONDITION_MUST_BREAK    :: MUST_BREAK;
+}
+
+DWRITE_LINE_BREAKPOINT :: struct {
+    breakConditionBefore: u8;
+
+    #place breakConditionBefore; /*bitfield 2*/ breakConditionAfter:  u8;
+
+    #place breakConditionBefore; /*bitfield 4*/ isWhitespace:         u8;
+
+    #place breakConditionBefore; /*bitfield 5*/ isSoftHyphen:         u8;
+
+    #place breakConditionBefore; /*bitfield 6*/ padding:              u8;
+}
+
+DWRITE_NUMBER_SUBSTITUTION_METHOD :: enum s32 {
+    FROM_CULTURE :: 0;
+
+    CONTEXTUAL   :: 1;
+
+    NONE         :: 2;
+
+    NATIONAL     :: 3;
+
+    TRADITIONAL  :: 4;
+
+    DWRITE_NUMBER_SUBSTITUTION_METHOD_FROM_CULTURE :: FROM_CULTURE;
+
+    DWRITE_NUMBER_SUBSTITUTION_METHOD_CONTEXTUAL   :: CONTEXTUAL;
+
+    DWRITE_NUMBER_SUBSTITUTION_METHOD_NONE         :: NONE;
+
+    DWRITE_NUMBER_SUBSTITUTION_METHOD_NATIONAL     :: NATIONAL;
+
+    DWRITE_NUMBER_SUBSTITUTION_METHOD_TRADITIONAL  :: TRADITIONAL;
+}
+
+IDWriteNumberSubstitution :: struct {
+    #as using iunknown: IUnknown;
+}
+
+DWRITE_SHAPING_TEXT_PROPERTIES :: struct {
+    isShapedAlone:        u16;
+
+    #place isShapedAlone; /*bitfield 1*/ reserved1:            u16;
+
+    #place isShapedAlone; /*bitfield 2*/ canBreakShapingAfter: u16;
+
+    #place isShapedAlone; /*bitfield 3*/ reserved:             u16;
+}
+
+DWRITE_SHAPING_GLYPH_PROPERTIES :: struct {
+    justification:    u16;
+
+    #place justification; /*bitfield 4*/ isClusterStart:   u16;
+
+    #place justification; /*bitfield 5*/ isDiacritic:      u16;
+
+    #place justification; /*bitfield 6*/ isZeroWidthSpace: u16;
+
+    #place justification; /*bitfield 7*/ reserved:         u16;
+}
+
+IDWriteTextAnalysisSource :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritetextanalysissource_vtable: *IDWriteTextAnalysisSource_VTable;
+}
+IDWriteTextAnalysisSource_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetTextAtPosition: (this: *IDWriteTextAnalysisSource, textPosition: u32, textString: **s16, textLength: *u32) -> HRESULT #cpp_method;
+
+    GetTextBeforePosition: (this: *IDWriteTextAnalysisSource, textPosition: u32, textString: **s16, textLength: *u32) -> HRESULT #cpp_method;
+
+    GetParagraphReadingDirection: (this: *IDWriteTextAnalysisSource) -> DWRITE_READING_DIRECTION #cpp_method;
+
+    GetLocaleName: (this: *IDWriteTextAnalysisSource, textPosition: u32, textLength: *u32, localeName: **s16) -> HRESULT #cpp_method;
+
+    GetNumberSubstitution: (this: *IDWriteTextAnalysisSource, textPosition: u32, textLength: *u32, numberSubstitution: **IDWriteNumberSubstitution) -> HRESULT #cpp_method;
+}
+
+IDWriteTextAnalysisSource_GetTextAtPosition :: inline (this: *IDWriteTextAnalysisSource, textPosition: u32, textString: **s16, textLength: *u32) -> HRESULT { return this.idwritetextanalysissource_vtable.GetTextAtPosition(this, textPosition, textString, textLength); }
+
+IDWriteTextAnalysisSource_GetTextBeforePosition :: inline (this: *IDWriteTextAnalysisSource, textPosition: u32, textString: **s16, textLength: *u32) -> HRESULT { return this.idwritetextanalysissource_vtable.GetTextBeforePosition(this, textPosition, textString, textLength); }
+
+IDWriteTextAnalysisSource_GetParagraphReadingDirection :: inline (this: *IDWriteTextAnalysisSource) -> DWRITE_READING_DIRECTION { return this.idwritetextanalysissource_vtable.GetParagraphReadingDirection(this); }
+
+IDWriteTextAnalysisSource_GetLocaleName :: inline (this: *IDWriteTextAnalysisSource, textPosition: u32, textLength: *u32, localeName: **s16) -> HRESULT { return this.idwritetextanalysissource_vtable.GetLocaleName(this, textPosition, textLength, localeName); }
+
+IDWriteTextAnalysisSource_GetNumberSubstitution :: inline (this: *IDWriteTextAnalysisSource, textPosition: u32, textLength: *u32, numberSubstitution: **IDWriteNumberSubstitution) -> HRESULT { return this.idwritetextanalysissource_vtable.GetNumberSubstitution(this, textPosition, textLength, numberSubstitution); }
+
+vtable :: (obj: *IDWriteTextAnalysisSource) -> *IDWriteTextAnalysisSource_VTable { return obj.idwritetextanalysissource_vtable; }
+
+
+IDWriteTextAnalysisSink :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritetextanalysissink_vtable: *IDWriteTextAnalysisSink_VTable;
+}
+IDWriteTextAnalysisSink_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    SetScriptAnalysis: (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS) -> HRESULT #cpp_method;
+
+    SetLineBreakpoints: (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, lineBreakpoints: *DWRITE_LINE_BREAKPOINT) -> HRESULT #cpp_method;
+
+    SetBidiLevel: (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, explicitLevel: u8, resolvedLevel: u8) -> HRESULT #cpp_method;
+
+    SetNumberSubstitution: (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, numberSubstitution: *IDWriteNumberSubstitution) -> HRESULT #cpp_method;
+}
+
+IDWriteTextAnalysisSink_SetScriptAnalysis :: inline (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS) -> HRESULT { return this.idwritetextanalysissink_vtable.SetScriptAnalysis(this, textPosition, textLength, scriptAnalysis); }
+
+IDWriteTextAnalysisSink_SetLineBreakpoints :: inline (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, lineBreakpoints: *DWRITE_LINE_BREAKPOINT) -> HRESULT { return this.idwritetextanalysissink_vtable.SetLineBreakpoints(this, textPosition, textLength, lineBreakpoints); }
+
+IDWriteTextAnalysisSink_SetBidiLevel :: inline (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, explicitLevel: u8, resolvedLevel: u8) -> HRESULT { return this.idwritetextanalysissink_vtable.SetBidiLevel(this, textPosition, textLength, explicitLevel, resolvedLevel); }
+
+IDWriteTextAnalysisSink_SetNumberSubstitution :: inline (this: *IDWriteTextAnalysisSink, textPosition: u32, textLength: u32, numberSubstitution: *IDWriteNumberSubstitution) -> HRESULT { return this.idwritetextanalysissink_vtable.SetNumberSubstitution(this, textPosition, textLength, numberSubstitution); }
+
+vtable :: (obj: *IDWriteTextAnalysisSink) -> *IDWriteTextAnalysisSink_VTable { return obj.idwritetextanalysissink_vtable; }
+
+
+IDWriteTextAnalyzer :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritetextanalyzer_vtable: *IDWriteTextAnalyzer_VTable;
+}
+IDWriteTextAnalyzer_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AnalyzeScript: (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT #cpp_method;
+
+    AnalyzeBidi: (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT #cpp_method;
+
+    AnalyzeNumberSubstitution: (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT #cpp_method;
+
+    AnalyzeLineBreakpoints: (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT #cpp_method;
+
+    GetGlyphs: (this: *IDWriteTextAnalyzer, textString: *s16, textLength: u32, fontFace: *IDWriteFontFace, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, numberSubstitution: *IDWriteNumberSubstitution, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, maxGlyphCount: u32, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, actualGlyphCount: *u32) -> HRESULT #cpp_method;
+
+    GetGlyphPlacements: (this: *IDWriteTextAnalyzer, textString: *s16, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, textLength: u32, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, glyphCount: u32, fontFace: *IDWriteFontFace, fontEmSize: float, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT #cpp_method;
+
+    GetGdiCompatibleGlyphPlacements: (this: *IDWriteTextAnalyzer, textString: *s16, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, textLength: u32, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, glyphCount: u32, fontFace: *IDWriteFontFace, fontEmSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT #cpp_method;
+}
+
+IDWriteTextAnalyzer_AnalyzeScript :: inline (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT { return this.idwritetextanalyzer_vtable.AnalyzeScript(this, analysisSource, textPosition, textLength, analysisSink); }
+
+IDWriteTextAnalyzer_AnalyzeBidi :: inline (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT { return this.idwritetextanalyzer_vtable.AnalyzeBidi(this, analysisSource, textPosition, textLength, analysisSink); }
+
+IDWriteTextAnalyzer_AnalyzeNumberSubstitution :: inline (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT { return this.idwritetextanalyzer_vtable.AnalyzeNumberSubstitution(this, analysisSource, textPosition, textLength, analysisSink); }
+
+IDWriteTextAnalyzer_AnalyzeLineBreakpoints :: inline (this: *IDWriteTextAnalyzer, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink) -> HRESULT { return this.idwritetextanalyzer_vtable.AnalyzeLineBreakpoints(this, analysisSource, textPosition, textLength, analysisSink); }
+
+IDWriteTextAnalyzer_GetGlyphs :: inline (this: *IDWriteTextAnalyzer, textString: *s16, textLength: u32, fontFace: *IDWriteFontFace, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, numberSubstitution: *IDWriteNumberSubstitution, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, maxGlyphCount: u32, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, actualGlyphCount: *u32) -> HRESULT { return this.idwritetextanalyzer_vtable.GetGlyphs(this, textString, textLength, fontFace, isSideways, isRightToLeft, scriptAnalysis, localeName, numberSubstitution, features, featureRangeLengths, featureRanges, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, actualGlyphCount); }
+
+IDWriteTextAnalyzer_GetGlyphPlacements :: inline (this: *IDWriteTextAnalyzer, textString: *s16, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, textLength: u32, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, glyphCount: u32, fontFace: *IDWriteFontFace, fontEmSize: float, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT { return this.idwritetextanalyzer_vtable.GetGlyphPlacements(this, textString, clusterMap, textProps, textLength, glyphIndices, glyphProps, glyphCount, fontFace, fontEmSize, isSideways, isRightToLeft, scriptAnalysis, localeName, features, featureRangeLengths, featureRanges, glyphAdvances, glyphOffsets); }
+
+IDWriteTextAnalyzer_GetGdiCompatibleGlyphPlacements :: inline (this: *IDWriteTextAnalyzer, textString: *s16, clusterMap: *u16, textProps: *DWRITE_SHAPING_TEXT_PROPERTIES, textLength: u32, glyphIndices: *u16, glyphProps: *DWRITE_SHAPING_GLYPH_PROPERTIES, glyphCount: u32, fontFace: *IDWriteFontFace, fontEmSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, isSideways: BOOL, isRightToLeft: BOOL, scriptAnalysis: *DWRITE_SCRIPT_ANALYSIS, localeName: *s16, features: **DWRITE_TYPOGRAPHIC_FEATURES, featureRangeLengths: *u32, featureRanges: u32, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT { return this.idwritetextanalyzer_vtable.GetGdiCompatibleGlyphPlacements(this, textString, clusterMap, textProps, textLength, glyphIndices, glyphProps, glyphCount, fontFace, fontEmSize, pixelsPerDip, transform, useGdiNatural, isSideways, isRightToLeft, scriptAnalysis, localeName, features, featureRangeLengths, featureRanges, glyphAdvances, glyphOffsets); }
+
+vtable :: (obj: *IDWriteTextAnalyzer) -> *IDWriteTextAnalyzer_VTable { return obj.idwritetextanalyzer_vtable; }
+
+
+DWRITE_GLYPH_RUN :: struct {
+    fontFace:      *IDWriteFontFace;
+
+    fontEmSize:    float;
+
+    glyphCount:    u32;
+
+    glyphIndices:  *u16;
+
+    glyphAdvances: *float;
+
+    glyphOffsets:  *DWRITE_GLYPH_OFFSET;
+
+    isSideways:    BOOL;
+
+    bidiLevel:     u32;
+}
+
+DWRITE_GLYPH_RUN_DESCRIPTION :: struct {
+    localeName:   *s16;
+
+    _string:      *s16;
+
+    stringLength: u32;
+
+    clusterMap:   *u16;
+
+    textPosition: u32;
+}
+
+DWRITE_UNDERLINE :: struct {
+    width:            float;
+
+    thickness:        float;
+
+    offset:           float;
+
+    runHeight:        float;
+
+    readingDirection: DWRITE_READING_DIRECTION;
+
+    flowDirection:    DWRITE_FLOW_DIRECTION;
+
+    localeName:       *s16;
+
+    measuringMode:    DWRITE_MEASURING_MODE;
+}
+
+DWRITE_STRIKETHROUGH :: struct {
+    width:            float;
+
+    thickness:        float;
+
+    offset:           float;
+
+    readingDirection: DWRITE_READING_DIRECTION;
+
+    flowDirection:    DWRITE_FLOW_DIRECTION;
+
+    localeName:       *s16;
+
+    measuringMode:    DWRITE_MEASURING_MODE;
+}
+
+DWRITE_LINE_METRICS :: struct {
+    length:                   u32;
+
+    trailingWhitespaceLength: u32;
+
+    newlineLength:            u32;
+
+    height:                   float;
+
+    baseline:                 float;
+
+    isTrimmed:                BOOL;
+}
+
+DWRITE_CLUSTER_METRICS :: struct {
+    width:            float;
+
+    length:           u16;
+
+    canWrapLineAfter: u16;
+
+    #place canWrapLineAfter; /*bitfield 1*/ isWhitespace:     u16;
+
+    #place canWrapLineAfter; /*bitfield 2*/ isNewline:        u16;
+
+    #place canWrapLineAfter; /*bitfield 3*/ isSoftHyphen:     u16;
+
+    #place canWrapLineAfter; /*bitfield 4*/ isRightToLeft:    u16;
+
+    #place canWrapLineAfter; /*bitfield 5*/ padding:          u16;
+}
+
+DWRITE_TEXT_METRICS :: struct {
+    left:                             float;
+
+    top:                              float;
+
+    width:                            float;
+
+    widthIncludingTrailingWhitespace: float;
+
+    height:                           float;
+
+    layoutWidth:                      float;
+
+    layoutHeight:                     float;
+
+    maxBidiReorderingDepth:           u32;
+
+    lineCount:                        u32;
+}
+
+DWRITE_INLINE_OBJECT_METRICS :: struct {
+    width:            float;
+
+    height:           float;
+
+    baseline:         float;
+
+    supportsSideways: BOOL;
+}
+
+DWRITE_OVERHANG_METRICS :: struct {
+    left:   float;
+
+    top:    float;
+
+    right:  float;
+
+    bottom: float;
+}
+
+DWRITE_HIT_TEST_METRICS :: struct {
+    textPosition: u32;
+
+    length:       u32;
+
+    left:         float;
+
+    top:          float;
+
+    width:        float;
+
+    height:       float;
+
+    bidiLevel:    u32;
+
+    isText:       BOOL;
+
+    isTrimmed:    BOOL;
+}
+
+IDWriteInlineObject :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwriteinlineobject_vtable: *IDWriteInlineObject_VTable;
+}
+IDWriteInlineObject_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    Draw: (this: *IDWriteInlineObject, clientDrawingContext: *void, renderer: *IDWriteTextRenderer, originX: float, originY: float, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    GetMetrics: (this: *IDWriteInlineObject, metrics: *DWRITE_INLINE_OBJECT_METRICS) -> HRESULT #cpp_method;
+
+    GetOverhangMetrics: (this: *IDWriteInlineObject, overhangs: *DWRITE_OVERHANG_METRICS) -> HRESULT #cpp_method;
+
+    GetBreakConditions: (this: *IDWriteInlineObject, breakConditionBefore: *DWRITE_BREAK_CONDITION, breakConditionAfter: *DWRITE_BREAK_CONDITION) -> HRESULT #cpp_method;
+}
+
+IDWriteInlineObject_Draw :: inline (this: *IDWriteInlineObject, clientDrawingContext: *void, renderer: *IDWriteTextRenderer, originX: float, originY: float, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwriteinlineobject_vtable.Draw(this, clientDrawingContext, renderer, originX, originY, isSideways, isRightToLeft, clientDrawingEffect); }
+
+IDWriteInlineObject_GetMetrics :: inline (this: *IDWriteInlineObject, metrics: *DWRITE_INLINE_OBJECT_METRICS) -> HRESULT { return this.idwriteinlineobject_vtable.GetMetrics(this, metrics); }
+
+IDWriteInlineObject_GetOverhangMetrics :: inline (this: *IDWriteInlineObject, overhangs: *DWRITE_OVERHANG_METRICS) -> HRESULT { return this.idwriteinlineobject_vtable.GetOverhangMetrics(this, overhangs); }
+
+IDWriteInlineObject_GetBreakConditions :: inline (this: *IDWriteInlineObject, breakConditionBefore: *DWRITE_BREAK_CONDITION, breakConditionAfter: *DWRITE_BREAK_CONDITION) -> HRESULT { return this.idwriteinlineobject_vtable.GetBreakConditions(this, breakConditionBefore, breakConditionAfter); }
+
+vtable :: (obj: *IDWriteInlineObject) -> *IDWriteInlineObject_VTable { return obj.idwriteinlineobject_vtable; }
+
+
+IDWritePixelSnapping :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritepixelsnapping_vtable: *IDWritePixelSnapping_VTable;
+}
+IDWritePixelSnapping_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    IsPixelSnappingDisabled: (this: *IDWritePixelSnapping, clientDrawingContext: *void, isDisabled: *BOOL) -> HRESULT #cpp_method;
+
+    GetCurrentTransform: (this: *IDWritePixelSnapping, clientDrawingContext: *void, transform: *DWRITE_MATRIX) -> HRESULT #cpp_method;
+
+    GetPixelsPerDip: (this: *IDWritePixelSnapping, clientDrawingContext: *void, pixelsPerDip: *float) -> HRESULT #cpp_method;
+}
+
+IDWritePixelSnapping_IsPixelSnappingDisabled :: inline (this: *IDWritePixelSnapping, clientDrawingContext: *void, isDisabled: *BOOL) -> HRESULT { return this.idwritepixelsnapping_vtable.IsPixelSnappingDisabled(this, clientDrawingContext, isDisabled); }
+
+IDWritePixelSnapping_GetCurrentTransform :: inline (this: *IDWritePixelSnapping, clientDrawingContext: *void, transform: *DWRITE_MATRIX) -> HRESULT { return this.idwritepixelsnapping_vtable.GetCurrentTransform(this, clientDrawingContext, transform); }
+
+IDWritePixelSnapping_GetPixelsPerDip :: inline (this: *IDWritePixelSnapping, clientDrawingContext: *void, pixelsPerDip: *float) -> HRESULT { return this.idwritepixelsnapping_vtable.GetPixelsPerDip(this, clientDrawingContext, pixelsPerDip); }
+
+vtable :: (obj: *IDWritePixelSnapping) -> *IDWritePixelSnapping_VTable { return obj.idwritepixelsnapping_vtable; }
+
+
+IDWriteTextRenderer :: struct {
+    #as using idwritepixelsnapping: IDWritePixelSnapping;
+    #place idwritepixelsnapping; idwritetextrenderer_vtable: *IDWriteTextRenderer_VTable;
+}
+IDWriteTextRenderer_VTable :: struct #type_info_none {
+    using idwritepixelsnapping: IDWritePixelSnapping_VTable;
+    DrawGlyphRun: (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawUnderline: (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, underline: *DWRITE_UNDERLINE, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawStrikethrough: (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, strikethrough: *DWRITE_STRIKETHROUGH, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawInlineObject: (this: *IDWriteTextRenderer, clientDrawingContext: *void, originX: float, originY: float, inlineObject: *IDWriteInlineObject, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+}
+
+IDWriteTextRenderer_DrawGlyphRun :: inline (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer_vtable.DrawGlyphRun(this, clientDrawingContext, baselineOriginX, baselineOriginY, measuringMode, glyphRun, glyphRunDescription, clientDrawingEffect); }
+
+IDWriteTextRenderer_DrawUnderline :: inline (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, underline: *DWRITE_UNDERLINE, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer_vtable.DrawUnderline(this, clientDrawingContext, baselineOriginX, baselineOriginY, underline, clientDrawingEffect); }
+
+IDWriteTextRenderer_DrawStrikethrough :: inline (this: *IDWriteTextRenderer, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, strikethrough: *DWRITE_STRIKETHROUGH, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer_vtable.DrawStrikethrough(this, clientDrawingContext, baselineOriginX, baselineOriginY, strikethrough, clientDrawingEffect); }
+
+IDWriteTextRenderer_DrawInlineObject :: inline (this: *IDWriteTextRenderer, clientDrawingContext: *void, originX: float, originY: float, inlineObject: *IDWriteInlineObject, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer_vtable.DrawInlineObject(this, clientDrawingContext, originX, originY, inlineObject, isSideways, isRightToLeft, clientDrawingEffect); }
+
+vtable :: (obj: *IDWriteTextRenderer) -> *IDWriteTextRenderer_VTable { return obj.idwritetextrenderer_vtable; }
+
+
+IDWriteTextLayout :: struct {
+    #as using idwritetextformat: IDWriteTextFormat;
+    #place idwritetextformat; idwritetextlayout_vtable: *IDWriteTextLayout_VTable;
+}
+IDWriteTextLayout_VTable :: struct #type_info_none {
+    using idwritetextformat: IDWriteTextFormat_VTable;
+    SetMaxWidth: (this: *IDWriteTextLayout, maxWidth: float) -> HRESULT #cpp_method;
+
+    SetMaxHeight: (this: *IDWriteTextLayout, maxHeight: float) -> HRESULT #cpp_method;
+
+    SetFontCollection: (this: *IDWriteTextLayout, fontCollection: *IDWriteFontCollection, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetFontFamilyName: (this: *IDWriteTextLayout, fontFamilyName: *s16, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetFontWeight: (this: *IDWriteTextLayout, fontWeight: DWRITE_FONT_WEIGHT, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetFontStyle: (this: *IDWriteTextLayout, fontStyle: DWRITE_FONT_STYLE, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetFontStretch: (this: *IDWriteTextLayout, fontStretch: DWRITE_FONT_STRETCH, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetFontSize: (this: *IDWriteTextLayout, fontSize: float, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetUnderline: (this: *IDWriteTextLayout, hasUnderline: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetStrikethrough: (this: *IDWriteTextLayout, hasStrikethrough: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetDrawingEffect: (this: *IDWriteTextLayout, drawingEffect: *IUnknown, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetInlineObject: (this: *IDWriteTextLayout, inlineObject: *IDWriteInlineObject, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetTypography: (this: *IDWriteTextLayout, typography: *IDWriteTypography, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    SetLocaleName: (this: *IDWriteTextLayout, localeName: *s16, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    GetMaxWidth: (this: *IDWriteTextLayout) -> float #cpp_method;
+
+    GetMaxHeight: (this: *IDWriteTextLayout) -> float #cpp_method;
+
+    GetFontCollection_1: (this: *IDWriteTextLayout, currentPosition: u32, fontCollection: **IDWriteFontCollection, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontFamilyNameLength_1: (this: *IDWriteTextLayout, currentPosition: u32, nameLength: *u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontFamilyName_1: (this: *IDWriteTextLayout, currentPosition: u32, fontFamilyName: *s16, nameSize: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontWeight_1: (this: *IDWriteTextLayout, currentPosition: u32, fontWeight: *DWRITE_FONT_WEIGHT, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontStyle_1: (this: *IDWriteTextLayout, currentPosition: u32, fontStyle: *DWRITE_FONT_STYLE, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontStretch_1: (this: *IDWriteTextLayout, currentPosition: u32, fontStretch: *DWRITE_FONT_STRETCH, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetFontSize_1: (this: *IDWriteTextLayout, currentPosition: u32, fontSize: *float, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetUnderline: (this: *IDWriteTextLayout, currentPosition: u32, hasUnderline: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetStrikethrough: (this: *IDWriteTextLayout, currentPosition: u32, hasStrikethrough: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetDrawingEffect: (this: *IDWriteTextLayout, currentPosition: u32, drawingEffect: **IUnknown, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetInlineObject: (this: *IDWriteTextLayout, currentPosition: u32, inlineObject: **IDWriteInlineObject, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetTypography: (this: *IDWriteTextLayout, currentPosition: u32, typography: **IDWriteTypography, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetLocaleNameLength_1: (this: *IDWriteTextLayout, currentPosition: u32, nameLength: *u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetLocaleName_1: (this: *IDWriteTextLayout, currentPosition: u32, localeName: *s16, nameSize: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    Draw: (this: *IDWriteTextLayout, clientDrawingContext: *void, renderer: *IDWriteTextRenderer, originX: float, originY: float) -> HRESULT #cpp_method;
+
+    GetLineMetrics: (this: *IDWriteTextLayout, lineMetrics: *DWRITE_LINE_METRICS, maxLineCount: u32, actualLineCount: *u32) -> HRESULT #cpp_method;
+
+    GetMetrics: (this: *IDWriteTextLayout, textMetrics: *DWRITE_TEXT_METRICS) -> HRESULT #cpp_method;
+
+    GetOverhangMetrics: (this: *IDWriteTextLayout, overhangs: *DWRITE_OVERHANG_METRICS) -> HRESULT #cpp_method;
+
+    GetClusterMetrics: (this: *IDWriteTextLayout, clusterMetrics: *DWRITE_CLUSTER_METRICS, maxClusterCount: u32, actualClusterCount: *u32) -> HRESULT #cpp_method;
+
+    DetermineMinWidth: (this: *IDWriteTextLayout, minWidth: *float) -> HRESULT #cpp_method;
+
+    HitTestPoint: (this: *IDWriteTextLayout, pointX: float, pointY: float, isTrailingHit: *BOOL, isInside: *BOOL, hitTestMetrics: *DWRITE_HIT_TEST_METRICS) -> HRESULT #cpp_method;
+
+    HitTestTextPosition: (this: *IDWriteTextLayout, textPosition: u32, isTrailingHit: BOOL, pointX: *float, pointY: *float, hitTestMetrics: *DWRITE_HIT_TEST_METRICS) -> HRESULT #cpp_method;
+
+    HitTestTextRange: (this: *IDWriteTextLayout, textPosition: u32, textLength: u32, originX: float, originY: float, hitTestMetrics: *DWRITE_HIT_TEST_METRICS, maxHitTestMetricsCount: u32, actualHitTestMetricsCount: *u32) -> HRESULT #cpp_method;
+}
+
+IDWriteTextLayout_SetMaxWidth :: inline (this: *IDWriteTextLayout, maxWidth: float) -> HRESULT { return this.idwritetextlayout_vtable.SetMaxWidth(this, maxWidth); }
+
+IDWriteTextLayout_SetMaxHeight :: inline (this: *IDWriteTextLayout, maxHeight: float) -> HRESULT { return this.idwritetextlayout_vtable.SetMaxHeight(this, maxHeight); }
+
+IDWriteTextLayout_SetFontCollection :: inline (this: *IDWriteTextLayout, fontCollection: *IDWriteFontCollection, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontCollection(this, fontCollection, textRange); }
+
+IDWriteTextLayout_SetFontFamilyName :: inline (this: *IDWriteTextLayout, fontFamilyName: *s16, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontFamilyName(this, fontFamilyName, textRange); }
+
+IDWriteTextLayout_SetFontWeight :: inline (this: *IDWriteTextLayout, fontWeight: DWRITE_FONT_WEIGHT, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontWeight(this, fontWeight, textRange); }
+
+IDWriteTextLayout_SetFontStyle :: inline (this: *IDWriteTextLayout, fontStyle: DWRITE_FONT_STYLE, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontStyle(this, fontStyle, textRange); }
+
+IDWriteTextLayout_SetFontStretch :: inline (this: *IDWriteTextLayout, fontStretch: DWRITE_FONT_STRETCH, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontStretch(this, fontStretch, textRange); }
+
+IDWriteTextLayout_SetFontSize :: inline (this: *IDWriteTextLayout, fontSize: float, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetFontSize(this, fontSize, textRange); }
+
+IDWriteTextLayout_SetUnderline :: inline (this: *IDWriteTextLayout, hasUnderline: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetUnderline(this, hasUnderline, textRange); }
+
+IDWriteTextLayout_SetStrikethrough :: inline (this: *IDWriteTextLayout, hasStrikethrough: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetStrikethrough(this, hasStrikethrough, textRange); }
+
+IDWriteTextLayout_SetDrawingEffect :: inline (this: *IDWriteTextLayout, drawingEffect: *IUnknown, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetDrawingEffect(this, drawingEffect, textRange); }
+
+IDWriteTextLayout_SetInlineObject :: inline (this: *IDWriteTextLayout, inlineObject: *IDWriteInlineObject, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetInlineObject(this, inlineObject, textRange); }
+
+IDWriteTextLayout_SetTypography :: inline (this: *IDWriteTextLayout, typography: *IDWriteTypography, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetTypography(this, typography, textRange); }
+
+IDWriteTextLayout_SetLocaleName :: inline (this: *IDWriteTextLayout, localeName: *s16, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout_vtable.SetLocaleName(this, localeName, textRange); }
+
+IDWriteTextLayout_GetMaxWidth :: inline (this: *IDWriteTextLayout) -> float { return this.idwritetextlayout_vtable.GetMaxWidth(this); }
+
+IDWriteTextLayout_GetMaxHeight :: inline (this: *IDWriteTextLayout) -> float { return this.idwritetextlayout_vtable.GetMaxHeight(this); }
+
+IDWriteTextLayout_GetFontCollection_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontCollection: **IDWriteFontCollection, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontCollection_1(this, currentPosition, fontCollection, textRange); }
+
+IDWriteTextLayout_GetFontFamilyNameLength_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, nameLength: *u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontFamilyNameLength_1(this, currentPosition, nameLength, textRange); }
+
+IDWriteTextLayout_GetFontFamilyName_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontFamilyName: *s16, nameSize: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontFamilyName_1(this, currentPosition, fontFamilyName, nameSize, textRange); }
+
+IDWriteTextLayout_GetFontWeight_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontWeight: *DWRITE_FONT_WEIGHT, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontWeight_1(this, currentPosition, fontWeight, textRange); }
+
+IDWriteTextLayout_GetFontStyle_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontStyle: *DWRITE_FONT_STYLE, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontStyle_1(this, currentPosition, fontStyle, textRange); }
+
+IDWriteTextLayout_GetFontStretch_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontStretch: *DWRITE_FONT_STRETCH, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontStretch_1(this, currentPosition, fontStretch, textRange); }
+
+IDWriteTextLayout_GetFontSize_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, fontSize: *float, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetFontSize_1(this, currentPosition, fontSize, textRange); }
+
+IDWriteTextLayout_GetUnderline :: inline (this: *IDWriteTextLayout, currentPosition: u32, hasUnderline: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetUnderline(this, currentPosition, hasUnderline, textRange); }
+
+IDWriteTextLayout_GetStrikethrough :: inline (this: *IDWriteTextLayout, currentPosition: u32, hasStrikethrough: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetStrikethrough(this, currentPosition, hasStrikethrough, textRange); }
+
+IDWriteTextLayout_GetDrawingEffect :: inline (this: *IDWriteTextLayout, currentPosition: u32, drawingEffect: **IUnknown, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetDrawingEffect(this, currentPosition, drawingEffect, textRange); }
+
+IDWriteTextLayout_GetInlineObject :: inline (this: *IDWriteTextLayout, currentPosition: u32, inlineObject: **IDWriteInlineObject, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetInlineObject(this, currentPosition, inlineObject, textRange); }
+
+IDWriteTextLayout_GetTypography :: inline (this: *IDWriteTextLayout, currentPosition: u32, typography: **IDWriteTypography, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetTypography(this, currentPosition, typography, textRange); }
+
+IDWriteTextLayout_GetLocaleNameLength_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, nameLength: *u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetLocaleNameLength_1(this, currentPosition, nameLength, textRange); }
+
+IDWriteTextLayout_GetLocaleName_1 :: inline (this: *IDWriteTextLayout, currentPosition: u32, localeName: *s16, nameSize: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout_vtable.GetLocaleName_1(this, currentPosition, localeName, nameSize, textRange); }
+
+IDWriteTextLayout_Draw :: inline (this: *IDWriteTextLayout, clientDrawingContext: *void, renderer: *IDWriteTextRenderer, originX: float, originY: float) -> HRESULT { return this.idwritetextlayout_vtable.Draw(this, clientDrawingContext, renderer, originX, originY); }
+
+IDWriteTextLayout_GetLineMetrics :: inline (this: *IDWriteTextLayout, lineMetrics: *DWRITE_LINE_METRICS, maxLineCount: u32, actualLineCount: *u32) -> HRESULT { return this.idwritetextlayout_vtable.GetLineMetrics(this, lineMetrics, maxLineCount, actualLineCount); }
+
+IDWriteTextLayout_GetMetrics :: inline (this: *IDWriteTextLayout, textMetrics: *DWRITE_TEXT_METRICS) -> HRESULT { return this.idwritetextlayout_vtable.GetMetrics(this, textMetrics); }
+
+IDWriteTextLayout_GetOverhangMetrics :: inline (this: *IDWriteTextLayout, overhangs: *DWRITE_OVERHANG_METRICS) -> HRESULT { return this.idwritetextlayout_vtable.GetOverhangMetrics(this, overhangs); }
+
+IDWriteTextLayout_GetClusterMetrics :: inline (this: *IDWriteTextLayout, clusterMetrics: *DWRITE_CLUSTER_METRICS, maxClusterCount: u32, actualClusterCount: *u32) -> HRESULT { return this.idwritetextlayout_vtable.GetClusterMetrics(this, clusterMetrics, maxClusterCount, actualClusterCount); }
+
+IDWriteTextLayout_DetermineMinWidth :: inline (this: *IDWriteTextLayout, minWidth: *float) -> HRESULT { return this.idwritetextlayout_vtable.DetermineMinWidth(this, minWidth); }
+
+IDWriteTextLayout_HitTestPoint :: inline (this: *IDWriteTextLayout, pointX: float, pointY: float, isTrailingHit: *BOOL, isInside: *BOOL, hitTestMetrics: *DWRITE_HIT_TEST_METRICS) -> HRESULT { return this.idwritetextlayout_vtable.HitTestPoint(this, pointX, pointY, isTrailingHit, isInside, hitTestMetrics); }
+
+IDWriteTextLayout_HitTestTextPosition :: inline (this: *IDWriteTextLayout, textPosition: u32, isTrailingHit: BOOL, pointX: *float, pointY: *float, hitTestMetrics: *DWRITE_HIT_TEST_METRICS) -> HRESULT { return this.idwritetextlayout_vtable.HitTestTextPosition(this, textPosition, isTrailingHit, pointX, pointY, hitTestMetrics); }
+
+IDWriteTextLayout_HitTestTextRange :: inline (this: *IDWriteTextLayout, textPosition: u32, textLength: u32, originX: float, originY: float, hitTestMetrics: *DWRITE_HIT_TEST_METRICS, maxHitTestMetricsCount: u32, actualHitTestMetricsCount: *u32) -> HRESULT { return this.idwritetextlayout_vtable.HitTestTextRange(this, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount); }
+
+vtable :: (obj: *IDWriteTextLayout) -> *IDWriteTextLayout_VTable { return obj.idwritetextlayout_vtable; }
+
+
+IDWriteBitmapRenderTarget :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritebitmaprendertarget_vtable: *IDWriteBitmapRenderTarget_VTable;
+}
+IDWriteBitmapRenderTarget_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    DrawGlyphRun: (this: *IDWriteBitmapRenderTarget, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, renderingParams: *IDWriteRenderingParams, textColor: COLORREF, blackBoxRect: *RECT = null) -> HRESULT #cpp_method;
+
+    GetMemoryDC: (this: *IDWriteBitmapRenderTarget) -> HDC #cpp_method;
+
+    GetPixelsPerDip: (this: *IDWriteBitmapRenderTarget) -> float #cpp_method;
+
+    SetPixelsPerDip: (this: *IDWriteBitmapRenderTarget, pixelsPerDip: float) -> HRESULT #cpp_method;
+
+    GetCurrentTransform: (this: *IDWriteBitmapRenderTarget, transform: *DWRITE_MATRIX) -> HRESULT #cpp_method;
+
+    SetCurrentTransform: (this: *IDWriteBitmapRenderTarget, transform: *DWRITE_MATRIX) -> HRESULT #cpp_method;
+
+    GetSize: (this: *IDWriteBitmapRenderTarget, size: *SIZE) -> HRESULT #cpp_method;
+
+    Resize: (this: *IDWriteBitmapRenderTarget, width: u32, height: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteBitmapRenderTarget_DrawGlyphRun :: inline (this: *IDWriteBitmapRenderTarget, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, renderingParams: *IDWriteRenderingParams, textColor: COLORREF, blackBoxRect: *RECT = null) -> HRESULT { return this.idwritebitmaprendertarget_vtable.DrawGlyphRun(this, baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, blackBoxRect); }
+
+IDWriteBitmapRenderTarget_GetMemoryDC :: inline (this: *IDWriteBitmapRenderTarget) -> HDC { return this.idwritebitmaprendertarget_vtable.GetMemoryDC(this); }
+
+IDWriteBitmapRenderTarget_GetPixelsPerDip :: inline (this: *IDWriteBitmapRenderTarget) -> float { return this.idwritebitmaprendertarget_vtable.GetPixelsPerDip(this); }
+
+IDWriteBitmapRenderTarget_SetPixelsPerDip :: inline (this: *IDWriteBitmapRenderTarget, pixelsPerDip: float) -> HRESULT { return this.idwritebitmaprendertarget_vtable.SetPixelsPerDip(this, pixelsPerDip); }
+
+IDWriteBitmapRenderTarget_GetCurrentTransform :: inline (this: *IDWriteBitmapRenderTarget, transform: *DWRITE_MATRIX) -> HRESULT { return this.idwritebitmaprendertarget_vtable.GetCurrentTransform(this, transform); }
+
+IDWriteBitmapRenderTarget_SetCurrentTransform :: inline (this: *IDWriteBitmapRenderTarget, transform: *DWRITE_MATRIX) -> HRESULT { return this.idwritebitmaprendertarget_vtable.SetCurrentTransform(this, transform); }
+
+IDWriteBitmapRenderTarget_GetSize :: inline (this: *IDWriteBitmapRenderTarget, size: *SIZE) -> HRESULT { return this.idwritebitmaprendertarget_vtable.GetSize(this, size); }
+
+IDWriteBitmapRenderTarget_Resize :: inline (this: *IDWriteBitmapRenderTarget, width: u32, height: u32) -> HRESULT { return this.idwritebitmaprendertarget_vtable.Resize(this, width, height); }
+
+vtable :: (obj: *IDWriteBitmapRenderTarget) -> *IDWriteBitmapRenderTarget_VTable { return obj.idwritebitmaprendertarget_vtable; }
+
+
+IDWriteGdiInterop :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritegdiinterop_vtable: *IDWriteGdiInterop_VTable;
+}
+IDWriteGdiInterop_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    CreateFontFromLOGFONT: (this: *IDWriteGdiInterop, logFont: *LOGFONTW, font: **IDWriteFont) -> HRESULT #cpp_method;
+
+    ConvertFontToLOGFONT: (this: *IDWriteGdiInterop, font: *IDWriteFont, logFont: *LOGFONTW, isSystemFont: *BOOL) -> HRESULT #cpp_method;
+
+    ConvertFontFaceToLOGFONT: (this: *IDWriteGdiInterop, font: *IDWriteFontFace, logFont: *LOGFONTW) -> HRESULT #cpp_method;
+
+    CreateFontFaceFromHdc: (this: *IDWriteGdiInterop, hdc: HDC, fontFace: **IDWriteFontFace) -> HRESULT #cpp_method;
+
+    CreateBitmapRenderTarget: (this: *IDWriteGdiInterop, hdc: HDC, width: u32, height: u32, renderTarget: **IDWriteBitmapRenderTarget) -> HRESULT #cpp_method;
+}
+
+IDWriteGdiInterop_CreateFontFromLOGFONT :: inline (this: *IDWriteGdiInterop, logFont: *LOGFONTW, font: **IDWriteFont) -> HRESULT { return this.idwritegdiinterop_vtable.CreateFontFromLOGFONT(this, logFont, font); }
+
+IDWriteGdiInterop_ConvertFontToLOGFONT :: inline (this: *IDWriteGdiInterop, font: *IDWriteFont, logFont: *LOGFONTW, isSystemFont: *BOOL) -> HRESULT { return this.idwritegdiinterop_vtable.ConvertFontToLOGFONT(this, font, logFont, isSystemFont); }
+
+IDWriteGdiInterop_ConvertFontFaceToLOGFONT :: inline (this: *IDWriteGdiInterop, font: *IDWriteFontFace, logFont: *LOGFONTW) -> HRESULT { return this.idwritegdiinterop_vtable.ConvertFontFaceToLOGFONT(this, font, logFont); }
+
+IDWriteGdiInterop_CreateFontFaceFromHdc :: inline (this: *IDWriteGdiInterop, hdc: HDC, fontFace: **IDWriteFontFace) -> HRESULT { return this.idwritegdiinterop_vtable.CreateFontFaceFromHdc(this, hdc, fontFace); }
+
+IDWriteGdiInterop_CreateBitmapRenderTarget :: inline (this: *IDWriteGdiInterop, hdc: HDC, width: u32, height: u32, renderTarget: **IDWriteBitmapRenderTarget) -> HRESULT { return this.idwritegdiinterop_vtable.CreateBitmapRenderTarget(this, hdc, width, height, renderTarget); }
+
+vtable :: (obj: *IDWriteGdiInterop) -> *IDWriteGdiInterop_VTable { return obj.idwritegdiinterop_vtable; }
+
+
+DWRITE_TEXTURE_TYPE :: enum s32 {
+    ALIASED_1x1   :: 0;
+
+    CLEARTYPE_3x1 :: 1;
+
+    DWRITE_TEXTURE_ALIASED_1x1   :: ALIASED_1x1;
+
+    DWRITE_TEXTURE_CLEARTYPE_3x1 :: CLEARTYPE_3x1;
+}
+
+IDWriteGlyphRunAnalysis :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwriteglyphrunanalysis_vtable: *IDWriteGlyphRunAnalysis_VTable;
+}
+IDWriteGlyphRunAnalysis_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetAlphaTextureBounds: (this: *IDWriteGlyphRunAnalysis, textureType: DWRITE_TEXTURE_TYPE, textureBounds: *RECT) -> HRESULT #cpp_method;
+
+    CreateAlphaTexture: (this: *IDWriteGlyphRunAnalysis, textureType: DWRITE_TEXTURE_TYPE, textureBounds: *RECT, alphaValues: *u8, bufferSize: u32) -> HRESULT #cpp_method;
+
+    GetAlphaBlendParams: (this: *IDWriteGlyphRunAnalysis, renderingParams: *IDWriteRenderingParams, blendGamma: *float, blendEnhancedContrast: *float, blendClearTypeLevel: *float) -> HRESULT #cpp_method;
+}
+
+IDWriteGlyphRunAnalysis_GetAlphaTextureBounds :: inline (this: *IDWriteGlyphRunAnalysis, textureType: DWRITE_TEXTURE_TYPE, textureBounds: *RECT) -> HRESULT { return this.idwriteglyphrunanalysis_vtable.GetAlphaTextureBounds(this, textureType, textureBounds); }
+
+IDWriteGlyphRunAnalysis_CreateAlphaTexture :: inline (this: *IDWriteGlyphRunAnalysis, textureType: DWRITE_TEXTURE_TYPE, textureBounds: *RECT, alphaValues: *u8, bufferSize: u32) -> HRESULT { return this.idwriteglyphrunanalysis_vtable.CreateAlphaTexture(this, textureType, textureBounds, alphaValues, bufferSize); }
+
+IDWriteGlyphRunAnalysis_GetAlphaBlendParams :: inline (this: *IDWriteGlyphRunAnalysis, renderingParams: *IDWriteRenderingParams, blendGamma: *float, blendEnhancedContrast: *float, blendClearTypeLevel: *float) -> HRESULT { return this.idwriteglyphrunanalysis_vtable.GetAlphaBlendParams(this, renderingParams, blendGamma, blendEnhancedContrast, blendClearTypeLevel); }
+
+vtable :: (obj: *IDWriteGlyphRunAnalysis) -> *IDWriteGlyphRunAnalysis_VTable { return obj.idwriteglyphrunanalysis_vtable; }
+
+
+IDWriteFactory :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefactory_vtable: *IDWriteFactory_VTable;
+}
+IDWriteFactory_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetSystemFontCollection: (this: *IDWriteFactory, fontCollection: **IDWriteFontCollection, checkForUpdates: BOOL = 0) -> HRESULT #cpp_method;
+
+    CreateCustomFontCollection: (this: *IDWriteFactory, collectionLoader: *IDWriteFontCollectionLoader, collectionKey: *void, collectionKeySize: u32, fontCollection: **IDWriteFontCollection) -> HRESULT #cpp_method;
+
+    RegisterFontCollectionLoader: (this: *IDWriteFactory, fontCollectionLoader: *IDWriteFontCollectionLoader) -> HRESULT #cpp_method;
+
+    UnregisterFontCollectionLoader: (this: *IDWriteFactory, fontCollectionLoader: *IDWriteFontCollectionLoader) -> HRESULT #cpp_method;
+
+    CreateFontFileReference: (this: *IDWriteFactory, filePath: *s16, lastWriteTime: *FILETIME, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    CreateCustomFontFileReference: (this: *IDWriteFactory, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileLoader: *IDWriteFontFileLoader, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    CreateFontFace: (this: *IDWriteFactory, fontFaceType: DWRITE_FONT_FACE_TYPE, numberOfFiles: u32, fontFiles: **IDWriteFontFile, faceIndex: u32, fontFaceSimulationFlags: DWRITE_FONT_SIMULATIONS, fontFace: **IDWriteFontFace) -> HRESULT #cpp_method;
+
+    CreateRenderingParams: (this: *IDWriteFactory, renderingParams: **IDWriteRenderingParams) -> HRESULT #cpp_method;
+
+    CreateMonitorRenderingParams: (this: *IDWriteFactory, monitor: HMONITOR, renderingParams: **IDWriteRenderingParams) -> HRESULT #cpp_method;
+
+    CreateCustomRenderingParams: (this: *IDWriteFactory, gamma: float, enhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, renderingParams: **IDWriteRenderingParams) -> HRESULT #cpp_method;
+
+    RegisterFontFileLoader: (this: *IDWriteFactory, fontFileLoader: *IDWriteFontFileLoader) -> HRESULT #cpp_method;
+
+    UnregisterFontFileLoader: (this: *IDWriteFactory, fontFileLoader: *IDWriteFontFileLoader) -> HRESULT #cpp_method;
+
+    CreateTextFormat: (this: *IDWriteFactory, fontFamilyName: *s16, fontCollection: *IDWriteFontCollection, fontWeight: DWRITE_FONT_WEIGHT, fontStyle: DWRITE_FONT_STYLE, fontStretch: DWRITE_FONT_STRETCH, fontSize: float, localeName: *s16, textFormat: **IDWriteTextFormat) -> HRESULT #cpp_method;
+
+    CreateTypography: (this: *IDWriteFactory, typography: **IDWriteTypography) -> HRESULT #cpp_method;
+
+    GetGdiInterop: (this: *IDWriteFactory, gdiInterop: **IDWriteGdiInterop) -> HRESULT #cpp_method;
+
+    CreateTextLayout: (this: *IDWriteFactory, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, maxWidth: float, maxHeight: float, textLayout: **IDWriteTextLayout) -> HRESULT #cpp_method;
+
+    CreateGdiCompatibleTextLayout: (this: *IDWriteFactory, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutWidth: float, layoutHeight: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, textLayout: **IDWriteTextLayout) -> HRESULT #cpp_method;
+
+    CreateEllipsisTrimmingSign: (this: *IDWriteFactory, textFormat: *IDWriteTextFormat, trimmingSign: **IDWriteInlineObject) -> HRESULT #cpp_method;
+
+    CreateTextAnalyzer: (this: *IDWriteFactory, textAnalyzer: **IDWriteTextAnalyzer) -> HRESULT #cpp_method;
+
+    CreateNumberSubstitution: (this: *IDWriteFactory, substitutionMethod: DWRITE_NUMBER_SUBSTITUTION_METHOD, localeName: *s16, ignoreUserOverride: BOOL, numberSubstitution: **IDWriteNumberSubstitution) -> HRESULT #cpp_method;
+
+    CreateGlyphRunAnalysis: (this: *IDWriteFactory, glyphRun: *DWRITE_GLYPH_RUN, pixelsPerDip: float, transform: *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE, measuringMode: DWRITE_MEASURING_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory_GetSystemFontCollection :: inline (this: *IDWriteFactory, fontCollection: **IDWriteFontCollection, checkForUpdates: BOOL = 0) -> HRESULT { return this.idwritefactory_vtable.GetSystemFontCollection(this, fontCollection, checkForUpdates); }
+
+IDWriteFactory_CreateCustomFontCollection :: inline (this: *IDWriteFactory, collectionLoader: *IDWriteFontCollectionLoader, collectionKey: *void, collectionKeySize: u32, fontCollection: **IDWriteFontCollection) -> HRESULT { return this.idwritefactory_vtable.CreateCustomFontCollection(this, collectionLoader, collectionKey, collectionKeySize, fontCollection); }
+
+IDWriteFactory_RegisterFontCollectionLoader :: inline (this: *IDWriteFactory, fontCollectionLoader: *IDWriteFontCollectionLoader) -> HRESULT { return this.idwritefactory_vtable.RegisterFontCollectionLoader(this, fontCollectionLoader); }
+
+IDWriteFactory_UnregisterFontCollectionLoader :: inline (this: *IDWriteFactory, fontCollectionLoader: *IDWriteFontCollectionLoader) -> HRESULT { return this.idwritefactory_vtable.UnregisterFontCollectionLoader(this, fontCollectionLoader); }
+
+IDWriteFactory_CreateFontFileReference :: inline (this: *IDWriteFactory, filePath: *s16, lastWriteTime: *FILETIME, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwritefactory_vtable.CreateFontFileReference(this, filePath, lastWriteTime, fontFile); }
+
+IDWriteFactory_CreateCustomFontFileReference :: inline (this: *IDWriteFactory, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileLoader: *IDWriteFontFileLoader, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwritefactory_vtable.CreateCustomFontFileReference(this, fontFileReferenceKey, fontFileReferenceKeySize, fontFileLoader, fontFile); }
+
+IDWriteFactory_CreateFontFace :: inline (this: *IDWriteFactory, fontFaceType: DWRITE_FONT_FACE_TYPE, numberOfFiles: u32, fontFiles: **IDWriteFontFile, faceIndex: u32, fontFaceSimulationFlags: DWRITE_FONT_SIMULATIONS, fontFace: **IDWriteFontFace) -> HRESULT { return this.idwritefactory_vtable.CreateFontFace(this, fontFaceType, numberOfFiles, fontFiles, faceIndex, fontFaceSimulationFlags, fontFace); }
+
+IDWriteFactory_CreateRenderingParams :: inline (this: *IDWriteFactory, renderingParams: **IDWriteRenderingParams) -> HRESULT { return this.idwritefactory_vtable.CreateRenderingParams(this, renderingParams); }
+
+IDWriteFactory_CreateMonitorRenderingParams :: inline (this: *IDWriteFactory, monitor: HMONITOR, renderingParams: **IDWriteRenderingParams) -> HRESULT { return this.idwritefactory_vtable.CreateMonitorRenderingParams(this, monitor, renderingParams); }
+
+IDWriteFactory_CreateCustomRenderingParams :: inline (this: *IDWriteFactory, gamma: float, enhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, renderingParams: **IDWriteRenderingParams) -> HRESULT { return this.idwritefactory_vtable.CreateCustomRenderingParams(this, gamma, enhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, renderingParams); }
+
+IDWriteFactory_RegisterFontFileLoader :: inline (this: *IDWriteFactory, fontFileLoader: *IDWriteFontFileLoader) -> HRESULT { return this.idwritefactory_vtable.RegisterFontFileLoader(this, fontFileLoader); }
+
+IDWriteFactory_UnregisterFontFileLoader :: inline (this: *IDWriteFactory, fontFileLoader: *IDWriteFontFileLoader) -> HRESULT { return this.idwritefactory_vtable.UnregisterFontFileLoader(this, fontFileLoader); }
+
+IDWriteFactory_CreateTextFormat :: inline (this: *IDWriteFactory, fontFamilyName: *s16, fontCollection: *IDWriteFontCollection, fontWeight: DWRITE_FONT_WEIGHT, fontStyle: DWRITE_FONT_STYLE, fontStretch: DWRITE_FONT_STRETCH, fontSize: float, localeName: *s16, textFormat: **IDWriteTextFormat) -> HRESULT { return this.idwritefactory_vtable.CreateTextFormat(this, fontFamilyName, fontCollection, fontWeight, fontStyle, fontStretch, fontSize, localeName, textFormat); }
+
+IDWriteFactory_CreateTypography :: inline (this: *IDWriteFactory, typography: **IDWriteTypography) -> HRESULT { return this.idwritefactory_vtable.CreateTypography(this, typography); }
+
+IDWriteFactory_GetGdiInterop :: inline (this: *IDWriteFactory, gdiInterop: **IDWriteGdiInterop) -> HRESULT { return this.idwritefactory_vtable.GetGdiInterop(this, gdiInterop); }
+
+IDWriteFactory_CreateTextLayout :: inline (this: *IDWriteFactory, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, maxWidth: float, maxHeight: float, textLayout: **IDWriteTextLayout) -> HRESULT { return this.idwritefactory_vtable.CreateTextLayout(this, _string, stringLength, textFormat, maxWidth, maxHeight, textLayout); }
+
+IDWriteFactory_CreateGdiCompatibleTextLayout :: inline (this: *IDWriteFactory, _string: *s16, stringLength: u32, textFormat: *IDWriteTextFormat, layoutWidth: float, layoutHeight: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, textLayout: **IDWriteTextLayout) -> HRESULT { return this.idwritefactory_vtable.CreateGdiCompatibleTextLayout(this, _string, stringLength, textFormat, layoutWidth, layoutHeight, pixelsPerDip, transform, useGdiNatural, textLayout); }
+
+IDWriteFactory_CreateEllipsisTrimmingSign :: inline (this: *IDWriteFactory, textFormat: *IDWriteTextFormat, trimmingSign: **IDWriteInlineObject) -> HRESULT { return this.idwritefactory_vtable.CreateEllipsisTrimmingSign(this, textFormat, trimmingSign); }
+
+IDWriteFactory_CreateTextAnalyzer :: inline (this: *IDWriteFactory, textAnalyzer: **IDWriteTextAnalyzer) -> HRESULT { return this.idwritefactory_vtable.CreateTextAnalyzer(this, textAnalyzer); }
+
+IDWriteFactory_CreateNumberSubstitution :: inline (this: *IDWriteFactory, substitutionMethod: DWRITE_NUMBER_SUBSTITUTION_METHOD, localeName: *s16, ignoreUserOverride: BOOL, numberSubstitution: **IDWriteNumberSubstitution) -> HRESULT { return this.idwritefactory_vtable.CreateNumberSubstitution(this, substitutionMethod, localeName, ignoreUserOverride, numberSubstitution); }
+
+IDWriteFactory_CreateGlyphRunAnalysis :: inline (this: *IDWriteFactory, glyphRun: *DWRITE_GLYPH_RUN, pixelsPerDip: float, transform: *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE, measuringMode: DWRITE_MEASURING_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT { return this.idwritefactory_vtable.CreateGlyphRunAnalysis(this, glyphRun, pixelsPerDip, transform, renderingMode, measuringMode, baselineOriginX, baselineOriginY, glyphRunAnalysis); }
+
+vtable :: (obj: *IDWriteFactory) -> *IDWriteFactory_VTable { return obj.idwritefactory_vtable; }
+
+
+DWRITE_PANOSE_FAMILY :: enum s32 {
+    ANY          :: 0;
+    NO_FIT       :: 1;
+    TEXT_DISPLAY :: 2;
+    SCRIPT       :: 3;
+    DECORATIVE   :: 4;
+    SYMBOL       :: 5;
+    PICTORIAL    :: 5;
+
+    DWRITE_PANOSE_FAMILY_ANY          :: ANY;
+    DWRITE_PANOSE_FAMILY_NO_FIT       :: NO_FIT;
+    DWRITE_PANOSE_FAMILY_TEXT_DISPLAY :: TEXT_DISPLAY;
+    DWRITE_PANOSE_FAMILY_SCRIPT       :: SCRIPT;
+    DWRITE_PANOSE_FAMILY_DECORATIVE   :: DECORATIVE;
+    DWRITE_PANOSE_FAMILY_SYMBOL       :: SYMBOL;
+    DWRITE_PANOSE_FAMILY_PICTORIAL    :: PICTORIAL;
+}
+
+DWRITE_PANOSE_SERIF_STYLE :: enum s32 {
+    ANY                :: 0;
+    NO_FIT             :: 1;
+    COVE               :: 2;
+    OBTUSE_COVE        :: 3;
+    SQUARE_COVE        :: 4;
+    OBTUSE_SQUARE_COVE :: 5;
+    SQUARE             :: 6;
+    THIN               :: 7;
+    OVAL               :: 8;
+    EXAGGERATED        :: 9;
+    TRIANGLE           :: 10;
+    NORMAL_SANS        :: 11;
+    OBTUSE_SANS        :: 12;
+    PERPENDICULAR_SANS :: 13;
+    FLARED             :: 14;
+    ROUNDED            :: 15;
+    SCRIPT             :: 16;
+    PERP_SANS          :: 13;
+    BONE               :: 8;
+
+    DWRITE_PANOSE_SERIF_STYLE_ANY                :: ANY;
+    DWRITE_PANOSE_SERIF_STYLE_NO_FIT             :: NO_FIT;
+    DWRITE_PANOSE_SERIF_STYLE_COVE               :: COVE;
+    DWRITE_PANOSE_SERIF_STYLE_OBTUSE_COVE        :: OBTUSE_COVE;
+    DWRITE_PANOSE_SERIF_STYLE_SQUARE_COVE        :: SQUARE_COVE;
+    DWRITE_PANOSE_SERIF_STYLE_OBTUSE_SQUARE_COVE :: OBTUSE_SQUARE_COVE;
+    DWRITE_PANOSE_SERIF_STYLE_SQUARE             :: SQUARE;
+    DWRITE_PANOSE_SERIF_STYLE_THIN               :: THIN;
+    DWRITE_PANOSE_SERIF_STYLE_OVAL               :: OVAL;
+    DWRITE_PANOSE_SERIF_STYLE_EXAGGERATED        :: EXAGGERATED;
+    DWRITE_PANOSE_SERIF_STYLE_TRIANGLE           :: TRIANGLE;
+    DWRITE_PANOSE_SERIF_STYLE_NORMAL_SANS        :: NORMAL_SANS;
+    DWRITE_PANOSE_SERIF_STYLE_OBTUSE_SANS        :: OBTUSE_SANS;
+    DWRITE_PANOSE_SERIF_STYLE_PERPENDICULAR_SANS :: PERPENDICULAR_SANS;
+    DWRITE_PANOSE_SERIF_STYLE_FLARED             :: FLARED;
+    DWRITE_PANOSE_SERIF_STYLE_ROUNDED            :: ROUNDED;
+    DWRITE_PANOSE_SERIF_STYLE_SCRIPT             :: SCRIPT;
+    DWRITE_PANOSE_SERIF_STYLE_PERP_SANS          :: PERP_SANS;
+    DWRITE_PANOSE_SERIF_STYLE_BONE               :: BONE;
+}
+
+DWRITE_PANOSE_WEIGHT :: enum s32 {
+    ANY         :: 0;
+    NO_FIT      :: 1;
+    VERY_LIGHT  :: 2;
+    LIGHT       :: 3;
+    THIN        :: 4;
+    BOOK        :: 5;
+    MEDIUM      :: 6;
+    DEMI        :: 7;
+    BOLD        :: 8;
+    HEAVY       :: 9;
+    BLACK       :: 10;
+    EXTRA_BLACK :: 11;
+    NORD        :: 11;
+
+    DWRITE_PANOSE_WEIGHT_ANY         :: ANY;
+    DWRITE_PANOSE_WEIGHT_NO_FIT      :: NO_FIT;
+    DWRITE_PANOSE_WEIGHT_VERY_LIGHT  :: VERY_LIGHT;
+    DWRITE_PANOSE_WEIGHT_LIGHT       :: LIGHT;
+    DWRITE_PANOSE_WEIGHT_THIN        :: THIN;
+    DWRITE_PANOSE_WEIGHT_BOOK        :: BOOK;
+    DWRITE_PANOSE_WEIGHT_MEDIUM      :: MEDIUM;
+    DWRITE_PANOSE_WEIGHT_DEMI        :: DEMI;
+    DWRITE_PANOSE_WEIGHT_BOLD        :: BOLD;
+    DWRITE_PANOSE_WEIGHT_HEAVY       :: HEAVY;
+    DWRITE_PANOSE_WEIGHT_BLACK       :: BLACK;
+    DWRITE_PANOSE_WEIGHT_EXTRA_BLACK :: EXTRA_BLACK;
+    DWRITE_PANOSE_WEIGHT_NORD        :: NORD;
+}
+
+DWRITE_PANOSE_PROPORTION :: enum s32 {
+    ANY            :: 0;
+    NO_FIT         :: 1;
+    OLD_STYLE      :: 2;
+    MODERN         :: 3;
+    EVEN_WIDTH     :: 4;
+    EXPANDED       :: 5;
+    CONDENSED      :: 6;
+    VERY_EXPANDED  :: 7;
+    VERY_CONDENSED :: 8;
+    MONOSPACED     :: 9;
+
+    DWRITE_PANOSE_PROPORTION_ANY            :: ANY;
+    DWRITE_PANOSE_PROPORTION_NO_FIT         :: NO_FIT;
+    DWRITE_PANOSE_PROPORTION_OLD_STYLE      :: OLD_STYLE;
+    DWRITE_PANOSE_PROPORTION_MODERN         :: MODERN;
+    DWRITE_PANOSE_PROPORTION_EVEN_WIDTH     :: EVEN_WIDTH;
+    DWRITE_PANOSE_PROPORTION_EXPANDED       :: EXPANDED;
+    DWRITE_PANOSE_PROPORTION_CONDENSED      :: CONDENSED;
+    DWRITE_PANOSE_PROPORTION_VERY_EXPANDED  :: VERY_EXPANDED;
+    DWRITE_PANOSE_PROPORTION_VERY_CONDENSED :: VERY_CONDENSED;
+    DWRITE_PANOSE_PROPORTION_MONOSPACED     :: MONOSPACED;
+}
+
+DWRITE_PANOSE_CONTRAST :: enum s32 {
+    ANY               :: 0;
+    NO_FIT            :: 1;
+    NONE              :: 2;
+    VERY_LOW          :: 3;
+    LOW               :: 4;
+    MEDIUM_LOW        :: 5;
+    MEDIUM            :: 6;
+    MEDIUM_HIGH       :: 7;
+    HIGH              :: 8;
+    VERY_HIGH         :: 9;
+    HORIZONTAL_LOW    :: 10;
+    HORIZONTAL_MEDIUM :: 11;
+    HORIZONTAL_HIGH   :: 12;
+    BROKEN            :: 13;
+
+    DWRITE_PANOSE_CONTRAST_ANY               :: ANY;
+    DWRITE_PANOSE_CONTRAST_NO_FIT            :: NO_FIT;
+    DWRITE_PANOSE_CONTRAST_NONE              :: NONE;
+    DWRITE_PANOSE_CONTRAST_VERY_LOW          :: VERY_LOW;
+    DWRITE_PANOSE_CONTRAST_LOW               :: LOW;
+    DWRITE_PANOSE_CONTRAST_MEDIUM_LOW        :: MEDIUM_LOW;
+    DWRITE_PANOSE_CONTRAST_MEDIUM            :: MEDIUM;
+    DWRITE_PANOSE_CONTRAST_MEDIUM_HIGH       :: MEDIUM_HIGH;
+    DWRITE_PANOSE_CONTRAST_HIGH              :: HIGH;
+    DWRITE_PANOSE_CONTRAST_VERY_HIGH         :: VERY_HIGH;
+    DWRITE_PANOSE_CONTRAST_HORIZONTAL_LOW    :: HORIZONTAL_LOW;
+    DWRITE_PANOSE_CONTRAST_HORIZONTAL_MEDIUM :: HORIZONTAL_MEDIUM;
+    DWRITE_PANOSE_CONTRAST_HORIZONTAL_HIGH   :: HORIZONTAL_HIGH;
+    DWRITE_PANOSE_CONTRAST_BROKEN            :: BROKEN;
+}
+
+DWRITE_PANOSE_STROKE_VARIATION :: enum s32 {
+    ANY                  :: 0;
+    NO_FIT               :: 1;
+    NO_VARIATION         :: 2;
+    GRADUAL_DIAGONAL     :: 3;
+    GRADUAL_TRANSITIONAL :: 4;
+    GRADUAL_VERTICAL     :: 5;
+    GRADUAL_HORIZONTAL   :: 6;
+    RAPID_VERTICAL       :: 7;
+    RAPID_HORIZONTAL     :: 8;
+    INSTANT_VERTICAL     :: 9;
+    INSTANT_HORIZONTAL   :: 10;
+
+    DWRITE_PANOSE_STROKE_VARIATION_ANY                  :: ANY;
+    DWRITE_PANOSE_STROKE_VARIATION_NO_FIT               :: NO_FIT;
+    DWRITE_PANOSE_STROKE_VARIATION_NO_VARIATION         :: NO_VARIATION;
+    DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_DIAGONAL     :: GRADUAL_DIAGONAL;
+    DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_TRANSITIONAL :: GRADUAL_TRANSITIONAL;
+    DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_VERTICAL     :: GRADUAL_VERTICAL;
+    DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_HORIZONTAL   :: GRADUAL_HORIZONTAL;
+    DWRITE_PANOSE_STROKE_VARIATION_RAPID_VERTICAL       :: RAPID_VERTICAL;
+    DWRITE_PANOSE_STROKE_VARIATION_RAPID_HORIZONTAL     :: RAPID_HORIZONTAL;
+    DWRITE_PANOSE_STROKE_VARIATION_INSTANT_VERTICAL     :: INSTANT_VERTICAL;
+    DWRITE_PANOSE_STROKE_VARIATION_INSTANT_HORIZONTAL   :: INSTANT_HORIZONTAL;
+}
+
+DWRITE_PANOSE_ARM_STYLE :: enum s32 {
+    ANY                           :: 0;
+    NO_FIT                        :: 1;
+    STRAIGHT_ARMS_HORIZONTAL      :: 2;
+    STRAIGHT_ARMS_WEDGE           :: 3;
+    STRAIGHT_ARMS_VERTICAL        :: 4;
+    STRAIGHT_ARMS_SINGLE_SERIF    :: 5;
+    STRAIGHT_ARMS_DOUBLE_SERIF    :: 6;
+    NONSTRAIGHT_ARMS_HORIZONTAL   :: 7;
+    NONSTRAIGHT_ARMS_WEDGE        :: 8;
+    NONSTRAIGHT_ARMS_VERTICAL     :: 9;
+    NONSTRAIGHT_ARMS_SINGLE_SERIF :: 10;
+    NONSTRAIGHT_ARMS_DOUBLE_SERIF :: 11;
+    STRAIGHT_ARMS_HORZ            :: 2;
+    STRAIGHT_ARMS_VERT            :: 4;
+    BENT_ARMS_HORZ                :: 7;
+    BENT_ARMS_WEDGE               :: 8;
+    BENT_ARMS_VERT                :: 9;
+    BENT_ARMS_SINGLE_SERIF        :: 10;
+    BENT_ARMS_DOUBLE_SERIF        :: 11;
+
+    DWRITE_PANOSE_ARM_STYLE_ANY                           :: ANY;
+    DWRITE_PANOSE_ARM_STYLE_NO_FIT                        :: NO_FIT;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_HORIZONTAL      :: STRAIGHT_ARMS_HORIZONTAL;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_WEDGE           :: STRAIGHT_ARMS_WEDGE;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_VERTICAL        :: STRAIGHT_ARMS_VERTICAL;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_SINGLE_SERIF    :: STRAIGHT_ARMS_SINGLE_SERIF;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_DOUBLE_SERIF    :: STRAIGHT_ARMS_DOUBLE_SERIF;
+    DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_HORIZONTAL   :: NONSTRAIGHT_ARMS_HORIZONTAL;
+    DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_WEDGE        :: NONSTRAIGHT_ARMS_WEDGE;
+    DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_VERTICAL     :: NONSTRAIGHT_ARMS_VERTICAL;
+    DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_SINGLE_SERIF :: NONSTRAIGHT_ARMS_SINGLE_SERIF;
+    DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_DOUBLE_SERIF :: NONSTRAIGHT_ARMS_DOUBLE_SERIF;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_HORZ            :: STRAIGHT_ARMS_HORZ;
+    DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_VERT            :: STRAIGHT_ARMS_VERT;
+    DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_HORZ                :: BENT_ARMS_HORZ;
+    DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_WEDGE               :: BENT_ARMS_WEDGE;
+    DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_VERT                :: BENT_ARMS_VERT;
+    DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_SINGLE_SERIF        :: BENT_ARMS_SINGLE_SERIF;
+    DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_DOUBLE_SERIF        :: BENT_ARMS_DOUBLE_SERIF;
+}
+
+DWRITE_PANOSE_LETTERFORM :: enum s32 {
+    ANY                :: 0;
+    NO_FIT             :: 1;
+    NORMAL_CONTACT     :: 2;
+    NORMAL_WEIGHTED    :: 3;
+    NORMAL_BOXED       :: 4;
+    NORMAL_FLATTENED   :: 5;
+    NORMAL_ROUNDED     :: 6;
+    NORMAL_OFF_CENTER  :: 7;
+    NORMAL_SQUARE      :: 8;
+    OBLIQUE_CONTACT    :: 9;
+    OBLIQUE_WEIGHTED   :: 10;
+    OBLIQUE_BOXED      :: 11;
+    OBLIQUE_FLATTENED  :: 12;
+    OBLIQUE_ROUNDED    :: 13;
+    OBLIQUE_OFF_CENTER :: 14;
+    OBLIQUE_SQUARE     :: 15;
+
+    DWRITE_PANOSE_LETTERFORM_ANY                :: ANY;
+    DWRITE_PANOSE_LETTERFORM_NO_FIT             :: NO_FIT;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_CONTACT     :: NORMAL_CONTACT;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_WEIGHTED    :: NORMAL_WEIGHTED;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_BOXED       :: NORMAL_BOXED;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_FLATTENED   :: NORMAL_FLATTENED;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_ROUNDED     :: NORMAL_ROUNDED;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_OFF_CENTER  :: NORMAL_OFF_CENTER;
+    DWRITE_PANOSE_LETTERFORM_NORMAL_SQUARE      :: NORMAL_SQUARE;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_CONTACT    :: OBLIQUE_CONTACT;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_WEIGHTED   :: OBLIQUE_WEIGHTED;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_BOXED      :: OBLIQUE_BOXED;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_FLATTENED  :: OBLIQUE_FLATTENED;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_ROUNDED    :: OBLIQUE_ROUNDED;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_OFF_CENTER :: OBLIQUE_OFF_CENTER;
+    DWRITE_PANOSE_LETTERFORM_OBLIQUE_SQUARE     :: OBLIQUE_SQUARE;
+}
+
+DWRITE_PANOSE_MIDLINE :: enum s32 {
+    ANY              :: 0;
+    NO_FIT           :: 1;
+    STANDARD_TRIMMED :: 2;
+    STANDARD_POINTED :: 3;
+    STANDARD_SERIFED :: 4;
+    HIGH_TRIMMED     :: 5;
+    HIGH_POINTED     :: 6;
+    HIGH_SERIFED     :: 7;
+    CONSTANT_TRIMMED :: 8;
+    CONSTANT_POINTED :: 9;
+    CONSTANT_SERIFED :: 10;
+    LOW_TRIMMED      :: 11;
+    LOW_POINTED      :: 12;
+    LOW_SERIFED      :: 13;
+
+    DWRITE_PANOSE_MIDLINE_ANY              :: ANY;
+    DWRITE_PANOSE_MIDLINE_NO_FIT           :: NO_FIT;
+    DWRITE_PANOSE_MIDLINE_STANDARD_TRIMMED :: STANDARD_TRIMMED;
+    DWRITE_PANOSE_MIDLINE_STANDARD_POINTED :: STANDARD_POINTED;
+    DWRITE_PANOSE_MIDLINE_STANDARD_SERIFED :: STANDARD_SERIFED;
+    DWRITE_PANOSE_MIDLINE_HIGH_TRIMMED     :: HIGH_TRIMMED;
+    DWRITE_PANOSE_MIDLINE_HIGH_POINTED     :: HIGH_POINTED;
+    DWRITE_PANOSE_MIDLINE_HIGH_SERIFED     :: HIGH_SERIFED;
+    DWRITE_PANOSE_MIDLINE_CONSTANT_TRIMMED :: CONSTANT_TRIMMED;
+    DWRITE_PANOSE_MIDLINE_CONSTANT_POINTED :: CONSTANT_POINTED;
+    DWRITE_PANOSE_MIDLINE_CONSTANT_SERIFED :: CONSTANT_SERIFED;
+    DWRITE_PANOSE_MIDLINE_LOW_TRIMMED      :: LOW_TRIMMED;
+    DWRITE_PANOSE_MIDLINE_LOW_POINTED      :: LOW_POINTED;
+    DWRITE_PANOSE_MIDLINE_LOW_SERIFED      :: LOW_SERIFED;
+}
+
+DWRITE_PANOSE_XHEIGHT :: enum s32 {
+    ANY               :: 0;
+    NO_FIT            :: 1;
+    CONSTANT_SMALL    :: 2;
+    CONSTANT_STANDARD :: 3;
+    CONSTANT_LARGE    :: 4;
+    DUCKING_SMALL     :: 5;
+    DUCKING_STANDARD  :: 6;
+    DUCKING_LARGE     :: 7;
+    CONSTANT_STD      :: 3;
+    DUCKING_STD       :: 6;
+
+    DWRITE_PANOSE_XHEIGHT_ANY               :: ANY;
+    DWRITE_PANOSE_XHEIGHT_NO_FIT            :: NO_FIT;
+    DWRITE_PANOSE_XHEIGHT_CONSTANT_SMALL    :: CONSTANT_SMALL;
+    DWRITE_PANOSE_XHEIGHT_CONSTANT_STANDARD :: CONSTANT_STANDARD;
+    DWRITE_PANOSE_XHEIGHT_CONSTANT_LARGE    :: CONSTANT_LARGE;
+    DWRITE_PANOSE_XHEIGHT_DUCKING_SMALL     :: DUCKING_SMALL;
+    DWRITE_PANOSE_XHEIGHT_DUCKING_STANDARD  :: DUCKING_STANDARD;
+    DWRITE_PANOSE_XHEIGHT_DUCKING_LARGE     :: DUCKING_LARGE;
+    DWRITE_PANOSE_XHEIGHT_CONSTANT_STD      :: CONSTANT_STD;
+    DWRITE_PANOSE_XHEIGHT_DUCKING_STD       :: DUCKING_STD;
+}
+
+DWRITE_PANOSE_TOOL_KIND :: enum s32 {
+    ANY                :: 0;
+    NO_FIT             :: 1;
+    FLAT_NIB           :: 2;
+    PRESSURE_POINT     :: 3;
+    ENGRAVED           :: 4;
+    BALL               :: 5;
+    BRUSH              :: 6;
+    ROUGH              :: 7;
+    FELT_PEN_BRUSH_TIP :: 8;
+    WILD_BRUSH         :: 9;
+
+    DWRITE_PANOSE_TOOL_KIND_ANY                :: ANY;
+    DWRITE_PANOSE_TOOL_KIND_NO_FIT             :: NO_FIT;
+    DWRITE_PANOSE_TOOL_KIND_FLAT_NIB           :: FLAT_NIB;
+    DWRITE_PANOSE_TOOL_KIND_PRESSURE_POINT     :: PRESSURE_POINT;
+    DWRITE_PANOSE_TOOL_KIND_ENGRAVED           :: ENGRAVED;
+    DWRITE_PANOSE_TOOL_KIND_BALL               :: BALL;
+    DWRITE_PANOSE_TOOL_KIND_BRUSH              :: BRUSH;
+    DWRITE_PANOSE_TOOL_KIND_ROUGH              :: ROUGH;
+    DWRITE_PANOSE_TOOL_KIND_FELT_PEN_BRUSH_TIP :: FELT_PEN_BRUSH_TIP;
+    DWRITE_PANOSE_TOOL_KIND_WILD_BRUSH         :: WILD_BRUSH;
+}
+
+DWRITE_PANOSE_SPACING :: enum s32 {
+    ANY                 :: 0;
+    NO_FIT              :: 1;
+    PROPORTIONAL_SPACED :: 2;
+    MONOSPACED          :: 3;
+
+    DWRITE_PANOSE_SPACING_ANY                 :: ANY;
+    DWRITE_PANOSE_SPACING_NO_FIT              :: NO_FIT;
+    DWRITE_PANOSE_SPACING_PROPORTIONAL_SPACED :: PROPORTIONAL_SPACED;
+    DWRITE_PANOSE_SPACING_MONOSPACED          :: MONOSPACED;
+}
+
+DWRITE_PANOSE_ASPECT_RATIO :: enum s32 {
+    ANY            :: 0;
+    NO_FIT         :: 1;
+    VERY_CONDENSED :: 2;
+    CONDENSED      :: 3;
+    NORMAL         :: 4;
+    EXPANDED       :: 5;
+    VERY_EXPANDED  :: 6;
+
+    DWRITE_PANOSE_ASPECT_RATIO_ANY            :: ANY;
+    DWRITE_PANOSE_ASPECT_RATIO_NO_FIT         :: NO_FIT;
+    DWRITE_PANOSE_ASPECT_RATIO_VERY_CONDENSED :: VERY_CONDENSED;
+    DWRITE_PANOSE_ASPECT_RATIO_CONDENSED      :: CONDENSED;
+    DWRITE_PANOSE_ASPECT_RATIO_NORMAL         :: NORMAL;
+    DWRITE_PANOSE_ASPECT_RATIO_EXPANDED       :: EXPANDED;
+    DWRITE_PANOSE_ASPECT_RATIO_VERY_EXPANDED  :: VERY_EXPANDED;
+}
+
+DWRITE_PANOSE_SCRIPT_TOPOLOGY :: enum s32 {
+    ANY                      :: 0;
+    NO_FIT                   :: 1;
+    ROMAN_DISCONNECTED       :: 2;
+    ROMAN_TRAILING           :: 3;
+    ROMAN_CONNECTED          :: 4;
+    CURSIVE_DISCONNECTED     :: 5;
+    CURSIVE_TRAILING         :: 6;
+    CURSIVE_CONNECTED        :: 7;
+    BLACKLETTER_DISCONNECTED :: 8;
+    BLACKLETTER_TRAILING     :: 9;
+    BLACKLETTER_CONNECTED    :: 10;
+
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_ANY                      :: ANY;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_NO_FIT                   :: NO_FIT;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_DISCONNECTED       :: ROMAN_DISCONNECTED;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_TRAILING           :: ROMAN_TRAILING;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_CONNECTED          :: ROMAN_CONNECTED;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_DISCONNECTED     :: CURSIVE_DISCONNECTED;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_TRAILING         :: CURSIVE_TRAILING;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_CONNECTED        :: CURSIVE_CONNECTED;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_DISCONNECTED :: BLACKLETTER_DISCONNECTED;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_TRAILING     :: BLACKLETTER_TRAILING;
+    DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_CONNECTED    :: BLACKLETTER_CONNECTED;
+}
+
+DWRITE_PANOSE_SCRIPT_FORM :: enum s32 {
+    ANY                          :: 0;
+    NO_FIT                       :: 1;
+    UPRIGHT_NO_WRAPPING          :: 2;
+    UPRIGHT_SOME_WRAPPING        :: 3;
+    UPRIGHT_MORE_WRAPPING        :: 4;
+    UPRIGHT_EXTREME_WRAPPING     :: 5;
+    OBLIQUE_NO_WRAPPING          :: 6;
+    OBLIQUE_SOME_WRAPPING        :: 7;
+    OBLIQUE_MORE_WRAPPING        :: 8;
+    OBLIQUE_EXTREME_WRAPPING     :: 9;
+    EXAGGERATED_NO_WRAPPING      :: 10;
+    EXAGGERATED_SOME_WRAPPING    :: 11;
+    EXAGGERATED_MORE_WRAPPING    :: 12;
+    EXAGGERATED_EXTREME_WRAPPING :: 13;
+
+    DWRITE_PANOSE_SCRIPT_FORM_ANY                          :: ANY;
+    DWRITE_PANOSE_SCRIPT_FORM_NO_FIT                       :: NO_FIT;
+    DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_NO_WRAPPING          :: UPRIGHT_NO_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_SOME_WRAPPING        :: UPRIGHT_SOME_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_MORE_WRAPPING        :: UPRIGHT_MORE_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_EXTREME_WRAPPING     :: UPRIGHT_EXTREME_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_NO_WRAPPING          :: OBLIQUE_NO_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_SOME_WRAPPING        :: OBLIQUE_SOME_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_MORE_WRAPPING        :: OBLIQUE_MORE_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_EXTREME_WRAPPING     :: OBLIQUE_EXTREME_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_NO_WRAPPING      :: EXAGGERATED_NO_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_SOME_WRAPPING    :: EXAGGERATED_SOME_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_MORE_WRAPPING    :: EXAGGERATED_MORE_WRAPPING;
+    DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_EXTREME_WRAPPING :: EXAGGERATED_EXTREME_WRAPPING;
+}
+
+DWRITE_PANOSE_FINIALS :: enum s32 {
+    ANY                  :: 0;
+    NO_FIT               :: 1;
+    NONE_NO_LOOPS        :: 2;
+    NONE_CLOSED_LOOPS    :: 3;
+    NONE_OPEN_LOOPS      :: 4;
+    SHARP_NO_LOOPS       :: 5;
+    SHARP_CLOSED_LOOPS   :: 6;
+    SHARP_OPEN_LOOPS     :: 7;
+    TAPERED_NO_LOOPS     :: 8;
+    TAPERED_CLOSED_LOOPS :: 9;
+    TAPERED_OPEN_LOOPS   :: 10;
+    ROUND_NO_LOOPS       :: 11;
+    ROUND_CLOSED_LOOPS   :: 12;
+    ROUND_OPEN_LOOPS     :: 13;
+
+    DWRITE_PANOSE_FINIALS_ANY                  :: ANY;
+    DWRITE_PANOSE_FINIALS_NO_FIT               :: NO_FIT;
+    DWRITE_PANOSE_FINIALS_NONE_NO_LOOPS        :: NONE_NO_LOOPS;
+    DWRITE_PANOSE_FINIALS_NONE_CLOSED_LOOPS    :: NONE_CLOSED_LOOPS;
+    DWRITE_PANOSE_FINIALS_NONE_OPEN_LOOPS      :: NONE_OPEN_LOOPS;
+    DWRITE_PANOSE_FINIALS_SHARP_NO_LOOPS       :: SHARP_NO_LOOPS;
+    DWRITE_PANOSE_FINIALS_SHARP_CLOSED_LOOPS   :: SHARP_CLOSED_LOOPS;
+    DWRITE_PANOSE_FINIALS_SHARP_OPEN_LOOPS     :: SHARP_OPEN_LOOPS;
+    DWRITE_PANOSE_FINIALS_TAPERED_NO_LOOPS     :: TAPERED_NO_LOOPS;
+    DWRITE_PANOSE_FINIALS_TAPERED_CLOSED_LOOPS :: TAPERED_CLOSED_LOOPS;
+    DWRITE_PANOSE_FINIALS_TAPERED_OPEN_LOOPS   :: TAPERED_OPEN_LOOPS;
+    DWRITE_PANOSE_FINIALS_ROUND_NO_LOOPS       :: ROUND_NO_LOOPS;
+    DWRITE_PANOSE_FINIALS_ROUND_CLOSED_LOOPS   :: ROUND_CLOSED_LOOPS;
+    DWRITE_PANOSE_FINIALS_ROUND_OPEN_LOOPS     :: ROUND_OPEN_LOOPS;
+}
+
+DWRITE_PANOSE_XASCENT :: enum s32 {
+    ANY       :: 0;
+    NO_FIT    :: 1;
+    VERY_LOW  :: 2;
+    LOW       :: 3;
+    MEDIUM    :: 4;
+    HIGH      :: 5;
+    VERY_HIGH :: 6;
+
+    DWRITE_PANOSE_XASCENT_ANY       :: ANY;
+    DWRITE_PANOSE_XASCENT_NO_FIT    :: NO_FIT;
+    DWRITE_PANOSE_XASCENT_VERY_LOW  :: VERY_LOW;
+    DWRITE_PANOSE_XASCENT_LOW       :: LOW;
+    DWRITE_PANOSE_XASCENT_MEDIUM    :: MEDIUM;
+    DWRITE_PANOSE_XASCENT_HIGH      :: HIGH;
+    DWRITE_PANOSE_XASCENT_VERY_HIGH :: VERY_HIGH;
+}
+
+DWRITE_PANOSE_DECORATIVE_CLASS :: enum s32 {
+    ANY                  :: 0;
+    NO_FIT               :: 1;
+    DERIVATIVE           :: 2;
+    NONSTANDARD_TOPOLOGY :: 3;
+    NONSTANDARD_ELEMENTS :: 4;
+    NONSTANDARD_ASPECT   :: 5;
+    INITIALS             :: 6;
+    CARTOON              :: 7;
+    PICTURE_STEMS        :: 8;
+    ORNAMENTED           :: 9;
+    TEXT_AND_BACKGROUND  :: 10;
+    COLLAGE              :: 11;
+    MONTAGE              :: 12;
+
+    DWRITE_PANOSE_DECORATIVE_CLASS_ANY                  :: ANY;
+    DWRITE_PANOSE_DECORATIVE_CLASS_NO_FIT               :: NO_FIT;
+    DWRITE_PANOSE_DECORATIVE_CLASS_DERIVATIVE           :: DERIVATIVE;
+    DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_TOPOLOGY :: NONSTANDARD_TOPOLOGY;
+    DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_ELEMENTS :: NONSTANDARD_ELEMENTS;
+    DWRITE_PANOSE_DECORATIVE_CLASS_NONSTANDARD_ASPECT   :: NONSTANDARD_ASPECT;
+    DWRITE_PANOSE_DECORATIVE_CLASS_INITIALS             :: INITIALS;
+    DWRITE_PANOSE_DECORATIVE_CLASS_CARTOON              :: CARTOON;
+    DWRITE_PANOSE_DECORATIVE_CLASS_PICTURE_STEMS        :: PICTURE_STEMS;
+    DWRITE_PANOSE_DECORATIVE_CLASS_ORNAMENTED           :: ORNAMENTED;
+    DWRITE_PANOSE_DECORATIVE_CLASS_TEXT_AND_BACKGROUND  :: TEXT_AND_BACKGROUND;
+    DWRITE_PANOSE_DECORATIVE_CLASS_COLLAGE              :: COLLAGE;
+    DWRITE_PANOSE_DECORATIVE_CLASS_MONTAGE              :: MONTAGE;
+}
+
+DWRITE_PANOSE_ASPECT :: enum s32 {
+    ANY             :: 0;
+    NO_FIT          :: 1;
+    SUPER_CONDENSED :: 2;
+    VERY_CONDENSED  :: 3;
+    CONDENSED       :: 4;
+    NORMAL          :: 5;
+    EXTENDED        :: 6;
+    VERY_EXTENDED   :: 7;
+    SUPER_EXTENDED  :: 8;
+    MONOSPACED      :: 9;
+
+    DWRITE_PANOSE_ASPECT_ANY             :: ANY;
+    DWRITE_PANOSE_ASPECT_NO_FIT          :: NO_FIT;
+    DWRITE_PANOSE_ASPECT_SUPER_CONDENSED :: SUPER_CONDENSED;
+    DWRITE_PANOSE_ASPECT_VERY_CONDENSED  :: VERY_CONDENSED;
+    DWRITE_PANOSE_ASPECT_CONDENSED       :: CONDENSED;
+    DWRITE_PANOSE_ASPECT_NORMAL          :: NORMAL;
+    DWRITE_PANOSE_ASPECT_EXTENDED        :: EXTENDED;
+    DWRITE_PANOSE_ASPECT_VERY_EXTENDED   :: VERY_EXTENDED;
+    DWRITE_PANOSE_ASPECT_SUPER_EXTENDED  :: SUPER_EXTENDED;
+    DWRITE_PANOSE_ASPECT_MONOSPACED      :: MONOSPACED;
+}
+
+DWRITE_PANOSE_FILL :: enum s32 {
+    ANY                 :: 0;
+    NO_FIT              :: 1;
+    STANDARD_SOLID_FILL :: 2;
+    NO_FILL             :: 3;
+    PATTERNED_FILL      :: 4;
+    COMPLEX_FILL        :: 5;
+    SHAPED_FILL         :: 6;
+    DRAWN_DISTRESSED    :: 7;
+
+    DWRITE_PANOSE_FILL_ANY                 :: ANY;
+    DWRITE_PANOSE_FILL_NO_FIT              :: NO_FIT;
+    DWRITE_PANOSE_FILL_STANDARD_SOLID_FILL :: STANDARD_SOLID_FILL;
+    DWRITE_PANOSE_FILL_NO_FILL             :: NO_FILL;
+    DWRITE_PANOSE_FILL_PATTERNED_FILL      :: PATTERNED_FILL;
+    DWRITE_PANOSE_FILL_COMPLEX_FILL        :: COMPLEX_FILL;
+    DWRITE_PANOSE_FILL_SHAPED_FILL         :: SHAPED_FILL;
+    DWRITE_PANOSE_FILL_DRAWN_DISTRESSED    :: DRAWN_DISTRESSED;
+}
+
+DWRITE_PANOSE_LINING :: enum s32 {
+    ANY      :: 0;
+    NO_FIT   :: 1;
+    NONE     :: 2;
+    INLINE   :: 3;
+    OUTLINE  :: 4;
+    ENGRAVED :: 5;
+    SHADOW   :: 6;
+    RELIEF   :: 7;
+    BACKDROP :: 8;
+
+    DWRITE_PANOSE_LINING_ANY      :: ANY;
+    DWRITE_PANOSE_LINING_NO_FIT   :: NO_FIT;
+    DWRITE_PANOSE_LINING_NONE     :: NONE;
+    DWRITE_PANOSE_LINING_INLINE   :: INLINE;
+    DWRITE_PANOSE_LINING_OUTLINE  :: OUTLINE;
+    DWRITE_PANOSE_LINING_ENGRAVED :: ENGRAVED;
+    DWRITE_PANOSE_LINING_SHADOW   :: SHADOW;
+    DWRITE_PANOSE_LINING_RELIEF   :: RELIEF;
+    DWRITE_PANOSE_LINING_BACKDROP :: BACKDROP;
+}
+
+DWRITE_PANOSE_DECORATIVE_TOPOLOGY :: enum s32 {
+    ANY                      :: 0;
+    NO_FIT                   :: 1;
+    STANDARD                 :: 2;
+    SQUARE                   :: 3;
+    MULTIPLE_SEGMENT         :: 4;
+    ART_DECO                 :: 5;
+    UNEVEN_WEIGHTING         :: 6;
+    DIVERSE_ARMS             :: 7;
+    DIVERSE_FORMS            :: 8;
+    LOMBARDIC_FORMS          :: 9;
+    UPPER_CASE_IN_LOWER_CASE :: 10;
+    IMPLIED_TOPOLOGY         :: 11;
+    HORSESHOE_E_AND_A        :: 12;
+    CURSIVE                  :: 13;
+    BLACKLETTER              :: 14;
+    SWASH_VARIANCE           :: 15;
+
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_ANY                      :: ANY;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_NO_FIT                   :: NO_FIT;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_STANDARD                 :: STANDARD;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_SQUARE                   :: SQUARE;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_MULTIPLE_SEGMENT         :: MULTIPLE_SEGMENT;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_ART_DECO                 :: ART_DECO;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_UNEVEN_WEIGHTING         :: UNEVEN_WEIGHTING;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_DIVERSE_ARMS             :: DIVERSE_ARMS;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_DIVERSE_FORMS            :: DIVERSE_FORMS;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_LOMBARDIC_FORMS          :: LOMBARDIC_FORMS;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_UPPER_CASE_IN_LOWER_CASE :: UPPER_CASE_IN_LOWER_CASE;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_IMPLIED_TOPOLOGY         :: IMPLIED_TOPOLOGY;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_HORSESHOE_E_AND_A        :: HORSESHOE_E_AND_A;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_CURSIVE                  :: CURSIVE;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_BLACKLETTER              :: BLACKLETTER;
+    DWRITE_PANOSE_DECORATIVE_TOPOLOGY_SWASH_VARIANCE           :: SWASH_VARIANCE;
+}
+
+DWRITE_PANOSE_CHARACTER_RANGES :: enum s32 {
+    ANY                 :: 0;
+    NO_FIT              :: 1;
+    EXTENDED_COLLECTION :: 2;
+    LITERALS            :: 3;
+    NO_LOWER_CASE       :: 4;
+    SMALL_CAPS          :: 5;
+
+    DWRITE_PANOSE_CHARACTER_RANGES_ANY                 :: ANY;
+    DWRITE_PANOSE_CHARACTER_RANGES_NO_FIT              :: NO_FIT;
+    DWRITE_PANOSE_CHARACTER_RANGES_EXTENDED_COLLECTION :: EXTENDED_COLLECTION;
+    DWRITE_PANOSE_CHARACTER_RANGES_LITERALS            :: LITERALS;
+    DWRITE_PANOSE_CHARACTER_RANGES_NO_LOWER_CASE       :: NO_LOWER_CASE;
+    DWRITE_PANOSE_CHARACTER_RANGES_SMALL_CAPS          :: SMALL_CAPS;
+}
+
+DWRITE_PANOSE_SYMBOL_KIND :: enum s32 {
+    ANY               :: 0;
+    NO_FIT            :: 1;
+    MONTAGES          :: 2;
+    PICTURES          :: 3;
+    SHAPES            :: 4;
+    SCIENTIFIC        :: 5;
+    MUSIC             :: 6;
+    EXPERT            :: 7;
+    PATTERNS          :: 8;
+    BOARDERS          :: 9;
+    ICONS             :: 10;
+    LOGOS             :: 11;
+    INDUSTRY_SPECIFIC :: 12;
+
+    DWRITE_PANOSE_SYMBOL_KIND_ANY               :: ANY;
+    DWRITE_PANOSE_SYMBOL_KIND_NO_FIT            :: NO_FIT;
+    DWRITE_PANOSE_SYMBOL_KIND_MONTAGES          :: MONTAGES;
+    DWRITE_PANOSE_SYMBOL_KIND_PICTURES          :: PICTURES;
+    DWRITE_PANOSE_SYMBOL_KIND_SHAPES            :: SHAPES;
+    DWRITE_PANOSE_SYMBOL_KIND_SCIENTIFIC        :: SCIENTIFIC;
+    DWRITE_PANOSE_SYMBOL_KIND_MUSIC             :: MUSIC;
+    DWRITE_PANOSE_SYMBOL_KIND_EXPERT            :: EXPERT;
+    DWRITE_PANOSE_SYMBOL_KIND_PATTERNS          :: PATTERNS;
+    DWRITE_PANOSE_SYMBOL_KIND_BOARDERS          :: BOARDERS;
+    DWRITE_PANOSE_SYMBOL_KIND_ICONS             :: ICONS;
+    DWRITE_PANOSE_SYMBOL_KIND_LOGOS             :: LOGOS;
+    DWRITE_PANOSE_SYMBOL_KIND_INDUSTRY_SPECIFIC :: INDUSTRY_SPECIFIC;
+}
+
+DWRITE_PANOSE_SYMBOL_ASPECT_RATIO :: enum s32 {
+    ANY                :: 0;
+    NO_FIT             :: 1;
+    NO_WIDTH           :: 2;
+    EXCEPTIONALLY_WIDE :: 3;
+    SUPER_WIDE         :: 4;
+    VERY_WIDE          :: 5;
+    WIDE               :: 6;
+    NORMAL             :: 7;
+    NARROW             :: 8;
+    VERY_NARROW        :: 9;
+
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_ANY                :: ANY;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NO_FIT             :: NO_FIT;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NO_WIDTH           :: NO_WIDTH;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_EXCEPTIONALLY_WIDE :: EXCEPTIONALLY_WIDE;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_SUPER_WIDE         :: SUPER_WIDE;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_VERY_WIDE          :: VERY_WIDE;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_WIDE               :: WIDE;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NORMAL             :: NORMAL;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NARROW             :: NARROW;
+    DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_VERY_NARROW        :: VERY_NARROW;
+}
+
+DWRITE_OUTLINE_THRESHOLD :: enum s32 {
+    ANTIALIASED :: 0;
+    ALIASED     :: 1;
+
+    DWRITE_OUTLINE_THRESHOLD_ANTIALIASED :: ANTIALIASED;
+    DWRITE_OUTLINE_THRESHOLD_ALIASED     :: ALIASED;
+}
+
+DWRITE_BASELINE :: enum s32 {
+    DEFAULT            :: 0;
+
+    ROMAN              :: 1;
+
+    CENTRAL            :: 2;
+
+    MATH               :: 3;
+
+    HANGING            :: 4;
+
+    IDEOGRAPHIC_BOTTOM :: 5;
+
+    IDEOGRAPHIC_TOP    :: 6;
+
+    MINIMUM            :: 7;
+
+    MAXIMUM            :: 8;
+
+    DWRITE_BASELINE_DEFAULT            :: DEFAULT;
+
+    DWRITE_BASELINE_ROMAN              :: ROMAN;
+
+    DWRITE_BASELINE_CENTRAL            :: CENTRAL;
+
+    DWRITE_BASELINE_MATH               :: MATH;
+
+    DWRITE_BASELINE_HANGING            :: HANGING;
+
+    DWRITE_BASELINE_IDEOGRAPHIC_BOTTOM :: IDEOGRAPHIC_BOTTOM;
+
+    DWRITE_BASELINE_IDEOGRAPHIC_TOP    :: IDEOGRAPHIC_TOP;
+
+    DWRITE_BASELINE_MINIMUM            :: MINIMUM;
+
+    DWRITE_BASELINE_MAXIMUM            :: MAXIMUM;
+}
+
+DWRITE_VERTICAL_GLYPH_ORIENTATION :: enum s32 {
+    DEFAULT :: 0;
+
+    STACKED :: 1;
+
+    DWRITE_VERTICAL_GLYPH_ORIENTATION_DEFAULT :: DEFAULT;
+
+    DWRITE_VERTICAL_GLYPH_ORIENTATION_STACKED :: STACKED;
+}
+
+DWRITE_GLYPH_ORIENTATION_ANGLE :: enum s32 {
+    _0_DEGREES   :: 0;
+
+    _90_DEGREES  :: 1;
+
+    _180_DEGREES :: 2;
+
+    _270_DEGREES :: 3;
+
+    DWRITE_GLYPH_ORIENTATION_ANGLE_0_DEGREES   :: _0_DEGREES;
+
+    DWRITE_GLYPH_ORIENTATION_ANGLE_90_DEGREES  :: _90_DEGREES;
+
+    DWRITE_GLYPH_ORIENTATION_ANGLE_180_DEGREES :: _180_DEGREES;
+
+    DWRITE_GLYPH_ORIENTATION_ANGLE_270_DEGREES :: _270_DEGREES;
+}
+
+DWRITE_FONT_METRICS1 :: struct {
+    #as using dwrite_font_metrics: DWRITE_FONT_METRICS;
+
+    glyphBoxLeft:          s16;
+
+    glyphBoxTop:           s16;
+
+    glyphBoxRight:         s16;
+
+    glyphBoxBottom:        s16;
+
+    subscriptPositionX:    s16;
+
+    subscriptPositionY:    s16;
+
+    subscriptSizeX:        s16;
+
+    subscriptSizeY:        s16;
+
+    superscriptPositionX:  s16;
+
+    superscriptPositionY:  s16;
+
+    superscriptSizeX:      s16;
+
+    superscriptSizeY:      s16;
+
+    hasTypographicMetrics: BOOL;
+}
+
+DWRITE_CARET_METRICS :: struct {
+    slopeRise: s16;
+
+    slopeRun:  s16;
+
+    offset:    s16;
+}
+
+DWRITE_PANOSE :: union {
+    values:     [10] u8;
+
+    familyKind: u8;
+
+    text:       struct {
+        familyKind:      u8;
+        serifStyle:      u8;
+        weight:          u8;
+        proportion:      u8;
+        contrast:        u8;
+        strokeVariation: u8;
+        armStyle:        u8;
+        letterform:      u8;
+        midline:         u8;
+        xHeight:         u8;
+    };
+
+    script:     struct {
+        familyKind:     u8;
+        toolKind:       u8;
+        weight:         u8;
+        spacing:        u8;
+        aspectRatio:    u8;
+        contrast:       u8;
+        scriptTopology: u8;
+        scriptForm:     u8;
+        finials:        u8;
+        xAscent:        u8;
+    };
+
+    decorative: struct {
+        familyKind:         u8;
+        decorativeClass:    u8;
+        weight:             u8;
+        aspect:             u8;
+        contrast:           u8;
+        serifVariant:       u8;
+        fill:               u8;
+        lining:             u8;
+        decorativeTopology: u8;
+        characterRange:     u8;
+    };
+
+    symbol:     struct {
+        familyKind:             u8;
+        symbolKind:             u8;
+        weight:                 u8;
+        spacing:                u8;
+        aspectRatioAndContrast: u8;
+        aspectRatio94:          u8;
+        aspectRatio119:         u8;
+        aspectRatio157:         u8;
+        aspectRatio163:         u8;
+        aspectRatio211:         u8;
+    };
+}
+
+DWRITE_UNICODE_RANGE :: struct {
+    first: u32;
+
+    last:  u32;
+}
+
+DWRITE_SCRIPT_PROPERTIES :: struct {
+    isoScriptCode:              u32;
+
+    isoScriptNumber:            u32;
+
+    clusterLookahead:           u32;
+
+    justificationCharacter:     u32;
+
+    restrictCaretToClusters:    u32;
+
+    #place restrictCaretToClusters; /*bitfield 1*/ usesWordDividers:           u32;
+
+    #place restrictCaretToClusters; /*bitfield 2*/ isDiscreteWriting:          u32;
+
+    #place restrictCaretToClusters; /*bitfield 3*/ isBlockWriting:             u32;
+
+    #place restrictCaretToClusters; /*bitfield 4*/ isDistributedWithinCluster: u32;
+
+    #place restrictCaretToClusters; /*bitfield 5*/ isConnectedWriting:         u32;
+
+    #place restrictCaretToClusters; /*bitfield 6*/ isCursiveWriting:           u32;
+
+    #place restrictCaretToClusters; /*bitfield 7*/ reserved:                   u32;
+}
+
+DWRITE_JUSTIFICATION_OPPORTUNITY :: struct {
+    expansionMinimum:         float;
+
+    expansionMaximum:         float;
+
+    compressionMaximum:       float;
+
+    expansionPriority:        u32;
+
+    #place expansionPriority; /*bitfield 8*/ compressionPriority:      u32;
+
+    #place expansionPriority; /*bitfield 16*/ allowResidualExpansion:   u32;
+
+    #place expansionPriority; /*bitfield 17*/ allowResidualCompression: u32;
+
+    #place expansionPriority; /*bitfield 18*/ applyToLeadingEdge:       u32;
+
+    #place expansionPriority; /*bitfield 19*/ applyToTrailingEdge:      u32;
+
+    #place expansionPriority; /*bitfield 20*/ reserved:                 u32;
+}
+
+IDWriteFactory1 :: struct {
+    #as using idwritefactory: IDWriteFactory;
+    #place idwritefactory; idwritefactory1_vtable: *IDWriteFactory1_VTable;
+}
+IDWriteFactory1_VTable :: struct #type_info_none {
+    using idwritefactory: IDWriteFactory_VTable;
+    GetEudcFontCollection: (this: *IDWriteFactory1, fontCollection: **IDWriteFontCollection, checkForUpdates: BOOL = 0) -> HRESULT #cpp_method;
+
+    CreateCustomRenderingParams_1: (this: *IDWriteFactory1, gamma: float, enhancedContrast: float, enhancedContrastGrayscale: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, renderingParams: **IDWriteRenderingParams1) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory1_GetEudcFontCollection :: inline (this: *IDWriteFactory1, fontCollection: **IDWriteFontCollection, checkForUpdates: BOOL = 0) -> HRESULT { return this.idwritefactory1_vtable.GetEudcFontCollection(this, fontCollection, checkForUpdates); }
+
+IDWriteFactory1_CreateCustomRenderingParams_1 :: inline (this: *IDWriteFactory1, gamma: float, enhancedContrast: float, enhancedContrastGrayscale: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, renderingParams: **IDWriteRenderingParams1) -> HRESULT { return this.idwritefactory1_vtable.CreateCustomRenderingParams_1(this, gamma, enhancedContrast, enhancedContrastGrayscale, clearTypeLevel, pixelGeometry, renderingMode, renderingParams); }
+
+vtable :: (obj: *IDWriteFactory1) -> *IDWriteFactory1_VTable { return obj.idwritefactory1_vtable; }
+
+
+IDWriteFontFace1 :: struct {
+    #as using idwritefontface: IDWriteFontFace;
+    #place idwritefontface; idwritefontface1_vtable: *IDWriteFontFace1_VTable;
+}
+IDWriteFontFace1_VTable :: struct #type_info_none {
+    using idwritefontface: IDWriteFontFace_VTable;
+    GetMetrics_1: (this: *IDWriteFontFace1, fontMetrics: *DWRITE_FONT_METRICS1) -> void #cpp_method;
+
+    GetGdiCompatibleMetrics_1: (this: *IDWriteFontFace1, emSize: float, pixelsPerDip: float, transform: /*const*/ *DWRITE_MATRIX, fontMetrics: *DWRITE_FONT_METRICS1) -> HRESULT #cpp_method;
+
+    GetCaretMetrics: (this: *IDWriteFontFace1, caretMetrics: *DWRITE_CARET_METRICS) -> void #cpp_method;
+
+    GetUnicodeRanges: (this: *IDWriteFontFace1, maxRangeCount: u32, unicodeRanges: *DWRITE_UNICODE_RANGE, actualRangeCount: *u32) -> HRESULT #cpp_method;
+
+    IsMonospacedFont: (this: *IDWriteFontFace1) -> BOOL #cpp_method;
+
+    GetDesignGlyphAdvances: (this: *IDWriteFontFace1, glyphCount: u32, glyphIndices: *u16, glyphAdvances: *s32, isSideways: BOOL = 0) -> HRESULT #cpp_method;
+
+    GetGdiCompatibleGlyphAdvances: (this: *IDWriteFontFace1, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, isSideways: BOOL, glyphCount: u32, glyphIndices: *u16, glyphAdvances: *s32) -> HRESULT #cpp_method;
+
+    GetKerningPairAdjustments: (this: *IDWriteFontFace1, glyphCount: u32, glyphIndices: *u16, glyphAdvanceAdjustments: *s32) -> HRESULT #cpp_method;
+
+    HasKerningPairs: (this: *IDWriteFontFace1) -> BOOL #cpp_method;
+
+    GetRecommendedRenderingMode_1: (this: *IDWriteFontFace1, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingMode: *DWRITE_RENDERING_MODE) -> HRESULT #cpp_method;
+
+    GetVerticalGlyphVariants: (this: *IDWriteFontFace1, glyphCount: u32, nominalGlyphIndices: *u16, verticalGlyphIndices: *u16) -> HRESULT #cpp_method;
+
+    HasVerticalGlyphVariants: (this: *IDWriteFontFace1) -> BOOL #cpp_method;
+}
+
+IDWriteFontFace1_GetMetrics_1 :: inline (this: *IDWriteFontFace1, fontMetrics: *DWRITE_FONT_METRICS1) { this.idwritefontface1_vtable.GetMetrics_1(this, fontMetrics); }
+
+IDWriteFontFace1_GetGdiCompatibleMetrics_1 :: inline (this: *IDWriteFontFace1, emSize: float, pixelsPerDip: float, transform: /*const*/ *DWRITE_MATRIX, fontMetrics: *DWRITE_FONT_METRICS1) -> HRESULT { return this.idwritefontface1_vtable.GetGdiCompatibleMetrics_1(this, emSize, pixelsPerDip, transform, fontMetrics); }
+
+IDWriteFontFace1_GetCaretMetrics :: inline (this: *IDWriteFontFace1, caretMetrics: *DWRITE_CARET_METRICS) { this.idwritefontface1_vtable.GetCaretMetrics(this, caretMetrics); }
+
+IDWriteFontFace1_GetUnicodeRanges :: inline (this: *IDWriteFontFace1, maxRangeCount: u32, unicodeRanges: *DWRITE_UNICODE_RANGE, actualRangeCount: *u32) -> HRESULT { return this.idwritefontface1_vtable.GetUnicodeRanges(this, maxRangeCount, unicodeRanges, actualRangeCount); }
+
+IDWriteFontFace1_IsMonospacedFont :: inline (this: *IDWriteFontFace1) -> BOOL { return this.idwritefontface1_vtable.IsMonospacedFont(this); }
+
+IDWriteFontFace1_GetDesignGlyphAdvances :: inline (this: *IDWriteFontFace1, glyphCount: u32, glyphIndices: *u16, glyphAdvances: *s32, isSideways: BOOL = 0) -> HRESULT { return this.idwritefontface1_vtable.GetDesignGlyphAdvances(this, glyphCount, glyphIndices, glyphAdvances, isSideways); }
+
+IDWriteFontFace1_GetGdiCompatibleGlyphAdvances :: inline (this: *IDWriteFontFace1, emSize: float, pixelsPerDip: float, transform: *DWRITE_MATRIX, useGdiNatural: BOOL, isSideways: BOOL, glyphCount: u32, glyphIndices: *u16, glyphAdvances: *s32) -> HRESULT { return this.idwritefontface1_vtable.GetGdiCompatibleGlyphAdvances(this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvances); }
+
+IDWriteFontFace1_GetKerningPairAdjustments :: inline (this: *IDWriteFontFace1, glyphCount: u32, glyphIndices: *u16, glyphAdvanceAdjustments: *s32) -> HRESULT { return this.idwritefontface1_vtable.GetKerningPairAdjustments(this, glyphCount, glyphIndices, glyphAdvanceAdjustments); }
+
+IDWriteFontFace1_HasKerningPairs :: inline (this: *IDWriteFontFace1) -> BOOL { return this.idwritefontface1_vtable.HasKerningPairs(this); }
+
+IDWriteFontFace1_GetRecommendedRenderingMode_1 :: inline (this: *IDWriteFontFace1, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingMode: *DWRITE_RENDERING_MODE) -> HRESULT { return this.idwritefontface1_vtable.GetRecommendedRenderingMode_1(this, fontEmSize, dpiX, dpiY, transform, isSideways, outlineThreshold, measuringMode, renderingMode); }
+
+IDWriteFontFace1_GetVerticalGlyphVariants :: inline (this: *IDWriteFontFace1, glyphCount: u32, nominalGlyphIndices: *u16, verticalGlyphIndices: *u16) -> HRESULT { return this.idwritefontface1_vtable.GetVerticalGlyphVariants(this, glyphCount, nominalGlyphIndices, verticalGlyphIndices); }
+
+IDWriteFontFace1_HasVerticalGlyphVariants :: inline (this: *IDWriteFontFace1) -> BOOL { return this.idwritefontface1_vtable.HasVerticalGlyphVariants(this); }
+
+vtable :: (obj: *IDWriteFontFace1) -> *IDWriteFontFace1_VTable { return obj.idwritefontface1_vtable; }
+
+
+IDWriteFont1 :: struct {
+    #as using idwritefont: IDWriteFont;
+    #place idwritefont; idwritefont1_vtable: *IDWriteFont1_VTable;
+}
+IDWriteFont1_VTable :: struct #type_info_none {
+    using idwritefont: IDWriteFont_VTable;
+    GetMetrics_1: (this: *IDWriteFont1, fontMetrics: *DWRITE_FONT_METRICS1) -> void #cpp_method;
+
+    GetPanose: (this: *IDWriteFont1, panose: *DWRITE_PANOSE) -> void #cpp_method;
+
+    GetUnicodeRanges: (this: *IDWriteFont1, maxRangeCount: u32, unicodeRanges: *DWRITE_UNICODE_RANGE, actualRangeCount: *u32) -> HRESULT #cpp_method;
+
+    IsMonospacedFont: (this: *IDWriteFont1) -> BOOL #cpp_method;
+}
+
+IDWriteFont1_GetMetrics_1 :: inline (this: *IDWriteFont1, fontMetrics: *DWRITE_FONT_METRICS1) { this.idwritefont1_vtable.GetMetrics_1(this, fontMetrics); }
+
+IDWriteFont1_GetPanose :: inline (this: *IDWriteFont1, panose: *DWRITE_PANOSE) { this.idwritefont1_vtable.GetPanose(this, panose); }
+
+IDWriteFont1_GetUnicodeRanges :: inline (this: *IDWriteFont1, maxRangeCount: u32, unicodeRanges: *DWRITE_UNICODE_RANGE, actualRangeCount: *u32) -> HRESULT { return this.idwritefont1_vtable.GetUnicodeRanges(this, maxRangeCount, unicodeRanges, actualRangeCount); }
+
+IDWriteFont1_IsMonospacedFont :: inline (this: *IDWriteFont1) -> BOOL { return this.idwritefont1_vtable.IsMonospacedFont(this); }
+
+vtable :: (obj: *IDWriteFont1) -> *IDWriteFont1_VTable { return obj.idwritefont1_vtable; }
+
+
+IDWriteRenderingParams1 :: struct {
+    #as using idwriterenderingparams: IDWriteRenderingParams;
+    #place idwriterenderingparams; idwriterenderingparams1_vtable: *IDWriteRenderingParams1_VTable;
+}
+IDWriteRenderingParams1_VTable :: struct #type_info_none {
+    using idwriterenderingparams: IDWriteRenderingParams_VTable;
+    GetGrayscaleEnhancedContrast: (this: *IDWriteRenderingParams1) -> float #cpp_method;
+}
+IDWriteRenderingParams1_GetGrayscaleEnhancedContrast :: inline (this: *IDWriteRenderingParams1) -> float { return this.idwriterenderingparams1_vtable.GetGrayscaleEnhancedContrast(this); }
+
+vtable :: (obj: *IDWriteRenderingParams1) -> *IDWriteRenderingParams1_VTable { return obj.idwriterenderingparams1_vtable; }
+
+
+IDWriteTextAnalyzer1 :: struct {
+    #as using idwritetextanalyzer: IDWriteTextAnalyzer;
+    #place idwritetextanalyzer; idwritetextanalyzer1_vtable: *IDWriteTextAnalyzer1_VTable;
+}
+IDWriteTextAnalyzer1_VTable :: struct #type_info_none {
+    using idwritetextanalyzer: IDWriteTextAnalyzer_VTable;
+    ApplyCharacterSpacing: (this: *IDWriteTextAnalyzer1, leadingSpacing: float, trailingSpacing: float, minimumAdvanceWidth: float, textLength: u32, glyphCount: u32, clusterMap: *u16, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, modifiedGlyphAdvances: *float, modifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT #cpp_method;
+
+    GetBaseline: (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, baseline: DWRITE_BASELINE, isVertical: BOOL, isSimulationAllowed: BOOL, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, baselineCoordinate: *s32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    AnalyzeVerticalGlyphOrientation: (this: *IDWriteTextAnalyzer1, analysisSource: *IDWriteTextAnalysisSource1, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink1) -> HRESULT #cpp_method;
+
+    GetGlyphOrientationTransform: (this: *IDWriteTextAnalyzer1, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, isSideways: BOOL, transform: *DWRITE_MATRIX) -> HRESULT #cpp_method;
+
+    GetScriptProperties: (this: *IDWriteTextAnalyzer1, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, scriptProperties: *DWRITE_SCRIPT_PROPERTIES) -> HRESULT #cpp_method;
+
+    GetTextComplexity: (this: *IDWriteTextAnalyzer1, textString: *s16, textLength: u32, fontFace: *IDWriteFontFace, isTextSimple: *BOOL, textLengthRead: *u32, glyphIndices: *u16) -> HRESULT #cpp_method;
+
+    GetJustificationOpportunities: (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, fontEmSize: float, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, textLength: u32, glyphCount: u32, textString: *s16, clusterMap: *u16, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, justificationOpportunities: *DWRITE_JUSTIFICATION_OPPORTUNITY) -> HRESULT #cpp_method;
+
+    JustifyGlyphAdvances: (this: *IDWriteTextAnalyzer1, lineWidth: float, glyphCount: u32, justificationOpportunities: *DWRITE_JUSTIFICATION_OPPORTUNITY, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, justifiedGlyphAdvances: *float, justifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT #cpp_method;
+
+    GetJustifiedGlyphs: (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, fontEmSize: float, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, textLength: u32, glyphCount: u32, maxGlyphCount: u32, clusterMap: *u16, glyphIndices: *u16, glyphAdvances: *float, justifiedGlyphAdvances: *float, justifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, actualGlyphCount: *u32, modifiedClusterMap: *u16, modifiedGlyphIndices: *u16, modifiedGlyphAdvances: *float, modifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT #cpp_method;
+}
+
+IDWriteTextAnalyzer1_ApplyCharacterSpacing :: inline (this: *IDWriteTextAnalyzer1, leadingSpacing: float, trailingSpacing: float, minimumAdvanceWidth: float, textLength: u32, glyphCount: u32, clusterMap: *u16, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, modifiedGlyphAdvances: *float, modifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT { return this.idwritetextanalyzer1_vtable.ApplyCharacterSpacing(this, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textLength, glyphCount, clusterMap, glyphAdvances, glyphOffsets, glyphProperties, modifiedGlyphAdvances, modifiedGlyphOffsets); }
+
+IDWriteTextAnalyzer1_GetBaseline :: inline (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, baseline: DWRITE_BASELINE, isVertical: BOOL, isSimulationAllowed: BOOL, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, baselineCoordinate: *s32, exists: *BOOL) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetBaseline(this, fontFace, baseline, isVertical, isSimulationAllowed, scriptAnalysis, localeName, baselineCoordinate, exists); }
+
+IDWriteTextAnalyzer1_AnalyzeVerticalGlyphOrientation :: inline (this: *IDWriteTextAnalyzer1, analysisSource: *IDWriteTextAnalysisSource1, textPosition: u32, textLength: u32, analysisSink: *IDWriteTextAnalysisSink1) -> HRESULT { return this.idwritetextanalyzer1_vtable.AnalyzeVerticalGlyphOrientation(this, analysisSource, textPosition, textLength, analysisSink); }
+
+IDWriteTextAnalyzer1_GetGlyphOrientationTransform :: inline (this: *IDWriteTextAnalyzer1, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, isSideways: BOOL, transform: *DWRITE_MATRIX) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetGlyphOrientationTransform(this, glyphOrientationAngle, isSideways, transform); }
+
+IDWriteTextAnalyzer1_GetScriptProperties :: inline (this: *IDWriteTextAnalyzer1, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, scriptProperties: *DWRITE_SCRIPT_PROPERTIES) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetScriptProperties(this, scriptAnalysis, scriptProperties); }
+
+IDWriteTextAnalyzer1_GetTextComplexity :: inline (this: *IDWriteTextAnalyzer1, textString: *s16, textLength: u32, fontFace: *IDWriteFontFace, isTextSimple: *BOOL, textLengthRead: *u32, glyphIndices: *u16) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetTextComplexity(this, textString, textLength, fontFace, isTextSimple, textLengthRead, glyphIndices); }
+
+IDWriteTextAnalyzer1_GetJustificationOpportunities :: inline (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, fontEmSize: float, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, textLength: u32, glyphCount: u32, textString: *s16, clusterMap: *u16, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, justificationOpportunities: *DWRITE_JUSTIFICATION_OPPORTUNITY) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetJustificationOpportunities(this, fontFace, fontEmSize, scriptAnalysis, textLength, glyphCount, textString, clusterMap, glyphProperties, justificationOpportunities); }
+
+IDWriteTextAnalyzer1_JustifyGlyphAdvances :: inline (this: *IDWriteTextAnalyzer1, lineWidth: float, glyphCount: u32, justificationOpportunities: *DWRITE_JUSTIFICATION_OPPORTUNITY, glyphAdvances: *float, glyphOffsets: *DWRITE_GLYPH_OFFSET, justifiedGlyphAdvances: *float, justifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT { return this.idwritetextanalyzer1_vtable.JustifyGlyphAdvances(this, lineWidth, glyphCount, justificationOpportunities, glyphAdvances, glyphOffsets, justifiedGlyphAdvances, justifiedGlyphOffsets); }
+
+IDWriteTextAnalyzer1_GetJustifiedGlyphs :: inline (this: *IDWriteTextAnalyzer1, fontFace: *IDWriteFontFace, fontEmSize: float, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, textLength: u32, glyphCount: u32, maxGlyphCount: u32, clusterMap: *u16, glyphIndices: *u16, glyphAdvances: *float, justifiedGlyphAdvances: *float, justifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET, glyphProperties: *DWRITE_SHAPING_GLYPH_PROPERTIES, actualGlyphCount: *u32, modifiedClusterMap: *u16, modifiedGlyphIndices: *u16, modifiedGlyphAdvances: *float, modifiedGlyphOffsets: *DWRITE_GLYPH_OFFSET) -> HRESULT { return this.idwritetextanalyzer1_vtable.GetJustifiedGlyphs(this, fontFace, fontEmSize, scriptAnalysis, textLength, glyphCount, maxGlyphCount, clusterMap, glyphIndices, glyphAdvances, justifiedGlyphAdvances, justifiedGlyphOffsets, glyphProperties, actualGlyphCount, modifiedClusterMap, modifiedGlyphIndices, modifiedGlyphAdvances, modifiedGlyphOffsets); }
+
+vtable :: (obj: *IDWriteTextAnalyzer1) -> *IDWriteTextAnalyzer1_VTable { return obj.idwritetextanalyzer1_vtable; }
+
+
+IDWriteTextAnalysisSource1 :: struct {
+    #as using idwritetextanalysissource: IDWriteTextAnalysisSource;
+    #place idwritetextanalysissource; idwritetextanalysissource1_vtable: *IDWriteTextAnalysisSource1_VTable;
+}
+IDWriteTextAnalysisSource1_VTable :: struct #type_info_none {
+    using idwritetextanalysissource: IDWriteTextAnalysisSource_VTable;
+    GetVerticalGlyphOrientation: (this: *IDWriteTextAnalysisSource1, textPosition: u32, textLength: *u32, glyphOrientation: *DWRITE_VERTICAL_GLYPH_ORIENTATION, bidiLevel: *u8) -> HRESULT #cpp_method;
+}
+IDWriteTextAnalysisSource1_GetVerticalGlyphOrientation :: inline (this: *IDWriteTextAnalysisSource1, textPosition: u32, textLength: *u32, glyphOrientation: *DWRITE_VERTICAL_GLYPH_ORIENTATION, bidiLevel: *u8) -> HRESULT { return this.idwritetextanalysissource1_vtable.GetVerticalGlyphOrientation(this, textPosition, textLength, glyphOrientation, bidiLevel); }
+
+vtable :: (obj: *IDWriteTextAnalysisSource1) -> *IDWriteTextAnalysisSource1_VTable { return obj.idwritetextanalysissource1_vtable; }
+
+
+IDWriteTextAnalysisSink1 :: struct {
+    #as using idwritetextanalysissink: IDWriteTextAnalysisSink;
+    #place idwritetextanalysissink; idwritetextanalysissink1_vtable: *IDWriteTextAnalysisSink1_VTable;
+}
+IDWriteTextAnalysisSink1_VTable :: struct #type_info_none {
+    using idwritetextanalysissink: IDWriteTextAnalysisSink_VTable;
+    SetGlyphOrientation: (this: *IDWriteTextAnalysisSink1, textPosition: u32, textLength: u32, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, adjustedBidiLevel: u8, isSideways: BOOL, isRightToLeft: BOOL) -> HRESULT #cpp_method;
+}
+IDWriteTextAnalysisSink1_SetGlyphOrientation :: inline (this: *IDWriteTextAnalysisSink1, textPosition: u32, textLength: u32, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, adjustedBidiLevel: u8, isSideways: BOOL, isRightToLeft: BOOL) -> HRESULT { return this.idwritetextanalysissink1_vtable.SetGlyphOrientation(this, textPosition, textLength, glyphOrientationAngle, adjustedBidiLevel, isSideways, isRightToLeft); }
+
+vtable :: (obj: *IDWriteTextAnalysisSink1) -> *IDWriteTextAnalysisSink1_VTable { return obj.idwritetextanalysissink1_vtable; }
+
+
+IDWriteTextLayout1 :: struct {
+    #as using idwritetextlayout: IDWriteTextLayout;
+    #place idwritetextlayout; idwritetextlayout1_vtable: *IDWriteTextLayout1_VTable;
+}
+IDWriteTextLayout1_VTable :: struct #type_info_none {
+    using idwritetextlayout: IDWriteTextLayout_VTable;
+    SetPairKerning: (this: *IDWriteTextLayout1, isPairKerningEnabled: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    GetPairKerning: (this: *IDWriteTextLayout1, currentPosition: u32, isPairKerningEnabled: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    SetCharacterSpacing: (this: *IDWriteTextLayout1, leadingSpacing: float, trailingSpacing: float, minimumAdvanceWidth: float, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    GetCharacterSpacing: (this: *IDWriteTextLayout1, currentPosition: u32, leadingSpacing: *float, trailingSpacing: *float, minimumAdvanceWidth: *float, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+}
+
+IDWriteTextLayout1_SetPairKerning :: inline (this: *IDWriteTextLayout1, isPairKerningEnabled: BOOL, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout1_vtable.SetPairKerning(this, isPairKerningEnabled, textRange); }
+
+IDWriteTextLayout1_GetPairKerning :: inline (this: *IDWriteTextLayout1, currentPosition: u32, isPairKerningEnabled: *BOOL, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout1_vtable.GetPairKerning(this, currentPosition, isPairKerningEnabled, textRange); }
+
+IDWriteTextLayout1_SetCharacterSpacing :: inline (this: *IDWriteTextLayout1, leadingSpacing: float, trailingSpacing: float, minimumAdvanceWidth: float, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout1_vtable.SetCharacterSpacing(this, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange); }
+
+IDWriteTextLayout1_GetCharacterSpacing :: inline (this: *IDWriteTextLayout1, currentPosition: u32, leadingSpacing: *float, trailingSpacing: *float, minimumAdvanceWidth: *float, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout1_vtable.GetCharacterSpacing(this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange); }
+
+vtable :: (obj: *IDWriteTextLayout1) -> *IDWriteTextLayout1_VTable { return obj.idwritetextlayout1_vtable; }
+
+
+DWRITE_TEXT_ANTIALIAS_MODE :: enum s32 {
+    CLEARTYPE :: 0;
+
+    GRAYSCALE :: 1;
+
+    DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE :: CLEARTYPE;
+
+    DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE :: GRAYSCALE;
+}
+
+IDWriteBitmapRenderTarget1 :: struct {
+    #as using idwritebitmaprendertarget: IDWriteBitmapRenderTarget;
+    #place idwritebitmaprendertarget; idwritebitmaprendertarget1_vtable: *IDWriteBitmapRenderTarget1_VTable;
+}
+IDWriteBitmapRenderTarget1_VTable :: struct #type_info_none {
+    using idwritebitmaprendertarget: IDWriteBitmapRenderTarget_VTable;
+    GetTextAntialiasMode: (this: *IDWriteBitmapRenderTarget1) -> DWRITE_TEXT_ANTIALIAS_MODE #cpp_method;
+
+    SetTextAntialiasMode: (this: *IDWriteBitmapRenderTarget1, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE) -> HRESULT #cpp_method;
+}
+
+IDWriteBitmapRenderTarget1_GetTextAntialiasMode :: inline (this: *IDWriteBitmapRenderTarget1) -> DWRITE_TEXT_ANTIALIAS_MODE { return this.idwritebitmaprendertarget1_vtable.GetTextAntialiasMode(this); }
+
+IDWriteBitmapRenderTarget1_SetTextAntialiasMode :: inline (this: *IDWriteBitmapRenderTarget1, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE) -> HRESULT { return this.idwritebitmaprendertarget1_vtable.SetTextAntialiasMode(this, antialiasMode); }
+
+vtable :: (obj: *IDWriteBitmapRenderTarget1) -> *IDWriteBitmapRenderTarget1_VTable { return obj.idwritebitmaprendertarget1_vtable; }
+
+
+DWRITE_OPTICAL_ALIGNMENT :: enum s32 {
+    NONE             :: 0;
+
+    NO_SIDE_BEARINGS :: 1;
+
+    DWRITE_OPTICAL_ALIGNMENT_NONE             :: NONE;
+
+    DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS :: NO_SIDE_BEARINGS;
+}
+
+DWRITE_GRID_FIT_MODE :: enum s32 {
+    DEFAULT  :: 0;
+
+    DISABLED :: 1;
+
+    ENABLED  :: 2;
+
+    DWRITE_GRID_FIT_MODE_DEFAULT  :: DEFAULT;
+
+    DWRITE_GRID_FIT_MODE_DISABLED :: DISABLED;
+
+    DWRITE_GRID_FIT_MODE_ENABLED  :: ENABLED;
+}
+
+DWRITE_TEXT_METRICS1 :: struct {
+    #as using dwrite_text_metrics: DWRITE_TEXT_METRICS;
+
+    heightIncludingTrailingWhitespace: float;
+}
+
+IDWriteTextRenderer1 :: struct {
+    #as using idwritetextrenderer: IDWriteTextRenderer;
+    #place idwritetextrenderer; idwritetextrenderer1_vtable: *IDWriteTextRenderer1_VTable;
+}
+IDWriteTextRenderer1_VTable :: struct #type_info_none {
+    using idwritetextrenderer: IDWriteTextRenderer_VTable;
+    DrawGlyphRun_1: (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, measuringMode: DWRITE_MEASURING_MODE, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawUnderline_1: (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, underline: /*const*/ *DWRITE_UNDERLINE, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawStrikethrough_1: (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, strikethrough: /*const*/ *DWRITE_STRIKETHROUGH, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+
+    DrawInlineObject_1: (this: *IDWriteTextRenderer1, clientDrawingContext: *void, originX: float, originY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, inlineObject: *IDWriteInlineObject, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT #cpp_method;
+}
+
+IDWriteTextRenderer1_DrawGlyphRun_1 :: inline (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, measuringMode: DWRITE_MEASURING_MODE, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer1_vtable.DrawGlyphRun_1(this, clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, measuringMode, glyphRun, glyphRunDescription, clientDrawingEffect); }
+
+IDWriteTextRenderer1_DrawUnderline_1 :: inline (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, underline: /*const*/ *DWRITE_UNDERLINE, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer1_vtable.DrawUnderline_1(this, clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, underline, clientDrawingEffect); }
+
+IDWriteTextRenderer1_DrawStrikethrough_1 :: inline (this: *IDWriteTextRenderer1, clientDrawingContext: *void, baselineOriginX: float, baselineOriginY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, strikethrough: /*const*/ *DWRITE_STRIKETHROUGH, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer1_vtable.DrawStrikethrough_1(this, clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, strikethrough, clientDrawingEffect); }
+
+IDWriteTextRenderer1_DrawInlineObject_1 :: inline (this: *IDWriteTextRenderer1, clientDrawingContext: *void, originX: float, originY: float, orientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, inlineObject: *IDWriteInlineObject, isSideways: BOOL, isRightToLeft: BOOL, clientDrawingEffect: *IUnknown) -> HRESULT { return this.idwritetextrenderer1_vtable.DrawInlineObject_1(this, clientDrawingContext, originX, originY, orientationAngle, inlineObject, isSideways, isRightToLeft, clientDrawingEffect); }
+
+vtable :: (obj: *IDWriteTextRenderer1) -> *IDWriteTextRenderer1_VTable { return obj.idwritetextrenderer1_vtable; }
+
+
+IDWriteTextFormat1 :: struct {
+    #as using idwritetextformat: IDWriteTextFormat;
+    #place idwritetextformat; idwritetextformat1_vtable: *IDWriteTextFormat1_VTable;
+}
+IDWriteTextFormat1_VTable :: struct #type_info_none {
+    using idwritetextformat: IDWriteTextFormat_VTable;
+    SetVerticalGlyphOrientation: (this: *IDWriteTextFormat1, glyphOrientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> HRESULT #cpp_method;
+
+    GetVerticalGlyphOrientation: (this: *IDWriteTextFormat1) -> DWRITE_VERTICAL_GLYPH_ORIENTATION #cpp_method;
+
+    SetLastLineWrapping: (this: *IDWriteTextFormat1, isLastLineWrappingEnabled: BOOL) -> HRESULT #cpp_method;
+
+    GetLastLineWrapping: (this: *IDWriteTextFormat1) -> BOOL #cpp_method;
+
+    SetOpticalAlignment: (this: *IDWriteTextFormat1, opticalAlignment: DWRITE_OPTICAL_ALIGNMENT) -> HRESULT #cpp_method;
+
+    GetOpticalAlignment: (this: *IDWriteTextFormat1) -> DWRITE_OPTICAL_ALIGNMENT #cpp_method;
+
+    SetFontFallback: (this: *IDWriteTextFormat1, fontFallback: *IDWriteFontFallback) -> HRESULT #cpp_method;
+
+    GetFontFallback: (this: *IDWriteTextFormat1, fontFallback: **IDWriteFontFallback) -> HRESULT #cpp_method;
+}
+
+IDWriteTextFormat1_SetVerticalGlyphOrientation :: inline (this: *IDWriteTextFormat1, glyphOrientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> HRESULT { return this.idwritetextformat1_vtable.SetVerticalGlyphOrientation(this, glyphOrientation); }
+
+IDWriteTextFormat1_GetVerticalGlyphOrientation :: inline (this: *IDWriteTextFormat1) -> DWRITE_VERTICAL_GLYPH_ORIENTATION { return this.idwritetextformat1_vtable.GetVerticalGlyphOrientation(this); }
+
+IDWriteTextFormat1_SetLastLineWrapping :: inline (this: *IDWriteTextFormat1, isLastLineWrappingEnabled: BOOL) -> HRESULT { return this.idwritetextformat1_vtable.SetLastLineWrapping(this, isLastLineWrappingEnabled); }
+
+IDWriteTextFormat1_GetLastLineWrapping :: inline (this: *IDWriteTextFormat1) -> BOOL { return this.idwritetextformat1_vtable.GetLastLineWrapping(this); }
+
+IDWriteTextFormat1_SetOpticalAlignment :: inline (this: *IDWriteTextFormat1, opticalAlignment: DWRITE_OPTICAL_ALIGNMENT) -> HRESULT { return this.idwritetextformat1_vtable.SetOpticalAlignment(this, opticalAlignment); }
+
+IDWriteTextFormat1_GetOpticalAlignment :: inline (this: *IDWriteTextFormat1) -> DWRITE_OPTICAL_ALIGNMENT { return this.idwritetextformat1_vtable.GetOpticalAlignment(this); }
+
+IDWriteTextFormat1_SetFontFallback :: inline (this: *IDWriteTextFormat1, fontFallback: *IDWriteFontFallback) -> HRESULT { return this.idwritetextformat1_vtable.SetFontFallback(this, fontFallback); }
+
+IDWriteTextFormat1_GetFontFallback :: inline (this: *IDWriteTextFormat1, fontFallback: **IDWriteFontFallback) -> HRESULT { return this.idwritetextformat1_vtable.GetFontFallback(this, fontFallback); }
+
+vtable :: (obj: *IDWriteTextFormat1) -> *IDWriteTextFormat1_VTable { return obj.idwritetextformat1_vtable; }
+
+
+IDWriteTextLayout2 :: struct {
+    #as using idwritetextlayout1: IDWriteTextLayout1;
+    #place idwritetextlayout1; idwritetextlayout2_vtable: *IDWriteTextLayout2_VTable;
+}
+IDWriteTextLayout2_VTable :: struct #type_info_none {
+    using idwritetextlayout1: IDWriteTextLayout1_VTable;
+    GetMetrics_1: (this: *IDWriteTextLayout2, textMetrics: *DWRITE_TEXT_METRICS1) -> HRESULT #cpp_method;
+
+    SetVerticalGlyphOrientation: (this: *IDWriteTextLayout2, glyphOrientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> HRESULT #cpp_method;
+
+    GetVerticalGlyphOrientation: (this: *IDWriteTextLayout2) -> DWRITE_VERTICAL_GLYPH_ORIENTATION #cpp_method;
+
+    SetLastLineWrapping: (this: *IDWriteTextLayout2, isLastLineWrappingEnabled: BOOL) -> HRESULT #cpp_method;
+
+    GetLastLineWrapping: (this: *IDWriteTextLayout2) -> BOOL #cpp_method;
+
+    SetOpticalAlignment: (this: *IDWriteTextLayout2, opticalAlignment: DWRITE_OPTICAL_ALIGNMENT) -> HRESULT #cpp_method;
+
+    GetOpticalAlignment: (this: *IDWriteTextLayout2) -> DWRITE_OPTICAL_ALIGNMENT #cpp_method;
+
+    SetFontFallback: (this: *IDWriteTextLayout2, fontFallback: *IDWriteFontFallback) -> HRESULT #cpp_method;
+
+    GetFontFallback: (this: *IDWriteTextLayout2, fontFallback: **IDWriteFontFallback) -> HRESULT #cpp_method;
+}
+
+IDWriteTextLayout2_GetMetrics_1 :: inline (this: *IDWriteTextLayout2, textMetrics: *DWRITE_TEXT_METRICS1) -> HRESULT { return this.idwritetextlayout2_vtable.GetMetrics_1(this, textMetrics); }
+
+IDWriteTextLayout2_SetVerticalGlyphOrientation :: inline (this: *IDWriteTextLayout2, glyphOrientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> HRESULT { return this.idwritetextlayout2_vtable.SetVerticalGlyphOrientation(this, glyphOrientation); }
+
+IDWriteTextLayout2_GetVerticalGlyphOrientation :: inline (this: *IDWriteTextLayout2) -> DWRITE_VERTICAL_GLYPH_ORIENTATION { return this.idwritetextlayout2_vtable.GetVerticalGlyphOrientation(this); }
+
+IDWriteTextLayout2_SetLastLineWrapping :: inline (this: *IDWriteTextLayout2, isLastLineWrappingEnabled: BOOL) -> HRESULT { return this.idwritetextlayout2_vtable.SetLastLineWrapping(this, isLastLineWrappingEnabled); }
+
+IDWriteTextLayout2_GetLastLineWrapping :: inline (this: *IDWriteTextLayout2) -> BOOL { return this.idwritetextlayout2_vtable.GetLastLineWrapping(this); }
+
+IDWriteTextLayout2_SetOpticalAlignment :: inline (this: *IDWriteTextLayout2, opticalAlignment: DWRITE_OPTICAL_ALIGNMENT) -> HRESULT { return this.idwritetextlayout2_vtable.SetOpticalAlignment(this, opticalAlignment); }
+
+IDWriteTextLayout2_GetOpticalAlignment :: inline (this: *IDWriteTextLayout2) -> DWRITE_OPTICAL_ALIGNMENT { return this.idwritetextlayout2_vtable.GetOpticalAlignment(this); }
+
+IDWriteTextLayout2_SetFontFallback :: inline (this: *IDWriteTextLayout2, fontFallback: *IDWriteFontFallback) -> HRESULT { return this.idwritetextlayout2_vtable.SetFontFallback(this, fontFallback); }
+
+IDWriteTextLayout2_GetFontFallback :: inline (this: *IDWriteTextLayout2, fontFallback: **IDWriteFontFallback) -> HRESULT { return this.idwritetextlayout2_vtable.GetFontFallback(this, fontFallback); }
+
+vtable :: (obj: *IDWriteTextLayout2) -> *IDWriteTextLayout2_VTable { return obj.idwritetextlayout2_vtable; }
+
+
+IDWriteTextAnalyzer2 :: struct {
+    #as using idwritetextanalyzer1: IDWriteTextAnalyzer1;
+    #place idwritetextanalyzer1; idwritetextanalyzer2_vtable: *IDWriteTextAnalyzer2_VTable;
+}
+IDWriteTextAnalyzer2_VTable :: struct #type_info_none {
+    using idwritetextanalyzer1: IDWriteTextAnalyzer1_VTable;
+    GetGlyphOrientationTransform_1: (this: *IDWriteTextAnalyzer2, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, isSideways: BOOL, originX: float, originY: float, transform: *DWRITE_MATRIX) -> HRESULT #cpp_method;
+
+    GetTypographicFeatures: (this: *IDWriteTextAnalyzer2, fontFace: *IDWriteFontFace, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, maxTagCount: u32, actualTagCount: *u32, tags: *DWRITE_FONT_FEATURE_TAG) -> HRESULT #cpp_method;
+
+    CheckTypographicFeature: (this: *IDWriteTextAnalyzer2, fontFace: *IDWriteFontFace, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, featureTag: DWRITE_FONT_FEATURE_TAG, glyphCount: u32, glyphIndices: *u16, featureApplies: *u8) -> HRESULT #cpp_method;
+}
+
+IDWriteTextAnalyzer2_GetGlyphOrientationTransform_1 :: inline (this: *IDWriteTextAnalyzer2, glyphOrientationAngle: DWRITE_GLYPH_ORIENTATION_ANGLE, isSideways: BOOL, originX: float, originY: float, transform: *DWRITE_MATRIX) -> HRESULT { return this.idwritetextanalyzer2_vtable.GetGlyphOrientationTransform_1(this, glyphOrientationAngle, isSideways, originX, originY, transform); }
+
+IDWriteTextAnalyzer2_GetTypographicFeatures :: inline (this: *IDWriteTextAnalyzer2, fontFace: *IDWriteFontFace, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, maxTagCount: u32, actualTagCount: *u32, tags: *DWRITE_FONT_FEATURE_TAG) -> HRESULT { return this.idwritetextanalyzer2_vtable.GetTypographicFeatures(this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCount, tags); }
+
+IDWriteTextAnalyzer2_CheckTypographicFeature :: inline (this: *IDWriteTextAnalyzer2, fontFace: *IDWriteFontFace, scriptAnalysis: DWRITE_SCRIPT_ANALYSIS, localeName: *s16, featureTag: DWRITE_FONT_FEATURE_TAG, glyphCount: u32, glyphIndices: *u16, featureApplies: *u8) -> HRESULT { return this.idwritetextanalyzer2_vtable.CheckTypographicFeature(this, fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureApplies); }
+
+vtable :: (obj: *IDWriteTextAnalyzer2) -> *IDWriteTextAnalyzer2_VTable { return obj.idwritetextanalyzer2_vtable; }
+
+
+IDWriteFontFallback :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfallback_vtable: *IDWriteFontFallback_VTable;
+}
+IDWriteFontFallback_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    MapCharacters: (this: *IDWriteFontFallback, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, baseFontCollection: *IDWriteFontCollection, baseFamilyName: *s16, baseWeight: DWRITE_FONT_WEIGHT, baseStyle: DWRITE_FONT_STYLE, baseStretch: DWRITE_FONT_STRETCH, mappedLength: *u32, mappedFont: **IDWriteFont, scale: *float) -> HRESULT #cpp_method;
+}
+IDWriteFontFallback_MapCharacters :: inline (this: *IDWriteFontFallback, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, baseFontCollection: *IDWriteFontCollection, baseFamilyName: *s16, baseWeight: DWRITE_FONT_WEIGHT, baseStyle: DWRITE_FONT_STYLE, baseStretch: DWRITE_FONT_STRETCH, mappedLength: *u32, mappedFont: **IDWriteFont, scale: *float) -> HRESULT { return this.idwritefontfallback_vtable.MapCharacters(this, analysisSource, textPosition, textLength, baseFontCollection, baseFamilyName, baseWeight, baseStyle, baseStretch, mappedLength, mappedFont, scale); }
+
+vtable :: (obj: *IDWriteFontFallback) -> *IDWriteFontFallback_VTable { return obj.idwritefontfallback_vtable; }
+
+
+IDWriteFontFallbackBuilder :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfallbackbuilder_vtable: *IDWriteFontFallbackBuilder_VTable;
+}
+IDWriteFontFallbackBuilder_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddMapping: (this: *IDWriteFontFallbackBuilder, ranges: *DWRITE_UNICODE_RANGE, rangesCount: u32, targetFamilyNames: **s16, targetFamilyNamesCount: u32, fontCollection: *IDWriteFontCollection = null, localeName: *s16 = null, baseFamilyName: *s16 = null, scale: float = 1.0) -> HRESULT #cpp_method;
+
+    AddMappings: (this: *IDWriteFontFallbackBuilder, fontFallback: *IDWriteFontFallback) -> HRESULT #cpp_method;
+
+    CreateFontFallback: (this: *IDWriteFontFallbackBuilder, fontFallback: **IDWriteFontFallback) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFallbackBuilder_AddMapping :: inline (this: *IDWriteFontFallbackBuilder, ranges: *DWRITE_UNICODE_RANGE, rangesCount: u32, targetFamilyNames: **s16, targetFamilyNamesCount: u32, fontCollection: *IDWriteFontCollection = null, localeName: *s16 = null, baseFamilyName: *s16 = null, scale: float = 1.0) -> HRESULT { return this.idwritefontfallbackbuilder_vtable.AddMapping(this, ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale); }
+
+IDWriteFontFallbackBuilder_AddMappings :: inline (this: *IDWriteFontFallbackBuilder, fontFallback: *IDWriteFontFallback) -> HRESULT { return this.idwritefontfallbackbuilder_vtable.AddMappings(this, fontFallback); }
+
+IDWriteFontFallbackBuilder_CreateFontFallback :: inline (this: *IDWriteFontFallbackBuilder, fontFallback: **IDWriteFontFallback) -> HRESULT { return this.idwritefontfallbackbuilder_vtable.CreateFontFallback(this, fontFallback); }
+
+vtable :: (obj: *IDWriteFontFallbackBuilder) -> *IDWriteFontFallbackBuilder_VTable { return obj.idwritefontfallbackbuilder_vtable; }
+
+
+DWRITE_COLOR_F :: D3DCOLORVALUE;
+
+IDWriteFont2 :: struct {
+    #as using idwritefont1: IDWriteFont1;
+    #place idwritefont1; idwritefont2_vtable: *IDWriteFont2_VTable;
+}
+IDWriteFont2_VTable :: struct #type_info_none {
+    using idwritefont1: IDWriteFont1_VTable;
+    IsColorFont: (this: *IDWriteFont2) -> BOOL #cpp_method;
+}
+IDWriteFont2_IsColorFont :: inline (this: *IDWriteFont2) -> BOOL { return this.idwritefont2_vtable.IsColorFont(this); }
+
+vtable :: (obj: *IDWriteFont2) -> *IDWriteFont2_VTable { return obj.idwritefont2_vtable; }
+
+
+IDWriteFontFace2 :: struct {
+    #as using idwritefontface1: IDWriteFontFace1;
+    #place idwritefontface1; idwritefontface2_vtable: *IDWriteFontFace2_VTable;
+}
+IDWriteFontFace2_VTable :: struct #type_info_none {
+    using idwritefontface1: IDWriteFontFace1_VTable;
+    IsColorFont: (this: *IDWriteFontFace2) -> BOOL #cpp_method;
+
+    GetColorPaletteCount: (this: *IDWriteFontFace2) -> u32 #cpp_method;
+
+    GetPaletteEntryCount: (this: *IDWriteFontFace2) -> u32 #cpp_method;
+
+    GetPaletteEntries: (this: *IDWriteFontFace2, colorPaletteIndex: u32, firstEntryIndex: u32, entryCount: u32, paletteEntries: *DWRITE_COLOR_F) -> HRESULT #cpp_method;
+
+    GetRecommendedRenderingMode_2: (this: *IDWriteFontFace2, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE, gridFitMode: *DWRITE_GRID_FIT_MODE) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFace2_IsColorFont :: inline (this: *IDWriteFontFace2) -> BOOL { return this.idwritefontface2_vtable.IsColorFont(this); }
+
+IDWriteFontFace2_GetColorPaletteCount :: inline (this: *IDWriteFontFace2) -> u32 { return this.idwritefontface2_vtable.GetColorPaletteCount(this); }
+
+IDWriteFontFace2_GetPaletteEntryCount :: inline (this: *IDWriteFontFace2) -> u32 { return this.idwritefontface2_vtable.GetPaletteEntryCount(this); }
+
+IDWriteFontFace2_GetPaletteEntries :: inline (this: *IDWriteFontFace2, colorPaletteIndex: u32, firstEntryIndex: u32, entryCount: u32, paletteEntries: *DWRITE_COLOR_F) -> HRESULT { return this.idwritefontface2_vtable.GetPaletteEntries(this, colorPaletteIndex, firstEntryIndex, entryCount, paletteEntries); }
+
+IDWriteFontFace2_GetRecommendedRenderingMode_2 :: inline (this: *IDWriteFontFace2, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE, gridFitMode: *DWRITE_GRID_FIT_MODE) -> HRESULT { return this.idwritefontface2_vtable.GetRecommendedRenderingMode_2(this, fontEmSize, dpiX, dpiY, transform, isSideways, outlineThreshold, measuringMode, renderingParams, renderingMode, gridFitMode); }
+
+vtable :: (obj: *IDWriteFontFace2) -> *IDWriteFontFace2_VTable { return obj.idwritefontface2_vtable; }
+
+
+DWRITE_COLOR_GLYPH_RUN :: struct {
+    glyphRun:            DWRITE_GLYPH_RUN;
+
+    glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION;
+
+    baselineOriginX:     float;
+    baselineOriginY:     float;
+
+    runColor:            DWRITE_COLOR_F;
+
+    paletteIndex:        u16;
+}
+
+IDWriteColorGlyphRunEnumerator :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritecolorglyphrunenumerator_vtable: *IDWriteColorGlyphRunEnumerator_VTable;
+}
+IDWriteColorGlyphRunEnumerator_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    MoveNext: (this: *IDWriteColorGlyphRunEnumerator, hasRun: *BOOL) -> HRESULT #cpp_method;
+
+    GetCurrentRun: (this: *IDWriteColorGlyphRunEnumerator, colorGlyphRun: **DWRITE_COLOR_GLYPH_RUN) -> HRESULT #cpp_method;
+}
+
+IDWriteColorGlyphRunEnumerator_MoveNext :: inline (this: *IDWriteColorGlyphRunEnumerator, hasRun: *BOOL) -> HRESULT { return this.idwritecolorglyphrunenumerator_vtable.MoveNext(this, hasRun); }
+
+IDWriteColorGlyphRunEnumerator_GetCurrentRun :: inline (this: *IDWriteColorGlyphRunEnumerator, colorGlyphRun: **DWRITE_COLOR_GLYPH_RUN) -> HRESULT { return this.idwritecolorglyphrunenumerator_vtable.GetCurrentRun(this, colorGlyphRun); }
+
+vtable :: (obj: *IDWriteColorGlyphRunEnumerator) -> *IDWriteColorGlyphRunEnumerator_VTable { return obj.idwritecolorglyphrunenumerator_vtable; }
+
+
+IDWriteRenderingParams2 :: struct {
+    #as using idwriterenderingparams1: IDWriteRenderingParams1;
+    #place idwriterenderingparams1; idwriterenderingparams2_vtable: *IDWriteRenderingParams2_VTable;
+}
+IDWriteRenderingParams2_VTable :: struct #type_info_none {
+    using idwriterenderingparams1: IDWriteRenderingParams1_VTable;
+    GetGridFitMode: (this: *IDWriteRenderingParams2) -> DWRITE_GRID_FIT_MODE #cpp_method;
+}
+IDWriteRenderingParams2_GetGridFitMode :: inline (this: *IDWriteRenderingParams2) -> DWRITE_GRID_FIT_MODE { return this.idwriterenderingparams2_vtable.GetGridFitMode(this); }
+
+vtable :: (obj: *IDWriteRenderingParams2) -> *IDWriteRenderingParams2_VTable { return obj.idwriterenderingparams2_vtable; }
+
+
+IDWriteFactory2 :: struct {
+    #as using idwritefactory1: IDWriteFactory1;
+    #place idwritefactory1; idwritefactory2_vtable: *IDWriteFactory2_VTable;
+}
+IDWriteFactory2_VTable :: struct #type_info_none {
+    using idwritefactory1: IDWriteFactory1_VTable;
+    GetSystemFontFallback: (this: *IDWriteFactory2, fontFallback: **IDWriteFontFallback) -> HRESULT #cpp_method;
+
+    CreateFontFallbackBuilder: (this: *IDWriteFactory2, fontFallbackBuilder: **IDWriteFontFallbackBuilder) -> HRESULT #cpp_method;
+
+    TranslateColorGlyphRun: (this: *IDWriteFactory2, baselineOriginX: float, baselineOriginY: float, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, measuringMode: DWRITE_MEASURING_MODE, worldToDeviceTransform: *DWRITE_MATRIX, colorPaletteIndex: u32, colorLayers: **IDWriteColorGlyphRunEnumerator) -> HRESULT #cpp_method;
+
+    CreateCustomRenderingParams_2: (this: *IDWriteFactory2, gamma: float, enhancedContrast: float, grayscaleEnhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, renderingParams: **IDWriteRenderingParams2) -> HRESULT #cpp_method;
+
+    CreateGlyphRunAnalysis_1: (this: *IDWriteFactory2, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, transform: /*const*/ *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE, measuringMode: DWRITE_MEASURING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory2_GetSystemFontFallback :: inline (this: *IDWriteFactory2, fontFallback: **IDWriteFontFallback) -> HRESULT { return this.idwritefactory2_vtable.GetSystemFontFallback(this, fontFallback); }
+
+IDWriteFactory2_CreateFontFallbackBuilder :: inline (this: *IDWriteFactory2, fontFallbackBuilder: **IDWriteFontFallbackBuilder) -> HRESULT { return this.idwritefactory2_vtable.CreateFontFallbackBuilder(this, fontFallbackBuilder); }
+
+IDWriteFactory2_TranslateColorGlyphRun :: inline (this: *IDWriteFactory2, baselineOriginX: float, baselineOriginY: float, glyphRun: *DWRITE_GLYPH_RUN, glyphRunDescription: *DWRITE_GLYPH_RUN_DESCRIPTION, measuringMode: DWRITE_MEASURING_MODE, worldToDeviceTransform: *DWRITE_MATRIX, colorPaletteIndex: u32, colorLayers: **IDWriteColorGlyphRunEnumerator) -> HRESULT { return this.idwritefactory2_vtable.TranslateColorGlyphRun(this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers); }
+
+IDWriteFactory2_CreateCustomRenderingParams_2 :: inline (this: *IDWriteFactory2, gamma: float, enhancedContrast: float, grayscaleEnhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, renderingParams: **IDWriteRenderingParams2) -> HRESULT { return this.idwritefactory2_vtable.CreateCustomRenderingParams_2(this, gamma, enhancedContrast, grayscaleEnhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, gridFitMode, renderingParams); }
+
+IDWriteFactory2_CreateGlyphRunAnalysis_1 :: inline (this: *IDWriteFactory2, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, transform: /*const*/ *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE, measuringMode: DWRITE_MEASURING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT { return this.idwritefactory2_vtable.CreateGlyphRunAnalysis_1(this, glyphRun, transform, renderingMode, measuringMode, gridFitMode, antialiasMode, baselineOriginX, baselineOriginY, glyphRunAnalysis); }
+
+vtable :: (obj: *IDWriteFactory2) -> *IDWriteFactory2_VTable { return obj.idwritefactory2_vtable; }
+
+
+DWRITE_FONT_PROPERTY_ID :: enum s32 {
+    NONE                             :: 0;
+
+    WEIGHT_STRETCH_STYLE_FAMILY_NAME :: 1;
+
+    TYPOGRAPHIC_FAMILY_NAME          :: 2;
+
+    WEIGHT_STRETCH_STYLE_FACE_NAME   :: 3;
+
+    FULL_NAME                        :: 4;
+
+    WIN32_FAMILY_NAME                :: 5;
+
+    POSTSCRIPT_NAME                  :: 6;
+
+    DESIGN_SCRIPT_LANGUAGE_TAG       :: 7;
+
+    SUPPORTED_SCRIPT_LANGUAGE_TAG    :: 8;
+
+    SEMANTIC_TAG                     :: 9;
+
+    WEIGHT                           :: 10;
+
+    STRETCH                          :: 11;
+
+    STYLE                            :: 12;
+
+    TYPOGRAPHIC_FACE_NAME            :: 13;
+
+    TOTAL                            :: 13;
+
+    TOTAL_RS3                        :: 14;
+
+    PREFERRED_FAMILY_NAME            :: 2;
+    FAMILY_NAME                      :: 1;
+    FACE_NAME                        :: 3;
+
+    DWRITE_FONT_PROPERTY_ID_NONE                             :: NONE;
+
+    DWRITE_FONT_PROPERTY_ID_WEIGHT_STRETCH_STYLE_FAMILY_NAME :: WEIGHT_STRETCH_STYLE_FAMILY_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_TYPOGRAPHIC_FAMILY_NAME          :: TYPOGRAPHIC_FAMILY_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_WEIGHT_STRETCH_STYLE_FACE_NAME   :: WEIGHT_STRETCH_STYLE_FACE_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_FULL_NAME                        :: FULL_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_WIN32_FAMILY_NAME                :: WIN32_FAMILY_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_POSTSCRIPT_NAME                  :: POSTSCRIPT_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_DESIGN_SCRIPT_LANGUAGE_TAG       :: DESIGN_SCRIPT_LANGUAGE_TAG;
+
+    DWRITE_FONT_PROPERTY_ID_SUPPORTED_SCRIPT_LANGUAGE_TAG    :: SUPPORTED_SCRIPT_LANGUAGE_TAG;
+
+    DWRITE_FONT_PROPERTY_ID_SEMANTIC_TAG                     :: SEMANTIC_TAG;
+
+    DWRITE_FONT_PROPERTY_ID_WEIGHT                           :: WEIGHT;
+
+    DWRITE_FONT_PROPERTY_ID_STRETCH                          :: STRETCH;
+
+    DWRITE_FONT_PROPERTY_ID_STYLE                            :: STYLE;
+
+    DWRITE_FONT_PROPERTY_ID_TYPOGRAPHIC_FACE_NAME            :: TYPOGRAPHIC_FACE_NAME;
+
+    DWRITE_FONT_PROPERTY_ID_TOTAL                            :: TOTAL;
+
+    DWRITE_FONT_PROPERTY_ID_TOTAL_RS3                        :: TOTAL_RS3;
+
+    DWRITE_FONT_PROPERTY_ID_PREFERRED_FAMILY_NAME            :: PREFERRED_FAMILY_NAME;
+    DWRITE_FONT_PROPERTY_ID_FAMILY_NAME                      :: FAMILY_NAME;
+    DWRITE_FONT_PROPERTY_ID_FACE_NAME                        :: FACE_NAME;
+}
+
+DWRITE_FONT_PROPERTY :: struct {
+    propertyId:    DWRITE_FONT_PROPERTY_ID;
+
+    propertyValue: *s16;
+
+    localeName:    *s16;
+}
+
+DWRITE_LOCALITY :: enum s32 {
+    REMOTE  :: 0;
+
+    PARTIAL :: 1;
+
+    LOCAL   :: 2;
+
+    DWRITE_LOCALITY_REMOTE  :: REMOTE;
+
+    DWRITE_LOCALITY_PARTIAL :: PARTIAL;
+
+    DWRITE_LOCALITY_LOCAL   :: LOCAL;
+}
+
+DWRITE_RENDERING_MODE1 :: enum s32 {
+    DEFAULT                       :: 0;
+
+    ALIASED                       :: 1;
+
+    GDI_CLASSIC                   :: 2;
+
+    GDI_NATURAL                   :: 3;
+
+    NATURAL                       :: 4;
+
+    NATURAL_SYMMETRIC             :: 5;
+
+    OUTLINE                       :: 6;
+
+    NATURAL_SYMMETRIC_DOWNSAMPLED :: 7;
+
+    DWRITE_RENDERING_MODE1_DEFAULT                       :: DEFAULT;
+
+    DWRITE_RENDERING_MODE1_ALIASED                       :: ALIASED;
+
+    DWRITE_RENDERING_MODE1_GDI_CLASSIC                   :: GDI_CLASSIC;
+
+    DWRITE_RENDERING_MODE1_GDI_NATURAL                   :: GDI_NATURAL;
+
+    DWRITE_RENDERING_MODE1_NATURAL                       :: NATURAL;
+
+    DWRITE_RENDERING_MODE1_NATURAL_SYMMETRIC             :: NATURAL_SYMMETRIC;
+
+    DWRITE_RENDERING_MODE1_OUTLINE                       :: OUTLINE;
+
+    DWRITE_RENDERING_MODE1_NATURAL_SYMMETRIC_DOWNSAMPLED :: NATURAL_SYMMETRIC_DOWNSAMPLED;
+}
+
+IDWriteRenderingParams3 :: struct {
+    #as using idwriterenderingparams2: IDWriteRenderingParams2;
+    #place idwriterenderingparams2; idwriterenderingparams3_vtable: *IDWriteRenderingParams3_VTable;
+}
+IDWriteRenderingParams3_VTable :: struct #type_info_none {
+    using idwriterenderingparams2: IDWriteRenderingParams2_VTable;
+    GetRenderingMode1: (this: *IDWriteRenderingParams3) -> DWRITE_RENDERING_MODE1 #cpp_method;
+}
+IDWriteRenderingParams3_GetRenderingMode1 :: inline (this: *IDWriteRenderingParams3) -> DWRITE_RENDERING_MODE1 { return this.idwriterenderingparams3_vtable.GetRenderingMode1(this); }
+
+vtable :: (obj: *IDWriteRenderingParams3) -> *IDWriteRenderingParams3_VTable { return obj.idwriterenderingparams3_vtable; }
+
+
+IDWriteFactory3 :: struct {
+    #as using idwritefactory2: IDWriteFactory2;
+    #place idwritefactory2; idwritefactory3_vtable: *IDWriteFactory3_VTable;
+}
+IDWriteFactory3_VTable :: struct #type_info_none {
+    using idwritefactory2: IDWriteFactory2_VTable;
+    CreateGlyphRunAnalysis_2: (this: *IDWriteFactory3, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, transform: /*const*/ *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE1, measuringMode: DWRITE_MEASURING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT #cpp_method;
+
+    CreateCustomRenderingParams_3: (this: *IDWriteFactory3, gamma: float, enhancedContrast: float, grayscaleEnhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE1, gridFitMode: DWRITE_GRID_FIT_MODE, renderingParams: **IDWriteRenderingParams3) -> HRESULT #cpp_method;
+
+    CreateFontFaceReference: (this: *IDWriteFactory3, fontFile: *IDWriteFontFile, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    CreateFontFaceReference_1: (this: *IDWriteFactory3, filePath: /*const*/ *s16, lastWriteTime: /*const*/ *FILETIME, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    GetSystemFontSet: (this: *IDWriteFactory3, fontSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+
+    CreateFontSetBuilder: (this: *IDWriteFactory3, fontSetBuilder: **IDWriteFontSetBuilder) -> HRESULT #cpp_method;
+
+    CreateFontCollectionFromFontSet: (this: *IDWriteFactory3, fontSet: *IDWriteFontSet, fontCollection: **IDWriteFontCollection1) -> HRESULT #cpp_method;
+
+    GetSystemFontCollection_1: (this: *IDWriteFactory3, includeDownloadableFonts: BOOL, fontCollection: **IDWriteFontCollection1, checkForUpdates: BOOL = 0) -> HRESULT #cpp_method;
+
+    GetFontDownloadQueue: (this: *IDWriteFactory3, fontDownloadQueue: **IDWriteFontDownloadQueue) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory3_CreateGlyphRunAnalysis_2 :: inline (this: *IDWriteFactory3, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, transform: /*const*/ *DWRITE_MATRIX, renderingMode: DWRITE_RENDERING_MODE1, measuringMode: DWRITE_MEASURING_MODE, gridFitMode: DWRITE_GRID_FIT_MODE, antialiasMode: DWRITE_TEXT_ANTIALIAS_MODE, baselineOriginX: float, baselineOriginY: float, glyphRunAnalysis: **IDWriteGlyphRunAnalysis) -> HRESULT { return this.idwritefactory3_vtable.CreateGlyphRunAnalysis_2(this, glyphRun, transform, renderingMode, measuringMode, gridFitMode, antialiasMode, baselineOriginX, baselineOriginY, glyphRunAnalysis); }
+
+IDWriteFactory3_CreateCustomRenderingParams_3 :: inline (this: *IDWriteFactory3, gamma: float, enhancedContrast: float, grayscaleEnhancedContrast: float, clearTypeLevel: float, pixelGeometry: DWRITE_PIXEL_GEOMETRY, renderingMode: DWRITE_RENDERING_MODE1, gridFitMode: DWRITE_GRID_FIT_MODE, renderingParams: **IDWriteRenderingParams3) -> HRESULT { return this.idwritefactory3_vtable.CreateCustomRenderingParams_3(this, gamma, enhancedContrast, grayscaleEnhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, gridFitMode, renderingParams); }
+
+IDWriteFactory3_CreateFontFaceReference :: inline (this: *IDWriteFactory3, fontFile: *IDWriteFontFile, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefactory3_vtable.CreateFontFaceReference(this, fontFile, faceIndex, fontSimulations, fontFaceReference); }
+
+IDWriteFactory3_CreateFontFaceReference_1 :: inline (this: *IDWriteFactory3, filePath: /*const*/ *s16, lastWriteTime: /*const*/ *FILETIME, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefactory3_vtable.CreateFontFaceReference_1(this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference); }
+
+IDWriteFactory3_GetSystemFontSet :: inline (this: *IDWriteFactory3, fontSet: **IDWriteFontSet) -> HRESULT { return this.idwritefactory3_vtable.GetSystemFontSet(this, fontSet); }
+
+IDWriteFactory3_CreateFontSetBuilder :: inline (this: *IDWriteFactory3, fontSetBuilder: **IDWriteFontSetBuilder) -> HRESULT { return this.idwritefactory3_vtable.CreateFontSetBuilder(this, fontSetBuilder); }
+
+IDWriteFactory3_CreateFontCollectionFromFontSet :: inline (this: *IDWriteFactory3, fontSet: *IDWriteFontSet, fontCollection: **IDWriteFontCollection1) -> HRESULT { return this.idwritefactory3_vtable.CreateFontCollectionFromFontSet(this, fontSet, fontCollection); }
+
+IDWriteFactory3_GetSystemFontCollection_1 :: inline (this: *IDWriteFactory3, includeDownloadableFonts: BOOL, fontCollection: **IDWriteFontCollection1, checkForUpdates: BOOL = 0) -> HRESULT { return this.idwritefactory3_vtable.GetSystemFontCollection_1(this, includeDownloadableFonts, fontCollection, checkForUpdates); }
+
+IDWriteFactory3_GetFontDownloadQueue :: inline (this: *IDWriteFactory3, fontDownloadQueue: **IDWriteFontDownloadQueue) -> HRESULT { return this.idwritefactory3_vtable.GetFontDownloadQueue(this, fontDownloadQueue); }
+
+vtable :: (obj: *IDWriteFactory3) -> *IDWriteFactory3_VTable { return obj.idwritefactory3_vtable; }
+
+
+IDWriteFontSet :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontset_vtable: *IDWriteFontSet_VTable;
+}
+IDWriteFontSet_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFontCount: (this: *IDWriteFontSet) -> u32 #cpp_method;
+
+    GetFontFaceReference: (this: *IDWriteFontSet, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    FindFontFaceReference: (this: *IDWriteFontSet, fontFaceReference: *IDWriteFontFaceReference, listIndex: *u32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    FindFontFace: (this: *IDWriteFontSet, fontFace: *IDWriteFontFace, listIndex: *u32, exists: *BOOL) -> HRESULT #cpp_method;
+
+    GetPropertyValues: (this: *IDWriteFontSet, propertyID: DWRITE_FONT_PROPERTY_ID, values: **IDWriteStringList) -> HRESULT #cpp_method;
+
+    GetPropertyValues_1: (this: *IDWriteFontSet, propertyID: DWRITE_FONT_PROPERTY_ID, preferredLocaleNames: /*const*/ *s16, values: **IDWriteStringList) -> HRESULT #cpp_method;
+
+    GetPropertyValues_2: (this: *IDWriteFontSet, listIndex: u32, propertyId: DWRITE_FONT_PROPERTY_ID, exists: *BOOL, values: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetPropertyOccurrenceCount: (this: *IDWriteFontSet, property: *DWRITE_FONT_PROPERTY, propertyOccurrenceCount: *u32) -> HRESULT #cpp_method;
+
+    GetMatchingFonts: (this: *IDWriteFontSet, familyName: *s16, fontWeight: DWRITE_FONT_WEIGHT, fontStretch: DWRITE_FONT_STRETCH, fontStyle: DWRITE_FONT_STYLE, filteredSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+
+    GetMatchingFonts_1: (this: *IDWriteFontSet, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, filteredSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+}
+
+IDWriteFontSet_GetFontCount :: inline (this: *IDWriteFontSet) -> u32 { return this.idwritefontset_vtable.GetFontCount(this); }
+
+IDWriteFontSet_GetFontFaceReference :: inline (this: *IDWriteFontSet, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefontset_vtable.GetFontFaceReference(this, listIndex, fontFaceReference); }
+
+IDWriteFontSet_FindFontFaceReference :: inline (this: *IDWriteFontSet, fontFaceReference: *IDWriteFontFaceReference, listIndex: *u32, exists: *BOOL) -> HRESULT { return this.idwritefontset_vtable.FindFontFaceReference(this, fontFaceReference, listIndex, exists); }
+
+IDWriteFontSet_FindFontFace :: inline (this: *IDWriteFontSet, fontFace: *IDWriteFontFace, listIndex: *u32, exists: *BOOL) -> HRESULT { return this.idwritefontset_vtable.FindFontFace(this, fontFace, listIndex, exists); }
+
+IDWriteFontSet_GetPropertyValues :: inline (this: *IDWriteFontSet, propertyID: DWRITE_FONT_PROPERTY_ID, values: **IDWriteStringList) -> HRESULT { return this.idwritefontset_vtable.GetPropertyValues(this, propertyID, values); }
+
+IDWriteFontSet_GetPropertyValues_1 :: inline (this: *IDWriteFontSet, propertyID: DWRITE_FONT_PROPERTY_ID, preferredLocaleNames: /*const*/ *s16, values: **IDWriteStringList) -> HRESULT { return this.idwritefontset_vtable.GetPropertyValues_1(this, propertyID, preferredLocaleNames, values); }
+
+IDWriteFontSet_GetPropertyValues_2 :: inline (this: *IDWriteFontSet, listIndex: u32, propertyId: DWRITE_FONT_PROPERTY_ID, exists: *BOOL, values: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontset_vtable.GetPropertyValues_2(this, listIndex, propertyId, exists, values); }
+
+IDWriteFontSet_GetPropertyOccurrenceCount :: inline (this: *IDWriteFontSet, property: *DWRITE_FONT_PROPERTY, propertyOccurrenceCount: *u32) -> HRESULT { return this.idwritefontset_vtable.GetPropertyOccurrenceCount(this, property, propertyOccurrenceCount); }
+
+IDWriteFontSet_GetMatchingFonts :: inline (this: *IDWriteFontSet, familyName: /*const*/ *s16, fontWeight: DWRITE_FONT_WEIGHT, fontStretch: DWRITE_FONT_STRETCH, fontStyle: DWRITE_FONT_STYLE, filteredSet: **IDWriteFontSet) -> HRESULT { return this.idwritefontset_vtable.GetMatchingFonts(this, familyName, fontWeight, fontStretch, fontStyle, filteredSet); }
+
+IDWriteFontSet_GetMatchingFonts_1 :: inline (this: *IDWriteFontSet, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, filteredSet: **IDWriteFontSet) -> HRESULT { return this.idwritefontset_vtable.GetMatchingFonts_1(this, properties, propertyCount, filteredSet); }
+
+vtable :: (obj: *IDWriteFontSet) -> *IDWriteFontSet_VTable { return obj.idwritefontset_vtable; }
+
+
+IDWriteFontSetBuilder :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontsetbuilder_vtable: *IDWriteFontSetBuilder_VTable;
+}
+IDWriteFontSetBuilder_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddFontFaceReference: (this: *IDWriteFontSetBuilder, fontFaceReference: *IDWriteFontFaceReference, properties: *DWRITE_FONT_PROPERTY, propertyCount: u32) -> HRESULT #cpp_method;
+
+    AddFontFaceReference_1: (this: *IDWriteFontSetBuilder, fontFaceReference: *IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    AddFontSet: (this: *IDWriteFontSetBuilder, fontSet: *IDWriteFontSet) -> HRESULT #cpp_method;
+
+    CreateFontSet: (this: *IDWriteFontSetBuilder, fontSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+}
+
+IDWriteFontSetBuilder_AddFontFaceReference :: inline (this: *IDWriteFontSetBuilder, fontFaceReference: *IDWriteFontFaceReference, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32) -> HRESULT { return this.idwritefontsetbuilder_vtable.AddFontFaceReference(this, fontFaceReference, properties, propertyCount); }
+
+IDWriteFontSetBuilder_AddFontFaceReference_1 :: inline (this: *IDWriteFontSetBuilder, fontFaceReference: *IDWriteFontFaceReference) -> HRESULT { return this.idwritefontsetbuilder_vtable.AddFontFaceReference_1(this, fontFaceReference); }
+
+IDWriteFontSetBuilder_AddFontSet :: inline (this: *IDWriteFontSetBuilder, fontSet: *IDWriteFontSet) -> HRESULT { return this.idwritefontsetbuilder_vtable.AddFontSet(this, fontSet); }
+
+IDWriteFontSetBuilder_CreateFontSet :: inline (this: *IDWriteFontSetBuilder, fontSet: **IDWriteFontSet) -> HRESULT { return this.idwritefontsetbuilder_vtable.CreateFontSet(this, fontSet); }
+
+vtable :: (obj: *IDWriteFontSetBuilder) -> *IDWriteFontSetBuilder_VTable { return obj.idwritefontsetbuilder_vtable; }
+
+
+IDWriteFontCollection1 :: struct {
+    #as using idwritefontcollection: IDWriteFontCollection;
+    #place idwritefontcollection; idwritefontcollection1_vtable: *IDWriteFontCollection1_VTable;
+}
+IDWriteFontCollection1_VTable :: struct #type_info_none {
+    using idwritefontcollection: IDWriteFontCollection_VTable;
+    GetFontSet: (this: *IDWriteFontCollection1, fontSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+
+    GetFontFamily_1: (this: *IDWriteFontCollection1, index: u32, fontFamily: **IDWriteFontFamily1) -> HRESULT #cpp_method;
+}
+
+IDWriteFontCollection1_GetFontSet :: inline (this: *IDWriteFontCollection1, fontSet: **IDWriteFontSet) -> HRESULT { return this.idwritefontcollection1_vtable.GetFontSet(this, fontSet); }
+
+IDWriteFontCollection1_GetFontFamily_1 :: inline (this: *IDWriteFontCollection1, index: u32, fontFamily: **IDWriteFontFamily1) -> HRESULT { return this.idwritefontcollection1_vtable.GetFontFamily_1(this, index, fontFamily); }
+
+vtable :: (obj: *IDWriteFontCollection1) -> *IDWriteFontCollection1_VTable { return obj.idwritefontcollection1_vtable; }
+
+
+IDWriteFontFamily1 :: struct {
+    #as using idwritefontfamily: IDWriteFontFamily;
+    #place idwritefontfamily; idwritefontfamily1_vtable: *IDWriteFontFamily1_VTable;
+}
+IDWriteFontFamily1_VTable :: struct #type_info_none {
+    using idwritefontfamily: IDWriteFontFamily_VTable;
+    GetFontLocality: (this: *IDWriteFontFamily1, listIndex: u32) -> DWRITE_LOCALITY #cpp_method;
+
+    GetFont_1: (this: *IDWriteFontFamily1, listIndex: u32, font: **IDWriteFont3) -> HRESULT #cpp_method;
+
+    GetFontFaceReference: (this: *IDWriteFontFamily1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFamily1_GetFontLocality :: inline (this: *IDWriteFontFamily1, listIndex: u32) -> DWRITE_LOCALITY { return this.idwritefontfamily1_vtable.GetFontLocality(this, listIndex); }
+
+IDWriteFontFamily1_GetFont_1 :: inline (this: *IDWriteFontFamily1, listIndex: u32, font: **IDWriteFont3) -> HRESULT { return this.idwritefontfamily1_vtable.GetFont_1(this, listIndex, font); }
+
+IDWriteFontFamily1_GetFontFaceReference :: inline (this: *IDWriteFontFamily1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefontfamily1_vtable.GetFontFaceReference(this, listIndex, fontFaceReference); }
+
+vtable :: (obj: *IDWriteFontFamily1) -> *IDWriteFontFamily1_VTable { return obj.idwritefontfamily1_vtable; }
+
+
+IDWriteFontList1 :: struct {
+    #as using idwritefontlist: IDWriteFontList;
+    #place idwritefontlist; idwritefontlist1_vtable: *IDWriteFontList1_VTable;
+}
+IDWriteFontList1_VTable :: struct #type_info_none {
+    using idwritefontlist: IDWriteFontList_VTable;
+    GetFontLocality: (this: *IDWriteFontList1, listIndex: u32) -> DWRITE_LOCALITY #cpp_method;
+
+    GetFont_1: (this: *IDWriteFontList1, listIndex: u32, font: **IDWriteFont3) -> HRESULT #cpp_method;
+
+    GetFontFaceReference: (this: *IDWriteFontList1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+}
+
+IDWriteFontList1_GetFontLocality :: inline (this: *IDWriteFontList1, listIndex: u32) -> DWRITE_LOCALITY { return this.idwritefontlist1_vtable.GetFontLocality(this, listIndex); }
+
+IDWriteFontList1_GetFont_1 :: inline (this: *IDWriteFontList1, listIndex: u32, font: **IDWriteFont3) -> HRESULT { return this.idwritefontlist1_vtable.GetFont_1(this, listIndex, font); }
+
+IDWriteFontList1_GetFontFaceReference :: inline (this: *IDWriteFontList1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefontlist1_vtable.GetFontFaceReference(this, listIndex, fontFaceReference); }
+
+vtable :: (obj: *IDWriteFontList1) -> *IDWriteFontList1_VTable { return obj.idwritefontlist1_vtable; }
+
+
+IDWriteFontFaceReference :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontfacereference_vtable: *IDWriteFontFaceReference_VTable;
+}
+IDWriteFontFaceReference_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    CreateFontFace: (this: *IDWriteFontFaceReference, fontFace: **IDWriteFontFace3) -> HRESULT #cpp_method;
+
+    CreateFontFaceWithSimulations: (this: *IDWriteFontFaceReference, fontFaceSimulationFlags: DWRITE_FONT_SIMULATIONS, fontFace: **IDWriteFontFace3) -> HRESULT #cpp_method;
+
+    Equals: (this: *IDWriteFontFaceReference, fontFaceReference: *IDWriteFontFaceReference) -> BOOL #cpp_method;
+
+    GetFontFaceIndex: (this: *IDWriteFontFaceReference) -> u32 #cpp_method;
+
+    GetSimulations: (this: *IDWriteFontFaceReference) -> DWRITE_FONT_SIMULATIONS #cpp_method;
+
+    GetFontFile: (this: *IDWriteFontFaceReference, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    GetLocalFileSize: (this: *IDWriteFontFaceReference) -> u64 #cpp_method;
+
+    GetFileSize: (this: *IDWriteFontFaceReference) -> u64 #cpp_method;
+
+    GetFileTime: (this: *IDWriteFontFaceReference, lastWriteTime: *FILETIME) -> HRESULT #cpp_method;
+
+    GetLocality: (this: *IDWriteFontFaceReference) -> DWRITE_LOCALITY #cpp_method;
+
+    EnqueueFontDownloadRequest: (this: *IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    EnqueueCharacterDownloadRequest: (this: *IDWriteFontFaceReference, characters: *s16, characterCount: u32) -> HRESULT #cpp_method;
+
+    EnqueueGlyphDownloadRequest: (this: *IDWriteFontFaceReference, glyphIndices: *u16, glyphCount: u32) -> HRESULT #cpp_method;
+
+    EnqueueFileFragmentDownloadRequest: (this: *IDWriteFontFaceReference, fileOffset: u64, fragmentSize: u64) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFaceReference_CreateFontFace :: inline (this: *IDWriteFontFaceReference, fontFace: **IDWriteFontFace3) -> HRESULT { return this.idwritefontfacereference_vtable.CreateFontFace(this, fontFace); }
+
+IDWriteFontFaceReference_CreateFontFaceWithSimulations :: inline (this: *IDWriteFontFaceReference, fontFaceSimulationFlags: DWRITE_FONT_SIMULATIONS, fontFace: **IDWriteFontFace3) -> HRESULT { return this.idwritefontfacereference_vtable.CreateFontFaceWithSimulations(this, fontFaceSimulationFlags, fontFace); }
+
+IDWriteFontFaceReference_Equals :: inline (this: *IDWriteFontFaceReference, fontFaceReference: *IDWriteFontFaceReference) -> BOOL { return this.idwritefontfacereference_vtable.Equals(this, fontFaceReference); }
+
+IDWriteFontFaceReference_GetFontFaceIndex :: inline (this: *IDWriteFontFaceReference) -> u32 { return this.idwritefontfacereference_vtable.GetFontFaceIndex(this); }
+
+IDWriteFontFaceReference_GetSimulations :: inline (this: *IDWriteFontFaceReference) -> DWRITE_FONT_SIMULATIONS { return this.idwritefontfacereference_vtable.GetSimulations(this); }
+
+IDWriteFontFaceReference_GetFontFile :: inline (this: *IDWriteFontFaceReference, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwritefontfacereference_vtable.GetFontFile(this, fontFile); }
+
+IDWriteFontFaceReference_GetLocalFileSize :: inline (this: *IDWriteFontFaceReference) -> u64 { return this.idwritefontfacereference_vtable.GetLocalFileSize(this); }
+
+IDWriteFontFaceReference_GetFileSize :: inline (this: *IDWriteFontFaceReference) -> u64 { return this.idwritefontfacereference_vtable.GetFileSize(this); }
+
+IDWriteFontFaceReference_GetFileTime :: inline (this: *IDWriteFontFaceReference, lastWriteTime: *FILETIME) -> HRESULT { return this.idwritefontfacereference_vtable.GetFileTime(this, lastWriteTime); }
+
+IDWriteFontFaceReference_GetLocality :: inline (this: *IDWriteFontFaceReference) -> DWRITE_LOCALITY { return this.idwritefontfacereference_vtable.GetLocality(this); }
+
+IDWriteFontFaceReference_EnqueueFontDownloadRequest :: inline (this: *IDWriteFontFaceReference) -> HRESULT { return this.idwritefontfacereference_vtable.EnqueueFontDownloadRequest(this); }
+
+IDWriteFontFaceReference_EnqueueCharacterDownloadRequest :: inline (this: *IDWriteFontFaceReference, characters: *s16, characterCount: u32) -> HRESULT { return this.idwritefontfacereference_vtable.EnqueueCharacterDownloadRequest(this, characters, characterCount); }
+
+IDWriteFontFaceReference_EnqueueGlyphDownloadRequest :: inline (this: *IDWriteFontFaceReference, glyphIndices: *u16, glyphCount: u32) -> HRESULT { return this.idwritefontfacereference_vtable.EnqueueGlyphDownloadRequest(this, glyphIndices, glyphCount); }
+
+IDWriteFontFaceReference_EnqueueFileFragmentDownloadRequest :: inline (this: *IDWriteFontFaceReference, fileOffset: u64, fragmentSize: u64) -> HRESULT { return this.idwritefontfacereference_vtable.EnqueueFileFragmentDownloadRequest(this, fileOffset, fragmentSize); }
+
+vtable :: (obj: *IDWriteFontFaceReference) -> *IDWriteFontFaceReference_VTable { return obj.idwritefontfacereference_vtable; }
+
+
+IDWriteFont3 :: struct {
+    #as using idwritefont2: IDWriteFont2;
+    #place idwritefont2; idwritefont3_vtable: *IDWriteFont3_VTable;
+}
+IDWriteFont3_VTable :: struct #type_info_none {
+    using idwritefont2: IDWriteFont2_VTable;
+    CreateFontFace_1: (this: *IDWriteFont3, fontFace: **IDWriteFontFace3) -> HRESULT #cpp_method;
+
+    Equals: (this: *IDWriteFont3, font: *IDWriteFont) -> BOOL #cpp_method;
+
+    GetFontFaceReference: (this: *IDWriteFont3, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    HasCharacter_1: (this: *IDWriteFont3, unicodeValue: u32) -> BOOL #cpp_method;
+
+    GetLocality: (this: *IDWriteFont3) -> DWRITE_LOCALITY #cpp_method;
+}
+
+IDWriteFont3_CreateFontFace_1 :: inline (this: *IDWriteFont3, fontFace: **IDWriteFontFace3) -> HRESULT { return this.idwritefont3_vtable.CreateFontFace_1(this, fontFace); }
+
+IDWriteFont3_Equals :: inline (this: *IDWriteFont3, font: *IDWriteFont) -> BOOL { return this.idwritefont3_vtable.Equals(this, font); }
+
+IDWriteFont3_GetFontFaceReference :: inline (this: *IDWriteFont3, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefont3_vtable.GetFontFaceReference(this, fontFaceReference); }
+
+IDWriteFont3_HasCharacter_1 :: inline (this: *IDWriteFont3, unicodeValue: u32) -> BOOL { return this.idwritefont3_vtable.HasCharacter_1(this, unicodeValue); }
+
+IDWriteFont3_GetLocality :: inline (this: *IDWriteFont3) -> DWRITE_LOCALITY { return this.idwritefont3_vtable.GetLocality(this); }
+
+vtable :: (obj: *IDWriteFont3) -> *IDWriteFont3_VTable { return obj.idwritefont3_vtable; }
+
+
+IDWriteFontFace3 :: struct {
+    #as using idwritefontface2: IDWriteFontFace2;
+    #place idwritefontface2; idwritefontface3_vtable: *IDWriteFontFace3_VTable;
+}
+IDWriteFontFace3_VTable :: struct #type_info_none {
+    using idwritefontface2: IDWriteFontFace2_VTable;
+    GetFontFaceReference: (this: *IDWriteFontFace3, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT #cpp_method;
+
+    GetPanose: (this: *IDWriteFontFace3, panose: *DWRITE_PANOSE) -> void #cpp_method;
+
+    GetWeight: (this: *IDWriteFontFace3) -> DWRITE_FONT_WEIGHT #cpp_method;
+
+    GetStretch: (this: *IDWriteFontFace3) -> DWRITE_FONT_STRETCH #cpp_method;
+
+    GetStyle: (this: *IDWriteFontFace3) -> DWRITE_FONT_STYLE #cpp_method;
+
+    GetFamilyNames: (this: *IDWriteFontFace3, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetFaceNames: (this: *IDWriteFontFace3, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetInformationalStrings: (this: *IDWriteFontFace3, informationalStringID: DWRITE_INFORMATIONAL_STRING_ID, informationalStrings: **IDWriteLocalizedStrings, exists: *BOOL) -> HRESULT #cpp_method;
+
+    HasCharacter: (this: *IDWriteFontFace3, unicodeValue: u32) -> BOOL #cpp_method;
+
+    GetRecommendedRenderingMode_3: (this: *IDWriteFontFace3, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE1, gridFitMode: *DWRITE_GRID_FIT_MODE) -> HRESULT #cpp_method;
+
+    IsCharacterLocal: (this: *IDWriteFontFace3, unicodeValue: u32) -> BOOL #cpp_method;
+
+    IsGlyphLocal: (this: *IDWriteFontFace3, glyphId: u16) -> BOOL #cpp_method;
+
+    AreCharactersLocal: (this: *IDWriteFontFace3, characters: *s16, characterCount: u32, enqueueIfNotLocal: BOOL, isLocal: *BOOL) -> HRESULT #cpp_method;
+
+    AreGlyphsLocal: (this: *IDWriteFontFace3, glyphIndices: *u16, glyphCount: u32, enqueueIfNotLocal: BOOL, isLocal: *BOOL) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFace3_GetFontFaceReference :: inline (this: *IDWriteFontFace3, fontFaceReference: **IDWriteFontFaceReference) -> HRESULT { return this.idwritefontface3_vtable.GetFontFaceReference(this, fontFaceReference); }
+
+IDWriteFontFace3_GetPanose :: inline (this: *IDWriteFontFace3, panose: *DWRITE_PANOSE) { this.idwritefontface3_vtable.GetPanose(this, panose); }
+
+IDWriteFontFace3_GetWeight :: inline (this: *IDWriteFontFace3) -> DWRITE_FONT_WEIGHT { return this.idwritefontface3_vtable.GetWeight(this); }
+
+IDWriteFontFace3_GetStretch :: inline (this: *IDWriteFontFace3) -> DWRITE_FONT_STRETCH { return this.idwritefontface3_vtable.GetStretch(this); }
+
+IDWriteFontFace3_GetStyle :: inline (this: *IDWriteFontFace3) -> DWRITE_FONT_STYLE { return this.idwritefontface3_vtable.GetStyle(this); }
+
+IDWriteFontFace3_GetFamilyNames :: inline (this: *IDWriteFontFace3, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontface3_vtable.GetFamilyNames(this, names); }
+
+IDWriteFontFace3_GetFaceNames :: inline (this: *IDWriteFontFace3, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontface3_vtable.GetFaceNames(this, names); }
+
+IDWriteFontFace3_GetInformationalStrings :: inline (this: *IDWriteFontFace3, informationalStringID: DWRITE_INFORMATIONAL_STRING_ID, informationalStrings: **IDWriteLocalizedStrings, exists: *BOOL) -> HRESULT { return this.idwritefontface3_vtable.GetInformationalStrings(this, informationalStringID, informationalStrings, exists); }
+
+IDWriteFontFace3_HasCharacter :: inline (this: *IDWriteFontFace3, unicodeValue: u32) -> BOOL { return this.idwritefontface3_vtable.HasCharacter(this, unicodeValue); }
+
+IDWriteFontFace3_GetRecommendedRenderingMode_3 :: inline (this: *IDWriteFontFace3, fontEmSize: float, dpiX: float, dpiY: float, transform: /*const*/ *DWRITE_MATRIX, isSideways: BOOL, outlineThreshold: DWRITE_OUTLINE_THRESHOLD, measuringMode: DWRITE_MEASURING_MODE, renderingParams: *IDWriteRenderingParams, renderingMode: *DWRITE_RENDERING_MODE1, gridFitMode: *DWRITE_GRID_FIT_MODE) -> HRESULT { return this.idwritefontface3_vtable.GetRecommendedRenderingMode_3(this, fontEmSize, dpiX, dpiY, transform, isSideways, outlineThreshold, measuringMode, renderingParams, renderingMode, gridFitMode); }
+
+IDWriteFontFace3_IsCharacterLocal :: inline (this: *IDWriteFontFace3, unicodeValue: u32) -> BOOL { return this.idwritefontface3_vtable.IsCharacterLocal(this, unicodeValue); }
+
+IDWriteFontFace3_IsGlyphLocal :: inline (this: *IDWriteFontFace3, glyphId: u16) -> BOOL { return this.idwritefontface3_vtable.IsGlyphLocal(this, glyphId); }
+
+IDWriteFontFace3_AreCharactersLocal :: inline (this: *IDWriteFontFace3, characters: *s16, characterCount: u32, enqueueIfNotLocal: BOOL, isLocal: *BOOL) -> HRESULT { return this.idwritefontface3_vtable.AreCharactersLocal(this, characters, characterCount, enqueueIfNotLocal, isLocal); }
+
+IDWriteFontFace3_AreGlyphsLocal :: inline (this: *IDWriteFontFace3, glyphIndices: *u16, glyphCount: u32, enqueueIfNotLocal: BOOL, isLocal: *BOOL) -> HRESULT { return this.idwritefontface3_vtable.AreGlyphsLocal(this, glyphIndices, glyphCount, enqueueIfNotLocal, isLocal); }
+
+vtable :: (obj: *IDWriteFontFace3) -> *IDWriteFontFace3_VTable { return obj.idwritefontface3_vtable; }
+
+
+IDWriteStringList :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritestringlist_vtable: *IDWriteStringList_VTable;
+}
+IDWriteStringList_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetCount: (this: *IDWriteStringList) -> u32 #cpp_method;
+
+    GetLocaleNameLength: (this: *IDWriteStringList, listIndex: u32, length: *u32) -> HRESULT #cpp_method;
+
+    GetLocaleName: (this: *IDWriteStringList, listIndex: u32, localeName: *s16, size: u32) -> HRESULT #cpp_method;
+
+    GetStringLength: (this: *IDWriteStringList, listIndex: u32, length: *u32) -> HRESULT #cpp_method;
+
+    GetString: (this: *IDWriteStringList, listIndex: u32, stringBuffer: *s16, stringBufferSize: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteStringList_GetCount :: inline (this: *IDWriteStringList) -> u32 { return this.idwritestringlist_vtable.GetCount(this); }
+
+IDWriteStringList_GetLocaleNameLength :: inline (this: *IDWriteStringList, listIndex: u32, length: *u32) -> HRESULT { return this.idwritestringlist_vtable.GetLocaleNameLength(this, listIndex, length); }
+
+IDWriteStringList_GetLocaleName :: inline (this: *IDWriteStringList, listIndex: u32, localeName: *s16, size: u32) -> HRESULT { return this.idwritestringlist_vtable.GetLocaleName(this, listIndex, localeName, size); }
+
+IDWriteStringList_GetStringLength :: inline (this: *IDWriteStringList, listIndex: u32, length: *u32) -> HRESULT { return this.idwritestringlist_vtable.GetStringLength(this, listIndex, length); }
+
+IDWriteStringList_GetString :: inline (this: *IDWriteStringList, listIndex: u32, stringBuffer: *s16, stringBufferSize: u32) -> HRESULT { return this.idwritestringlist_vtable.GetString(this, listIndex, stringBuffer, stringBufferSize); }
+
+vtable :: (obj: *IDWriteStringList) -> *IDWriteStringList_VTable { return obj.idwritestringlist_vtable; }
+
+
+IDWriteFontDownloadListener :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontdownloadlistener_vtable: *IDWriteFontDownloadListener_VTable;
+}
+IDWriteFontDownloadListener_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    DownloadCompleted: (this: *IDWriteFontDownloadListener, downloadQueue: *IDWriteFontDownloadQueue, _context: *IUnknown, downloadResult: HRESULT) -> void #cpp_method;
+}
+IDWriteFontDownloadListener_DownloadCompleted :: inline (this: *IDWriteFontDownloadListener, downloadQueue: *IDWriteFontDownloadQueue, _context: *IUnknown, downloadResult: HRESULT) { this.idwritefontdownloadlistener_vtable.DownloadCompleted(this, downloadQueue, _context, downloadResult); }
+
+vtable :: (obj: *IDWriteFontDownloadListener) -> *IDWriteFontDownloadListener_VTable { return obj.idwritefontdownloadlistener_vtable; }
+
+
+IDWriteFontDownloadQueue :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontdownloadqueue_vtable: *IDWriteFontDownloadQueue_VTable;
+}
+IDWriteFontDownloadQueue_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    AddListener: (this: *IDWriteFontDownloadQueue, listener: *IDWriteFontDownloadListener, token: *u32) -> HRESULT #cpp_method;
+
+    RemoveListener: (this: *IDWriteFontDownloadQueue, token: u32) -> HRESULT #cpp_method;
+
+    IsEmpty: (this: *IDWriteFontDownloadQueue) -> BOOL #cpp_method;
+
+    BeginDownload: (this: *IDWriteFontDownloadQueue, _context: *IUnknown = null) -> HRESULT #cpp_method;
+
+    CancelDownload: (this: *IDWriteFontDownloadQueue) -> HRESULT #cpp_method;
+
+    GetGenerationCount: (this: *IDWriteFontDownloadQueue) -> u64 #cpp_method;
+}
+
+IDWriteFontDownloadQueue_AddListener :: inline (this: *IDWriteFontDownloadQueue, listener: *IDWriteFontDownloadListener, token: *u32) -> HRESULT { return this.idwritefontdownloadqueue_vtable.AddListener(this, listener, token); }
+
+IDWriteFontDownloadQueue_RemoveListener :: inline (this: *IDWriteFontDownloadQueue, token: u32) -> HRESULT { return this.idwritefontdownloadqueue_vtable.RemoveListener(this, token); }
+
+IDWriteFontDownloadQueue_IsEmpty :: inline (this: *IDWriteFontDownloadQueue) -> BOOL { return this.idwritefontdownloadqueue_vtable.IsEmpty(this); }
+
+IDWriteFontDownloadQueue_BeginDownload :: inline (this: *IDWriteFontDownloadQueue, _context: *IUnknown = null) -> HRESULT { return this.idwritefontdownloadqueue_vtable.BeginDownload(this, _context); }
+
+IDWriteFontDownloadQueue_CancelDownload :: inline (this: *IDWriteFontDownloadQueue) -> HRESULT { return this.idwritefontdownloadqueue_vtable.CancelDownload(this); }
+
+IDWriteFontDownloadQueue_GetGenerationCount :: inline (this: *IDWriteFontDownloadQueue) -> u64 { return this.idwritefontdownloadqueue_vtable.GetGenerationCount(this); }
+
+vtable :: (obj: *IDWriteFontDownloadQueue) -> *IDWriteFontDownloadQueue_VTable { return obj.idwritefontdownloadqueue_vtable; }
+
+
+IDWriteGdiInterop1 :: struct {
+    #as using idwritegdiinterop: IDWriteGdiInterop;
+    #place idwritegdiinterop; idwritegdiinterop1_vtable: *IDWriteGdiInterop1_VTable;
+}
+IDWriteGdiInterop1_VTable :: struct #type_info_none {
+    using idwritegdiinterop: IDWriteGdiInterop_VTable;
+    CreateFontFromLOGFONT_1: (this: *IDWriteGdiInterop1, logFont: /*const*/ *LOGFONTW, fontCollection: *IDWriteFontCollection, font: **IDWriteFont) -> HRESULT #cpp_method;
+
+    GetFontSignature: (this: *IDWriteGdiInterop1, fontFace: *IDWriteFontFace, fontSignature: *FONTSIGNATURE) -> HRESULT #cpp_method;
+
+    GetFontSignature_1: (this: *IDWriteGdiInterop1, font: *IDWriteFont, fontSignature: *FONTSIGNATURE) -> HRESULT #cpp_method;
+
+    GetMatchingFontsByLOGFONT: (this: *IDWriteGdiInterop1, logFont: *LOGFONT, fontSet: *IDWriteFontSet, filteredSet: **IDWriteFontSet) -> HRESULT #cpp_method;
+}
+
+IDWriteGdiInterop1_CreateFontFromLOGFONT_1 :: inline (this: *IDWriteGdiInterop1, logFont: /*const*/ *LOGFONTW, fontCollection: *IDWriteFontCollection, font: **IDWriteFont) -> HRESULT { return this.idwritegdiinterop1_vtable.CreateFontFromLOGFONT_1(this, logFont, fontCollection, font); }
+
+IDWriteGdiInterop1_GetFontSignature :: inline (this: *IDWriteGdiInterop1, fontFace: *IDWriteFontFace, fontSignature: *FONTSIGNATURE) -> HRESULT { return this.idwritegdiinterop1_vtable.GetFontSignature(this, fontFace, fontSignature); }
+
+IDWriteGdiInterop1_GetFontSignature_1 :: inline (this: *IDWriteGdiInterop1, font: *IDWriteFont, fontSignature: *FONTSIGNATURE) -> HRESULT { return this.idwritegdiinterop1_vtable.GetFontSignature_1(this, font, fontSignature); }
+
+IDWriteGdiInterop1_GetMatchingFontsByLOGFONT :: inline (this: *IDWriteGdiInterop1, logFont: *LOGFONT, fontSet: *IDWriteFontSet, filteredSet: **IDWriteFontSet) -> HRESULT { return this.idwritegdiinterop1_vtable.GetMatchingFontsByLOGFONT(this, logFont, fontSet, filteredSet); }
+
+vtable :: (obj: *IDWriteGdiInterop1) -> *IDWriteGdiInterop1_VTable { return obj.idwritegdiinterop1_vtable; }
+
+
+DWRITE_LINE_METRICS1 :: struct {
+    #as using dwrite_line_metrics: DWRITE_LINE_METRICS;
+
+    leadingBefore: float;
+
+    leadingAfter:  float;
+}
+
+DWRITE_FONT_LINE_GAP_USAGE :: enum s32 {
+    DEFAULT  :: 0;
+
+    DISABLED :: 1;
+
+    ENABLED  :: 2;
+
+    DWRITE_FONT_LINE_GAP_USAGE_DEFAULT  :: DEFAULT;
+
+    DWRITE_FONT_LINE_GAP_USAGE_DISABLED :: DISABLED;
+
+    DWRITE_FONT_LINE_GAP_USAGE_ENABLED  :: ENABLED;
+}
+
+DWRITE_LINE_SPACING :: struct {
+    method:           DWRITE_LINE_SPACING_METHOD;
+
+    height:           float;
+
+    baseline:         float;
+
+    leadingBefore:    float;
+
+    fontLineGapUsage: DWRITE_FONT_LINE_GAP_USAGE;
+}
+
+IDWriteTextFormat2 :: struct {
+    #as using idwritetextformat1: IDWriteTextFormat1;
+    #place idwritetextformat1; idwritetextformat2_vtable: *IDWriteTextFormat2_VTable;
+}
+IDWriteTextFormat2_VTable :: struct #type_info_none {
+    using idwritetextformat1: IDWriteTextFormat1_VTable;
+    SetLineSpacing_1: (this: *IDWriteTextFormat2, lineSpacingOptions: /*const*/ *DWRITE_LINE_SPACING) -> HRESULT #cpp_method;
+
+    GetLineSpacing_1: (this: *IDWriteTextFormat2, lineSpacingOptions: *DWRITE_LINE_SPACING) -> HRESULT #cpp_method;
+}
+
+IDWriteTextFormat2_SetLineSpacing_1 :: inline (this: *IDWriteTextFormat2, lineSpacingOptions: /*const*/ *DWRITE_LINE_SPACING) -> HRESULT { return this.idwritetextformat2_vtable.SetLineSpacing_1(this, lineSpacingOptions); }
+
+IDWriteTextFormat2_GetLineSpacing_1 :: inline (this: *IDWriteTextFormat2, lineSpacingOptions: *DWRITE_LINE_SPACING) -> HRESULT { return this.idwritetextformat2_vtable.GetLineSpacing_1(this, lineSpacingOptions); }
+
+vtable :: (obj: *IDWriteTextFormat2) -> *IDWriteTextFormat2_VTable { return obj.idwritetextformat2_vtable; }
+
+
+IDWriteTextLayout3 :: struct {
+    #as using idwritetextlayout2: IDWriteTextLayout2;
+    #place idwritetextlayout2; idwritetextlayout3_vtable: *IDWriteTextLayout3_VTable;
+}
+IDWriteTextLayout3_VTable :: struct #type_info_none {
+    using idwritetextlayout2: IDWriteTextLayout2_VTable;
+    InvalidateLayout: (this: *IDWriteTextLayout3) -> HRESULT #cpp_method;
+
+    SetLineSpacing_1: (this: *IDWriteTextLayout3, lineSpacingOptions: /*const*/ *DWRITE_LINE_SPACING) -> HRESULT #cpp_method;
+
+    GetLineSpacing_1: (this: *IDWriteTextLayout3, lineSpacingOptions: *DWRITE_LINE_SPACING) -> HRESULT #cpp_method;
+
+    GetLineMetrics_1: (this: *IDWriteTextLayout3, lineMetrics: *DWRITE_LINE_METRICS1, maxLineCount: u32, actualLineCount: *u32) -> HRESULT #cpp_method;
+}
+
+IDWriteTextLayout3_InvalidateLayout :: inline (this: *IDWriteTextLayout3) -> HRESULT { return this.idwritetextlayout3_vtable.InvalidateLayout(this); }
+
+IDWriteTextLayout3_SetLineSpacing_1 :: inline (this: *IDWriteTextLayout3, lineSpacingOptions: /*const*/ *DWRITE_LINE_SPACING) -> HRESULT { return this.idwritetextlayout3_vtable.SetLineSpacing_1(this, lineSpacingOptions); }
+
+IDWriteTextLayout3_GetLineSpacing_1 :: inline (this: *IDWriteTextLayout3, lineSpacingOptions: *DWRITE_LINE_SPACING) -> HRESULT { return this.idwritetextlayout3_vtable.GetLineSpacing_1(this, lineSpacingOptions); }
+
+IDWriteTextLayout3_GetLineMetrics_1 :: inline (this: *IDWriteTextLayout3, lineMetrics: *DWRITE_LINE_METRICS1, maxLineCount: u32, actualLineCount: *u32) -> HRESULT { return this.idwritetextlayout3_vtable.GetLineMetrics_1(this, lineMetrics, maxLineCount, actualLineCount); }
+
+vtable :: (obj: *IDWriteTextLayout3) -> *IDWriteTextLayout3_VTable { return obj.idwritetextlayout3_vtable; }
+
+
+DWRITE_COLOR_GLYPH_RUN1 :: struct {
+    #as using dwrite_color_glyph_run: DWRITE_COLOR_GLYPH_RUN;
+
+    glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS;
+
+    measuringMode:    DWRITE_MEASURING_MODE;
+}
+
+DWRITE_GLYPH_IMAGE_DATA :: struct {
+    imageData:             *void;
+
+    imageDataSize:         u32;
+
+    uniqueDataId:          u32;
+
+    pixelsPerEm:           u32;
+
+    pixelSize:             D2D1_SIZE_U;
+
+    horizontalLeftOrigin:  D2D1_POINT_2L;
+
+    horizontalRightOrigin: D2D1_POINT_2L;
+
+    verticalTopOrigin:     D2D1_POINT_2L;
+
+    verticalBottomOrigin:  D2D1_POINT_2L;
+}
+
+IDWriteColorGlyphRunEnumerator1 :: struct {
+    #as using idwritecolorglyphrunenumerator: IDWriteColorGlyphRunEnumerator;
+    #place idwritecolorglyphrunenumerator; idwritecolorglyphrunenumerator1_vtable: *IDWriteColorGlyphRunEnumerator1_VTable;
+}
+IDWriteColorGlyphRunEnumerator1_VTable :: struct #type_info_none {
+    using idwritecolorglyphrunenumerator: IDWriteColorGlyphRunEnumerator_VTable;
+    GetCurrentRun_1: (this: *IDWriteColorGlyphRunEnumerator1, colorGlyphRun: **DWRITE_COLOR_GLYPH_RUN1) -> HRESULT #cpp_method;
+}
+IDWriteColorGlyphRunEnumerator1_GetCurrentRun_1 :: inline (this: *IDWriteColorGlyphRunEnumerator1, colorGlyphRun: **DWRITE_COLOR_GLYPH_RUN1) -> HRESULT { return this.idwritecolorglyphrunenumerator1_vtable.GetCurrentRun_1(this, colorGlyphRun); }
+
+vtable :: (obj: *IDWriteColorGlyphRunEnumerator1) -> *IDWriteColorGlyphRunEnumerator1_VTable { return obj.idwritecolorglyphrunenumerator1_vtable; }
+
+
+IDWriteFontFace4 :: struct {
+    #as using idwritefontface3: IDWriteFontFace3;
+    #place idwritefontface3; idwritefontface4_vtable: *IDWriteFontFace4_VTable;
+}
+IDWriteFontFace4_VTable :: struct #type_info_none {
+    using idwritefontface3: IDWriteFontFace3_VTable;
+    GetGlyphImageFormats: (this: *IDWriteFontFace4, glyphId: u16, pixelsPerEmFirst: u32, pixelsPerEmLast: u32, glyphImageFormats: *DWRITE_GLYPH_IMAGE_FORMATS) -> HRESULT #cpp_method;
+
+    GetGlyphImageFormats_1: (this: *IDWriteFontFace4) -> DWRITE_GLYPH_IMAGE_FORMATS #cpp_method;
+
+    GetGlyphImageData: (this: *IDWriteFontFace4, glyphId: u16, pixelsPerEm: u32, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, glyphData: *DWRITE_GLYPH_IMAGE_DATA, glyphDataContext: **void) -> HRESULT #cpp_method;
+
+    ReleaseGlyphImageData: (this: *IDWriteFontFace4, glyphDataContext: *void) -> void #cpp_method;
+}
+
+IDWriteFontFace4_GetGlyphImageFormats :: inline (this: *IDWriteFontFace4, glyphId: u16, pixelsPerEmFirst: u32, pixelsPerEmLast: u32, glyphImageFormats: *DWRITE_GLYPH_IMAGE_FORMATS) -> HRESULT { return this.idwritefontface4_vtable.GetGlyphImageFormats(this, glyphId, pixelsPerEmFirst, pixelsPerEmLast, glyphImageFormats); }
+
+IDWriteFontFace4_GetGlyphImageFormats_1 :: inline (this: *IDWriteFontFace4) -> DWRITE_GLYPH_IMAGE_FORMATS { return this.idwritefontface4_vtable.GetGlyphImageFormats_1(this); }
+
+IDWriteFontFace4_GetGlyphImageData :: inline (this: *IDWriteFontFace4, glyphId: u16, pixelsPerEm: u32, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, glyphData: *DWRITE_GLYPH_IMAGE_DATA, glyphDataContext: **void) -> HRESULT { return this.idwritefontface4_vtable.GetGlyphImageData(this, glyphId, pixelsPerEm, glyphImageFormat, glyphData, glyphDataContext); }
+
+IDWriteFontFace4_ReleaseGlyphImageData :: inline (this: *IDWriteFontFace4, glyphDataContext: *void) { this.idwritefontface4_vtable.ReleaseGlyphImageData(this, glyphDataContext); }
+
+vtable :: (obj: *IDWriteFontFace4) -> *IDWriteFontFace4_VTable { return obj.idwritefontface4_vtable; }
+
+
+IDWriteFactory4 :: struct {
+    #as using idwritefactory3: IDWriteFactory3;
+    #place idwritefactory3; idwritefactory4_vtable: *IDWriteFactory4_VTable;
+}
+IDWriteFactory4_VTable :: struct #type_info_none {
+    using idwritefactory3: IDWriteFactory3_VTable;
+    TranslateColorGlyphRun_1: (this: *IDWriteFactory4, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, desiredGlyphImageFormats: DWRITE_GLYPH_IMAGE_FORMATS, measuringMode: DWRITE_MEASURING_MODE, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, colorPaletteIndex: u32, colorLayers: **IDWriteColorGlyphRunEnumerator1) -> HRESULT #cpp_method;
+
+    ComputeGlyphOrigins: (this: *IDWriteFactory4, glyphRun: *DWRITE_GLYPH_RUN, baselineOrigin: D2D1_POINT_2F, glyphOrigins: *D2D1_POINT_2F) -> HRESULT #cpp_method;
+
+    ComputeGlyphOrigins_1: (this: *IDWriteFactory4, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE, baselineOrigin: D2D1_POINT_2F, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, glyphOrigins: *D2D1_POINT_2F) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory4_TranslateColorGlyphRun_1 :: inline (this: *IDWriteFactory4, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, desiredGlyphImageFormats: DWRITE_GLYPH_IMAGE_FORMATS, measuringMode: DWRITE_MEASURING_MODE, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, colorPaletteIndex: u32, colorLayers: **IDWriteColorGlyphRunEnumerator1) -> HRESULT { return this.idwritefactory4_vtable.TranslateColorGlyphRun_1(this, baselineOrigin, glyphRun, glyphRunDescription, desiredGlyphImageFormats, measuringMode, worldAndDpiTransform, colorPaletteIndex, colorLayers); }
+
+IDWriteFactory4_ComputeGlyphOrigins :: inline (this: *IDWriteFactory4, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, baselineOrigin: D2D1_POINT_2F, glyphOrigins: *D2D1_POINT_2F) -> HRESULT { return this.idwritefactory4_vtable.ComputeGlyphOrigins(this, glyphRun, baselineOrigin, glyphOrigins); }
+
+IDWriteFactory4_ComputeGlyphOrigins_1 :: inline (this: *IDWriteFactory4, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, measuringMode: DWRITE_MEASURING_MODE, baselineOrigin: D2D1_POINT_2F, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, glyphOrigins: *D2D1_POINT_2F) -> HRESULT { return this.idwritefactory4_vtable.ComputeGlyphOrigins_1(this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins); }
+
+vtable :: (obj: *IDWriteFactory4) -> *IDWriteFactory4_VTable { return obj.idwritefactory4_vtable; }
+
+
+IDWriteFontSetBuilder1 :: struct {
+    #as using idwritefontsetbuilder: IDWriteFontSetBuilder;
+    #place idwritefontsetbuilder; idwritefontsetbuilder1_vtable: *IDWriteFontSetBuilder1_VTable;
+}
+IDWriteFontSetBuilder1_VTable :: struct #type_info_none {
+    using idwritefontsetbuilder: IDWriteFontSetBuilder_VTable;
+    AddFontFile: (this: *IDWriteFontSetBuilder1, fontFile: *IDWriteFontFile) -> HRESULT #cpp_method;
+}
+IDWriteFontSetBuilder1_AddFontFile :: inline (this: *IDWriteFontSetBuilder1, fontFile: *IDWriteFontFile) -> HRESULT { return this.idwritefontsetbuilder1_vtable.AddFontFile(this, fontFile); }
+
+vtable :: (obj: *IDWriteFontSetBuilder1) -> *IDWriteFontSetBuilder1_VTable { return obj.idwritefontsetbuilder1_vtable; }
+
+
+IDWriteAsyncResult :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwriteasyncresult_vtable: *IDWriteAsyncResult_VTable;
+}
+IDWriteAsyncResult_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetWaitHandle: (this: *IDWriteAsyncResult) -> HANDLE #cpp_method;
+
+    GetResult: (this: *IDWriteAsyncResult) -> HRESULT #cpp_method;
+}
+
+IDWriteAsyncResult_GetWaitHandle :: inline (this: *IDWriteAsyncResult) -> HANDLE { return this.idwriteasyncresult_vtable.GetWaitHandle(this); }
+
+IDWriteAsyncResult_GetResult :: inline (this: *IDWriteAsyncResult) -> HRESULT { return this.idwriteasyncresult_vtable.GetResult(this); }
+
+vtable :: (obj: *IDWriteAsyncResult) -> *IDWriteAsyncResult_VTable { return obj.idwriteasyncresult_vtable; }
+
+
+DWRITE_FILE_FRAGMENT :: struct {
+    fileOffset:   u64;
+
+    fragmentSize: u64;
+}
+
+IDWriteRemoteFontFileStream :: struct {
+    #as using idwritefontfilestream: IDWriteFontFileStream;
+    #place idwritefontfilestream; idwriteremotefontfilestream_vtable: *IDWriteRemoteFontFileStream_VTable;
+}
+IDWriteRemoteFontFileStream_VTable :: struct #type_info_none {
+    using idwritefontfilestream: IDWriteFontFileStream_VTable;
+    GetLocalFileSize: (this: *IDWriteRemoteFontFileStream, localFileSize: *u64) -> HRESULT #cpp_method;
+
+    GetFileFragmentLocality: (this: *IDWriteRemoteFontFileStream, fileOffset: u64, fragmentSize: u64, isLocal: *BOOL, partialSize: *u64) -> HRESULT #cpp_method;
+
+    GetLocality: (this: *IDWriteRemoteFontFileStream) -> DWRITE_LOCALITY #cpp_method;
+
+    BeginDownload: (this: *IDWriteRemoteFontFileStream, downloadOperationID: *UUID, fileFragments: *DWRITE_FILE_FRAGMENT, fragmentCount: u32, asyncResult: **IDWriteAsyncResult) -> HRESULT #cpp_method;
+}
+
+IDWriteRemoteFontFileStream_GetLocalFileSize :: inline (this: *IDWriteRemoteFontFileStream, localFileSize: *u64) -> HRESULT { return this.idwriteremotefontfilestream_vtable.GetLocalFileSize(this, localFileSize); }
+
+IDWriteRemoteFontFileStream_GetFileFragmentLocality :: inline (this: *IDWriteRemoteFontFileStream, fileOffset: u64, fragmentSize: u64, isLocal: *BOOL, partialSize: *u64) -> HRESULT { return this.idwriteremotefontfilestream_vtable.GetFileFragmentLocality(this, fileOffset, fragmentSize, isLocal, partialSize); }
+
+IDWriteRemoteFontFileStream_GetLocality :: inline (this: *IDWriteRemoteFontFileStream) -> DWRITE_LOCALITY { return this.idwriteremotefontfilestream_vtable.GetLocality(this); }
+
+IDWriteRemoteFontFileStream_BeginDownload :: inline (this: *IDWriteRemoteFontFileStream, downloadOperationID: *UUID, fileFragments: *DWRITE_FILE_FRAGMENT, fragmentCount: u32, asyncResult: **IDWriteAsyncResult) -> HRESULT { return this.idwriteremotefontfilestream_vtable.BeginDownload(this, downloadOperationID, fileFragments, fragmentCount, asyncResult); }
+
+vtable :: (obj: *IDWriteRemoteFontFileStream) -> *IDWriteRemoteFontFileStream_VTable { return obj.idwriteremotefontfilestream_vtable; }
+
+
+DWRITE_CONTAINER_TYPE :: enum s32 {
+    UNKNOWN :: 0;
+    WOFF    :: 1;
+    WOFF2   :: 2;
+
+    DWRITE_CONTAINER_TYPE_UNKNOWN :: UNKNOWN;
+    DWRITE_CONTAINER_TYPE_WOFF    :: WOFF;
+    DWRITE_CONTAINER_TYPE_WOFF2   :: WOFF2;
+}
+
+IDWriteRemoteFontFileLoader :: struct {
+    #as using idwritefontfileloader: IDWriteFontFileLoader;
+    #place idwritefontfileloader; idwriteremotefontfileloader_vtable: *IDWriteRemoteFontFileLoader_VTable;
+}
+IDWriteRemoteFontFileLoader_VTable :: struct #type_info_none {
+    using idwritefontfileloader: IDWriteFontFileLoader_VTable;
+    CreateRemoteStreamFromKey: (this: *IDWriteRemoteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileStream: **IDWriteRemoteFontFileStream) -> HRESULT #cpp_method;
+
+    GetLocalityFromKey: (this: *IDWriteRemoteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, locality: *DWRITE_LOCALITY) -> HRESULT #cpp_method;
+
+    CreateFontFileReferenceFromUrl: (this: *IDWriteRemoteFontFileLoader, factory: *IDWriteFactory, baseUrl: *s16, fontFileUrl: *s16, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+}
+
+IDWriteRemoteFontFileLoader_CreateRemoteStreamFromKey :: inline (this: *IDWriteRemoteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, fontFileStream: **IDWriteRemoteFontFileStream) -> HRESULT { return this.idwriteremotefontfileloader_vtable.CreateRemoteStreamFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream); }
+
+IDWriteRemoteFontFileLoader_GetLocalityFromKey :: inline (this: *IDWriteRemoteFontFileLoader, fontFileReferenceKey: *void, fontFileReferenceKeySize: u32, locality: *DWRITE_LOCALITY) -> HRESULT { return this.idwriteremotefontfileloader_vtable.GetLocalityFromKey(this, fontFileReferenceKey, fontFileReferenceKeySize, locality); }
+
+IDWriteRemoteFontFileLoader_CreateFontFileReferenceFromUrl :: inline (this: *IDWriteRemoteFontFileLoader, factory: *IDWriteFactory, baseUrl: *s16, fontFileUrl: *s16, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwriteremotefontfileloader_vtable.CreateFontFileReferenceFromUrl(this, factory, baseUrl, fontFileUrl, fontFile); }
+
+vtable :: (obj: *IDWriteRemoteFontFileLoader) -> *IDWriteRemoteFontFileLoader_VTable { return obj.idwriteremotefontfileloader_vtable; }
+
+
+IDWriteInMemoryFontFileLoader :: struct {
+    #as using idwritefontfileloader: IDWriteFontFileLoader;
+    #place idwritefontfileloader; idwriteinmemoryfontfileloader_vtable: *IDWriteInMemoryFontFileLoader_VTable;
+}
+IDWriteInMemoryFontFileLoader_VTable :: struct #type_info_none {
+    using idwritefontfileloader: IDWriteFontFileLoader_VTable;
+    CreateInMemoryFontFileReference: (this: *IDWriteInMemoryFontFileLoader, factory: *IDWriteFactory, fontData: *void, fontDataSize: u32, ownerObject: *IUnknown, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    GetFileCount: (this: *IDWriteInMemoryFontFileLoader) -> u32 #cpp_method;
+}
+
+IDWriteInMemoryFontFileLoader_CreateInMemoryFontFileReference :: inline (this: *IDWriteInMemoryFontFileLoader, factory: *IDWriteFactory, fontData: *void, fontDataSize: u32, ownerObject: *IUnknown, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwriteinmemoryfontfileloader_vtable.CreateInMemoryFontFileReference(this, factory, fontData, fontDataSize, ownerObject, fontFile); }
+
+IDWriteInMemoryFontFileLoader_GetFileCount :: inline (this: *IDWriteInMemoryFontFileLoader) -> u32 { return this.idwriteinmemoryfontfileloader_vtable.GetFileCount(this); }
+
+vtable :: (obj: *IDWriteInMemoryFontFileLoader) -> *IDWriteInMemoryFontFileLoader_VTable { return obj.idwriteinmemoryfontfileloader_vtable; }
+
+
+IDWriteFactory5 :: struct {
+    #as using idwritefactory4: IDWriteFactory4;
+    #place idwritefactory4; idwritefactory5_vtable: *IDWriteFactory5_VTable;
+}
+IDWriteFactory5_VTable :: struct #type_info_none {
+    using idwritefactory4: IDWriteFactory4_VTable;
+    CreateFontSetBuilder_1: (this: *IDWriteFactory5, fontSetBuilder: **IDWriteFontSetBuilder1) -> HRESULT #cpp_method;
+
+    CreateInMemoryFontFileLoader: (this: *IDWriteFactory5, newLoader: **IDWriteInMemoryFontFileLoader) -> HRESULT #cpp_method;
+
+    CreateHttpFontFileLoader: (this: *IDWriteFactory5, referrerUrl: *s16, extraHeaders: *s16, newLoader: **IDWriteRemoteFontFileLoader) -> HRESULT #cpp_method;
+
+    AnalyzeContainerType: (this: *IDWriteFactory5, fileData: *void, fileDataSize: u32) -> DWRITE_CONTAINER_TYPE #cpp_method;
+
+    UnpackFontFile: (this: *IDWriteFactory5, containerType: DWRITE_CONTAINER_TYPE, fileData: *void, fileDataSize: u32, unpackedFontStream: **IDWriteFontFileStream) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory5_CreateFontSetBuilder_1 :: inline (this: *IDWriteFactory5, fontSetBuilder: **IDWriteFontSetBuilder1) -> HRESULT { return this.idwritefactory5_vtable.CreateFontSetBuilder_1(this, fontSetBuilder); }
+
+IDWriteFactory5_CreateInMemoryFontFileLoader :: inline (this: *IDWriteFactory5, newLoader: **IDWriteInMemoryFontFileLoader) -> HRESULT { return this.idwritefactory5_vtable.CreateInMemoryFontFileLoader(this, newLoader); }
+
+IDWriteFactory5_CreateHttpFontFileLoader :: inline (this: *IDWriteFactory5, referrerUrl: *s16, extraHeaders: *s16, newLoader: **IDWriteRemoteFontFileLoader) -> HRESULT { return this.idwritefactory5_vtable.CreateHttpFontFileLoader(this, referrerUrl, extraHeaders, newLoader); }
+
+IDWriteFactory5_AnalyzeContainerType :: inline (this: *IDWriteFactory5, fileData: *void, fileDataSize: u32) -> DWRITE_CONTAINER_TYPE { return this.idwritefactory5_vtable.AnalyzeContainerType(this, fileData, fileDataSize); }
+
+IDWriteFactory5_UnpackFontFile :: inline (this: *IDWriteFactory5, containerType: DWRITE_CONTAINER_TYPE, fileData: *void, fileDataSize: u32, unpackedFontStream: **IDWriteFontFileStream) -> HRESULT { return this.idwritefactory5_vtable.UnpackFontFile(this, containerType, fileData, fileDataSize, unpackedFontStream); }
+
+vtable :: (obj: *IDWriteFactory5) -> *IDWriteFactory5_VTable { return obj.idwritefactory5_vtable; }
+
+
+DWRITE_FONT_AXIS_TAG :: enum u32 {
+    WEIGHT       :: 1952999287;
+    WIDTH        :: 1752458359;
+    SLANT        :: 1953393779;
+    OPTICAL_SIZE :: 2054385775;
+    ITALIC       :: 1818326121;
+
+    DWRITE_FONT_AXIS_TAG_WEIGHT       :: WEIGHT;
+    DWRITE_FONT_AXIS_TAG_WIDTH        :: WIDTH;
+    DWRITE_FONT_AXIS_TAG_SLANT        :: SLANT;
+    DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE :: OPTICAL_SIZE;
+    DWRITE_FONT_AXIS_TAG_ITALIC       :: ITALIC;
+}
+
+DWRITE_FONT_AXIS_VALUE :: struct {
+    axisTag: DWRITE_FONT_AXIS_TAG;
+
+    value:   float;
+}
+
+DWRITE_FONT_AXIS_RANGE :: struct {
+    axisTag:  DWRITE_FONT_AXIS_TAG;
+
+    minValue: float;
+
+    maxValue: float;
+}
+
+DWRITE_FONT_FAMILY_MODEL :: enum s32 {
+    TYPOGRAPHIC          :: 0;
+
+    WEIGHT_STRETCH_STYLE :: 1;
+
+    DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC          :: TYPOGRAPHIC;
+
+    DWRITE_FONT_FAMILY_MODEL_WEIGHT_STRETCH_STYLE :: WEIGHT_STRETCH_STYLE;
+}
+
+DWRITE_AUTOMATIC_FONT_AXES :: enum s32 {
+    NONE         :: 0;
+
+    OPTICAL_SIZE :: 1;
+
+    DWRITE_AUTOMATIC_FONT_AXES_NONE         :: NONE;
+
+    DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE :: OPTICAL_SIZE;
+}
+
+DWRITE_FONT_AXIS_ATTRIBUTES :: enum s32 {
+    NONE     :: 0;
+
+    VARIABLE :: 1;
+
+    HIDDEN   :: 2;
+
+    DWRITE_FONT_AXIS_ATTRIBUTES_NONE     :: NONE;
+
+    DWRITE_FONT_AXIS_ATTRIBUTES_VARIABLE :: VARIABLE;
+
+    DWRITE_FONT_AXIS_ATTRIBUTES_HIDDEN   :: HIDDEN;
+}
+
+IDWriteFactory6 :: struct {
+    #as using idwritefactory5: IDWriteFactory5;
+    #place idwritefactory5; idwritefactory6_vtable: *IDWriteFactory6_VTable;
+}
+IDWriteFactory6_VTable :: struct #type_info_none {
+    using idwritefactory5: IDWriteFactory5_VTable;
+    CreateFontFaceReference_2: (this: *IDWriteFactory6, fontFile: *IDWriteFontFile, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT #cpp_method;
+
+    CreateFontResource: (this: *IDWriteFactory6, fontFile: *IDWriteFontFile, faceIndex: u32, fontResource: **IDWriteFontResource) -> HRESULT #cpp_method;
+
+    GetSystemFontSet_1: (this: *IDWriteFactory6, includeDownloadableFonts: BOOL, fontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetSystemFontCollection_2: (this: *IDWriteFactory6, includeDownloadableFonts: BOOL, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection2) -> HRESULT #cpp_method;
+
+    CreateFontCollectionFromFontSet_1: (this: *IDWriteFactory6, fontSet: *IDWriteFontSet, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection2) -> HRESULT #cpp_method;
+
+    CreateFontSetBuilder_2: (this: *IDWriteFactory6, fontSetBuilder: **IDWriteFontSetBuilder2) -> HRESULT #cpp_method;
+
+    CreateTextFormat_1: (this: *IDWriteFactory6, fontFamilyName: /*const*/ *s16, fontCollection: *IDWriteFontCollection, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontSize: float, localeName: /*const*/ *s16, textFormat: **IDWriteTextFormat3) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory6_CreateFontFaceReference_2 :: inline (this: *IDWriteFactory6, fontFile: *IDWriteFontFile, faceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT { return this.idwritefactory6_vtable.CreateFontFaceReference_2(this, fontFile, faceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference); }
+
+IDWriteFactory6_CreateFontResource :: inline (this: *IDWriteFactory6, fontFile: *IDWriteFontFile, faceIndex: u32, fontResource: **IDWriteFontResource) -> HRESULT { return this.idwritefactory6_vtable.CreateFontResource(this, fontFile, faceIndex, fontResource); }
+
+IDWriteFactory6_GetSystemFontSet_1 :: inline (this: *IDWriteFactory6, includeDownloadableFonts: BOOL, fontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefactory6_vtable.GetSystemFontSet_1(this, includeDownloadableFonts, fontSet); }
+
+IDWriteFactory6_GetSystemFontCollection_2 :: inline (this: *IDWriteFactory6, includeDownloadableFonts: BOOL, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection2) -> HRESULT { return this.idwritefactory6_vtable.GetSystemFontCollection_2(this, includeDownloadableFonts, fontFamilyModel, fontCollection); }
+
+IDWriteFactory6_CreateFontCollectionFromFontSet_1 :: inline (this: *IDWriteFactory6, fontSet: *IDWriteFontSet, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection2) -> HRESULT { return this.idwritefactory6_vtable.CreateFontCollectionFromFontSet_1(this, fontSet, fontFamilyModel, fontCollection); }
+
+IDWriteFactory6_CreateFontSetBuilder_2 :: inline (this: *IDWriteFactory6, fontSetBuilder: **IDWriteFontSetBuilder2) -> HRESULT { return this.idwritefactory6_vtable.CreateFontSetBuilder_2(this, fontSetBuilder); }
+
+IDWriteFactory6_CreateTextFormat_1 :: inline (this: *IDWriteFactory6, fontFamilyName: /*const*/ *s16, fontCollection: *IDWriteFontCollection, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontSize: float, localeName: /*const*/ *s16, textFormat: **IDWriteTextFormat3) -> HRESULT { return this.idwritefactory6_vtable.CreateTextFormat_1(this, fontFamilyName, fontCollection, fontAxisValues, fontAxisValueCount, fontSize, localeName, textFormat); }
+
+vtable :: (obj: *IDWriteFactory6) -> *IDWriteFactory6_VTable { return obj.idwritefactory6_vtable; }
+
+
+IDWriteFontFace5 :: struct {
+    #as using idwritefontface4: IDWriteFontFace4;
+    #place idwritefontface4; idwritefontface5_vtable: *IDWriteFontFace5_VTable;
+}
+IDWriteFontFace5_VTable :: struct #type_info_none {
+    using idwritefontface4: IDWriteFontFace4_VTable;
+    GetFontAxisValueCount: (this: *IDWriteFontFace5) -> u32 #cpp_method;
+
+    GetFontAxisValues: (this: *IDWriteFontFace5, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT #cpp_method;
+
+    HasVariations: (this: *IDWriteFontFace5) -> BOOL #cpp_method;
+
+    GetFontResource: (this: *IDWriteFontFace5, fontResource: **IDWriteFontResource) -> HRESULT #cpp_method;
+
+    Equals: (this: *IDWriteFontFace5, fontFace: *IDWriteFontFace) -> BOOL #cpp_method;
+}
+
+IDWriteFontFace5_GetFontAxisValueCount :: inline (this: *IDWriteFontFace5) -> u32 { return this.idwritefontface5_vtable.GetFontAxisValueCount(this); }
+
+IDWriteFontFace5_GetFontAxisValues :: inline (this: *IDWriteFontFace5, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT { return this.idwritefontface5_vtable.GetFontAxisValues(this, fontAxisValues, fontAxisValueCount); }
+
+IDWriteFontFace5_HasVariations :: inline (this: *IDWriteFontFace5) -> BOOL { return this.idwritefontface5_vtable.HasVariations(this); }
+
+IDWriteFontFace5_GetFontResource :: inline (this: *IDWriteFontFace5, fontResource: **IDWriteFontResource) -> HRESULT { return this.idwritefontface5_vtable.GetFontResource(this, fontResource); }
+
+IDWriteFontFace5_Equals :: inline (this: *IDWriteFontFace5, fontFace: *IDWriteFontFace) -> BOOL { return this.idwritefontface5_vtable.Equals(this, fontFace); }
+
+vtable :: (obj: *IDWriteFontFace5) -> *IDWriteFontFace5_VTable { return obj.idwritefontface5_vtable; }
+
+
+IDWriteFontResource :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritefontresource_vtable: *IDWriteFontResource_VTable;
+}
+IDWriteFontResource_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    GetFontFile: (this: *IDWriteFontResource, fontFile: **IDWriteFontFile) -> HRESULT #cpp_method;
+
+    GetFontFaceIndex: (this: *IDWriteFontResource) -> u32 #cpp_method;
+
+    GetFontAxisCount: (this: *IDWriteFontResource) -> u32 #cpp_method;
+
+    GetDefaultFontAxisValues: (this: *IDWriteFontResource, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT #cpp_method;
+
+    GetFontAxisRanges: (this: *IDWriteFontResource, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32) -> HRESULT #cpp_method;
+
+    GetFontAxisAttributes: (this: *IDWriteFontResource, axisIndex: u32) -> DWRITE_FONT_AXIS_ATTRIBUTES #cpp_method;
+
+    GetAxisNames: (this: *IDWriteFontResource, axisIndex: u32, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetAxisValueNameCount: (this: *IDWriteFontResource, axisIndex: u32) -> u32 #cpp_method;
+
+    GetAxisValueNames: (this: *IDWriteFontResource, axisIndex: u32, axisValueIndex: u32, fontAxisRange: *DWRITE_FONT_AXIS_RANGE, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    HasVariations: (this: *IDWriteFontResource) -> BOOL #cpp_method;
+
+    CreateFontFace: (this: *IDWriteFontResource, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFace: **IDWriteFontFace5) -> HRESULT #cpp_method;
+
+    CreateFontFaceReference: (this: *IDWriteFontResource, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT #cpp_method;
+}
+
+IDWriteFontResource_GetFontFile :: inline (this: *IDWriteFontResource, fontFile: **IDWriteFontFile) -> HRESULT { return this.idwritefontresource_vtable.GetFontFile(this, fontFile); }
+
+IDWriteFontResource_GetFontFaceIndex :: inline (this: *IDWriteFontResource) -> u32 { return this.idwritefontresource_vtable.GetFontFaceIndex(this); }
+
+IDWriteFontResource_GetFontAxisCount :: inline (this: *IDWriteFontResource) -> u32 { return this.idwritefontresource_vtable.GetFontAxisCount(this); }
+
+IDWriteFontResource_GetDefaultFontAxisValues :: inline (this: *IDWriteFontResource, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT { return this.idwritefontresource_vtable.GetDefaultFontAxisValues(this, fontAxisValues, fontAxisValueCount); }
+
+IDWriteFontResource_GetFontAxisRanges :: inline (this: *IDWriteFontResource, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32) -> HRESULT { return this.idwritefontresource_vtable.GetFontAxisRanges(this, fontAxisRanges, fontAxisRangeCount); }
+
+IDWriteFontResource_GetFontAxisAttributes :: inline (this: *IDWriteFontResource, axisIndex: u32) -> DWRITE_FONT_AXIS_ATTRIBUTES { return this.idwritefontresource_vtable.GetFontAxisAttributes(this, axisIndex); }
+
+IDWriteFontResource_GetAxisNames :: inline (this: *IDWriteFontResource, axisIndex: u32, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontresource_vtable.GetAxisNames(this, axisIndex, names); }
+
+IDWriteFontResource_GetAxisValueNameCount :: inline (this: *IDWriteFontResource, axisIndex: u32) -> u32 { return this.idwritefontresource_vtable.GetAxisValueNameCount(this, axisIndex); }
+
+IDWriteFontResource_GetAxisValueNames :: inline (this: *IDWriteFontResource, axisIndex: u32, axisValueIndex: u32, fontAxisRange: *DWRITE_FONT_AXIS_RANGE, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontresource_vtable.GetAxisValueNames(this, axisIndex, axisValueIndex, fontAxisRange, names); }
+
+IDWriteFontResource_HasVariations :: inline (this: *IDWriteFontResource) -> BOOL { return this.idwritefontresource_vtable.HasVariations(this); }
+
+IDWriteFontResource_CreateFontFace :: inline (this: *IDWriteFontResource, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFace: **IDWriteFontFace5) -> HRESULT { return this.idwritefontresource_vtable.CreateFontFace(this, fontSimulations, fontAxisValues, fontAxisValueCount, fontFace); }
+
+IDWriteFontResource_CreateFontFaceReference :: inline (this: *IDWriteFontResource, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT { return this.idwritefontresource_vtable.CreateFontFaceReference(this, fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference); }
+
+vtable :: (obj: *IDWriteFontResource) -> *IDWriteFontResource_VTable { return obj.idwritefontresource_vtable; }
+
+
+IDWriteFontFaceReference1 :: struct {
+    #as using idwritefontfacereference: IDWriteFontFaceReference;
+    #place idwritefontfacereference; idwritefontfacereference1_vtable: *IDWriteFontFaceReference1_VTable;
+}
+IDWriteFontFaceReference1_VTable :: struct #type_info_none {
+    using idwritefontfacereference: IDWriteFontFaceReference_VTable;
+    CreateFontFace_1: (this: *IDWriteFontFaceReference1, fontFace: **IDWriteFontFace5) -> HRESULT #cpp_method;
+
+    GetFontAxisValueCount: (this: *IDWriteFontFaceReference1) -> u32 #cpp_method;
+
+    GetFontAxisValues: (this: *IDWriteFontFaceReference1, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFaceReference1_CreateFontFace_1 :: inline (this: *IDWriteFontFaceReference1, fontFace: **IDWriteFontFace5) -> HRESULT { return this.idwritefontfacereference1_vtable.CreateFontFace_1(this, fontFace); }
+
+IDWriteFontFaceReference1_GetFontAxisValueCount :: inline (this: *IDWriteFontFaceReference1) -> u32 { return this.idwritefontfacereference1_vtable.GetFontAxisValueCount(this); }
+
+IDWriteFontFaceReference1_GetFontAxisValues :: inline (this: *IDWriteFontFaceReference1, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT { return this.idwritefontfacereference1_vtable.GetFontAxisValues(this, fontAxisValues, fontAxisValueCount); }
+
+vtable :: (obj: *IDWriteFontFaceReference1) -> *IDWriteFontFaceReference1_VTable { return obj.idwritefontfacereference1_vtable; }
+
+
+IDWriteFontSetBuilder2 :: struct {
+    #as using idwritefontsetbuilder1: IDWriteFontSetBuilder1;
+    #place idwritefontsetbuilder1; idwritefontsetbuilder2_vtable: *IDWriteFontSetBuilder2_VTable;
+}
+IDWriteFontSetBuilder2_VTable :: struct #type_info_none {
+    using idwritefontsetbuilder1: IDWriteFontSetBuilder1_VTable;
+    AddFont: (this: *IDWriteFontSetBuilder2, fontFile: *IDWriteFontFile, fontFaceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, properties: *DWRITE_FONT_PROPERTY, propertyCount: u32) -> HRESULT #cpp_method;
+
+    AddFontFile_1: (this: *IDWriteFontSetBuilder2, filePath: /*const*/ *s16) -> HRESULT #cpp_method;
+}
+
+IDWriteFontSetBuilder2_AddFont :: inline (this: *IDWriteFontSetBuilder2, fontFile: *IDWriteFontFile, fontFaceIndex: u32, fontSimulations: DWRITE_FONT_SIMULATIONS, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, properties: *DWRITE_FONT_PROPERTY, propertyCount: u32) -> HRESULT { return this.idwritefontsetbuilder2_vtable.AddFont(this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount); }
+
+IDWriteFontSetBuilder2_AddFontFile_1 :: inline (this: *IDWriteFontSetBuilder2, filePath: /*const*/ *s16) -> HRESULT { return this.idwritefontsetbuilder2_vtable.AddFontFile_1(this, filePath); }
+
+vtable :: (obj: *IDWriteFontSetBuilder2) -> *IDWriteFontSetBuilder2_VTable { return obj.idwritefontsetbuilder2_vtable; }
+
+
+IDWriteFontSet1 :: struct {
+    #as using idwritefontset: IDWriteFontSet;
+    #place idwritefontset; idwritefontset1_vtable: *IDWriteFontSet1_VTable;
+}
+IDWriteFontSet1_VTable :: struct #type_info_none {
+    using idwritefontset: IDWriteFontSet_VTable;
+    GetMatchingFonts_2: (this: *IDWriteFontSet1, fontProperty: /*const*/ *DWRITE_FONT_PROPERTY, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, matchingFonts: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetFirstFontResources: (this: *IDWriteFontSet1, filteredFontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetFilteredFonts: (this: *IDWriteFontSet1, indices: *u32, indexCount: u32, filteredFontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetFilteredFonts_1: (this: *IDWriteFontSet1, fontAxisRanges: /*const*/ *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, selectAnyRange: BOOL, filteredFontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetFilteredFonts_2: (this: *IDWriteFontSet1, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, selectAnyProperty: BOOL, filteredFontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+
+    GetFilteredFontIndices: (this: *IDWriteFontSet1, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, selectAnyRange: BOOL, indices: *u32, maxIndexCount: u32, actualIndexCount: *u32) -> HRESULT #cpp_method;
+
+    GetFilteredFontIndices_1: (this: *IDWriteFontSet1, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, selectAnyProperty: BOOL, indices: *u32, maxIndexCount: u32, actualIndexCount: *u32) -> HRESULT #cpp_method;
+
+    GetFontAxisRanges: (this: *IDWriteFontSet1, listIndex: u32, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, maxFontAxisRangeCount: u32, actualFontAxisRangeCount: *u32) -> HRESULT #cpp_method;
+
+    GetFontAxisRanges_1: (this: *IDWriteFontSet1, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, maxFontAxisRangeCount: u32, actualFontAxisRangeCount: *u32) -> HRESULT #cpp_method;
+
+    GetFontFaceReference_1: (this: *IDWriteFontSet1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT #cpp_method;
+
+    CreateFontResource: (this: *IDWriteFontSet1, listIndex: u32, fontResource: **IDWriteFontResource) -> HRESULT #cpp_method;
+
+    CreateFontFace: (this: *IDWriteFontSet1, listIndex: u32, fontFace: **IDWriteFontFace5) -> HRESULT #cpp_method;
+
+    GetFontLocality: (this: *IDWriteFontSet1, listIndex: u32) -> DWRITE_LOCALITY #cpp_method;
+}
+
+IDWriteFontSet1_GetMatchingFonts_2 :: inline (this: *IDWriteFontSet1, fontProperty: /*const*/ *DWRITE_FONT_PROPERTY, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, matchingFonts: **IDWriteFontSet1) -> HRESULT { return this.idwritefontset1_vtable.GetMatchingFonts_2(this, fontProperty, fontAxisValues, fontAxisValueCount, matchingFonts); }
+
+IDWriteFontSet1_GetFirstFontResources :: inline (this: *IDWriteFontSet1, filteredFontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontset1_vtable.GetFirstFontResources(this, filteredFontSet); }
+
+IDWriteFontSet1_GetFilteredFonts :: inline (this: *IDWriteFontSet1, indices: /*const*/ *u32, indexCount: u32, filteredFontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontset1_vtable.GetFilteredFonts(this, indices, indexCount, filteredFontSet); }
+
+IDWriteFontSet1_GetFilteredFonts_1 :: inline (this: *IDWriteFontSet1, fontAxisRanges: /*const*/ *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, selectAnyRange: BOOL, filteredFontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontset1_vtable.GetFilteredFonts_1(this, fontAxisRanges, fontAxisRangeCount, selectAnyRange, filteredFontSet); }
+
+IDWriteFontSet1_GetFilteredFonts_2 :: inline (this: *IDWriteFontSet1, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, selectAnyProperty: BOOL, filteredFontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontset1_vtable.GetFilteredFonts_2(this, properties, propertyCount, selectAnyProperty, filteredFontSet); }
+
+IDWriteFontSet1_GetFilteredFontIndices :: inline (this: *IDWriteFontSet1, fontAxisRanges: /*const*/ *DWRITE_FONT_AXIS_RANGE, fontAxisRangeCount: u32, selectAnyRange: BOOL, indices: *u32, maxIndexCount: u32, actualIndexCount: *u32) -> HRESULT { return this.idwritefontset1_vtable.GetFilteredFontIndices(this, fontAxisRanges, fontAxisRangeCount, selectAnyRange, indices, maxIndexCount, actualIndexCount); }
+
+IDWriteFontSet1_GetFilteredFontIndices_1 :: inline (this: *IDWriteFontSet1, properties: /*const*/ *DWRITE_FONT_PROPERTY, propertyCount: u32, selectAnyProperty: BOOL, indices: *u32, maxIndexCount: u32, actualIndexCount: *u32) -> HRESULT { return this.idwritefontset1_vtable.GetFilteredFontIndices_1(this, properties, propertyCount, selectAnyProperty, indices, maxIndexCount, actualIndexCount); }
+
+IDWriteFontSet1_GetFontAxisRanges :: inline (this: *IDWriteFontSet1, listIndex: u32, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, maxFontAxisRangeCount: u32, actualFontAxisRangeCount: *u32) -> HRESULT { return this.idwritefontset1_vtable.GetFontAxisRanges(this, listIndex, fontAxisRanges, maxFontAxisRangeCount, actualFontAxisRangeCount); }
+
+IDWriteFontSet1_GetFontAxisRanges_1 :: inline (this: *IDWriteFontSet1, fontAxisRanges: *DWRITE_FONT_AXIS_RANGE, maxFontAxisRangeCount: u32, actualFontAxisRangeCount: *u32) -> HRESULT { return this.idwritefontset1_vtable.GetFontAxisRanges_1(this, fontAxisRanges, maxFontAxisRangeCount, actualFontAxisRangeCount); }
+
+IDWriteFontSet1_GetFontFaceReference_1 :: inline (this: *IDWriteFontSet1, listIndex: u32, fontFaceReference: **IDWriteFontFaceReference1) -> HRESULT { return this.idwritefontset1_vtable.GetFontFaceReference_1(this, listIndex, fontFaceReference); }
+
+IDWriteFontSet1_CreateFontResource :: inline (this: *IDWriteFontSet1, listIndex: u32, fontResource: **IDWriteFontResource) -> HRESULT { return this.idwritefontset1_vtable.CreateFontResource(this, listIndex, fontResource); }
+
+IDWriteFontSet1_CreateFontFace :: inline (this: *IDWriteFontSet1, listIndex: u32, fontFace: **IDWriteFontFace5) -> HRESULT { return this.idwritefontset1_vtable.CreateFontFace(this, listIndex, fontFace); }
+
+IDWriteFontSet1_GetFontLocality :: inline (this: *IDWriteFontSet1, listIndex: u32) -> DWRITE_LOCALITY { return this.idwritefontset1_vtable.GetFontLocality(this, listIndex); }
+
+vtable :: (obj: *IDWriteFontSet1) -> *IDWriteFontSet1_VTable { return obj.idwritefontset1_vtable; }
+
+
+IDWriteFontList2 :: struct {
+    #as using idwritefontlist1: IDWriteFontList1;
+    #place idwritefontlist1; idwritefontlist2_vtable: *IDWriteFontList2_VTable;
+}
+IDWriteFontList2_VTable :: struct #type_info_none {
+    using idwritefontlist1: IDWriteFontList1_VTable;
+    GetFontSet: (this: *IDWriteFontList2, fontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+}
+IDWriteFontList2_GetFontSet :: inline (this: *IDWriteFontList2, fontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontlist2_vtable.GetFontSet(this, fontSet); }
+
+vtable :: (obj: *IDWriteFontList2) -> *IDWriteFontList2_VTable { return obj.idwritefontlist2_vtable; }
+
+
+IDWriteFontFamily2 :: struct {
+    #as using idwritefontfamily1: IDWriteFontFamily1;
+    #place idwritefontfamily1; idwritefontfamily2_vtable: *IDWriteFontFamily2_VTable;
+}
+IDWriteFontFamily2_VTable :: struct #type_info_none {
+    using idwritefontfamily1: IDWriteFontFamily1_VTable;
+    GetMatchingFonts_1: (this: *IDWriteFontFamily2, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, matchingFonts: **IDWriteFontList2) -> HRESULT #cpp_method;
+
+    GetFontSet: (this: *IDWriteFontFamily2, fontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFamily2_GetMatchingFonts_1 :: inline (this: *IDWriteFontFamily2, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, matchingFonts: **IDWriteFontList2) -> HRESULT { return this.idwritefontfamily2_vtable.GetMatchingFonts_1(this, fontAxisValues, fontAxisValueCount, matchingFonts); }
+
+IDWriteFontFamily2_GetFontSet :: inline (this: *IDWriteFontFamily2, fontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontfamily2_vtable.GetFontSet(this, fontSet); }
+
+vtable :: (obj: *IDWriteFontFamily2) -> *IDWriteFontFamily2_VTable { return obj.idwritefontfamily2_vtable; }
+
+
+IDWriteFontCollection2 :: struct {
+    #as using idwritefontcollection1: IDWriteFontCollection1;
+    #place idwritefontcollection1; idwritefontcollection2_vtable: *IDWriteFontCollection2_VTable;
+}
+IDWriteFontCollection2_VTable :: struct #type_info_none {
+    using idwritefontcollection1: IDWriteFontCollection1_VTable;
+    GetFontFamily_2: (this: *IDWriteFontCollection2, index: u32, fontFamily: **IDWriteFontFamily2) -> HRESULT #cpp_method;
+
+    GetMatchingFonts: (this: *IDWriteFontCollection2, familyName: *s16, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontList: **IDWriteFontList2) -> HRESULT #cpp_method;
+
+    GetFontFamilyModel: (this: *IDWriteFontCollection2) -> DWRITE_FONT_FAMILY_MODEL #cpp_method;
+
+    GetFontSet_1: (this: *IDWriteFontCollection2, fontSet: **IDWriteFontSet1) -> HRESULT #cpp_method;
+}
+
+IDWriteFontCollection2_GetFontFamily_2 :: inline (this: *IDWriteFontCollection2, index: u32, fontFamily: **IDWriteFontFamily2) -> HRESULT { return this.idwritefontcollection2_vtable.GetFontFamily_2(this, index, fontFamily); }
+
+IDWriteFontCollection2_GetMatchingFonts :: inline (this: *IDWriteFontCollection2, familyName: *s16, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, fontList: **IDWriteFontList2) -> HRESULT { return this.idwritefontcollection2_vtable.GetMatchingFonts(this, familyName, fontAxisValues, fontAxisValueCount, fontList); }
+
+IDWriteFontCollection2_GetFontFamilyModel :: inline (this: *IDWriteFontCollection2) -> DWRITE_FONT_FAMILY_MODEL { return this.idwritefontcollection2_vtable.GetFontFamilyModel(this); }
+
+IDWriteFontCollection2_GetFontSet_1 :: inline (this: *IDWriteFontCollection2, fontSet: **IDWriteFontSet1) -> HRESULT { return this.idwritefontcollection2_vtable.GetFontSet_1(this, fontSet); }
+
+vtable :: (obj: *IDWriteFontCollection2) -> *IDWriteFontCollection2_VTable { return obj.idwritefontcollection2_vtable; }
+
+
+IDWriteTextLayout4 :: struct {
+    #as using idwritetextlayout3: IDWriteTextLayout3;
+    #place idwritetextlayout3; idwritetextlayout4_vtable: *IDWriteTextLayout4_VTable;
+}
+IDWriteTextLayout4_VTable :: struct #type_info_none {
+    using idwritetextlayout3: IDWriteTextLayout3_VTable;
+    SetFontAxisValues: (this: *IDWriteTextLayout4, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, textRange: DWRITE_TEXT_RANGE) -> HRESULT #cpp_method;
+
+    GetFontAxisValueCount: (this: *IDWriteTextLayout4, currentPosition: u32) -> u32 #cpp_method;
+
+    GetFontAxisValues: (this: *IDWriteTextLayout4, currentPosition: u32, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT #cpp_method;
+
+    GetAutomaticFontAxes: (this: *IDWriteTextLayout4) -> DWRITE_AUTOMATIC_FONT_AXES #cpp_method;
+
+    SetAutomaticFontAxes: (this: *IDWriteTextLayout4, automaticFontAxes: DWRITE_AUTOMATIC_FONT_AXES) -> HRESULT #cpp_method;
+}
+
+IDWriteTextLayout4_SetFontAxisValues :: inline (this: *IDWriteTextLayout4, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, textRange: DWRITE_TEXT_RANGE) -> HRESULT { return this.idwritetextlayout4_vtable.SetFontAxisValues(this, fontAxisValues, fontAxisValueCount, textRange); }
+
+IDWriteTextLayout4_GetFontAxisValueCount :: inline (this: *IDWriteTextLayout4, currentPosition: u32) -> u32 { return this.idwritetextlayout4_vtable.GetFontAxisValueCount(this, currentPosition); }
+
+IDWriteTextLayout4_GetFontAxisValues :: inline (this: *IDWriteTextLayout4, currentPosition: u32, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, textRange: *DWRITE_TEXT_RANGE = null) -> HRESULT { return this.idwritetextlayout4_vtable.GetFontAxisValues(this, currentPosition, fontAxisValues, fontAxisValueCount, textRange); }
+
+IDWriteTextLayout4_GetAutomaticFontAxes :: inline (this: *IDWriteTextLayout4) -> DWRITE_AUTOMATIC_FONT_AXES { return this.idwritetextlayout4_vtable.GetAutomaticFontAxes(this); }
+
+IDWriteTextLayout4_SetAutomaticFontAxes :: inline (this: *IDWriteTextLayout4, automaticFontAxes: DWRITE_AUTOMATIC_FONT_AXES) -> HRESULT { return this.idwritetextlayout4_vtable.SetAutomaticFontAxes(this, automaticFontAxes); }
+
+vtable :: (obj: *IDWriteTextLayout4) -> *IDWriteTextLayout4_VTable { return obj.idwritetextlayout4_vtable; }
+
+
+IDWriteTextFormat3 :: struct {
+    #as using idwritetextformat2: IDWriteTextFormat2;
+    #place idwritetextformat2; idwritetextformat3_vtable: *IDWriteTextFormat3_VTable;
+}
+IDWriteTextFormat3_VTable :: struct #type_info_none {
+    using idwritetextformat2: IDWriteTextFormat2_VTable;
+    SetFontAxisValues: (this: *IDWriteTextFormat3, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT #cpp_method;
+
+    GetFontAxisValueCount: (this: *IDWriteTextFormat3) -> u32 #cpp_method;
+
+    GetFontAxisValues: (this: *IDWriteTextFormat3, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT #cpp_method;
+
+    GetAutomaticFontAxes: (this: *IDWriteTextFormat3) -> DWRITE_AUTOMATIC_FONT_AXES #cpp_method;
+
+    SetAutomaticFontAxes: (this: *IDWriteTextFormat3, automaticFontAxes: DWRITE_AUTOMATIC_FONT_AXES) -> HRESULT #cpp_method;
+}
+
+IDWriteTextFormat3_SetFontAxisValues :: inline (this: *IDWriteTextFormat3, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT { return this.idwritetextformat3_vtable.SetFontAxisValues(this, fontAxisValues, fontAxisValueCount); }
+
+IDWriteTextFormat3_GetFontAxisValueCount :: inline (this: *IDWriteTextFormat3) -> u32 { return this.idwritetextformat3_vtable.GetFontAxisValueCount(this); }
+
+IDWriteTextFormat3_GetFontAxisValues :: inline (this: *IDWriteTextFormat3, fontAxisValues: *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32) -> HRESULT { return this.idwritetextformat3_vtable.GetFontAxisValues(this, fontAxisValues, fontAxisValueCount); }
+
+IDWriteTextFormat3_GetAutomaticFontAxes :: inline (this: *IDWriteTextFormat3) -> DWRITE_AUTOMATIC_FONT_AXES { return this.idwritetextformat3_vtable.GetAutomaticFontAxes(this); }
+
+IDWriteTextFormat3_SetAutomaticFontAxes :: inline (this: *IDWriteTextFormat3, automaticFontAxes: DWRITE_AUTOMATIC_FONT_AXES) -> HRESULT { return this.idwritetextformat3_vtable.SetAutomaticFontAxes(this, automaticFontAxes); }
+
+vtable :: (obj: *IDWriteTextFormat3) -> *IDWriteTextFormat3_VTable { return obj.idwritetextformat3_vtable; }
+
+
+IDWriteFontFallback1 :: struct {
+    #as using idwritefontfallback: IDWriteFontFallback;
+    #place idwritefontfallback; idwritefontfallback1_vtable: *IDWriteFontFallback1_VTable;
+}
+IDWriteFontFallback1_VTable :: struct #type_info_none {
+    using idwritefontfallback: IDWriteFontFallback_VTable;
+    MapCharacters_1: (this: *IDWriteFontFallback1, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, baseFontCollection: *IDWriteFontCollection, baseFamilyName: /*const*/ *s16, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, mappedLength: *u32, scale: *float, mappedFontFace: **IDWriteFontFace5) -> HRESULT #cpp_method;
+}
+IDWriteFontFallback1_MapCharacters_1 :: inline (this: *IDWriteFontFallback1, analysisSource: *IDWriteTextAnalysisSource, textPosition: u32, textLength: u32, baseFontCollection: *IDWriteFontCollection, baseFamilyName: /*const*/ *s16, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, mappedLength: *u32, scale: *float, mappedFontFace: **IDWriteFontFace5) -> HRESULT { return this.idwritefontfallback1_vtable.MapCharacters_1(this, analysisSource, textPosition, textLength, baseFontCollection, baseFamilyName, fontAxisValues, fontAxisValueCount, mappedLength, scale, mappedFontFace); }
+
+vtable :: (obj: *IDWriteFontFallback1) -> *IDWriteFontFallback1_VTable { return obj.idwritefontfallback1_vtable; }
+
+
+IDWriteFontSet2 :: struct {
+    #as using idwritefontset1: IDWriteFontSet1;
+    #place idwritefontset1; idwritefontset2_vtable: *IDWriteFontSet2_VTable;
+}
+IDWriteFontSet2_VTable :: struct #type_info_none {
+    using idwritefontset1: IDWriteFontSet1_VTable;
+    GetExpirationEvent: (this: *IDWriteFontSet2) -> HANDLE #cpp_method;
+}
+IDWriteFontSet2_GetExpirationEvent :: inline (this: *IDWriteFontSet2) -> HANDLE { return this.idwritefontset2_vtable.GetExpirationEvent(this); }
+
+vtable :: (obj: *IDWriteFontSet2) -> *IDWriteFontSet2_VTable { return obj.idwritefontset2_vtable; }
+
+
+IDWriteFontCollection3 :: struct {
+    #as using idwritefontcollection2: IDWriteFontCollection2;
+    #place idwritefontcollection2; idwritefontcollection3_vtable: *IDWriteFontCollection3_VTable;
+}
+IDWriteFontCollection3_VTable :: struct #type_info_none {
+    using idwritefontcollection2: IDWriteFontCollection2_VTable;
+    GetExpirationEvent: (this: *IDWriteFontCollection3) -> HANDLE #cpp_method;
+}
+IDWriteFontCollection3_GetExpirationEvent :: inline (this: *IDWriteFontCollection3) -> HANDLE { return this.idwritefontcollection3_vtable.GetExpirationEvent(this); }
+
+vtable :: (obj: *IDWriteFontCollection3) -> *IDWriteFontCollection3_VTable { return obj.idwritefontcollection3_vtable; }
+
+
+IDWriteFactory7 :: struct {
+    #as using idwritefactory6: IDWriteFactory6;
+    #place idwritefactory6; idwritefactory7_vtable: *IDWriteFactory7_VTable;
+}
+IDWriteFactory7_VTable :: struct #type_info_none {
+    using idwritefactory6: IDWriteFactory6_VTable;
+    GetSystemFontSet_2: (this: *IDWriteFactory7, includeDownloadableFonts: BOOL, fontSet: **IDWriteFontSet2) -> HRESULT #cpp_method;
+
+    GetSystemFontCollection_3: (this: *IDWriteFactory7, includeDownloadableFonts: BOOL, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection3) -> HRESULT #cpp_method;
+}
+
+IDWriteFactory7_GetSystemFontSet_2 :: inline (this: *IDWriteFactory7, includeDownloadableFonts: BOOL, fontSet: **IDWriteFontSet2) -> HRESULT { return this.idwritefactory7_vtable.GetSystemFontSet_2(this, includeDownloadableFonts, fontSet); }
+
+IDWriteFactory7_GetSystemFontCollection_3 :: inline (this: *IDWriteFactory7, includeDownloadableFonts: BOOL, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, fontCollection: **IDWriteFontCollection3) -> HRESULT { return this.idwritefactory7_vtable.GetSystemFontCollection_3(this, includeDownloadableFonts, fontFamilyModel, fontCollection); }
+
+vtable :: (obj: *IDWriteFactory7) -> *IDWriteFactory7_VTable { return obj.idwritefactory7_vtable; }
+
+
+DWRITE_FONT_SOURCE_TYPE :: enum s32 {
+    UNKNOWN              :: 0;
+
+    PER_MACHINE          :: 1;
+
+    PER_USER             :: 2;
+
+    APPX_PACKAGE         :: 3;
+
+    REMOTE_FONT_PROVIDER :: 4;
+
+    DWRITE_FONT_SOURCE_TYPE_UNKNOWN              :: UNKNOWN;
+
+    DWRITE_FONT_SOURCE_TYPE_PER_MACHINE          :: PER_MACHINE;
+
+    DWRITE_FONT_SOURCE_TYPE_PER_USER             :: PER_USER;
+
+    DWRITE_FONT_SOURCE_TYPE_APPX_PACKAGE         :: APPX_PACKAGE;
+
+    DWRITE_FONT_SOURCE_TYPE_REMOTE_FONT_PROVIDER :: REMOTE_FONT_PROVIDER;
+}
+
+IDWriteFontSet3 :: struct {
+    #as using idwritefontset2: IDWriteFontSet2;
+    #place idwritefontset2; idwritefontset3_vtable: *IDWriteFontSet3_VTable;
+}
+IDWriteFontSet3_VTable :: struct #type_info_none {
+    using idwritefontset2: IDWriteFontSet2_VTable;
+    GetFontSourceType: (this: *IDWriteFontSet3, fontIndex: u32) -> DWRITE_FONT_SOURCE_TYPE #cpp_method;
+
+    GetFontSourceNameLength: (this: *IDWriteFontSet3, listIndex: u32) -> u32 #cpp_method;
+
+    GetFontSourceName: (this: *IDWriteFontSet3, listIndex: u32, stringBuffer: *s16, stringBufferSize: u32) -> HRESULT #cpp_method;
+}
+
+IDWriteFontSet3_GetFontSourceType :: inline (this: *IDWriteFontSet3, fontIndex: u32) -> DWRITE_FONT_SOURCE_TYPE { return this.idwritefontset3_vtable.GetFontSourceType(this, fontIndex); }
+
+IDWriteFontSet3_GetFontSourceNameLength :: inline (this: *IDWriteFontSet3, listIndex: u32) -> u32 { return this.idwritefontset3_vtable.GetFontSourceNameLength(this, listIndex); }
+
+IDWriteFontSet3_GetFontSourceName :: inline (this: *IDWriteFontSet3, listIndex: u32, stringBuffer: *s16, stringBufferSize: u32) -> HRESULT { return this.idwritefontset3_vtable.GetFontSourceName(this, listIndex, stringBuffer, stringBufferSize); }
+
+vtable :: (obj: *IDWriteFontSet3) -> *IDWriteFontSet3_VTable { return obj.idwritefontset3_vtable; }
+
+
+IDWriteFontFace6 :: struct {
+    #as using idwritefontface5: IDWriteFontFace5;
+    #place idwritefontface5; idwritefontface6_vtable: *IDWriteFontFace6_VTable;
+}
+IDWriteFontFace6_VTable :: struct #type_info_none {
+    using idwritefontface5: IDWriteFontFace5_VTable;
+    GetFamilyNames_1: (this: *IDWriteFontFace6, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+
+    GetFaceNames_1: (this: *IDWriteFontFace6, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, names: **IDWriteLocalizedStrings) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFace6_GetFamilyNames_1 :: inline (this: *IDWriteFontFace6, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontface6_vtable.GetFamilyNames_1(this, fontFamilyModel, names); }
+
+IDWriteFontFace6_GetFaceNames_1 :: inline (this: *IDWriteFontFace6, fontFamilyModel: DWRITE_FONT_FAMILY_MODEL, names: **IDWriteLocalizedStrings) -> HRESULT { return this.idwritefontface6_vtable.GetFaceNames_1(this, fontFamilyModel, names); }
+
+vtable :: (obj: *IDWriteFontFace6) -> *IDWriteFontFace6_VTable { return obj.idwritefontface6_vtable; }
+
+
+IDWriteFontSet4 :: struct {
+    #as using idwritefontset3: IDWriteFontSet3;
+    #place idwritefontset3; idwritefontset4_vtable: *IDWriteFontSet4_VTable;
+}
+IDWriteFontSet4_VTable :: struct #type_info_none {
+    using idwritefontset3: IDWriteFontSet3_VTable;
+    ConvertWeightStretchStyleToFontAxisValues: (this: *IDWriteFontSet4, inputAxisValues: *DWRITE_FONT_AXIS_VALUE, inputAxisCount: u32, fontWeight: DWRITE_FONT_WEIGHT, fontStretch: DWRITE_FONT_STRETCH, fontStyle: DWRITE_FONT_STYLE, fontSize: float, outputAxisValues: *DWRITE_FONT_AXIS_VALUE) -> u32 #cpp_method;
+
+    GetMatchingFonts_3: (this: *IDWriteFontSet4, familyName: /*const*/ *s16, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, allowedSimulations: DWRITE_FONT_SIMULATIONS, matchingFonts: **IDWriteFontSet4) -> HRESULT #cpp_method;
+}
+
+IDWriteFontSet4_ConvertWeightStretchStyleToFontAxisValues :: inline (this: *IDWriteFontSet4, inputAxisValues: *DWRITE_FONT_AXIS_VALUE, inputAxisCount: u32, fontWeight: DWRITE_FONT_WEIGHT, fontStretch: DWRITE_FONT_STRETCH, fontStyle: DWRITE_FONT_STYLE, fontSize: float, outputAxisValues: *DWRITE_FONT_AXIS_VALUE) -> u32 { return this.idwritefontset4_vtable.ConvertWeightStretchStyleToFontAxisValues(this, inputAxisValues, inputAxisCount, fontWeight, fontStretch, fontStyle, fontSize, outputAxisValues); }
+
+IDWriteFontSet4_GetMatchingFonts_3 :: inline (this: *IDWriteFontSet4, familyName: /*const*/ *s16, fontAxisValues: /*const*/ *DWRITE_FONT_AXIS_VALUE, fontAxisValueCount: u32, allowedSimulations: DWRITE_FONT_SIMULATIONS, matchingFonts: **IDWriteFontSet4) -> HRESULT { return this.idwritefontset4_vtable.GetMatchingFonts_3(this, familyName, fontAxisValues, fontAxisValueCount, allowedSimulations, matchingFonts); }
+
+vtable :: (obj: *IDWriteFontSet4) -> *IDWriteFontSet4_VTable { return obj.idwritefontset4_vtable; }
+
+
+DWRITE_BITMAP_DATA_BGRA32 :: struct {
+    width:  u32;
+    height: u32;
+    pixels: *u32;
+}
+
+IDWriteBitmapRenderTarget2 :: struct {
+    #as using idwritebitmaprendertarget1: IDWriteBitmapRenderTarget1;
+    #place idwritebitmaprendertarget1; idwritebitmaprendertarget2_vtable: *IDWriteBitmapRenderTarget2_VTable;
+}
+IDWriteBitmapRenderTarget2_VTable :: struct #type_info_none {
+    using idwritebitmaprendertarget1: IDWriteBitmapRenderTarget1_VTable;
+    GetBitmapData: (this: *IDWriteBitmapRenderTarget2, bitmapData: *DWRITE_BITMAP_DATA_BGRA32) -> HRESULT #cpp_method;
+}
+IDWriteBitmapRenderTarget2_GetBitmapData :: inline (this: *IDWriteBitmapRenderTarget2, bitmapData: *DWRITE_BITMAP_DATA_BGRA32) -> HRESULT { return this.idwritebitmaprendertarget2_vtable.GetBitmapData(this, bitmapData); }
+
+vtable :: (obj: *IDWriteBitmapRenderTarget2) -> *IDWriteBitmapRenderTarget2_VTable { return obj.idwritebitmaprendertarget2_vtable; }
+
+
+DWRITE_PAINT_ATTRIBUTES :: enum s32 {
+    NONE            :: 0;
+
+    USES_PALETTE    :: 1;
+
+    USES_TEXT_COLOR :: 2;
+
+    DWRITE_PAINT_ATTRIBUTES_NONE            :: NONE;
+
+    DWRITE_PAINT_ATTRIBUTES_USES_PALETTE    :: USES_PALETTE;
+
+    DWRITE_PAINT_ATTRIBUTES_USES_TEXT_COLOR :: USES_TEXT_COLOR;
+}
+
+DWRITE_PAINT_COLOR :: struct {
+    value:             DWRITE_COLOR_F;
+
+    paletteEntryIndex: u16;
+
+    alphaMultiplier:   float;
+
+    colorAttributes:   DWRITE_PAINT_ATTRIBUTES;
+}
+
+DWRITE_COLOR_COMPOSITE_MODE :: enum s32 {
+    CLEAR          :: 0;
+    SRC            :: 1;
+    DEST           :: 2;
+    SRC_OVER       :: 3;
+    DEST_OVER      :: 4;
+    SRC_IN         :: 5;
+    DEST_IN        :: 6;
+    SRC_OUT        :: 7;
+    DEST_OUT       :: 8;
+    SRC_ATOP       :: 9;
+    DEST_ATOP      :: 10;
+    XOR            :: 11;
+    PLUS           :: 12;
+
+    SCREEN         :: 13;
+    OVERLAY        :: 14;
+    DARKEN         :: 15;
+    LIGHTEN        :: 16;
+    COLOR_DODGE    :: 17;
+    COLOR_BURN     :: 18;
+    HARD_LIGHT     :: 19;
+    SOFT_LIGHT     :: 20;
+    DIFFERENCE     :: 21;
+    EXCLUSION      :: 22;
+    MULTIPLY       :: 23;
+
+    HSL_HUE        :: 24;
+    HSL_SATURATION :: 25;
+    HSL_COLOR      :: 26;
+    HSL_LUMINOSITY :: 27;
+
+    DWRITE_COLOR_COMPOSITE_CLEAR          :: CLEAR;
+    DWRITE_COLOR_COMPOSITE_SRC            :: SRC;
+    DWRITE_COLOR_COMPOSITE_DEST           :: DEST;
+    DWRITE_COLOR_COMPOSITE_SRC_OVER       :: SRC_OVER;
+    DWRITE_COLOR_COMPOSITE_DEST_OVER      :: DEST_OVER;
+    DWRITE_COLOR_COMPOSITE_SRC_IN         :: SRC_IN;
+    DWRITE_COLOR_COMPOSITE_DEST_IN        :: DEST_IN;
+    DWRITE_COLOR_COMPOSITE_SRC_OUT        :: SRC_OUT;
+    DWRITE_COLOR_COMPOSITE_DEST_OUT       :: DEST_OUT;
+    DWRITE_COLOR_COMPOSITE_SRC_ATOP       :: SRC_ATOP;
+    DWRITE_COLOR_COMPOSITE_DEST_ATOP      :: DEST_ATOP;
+    DWRITE_COLOR_COMPOSITE_XOR            :: XOR;
+    DWRITE_COLOR_COMPOSITE_PLUS           :: PLUS;
+
+    DWRITE_COLOR_COMPOSITE_SCREEN         :: SCREEN;
+    DWRITE_COLOR_COMPOSITE_OVERLAY        :: OVERLAY;
+    DWRITE_COLOR_COMPOSITE_DARKEN         :: DARKEN;
+    DWRITE_COLOR_COMPOSITE_LIGHTEN        :: LIGHTEN;
+    DWRITE_COLOR_COMPOSITE_COLOR_DODGE    :: COLOR_DODGE;
+    DWRITE_COLOR_COMPOSITE_COLOR_BURN     :: COLOR_BURN;
+    DWRITE_COLOR_COMPOSITE_HARD_LIGHT     :: HARD_LIGHT;
+    DWRITE_COLOR_COMPOSITE_SOFT_LIGHT     :: SOFT_LIGHT;
+    DWRITE_COLOR_COMPOSITE_DIFFERENCE     :: DIFFERENCE;
+    DWRITE_COLOR_COMPOSITE_EXCLUSION      :: EXCLUSION;
+    DWRITE_COLOR_COMPOSITE_MULTIPLY       :: MULTIPLY;
+
+    DWRITE_COLOR_COMPOSITE_HSL_HUE        :: HSL_HUE;
+    DWRITE_COLOR_COMPOSITE_HSL_SATURATION :: HSL_SATURATION;
+    DWRITE_COLOR_COMPOSITE_HSL_COLOR      :: HSL_COLOR;
+    DWRITE_COLOR_COMPOSITE_HSL_LUMINOSITY :: HSL_LUMINOSITY;
+}
+
+DWRITE_PAINT_TYPE :: enum s32 {
+    NONE            :: 0;
+    LAYERS          :: 1;
+    SOLID_GLYPH     :: 2;
+
+    SOLID           :: 3;
+    LINEAR_GRADIENT :: 4;
+    RADIAL_GRADIENT :: 5;
+    SWEEP_GRADIENT  :: 6;
+    GLYPH           :: 7;
+    COLOR_GLYPH     :: 8;
+    TRANSFORM       :: 9;
+    COMPOSITE       :: 10;
+
+    DWRITE_PAINT_TYPE_NONE            :: NONE;
+    DWRITE_PAINT_TYPE_LAYERS          :: LAYERS;
+    DWRITE_PAINT_TYPE_SOLID_GLYPH     :: SOLID_GLYPH;
+
+    DWRITE_PAINT_TYPE_SOLID           :: SOLID;
+    DWRITE_PAINT_TYPE_LINEAR_GRADIENT :: LINEAR_GRADIENT;
+    DWRITE_PAINT_TYPE_RADIAL_GRADIENT :: RADIAL_GRADIENT;
+    DWRITE_PAINT_TYPE_SWEEP_GRADIENT  :: SWEEP_GRADIENT;
+    DWRITE_PAINT_TYPE_GLYPH           :: GLYPH;
+    DWRITE_PAINT_TYPE_COLOR_GLYPH     :: COLOR_GLYPH;
+    DWRITE_PAINT_TYPE_TRANSFORM       :: TRANSFORM;
+    DWRITE_PAINT_TYPE_COMPOSITE       :: COMPOSITE;
+}
+
+DWRITE_PAINT_ELEMENT :: struct {
+    paintType: DWRITE_PAINT_TYPE;
+
+    PAINT_UNION :: union {
+        PAINT_LAYERS :: struct {
+            childCount: u32;
+        }
+
+        layers:         PAINT_LAYERS;
+
+        PAINT_SOLID_GLYPH :: struct {
+            glyphIndex: u32;
+
+            color:      DWRITE_PAINT_COLOR;
+        }
+
+        solidGlyph:     PAINT_SOLID_GLYPH;
+
+        solid:          DWRITE_PAINT_COLOR;
+
+        PAINT_LINEAR_GRADIENT :: struct {
+            extendMode:        u32;
+
+            gradientStopCount: u32;
+
+            x0:                float;
+
+            y0:                float;
+
+            x1:                float;
+
+            y1:                float;
+
+            x2:                float;
+
+            y2:                float;
+        }
+
+        linearGradient: PAINT_LINEAR_GRADIENT;
+
+        PAINT_RADIAL_GRADIENT :: struct {
+            extendMode:        u32;
+
+            gradientStopCount: u32;
+
+            x0:                float;
+
+            y0:                float;
+
+            radius0:           float;
+
+            x1:                float;
+
+            y1:                float;
+
+            radius1:           float;
+        }
+
+        radialGradient: PAINT_RADIAL_GRADIENT;
+
+        PAINT_SWEEP_GRADIENT :: struct {
+            extendMode:        u32;
+
+            gradientStopCount: u32;
+
+            centerX:           float;
+
+            centerY:           float;
+
+            startAngle:        float;
+
+            endAngle:          float;
+        }
+
+        sweepGradient:  PAINT_SWEEP_GRADIENT;
+
+        PAINT_GLYPH :: struct {
+            glyphIndex: u32;
+        }
+
+        glyph:          PAINT_GLYPH;
+
+        PAINT_COLOR_GLYPH :: struct {
+            glyphIndex: u32;
+
+            clipBox:    D2D_RECT_F;
+        }
+
+        colorGlyph:     PAINT_COLOR_GLYPH;
+
+        transform:      DWRITE_MATRIX;
+
+        PAINT_COMPOSITE :: struct {
+            mode: DWRITE_COLOR_COMPOSITE_MODE;
+        }
+
+        composite:      PAINT_COMPOSITE;
+    }
+
+    paint:     PAINT_UNION;
+}
+
+IDWritePaintReader :: struct {
+    #as using iunknown: IUnknown;
+    #place iunknown; idwritepaintreader_vtable: *IDWritePaintReader_VTable;
+}
+IDWritePaintReader_VTable :: struct #type_info_none {
+    using iunknown: IUnknown_VTable;
+    SetCurrentGlyph: (this: *IDWritePaintReader, glyphIndex: u32, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32, clipBox: *D2D_RECT_F, glyphAttributes: *DWRITE_PAINT_ATTRIBUTES = null) -> HRESULT #cpp_method;
+
+    SetTextColor: (this: *IDWritePaintReader, textColor: *DWRITE_COLOR_F) -> HRESULT #cpp_method;
+
+    SetColorPaletteIndex: (this: *IDWritePaintReader, colorPaletteIndex: u32) -> HRESULT #cpp_method;
+
+    SetCustomColorPalette: (this: *IDWritePaintReader, paletteEntries: *DWRITE_COLOR_F, paletteEntryCount: u32) -> HRESULT #cpp_method;
+
+    MoveToFirstChild: (this: *IDWritePaintReader, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32 = 36) -> HRESULT #cpp_method;
+
+    MoveToNextSibling: (this: *IDWritePaintReader, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32 = 36) -> HRESULT #cpp_method;
+
+    MoveToParent: (this: *IDWritePaintReader) -> HRESULT #cpp_method;
+
+    GetGradientStops: (this: *IDWritePaintReader, firstGradientStopIndex: u32, gradientStopCount: u32, gradientStops: *D2D1_GRADIENT_STOP) -> HRESULT #cpp_method;
+
+    GetGradientStopColors: (this: *IDWritePaintReader, firstGradientStopIndex: u32, gradientStopCount: u32, gradientStopColors: *DWRITE_PAINT_COLOR) -> HRESULT #cpp_method;
+}
+
+IDWritePaintReader_SetCurrentGlyph :: inline (this: *IDWritePaintReader, glyphIndex: u32, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32, clipBox: *D2D_RECT_F, glyphAttributes: *DWRITE_PAINT_ATTRIBUTES = null) -> HRESULT { return this.idwritepaintreader_vtable.SetCurrentGlyph(this, glyphIndex, paintElement, structSize, clipBox, glyphAttributes); }
+
+IDWritePaintReader_SetTextColor :: inline (this: *IDWritePaintReader, textColor: *DWRITE_COLOR_F) -> HRESULT { return this.idwritepaintreader_vtable.SetTextColor(this, textColor); }
+
+IDWritePaintReader_SetColorPaletteIndex :: inline (this: *IDWritePaintReader, colorPaletteIndex: u32) -> HRESULT { return this.idwritepaintreader_vtable.SetColorPaletteIndex(this, colorPaletteIndex); }
+
+IDWritePaintReader_SetCustomColorPalette :: inline (this: *IDWritePaintReader, paletteEntries: *DWRITE_COLOR_F, paletteEntryCount: u32) -> HRESULT { return this.idwritepaintreader_vtable.SetCustomColorPalette(this, paletteEntries, paletteEntryCount); }
+
+IDWritePaintReader_MoveToFirstChild :: inline (this: *IDWritePaintReader, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32 = 36) -> HRESULT { return this.idwritepaintreader_vtable.MoveToFirstChild(this, paintElement, structSize); }
+
+IDWritePaintReader_MoveToNextSibling :: inline (this: *IDWritePaintReader, paintElement: *DWRITE_PAINT_ELEMENT, structSize: u32 = 36) -> HRESULT { return this.idwritepaintreader_vtable.MoveToNextSibling(this, paintElement, structSize); }
+
+IDWritePaintReader_MoveToParent :: inline (this: *IDWritePaintReader) -> HRESULT { return this.idwritepaintreader_vtable.MoveToParent(this); }
+
+IDWritePaintReader_GetGradientStops :: inline (this: *IDWritePaintReader, firstGradientStopIndex: u32, gradientStopCount: u32, gradientStops: *D2D1_GRADIENT_STOP) -> HRESULT { return this.idwritepaintreader_vtable.GetGradientStops(this, firstGradientStopIndex, gradientStopCount, gradientStops); }
+
+IDWritePaintReader_GetGradientStopColors :: inline (this: *IDWritePaintReader, firstGradientStopIndex: u32, gradientStopCount: u32, gradientStopColors: *DWRITE_PAINT_COLOR) -> HRESULT { return this.idwritepaintreader_vtable.GetGradientStopColors(this, firstGradientStopIndex, gradientStopCount, gradientStopColors); }
+
+vtable :: (obj: *IDWritePaintReader) -> *IDWritePaintReader_VTable { return obj.idwritepaintreader_vtable; }
+
+
+IDWriteFontFace7 :: struct {
+    #as using idwritefontface6: IDWriteFontFace6;
+    #place idwritefontface6; idwritefontface7_vtable: *IDWriteFontFace7_VTable;
+}
+IDWriteFontFace7_VTable :: struct #type_info_none {
+    using idwritefontface6: IDWriteFontFace6_VTable;
+    GetPaintFeatureLevel: (this: *IDWriteFontFace7, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS) -> DWRITE_PAINT_FEATURE_LEVEL #cpp_method;
+
+    CreatePaintReader: (this: *IDWriteFontFace7, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, paintFeatureLevel: DWRITE_PAINT_FEATURE_LEVEL, paintReader: **IDWritePaintReader) -> HRESULT #cpp_method;
+}
+
+IDWriteFontFace7_GetPaintFeatureLevel :: inline (this: *IDWriteFontFace7, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS) -> DWRITE_PAINT_FEATURE_LEVEL { return this.idwritefontface7_vtable.GetPaintFeatureLevel(this, glyphImageFormat); }
+
+IDWriteFontFace7_CreatePaintReader :: inline (this: *IDWriteFontFace7, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, paintFeatureLevel: DWRITE_PAINT_FEATURE_LEVEL, paintReader: **IDWritePaintReader) -> HRESULT { return this.idwritefontface7_vtable.CreatePaintReader(this, glyphImageFormat, paintFeatureLevel, paintReader); }
+
+vtable :: (obj: *IDWriteFontFace7) -> *IDWriteFontFace7_VTable { return obj.idwritefontface7_vtable; }
+
+
+IDWriteFactory8 :: struct {
+    #as using idwritefactory7: IDWriteFactory7;
+    #place idwritefactory7; idwritefactory8_vtable: *IDWriteFactory8_VTable;
+}
+IDWriteFactory8_VTable :: struct #type_info_none {
+    using idwritefactory7: IDWriteFactory7_VTable;
+    TranslateColorGlyphRun_2: (this: *IDWriteFactory8, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, desiredGlyphImageFormats: DWRITE_GLYPH_IMAGE_FORMATS, paintFeatureLevel: DWRITE_PAINT_FEATURE_LEVEL, measuringMode: DWRITE_MEASURING_MODE, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, colorPaletteIndex: u32, colorEnumerator: **IDWriteColorGlyphRunEnumerator1) -> HRESULT #cpp_method;
+}
+IDWriteFactory8_TranslateColorGlyphRun_2 :: inline (this: *IDWriteFactory8, baselineOrigin: D2D1_POINT_2F, glyphRun: /*const*/ *DWRITE_GLYPH_RUN, glyphRunDescription: /*const*/ *DWRITE_GLYPH_RUN_DESCRIPTION, desiredGlyphImageFormats: DWRITE_GLYPH_IMAGE_FORMATS, paintFeatureLevel: DWRITE_PAINT_FEATURE_LEVEL, measuringMode: DWRITE_MEASURING_MODE, worldAndDpiTransform: /*const*/ *DWRITE_MATRIX, colorPaletteIndex: u32, colorEnumerator: **IDWriteColorGlyphRunEnumerator1) -> HRESULT { return this.idwritefactory8_vtable.TranslateColorGlyphRun_2(this, baselineOrigin, glyphRun, glyphRunDescription, desiredGlyphImageFormats, paintFeatureLevel, measuringMode, worldAndDpiTransform, colorPaletteIndex, colorEnumerator); }
+
+vtable :: (obj: *IDWriteFactory8) -> *IDWriteFactory8_VTable { return obj.idwritefactory8_vtable; }
+
+
+IDWriteBitmapRenderTarget3 :: struct {
+    #as using idwritebitmaprendertarget2: IDWriteBitmapRenderTarget2;
+    #place idwritebitmaprendertarget2; idwritebitmaprendertarget3_vtable: *IDWriteBitmapRenderTarget3_VTable;
+}
+IDWriteBitmapRenderTarget3_VTable :: struct #type_info_none {
+    using idwritebitmaprendertarget2: IDWriteBitmapRenderTarget2_VTable;
+    GetPaintFeatureLevel: (this: *IDWriteBitmapRenderTarget3) -> DWRITE_PAINT_FEATURE_LEVEL #cpp_method;
+
+    DrawPaintGlyphRun: (this: *IDWriteBitmapRenderTarget3, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, textColor: COLORREF, colorPaletteIndex: u32 = 0, blackBoxRect: *RECT = null) -> HRESULT #cpp_method;
+
+    DrawGlyphRunWithColorSupport: (this: *IDWriteBitmapRenderTarget3, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, renderingParams: *IDWriteRenderingParams, textColor: COLORREF, colorPaletteIndex: u32 = 0, blackBoxRect: *RECT = null) -> HRESULT #cpp_method;
+}
+
+IDWriteBitmapRenderTarget3_GetPaintFeatureLevel :: inline (this: *IDWriteBitmapRenderTarget3) -> DWRITE_PAINT_FEATURE_LEVEL { return this.idwritebitmaprendertarget3_vtable.GetPaintFeatureLevel(this); }
+
+IDWriteBitmapRenderTarget3_DrawPaintGlyphRun :: inline (this: *IDWriteBitmapRenderTarget3, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, glyphImageFormat: DWRITE_GLYPH_IMAGE_FORMATS, textColor: COLORREF, colorPaletteIndex: u32 = 0, blackBoxRect: *RECT = null) -> HRESULT { return this.idwritebitmaprendertarget3_vtable.DrawPaintGlyphRun(this, baselineOriginX, baselineOriginY, measuringMode, glyphRun, glyphImageFormat, textColor, colorPaletteIndex, blackBoxRect); }
+
+IDWriteBitmapRenderTarget3_DrawGlyphRunWithColorSupport :: inline (this: *IDWriteBitmapRenderTarget3, baselineOriginX: float, baselineOriginY: float, measuringMode: DWRITE_MEASURING_MODE, glyphRun: *DWRITE_GLYPH_RUN, renderingParams: *IDWriteRenderingParams, textColor: COLORREF, colorPaletteIndex: u32 = 0, blackBoxRect: *RECT = null) -> HRESULT { return this.idwritebitmaprendertarget3_vtable.DrawGlyphRunWithColorSupport(this, baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, colorPaletteIndex, blackBoxRect); }
+
+vtable :: (obj: *IDWriteBitmapRenderTarget3) -> *IDWriteBitmapRenderTarget3_VTable { return obj.idwritebitmaprendertarget3_vtable; }
+
+
+#scope_file
+
+#import "Basic"; // For assert
+
+
+#run {
+    {
+        instance: D2D1_PIXEL_FORMAT;
+        assert(((cast(*void)(*instance.format)) - cast(*void)(*instance)) == 0, "D2D1_PIXEL_FORMAT.format has unexpected offset % instead of 0", ((cast(*void)(*instance.format)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_PIXEL_FORMAT.format)) == 4, "D2D1_PIXEL_FORMAT.format has unexpected size % instead of 4", size_of(type_of(D2D1_PIXEL_FORMAT.format)));
+        assert(((cast(*void)(*instance.alphaMode)) - cast(*void)(*instance)) == 4, "D2D1_PIXEL_FORMAT.alphaMode has unexpected offset % instead of 4", ((cast(*void)(*instance.alphaMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_PIXEL_FORMAT.alphaMode)) == 4, "D2D1_PIXEL_FORMAT.alphaMode has unexpected size % instead of 4", size_of(type_of(D2D1_PIXEL_FORMAT.alphaMode)));
+        assert(size_of(D2D1_PIXEL_FORMAT) == 8, "D2D1_PIXEL_FORMAT has size % instead of 8", size_of(D2D1_PIXEL_FORMAT));
+    }
+
+    {
+        instance: D2D_POINT_2U;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D_POINT_2U.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_POINT_2U.x)) == 4, "D2D_POINT_2U.x has unexpected size % instead of 4", size_of(type_of(D2D_POINT_2U.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D_POINT_2U.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_POINT_2U.y)) == 4, "D2D_POINT_2U.y has unexpected size % instead of 4", size_of(type_of(D2D_POINT_2U.y)));
+        assert(size_of(D2D_POINT_2U) == 8, "D2D_POINT_2U has size % instead of 8", size_of(D2D_POINT_2U));
+    }
+
+    {
+        instance: D2D_POINT_2F;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D_POINT_2F.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_POINT_2F.x)) == 4, "D2D_POINT_2F.x has unexpected size % instead of 4", size_of(type_of(D2D_POINT_2F.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D_POINT_2F.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_POINT_2F.y)) == 4, "D2D_POINT_2F.y has unexpected size % instead of 4", size_of(type_of(D2D_POINT_2F.y)));
+        assert(size_of(D2D_POINT_2F) == 8, "D2D_POINT_2F has size % instead of 8", size_of(D2D_POINT_2F));
+    }
+
+    {
+        instance: D2D_VECTOR_2F;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D_VECTOR_2F.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_2F.x)) == 4, "D2D_VECTOR_2F.x has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_2F.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D_VECTOR_2F.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_2F.y)) == 4, "D2D_VECTOR_2F.y has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_2F.y)));
+        assert(size_of(D2D_VECTOR_2F) == 8, "D2D_VECTOR_2F has size % instead of 8", size_of(D2D_VECTOR_2F));
+    }
+
+    {
+        instance: D2D_VECTOR_3F;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D_VECTOR_3F.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_3F.x)) == 4, "D2D_VECTOR_3F.x has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_3F.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D_VECTOR_3F.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_3F.y)) == 4, "D2D_VECTOR_3F.y has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_3F.y)));
+        assert(((cast(*void)(*instance.z)) - cast(*void)(*instance)) == 8, "D2D_VECTOR_3F.z has unexpected offset % instead of 8", ((cast(*void)(*instance.z)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_3F.z)) == 4, "D2D_VECTOR_3F.z has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_3F.z)));
+        assert(size_of(D2D_VECTOR_3F) == 12, "D2D_VECTOR_3F has size % instead of 12", size_of(D2D_VECTOR_3F));
+    }
+
+    {
+        instance: D2D_VECTOR_4F;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D_VECTOR_4F.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_4F.x)) == 4, "D2D_VECTOR_4F.x has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_4F.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D_VECTOR_4F.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_4F.y)) == 4, "D2D_VECTOR_4F.y has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_4F.y)));
+        assert(((cast(*void)(*instance.z)) - cast(*void)(*instance)) == 8, "D2D_VECTOR_4F.z has unexpected offset % instead of 8", ((cast(*void)(*instance.z)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_4F.z)) == 4, "D2D_VECTOR_4F.z has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_4F.z)));
+        assert(((cast(*void)(*instance.w)) - cast(*void)(*instance)) == 12, "D2D_VECTOR_4F.w has unexpected offset % instead of 12", ((cast(*void)(*instance.w)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_VECTOR_4F.w)) == 4, "D2D_VECTOR_4F.w has unexpected size % instead of 4", size_of(type_of(D2D_VECTOR_4F.w)));
+        assert(size_of(D2D_VECTOR_4F) == 16, "D2D_VECTOR_4F has size % instead of 16", size_of(D2D_VECTOR_4F));
+    }
+
+    {
+        instance: D2D_RECT_F;
+        assert(((cast(*void)(*instance.left)) - cast(*void)(*instance)) == 0, "D2D_RECT_F.left has unexpected offset % instead of 0", ((cast(*void)(*instance.left)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_F.left)) == 4, "D2D_RECT_F.left has unexpected size % instead of 4", size_of(type_of(D2D_RECT_F.left)));
+        assert(((cast(*void)(*instance.top)) - cast(*void)(*instance)) == 4, "D2D_RECT_F.top has unexpected offset % instead of 4", ((cast(*void)(*instance.top)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_F.top)) == 4, "D2D_RECT_F.top has unexpected size % instead of 4", size_of(type_of(D2D_RECT_F.top)));
+        assert(((cast(*void)(*instance.right)) - cast(*void)(*instance)) == 8, "D2D_RECT_F.right has unexpected offset % instead of 8", ((cast(*void)(*instance.right)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_F.right)) == 4, "D2D_RECT_F.right has unexpected size % instead of 4", size_of(type_of(D2D_RECT_F.right)));
+        assert(((cast(*void)(*instance.bottom)) - cast(*void)(*instance)) == 12, "D2D_RECT_F.bottom has unexpected offset % instead of 12", ((cast(*void)(*instance.bottom)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_F.bottom)) == 4, "D2D_RECT_F.bottom has unexpected size % instead of 4", size_of(type_of(D2D_RECT_F.bottom)));
+        assert(size_of(D2D_RECT_F) == 16, "D2D_RECT_F has size % instead of 16", size_of(D2D_RECT_F));
+    }
+
+    {
+        instance: D2D_RECT_U;
+        assert(((cast(*void)(*instance.left)) - cast(*void)(*instance)) == 0, "D2D_RECT_U.left has unexpected offset % instead of 0", ((cast(*void)(*instance.left)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_U.left)) == 4, "D2D_RECT_U.left has unexpected size % instead of 4", size_of(type_of(D2D_RECT_U.left)));
+        assert(((cast(*void)(*instance.top)) - cast(*void)(*instance)) == 4, "D2D_RECT_U.top has unexpected offset % instead of 4", ((cast(*void)(*instance.top)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_U.top)) == 4, "D2D_RECT_U.top has unexpected size % instead of 4", size_of(type_of(D2D_RECT_U.top)));
+        assert(((cast(*void)(*instance.right)) - cast(*void)(*instance)) == 8, "D2D_RECT_U.right has unexpected offset % instead of 8", ((cast(*void)(*instance.right)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_U.right)) == 4, "D2D_RECT_U.right has unexpected size % instead of 4", size_of(type_of(D2D_RECT_U.right)));
+        assert(((cast(*void)(*instance.bottom)) - cast(*void)(*instance)) == 12, "D2D_RECT_U.bottom has unexpected offset % instead of 12", ((cast(*void)(*instance.bottom)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_RECT_U.bottom)) == 4, "D2D_RECT_U.bottom has unexpected size % instead of 4", size_of(type_of(D2D_RECT_U.bottom)));
+        assert(size_of(D2D_RECT_U) == 16, "D2D_RECT_U has size % instead of 16", size_of(D2D_RECT_U));
+    }
+
+    {
+        instance: D2D_SIZE_F;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "D2D_SIZE_F.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_SIZE_F.width)) == 4, "D2D_SIZE_F.width has unexpected size % instead of 4", size_of(type_of(D2D_SIZE_F.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 4, "D2D_SIZE_F.height has unexpected offset % instead of 4", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_SIZE_F.height)) == 4, "D2D_SIZE_F.height has unexpected size % instead of 4", size_of(type_of(D2D_SIZE_F.height)));
+        assert(size_of(D2D_SIZE_F) == 8, "D2D_SIZE_F has size % instead of 8", size_of(D2D_SIZE_F));
+    }
+
+    {
+        instance: D2D_SIZE_U;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "D2D_SIZE_U.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_SIZE_U.width)) == 4, "D2D_SIZE_U.width has unexpected size % instead of 4", size_of(type_of(D2D_SIZE_U.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 4, "D2D_SIZE_U.height has unexpected offset % instead of 4", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D_SIZE_U.height)) == 4, "D2D_SIZE_U.height has unexpected size % instead of 4", size_of(type_of(D2D_SIZE_U.height)));
+        assert(size_of(D2D_SIZE_U) == 8, "D2D_SIZE_U has size % instead of 8", size_of(D2D_SIZE_U));
+    }
+
+    assert(size_of(D2D_MATRIX_3X2_F) == 24, "D2D_MATRIX_3X2_F has size % instead of 24", size_of(D2D_MATRIX_3X2_F));
+
+    assert(size_of(D2D_MATRIX_4X3_F) == 48, "D2D_MATRIX_4X3_F has size % instead of 48", size_of(D2D_MATRIX_4X3_F));
+
+    assert(size_of(D2D_MATRIX_4X4_F) == 64, "D2D_MATRIX_4X4_F has size % instead of 64", size_of(D2D_MATRIX_4X4_F));
+
+    assert(size_of(D2D_MATRIX_5X4_F) == 80, "D2D_MATRIX_5X4_F has size % instead of 80", size_of(D2D_MATRIX_5X4_F));
+
+    {
+        instance: _D3D_SHADER_MACRO;
+        assert(((cast(*void)(*instance.Name)) - cast(*void)(*instance)) == 0, "_D3D_SHADER_MACRO.Name has unexpected offset % instead of 0", ((cast(*void)(*instance.Name)) - cast(*void)(*instance)));
+        assert(size_of(type_of(_D3D_SHADER_MACRO.Name)) == 8, "_D3D_SHADER_MACRO.Name has unexpected size % instead of 8", size_of(type_of(_D3D_SHADER_MACRO.Name)));
+        assert(((cast(*void)(*instance.Definition)) - cast(*void)(*instance)) == 8, "_D3D_SHADER_MACRO.Definition has unexpected offset % instead of 8", ((cast(*void)(*instance.Definition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(_D3D_SHADER_MACRO.Definition)) == 8, "_D3D_SHADER_MACRO.Definition has unexpected size % instead of 8", size_of(type_of(_D3D_SHADER_MACRO.Definition)));
+        assert(size_of(_D3D_SHADER_MACRO) == 16, "_D3D_SHADER_MACRO has size % instead of 16", size_of(_D3D_SHADER_MACRO));
+    }
+
+    assert(size_of(ID3D10Blob) == 8, "ID3D10Blob has size % instead of 8", size_of(ID3D10Blob));
+
+    assert(size_of(ID3DDestructionNotifier) == 8, "ID3DDestructionNotifier has size % instead of 8", size_of(ID3DDestructionNotifier));
+
+    assert(size_of(ID3DInclude) == 8, "ID3DInclude has size % instead of 8", size_of(ID3DInclude));
+
+    {
+        instance: D2D1_BITMAP_PROPERTIES;
+        assert(((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)) == 0, "D2D1_BITMAP_PROPERTIES.pixelFormat has unexpected offset % instead of 0", ((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES.pixelFormat)) == 8, "D2D1_BITMAP_PROPERTIES.pixelFormat has unexpected size % instead of 8", size_of(type_of(D2D1_BITMAP_PROPERTIES.pixelFormat)));
+        assert(((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)) == 8, "D2D1_BITMAP_PROPERTIES.dpiX has unexpected offset % instead of 8", ((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES.dpiX)) == 4, "D2D1_BITMAP_PROPERTIES.dpiX has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_PROPERTIES.dpiX)));
+        assert(((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)) == 12, "D2D1_BITMAP_PROPERTIES.dpiY has unexpected offset % instead of 12", ((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES.dpiY)) == 4, "D2D1_BITMAP_PROPERTIES.dpiY has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_PROPERTIES.dpiY)));
+        assert(size_of(D2D1_BITMAP_PROPERTIES) == 16, "D2D1_BITMAP_PROPERTIES has size % instead of 16", size_of(D2D1_BITMAP_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_GRADIENT_STOP;
+        assert(((cast(*void)(*instance.position)) - cast(*void)(*instance)) == 0, "D2D1_GRADIENT_STOP.position has unexpected offset % instead of 0", ((cast(*void)(*instance.position)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_STOP.position)) == 4, "D2D1_GRADIENT_STOP.position has unexpected size % instead of 4", size_of(type_of(D2D1_GRADIENT_STOP.position)));
+        assert(((cast(*void)(*instance.color)) - cast(*void)(*instance)) == 4, "D2D1_GRADIENT_STOP.color has unexpected offset % instead of 4", ((cast(*void)(*instance.color)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_STOP.color)) == 16, "D2D1_GRADIENT_STOP.color has unexpected size % instead of 16", size_of(type_of(D2D1_GRADIENT_STOP.color)));
+        assert(size_of(D2D1_GRADIENT_STOP) == 20, "D2D1_GRADIENT_STOP has size % instead of 20", size_of(D2D1_GRADIENT_STOP));
+    }
+
+    {
+        instance: D2D1_BRUSH_PROPERTIES;
+        assert(((cast(*void)(*instance.opacity)) - cast(*void)(*instance)) == 0, "D2D1_BRUSH_PROPERTIES.opacity has unexpected offset % instead of 0", ((cast(*void)(*instance.opacity)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BRUSH_PROPERTIES.opacity)) == 4, "D2D1_BRUSH_PROPERTIES.opacity has unexpected size % instead of 4", size_of(type_of(D2D1_BRUSH_PROPERTIES.opacity)));
+        assert(((cast(*void)(*instance.transform)) - cast(*void)(*instance)) == 4, "D2D1_BRUSH_PROPERTIES.transform has unexpected offset % instead of 4", ((cast(*void)(*instance.transform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BRUSH_PROPERTIES.transform)) == 24, "D2D1_BRUSH_PROPERTIES.transform has unexpected size % instead of 24", size_of(type_of(D2D1_BRUSH_PROPERTIES.transform)));
+        assert(size_of(D2D1_BRUSH_PROPERTIES) == 28, "D2D1_BRUSH_PROPERTIES has size % instead of 28", size_of(D2D1_BRUSH_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_BITMAP_BRUSH_PROPERTIES;
+        assert(((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)) == 0, "D2D1_BITMAP_BRUSH_PROPERTIES.extendModeX has unexpected offset % instead of 0", ((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.extendModeX)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES.extendModeX has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.extendModeX)));
+        assert(((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES.extendModeY has unexpected offset % instead of 4", ((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.extendModeY)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES.extendModeY has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.extendModeY)));
+        assert(((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)) == 8, "D2D1_BITMAP_BRUSH_PROPERTIES.interpolationMode has unexpected offset % instead of 8", ((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.interpolationMode)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES.interpolationMode has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES.interpolationMode)));
+        assert(size_of(D2D1_BITMAP_BRUSH_PROPERTIES) == 12, "D2D1_BITMAP_BRUSH_PROPERTIES has size % instead of 12", size_of(D2D1_BITMAP_BRUSH_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES;
+        assert(((cast(*void)(*instance.startPoint)) - cast(*void)(*instance)) == 0, "D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.startPoint has unexpected offset % instead of 0", ((cast(*void)(*instance.startPoint)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.startPoint)) == 8, "D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.startPoint has unexpected size % instead of 8", size_of(type_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.startPoint)));
+        assert(((cast(*void)(*instance.endPoint)) - cast(*void)(*instance)) == 8, "D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.endPoint has unexpected offset % instead of 8", ((cast(*void)(*instance.endPoint)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.endPoint)) == 8, "D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.endPoint has unexpected size % instead of 8", size_of(type_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES.endPoint)));
+        assert(size_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES) == 16, "D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES has size % instead of 16", size_of(D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES;
+        assert(((cast(*void)(*instance.center)) - cast(*void)(*instance)) == 0, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center has unexpected offset % instead of 0", ((cast(*void)(*instance.center)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center)) == 8, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center has unexpected size % instead of 8", size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center)));
+        assert(((cast(*void)(*instance.gradientOriginOffset)) - cast(*void)(*instance)) == 8, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset has unexpected offset % instead of 8", ((cast(*void)(*instance.gradientOriginOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset)) == 8, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset has unexpected size % instead of 8", size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset)));
+        assert(((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)) == 16, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX has unexpected offset % instead of 16", ((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX)) == 4, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX has unexpected size % instead of 4", size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX)));
+        assert(((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)) == 20, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY has unexpected offset % instead of 20", ((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY)) == 4, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY has unexpected size % instead of 4", size_of(type_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY)));
+        assert(size_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES) == 24, "D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES has size % instead of 24", size_of(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_BEZIER_SEGMENT;
+        assert(((cast(*void)(*instance.point1)) - cast(*void)(*instance)) == 0, "D2D1_BEZIER_SEGMENT.point1 has unexpected offset % instead of 0", ((cast(*void)(*instance.point1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BEZIER_SEGMENT.point1)) == 8, "D2D1_BEZIER_SEGMENT.point1 has unexpected size % instead of 8", size_of(type_of(D2D1_BEZIER_SEGMENT.point1)));
+        assert(((cast(*void)(*instance.point2)) - cast(*void)(*instance)) == 8, "D2D1_BEZIER_SEGMENT.point2 has unexpected offset % instead of 8", ((cast(*void)(*instance.point2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BEZIER_SEGMENT.point2)) == 8, "D2D1_BEZIER_SEGMENT.point2 has unexpected size % instead of 8", size_of(type_of(D2D1_BEZIER_SEGMENT.point2)));
+        assert(((cast(*void)(*instance.point3)) - cast(*void)(*instance)) == 16, "D2D1_BEZIER_SEGMENT.point3 has unexpected offset % instead of 16", ((cast(*void)(*instance.point3)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BEZIER_SEGMENT.point3)) == 8, "D2D1_BEZIER_SEGMENT.point3 has unexpected size % instead of 8", size_of(type_of(D2D1_BEZIER_SEGMENT.point3)));
+        assert(size_of(D2D1_BEZIER_SEGMENT) == 24, "D2D1_BEZIER_SEGMENT has size % instead of 24", size_of(D2D1_BEZIER_SEGMENT));
+    }
+
+    {
+        instance: D2D1_TRIANGLE;
+        assert(((cast(*void)(*instance.point1)) - cast(*void)(*instance)) == 0, "D2D1_TRIANGLE.point1 has unexpected offset % instead of 0", ((cast(*void)(*instance.point1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRIANGLE.point1)) == 8, "D2D1_TRIANGLE.point1 has unexpected size % instead of 8", size_of(type_of(D2D1_TRIANGLE.point1)));
+        assert(((cast(*void)(*instance.point2)) - cast(*void)(*instance)) == 8, "D2D1_TRIANGLE.point2 has unexpected offset % instead of 8", ((cast(*void)(*instance.point2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRIANGLE.point2)) == 8, "D2D1_TRIANGLE.point2 has unexpected size % instead of 8", size_of(type_of(D2D1_TRIANGLE.point2)));
+        assert(((cast(*void)(*instance.point3)) - cast(*void)(*instance)) == 16, "D2D1_TRIANGLE.point3 has unexpected offset % instead of 16", ((cast(*void)(*instance.point3)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRIANGLE.point3)) == 8, "D2D1_TRIANGLE.point3 has unexpected size % instead of 8", size_of(type_of(D2D1_TRIANGLE.point3)));
+        assert(size_of(D2D1_TRIANGLE) == 24, "D2D1_TRIANGLE has size % instead of 24", size_of(D2D1_TRIANGLE));
+    }
+
+    {
+        instance: D2D1_ARC_SEGMENT;
+        assert(((cast(*void)(*instance.point)) - cast(*void)(*instance)) == 0, "D2D1_ARC_SEGMENT.point has unexpected offset % instead of 0", ((cast(*void)(*instance.point)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ARC_SEGMENT.point)) == 8, "D2D1_ARC_SEGMENT.point has unexpected size % instead of 8", size_of(type_of(D2D1_ARC_SEGMENT.point)));
+        assert(((cast(*void)(*instance.size)) - cast(*void)(*instance)) == 8, "D2D1_ARC_SEGMENT.size has unexpected offset % instead of 8", ((cast(*void)(*instance.size)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ARC_SEGMENT.size)) == 8, "D2D1_ARC_SEGMENT.size has unexpected size % instead of 8", size_of(type_of(D2D1_ARC_SEGMENT.size)));
+        assert(((cast(*void)(*instance.rotationAngle)) - cast(*void)(*instance)) == 16, "D2D1_ARC_SEGMENT.rotationAngle has unexpected offset % instead of 16", ((cast(*void)(*instance.rotationAngle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ARC_SEGMENT.rotationAngle)) == 4, "D2D1_ARC_SEGMENT.rotationAngle has unexpected size % instead of 4", size_of(type_of(D2D1_ARC_SEGMENT.rotationAngle)));
+        assert(((cast(*void)(*instance.sweepDirection)) - cast(*void)(*instance)) == 20, "D2D1_ARC_SEGMENT.sweepDirection has unexpected offset % instead of 20", ((cast(*void)(*instance.sweepDirection)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ARC_SEGMENT.sweepDirection)) == 4, "D2D1_ARC_SEGMENT.sweepDirection has unexpected size % instead of 4", size_of(type_of(D2D1_ARC_SEGMENT.sweepDirection)));
+        assert(((cast(*void)(*instance.arcSize)) - cast(*void)(*instance)) == 24, "D2D1_ARC_SEGMENT.arcSize has unexpected offset % instead of 24", ((cast(*void)(*instance.arcSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ARC_SEGMENT.arcSize)) == 4, "D2D1_ARC_SEGMENT.arcSize has unexpected size % instead of 4", size_of(type_of(D2D1_ARC_SEGMENT.arcSize)));
+        assert(size_of(D2D1_ARC_SEGMENT) == 28, "D2D1_ARC_SEGMENT has size % instead of 28", size_of(D2D1_ARC_SEGMENT));
+    }
+
+    {
+        instance: D2D1_QUADRATIC_BEZIER_SEGMENT;
+        assert(((cast(*void)(*instance.point1)) - cast(*void)(*instance)) == 0, "D2D1_QUADRATIC_BEZIER_SEGMENT.point1 has unexpected offset % instead of 0", ((cast(*void)(*instance.point1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_QUADRATIC_BEZIER_SEGMENT.point1)) == 8, "D2D1_QUADRATIC_BEZIER_SEGMENT.point1 has unexpected size % instead of 8", size_of(type_of(D2D1_QUADRATIC_BEZIER_SEGMENT.point1)));
+        assert(((cast(*void)(*instance.point2)) - cast(*void)(*instance)) == 8, "D2D1_QUADRATIC_BEZIER_SEGMENT.point2 has unexpected offset % instead of 8", ((cast(*void)(*instance.point2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_QUADRATIC_BEZIER_SEGMENT.point2)) == 8, "D2D1_QUADRATIC_BEZIER_SEGMENT.point2 has unexpected size % instead of 8", size_of(type_of(D2D1_QUADRATIC_BEZIER_SEGMENT.point2)));
+        assert(size_of(D2D1_QUADRATIC_BEZIER_SEGMENT) == 16, "D2D1_QUADRATIC_BEZIER_SEGMENT has size % instead of 16", size_of(D2D1_QUADRATIC_BEZIER_SEGMENT));
+    }
+
+    {
+        instance: D2D1_ELLIPSE;
+        assert(((cast(*void)(*instance.point)) - cast(*void)(*instance)) == 0, "D2D1_ELLIPSE.point has unexpected offset % instead of 0", ((cast(*void)(*instance.point)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ELLIPSE.point)) == 8, "D2D1_ELLIPSE.point has unexpected size % instead of 8", size_of(type_of(D2D1_ELLIPSE.point)));
+        assert(((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)) == 8, "D2D1_ELLIPSE.radiusX has unexpected offset % instead of 8", ((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ELLIPSE.radiusX)) == 4, "D2D1_ELLIPSE.radiusX has unexpected size % instead of 4", size_of(type_of(D2D1_ELLIPSE.radiusX)));
+        assert(((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)) == 12, "D2D1_ELLIPSE.radiusY has unexpected offset % instead of 12", ((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ELLIPSE.radiusY)) == 4, "D2D1_ELLIPSE.radiusY has unexpected size % instead of 4", size_of(type_of(D2D1_ELLIPSE.radiusY)));
+        assert(size_of(D2D1_ELLIPSE) == 16, "D2D1_ELLIPSE has size % instead of 16", size_of(D2D1_ELLIPSE));
+    }
+
+    {
+        instance: D2D1_ROUNDED_RECT;
+        assert(((cast(*void)(*instance.rect)) - cast(*void)(*instance)) == 0, "D2D1_ROUNDED_RECT.rect has unexpected offset % instead of 0", ((cast(*void)(*instance.rect)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ROUNDED_RECT.rect)) == 16, "D2D1_ROUNDED_RECT.rect has unexpected size % instead of 16", size_of(type_of(D2D1_ROUNDED_RECT.rect)));
+        assert(((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)) == 16, "D2D1_ROUNDED_RECT.radiusX has unexpected offset % instead of 16", ((cast(*void)(*instance.radiusX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ROUNDED_RECT.radiusX)) == 4, "D2D1_ROUNDED_RECT.radiusX has unexpected size % instead of 4", size_of(type_of(D2D1_ROUNDED_RECT.radiusX)));
+        assert(((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)) == 20, "D2D1_ROUNDED_RECT.radiusY has unexpected offset % instead of 20", ((cast(*void)(*instance.radiusY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_ROUNDED_RECT.radiusY)) == 4, "D2D1_ROUNDED_RECT.radiusY has unexpected size % instead of 4", size_of(type_of(D2D1_ROUNDED_RECT.radiusY)));
+        assert(size_of(D2D1_ROUNDED_RECT) == 24, "D2D1_ROUNDED_RECT has size % instead of 24", size_of(D2D1_ROUNDED_RECT));
+    }
+
+    {
+        instance: D2D1_STROKE_STYLE_PROPERTIES;
+        assert(((cast(*void)(*instance.startCap)) - cast(*void)(*instance)) == 0, "D2D1_STROKE_STYLE_PROPERTIES.startCap has unexpected offset % instead of 0", ((cast(*void)(*instance.startCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.startCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.startCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.startCap)));
+        assert(((cast(*void)(*instance.endCap)) - cast(*void)(*instance)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.endCap has unexpected offset % instead of 4", ((cast(*void)(*instance.endCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.endCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.endCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.endCap)));
+        assert(((cast(*void)(*instance.dashCap)) - cast(*void)(*instance)) == 8, "D2D1_STROKE_STYLE_PROPERTIES.dashCap has unexpected offset % instead of 8", ((cast(*void)(*instance.dashCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.dashCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashCap)));
+        assert(((cast(*void)(*instance.lineJoin)) - cast(*void)(*instance)) == 12, "D2D1_STROKE_STYLE_PROPERTIES.lineJoin has unexpected offset % instead of 12", ((cast(*void)(*instance.lineJoin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.lineJoin)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.lineJoin has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.lineJoin)));
+        assert(((cast(*void)(*instance.miterLimit)) - cast(*void)(*instance)) == 16, "D2D1_STROKE_STYLE_PROPERTIES.miterLimit has unexpected offset % instead of 16", ((cast(*void)(*instance.miterLimit)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.miterLimit)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.miterLimit has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.miterLimit)));
+        assert(((cast(*void)(*instance.dashStyle)) - cast(*void)(*instance)) == 20, "D2D1_STROKE_STYLE_PROPERTIES.dashStyle has unexpected offset % instead of 20", ((cast(*void)(*instance.dashStyle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashStyle)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.dashStyle has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashStyle)));
+        assert(((cast(*void)(*instance.dashOffset)) - cast(*void)(*instance)) == 24, "D2D1_STROKE_STYLE_PROPERTIES.dashOffset has unexpected offset % instead of 24", ((cast(*void)(*instance.dashOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashOffset)) == 4, "D2D1_STROKE_STYLE_PROPERTIES.dashOffset has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES.dashOffset)));
+        assert(size_of(D2D1_STROKE_STYLE_PROPERTIES) == 28, "D2D1_STROKE_STYLE_PROPERTIES has size % instead of 28", size_of(D2D1_STROKE_STYLE_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_LAYER_PARAMETERS;
+        assert(((cast(*void)(*instance.contentBounds)) - cast(*void)(*instance)) == 0, "D2D1_LAYER_PARAMETERS.contentBounds has unexpected offset % instead of 0", ((cast(*void)(*instance.contentBounds)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.contentBounds)) == 16, "D2D1_LAYER_PARAMETERS.contentBounds has unexpected size % instead of 16", size_of(type_of(D2D1_LAYER_PARAMETERS.contentBounds)));
+        assert(((cast(*void)(*instance.geometricMask)) - cast(*void)(*instance)) == 16, "D2D1_LAYER_PARAMETERS.geometricMask has unexpected offset % instead of 16", ((cast(*void)(*instance.geometricMask)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.geometricMask)) == 8, "D2D1_LAYER_PARAMETERS.geometricMask has unexpected size % instead of 8", size_of(type_of(D2D1_LAYER_PARAMETERS.geometricMask)));
+        assert(((cast(*void)(*instance.maskAntialiasMode)) - cast(*void)(*instance)) == 24, "D2D1_LAYER_PARAMETERS.maskAntialiasMode has unexpected offset % instead of 24", ((cast(*void)(*instance.maskAntialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.maskAntialiasMode)) == 4, "D2D1_LAYER_PARAMETERS.maskAntialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS.maskAntialiasMode)));
+        assert(((cast(*void)(*instance.maskTransform)) - cast(*void)(*instance)) == 28, "D2D1_LAYER_PARAMETERS.maskTransform has unexpected offset % instead of 28", ((cast(*void)(*instance.maskTransform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.maskTransform)) == 24, "D2D1_LAYER_PARAMETERS.maskTransform has unexpected size % instead of 24", size_of(type_of(D2D1_LAYER_PARAMETERS.maskTransform)));
+        assert(((cast(*void)(*instance.opacity)) - cast(*void)(*instance)) == 52, "D2D1_LAYER_PARAMETERS.opacity has unexpected offset % instead of 52", ((cast(*void)(*instance.opacity)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.opacity)) == 4, "D2D1_LAYER_PARAMETERS.opacity has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS.opacity)));
+        assert(((cast(*void)(*instance.opacityBrush)) - cast(*void)(*instance)) == 56, "D2D1_LAYER_PARAMETERS.opacityBrush has unexpected offset % instead of 56", ((cast(*void)(*instance.opacityBrush)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.opacityBrush)) == 8, "D2D1_LAYER_PARAMETERS.opacityBrush has unexpected size % instead of 8", size_of(type_of(D2D1_LAYER_PARAMETERS.opacityBrush)));
+        assert(((cast(*void)(*instance.layerOptions)) - cast(*void)(*instance)) == 64, "D2D1_LAYER_PARAMETERS.layerOptions has unexpected offset % instead of 64", ((cast(*void)(*instance.layerOptions)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS.layerOptions)) == 4, "D2D1_LAYER_PARAMETERS.layerOptions has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS.layerOptions)));
+        assert(size_of(D2D1_LAYER_PARAMETERS) == 72, "D2D1_LAYER_PARAMETERS has size % instead of 72", size_of(D2D1_LAYER_PARAMETERS));
+    }
+
+    {
+        instance: D2D1_RENDER_TARGET_PROPERTIES;
+        assert(((cast(*void)(*instance.type)) - cast(*void)(*instance)) == 0, "D2D1_RENDER_TARGET_PROPERTIES.type has unexpected offset % instead of 0", ((cast(*void)(*instance.type)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.type)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.type has unexpected size % instead of 4", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.type)));
+        assert(((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.pixelFormat has unexpected offset % instead of 4", ((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.pixelFormat)) == 8, "D2D1_RENDER_TARGET_PROPERTIES.pixelFormat has unexpected size % instead of 8", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.pixelFormat)));
+        assert(((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)) == 12, "D2D1_RENDER_TARGET_PROPERTIES.dpiX has unexpected offset % instead of 12", ((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.dpiX)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.dpiX has unexpected size % instead of 4", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.dpiX)));
+        assert(((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)) == 16, "D2D1_RENDER_TARGET_PROPERTIES.dpiY has unexpected offset % instead of 16", ((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.dpiY)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.dpiY has unexpected size % instead of 4", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.dpiY)));
+        assert(((cast(*void)(*instance.usage)) - cast(*void)(*instance)) == 20, "D2D1_RENDER_TARGET_PROPERTIES.usage has unexpected offset % instead of 20", ((cast(*void)(*instance.usage)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.usage)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.usage has unexpected size % instead of 4", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.usage)));
+        assert(((cast(*void)(*instance.minLevel)) - cast(*void)(*instance)) == 24, "D2D1_RENDER_TARGET_PROPERTIES.minLevel has unexpected offset % instead of 24", ((cast(*void)(*instance.minLevel)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.minLevel)) == 4, "D2D1_RENDER_TARGET_PROPERTIES.minLevel has unexpected size % instead of 4", size_of(type_of(D2D1_RENDER_TARGET_PROPERTIES.minLevel)));
+        assert(size_of(D2D1_RENDER_TARGET_PROPERTIES) == 28, "D2D1_RENDER_TARGET_PROPERTIES has size % instead of 28", size_of(D2D1_RENDER_TARGET_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_HWND_RENDER_TARGET_PROPERTIES;
+        assert(((cast(*void)(*instance.hwnd)) - cast(*void)(*instance)) == 0, "D2D1_HWND_RENDER_TARGET_PROPERTIES.hwnd has unexpected offset % instead of 0", ((cast(*void)(*instance.hwnd)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.hwnd)) == 8, "D2D1_HWND_RENDER_TARGET_PROPERTIES.hwnd has unexpected size % instead of 8", size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.hwnd)));
+        assert(((cast(*void)(*instance.pixelSize)) - cast(*void)(*instance)) == 8, "D2D1_HWND_RENDER_TARGET_PROPERTIES.pixelSize has unexpected offset % instead of 8", ((cast(*void)(*instance.pixelSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.pixelSize)) == 8, "D2D1_HWND_RENDER_TARGET_PROPERTIES.pixelSize has unexpected size % instead of 8", size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.pixelSize)));
+        assert(((cast(*void)(*instance.presentOptions)) - cast(*void)(*instance)) == 16, "D2D1_HWND_RENDER_TARGET_PROPERTIES.presentOptions has unexpected offset % instead of 16", ((cast(*void)(*instance.presentOptions)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.presentOptions)) == 4, "D2D1_HWND_RENDER_TARGET_PROPERTIES.presentOptions has unexpected size % instead of 4", size_of(type_of(D2D1_HWND_RENDER_TARGET_PROPERTIES.presentOptions)));
+        assert(size_of(D2D1_HWND_RENDER_TARGET_PROPERTIES) == 24, "D2D1_HWND_RENDER_TARGET_PROPERTIES has size % instead of 24", size_of(D2D1_HWND_RENDER_TARGET_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_DRAWING_STATE_DESCRIPTION;
+        assert(((cast(*void)(*instance.antialiasMode)) - cast(*void)(*instance)) == 0, "D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode has unexpected offset % instead of 0", ((cast(*void)(*instance.antialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode)));
+        assert(((cast(*void)(*instance.textAntialiasMode)) - cast(*void)(*instance)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode has unexpected offset % instead of 4", ((cast(*void)(*instance.textAntialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode)));
+        assert(((cast(*void)(*instance.tag1)) - cast(*void)(*instance)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION.tag1 has unexpected offset % instead of 8", ((cast(*void)(*instance.tag1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.tag1)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION.tag1 has unexpected size % instead of 8", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.tag1)));
+        assert(((cast(*void)(*instance.tag2)) - cast(*void)(*instance)) == 16, "D2D1_DRAWING_STATE_DESCRIPTION.tag2 has unexpected offset % instead of 16", ((cast(*void)(*instance.tag2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.tag2)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION.tag2 has unexpected size % instead of 8", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.tag2)));
+        assert(((cast(*void)(*instance.transform)) - cast(*void)(*instance)) == 24, "D2D1_DRAWING_STATE_DESCRIPTION.transform has unexpected offset % instead of 24", ((cast(*void)(*instance.transform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.transform)) == 24, "D2D1_DRAWING_STATE_DESCRIPTION.transform has unexpected size % instead of 24", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION.transform)));
+        assert(size_of(D2D1_DRAWING_STATE_DESCRIPTION) == 48, "D2D1_DRAWING_STATE_DESCRIPTION has size % instead of 48", size_of(D2D1_DRAWING_STATE_DESCRIPTION));
+    }
+
+    {
+        instance: D2D1_FACTORY_OPTIONS;
+        assert(((cast(*void)(*instance.debugLevel)) - cast(*void)(*instance)) == 0, "D2D1_FACTORY_OPTIONS.debugLevel has unexpected offset % instead of 0", ((cast(*void)(*instance.debugLevel)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_FACTORY_OPTIONS.debugLevel)) == 4, "D2D1_FACTORY_OPTIONS.debugLevel has unexpected size % instead of 4", size_of(type_of(D2D1_FACTORY_OPTIONS.debugLevel)));
+        assert(size_of(D2D1_FACTORY_OPTIONS) == 4, "D2D1_FACTORY_OPTIONS has size % instead of 4", size_of(D2D1_FACTORY_OPTIONS));
+    }
+
+    assert(size_of(ID2D1Resource) == 8, "ID2D1Resource has size % instead of 8", size_of(ID2D1Resource));
+
+    assert(size_of(ID2D1Image) == 8, "ID2D1Image has size % instead of 8", size_of(ID2D1Image));
+
+    assert(size_of(ID2D1Bitmap) == 8, "ID2D1Bitmap has size % instead of 8", size_of(ID2D1Bitmap));
+
+    assert(size_of(ID2D1GradientStopCollection) == 8, "ID2D1GradientStopCollection has size % instead of 8", size_of(ID2D1GradientStopCollection));
+
+    assert(size_of(ID2D1Brush) == 8, "ID2D1Brush has size % instead of 8", size_of(ID2D1Brush));
+
+    assert(size_of(ID2D1BitmapBrush) == 8, "ID2D1BitmapBrush has size % instead of 8", size_of(ID2D1BitmapBrush));
+
+    assert(size_of(ID2D1SolidColorBrush) == 8, "ID2D1SolidColorBrush has size % instead of 8", size_of(ID2D1SolidColorBrush));
+
+    assert(size_of(ID2D1LinearGradientBrush) == 8, "ID2D1LinearGradientBrush has size % instead of 8", size_of(ID2D1LinearGradientBrush));
+
+    assert(size_of(ID2D1RadialGradientBrush) == 8, "ID2D1RadialGradientBrush has size % instead of 8", size_of(ID2D1RadialGradientBrush));
+
+    assert(size_of(ID2D1StrokeStyle) == 8, "ID2D1StrokeStyle has size % instead of 8", size_of(ID2D1StrokeStyle));
+
+    assert(size_of(ID2D1Geometry) == 8, "ID2D1Geometry has size % instead of 8", size_of(ID2D1Geometry));
+
+    assert(size_of(ID2D1RectangleGeometry) == 8, "ID2D1RectangleGeometry has size % instead of 8", size_of(ID2D1RectangleGeometry));
+
+    assert(size_of(ID2D1RoundedRectangleGeometry) == 8, "ID2D1RoundedRectangleGeometry has size % instead of 8", size_of(ID2D1RoundedRectangleGeometry));
+
+    assert(size_of(ID2D1EllipseGeometry) == 8, "ID2D1EllipseGeometry has size % instead of 8", size_of(ID2D1EllipseGeometry));
+
+    assert(size_of(ID2D1GeometryGroup) == 8, "ID2D1GeometryGroup has size % instead of 8", size_of(ID2D1GeometryGroup));
+
+    assert(size_of(ID2D1TransformedGeometry) == 8, "ID2D1TransformedGeometry has size % instead of 8", size_of(ID2D1TransformedGeometry));
+
+    assert(size_of(ID2D1SimplifiedGeometrySink) == 8, "ID2D1SimplifiedGeometrySink has size % instead of 8", size_of(ID2D1SimplifiedGeometrySink));
+
+    assert(size_of(ID2D1GeometrySink) == 8, "ID2D1GeometrySink has size % instead of 8", size_of(ID2D1GeometrySink));
+
+    assert(size_of(ID2D1TessellationSink) == 8, "ID2D1TessellationSink has size % instead of 8", size_of(ID2D1TessellationSink));
+
+    assert(size_of(ID2D1PathGeometry) == 8, "ID2D1PathGeometry has size % instead of 8", size_of(ID2D1PathGeometry));
+
+    assert(size_of(ID2D1Mesh) == 8, "ID2D1Mesh has size % instead of 8", size_of(ID2D1Mesh));
+
+    assert(size_of(ID2D1Layer) == 8, "ID2D1Layer has size % instead of 8", size_of(ID2D1Layer));
+
+    assert(size_of(ID2D1DrawingStateBlock) == 8, "ID2D1DrawingStateBlock has size % instead of 8", size_of(ID2D1DrawingStateBlock));
+
+    assert(size_of(ID2D1RenderTarget) == 8, "ID2D1RenderTarget has size % instead of 8", size_of(ID2D1RenderTarget));
+
+    assert(size_of(ID2D1BitmapRenderTarget) == 8, "ID2D1BitmapRenderTarget has size % instead of 8", size_of(ID2D1BitmapRenderTarget));
+
+    assert(size_of(ID2D1HwndRenderTarget) == 8, "ID2D1HwndRenderTarget has size % instead of 8", size_of(ID2D1HwndRenderTarget));
+
+    assert(size_of(ID2D1GdiInteropRenderTarget) == 8, "ID2D1GdiInteropRenderTarget has size % instead of 8", size_of(ID2D1GdiInteropRenderTarget));
+
+    assert(size_of(ID2D1DCRenderTarget) == 8, "ID2D1DCRenderTarget has size % instead of 8", size_of(ID2D1DCRenderTarget));
+
+    assert(size_of(ID2D1Factory) == 8, "ID2D1Factory has size % instead of 8", size_of(ID2D1Factory));
+
+    {
+        instance: D2D1_BITMAP_PROPERTIES1;
+        assert(((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)) == 0, "D2D1_BITMAP_PROPERTIES1.pixelFormat has unexpected offset % instead of 0", ((cast(*void)(*instance.pixelFormat)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES1.pixelFormat)) == 8, "D2D1_BITMAP_PROPERTIES1.pixelFormat has unexpected size % instead of 8", size_of(type_of(D2D1_BITMAP_PROPERTIES1.pixelFormat)));
+        assert(((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)) == 8, "D2D1_BITMAP_PROPERTIES1.dpiX has unexpected offset % instead of 8", ((cast(*void)(*instance.dpiX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES1.dpiX)) == 4, "D2D1_BITMAP_PROPERTIES1.dpiX has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_PROPERTIES1.dpiX)));
+        assert(((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)) == 12, "D2D1_BITMAP_PROPERTIES1.dpiY has unexpected offset % instead of 12", ((cast(*void)(*instance.dpiY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES1.dpiY)) == 4, "D2D1_BITMAP_PROPERTIES1.dpiY has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_PROPERTIES1.dpiY)));
+        assert(((cast(*void)(*instance.bitmapOptions)) - cast(*void)(*instance)) == 16, "D2D1_BITMAP_PROPERTIES1.bitmapOptions has unexpected offset % instead of 16", ((cast(*void)(*instance.bitmapOptions)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES1.bitmapOptions)) == 4, "D2D1_BITMAP_PROPERTIES1.bitmapOptions has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_PROPERTIES1.bitmapOptions)));
+        assert(((cast(*void)(*instance.colorContext)) - cast(*void)(*instance)) == 24, "D2D1_BITMAP_PROPERTIES1.colorContext has unexpected offset % instead of 24", ((cast(*void)(*instance.colorContext)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_PROPERTIES1.colorContext)) == 8, "D2D1_BITMAP_PROPERTIES1.colorContext has unexpected size % instead of 8", size_of(type_of(D2D1_BITMAP_PROPERTIES1.colorContext)));
+        assert(size_of(D2D1_BITMAP_PROPERTIES1) == 32, "D2D1_BITMAP_PROPERTIES1 has size % instead of 32", size_of(D2D1_BITMAP_PROPERTIES1));
+    }
+
+    {
+        instance: D2D1_MAPPED_RECT;
+        assert(((cast(*void)(*instance.pitch)) - cast(*void)(*instance)) == 0, "D2D1_MAPPED_RECT.pitch has unexpected offset % instead of 0", ((cast(*void)(*instance.pitch)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_MAPPED_RECT.pitch)) == 4, "D2D1_MAPPED_RECT.pitch has unexpected size % instead of 4", size_of(type_of(D2D1_MAPPED_RECT.pitch)));
+        assert(((cast(*void)(*instance.bits)) - cast(*void)(*instance)) == 8, "D2D1_MAPPED_RECT.bits has unexpected offset % instead of 8", ((cast(*void)(*instance.bits)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_MAPPED_RECT.bits)) == 8, "D2D1_MAPPED_RECT.bits has unexpected size % instead of 8", size_of(type_of(D2D1_MAPPED_RECT.bits)));
+        assert(size_of(D2D1_MAPPED_RECT) == 16, "D2D1_MAPPED_RECT has size % instead of 16", size_of(D2D1_MAPPED_RECT));
+    }
+
+    {
+        instance: D2D1_RENDERING_CONTROLS;
+        assert(((cast(*void)(*instance.bufferPrecision)) - cast(*void)(*instance)) == 0, "D2D1_RENDERING_CONTROLS.bufferPrecision has unexpected offset % instead of 0", ((cast(*void)(*instance.bufferPrecision)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDERING_CONTROLS.bufferPrecision)) == 4, "D2D1_RENDERING_CONTROLS.bufferPrecision has unexpected size % instead of 4", size_of(type_of(D2D1_RENDERING_CONTROLS.bufferPrecision)));
+        assert(((cast(*void)(*instance.tileSize)) - cast(*void)(*instance)) == 4, "D2D1_RENDERING_CONTROLS.tileSize has unexpected offset % instead of 4", ((cast(*void)(*instance.tileSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_RENDERING_CONTROLS.tileSize)) == 8, "D2D1_RENDERING_CONTROLS.tileSize has unexpected size % instead of 8", size_of(type_of(D2D1_RENDERING_CONTROLS.tileSize)));
+        assert(size_of(D2D1_RENDERING_CONTROLS) == 12, "D2D1_RENDERING_CONTROLS has size % instead of 12", size_of(D2D1_RENDERING_CONTROLS));
+    }
+
+    {
+        instance: D2D1_EFFECT_INPUT_DESCRIPTION;
+        assert(((cast(*void)(*instance.effect)) - cast(*void)(*instance)) == 0, "D2D1_EFFECT_INPUT_DESCRIPTION.effect has unexpected offset % instead of 0", ((cast(*void)(*instance.effect)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.effect)) == 8, "D2D1_EFFECT_INPUT_DESCRIPTION.effect has unexpected size % instead of 8", size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.effect)));
+        assert(((cast(*void)(*instance.inputIndex)) - cast(*void)(*instance)) == 8, "D2D1_EFFECT_INPUT_DESCRIPTION.inputIndex has unexpected offset % instead of 8", ((cast(*void)(*instance.inputIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.inputIndex)) == 4, "D2D1_EFFECT_INPUT_DESCRIPTION.inputIndex has unexpected size % instead of 4", size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.inputIndex)));
+        assert(((cast(*void)(*instance.inputRectangle)) - cast(*void)(*instance)) == 12, "D2D1_EFFECT_INPUT_DESCRIPTION.inputRectangle has unexpected offset % instead of 12", ((cast(*void)(*instance.inputRectangle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.inputRectangle)) == 16, "D2D1_EFFECT_INPUT_DESCRIPTION.inputRectangle has unexpected size % instead of 16", size_of(type_of(D2D1_EFFECT_INPUT_DESCRIPTION.inputRectangle)));
+        assert(size_of(D2D1_EFFECT_INPUT_DESCRIPTION) == 32, "D2D1_EFFECT_INPUT_DESCRIPTION has size % instead of 32", size_of(D2D1_EFFECT_INPUT_DESCRIPTION));
+    }
+
+    {
+        instance: D2D1_POINT_DESCRIPTION;
+        assert(((cast(*void)(*instance.point)) - cast(*void)(*instance)) == 0, "D2D1_POINT_DESCRIPTION.point has unexpected offset % instead of 0", ((cast(*void)(*instance.point)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_POINT_DESCRIPTION.point)) == 8, "D2D1_POINT_DESCRIPTION.point has unexpected size % instead of 8", size_of(type_of(D2D1_POINT_DESCRIPTION.point)));
+        assert(((cast(*void)(*instance.unitTangentVector)) - cast(*void)(*instance)) == 8, "D2D1_POINT_DESCRIPTION.unitTangentVector has unexpected offset % instead of 8", ((cast(*void)(*instance.unitTangentVector)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_POINT_DESCRIPTION.unitTangentVector)) == 8, "D2D1_POINT_DESCRIPTION.unitTangentVector has unexpected size % instead of 8", size_of(type_of(D2D1_POINT_DESCRIPTION.unitTangentVector)));
+        assert(((cast(*void)(*instance.endSegment)) - cast(*void)(*instance)) == 16, "D2D1_POINT_DESCRIPTION.endSegment has unexpected offset % instead of 16", ((cast(*void)(*instance.endSegment)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_POINT_DESCRIPTION.endSegment)) == 4, "D2D1_POINT_DESCRIPTION.endSegment has unexpected size % instead of 4", size_of(type_of(D2D1_POINT_DESCRIPTION.endSegment)));
+        assert(((cast(*void)(*instance.endFigure)) - cast(*void)(*instance)) == 20, "D2D1_POINT_DESCRIPTION.endFigure has unexpected offset % instead of 20", ((cast(*void)(*instance.endFigure)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_POINT_DESCRIPTION.endFigure)) == 4, "D2D1_POINT_DESCRIPTION.endFigure has unexpected size % instead of 4", size_of(type_of(D2D1_POINT_DESCRIPTION.endFigure)));
+        assert(((cast(*void)(*instance.lengthToEndSegment)) - cast(*void)(*instance)) == 24, "D2D1_POINT_DESCRIPTION.lengthToEndSegment has unexpected offset % instead of 24", ((cast(*void)(*instance.lengthToEndSegment)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_POINT_DESCRIPTION.lengthToEndSegment)) == 4, "D2D1_POINT_DESCRIPTION.lengthToEndSegment has unexpected size % instead of 4", size_of(type_of(D2D1_POINT_DESCRIPTION.lengthToEndSegment)));
+        assert(size_of(D2D1_POINT_DESCRIPTION) == 28, "D2D1_POINT_DESCRIPTION has size % instead of 28", size_of(D2D1_POINT_DESCRIPTION));
+    }
+
+    {
+        instance: D2D1_IMAGE_BRUSH_PROPERTIES;
+        assert(((cast(*void)(*instance.sourceRectangle)) - cast(*void)(*instance)) == 0, "D2D1_IMAGE_BRUSH_PROPERTIES.sourceRectangle has unexpected offset % instead of 0", ((cast(*void)(*instance.sourceRectangle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.sourceRectangle)) == 16, "D2D1_IMAGE_BRUSH_PROPERTIES.sourceRectangle has unexpected size % instead of 16", size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.sourceRectangle)));
+        assert(((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)) == 16, "D2D1_IMAGE_BRUSH_PROPERTIES.extendModeX has unexpected offset % instead of 16", ((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.extendModeX)) == 4, "D2D1_IMAGE_BRUSH_PROPERTIES.extendModeX has unexpected size % instead of 4", size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.extendModeX)));
+        assert(((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)) == 20, "D2D1_IMAGE_BRUSH_PROPERTIES.extendModeY has unexpected offset % instead of 20", ((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.extendModeY)) == 4, "D2D1_IMAGE_BRUSH_PROPERTIES.extendModeY has unexpected size % instead of 4", size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.extendModeY)));
+        assert(((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)) == 24, "D2D1_IMAGE_BRUSH_PROPERTIES.interpolationMode has unexpected offset % instead of 24", ((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.interpolationMode)) == 4, "D2D1_IMAGE_BRUSH_PROPERTIES.interpolationMode has unexpected size % instead of 4", size_of(type_of(D2D1_IMAGE_BRUSH_PROPERTIES.interpolationMode)));
+        assert(size_of(D2D1_IMAGE_BRUSH_PROPERTIES) == 28, "D2D1_IMAGE_BRUSH_PROPERTIES has size % instead of 28", size_of(D2D1_IMAGE_BRUSH_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_BITMAP_BRUSH_PROPERTIES1;
+        assert(((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)) == 0, "D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX has unexpected offset % instead of 0", ((cast(*void)(*instance.extendModeX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX)));
+        assert(((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY has unexpected offset % instead of 4", ((cast(*void)(*instance.extendModeY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY)));
+        assert(((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)) == 8, "D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode has unexpected offset % instead of 8", ((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode)) == 4, "D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode has unexpected size % instead of 4", size_of(type_of(D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode)));
+        assert(size_of(D2D1_BITMAP_BRUSH_PROPERTIES1) == 12, "D2D1_BITMAP_BRUSH_PROPERTIES1 has size % instead of 12", size_of(D2D1_BITMAP_BRUSH_PROPERTIES1));
+    }
+
+    {
+        instance: D2D1_STROKE_STYLE_PROPERTIES1;
+        assert(((cast(*void)(*instance.startCap)) - cast(*void)(*instance)) == 0, "D2D1_STROKE_STYLE_PROPERTIES1.startCap has unexpected offset % instead of 0", ((cast(*void)(*instance.startCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.startCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.startCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.startCap)));
+        assert(((cast(*void)(*instance.endCap)) - cast(*void)(*instance)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.endCap has unexpected offset % instead of 4", ((cast(*void)(*instance.endCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.endCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.endCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.endCap)));
+        assert(((cast(*void)(*instance.dashCap)) - cast(*void)(*instance)) == 8, "D2D1_STROKE_STYLE_PROPERTIES1.dashCap has unexpected offset % instead of 8", ((cast(*void)(*instance.dashCap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashCap)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.dashCap has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashCap)));
+        assert(((cast(*void)(*instance.lineJoin)) - cast(*void)(*instance)) == 12, "D2D1_STROKE_STYLE_PROPERTIES1.lineJoin has unexpected offset % instead of 12", ((cast(*void)(*instance.lineJoin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.lineJoin)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.lineJoin has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.lineJoin)));
+        assert(((cast(*void)(*instance.miterLimit)) - cast(*void)(*instance)) == 16, "D2D1_STROKE_STYLE_PROPERTIES1.miterLimit has unexpected offset % instead of 16", ((cast(*void)(*instance.miterLimit)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.miterLimit)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.miterLimit has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.miterLimit)));
+        assert(((cast(*void)(*instance.dashStyle)) - cast(*void)(*instance)) == 20, "D2D1_STROKE_STYLE_PROPERTIES1.dashStyle has unexpected offset % instead of 20", ((cast(*void)(*instance.dashStyle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashStyle)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.dashStyle has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashStyle)));
+        assert(((cast(*void)(*instance.dashOffset)) - cast(*void)(*instance)) == 24, "D2D1_STROKE_STYLE_PROPERTIES1.dashOffset has unexpected offset % instead of 24", ((cast(*void)(*instance.dashOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashOffset)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.dashOffset has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.dashOffset)));
+        assert(((cast(*void)(*instance.transformType)) - cast(*void)(*instance)) == 28, "D2D1_STROKE_STYLE_PROPERTIES1.transformType has unexpected offset % instead of 28", ((cast(*void)(*instance.transformType)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.transformType)) == 4, "D2D1_STROKE_STYLE_PROPERTIES1.transformType has unexpected size % instead of 4", size_of(type_of(D2D1_STROKE_STYLE_PROPERTIES1.transformType)));
+        assert(size_of(D2D1_STROKE_STYLE_PROPERTIES1) == 32, "D2D1_STROKE_STYLE_PROPERTIES1 has size % instead of 32", size_of(D2D1_STROKE_STYLE_PROPERTIES1));
+    }
+
+    {
+        instance: D2D1_LAYER_PARAMETERS1;
+        assert(((cast(*void)(*instance.contentBounds)) - cast(*void)(*instance)) == 0, "D2D1_LAYER_PARAMETERS1.contentBounds has unexpected offset % instead of 0", ((cast(*void)(*instance.contentBounds)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.contentBounds)) == 16, "D2D1_LAYER_PARAMETERS1.contentBounds has unexpected size % instead of 16", size_of(type_of(D2D1_LAYER_PARAMETERS1.contentBounds)));
+        assert(((cast(*void)(*instance.geometricMask)) - cast(*void)(*instance)) == 16, "D2D1_LAYER_PARAMETERS1.geometricMask has unexpected offset % instead of 16", ((cast(*void)(*instance.geometricMask)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.geometricMask)) == 8, "D2D1_LAYER_PARAMETERS1.geometricMask has unexpected size % instead of 8", size_of(type_of(D2D1_LAYER_PARAMETERS1.geometricMask)));
+        assert(((cast(*void)(*instance.maskAntialiasMode)) - cast(*void)(*instance)) == 24, "D2D1_LAYER_PARAMETERS1.maskAntialiasMode has unexpected offset % instead of 24", ((cast(*void)(*instance.maskAntialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.maskAntialiasMode)) == 4, "D2D1_LAYER_PARAMETERS1.maskAntialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS1.maskAntialiasMode)));
+        assert(((cast(*void)(*instance.maskTransform)) - cast(*void)(*instance)) == 28, "D2D1_LAYER_PARAMETERS1.maskTransform has unexpected offset % instead of 28", ((cast(*void)(*instance.maskTransform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.maskTransform)) == 24, "D2D1_LAYER_PARAMETERS1.maskTransform has unexpected size % instead of 24", size_of(type_of(D2D1_LAYER_PARAMETERS1.maskTransform)));
+        assert(((cast(*void)(*instance.opacity)) - cast(*void)(*instance)) == 52, "D2D1_LAYER_PARAMETERS1.opacity has unexpected offset % instead of 52", ((cast(*void)(*instance.opacity)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.opacity)) == 4, "D2D1_LAYER_PARAMETERS1.opacity has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS1.opacity)));
+        assert(((cast(*void)(*instance.opacityBrush)) - cast(*void)(*instance)) == 56, "D2D1_LAYER_PARAMETERS1.opacityBrush has unexpected offset % instead of 56", ((cast(*void)(*instance.opacityBrush)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.opacityBrush)) == 8, "D2D1_LAYER_PARAMETERS1.opacityBrush has unexpected size % instead of 8", size_of(type_of(D2D1_LAYER_PARAMETERS1.opacityBrush)));
+        assert(((cast(*void)(*instance.layerOptions)) - cast(*void)(*instance)) == 64, "D2D1_LAYER_PARAMETERS1.layerOptions has unexpected offset % instead of 64", ((cast(*void)(*instance.layerOptions)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_LAYER_PARAMETERS1.layerOptions)) == 4, "D2D1_LAYER_PARAMETERS1.layerOptions has unexpected size % instead of 4", size_of(type_of(D2D1_LAYER_PARAMETERS1.layerOptions)));
+        assert(size_of(D2D1_LAYER_PARAMETERS1) == 72, "D2D1_LAYER_PARAMETERS1 has size % instead of 72", size_of(D2D1_LAYER_PARAMETERS1));
+    }
+
+    {
+        instance: D2D1_DRAWING_STATE_DESCRIPTION1;
+        assert(((cast(*void)(*instance.antialiasMode)) - cast(*void)(*instance)) == 0, "D2D1_DRAWING_STATE_DESCRIPTION1.antialiasMode has unexpected offset % instead of 0", ((cast(*void)(*instance.antialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.antialiasMode)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION1.antialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.antialiasMode)));
+        assert(((cast(*void)(*instance.textAntialiasMode)) - cast(*void)(*instance)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION1.textAntialiasMode has unexpected offset % instead of 4", ((cast(*void)(*instance.textAntialiasMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.textAntialiasMode)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION1.textAntialiasMode has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.textAntialiasMode)));
+        assert(((cast(*void)(*instance.tag1)) - cast(*void)(*instance)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION1.tag1 has unexpected offset % instead of 8", ((cast(*void)(*instance.tag1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.tag1)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION1.tag1 has unexpected size % instead of 8", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.tag1)));
+        assert(((cast(*void)(*instance.tag2)) - cast(*void)(*instance)) == 16, "D2D1_DRAWING_STATE_DESCRIPTION1.tag2 has unexpected offset % instead of 16", ((cast(*void)(*instance.tag2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.tag2)) == 8, "D2D1_DRAWING_STATE_DESCRIPTION1.tag2 has unexpected size % instead of 8", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.tag2)));
+        assert(((cast(*void)(*instance.transform)) - cast(*void)(*instance)) == 24, "D2D1_DRAWING_STATE_DESCRIPTION1.transform has unexpected offset % instead of 24", ((cast(*void)(*instance.transform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.transform)) == 24, "D2D1_DRAWING_STATE_DESCRIPTION1.transform has unexpected size % instead of 24", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.transform)));
+        assert(((cast(*void)(*instance.primitiveBlend)) - cast(*void)(*instance)) == 48, "D2D1_DRAWING_STATE_DESCRIPTION1.primitiveBlend has unexpected offset % instead of 48", ((cast(*void)(*instance.primitiveBlend)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.primitiveBlend)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION1.primitiveBlend has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.primitiveBlend)));
+        assert(((cast(*void)(*instance.unitMode)) - cast(*void)(*instance)) == 52, "D2D1_DRAWING_STATE_DESCRIPTION1.unitMode has unexpected offset % instead of 52", ((cast(*void)(*instance.unitMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.unitMode)) == 4, "D2D1_DRAWING_STATE_DESCRIPTION1.unitMode has unexpected size % instead of 4", size_of(type_of(D2D1_DRAWING_STATE_DESCRIPTION1.unitMode)));
+        assert(size_of(D2D1_DRAWING_STATE_DESCRIPTION1) == 56, "D2D1_DRAWING_STATE_DESCRIPTION1 has size % instead of 56", size_of(D2D1_DRAWING_STATE_DESCRIPTION1));
+    }
+
+    {
+        instance: D2D1_PRINT_CONTROL_PROPERTIES;
+        assert(((cast(*void)(*instance.fontSubset)) - cast(*void)(*instance)) == 0, "D2D1_PRINT_CONTROL_PROPERTIES.fontSubset has unexpected offset % instead of 0", ((cast(*void)(*instance.fontSubset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.fontSubset)) == 4, "D2D1_PRINT_CONTROL_PROPERTIES.fontSubset has unexpected size % instead of 4", size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.fontSubset)));
+        assert(((cast(*void)(*instance.rasterDPI)) - cast(*void)(*instance)) == 4, "D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI has unexpected offset % instead of 4", ((cast(*void)(*instance.rasterDPI)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI)) == 4, "D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI has unexpected size % instead of 4", size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI)));
+        assert(((cast(*void)(*instance.colorSpace)) - cast(*void)(*instance)) == 8, "D2D1_PRINT_CONTROL_PROPERTIES.colorSpace has unexpected offset % instead of 8", ((cast(*void)(*instance.colorSpace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.colorSpace)) == 4, "D2D1_PRINT_CONTROL_PROPERTIES.colorSpace has unexpected size % instead of 4", size_of(type_of(D2D1_PRINT_CONTROL_PROPERTIES.colorSpace)));
+        assert(size_of(D2D1_PRINT_CONTROL_PROPERTIES) == 12, "D2D1_PRINT_CONTROL_PROPERTIES has size % instead of 12", size_of(D2D1_PRINT_CONTROL_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_CREATION_PROPERTIES;
+        assert(((cast(*void)(*instance.threadingMode)) - cast(*void)(*instance)) == 0, "D2D1_CREATION_PROPERTIES.threadingMode has unexpected offset % instead of 0", ((cast(*void)(*instance.threadingMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_CREATION_PROPERTIES.threadingMode)) == 4, "D2D1_CREATION_PROPERTIES.threadingMode has unexpected size % instead of 4", size_of(type_of(D2D1_CREATION_PROPERTIES.threadingMode)));
+        assert(((cast(*void)(*instance.debugLevel)) - cast(*void)(*instance)) == 4, "D2D1_CREATION_PROPERTIES.debugLevel has unexpected offset % instead of 4", ((cast(*void)(*instance.debugLevel)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_CREATION_PROPERTIES.debugLevel)) == 4, "D2D1_CREATION_PROPERTIES.debugLevel has unexpected size % instead of 4", size_of(type_of(D2D1_CREATION_PROPERTIES.debugLevel)));
+        assert(((cast(*void)(*instance.options)) - cast(*void)(*instance)) == 8, "D2D1_CREATION_PROPERTIES.options has unexpected offset % instead of 8", ((cast(*void)(*instance.options)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_CREATION_PROPERTIES.options)) == 4, "D2D1_CREATION_PROPERTIES.options has unexpected size % instead of 4", size_of(type_of(D2D1_CREATION_PROPERTIES.options)));
+        assert(size_of(D2D1_CREATION_PROPERTIES) == 12, "D2D1_CREATION_PROPERTIES has size % instead of 12", size_of(D2D1_CREATION_PROPERTIES));
+    }
+
+    assert(size_of(ID2D1GdiMetafileSink) == 8, "ID2D1GdiMetafileSink has size % instead of 8", size_of(ID2D1GdiMetafileSink));
+
+    assert(size_of(ID2D1GdiMetafile) == 8, "ID2D1GdiMetafile has size % instead of 8", size_of(ID2D1GdiMetafile));
+
+    assert(size_of(ID2D1CommandSink) == 8, "ID2D1CommandSink has size % instead of 8", size_of(ID2D1CommandSink));
+
+    assert(size_of(ID2D1CommandList) == 8, "ID2D1CommandList has size % instead of 8", size_of(ID2D1CommandList));
+
+    assert(size_of(ID2D1PrintControl) == 8, "ID2D1PrintControl has size % instead of 8", size_of(ID2D1PrintControl));
+
+    assert(size_of(ID2D1ImageBrush) == 8, "ID2D1ImageBrush has size % instead of 8", size_of(ID2D1ImageBrush));
+
+    assert(size_of(ID2D1BitmapBrush1) == 8, "ID2D1BitmapBrush1 has size % instead of 8", size_of(ID2D1BitmapBrush1));
+
+    assert(size_of(ID2D1StrokeStyle1) == 8, "ID2D1StrokeStyle1 has size % instead of 8", size_of(ID2D1StrokeStyle1));
+
+    assert(size_of(ID2D1PathGeometry1) == 8, "ID2D1PathGeometry1 has size % instead of 8", size_of(ID2D1PathGeometry1));
+
+    assert(size_of(ID2D1Properties) == 8, "ID2D1Properties has size % instead of 8", size_of(ID2D1Properties));
+
+    assert(size_of(ID2D1Effect) == 8, "ID2D1Effect has size % instead of 8", size_of(ID2D1Effect));
+
+    assert(size_of(ID2D1Bitmap1) == 8, "ID2D1Bitmap1 has size % instead of 8", size_of(ID2D1Bitmap1));
+
+    assert(size_of(ID2D1ColorContext) == 8, "ID2D1ColorContext has size % instead of 8", size_of(ID2D1ColorContext));
+
+    assert(size_of(ID2D1GradientStopCollection1) == 8, "ID2D1GradientStopCollection1 has size % instead of 8", size_of(ID2D1GradientStopCollection1));
+
+    assert(size_of(ID2D1DrawingStateBlock1) == 8, "ID2D1DrawingStateBlock1 has size % instead of 8", size_of(ID2D1DrawingStateBlock1));
+
+    assert(size_of(ID2D1DeviceContext) == 8, "ID2D1DeviceContext has size % instead of 8", size_of(ID2D1DeviceContext));
+
+    assert(size_of(ID2D1Device) == 8, "ID2D1Device has size % instead of 8", size_of(ID2D1Device));
+
+    assert(size_of(ID2D1Factory1) == 8, "ID2D1Factory1 has size % instead of 8", size_of(ID2D1Factory1));
+
+    assert(size_of(ID2D1Multithread) == 8, "ID2D1Multithread has size % instead of 8", size_of(ID2D1Multithread));
+
+    assert(size_of(ID2D1GeometryRealization) == 8, "ID2D1GeometryRealization has size % instead of 8", size_of(ID2D1GeometryRealization));
+
+    assert(size_of(ID2D1DeviceContext1) == 8, "ID2D1DeviceContext1 has size % instead of 8", size_of(ID2D1DeviceContext1));
+
+    assert(size_of(ID2D1Device1) == 8, "ID2D1Device1 has size % instead of 8", size_of(ID2D1Device1));
+
+    assert(size_of(ID2D1Factory2) == 8, "ID2D1Factory2 has size % instead of 8", size_of(ID2D1Factory2));
+
+    assert(size_of(ID2D1CommandSink1) == 8, "ID2D1CommandSink1 has size % instead of 8", size_of(ID2D1CommandSink1));
+
+    {
+        instance: D2D1_SVG_LENGTH;
+        assert(((cast(*void)(*instance.value)) - cast(*void)(*instance)) == 0, "D2D1_SVG_LENGTH.value has unexpected offset % instead of 0", ((cast(*void)(*instance.value)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_LENGTH.value)) == 4, "D2D1_SVG_LENGTH.value has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_LENGTH.value)));
+        assert(((cast(*void)(*instance.units)) - cast(*void)(*instance)) == 4, "D2D1_SVG_LENGTH.units has unexpected offset % instead of 4", ((cast(*void)(*instance.units)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_LENGTH.units)) == 4, "D2D1_SVG_LENGTH.units has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_LENGTH.units)));
+        assert(size_of(D2D1_SVG_LENGTH) == 8, "D2D1_SVG_LENGTH has size % instead of 8", size_of(D2D1_SVG_LENGTH));
+    }
+
+    {
+        instance: D2D1_SVG_PRESERVE_ASPECT_RATIO;
+        assert(((cast(*void)(*instance._defer)) - cast(*void)(*instance)) == 0, "D2D1_SVG_PRESERVE_ASPECT_RATIO._defer has unexpected offset % instead of 0", ((cast(*void)(*instance._defer)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO._defer)) == 4, "D2D1_SVG_PRESERVE_ASPECT_RATIO._defer has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO._defer)));
+        assert(((cast(*void)(*instance.align)) - cast(*void)(*instance)) == 4, "D2D1_SVG_PRESERVE_ASPECT_RATIO.align has unexpected offset % instead of 4", ((cast(*void)(*instance.align)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO.align)) == 4, "D2D1_SVG_PRESERVE_ASPECT_RATIO.align has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO.align)));
+        assert(((cast(*void)(*instance.meetOrSlice)) - cast(*void)(*instance)) == 8, "D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice has unexpected offset % instead of 8", ((cast(*void)(*instance.meetOrSlice)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice)) == 4, "D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice)));
+        assert(size_of(D2D1_SVG_PRESERVE_ASPECT_RATIO) == 12, "D2D1_SVG_PRESERVE_ASPECT_RATIO has size % instead of 12", size_of(D2D1_SVG_PRESERVE_ASPECT_RATIO));
+    }
+
+    {
+        instance: D2D1_SVG_VIEWBOX;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D1_SVG_VIEWBOX.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_VIEWBOX.x)) == 4, "D2D1_SVG_VIEWBOX.x has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_VIEWBOX.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D1_SVG_VIEWBOX.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_VIEWBOX.y)) == 4, "D2D1_SVG_VIEWBOX.y has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_VIEWBOX.y)));
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 8, "D2D1_SVG_VIEWBOX.width has unexpected offset % instead of 8", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_VIEWBOX.width)) == 4, "D2D1_SVG_VIEWBOX.width has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_VIEWBOX.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 12, "D2D1_SVG_VIEWBOX.height has unexpected offset % instead of 12", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SVG_VIEWBOX.height)) == 4, "D2D1_SVG_VIEWBOX.height has unexpected size % instead of 4", size_of(type_of(D2D1_SVG_VIEWBOX.height)));
+        assert(size_of(D2D1_SVG_VIEWBOX) == 16, "D2D1_SVG_VIEWBOX has size % instead of 16", size_of(D2D1_SVG_VIEWBOX));
+    }
+
+    assert(size_of(ID2D1SvgAttribute) == 8, "ID2D1SvgAttribute has size % instead of 8", size_of(ID2D1SvgAttribute));
+
+    assert(size_of(ID2D1SvgPaint) == 8, "ID2D1SvgPaint has size % instead of 8", size_of(ID2D1SvgPaint));
+
+    assert(size_of(ID2D1SvgStrokeDashArray) == 8, "ID2D1SvgStrokeDashArray has size % instead of 8", size_of(ID2D1SvgStrokeDashArray));
+
+    assert(size_of(ID2D1SvgPointCollection) == 8, "ID2D1SvgPointCollection has size % instead of 8", size_of(ID2D1SvgPointCollection));
+
+    assert(size_of(ID2D1SvgPathData) == 8, "ID2D1SvgPathData has size % instead of 8", size_of(ID2D1SvgPathData));
+
+    assert(size_of(ID2D1SvgElement) == 8, "ID2D1SvgElement has size % instead of 8", size_of(ID2D1SvgElement));
+
+    assert(size_of(ID2D1SvgDocument) == 8, "ID2D1SvgDocument has size % instead of 8", size_of(ID2D1SvgDocument));
+
+    {
+        instance: D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES;
+        assert(((cast(*void)(*instance.orientation)) - cast(*void)(*instance)) == 0, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation has unexpected offset % instead of 0", ((cast(*void)(*instance.orientation)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation has unexpected size % instead of 4", size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation)));
+        assert(((cast(*void)(*instance.scaleX)) - cast(*void)(*instance)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX has unexpected offset % instead of 4", ((cast(*void)(*instance.scaleX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX has unexpected size % instead of 4", size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX)));
+        assert(((cast(*void)(*instance.scaleY)) - cast(*void)(*instance)) == 8, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY has unexpected offset % instead of 8", ((cast(*void)(*instance.scaleY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY has unexpected size % instead of 4", size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY)));
+        assert(((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)) == 12, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode has unexpected offset % instead of 12", ((cast(*void)(*instance.interpolationMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode has unexpected size % instead of 4", size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode)));
+        assert(((cast(*void)(*instance.options)) - cast(*void)(*instance)) == 16, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options has unexpected offset % instead of 16", ((cast(*void)(*instance.options)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options)) == 4, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options has unexpected size % instead of 4", size_of(type_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options)));
+        assert(size_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES) == 20, "D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES has size % instead of 20", size_of(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_INK_POINT;
+        assert(((cast(*void)(*instance.x)) - cast(*void)(*instance)) == 0, "D2D1_INK_POINT.x has unexpected offset % instead of 0", ((cast(*void)(*instance.x)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_POINT.x)) == 4, "D2D1_INK_POINT.x has unexpected size % instead of 4", size_of(type_of(D2D1_INK_POINT.x)));
+        assert(((cast(*void)(*instance.y)) - cast(*void)(*instance)) == 4, "D2D1_INK_POINT.y has unexpected offset % instead of 4", ((cast(*void)(*instance.y)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_POINT.y)) == 4, "D2D1_INK_POINT.y has unexpected size % instead of 4", size_of(type_of(D2D1_INK_POINT.y)));
+        assert(((cast(*void)(*instance.radius)) - cast(*void)(*instance)) == 8, "D2D1_INK_POINT.radius has unexpected offset % instead of 8", ((cast(*void)(*instance.radius)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_POINT.radius)) == 4, "D2D1_INK_POINT.radius has unexpected size % instead of 4", size_of(type_of(D2D1_INK_POINT.radius)));
+        assert(size_of(D2D1_INK_POINT) == 12, "D2D1_INK_POINT has size % instead of 12", size_of(D2D1_INK_POINT));
+    }
+
+    {
+        instance: D2D1_INK_BEZIER_SEGMENT;
+        assert(((cast(*void)(*instance.point1)) - cast(*void)(*instance)) == 0, "D2D1_INK_BEZIER_SEGMENT.point1 has unexpected offset % instead of 0", ((cast(*void)(*instance.point1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point1)) == 12, "D2D1_INK_BEZIER_SEGMENT.point1 has unexpected size % instead of 12", size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point1)));
+        assert(((cast(*void)(*instance.point2)) - cast(*void)(*instance)) == 12, "D2D1_INK_BEZIER_SEGMENT.point2 has unexpected offset % instead of 12", ((cast(*void)(*instance.point2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point2)) == 12, "D2D1_INK_BEZIER_SEGMENT.point2 has unexpected size % instead of 12", size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point2)));
+        assert(((cast(*void)(*instance.point3)) - cast(*void)(*instance)) == 24, "D2D1_INK_BEZIER_SEGMENT.point3 has unexpected offset % instead of 24", ((cast(*void)(*instance.point3)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point3)) == 12, "D2D1_INK_BEZIER_SEGMENT.point3 has unexpected size % instead of 12", size_of(type_of(D2D1_INK_BEZIER_SEGMENT.point3)));
+        assert(size_of(D2D1_INK_BEZIER_SEGMENT) == 36, "D2D1_INK_BEZIER_SEGMENT has size % instead of 36", size_of(D2D1_INK_BEZIER_SEGMENT));
+    }
+
+    {
+        instance: D2D1_INK_STYLE_PROPERTIES;
+        assert(((cast(*void)(*instance.nibShape)) - cast(*void)(*instance)) == 0, "D2D1_INK_STYLE_PROPERTIES.nibShape has unexpected offset % instead of 0", ((cast(*void)(*instance.nibShape)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_STYLE_PROPERTIES.nibShape)) == 4, "D2D1_INK_STYLE_PROPERTIES.nibShape has unexpected size % instead of 4", size_of(type_of(D2D1_INK_STYLE_PROPERTIES.nibShape)));
+        assert(((cast(*void)(*instance.nibTransform)) - cast(*void)(*instance)) == 4, "D2D1_INK_STYLE_PROPERTIES.nibTransform has unexpected offset % instead of 4", ((cast(*void)(*instance.nibTransform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_INK_STYLE_PROPERTIES.nibTransform)) == 24, "D2D1_INK_STYLE_PROPERTIES.nibTransform has unexpected size % instead of 24", size_of(type_of(D2D1_INK_STYLE_PROPERTIES.nibTransform)));
+        assert(size_of(D2D1_INK_STYLE_PROPERTIES) == 28, "D2D1_INK_STYLE_PROPERTIES has size % instead of 28", size_of(D2D1_INK_STYLE_PROPERTIES));
+    }
+
+    {
+        instance: D2D1_GRADIENT_MESH_PATCH;
+        assert(((cast(*void)(*instance.point00)) - cast(*void)(*instance)) == 0, "D2D1_GRADIENT_MESH_PATCH.point00 has unexpected offset % instead of 0", ((cast(*void)(*instance.point00)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point00)) == 8, "D2D1_GRADIENT_MESH_PATCH.point00 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point00)));
+        assert(((cast(*void)(*instance.point01)) - cast(*void)(*instance)) == 8, "D2D1_GRADIENT_MESH_PATCH.point01 has unexpected offset % instead of 8", ((cast(*void)(*instance.point01)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point01)) == 8, "D2D1_GRADIENT_MESH_PATCH.point01 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point01)));
+        assert(((cast(*void)(*instance.point02)) - cast(*void)(*instance)) == 16, "D2D1_GRADIENT_MESH_PATCH.point02 has unexpected offset % instead of 16", ((cast(*void)(*instance.point02)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point02)) == 8, "D2D1_GRADIENT_MESH_PATCH.point02 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point02)));
+        assert(((cast(*void)(*instance.point03)) - cast(*void)(*instance)) == 24, "D2D1_GRADIENT_MESH_PATCH.point03 has unexpected offset % instead of 24", ((cast(*void)(*instance.point03)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point03)) == 8, "D2D1_GRADIENT_MESH_PATCH.point03 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point03)));
+        assert(((cast(*void)(*instance.point10)) - cast(*void)(*instance)) == 32, "D2D1_GRADIENT_MESH_PATCH.point10 has unexpected offset % instead of 32", ((cast(*void)(*instance.point10)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point10)) == 8, "D2D1_GRADIENT_MESH_PATCH.point10 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point10)));
+        assert(((cast(*void)(*instance.point11)) - cast(*void)(*instance)) == 40, "D2D1_GRADIENT_MESH_PATCH.point11 has unexpected offset % instead of 40", ((cast(*void)(*instance.point11)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point11)) == 8, "D2D1_GRADIENT_MESH_PATCH.point11 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point11)));
+        assert(((cast(*void)(*instance.point12)) - cast(*void)(*instance)) == 48, "D2D1_GRADIENT_MESH_PATCH.point12 has unexpected offset % instead of 48", ((cast(*void)(*instance.point12)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point12)) == 8, "D2D1_GRADIENT_MESH_PATCH.point12 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point12)));
+        assert(((cast(*void)(*instance.point13)) - cast(*void)(*instance)) == 56, "D2D1_GRADIENT_MESH_PATCH.point13 has unexpected offset % instead of 56", ((cast(*void)(*instance.point13)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point13)) == 8, "D2D1_GRADIENT_MESH_PATCH.point13 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point13)));
+        assert(((cast(*void)(*instance.point20)) - cast(*void)(*instance)) == 64, "D2D1_GRADIENT_MESH_PATCH.point20 has unexpected offset % instead of 64", ((cast(*void)(*instance.point20)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point20)) == 8, "D2D1_GRADIENT_MESH_PATCH.point20 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point20)));
+        assert(((cast(*void)(*instance.point21)) - cast(*void)(*instance)) == 72, "D2D1_GRADIENT_MESH_PATCH.point21 has unexpected offset % instead of 72", ((cast(*void)(*instance.point21)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point21)) == 8, "D2D1_GRADIENT_MESH_PATCH.point21 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point21)));
+        assert(((cast(*void)(*instance.point22)) - cast(*void)(*instance)) == 80, "D2D1_GRADIENT_MESH_PATCH.point22 has unexpected offset % instead of 80", ((cast(*void)(*instance.point22)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point22)) == 8, "D2D1_GRADIENT_MESH_PATCH.point22 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point22)));
+        assert(((cast(*void)(*instance.point23)) - cast(*void)(*instance)) == 88, "D2D1_GRADIENT_MESH_PATCH.point23 has unexpected offset % instead of 88", ((cast(*void)(*instance.point23)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point23)) == 8, "D2D1_GRADIENT_MESH_PATCH.point23 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point23)));
+        assert(((cast(*void)(*instance.point30)) - cast(*void)(*instance)) == 96, "D2D1_GRADIENT_MESH_PATCH.point30 has unexpected offset % instead of 96", ((cast(*void)(*instance.point30)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point30)) == 8, "D2D1_GRADIENT_MESH_PATCH.point30 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point30)));
+        assert(((cast(*void)(*instance.point31)) - cast(*void)(*instance)) == 104, "D2D1_GRADIENT_MESH_PATCH.point31 has unexpected offset % instead of 104", ((cast(*void)(*instance.point31)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point31)) == 8, "D2D1_GRADIENT_MESH_PATCH.point31 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point31)));
+        assert(((cast(*void)(*instance.point32)) - cast(*void)(*instance)) == 112, "D2D1_GRADIENT_MESH_PATCH.point32 has unexpected offset % instead of 112", ((cast(*void)(*instance.point32)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point32)) == 8, "D2D1_GRADIENT_MESH_PATCH.point32 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point32)));
+        assert(((cast(*void)(*instance.point33)) - cast(*void)(*instance)) == 120, "D2D1_GRADIENT_MESH_PATCH.point33 has unexpected offset % instead of 120", ((cast(*void)(*instance.point33)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point33)) == 8, "D2D1_GRADIENT_MESH_PATCH.point33 has unexpected size % instead of 8", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.point33)));
+        assert(((cast(*void)(*instance.color00)) - cast(*void)(*instance)) == 128, "D2D1_GRADIENT_MESH_PATCH.color00 has unexpected offset % instead of 128", ((cast(*void)(*instance.color00)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color00)) == 16, "D2D1_GRADIENT_MESH_PATCH.color00 has unexpected size % instead of 16", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color00)));
+        assert(((cast(*void)(*instance.color03)) - cast(*void)(*instance)) == 144, "D2D1_GRADIENT_MESH_PATCH.color03 has unexpected offset % instead of 144", ((cast(*void)(*instance.color03)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color03)) == 16, "D2D1_GRADIENT_MESH_PATCH.color03 has unexpected size % instead of 16", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color03)));
+        assert(((cast(*void)(*instance.color30)) - cast(*void)(*instance)) == 160, "D2D1_GRADIENT_MESH_PATCH.color30 has unexpected offset % instead of 160", ((cast(*void)(*instance.color30)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color30)) == 16, "D2D1_GRADIENT_MESH_PATCH.color30 has unexpected size % instead of 16", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color30)));
+        assert(((cast(*void)(*instance.color33)) - cast(*void)(*instance)) == 176, "D2D1_GRADIENT_MESH_PATCH.color33 has unexpected offset % instead of 176", ((cast(*void)(*instance.color33)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color33)) == 16, "D2D1_GRADIENT_MESH_PATCH.color33 has unexpected size % instead of 16", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.color33)));
+        assert(((cast(*void)(*instance.topEdgeMode)) - cast(*void)(*instance)) == 192, "D2D1_GRADIENT_MESH_PATCH.topEdgeMode has unexpected offset % instead of 192", ((cast(*void)(*instance.topEdgeMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.topEdgeMode)) == 4, "D2D1_GRADIENT_MESH_PATCH.topEdgeMode has unexpected size % instead of 4", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.topEdgeMode)));
+        assert(((cast(*void)(*instance.leftEdgeMode)) - cast(*void)(*instance)) == 196, "D2D1_GRADIENT_MESH_PATCH.leftEdgeMode has unexpected offset % instead of 196", ((cast(*void)(*instance.leftEdgeMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.leftEdgeMode)) == 4, "D2D1_GRADIENT_MESH_PATCH.leftEdgeMode has unexpected size % instead of 4", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.leftEdgeMode)));
+        assert(((cast(*void)(*instance.bottomEdgeMode)) - cast(*void)(*instance)) == 200, "D2D1_GRADIENT_MESH_PATCH.bottomEdgeMode has unexpected offset % instead of 200", ((cast(*void)(*instance.bottomEdgeMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.bottomEdgeMode)) == 4, "D2D1_GRADIENT_MESH_PATCH.bottomEdgeMode has unexpected size % instead of 4", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.bottomEdgeMode)));
+        assert(((cast(*void)(*instance.rightEdgeMode)) - cast(*void)(*instance)) == 204, "D2D1_GRADIENT_MESH_PATCH.rightEdgeMode has unexpected offset % instead of 204", ((cast(*void)(*instance.rightEdgeMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_GRADIENT_MESH_PATCH.rightEdgeMode)) == 4, "D2D1_GRADIENT_MESH_PATCH.rightEdgeMode has unexpected size % instead of 4", size_of(type_of(D2D1_GRADIENT_MESH_PATCH.rightEdgeMode)));
+        assert(size_of(D2D1_GRADIENT_MESH_PATCH) == 208, "D2D1_GRADIENT_MESH_PATCH has size % instead of 208", size_of(D2D1_GRADIENT_MESH_PATCH));
+    }
+
+    {
+        instance: D2D1_SIMPLE_COLOR_PROFILE;
+        assert(((cast(*void)(*instance.redPrimary)) - cast(*void)(*instance)) == 0, "D2D1_SIMPLE_COLOR_PROFILE.redPrimary has unexpected offset % instead of 0", ((cast(*void)(*instance.redPrimary)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.redPrimary)) == 8, "D2D1_SIMPLE_COLOR_PROFILE.redPrimary has unexpected size % instead of 8", size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.redPrimary)));
+        assert(((cast(*void)(*instance.greenPrimary)) - cast(*void)(*instance)) == 8, "D2D1_SIMPLE_COLOR_PROFILE.greenPrimary has unexpected offset % instead of 8", ((cast(*void)(*instance.greenPrimary)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.greenPrimary)) == 8, "D2D1_SIMPLE_COLOR_PROFILE.greenPrimary has unexpected size % instead of 8", size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.greenPrimary)));
+        assert(((cast(*void)(*instance.bluePrimary)) - cast(*void)(*instance)) == 16, "D2D1_SIMPLE_COLOR_PROFILE.bluePrimary has unexpected offset % instead of 16", ((cast(*void)(*instance.bluePrimary)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.bluePrimary)) == 8, "D2D1_SIMPLE_COLOR_PROFILE.bluePrimary has unexpected size % instead of 8", size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.bluePrimary)));
+        assert(((cast(*void)(*instance.whitePointXZ)) - cast(*void)(*instance)) == 24, "D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ has unexpected offset % instead of 24", ((cast(*void)(*instance.whitePointXZ)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ)) == 8, "D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ has unexpected size % instead of 8", size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ)));
+        assert(((cast(*void)(*instance.gamma)) - cast(*void)(*instance)) == 32, "D2D1_SIMPLE_COLOR_PROFILE.gamma has unexpected offset % instead of 32", ((cast(*void)(*instance.gamma)) - cast(*void)(*instance)));
+        assert(size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.gamma)) == 4, "D2D1_SIMPLE_COLOR_PROFILE.gamma has unexpected size % instead of 4", size_of(type_of(D2D1_SIMPLE_COLOR_PROFILE.gamma)));
+        assert(size_of(D2D1_SIMPLE_COLOR_PROFILE) == 36, "D2D1_SIMPLE_COLOR_PROFILE has size % instead of 36", size_of(D2D1_SIMPLE_COLOR_PROFILE));
+    }
+
+    assert(size_of(ID2D1InkStyle) == 8, "ID2D1InkStyle has size % instead of 8", size_of(ID2D1InkStyle));
+
+    assert(size_of(ID2D1Ink) == 8, "ID2D1Ink has size % instead of 8", size_of(ID2D1Ink));
+
+    assert(size_of(ID2D1GradientMesh) == 8, "ID2D1GradientMesh has size % instead of 8", size_of(ID2D1GradientMesh));
+
+    assert(size_of(ID2D1ImageSource) == 8, "ID2D1ImageSource has size % instead of 8", size_of(ID2D1ImageSource));
+
+    assert(size_of(ID2D1ImageSourceFromWic) == 8, "ID2D1ImageSourceFromWic has size % instead of 8", size_of(ID2D1ImageSourceFromWic));
+
+    assert(size_of(ID2D1TransformedImageSource) == 8, "ID2D1TransformedImageSource has size % instead of 8", size_of(ID2D1TransformedImageSource));
+
+    assert(size_of(ID2D1LookupTable3D) == 8, "ID2D1LookupTable3D has size % instead of 8", size_of(ID2D1LookupTable3D));
+
+    assert(size_of(ID2D1DeviceContext2) == 8, "ID2D1DeviceContext2 has size % instead of 8", size_of(ID2D1DeviceContext2));
+
+    assert(size_of(ID2D1Device2) == 8, "ID2D1Device2 has size % instead of 8", size_of(ID2D1Device2));
+
+    assert(size_of(ID2D1Factory3) == 8, "ID2D1Factory3 has size % instead of 8", size_of(ID2D1Factory3));
+
+    assert(size_of(ID2D1CommandSink2) == 8, "ID2D1CommandSink2 has size % instead of 8", size_of(ID2D1CommandSink2));
+
+    assert(size_of(ID2D1GdiMetafile1) == 8, "ID2D1GdiMetafile1 has size % instead of 8", size_of(ID2D1GdiMetafile1));
+
+    assert(size_of(ID2D1GdiMetafileSink1) == 8, "ID2D1GdiMetafileSink1 has size % instead of 8", size_of(ID2D1GdiMetafileSink1));
+
+    assert(size_of(ID2D1SpriteBatch) == 8, "ID2D1SpriteBatch has size % instead of 8", size_of(ID2D1SpriteBatch));
+
+    assert(size_of(ID2D1DeviceContext3) == 8, "ID2D1DeviceContext3 has size % instead of 8", size_of(ID2D1DeviceContext3));
+
+    assert(size_of(ID2D1Device3) == 8, "ID2D1Device3 has size % instead of 8", size_of(ID2D1Device3));
+
+    assert(size_of(ID2D1Factory4) == 8, "ID2D1Factory4 has size % instead of 8", size_of(ID2D1Factory4));
+
+    assert(size_of(ID2D1CommandSink3) == 8, "ID2D1CommandSink3 has size % instead of 8", size_of(ID2D1CommandSink3));
+
+    assert(size_of(ID2D1SvgGlyphStyle) == 8, "ID2D1SvgGlyphStyle has size % instead of 8", size_of(ID2D1SvgGlyphStyle));
+
+    assert(size_of(ID2D1DeviceContext4) == 8, "ID2D1DeviceContext4 has size % instead of 8", size_of(ID2D1DeviceContext4));
+
+    assert(size_of(ID2D1Device4) == 8, "ID2D1Device4 has size % instead of 8", size_of(ID2D1Device4));
+
+    assert(size_of(ID2D1Factory5) == 8, "ID2D1Factory5 has size % instead of 8", size_of(ID2D1Factory5));
+
+    assert(size_of(ID2D1CommandSink4) == 8, "ID2D1CommandSink4 has size % instead of 8", size_of(ID2D1CommandSink4));
+
+    assert(size_of(ID2D1ColorContext1) == 8, "ID2D1ColorContext1 has size % instead of 8", size_of(ID2D1ColorContext1));
+
+    assert(size_of(ID2D1DeviceContext5) == 8, "ID2D1DeviceContext5 has size % instead of 8", size_of(ID2D1DeviceContext5));
+
+    assert(size_of(ID2D1Device5) == 8, "ID2D1Device5 has size % instead of 8", size_of(ID2D1Device5));
+
+    assert(size_of(ID2D1Factory6) == 8, "ID2D1Factory6 has size % instead of 8", size_of(ID2D1Factory6));
+
+    assert(size_of(ID2D1CommandSink5) == 8, "ID2D1CommandSink5 has size % instead of 8", size_of(ID2D1CommandSink5));
+
+    assert(size_of(ID2D1DeviceContext6) == 8, "ID2D1DeviceContext6 has size % instead of 8", size_of(ID2D1DeviceContext6));
+
+    assert(size_of(ID2D1Device6) == 8, "ID2D1Device6 has size % instead of 8", size_of(ID2D1Device6));
+
+    assert(size_of(ID2D1Factory7) == 8, "ID2D1Factory7 has size % instead of 8", size_of(ID2D1Factory7));
+
+    assert(size_of(ID2D1DeviceContext7) == 8, "ID2D1DeviceContext7 has size % instead of 8", size_of(ID2D1DeviceContext7));
+
+    assert(size_of(ID2D1Device7) == 8, "ID2D1Device7 has size % instead of 8", size_of(ID2D1Device7));
+
+    assert(size_of(ID2D1Factory8) == 8, "ID2D1Factory8 has size % instead of 8", size_of(ID2D1Factory8));
+
+    {
+        instance: DWRITE_FONT_METRICS;
+        assert(((cast(*void)(*instance.designUnitsPerEm)) - cast(*void)(*instance)) == 0, "DWRITE_FONT_METRICS.designUnitsPerEm has unexpected offset % instead of 0", ((cast(*void)(*instance.designUnitsPerEm)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.designUnitsPerEm)) == 2, "DWRITE_FONT_METRICS.designUnitsPerEm has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.designUnitsPerEm)));
+        assert(((cast(*void)(*instance.ascent)) - cast(*void)(*instance)) == 2, "DWRITE_FONT_METRICS.ascent has unexpected offset % instead of 2", ((cast(*void)(*instance.ascent)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.ascent)) == 2, "DWRITE_FONT_METRICS.ascent has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.ascent)));
+        assert(((cast(*void)(*instance.descent)) - cast(*void)(*instance)) == 4, "DWRITE_FONT_METRICS.descent has unexpected offset % instead of 4", ((cast(*void)(*instance.descent)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.descent)) == 2, "DWRITE_FONT_METRICS.descent has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.descent)));
+        assert(((cast(*void)(*instance.lineGap)) - cast(*void)(*instance)) == 6, "DWRITE_FONT_METRICS.lineGap has unexpected offset % instead of 6", ((cast(*void)(*instance.lineGap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.lineGap)) == 2, "DWRITE_FONT_METRICS.lineGap has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.lineGap)));
+        assert(((cast(*void)(*instance.capHeight)) - cast(*void)(*instance)) == 8, "DWRITE_FONT_METRICS.capHeight has unexpected offset % instead of 8", ((cast(*void)(*instance.capHeight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.capHeight)) == 2, "DWRITE_FONT_METRICS.capHeight has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.capHeight)));
+        assert(((cast(*void)(*instance.xHeight)) - cast(*void)(*instance)) == 10, "DWRITE_FONT_METRICS.xHeight has unexpected offset % instead of 10", ((cast(*void)(*instance.xHeight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.xHeight)) == 2, "DWRITE_FONT_METRICS.xHeight has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.xHeight)));
+        assert(((cast(*void)(*instance.underlinePosition)) - cast(*void)(*instance)) == 12, "DWRITE_FONT_METRICS.underlinePosition has unexpected offset % instead of 12", ((cast(*void)(*instance.underlinePosition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.underlinePosition)) == 2, "DWRITE_FONT_METRICS.underlinePosition has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.underlinePosition)));
+        assert(((cast(*void)(*instance.underlineThickness)) - cast(*void)(*instance)) == 14, "DWRITE_FONT_METRICS.underlineThickness has unexpected offset % instead of 14", ((cast(*void)(*instance.underlineThickness)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.underlineThickness)) == 2, "DWRITE_FONT_METRICS.underlineThickness has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.underlineThickness)));
+        assert(((cast(*void)(*instance.strikethroughPosition)) - cast(*void)(*instance)) == 16, "DWRITE_FONT_METRICS.strikethroughPosition has unexpected offset % instead of 16", ((cast(*void)(*instance.strikethroughPosition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.strikethroughPosition)) == 2, "DWRITE_FONT_METRICS.strikethroughPosition has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.strikethroughPosition)));
+        assert(((cast(*void)(*instance.strikethroughThickness)) - cast(*void)(*instance)) == 18, "DWRITE_FONT_METRICS.strikethroughThickness has unexpected offset % instead of 18", ((cast(*void)(*instance.strikethroughThickness)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS.strikethroughThickness)) == 2, "DWRITE_FONT_METRICS.strikethroughThickness has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS.strikethroughThickness)));
+        assert(size_of(DWRITE_FONT_METRICS) == 20, "DWRITE_FONT_METRICS has size % instead of 20", size_of(DWRITE_FONT_METRICS));
+    }
+
+    {
+        instance: DWRITE_GLYPH_METRICS;
+        assert(((cast(*void)(*instance.leftSideBearing)) - cast(*void)(*instance)) == 0, "DWRITE_GLYPH_METRICS.leftSideBearing has unexpected offset % instead of 0", ((cast(*void)(*instance.leftSideBearing)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.leftSideBearing)) == 4, "DWRITE_GLYPH_METRICS.leftSideBearing has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.leftSideBearing)));
+        assert(((cast(*void)(*instance.advanceWidth)) - cast(*void)(*instance)) == 4, "DWRITE_GLYPH_METRICS.advanceWidth has unexpected offset % instead of 4", ((cast(*void)(*instance.advanceWidth)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.advanceWidth)) == 4, "DWRITE_GLYPH_METRICS.advanceWidth has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.advanceWidth)));
+        assert(((cast(*void)(*instance.rightSideBearing)) - cast(*void)(*instance)) == 8, "DWRITE_GLYPH_METRICS.rightSideBearing has unexpected offset % instead of 8", ((cast(*void)(*instance.rightSideBearing)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.rightSideBearing)) == 4, "DWRITE_GLYPH_METRICS.rightSideBearing has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.rightSideBearing)));
+        assert(((cast(*void)(*instance.topSideBearing)) - cast(*void)(*instance)) == 12, "DWRITE_GLYPH_METRICS.topSideBearing has unexpected offset % instead of 12", ((cast(*void)(*instance.topSideBearing)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.topSideBearing)) == 4, "DWRITE_GLYPH_METRICS.topSideBearing has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.topSideBearing)));
+        assert(((cast(*void)(*instance.advanceHeight)) - cast(*void)(*instance)) == 16, "DWRITE_GLYPH_METRICS.advanceHeight has unexpected offset % instead of 16", ((cast(*void)(*instance.advanceHeight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.advanceHeight)) == 4, "DWRITE_GLYPH_METRICS.advanceHeight has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.advanceHeight)));
+        assert(((cast(*void)(*instance.bottomSideBearing)) - cast(*void)(*instance)) == 20, "DWRITE_GLYPH_METRICS.bottomSideBearing has unexpected offset % instead of 20", ((cast(*void)(*instance.bottomSideBearing)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.bottomSideBearing)) == 4, "DWRITE_GLYPH_METRICS.bottomSideBearing has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.bottomSideBearing)));
+        assert(((cast(*void)(*instance.verticalOriginY)) - cast(*void)(*instance)) == 24, "DWRITE_GLYPH_METRICS.verticalOriginY has unexpected offset % instead of 24", ((cast(*void)(*instance.verticalOriginY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_METRICS.verticalOriginY)) == 4, "DWRITE_GLYPH_METRICS.verticalOriginY has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_METRICS.verticalOriginY)));
+        assert(size_of(DWRITE_GLYPH_METRICS) == 28, "DWRITE_GLYPH_METRICS has size % instead of 28", size_of(DWRITE_GLYPH_METRICS));
+    }
+
+    {
+        instance: DWRITE_GLYPH_OFFSET;
+        assert(((cast(*void)(*instance.advanceOffset)) - cast(*void)(*instance)) == 0, "DWRITE_GLYPH_OFFSET.advanceOffset has unexpected offset % instead of 0", ((cast(*void)(*instance.advanceOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_OFFSET.advanceOffset)) == 4, "DWRITE_GLYPH_OFFSET.advanceOffset has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_OFFSET.advanceOffset)));
+        assert(((cast(*void)(*instance.ascenderOffset)) - cast(*void)(*instance)) == 4, "DWRITE_GLYPH_OFFSET.ascenderOffset has unexpected offset % instead of 4", ((cast(*void)(*instance.ascenderOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_OFFSET.ascenderOffset)) == 4, "DWRITE_GLYPH_OFFSET.ascenderOffset has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_OFFSET.ascenderOffset)));
+        assert(size_of(DWRITE_GLYPH_OFFSET) == 8, "DWRITE_GLYPH_OFFSET has size % instead of 8", size_of(DWRITE_GLYPH_OFFSET));
+    }
+
+    assert(size_of(IDWriteFontFileLoader) == 8, "IDWriteFontFileLoader has size % instead of 8", size_of(IDWriteFontFileLoader));
+
+    assert(size_of(IDWriteLocalFontFileLoader) == 8, "IDWriteLocalFontFileLoader has size % instead of 8", size_of(IDWriteLocalFontFileLoader));
+
+    assert(size_of(IDWriteFontFileStream) == 8, "IDWriteFontFileStream has size % instead of 8", size_of(IDWriteFontFileStream));
+
+    assert(size_of(IDWriteFontFile) == 8, "IDWriteFontFile has size % instead of 8", size_of(IDWriteFontFile));
+
+    {
+        instance: DWRITE_MATRIX;
+        assert(((cast(*void)(*instance.m11)) - cast(*void)(*instance)) == 0, "DWRITE_MATRIX.m11 has unexpected offset % instead of 0", ((cast(*void)(*instance.m11)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.m11)) == 4, "DWRITE_MATRIX.m11 has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.m11)));
+        assert(((cast(*void)(*instance.m12)) - cast(*void)(*instance)) == 4, "DWRITE_MATRIX.m12 has unexpected offset % instead of 4", ((cast(*void)(*instance.m12)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.m12)) == 4, "DWRITE_MATRIX.m12 has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.m12)));
+        assert(((cast(*void)(*instance.m21)) - cast(*void)(*instance)) == 8, "DWRITE_MATRIX.m21 has unexpected offset % instead of 8", ((cast(*void)(*instance.m21)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.m21)) == 4, "DWRITE_MATRIX.m21 has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.m21)));
+        assert(((cast(*void)(*instance.m22)) - cast(*void)(*instance)) == 12, "DWRITE_MATRIX.m22 has unexpected offset % instead of 12", ((cast(*void)(*instance.m22)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.m22)) == 4, "DWRITE_MATRIX.m22 has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.m22)));
+        assert(((cast(*void)(*instance.dx)) - cast(*void)(*instance)) == 16, "DWRITE_MATRIX.dx has unexpected offset % instead of 16", ((cast(*void)(*instance.dx)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.dx)) == 4, "DWRITE_MATRIX.dx has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.dx)));
+        assert(((cast(*void)(*instance.dy)) - cast(*void)(*instance)) == 20, "DWRITE_MATRIX.dy has unexpected offset % instead of 20", ((cast(*void)(*instance.dy)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_MATRIX.dy)) == 4, "DWRITE_MATRIX.dy has unexpected size % instead of 4", size_of(type_of(DWRITE_MATRIX.dy)));
+        assert(size_of(DWRITE_MATRIX) == 24, "DWRITE_MATRIX has size % instead of 24", size_of(DWRITE_MATRIX));
+    }
+
+    assert(size_of(IDWriteRenderingParams) == 8, "IDWriteRenderingParams has size % instead of 8", size_of(IDWriteRenderingParams));
+
+    assert(size_of(IDWriteFontFace) == 8, "IDWriteFontFace has size % instead of 8", size_of(IDWriteFontFace));
+
+    assert(size_of(IDWriteFontCollectionLoader) == 8, "IDWriteFontCollectionLoader has size % instead of 8", size_of(IDWriteFontCollectionLoader));
+
+    assert(size_of(IDWriteFontFileEnumerator) == 8, "IDWriteFontFileEnumerator has size % instead of 8", size_of(IDWriteFontFileEnumerator));
+
+    assert(size_of(IDWriteLocalizedStrings) == 8, "IDWriteLocalizedStrings has size % instead of 8", size_of(IDWriteLocalizedStrings));
+
+    assert(size_of(IDWriteFontCollection) == 8, "IDWriteFontCollection has size % instead of 8", size_of(IDWriteFontCollection));
+
+    assert(size_of(IDWriteFontList) == 8, "IDWriteFontList has size % instead of 8", size_of(IDWriteFontList));
+
+    assert(size_of(IDWriteFontFamily) == 8, "IDWriteFontFamily has size % instead of 8", size_of(IDWriteFontFamily));
+
+    assert(size_of(IDWriteFont) == 8, "IDWriteFont has size % instead of 8", size_of(IDWriteFont));
+
+    {
+        instance: DWRITE_TEXT_RANGE;
+        assert(((cast(*void)(*instance.startPosition)) - cast(*void)(*instance)) == 0, "DWRITE_TEXT_RANGE.startPosition has unexpected offset % instead of 0", ((cast(*void)(*instance.startPosition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_RANGE.startPosition)) == 4, "DWRITE_TEXT_RANGE.startPosition has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_RANGE.startPosition)));
+        assert(((cast(*void)(*instance.length)) - cast(*void)(*instance)) == 4, "DWRITE_TEXT_RANGE.length has unexpected offset % instead of 4", ((cast(*void)(*instance.length)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_RANGE.length)) == 4, "DWRITE_TEXT_RANGE.length has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_RANGE.length)));
+        assert(size_of(DWRITE_TEXT_RANGE) == 8, "DWRITE_TEXT_RANGE has size % instead of 8", size_of(DWRITE_TEXT_RANGE));
+    }
+
+    {
+        instance: DWRITE_FONT_FEATURE;
+        assert(((cast(*void)(*instance.nameTag)) - cast(*void)(*instance)) == 0, "DWRITE_FONT_FEATURE.nameTag has unexpected offset % instead of 0", ((cast(*void)(*instance.nameTag)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_FEATURE.nameTag)) == 4, "DWRITE_FONT_FEATURE.nameTag has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_FEATURE.nameTag)));
+        assert(((cast(*void)(*instance.parameter)) - cast(*void)(*instance)) == 4, "DWRITE_FONT_FEATURE.parameter has unexpected offset % instead of 4", ((cast(*void)(*instance.parameter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_FEATURE.parameter)) == 4, "DWRITE_FONT_FEATURE.parameter has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_FEATURE.parameter)));
+        assert(size_of(DWRITE_FONT_FEATURE) == 8, "DWRITE_FONT_FEATURE has size % instead of 8", size_of(DWRITE_FONT_FEATURE));
+    }
+
+    {
+        instance: DWRITE_TYPOGRAPHIC_FEATURES;
+        assert(((cast(*void)(*instance.features)) - cast(*void)(*instance)) == 0, "DWRITE_TYPOGRAPHIC_FEATURES.features has unexpected offset % instead of 0", ((cast(*void)(*instance.features)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TYPOGRAPHIC_FEATURES.features)) == 8, "DWRITE_TYPOGRAPHIC_FEATURES.features has unexpected size % instead of 8", size_of(type_of(DWRITE_TYPOGRAPHIC_FEATURES.features)));
+        assert(((cast(*void)(*instance.featureCount)) - cast(*void)(*instance)) == 8, "DWRITE_TYPOGRAPHIC_FEATURES.featureCount has unexpected offset % instead of 8", ((cast(*void)(*instance.featureCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TYPOGRAPHIC_FEATURES.featureCount)) == 4, "DWRITE_TYPOGRAPHIC_FEATURES.featureCount has unexpected size % instead of 4", size_of(type_of(DWRITE_TYPOGRAPHIC_FEATURES.featureCount)));
+        assert(size_of(DWRITE_TYPOGRAPHIC_FEATURES) == 16, "DWRITE_TYPOGRAPHIC_FEATURES has size % instead of 16", size_of(DWRITE_TYPOGRAPHIC_FEATURES));
+    }
+
+    {
+        instance: DWRITE_TRIMMING;
+        assert(((cast(*void)(*instance.granularity)) - cast(*void)(*instance)) == 0, "DWRITE_TRIMMING.granularity has unexpected offset % instead of 0", ((cast(*void)(*instance.granularity)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TRIMMING.granularity)) == 4, "DWRITE_TRIMMING.granularity has unexpected size % instead of 4", size_of(type_of(DWRITE_TRIMMING.granularity)));
+        assert(((cast(*void)(*instance.delimiter)) - cast(*void)(*instance)) == 4, "DWRITE_TRIMMING.delimiter has unexpected offset % instead of 4", ((cast(*void)(*instance.delimiter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TRIMMING.delimiter)) == 4, "DWRITE_TRIMMING.delimiter has unexpected size % instead of 4", size_of(type_of(DWRITE_TRIMMING.delimiter)));
+        assert(((cast(*void)(*instance.delimiterCount)) - cast(*void)(*instance)) == 8, "DWRITE_TRIMMING.delimiterCount has unexpected offset % instead of 8", ((cast(*void)(*instance.delimiterCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TRIMMING.delimiterCount)) == 4, "DWRITE_TRIMMING.delimiterCount has unexpected size % instead of 4", size_of(type_of(DWRITE_TRIMMING.delimiterCount)));
+        assert(size_of(DWRITE_TRIMMING) == 12, "DWRITE_TRIMMING has size % instead of 12", size_of(DWRITE_TRIMMING));
+    }
+
+    assert(size_of(IDWriteTextFormat) == 8, "IDWriteTextFormat has size % instead of 8", size_of(IDWriteTextFormat));
+
+    assert(size_of(IDWriteTypography) == 8, "IDWriteTypography has size % instead of 8", size_of(IDWriteTypography));
+
+    {
+        instance: DWRITE_SCRIPT_ANALYSIS;
+        assert(((cast(*void)(*instance.script)) - cast(*void)(*instance)) == 0, "DWRITE_SCRIPT_ANALYSIS.script has unexpected offset % instead of 0", ((cast(*void)(*instance.script)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_ANALYSIS.script)) == 2, "DWRITE_SCRIPT_ANALYSIS.script has unexpected size % instead of 2", size_of(type_of(DWRITE_SCRIPT_ANALYSIS.script)));
+        assert(((cast(*void)(*instance.shapes)) - cast(*void)(*instance)) == 4, "DWRITE_SCRIPT_ANALYSIS.shapes has unexpected offset % instead of 4", ((cast(*void)(*instance.shapes)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_ANALYSIS.shapes)) == 4, "DWRITE_SCRIPT_ANALYSIS.shapes has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_ANALYSIS.shapes)));
+        assert(size_of(DWRITE_SCRIPT_ANALYSIS) == 8, "DWRITE_SCRIPT_ANALYSIS has size % instead of 8", size_of(DWRITE_SCRIPT_ANALYSIS));
+    }
+
+    {
+        instance: DWRITE_LINE_BREAKPOINT;
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.breakConditionBefore)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_BREAKPOINT.breakConditionBefore has unexpected offset % instead of 0", ((cast(*void)(*instance.breakConditionBefore)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_BREAKPOINT.breakConditionBefore)) == 1, "DWRITE_LINE_BREAKPOINT.breakConditionBefore has unexpected size % instead of 1", size_of(type_of(DWRITE_LINE_BREAKPOINT.breakConditionBefore)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.breakConditionAfter)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_BREAKPOINT.breakConditionAfter has unexpected offset % instead of 0", ((cast(*void)(*instance.breakConditionAfter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_BREAKPOINT.breakConditionAfter)) == 1, "DWRITE_LINE_BREAKPOINT.breakConditionAfter has unexpected size % instead of 1", size_of(type_of(DWRITE_LINE_BREAKPOINT.breakConditionAfter)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isWhitespace)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_BREAKPOINT.isWhitespace has unexpected offset % instead of 0", ((cast(*void)(*instance.isWhitespace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_BREAKPOINT.isWhitespace)) == 1, "DWRITE_LINE_BREAKPOINT.isWhitespace has unexpected size % instead of 1", size_of(type_of(DWRITE_LINE_BREAKPOINT.isWhitespace)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isSoftHyphen)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_BREAKPOINT.isSoftHyphen has unexpected offset % instead of 0", ((cast(*void)(*instance.isSoftHyphen)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_BREAKPOINT.isSoftHyphen)) == 1, "DWRITE_LINE_BREAKPOINT.isSoftHyphen has unexpected size % instead of 1", size_of(type_of(DWRITE_LINE_BREAKPOINT.isSoftHyphen)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.padding)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_BREAKPOINT.padding has unexpected offset % instead of 0", ((cast(*void)(*instance.padding)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_BREAKPOINT.padding)) == 1, "DWRITE_LINE_BREAKPOINT.padding has unexpected size % instead of 1", size_of(type_of(DWRITE_LINE_BREAKPOINT.padding)));
+        assert(size_of(DWRITE_LINE_BREAKPOINT) == 1, "DWRITE_LINE_BREAKPOINT has size % instead of 1", size_of(DWRITE_LINE_BREAKPOINT));
+    }
+
+    assert(size_of(IDWriteNumberSubstitution) == 8, "IDWriteNumberSubstitution has size % instead of 8", size_of(IDWriteNumberSubstitution));
+
+    {
+        instance: DWRITE_SHAPING_TEXT_PROPERTIES;
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isShapedAlone)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone has unexpected offset % instead of 0", ((cast(*void)(*instance.isShapedAlone)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone)) == 2, "DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.reserved1)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_TEXT_PROPERTIES.reserved1 has unexpected offset % instead of 0", ((cast(*void)(*instance.reserved1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.reserved1)) == 2, "DWRITE_SHAPING_TEXT_PROPERTIES.reserved1 has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.reserved1)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.canBreakShapingAfter)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter has unexpected offset % instead of 0", ((cast(*void)(*instance.canBreakShapingAfter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter)) == 2, "DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.reserved)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_TEXT_PROPERTIES.reserved has unexpected offset % instead of 0", ((cast(*void)(*instance.reserved)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.reserved)) == 2, "DWRITE_SHAPING_TEXT_PROPERTIES.reserved has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_TEXT_PROPERTIES.reserved)));
+        assert(size_of(DWRITE_SHAPING_TEXT_PROPERTIES) == 2, "DWRITE_SHAPING_TEXT_PROPERTIES has size % instead of 2", size_of(DWRITE_SHAPING_TEXT_PROPERTIES));
+    }
+
+    {
+        instance: DWRITE_SHAPING_GLYPH_PROPERTIES;
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.justification)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_GLYPH_PROPERTIES.justification has unexpected offset % instead of 0", ((cast(*void)(*instance.justification)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.justification)) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES.justification has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.justification)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isClusterStart)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart has unexpected offset % instead of 0", ((cast(*void)(*instance.isClusterStart)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart)) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isDiacritic)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic has unexpected offset % instead of 0", ((cast(*void)(*instance.isDiacritic)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic)) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isZeroWidthSpace)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace has unexpected offset % instead of 0", ((cast(*void)(*instance.isZeroWidthSpace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace)) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.reserved)) - cast(*void)(*instance)) == 0, "DWRITE_SHAPING_GLYPH_PROPERTIES.reserved has unexpected offset % instead of 0", ((cast(*void)(*instance.reserved)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.reserved)) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES.reserved has unexpected size % instead of 2", size_of(type_of(DWRITE_SHAPING_GLYPH_PROPERTIES.reserved)));
+        assert(size_of(DWRITE_SHAPING_GLYPH_PROPERTIES) == 2, "DWRITE_SHAPING_GLYPH_PROPERTIES has size % instead of 2", size_of(DWRITE_SHAPING_GLYPH_PROPERTIES));
+    }
+
+    assert(size_of(IDWriteTextAnalysisSource) == 8, "IDWriteTextAnalysisSource has size % instead of 8", size_of(IDWriteTextAnalysisSource));
+
+    assert(size_of(IDWriteTextAnalysisSink) == 8, "IDWriteTextAnalysisSink has size % instead of 8", size_of(IDWriteTextAnalysisSink));
+
+    assert(size_of(IDWriteTextAnalyzer) == 8, "IDWriteTextAnalyzer has size % instead of 8", size_of(IDWriteTextAnalyzer));
+
+    {
+        instance: DWRITE_GLYPH_RUN;
+        assert(((cast(*void)(*instance.fontFace)) - cast(*void)(*instance)) == 0, "DWRITE_GLYPH_RUN.fontFace has unexpected offset % instead of 0", ((cast(*void)(*instance.fontFace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.fontFace)) == 8, "DWRITE_GLYPH_RUN.fontFace has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN.fontFace)));
+        assert(((cast(*void)(*instance.fontEmSize)) - cast(*void)(*instance)) == 8, "DWRITE_GLYPH_RUN.fontEmSize has unexpected offset % instead of 8", ((cast(*void)(*instance.fontEmSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.fontEmSize)) == 4, "DWRITE_GLYPH_RUN.fontEmSize has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN.fontEmSize)));
+        assert(((cast(*void)(*instance.glyphCount)) - cast(*void)(*instance)) == 12, "DWRITE_GLYPH_RUN.glyphCount has unexpected offset % instead of 12", ((cast(*void)(*instance.glyphCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.glyphCount)) == 4, "DWRITE_GLYPH_RUN.glyphCount has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN.glyphCount)));
+        assert(((cast(*void)(*instance.glyphIndices)) - cast(*void)(*instance)) == 16, "DWRITE_GLYPH_RUN.glyphIndices has unexpected offset % instead of 16", ((cast(*void)(*instance.glyphIndices)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.glyphIndices)) == 8, "DWRITE_GLYPH_RUN.glyphIndices has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN.glyphIndices)));
+        assert(((cast(*void)(*instance.glyphAdvances)) - cast(*void)(*instance)) == 24, "DWRITE_GLYPH_RUN.glyphAdvances has unexpected offset % instead of 24", ((cast(*void)(*instance.glyphAdvances)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.glyphAdvances)) == 8, "DWRITE_GLYPH_RUN.glyphAdvances has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN.glyphAdvances)));
+        assert(((cast(*void)(*instance.glyphOffsets)) - cast(*void)(*instance)) == 32, "DWRITE_GLYPH_RUN.glyphOffsets has unexpected offset % instead of 32", ((cast(*void)(*instance.glyphOffsets)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.glyphOffsets)) == 8, "DWRITE_GLYPH_RUN.glyphOffsets has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN.glyphOffsets)));
+        assert(((cast(*void)(*instance.isSideways)) - cast(*void)(*instance)) == 40, "DWRITE_GLYPH_RUN.isSideways has unexpected offset % instead of 40", ((cast(*void)(*instance.isSideways)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.isSideways)) == 4, "DWRITE_GLYPH_RUN.isSideways has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN.isSideways)));
+        assert(((cast(*void)(*instance.bidiLevel)) - cast(*void)(*instance)) == 44, "DWRITE_GLYPH_RUN.bidiLevel has unexpected offset % instead of 44", ((cast(*void)(*instance.bidiLevel)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN.bidiLevel)) == 4, "DWRITE_GLYPH_RUN.bidiLevel has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN.bidiLevel)));
+        assert(size_of(DWRITE_GLYPH_RUN) == 48, "DWRITE_GLYPH_RUN has size % instead of 48", size_of(DWRITE_GLYPH_RUN));
+    }
+
+    {
+        instance: DWRITE_GLYPH_RUN_DESCRIPTION;
+        assert(((cast(*void)(*instance.localeName)) - cast(*void)(*instance)) == 0, "DWRITE_GLYPH_RUN_DESCRIPTION.localeName has unexpected offset % instead of 0", ((cast(*void)(*instance.localeName)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.localeName)) == 8, "DWRITE_GLYPH_RUN_DESCRIPTION.localeName has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.localeName)));
+        assert(((cast(*void)(*instance._string)) - cast(*void)(*instance)) == 8, "DWRITE_GLYPH_RUN_DESCRIPTION._string has unexpected offset % instead of 8", ((cast(*void)(*instance._string)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION._string)) == 8, "DWRITE_GLYPH_RUN_DESCRIPTION._string has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION._string)));
+        assert(((cast(*void)(*instance.stringLength)) - cast(*void)(*instance)) == 16, "DWRITE_GLYPH_RUN_DESCRIPTION.stringLength has unexpected offset % instead of 16", ((cast(*void)(*instance.stringLength)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.stringLength)) == 4, "DWRITE_GLYPH_RUN_DESCRIPTION.stringLength has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.stringLength)));
+        assert(((cast(*void)(*instance.clusterMap)) - cast(*void)(*instance)) == 24, "DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap has unexpected offset % instead of 24", ((cast(*void)(*instance.clusterMap)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap)) == 8, "DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap)));
+        assert(((cast(*void)(*instance.textPosition)) - cast(*void)(*instance)) == 32, "DWRITE_GLYPH_RUN_DESCRIPTION.textPosition has unexpected offset % instead of 32", ((cast(*void)(*instance.textPosition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.textPosition)) == 4, "DWRITE_GLYPH_RUN_DESCRIPTION.textPosition has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_RUN_DESCRIPTION.textPosition)));
+        assert(size_of(DWRITE_GLYPH_RUN_DESCRIPTION) == 40, "DWRITE_GLYPH_RUN_DESCRIPTION has size % instead of 40", size_of(DWRITE_GLYPH_RUN_DESCRIPTION));
+    }
+
+    {
+        instance: DWRITE_UNDERLINE;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "DWRITE_UNDERLINE.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.width)) == 4, "DWRITE_UNDERLINE.width has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.width)));
+        assert(((cast(*void)(*instance.thickness)) - cast(*void)(*instance)) == 4, "DWRITE_UNDERLINE.thickness has unexpected offset % instead of 4", ((cast(*void)(*instance.thickness)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.thickness)) == 4, "DWRITE_UNDERLINE.thickness has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.thickness)));
+        assert(((cast(*void)(*instance.offset)) - cast(*void)(*instance)) == 8, "DWRITE_UNDERLINE.offset has unexpected offset % instead of 8", ((cast(*void)(*instance.offset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.offset)) == 4, "DWRITE_UNDERLINE.offset has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.offset)));
+        assert(((cast(*void)(*instance.runHeight)) - cast(*void)(*instance)) == 12, "DWRITE_UNDERLINE.runHeight has unexpected offset % instead of 12", ((cast(*void)(*instance.runHeight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.runHeight)) == 4, "DWRITE_UNDERLINE.runHeight has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.runHeight)));
+        assert(((cast(*void)(*instance.readingDirection)) - cast(*void)(*instance)) == 16, "DWRITE_UNDERLINE.readingDirection has unexpected offset % instead of 16", ((cast(*void)(*instance.readingDirection)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.readingDirection)) == 4, "DWRITE_UNDERLINE.readingDirection has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.readingDirection)));
+        assert(((cast(*void)(*instance.flowDirection)) - cast(*void)(*instance)) == 20, "DWRITE_UNDERLINE.flowDirection has unexpected offset % instead of 20", ((cast(*void)(*instance.flowDirection)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.flowDirection)) == 4, "DWRITE_UNDERLINE.flowDirection has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.flowDirection)));
+        assert(((cast(*void)(*instance.localeName)) - cast(*void)(*instance)) == 24, "DWRITE_UNDERLINE.localeName has unexpected offset % instead of 24", ((cast(*void)(*instance.localeName)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.localeName)) == 8, "DWRITE_UNDERLINE.localeName has unexpected size % instead of 8", size_of(type_of(DWRITE_UNDERLINE.localeName)));
+        assert(((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)) == 32, "DWRITE_UNDERLINE.measuringMode has unexpected offset % instead of 32", ((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNDERLINE.measuringMode)) == 4, "DWRITE_UNDERLINE.measuringMode has unexpected size % instead of 4", size_of(type_of(DWRITE_UNDERLINE.measuringMode)));
+        assert(size_of(DWRITE_UNDERLINE) == 40, "DWRITE_UNDERLINE has size % instead of 40", size_of(DWRITE_UNDERLINE));
+    }
+
+    {
+        instance: DWRITE_STRIKETHROUGH;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "DWRITE_STRIKETHROUGH.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.width)) == 4, "DWRITE_STRIKETHROUGH.width has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.width)));
+        assert(((cast(*void)(*instance.thickness)) - cast(*void)(*instance)) == 4, "DWRITE_STRIKETHROUGH.thickness has unexpected offset % instead of 4", ((cast(*void)(*instance.thickness)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.thickness)) == 4, "DWRITE_STRIKETHROUGH.thickness has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.thickness)));
+        assert(((cast(*void)(*instance.offset)) - cast(*void)(*instance)) == 8, "DWRITE_STRIKETHROUGH.offset has unexpected offset % instead of 8", ((cast(*void)(*instance.offset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.offset)) == 4, "DWRITE_STRIKETHROUGH.offset has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.offset)));
+        assert(((cast(*void)(*instance.readingDirection)) - cast(*void)(*instance)) == 12, "DWRITE_STRIKETHROUGH.readingDirection has unexpected offset % instead of 12", ((cast(*void)(*instance.readingDirection)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.readingDirection)) == 4, "DWRITE_STRIKETHROUGH.readingDirection has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.readingDirection)));
+        assert(((cast(*void)(*instance.flowDirection)) - cast(*void)(*instance)) == 16, "DWRITE_STRIKETHROUGH.flowDirection has unexpected offset % instead of 16", ((cast(*void)(*instance.flowDirection)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.flowDirection)) == 4, "DWRITE_STRIKETHROUGH.flowDirection has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.flowDirection)));
+        assert(((cast(*void)(*instance.localeName)) - cast(*void)(*instance)) == 24, "DWRITE_STRIKETHROUGH.localeName has unexpected offset % instead of 24", ((cast(*void)(*instance.localeName)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.localeName)) == 8, "DWRITE_STRIKETHROUGH.localeName has unexpected size % instead of 8", size_of(type_of(DWRITE_STRIKETHROUGH.localeName)));
+        assert(((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)) == 32, "DWRITE_STRIKETHROUGH.measuringMode has unexpected offset % instead of 32", ((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_STRIKETHROUGH.measuringMode)) == 4, "DWRITE_STRIKETHROUGH.measuringMode has unexpected size % instead of 4", size_of(type_of(DWRITE_STRIKETHROUGH.measuringMode)));
+        assert(size_of(DWRITE_STRIKETHROUGH) == 40, "DWRITE_STRIKETHROUGH has size % instead of 40", size_of(DWRITE_STRIKETHROUGH));
+    }
+
+    {
+        instance: DWRITE_LINE_METRICS;
+        assert(((cast(*void)(*instance.length)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_METRICS.length has unexpected offset % instead of 0", ((cast(*void)(*instance.length)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.length)) == 4, "DWRITE_LINE_METRICS.length has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.length)));
+        assert(((cast(*void)(*instance.trailingWhitespaceLength)) - cast(*void)(*instance)) == 4, "DWRITE_LINE_METRICS.trailingWhitespaceLength has unexpected offset % instead of 4", ((cast(*void)(*instance.trailingWhitespaceLength)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.trailingWhitespaceLength)) == 4, "DWRITE_LINE_METRICS.trailingWhitespaceLength has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.trailingWhitespaceLength)));
+        assert(((cast(*void)(*instance.newlineLength)) - cast(*void)(*instance)) == 8, "DWRITE_LINE_METRICS.newlineLength has unexpected offset % instead of 8", ((cast(*void)(*instance.newlineLength)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.newlineLength)) == 4, "DWRITE_LINE_METRICS.newlineLength has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.newlineLength)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 12, "DWRITE_LINE_METRICS.height has unexpected offset % instead of 12", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.height)) == 4, "DWRITE_LINE_METRICS.height has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.height)));
+        assert(((cast(*void)(*instance.baseline)) - cast(*void)(*instance)) == 16, "DWRITE_LINE_METRICS.baseline has unexpected offset % instead of 16", ((cast(*void)(*instance.baseline)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.baseline)) == 4, "DWRITE_LINE_METRICS.baseline has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.baseline)));
+        assert(((cast(*void)(*instance.isTrimmed)) - cast(*void)(*instance)) == 20, "DWRITE_LINE_METRICS.isTrimmed has unexpected offset % instead of 20", ((cast(*void)(*instance.isTrimmed)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS.isTrimmed)) == 4, "DWRITE_LINE_METRICS.isTrimmed has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS.isTrimmed)));
+        assert(size_of(DWRITE_LINE_METRICS) == 24, "DWRITE_LINE_METRICS has size % instead of 24", size_of(DWRITE_LINE_METRICS));
+    }
+
+    {
+        instance: DWRITE_CLUSTER_METRICS;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "DWRITE_CLUSTER_METRICS.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.width)) == 4, "DWRITE_CLUSTER_METRICS.width has unexpected size % instead of 4", size_of(type_of(DWRITE_CLUSTER_METRICS.width)));
+        assert(((cast(*void)(*instance.length)) - cast(*void)(*instance)) == 4, "DWRITE_CLUSTER_METRICS.length has unexpected offset % instead of 4", ((cast(*void)(*instance.length)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.length)) == 2, "DWRITE_CLUSTER_METRICS.length has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.length)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.canWrapLineAfter)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.canWrapLineAfter has unexpected offset % instead of 6", ((cast(*void)(*instance.canWrapLineAfter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.canWrapLineAfter)) == 2, "DWRITE_CLUSTER_METRICS.canWrapLineAfter has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.canWrapLineAfter)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isWhitespace)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.isWhitespace has unexpected offset % instead of 6", ((cast(*void)(*instance.isWhitespace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.isWhitespace)) == 2, "DWRITE_CLUSTER_METRICS.isWhitespace has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.isWhitespace)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isNewline)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.isNewline has unexpected offset % instead of 6", ((cast(*void)(*instance.isNewline)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.isNewline)) == 2, "DWRITE_CLUSTER_METRICS.isNewline has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.isNewline)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isSoftHyphen)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.isSoftHyphen has unexpected offset % instead of 6", ((cast(*void)(*instance.isSoftHyphen)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.isSoftHyphen)) == 2, "DWRITE_CLUSTER_METRICS.isSoftHyphen has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.isSoftHyphen)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isRightToLeft)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.isRightToLeft has unexpected offset % instead of 6", ((cast(*void)(*instance.isRightToLeft)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.isRightToLeft)) == 2, "DWRITE_CLUSTER_METRICS.isRightToLeft has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.isRightToLeft)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.padding)) - cast(*void)(*instance)) == 6, "DWRITE_CLUSTER_METRICS.padding has unexpected offset % instead of 6", ((cast(*void)(*instance.padding)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CLUSTER_METRICS.padding)) == 2, "DWRITE_CLUSTER_METRICS.padding has unexpected size % instead of 2", size_of(type_of(DWRITE_CLUSTER_METRICS.padding)));
+        assert(size_of(DWRITE_CLUSTER_METRICS) == 8, "DWRITE_CLUSTER_METRICS has size % instead of 8", size_of(DWRITE_CLUSTER_METRICS));
+    }
+
+    {
+        instance: DWRITE_TEXT_METRICS;
+        assert(((cast(*void)(*instance.left)) - cast(*void)(*instance)) == 0, "DWRITE_TEXT_METRICS.left has unexpected offset % instead of 0", ((cast(*void)(*instance.left)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.left)) == 4, "DWRITE_TEXT_METRICS.left has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.left)));
+        assert(((cast(*void)(*instance.top)) - cast(*void)(*instance)) == 4, "DWRITE_TEXT_METRICS.top has unexpected offset % instead of 4", ((cast(*void)(*instance.top)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.top)) == 4, "DWRITE_TEXT_METRICS.top has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.top)));
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 8, "DWRITE_TEXT_METRICS.width has unexpected offset % instead of 8", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.width)) == 4, "DWRITE_TEXT_METRICS.width has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.width)));
+        assert(((cast(*void)(*instance.widthIncludingTrailingWhitespace)) - cast(*void)(*instance)) == 12, "DWRITE_TEXT_METRICS.widthIncludingTrailingWhitespace has unexpected offset % instead of 12", ((cast(*void)(*instance.widthIncludingTrailingWhitespace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.widthIncludingTrailingWhitespace)) == 4, "DWRITE_TEXT_METRICS.widthIncludingTrailingWhitespace has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.widthIncludingTrailingWhitespace)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 16, "DWRITE_TEXT_METRICS.height has unexpected offset % instead of 16", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.height)) == 4, "DWRITE_TEXT_METRICS.height has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.height)));
+        assert(((cast(*void)(*instance.layoutWidth)) - cast(*void)(*instance)) == 20, "DWRITE_TEXT_METRICS.layoutWidth has unexpected offset % instead of 20", ((cast(*void)(*instance.layoutWidth)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.layoutWidth)) == 4, "DWRITE_TEXT_METRICS.layoutWidth has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.layoutWidth)));
+        assert(((cast(*void)(*instance.layoutHeight)) - cast(*void)(*instance)) == 24, "DWRITE_TEXT_METRICS.layoutHeight has unexpected offset % instead of 24", ((cast(*void)(*instance.layoutHeight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.layoutHeight)) == 4, "DWRITE_TEXT_METRICS.layoutHeight has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.layoutHeight)));
+        assert(((cast(*void)(*instance.maxBidiReorderingDepth)) - cast(*void)(*instance)) == 28, "DWRITE_TEXT_METRICS.maxBidiReorderingDepth has unexpected offset % instead of 28", ((cast(*void)(*instance.maxBidiReorderingDepth)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.maxBidiReorderingDepth)) == 4, "DWRITE_TEXT_METRICS.maxBidiReorderingDepth has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.maxBidiReorderingDepth)));
+        assert(((cast(*void)(*instance.lineCount)) - cast(*void)(*instance)) == 32, "DWRITE_TEXT_METRICS.lineCount has unexpected offset % instead of 32", ((cast(*void)(*instance.lineCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS.lineCount)) == 4, "DWRITE_TEXT_METRICS.lineCount has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS.lineCount)));
+        assert(size_of(DWRITE_TEXT_METRICS) == 36, "DWRITE_TEXT_METRICS has size % instead of 36", size_of(DWRITE_TEXT_METRICS));
+    }
+
+    {
+        instance: DWRITE_INLINE_OBJECT_METRICS;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "DWRITE_INLINE_OBJECT_METRICS.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.width)) == 4, "DWRITE_INLINE_OBJECT_METRICS.width has unexpected size % instead of 4", size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 4, "DWRITE_INLINE_OBJECT_METRICS.height has unexpected offset % instead of 4", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.height)) == 4, "DWRITE_INLINE_OBJECT_METRICS.height has unexpected size % instead of 4", size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.height)));
+        assert(((cast(*void)(*instance.baseline)) - cast(*void)(*instance)) == 8, "DWRITE_INLINE_OBJECT_METRICS.baseline has unexpected offset % instead of 8", ((cast(*void)(*instance.baseline)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.baseline)) == 4, "DWRITE_INLINE_OBJECT_METRICS.baseline has unexpected size % instead of 4", size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.baseline)));
+        assert(((cast(*void)(*instance.supportsSideways)) - cast(*void)(*instance)) == 12, "DWRITE_INLINE_OBJECT_METRICS.supportsSideways has unexpected offset % instead of 12", ((cast(*void)(*instance.supportsSideways)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.supportsSideways)) == 4, "DWRITE_INLINE_OBJECT_METRICS.supportsSideways has unexpected size % instead of 4", size_of(type_of(DWRITE_INLINE_OBJECT_METRICS.supportsSideways)));
+        assert(size_of(DWRITE_INLINE_OBJECT_METRICS) == 16, "DWRITE_INLINE_OBJECT_METRICS has size % instead of 16", size_of(DWRITE_INLINE_OBJECT_METRICS));
+    }
+
+    {
+        instance: DWRITE_OVERHANG_METRICS;
+        assert(((cast(*void)(*instance.left)) - cast(*void)(*instance)) == 0, "DWRITE_OVERHANG_METRICS.left has unexpected offset % instead of 0", ((cast(*void)(*instance.left)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_OVERHANG_METRICS.left)) == 4, "DWRITE_OVERHANG_METRICS.left has unexpected size % instead of 4", size_of(type_of(DWRITE_OVERHANG_METRICS.left)));
+        assert(((cast(*void)(*instance.top)) - cast(*void)(*instance)) == 4, "DWRITE_OVERHANG_METRICS.top has unexpected offset % instead of 4", ((cast(*void)(*instance.top)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_OVERHANG_METRICS.top)) == 4, "DWRITE_OVERHANG_METRICS.top has unexpected size % instead of 4", size_of(type_of(DWRITE_OVERHANG_METRICS.top)));
+        assert(((cast(*void)(*instance.right)) - cast(*void)(*instance)) == 8, "DWRITE_OVERHANG_METRICS.right has unexpected offset % instead of 8", ((cast(*void)(*instance.right)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_OVERHANG_METRICS.right)) == 4, "DWRITE_OVERHANG_METRICS.right has unexpected size % instead of 4", size_of(type_of(DWRITE_OVERHANG_METRICS.right)));
+        assert(((cast(*void)(*instance.bottom)) - cast(*void)(*instance)) == 12, "DWRITE_OVERHANG_METRICS.bottom has unexpected offset % instead of 12", ((cast(*void)(*instance.bottom)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_OVERHANG_METRICS.bottom)) == 4, "DWRITE_OVERHANG_METRICS.bottom has unexpected size % instead of 4", size_of(type_of(DWRITE_OVERHANG_METRICS.bottom)));
+        assert(size_of(DWRITE_OVERHANG_METRICS) == 16, "DWRITE_OVERHANG_METRICS has size % instead of 16", size_of(DWRITE_OVERHANG_METRICS));
+    }
+
+    {
+        instance: DWRITE_HIT_TEST_METRICS;
+        assert(((cast(*void)(*instance.textPosition)) - cast(*void)(*instance)) == 0, "DWRITE_HIT_TEST_METRICS.textPosition has unexpected offset % instead of 0", ((cast(*void)(*instance.textPosition)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.textPosition)) == 4, "DWRITE_HIT_TEST_METRICS.textPosition has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.textPosition)));
+        assert(((cast(*void)(*instance.length)) - cast(*void)(*instance)) == 4, "DWRITE_HIT_TEST_METRICS.length has unexpected offset % instead of 4", ((cast(*void)(*instance.length)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.length)) == 4, "DWRITE_HIT_TEST_METRICS.length has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.length)));
+        assert(((cast(*void)(*instance.left)) - cast(*void)(*instance)) == 8, "DWRITE_HIT_TEST_METRICS.left has unexpected offset % instead of 8", ((cast(*void)(*instance.left)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.left)) == 4, "DWRITE_HIT_TEST_METRICS.left has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.left)));
+        assert(((cast(*void)(*instance.top)) - cast(*void)(*instance)) == 12, "DWRITE_HIT_TEST_METRICS.top has unexpected offset % instead of 12", ((cast(*void)(*instance.top)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.top)) == 4, "DWRITE_HIT_TEST_METRICS.top has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.top)));
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 16, "DWRITE_HIT_TEST_METRICS.width has unexpected offset % instead of 16", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.width)) == 4, "DWRITE_HIT_TEST_METRICS.width has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 20, "DWRITE_HIT_TEST_METRICS.height has unexpected offset % instead of 20", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.height)) == 4, "DWRITE_HIT_TEST_METRICS.height has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.height)));
+        assert(((cast(*void)(*instance.bidiLevel)) - cast(*void)(*instance)) == 24, "DWRITE_HIT_TEST_METRICS.bidiLevel has unexpected offset % instead of 24", ((cast(*void)(*instance.bidiLevel)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.bidiLevel)) == 4, "DWRITE_HIT_TEST_METRICS.bidiLevel has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.bidiLevel)));
+        assert(((cast(*void)(*instance.isText)) - cast(*void)(*instance)) == 28, "DWRITE_HIT_TEST_METRICS.isText has unexpected offset % instead of 28", ((cast(*void)(*instance.isText)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.isText)) == 4, "DWRITE_HIT_TEST_METRICS.isText has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.isText)));
+        assert(((cast(*void)(*instance.isTrimmed)) - cast(*void)(*instance)) == 32, "DWRITE_HIT_TEST_METRICS.isTrimmed has unexpected offset % instead of 32", ((cast(*void)(*instance.isTrimmed)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_HIT_TEST_METRICS.isTrimmed)) == 4, "DWRITE_HIT_TEST_METRICS.isTrimmed has unexpected size % instead of 4", size_of(type_of(DWRITE_HIT_TEST_METRICS.isTrimmed)));
+        assert(size_of(DWRITE_HIT_TEST_METRICS) == 36, "DWRITE_HIT_TEST_METRICS has size % instead of 36", size_of(DWRITE_HIT_TEST_METRICS));
+    }
+
+    assert(size_of(IDWriteInlineObject) == 8, "IDWriteInlineObject has size % instead of 8", size_of(IDWriteInlineObject));
+
+    assert(size_of(IDWritePixelSnapping) == 8, "IDWritePixelSnapping has size % instead of 8", size_of(IDWritePixelSnapping));
+
+    assert(size_of(IDWriteTextRenderer) == 8, "IDWriteTextRenderer has size % instead of 8", size_of(IDWriteTextRenderer));
+
+    assert(size_of(IDWriteTextLayout) == 8, "IDWriteTextLayout has size % instead of 8", size_of(IDWriteTextLayout));
+
+    assert(size_of(IDWriteBitmapRenderTarget) == 8, "IDWriteBitmapRenderTarget has size % instead of 8", size_of(IDWriteBitmapRenderTarget));
+
+    assert(size_of(IDWriteGdiInterop) == 8, "IDWriteGdiInterop has size % instead of 8", size_of(IDWriteGdiInterop));
+
+    assert(size_of(IDWriteGlyphRunAnalysis) == 8, "IDWriteGlyphRunAnalysis has size % instead of 8", size_of(IDWriteGlyphRunAnalysis));
+
+    assert(size_of(IDWriteFactory) == 8, "IDWriteFactory has size % instead of 8", size_of(IDWriteFactory));
+
+    {
+        instance: DWRITE_FONT_METRICS1;
+        assert(((cast(*void)(*instance.glyphBoxLeft)) - cast(*void)(*instance)) == 20, "DWRITE_FONT_METRICS1.glyphBoxLeft has unexpected offset % instead of 20", ((cast(*void)(*instance.glyphBoxLeft)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxLeft)) == 2, "DWRITE_FONT_METRICS1.glyphBoxLeft has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxLeft)));
+        assert(((cast(*void)(*instance.glyphBoxTop)) - cast(*void)(*instance)) == 22, "DWRITE_FONT_METRICS1.glyphBoxTop has unexpected offset % instead of 22", ((cast(*void)(*instance.glyphBoxTop)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxTop)) == 2, "DWRITE_FONT_METRICS1.glyphBoxTop has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxTop)));
+        assert(((cast(*void)(*instance.glyphBoxRight)) - cast(*void)(*instance)) == 24, "DWRITE_FONT_METRICS1.glyphBoxRight has unexpected offset % instead of 24", ((cast(*void)(*instance.glyphBoxRight)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxRight)) == 2, "DWRITE_FONT_METRICS1.glyphBoxRight has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxRight)));
+        assert(((cast(*void)(*instance.glyphBoxBottom)) - cast(*void)(*instance)) == 26, "DWRITE_FONT_METRICS1.glyphBoxBottom has unexpected offset % instead of 26", ((cast(*void)(*instance.glyphBoxBottom)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxBottom)) == 2, "DWRITE_FONT_METRICS1.glyphBoxBottom has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.glyphBoxBottom)));
+        assert(((cast(*void)(*instance.subscriptPositionX)) - cast(*void)(*instance)) == 28, "DWRITE_FONT_METRICS1.subscriptPositionX has unexpected offset % instead of 28", ((cast(*void)(*instance.subscriptPositionX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.subscriptPositionX)) == 2, "DWRITE_FONT_METRICS1.subscriptPositionX has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.subscriptPositionX)));
+        assert(((cast(*void)(*instance.subscriptPositionY)) - cast(*void)(*instance)) == 30, "DWRITE_FONT_METRICS1.subscriptPositionY has unexpected offset % instead of 30", ((cast(*void)(*instance.subscriptPositionY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.subscriptPositionY)) == 2, "DWRITE_FONT_METRICS1.subscriptPositionY has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.subscriptPositionY)));
+        assert(((cast(*void)(*instance.subscriptSizeX)) - cast(*void)(*instance)) == 32, "DWRITE_FONT_METRICS1.subscriptSizeX has unexpected offset % instead of 32", ((cast(*void)(*instance.subscriptSizeX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.subscriptSizeX)) == 2, "DWRITE_FONT_METRICS1.subscriptSizeX has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.subscriptSizeX)));
+        assert(((cast(*void)(*instance.subscriptSizeY)) - cast(*void)(*instance)) == 34, "DWRITE_FONT_METRICS1.subscriptSizeY has unexpected offset % instead of 34", ((cast(*void)(*instance.subscriptSizeY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.subscriptSizeY)) == 2, "DWRITE_FONT_METRICS1.subscriptSizeY has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.subscriptSizeY)));
+        assert(((cast(*void)(*instance.superscriptPositionX)) - cast(*void)(*instance)) == 36, "DWRITE_FONT_METRICS1.superscriptPositionX has unexpected offset % instead of 36", ((cast(*void)(*instance.superscriptPositionX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.superscriptPositionX)) == 2, "DWRITE_FONT_METRICS1.superscriptPositionX has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.superscriptPositionX)));
+        assert(((cast(*void)(*instance.superscriptPositionY)) - cast(*void)(*instance)) == 38, "DWRITE_FONT_METRICS1.superscriptPositionY has unexpected offset % instead of 38", ((cast(*void)(*instance.superscriptPositionY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.superscriptPositionY)) == 2, "DWRITE_FONT_METRICS1.superscriptPositionY has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.superscriptPositionY)));
+        assert(((cast(*void)(*instance.superscriptSizeX)) - cast(*void)(*instance)) == 40, "DWRITE_FONT_METRICS1.superscriptSizeX has unexpected offset % instead of 40", ((cast(*void)(*instance.superscriptSizeX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.superscriptSizeX)) == 2, "DWRITE_FONT_METRICS1.superscriptSizeX has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.superscriptSizeX)));
+        assert(((cast(*void)(*instance.superscriptSizeY)) - cast(*void)(*instance)) == 42, "DWRITE_FONT_METRICS1.superscriptSizeY has unexpected offset % instead of 42", ((cast(*void)(*instance.superscriptSizeY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.superscriptSizeY)) == 2, "DWRITE_FONT_METRICS1.superscriptSizeY has unexpected size % instead of 2", size_of(type_of(DWRITE_FONT_METRICS1.superscriptSizeY)));
+        assert(((cast(*void)(*instance.hasTypographicMetrics)) - cast(*void)(*instance)) == 44, "DWRITE_FONT_METRICS1.hasTypographicMetrics has unexpected offset % instead of 44", ((cast(*void)(*instance.hasTypographicMetrics)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_METRICS1.hasTypographicMetrics)) == 4, "DWRITE_FONT_METRICS1.hasTypographicMetrics has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_METRICS1.hasTypographicMetrics)));
+        assert(size_of(DWRITE_FONT_METRICS1) == 48, "DWRITE_FONT_METRICS1 has size % instead of 48", size_of(DWRITE_FONT_METRICS1));
+    }
+
+    {
+        instance: DWRITE_CARET_METRICS;
+        assert(((cast(*void)(*instance.slopeRise)) - cast(*void)(*instance)) == 0, "DWRITE_CARET_METRICS.slopeRise has unexpected offset % instead of 0", ((cast(*void)(*instance.slopeRise)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CARET_METRICS.slopeRise)) == 2, "DWRITE_CARET_METRICS.slopeRise has unexpected size % instead of 2", size_of(type_of(DWRITE_CARET_METRICS.slopeRise)));
+        assert(((cast(*void)(*instance.slopeRun)) - cast(*void)(*instance)) == 2, "DWRITE_CARET_METRICS.slopeRun has unexpected offset % instead of 2", ((cast(*void)(*instance.slopeRun)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CARET_METRICS.slopeRun)) == 2, "DWRITE_CARET_METRICS.slopeRun has unexpected size % instead of 2", size_of(type_of(DWRITE_CARET_METRICS.slopeRun)));
+        assert(((cast(*void)(*instance.offset)) - cast(*void)(*instance)) == 4, "DWRITE_CARET_METRICS.offset has unexpected offset % instead of 4", ((cast(*void)(*instance.offset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_CARET_METRICS.offset)) == 2, "DWRITE_CARET_METRICS.offset has unexpected size % instead of 2", size_of(type_of(DWRITE_CARET_METRICS.offset)));
+        assert(size_of(DWRITE_CARET_METRICS) == 6, "DWRITE_CARET_METRICS has size % instead of 6", size_of(DWRITE_CARET_METRICS));
+    }
+
+    {
+        instance: DWRITE_PANOSE;
+        assert(((cast(*void)(*instance.values)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.values has unexpected offset % instead of 0", ((cast(*void)(*instance.values)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.values)) == 10, "DWRITE_PANOSE.values has unexpected size % instead of 10", size_of(type_of(DWRITE_PANOSE.values)));
+        assert(((cast(*void)(*instance.familyKind)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.familyKind has unexpected offset % instead of 0", ((cast(*void)(*instance.familyKind)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.familyKind)) == 1, "DWRITE_PANOSE.familyKind has unexpected size % instead of 1", size_of(type_of(DWRITE_PANOSE.familyKind)));
+        assert(((cast(*void)(*instance.text)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.text has unexpected offset % instead of 0", ((cast(*void)(*instance.text)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.text)) == 10, "DWRITE_PANOSE.text has unexpected size % instead of 10", size_of(type_of(DWRITE_PANOSE.text)));
+        assert(((cast(*void)(*instance.script)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.script has unexpected offset % instead of 0", ((cast(*void)(*instance.script)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.script)) == 10, "DWRITE_PANOSE.script has unexpected size % instead of 10", size_of(type_of(DWRITE_PANOSE.script)));
+        assert(((cast(*void)(*instance.decorative)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.decorative has unexpected offset % instead of 0", ((cast(*void)(*instance.decorative)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.decorative)) == 10, "DWRITE_PANOSE.decorative has unexpected size % instead of 10", size_of(type_of(DWRITE_PANOSE.decorative)));
+        assert(((cast(*void)(*instance.symbol)) - cast(*void)(*instance)) == 0, "DWRITE_PANOSE.symbol has unexpected offset % instead of 0", ((cast(*void)(*instance.symbol)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PANOSE.symbol)) == 10, "DWRITE_PANOSE.symbol has unexpected size % instead of 10", size_of(type_of(DWRITE_PANOSE.symbol)));
+        assert(size_of(DWRITE_PANOSE) == 10, "DWRITE_PANOSE has size % instead of 10", size_of(DWRITE_PANOSE));
+    }
+
+    {
+        instance: DWRITE_UNICODE_RANGE;
+        assert(((cast(*void)(*instance.first)) - cast(*void)(*instance)) == 0, "DWRITE_UNICODE_RANGE.first has unexpected offset % instead of 0", ((cast(*void)(*instance.first)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNICODE_RANGE.first)) == 4, "DWRITE_UNICODE_RANGE.first has unexpected size % instead of 4", size_of(type_of(DWRITE_UNICODE_RANGE.first)));
+        assert(((cast(*void)(*instance.last)) - cast(*void)(*instance)) == 4, "DWRITE_UNICODE_RANGE.last has unexpected offset % instead of 4", ((cast(*void)(*instance.last)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_UNICODE_RANGE.last)) == 4, "DWRITE_UNICODE_RANGE.last has unexpected size % instead of 4", size_of(type_of(DWRITE_UNICODE_RANGE.last)));
+        assert(size_of(DWRITE_UNICODE_RANGE) == 8, "DWRITE_UNICODE_RANGE has size % instead of 8", size_of(DWRITE_UNICODE_RANGE));
+    }
+
+    {
+        instance: DWRITE_SCRIPT_PROPERTIES;
+        assert(((cast(*void)(*instance.isoScriptCode)) - cast(*void)(*instance)) == 0, "DWRITE_SCRIPT_PROPERTIES.isoScriptCode has unexpected offset % instead of 0", ((cast(*void)(*instance.isoScriptCode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isoScriptCode)) == 4, "DWRITE_SCRIPT_PROPERTIES.isoScriptCode has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isoScriptCode)));
+        assert(((cast(*void)(*instance.isoScriptNumber)) - cast(*void)(*instance)) == 4, "DWRITE_SCRIPT_PROPERTIES.isoScriptNumber has unexpected offset % instead of 4", ((cast(*void)(*instance.isoScriptNumber)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isoScriptNumber)) == 4, "DWRITE_SCRIPT_PROPERTIES.isoScriptNumber has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isoScriptNumber)));
+        assert(((cast(*void)(*instance.clusterLookahead)) - cast(*void)(*instance)) == 8, "DWRITE_SCRIPT_PROPERTIES.clusterLookahead has unexpected offset % instead of 8", ((cast(*void)(*instance.clusterLookahead)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.clusterLookahead)) == 4, "DWRITE_SCRIPT_PROPERTIES.clusterLookahead has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.clusterLookahead)));
+        assert(((cast(*void)(*instance.justificationCharacter)) - cast(*void)(*instance)) == 12, "DWRITE_SCRIPT_PROPERTIES.justificationCharacter has unexpected offset % instead of 12", ((cast(*void)(*instance.justificationCharacter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.justificationCharacter)) == 4, "DWRITE_SCRIPT_PROPERTIES.justificationCharacter has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.justificationCharacter)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.restrictCaretToClusters)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters has unexpected offset % instead of 16", ((cast(*void)(*instance.restrictCaretToClusters)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters)) == 4, "DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.usesWordDividers)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.usesWordDividers has unexpected offset % instead of 16", ((cast(*void)(*instance.usesWordDividers)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.usesWordDividers)) == 4, "DWRITE_SCRIPT_PROPERTIES.usesWordDividers has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.usesWordDividers)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isDiscreteWriting)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting has unexpected offset % instead of 16", ((cast(*void)(*instance.isDiscreteWriting)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting)) == 4, "DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isBlockWriting)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.isBlockWriting has unexpected offset % instead of 16", ((cast(*void)(*instance.isBlockWriting)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isBlockWriting)) == 4, "DWRITE_SCRIPT_PROPERTIES.isBlockWriting has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isBlockWriting)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isDistributedWithinCluster)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster has unexpected offset % instead of 16", ((cast(*void)(*instance.isDistributedWithinCluster)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster)) == 4, "DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isConnectedWriting)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.isConnectedWriting has unexpected offset % instead of 16", ((cast(*void)(*instance.isConnectedWriting)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isConnectedWriting)) == 4, "DWRITE_SCRIPT_PROPERTIES.isConnectedWriting has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isConnectedWriting)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.isCursiveWriting)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.isCursiveWriting has unexpected offset % instead of 16", ((cast(*void)(*instance.isCursiveWriting)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isCursiveWriting)) == 4, "DWRITE_SCRIPT_PROPERTIES.isCursiveWriting has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.isCursiveWriting)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.reserved)) - cast(*void)(*instance)) == 16, "DWRITE_SCRIPT_PROPERTIES.reserved has unexpected offset % instead of 16", ((cast(*void)(*instance.reserved)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_SCRIPT_PROPERTIES.reserved)) == 4, "DWRITE_SCRIPT_PROPERTIES.reserved has unexpected size % instead of 4", size_of(type_of(DWRITE_SCRIPT_PROPERTIES.reserved)));
+        assert(size_of(DWRITE_SCRIPT_PROPERTIES) == 20, "DWRITE_SCRIPT_PROPERTIES has size % instead of 20", size_of(DWRITE_SCRIPT_PROPERTIES));
+    }
+
+    {
+        instance: DWRITE_JUSTIFICATION_OPPORTUNITY;
+        assert(((cast(*void)(*instance.expansionMinimum)) - cast(*void)(*instance)) == 0, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum has unexpected offset % instead of 0", ((cast(*void)(*instance.expansionMinimum)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum)));
+        assert(((cast(*void)(*instance.expansionMaximum)) - cast(*void)(*instance)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum has unexpected offset % instead of 4", ((cast(*void)(*instance.expansionMaximum)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum)));
+        assert(((cast(*void)(*instance.compressionMaximum)) - cast(*void)(*instance)) == 8, "DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum has unexpected offset % instead of 8", ((cast(*void)(*instance.compressionMaximum)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.expansionPriority)) - cast(*void)(*instance)) == 12, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority has unexpected offset % instead of 12", ((cast(*void)(*instance.expansionPriority)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.compressionPriority)) - cast(*void)(*instance)) == 13, "DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority has unexpected offset % instead of 13", ((cast(*void)(*instance.compressionPriority)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.allowResidualExpansion)) - cast(*void)(*instance)) == 14, "DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion has unexpected offset % instead of 14", ((cast(*void)(*instance.allowResidualExpansion)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.allowResidualCompression)) - cast(*void)(*instance)) == 14, "DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression has unexpected offset % instead of 14", ((cast(*void)(*instance.allowResidualCompression)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.applyToLeadingEdge)) - cast(*void)(*instance)) == 14, "DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge has unexpected offset % instead of 14", ((cast(*void)(*instance.applyToLeadingEdge)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.applyToTrailingEdge)) - cast(*void)(*instance)) == 14, "DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge has unexpected offset % instead of 14", ((cast(*void)(*instance.applyToTrailingEdge)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge)));
+        // Bitfields are currently not correctly aligned
+        // assert(((cast(*void)(*instance.reserved)) - cast(*void)(*instance)) == 14, "DWRITE_JUSTIFICATION_OPPORTUNITY.reserved has unexpected offset % instead of 14", ((cast(*void)(*instance.reserved)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.reserved)) == 4, "DWRITE_JUSTIFICATION_OPPORTUNITY.reserved has unexpected size % instead of 4", size_of(type_of(DWRITE_JUSTIFICATION_OPPORTUNITY.reserved)));
+        assert(size_of(DWRITE_JUSTIFICATION_OPPORTUNITY) == 16, "DWRITE_JUSTIFICATION_OPPORTUNITY has size % instead of 16", size_of(DWRITE_JUSTIFICATION_OPPORTUNITY));
+    }
+
+    assert(size_of(IDWriteFactory1) == 8, "IDWriteFactory1 has size % instead of 8", size_of(IDWriteFactory1));
+
+    assert(size_of(IDWriteFontFace1) == 8, "IDWriteFontFace1 has size % instead of 8", size_of(IDWriteFontFace1));
+
+    assert(size_of(IDWriteFont1) == 8, "IDWriteFont1 has size % instead of 8", size_of(IDWriteFont1));
+
+    assert(size_of(IDWriteRenderingParams1) == 8, "IDWriteRenderingParams1 has size % instead of 8", size_of(IDWriteRenderingParams1));
+
+    assert(size_of(IDWriteTextAnalyzer1) == 8, "IDWriteTextAnalyzer1 has size % instead of 8", size_of(IDWriteTextAnalyzer1));
+
+    assert(size_of(IDWriteTextAnalysisSource1) == 8, "IDWriteTextAnalysisSource1 has size % instead of 8", size_of(IDWriteTextAnalysisSource1));
+
+    assert(size_of(IDWriteTextAnalysisSink1) == 8, "IDWriteTextAnalysisSink1 has size % instead of 8", size_of(IDWriteTextAnalysisSink1));
+
+    assert(size_of(IDWriteTextLayout1) == 8, "IDWriteTextLayout1 has size % instead of 8", size_of(IDWriteTextLayout1));
+
+    assert(size_of(IDWriteBitmapRenderTarget1) == 8, "IDWriteBitmapRenderTarget1 has size % instead of 8", size_of(IDWriteBitmapRenderTarget1));
+
+    {
+        instance: DWRITE_TEXT_METRICS1;
+        assert(((cast(*void)(*instance.heightIncludingTrailingWhitespace)) - cast(*void)(*instance)) == 36, "DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace has unexpected offset % instead of 36", ((cast(*void)(*instance.heightIncludingTrailingWhitespace)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace)) == 4, "DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace has unexpected size % instead of 4", size_of(type_of(DWRITE_TEXT_METRICS1.heightIncludingTrailingWhitespace)));
+        assert(size_of(DWRITE_TEXT_METRICS1) == 40, "DWRITE_TEXT_METRICS1 has size % instead of 40", size_of(DWRITE_TEXT_METRICS1));
+    }
+
+    assert(size_of(IDWriteTextRenderer1) == 8, "IDWriteTextRenderer1 has size % instead of 8", size_of(IDWriteTextRenderer1));
+
+    assert(size_of(IDWriteTextFormat1) == 8, "IDWriteTextFormat1 has size % instead of 8", size_of(IDWriteTextFormat1));
+
+    assert(size_of(IDWriteTextLayout2) == 8, "IDWriteTextLayout2 has size % instead of 8", size_of(IDWriteTextLayout2));
+
+    assert(size_of(IDWriteTextAnalyzer2) == 8, "IDWriteTextAnalyzer2 has size % instead of 8", size_of(IDWriteTextAnalyzer2));
+
+    assert(size_of(IDWriteFontFallback) == 8, "IDWriteFontFallback has size % instead of 8", size_of(IDWriteFontFallback));
+
+    assert(size_of(IDWriteFontFallbackBuilder) == 8, "IDWriteFontFallbackBuilder has size % instead of 8", size_of(IDWriteFontFallbackBuilder));
+
+    assert(size_of(IDWriteFont2) == 8, "IDWriteFont2 has size % instead of 8", size_of(IDWriteFont2));
+
+    assert(size_of(IDWriteFontFace2) == 8, "IDWriteFontFace2 has size % instead of 8", size_of(IDWriteFontFace2));
+
+    {
+        instance: DWRITE_COLOR_GLYPH_RUN;
+        assert(((cast(*void)(*instance.glyphRun)) - cast(*void)(*instance)) == 0, "DWRITE_COLOR_GLYPH_RUN.glyphRun has unexpected offset % instead of 0", ((cast(*void)(*instance.glyphRun)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.glyphRun)) == 48, "DWRITE_COLOR_GLYPH_RUN.glyphRun has unexpected size % instead of 48", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.glyphRun)));
+        assert(((cast(*void)(*instance.glyphRunDescription)) - cast(*void)(*instance)) == 48, "DWRITE_COLOR_GLYPH_RUN.glyphRunDescription has unexpected offset % instead of 48", ((cast(*void)(*instance.glyphRunDescription)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.glyphRunDescription)) == 8, "DWRITE_COLOR_GLYPH_RUN.glyphRunDescription has unexpected size % instead of 8", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.glyphRunDescription)));
+        assert(((cast(*void)(*instance.baselineOriginX)) - cast(*void)(*instance)) == 56, "DWRITE_COLOR_GLYPH_RUN.baselineOriginX has unexpected offset % instead of 56", ((cast(*void)(*instance.baselineOriginX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.baselineOriginX)) == 4, "DWRITE_COLOR_GLYPH_RUN.baselineOriginX has unexpected size % instead of 4", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.baselineOriginX)));
+        assert(((cast(*void)(*instance.baselineOriginY)) - cast(*void)(*instance)) == 60, "DWRITE_COLOR_GLYPH_RUN.baselineOriginY has unexpected offset % instead of 60", ((cast(*void)(*instance.baselineOriginY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.baselineOriginY)) == 4, "DWRITE_COLOR_GLYPH_RUN.baselineOriginY has unexpected size % instead of 4", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.baselineOriginY)));
+        assert(((cast(*void)(*instance.runColor)) - cast(*void)(*instance)) == 64, "DWRITE_COLOR_GLYPH_RUN.runColor has unexpected offset % instead of 64", ((cast(*void)(*instance.runColor)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.runColor)) == 16, "DWRITE_COLOR_GLYPH_RUN.runColor has unexpected size % instead of 16", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.runColor)));
+        assert(((cast(*void)(*instance.paletteIndex)) - cast(*void)(*instance)) == 80, "DWRITE_COLOR_GLYPH_RUN.paletteIndex has unexpected offset % instead of 80", ((cast(*void)(*instance.paletteIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN.paletteIndex)) == 2, "DWRITE_COLOR_GLYPH_RUN.paletteIndex has unexpected size % instead of 2", size_of(type_of(DWRITE_COLOR_GLYPH_RUN.paletteIndex)));
+        assert(size_of(DWRITE_COLOR_GLYPH_RUN) == 88, "DWRITE_COLOR_GLYPH_RUN has size % instead of 88", size_of(DWRITE_COLOR_GLYPH_RUN));
+    }
+
+    assert(size_of(IDWriteColorGlyphRunEnumerator) == 8, "IDWriteColorGlyphRunEnumerator has size % instead of 8", size_of(IDWriteColorGlyphRunEnumerator));
+
+    assert(size_of(IDWriteRenderingParams2) == 8, "IDWriteRenderingParams2 has size % instead of 8", size_of(IDWriteRenderingParams2));
+
+    assert(size_of(IDWriteFactory2) == 8, "IDWriteFactory2 has size % instead of 8", size_of(IDWriteFactory2));
+
+    {
+        instance: DWRITE_FONT_PROPERTY;
+        assert(((cast(*void)(*instance.propertyId)) - cast(*void)(*instance)) == 0, "DWRITE_FONT_PROPERTY.propertyId has unexpected offset % instead of 0", ((cast(*void)(*instance.propertyId)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_PROPERTY.propertyId)) == 4, "DWRITE_FONT_PROPERTY.propertyId has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_PROPERTY.propertyId)));
+        assert(((cast(*void)(*instance.propertyValue)) - cast(*void)(*instance)) == 8, "DWRITE_FONT_PROPERTY.propertyValue has unexpected offset % instead of 8", ((cast(*void)(*instance.propertyValue)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_PROPERTY.propertyValue)) == 8, "DWRITE_FONT_PROPERTY.propertyValue has unexpected size % instead of 8", size_of(type_of(DWRITE_FONT_PROPERTY.propertyValue)));
+        assert(((cast(*void)(*instance.localeName)) - cast(*void)(*instance)) == 16, "DWRITE_FONT_PROPERTY.localeName has unexpected offset % instead of 16", ((cast(*void)(*instance.localeName)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_PROPERTY.localeName)) == 8, "DWRITE_FONT_PROPERTY.localeName has unexpected size % instead of 8", size_of(type_of(DWRITE_FONT_PROPERTY.localeName)));
+        assert(size_of(DWRITE_FONT_PROPERTY) == 24, "DWRITE_FONT_PROPERTY has size % instead of 24", size_of(DWRITE_FONT_PROPERTY));
+    }
+
+    assert(size_of(IDWriteRenderingParams3) == 8, "IDWriteRenderingParams3 has size % instead of 8", size_of(IDWriteRenderingParams3));
+
+    assert(size_of(IDWriteFactory3) == 8, "IDWriteFactory3 has size % instead of 8", size_of(IDWriteFactory3));
+
+    assert(size_of(IDWriteFontSet) == 8, "IDWriteFontSet has size % instead of 8", size_of(IDWriteFontSet));
+
+    assert(size_of(IDWriteFontSetBuilder) == 8, "IDWriteFontSetBuilder has size % instead of 8", size_of(IDWriteFontSetBuilder));
+
+    assert(size_of(IDWriteFontCollection1) == 8, "IDWriteFontCollection1 has size % instead of 8", size_of(IDWriteFontCollection1));
+
+    assert(size_of(IDWriteFontFamily1) == 8, "IDWriteFontFamily1 has size % instead of 8", size_of(IDWriteFontFamily1));
+
+    assert(size_of(IDWriteFontList1) == 8, "IDWriteFontList1 has size % instead of 8", size_of(IDWriteFontList1));
+
+    assert(size_of(IDWriteFontFaceReference) == 8, "IDWriteFontFaceReference has size % instead of 8", size_of(IDWriteFontFaceReference));
+
+    assert(size_of(IDWriteFont3) == 8, "IDWriteFont3 has size % instead of 8", size_of(IDWriteFont3));
+
+    assert(size_of(IDWriteFontFace3) == 8, "IDWriteFontFace3 has size % instead of 8", size_of(IDWriteFontFace3));
+
+    assert(size_of(IDWriteStringList) == 8, "IDWriteStringList has size % instead of 8", size_of(IDWriteStringList));
+
+    assert(size_of(IDWriteFontDownloadListener) == 8, "IDWriteFontDownloadListener has size % instead of 8", size_of(IDWriteFontDownloadListener));
+
+    assert(size_of(IDWriteFontDownloadQueue) == 8, "IDWriteFontDownloadQueue has size % instead of 8", size_of(IDWriteFontDownloadQueue));
+
+    assert(size_of(IDWriteGdiInterop1) == 8, "IDWriteGdiInterop1 has size % instead of 8", size_of(IDWriteGdiInterop1));
+
+    {
+        instance: DWRITE_LINE_METRICS1;
+        assert(((cast(*void)(*instance.leadingBefore)) - cast(*void)(*instance)) == 24, "DWRITE_LINE_METRICS1.leadingBefore has unexpected offset % instead of 24", ((cast(*void)(*instance.leadingBefore)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS1.leadingBefore)) == 4, "DWRITE_LINE_METRICS1.leadingBefore has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS1.leadingBefore)));
+        assert(((cast(*void)(*instance.leadingAfter)) - cast(*void)(*instance)) == 28, "DWRITE_LINE_METRICS1.leadingAfter has unexpected offset % instead of 28", ((cast(*void)(*instance.leadingAfter)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_METRICS1.leadingAfter)) == 4, "DWRITE_LINE_METRICS1.leadingAfter has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_METRICS1.leadingAfter)));
+        assert(size_of(DWRITE_LINE_METRICS1) == 32, "DWRITE_LINE_METRICS1 has size % instead of 32", size_of(DWRITE_LINE_METRICS1));
+    }
+
+    {
+        instance: DWRITE_LINE_SPACING;
+        assert(((cast(*void)(*instance.method)) - cast(*void)(*instance)) == 0, "DWRITE_LINE_SPACING.method has unexpected offset % instead of 0", ((cast(*void)(*instance.method)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_SPACING.method)) == 4, "DWRITE_LINE_SPACING.method has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_SPACING.method)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 4, "DWRITE_LINE_SPACING.height has unexpected offset % instead of 4", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_SPACING.height)) == 4, "DWRITE_LINE_SPACING.height has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_SPACING.height)));
+        assert(((cast(*void)(*instance.baseline)) - cast(*void)(*instance)) == 8, "DWRITE_LINE_SPACING.baseline has unexpected offset % instead of 8", ((cast(*void)(*instance.baseline)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_SPACING.baseline)) == 4, "DWRITE_LINE_SPACING.baseline has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_SPACING.baseline)));
+        assert(((cast(*void)(*instance.leadingBefore)) - cast(*void)(*instance)) == 12, "DWRITE_LINE_SPACING.leadingBefore has unexpected offset % instead of 12", ((cast(*void)(*instance.leadingBefore)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_SPACING.leadingBefore)) == 4, "DWRITE_LINE_SPACING.leadingBefore has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_SPACING.leadingBefore)));
+        assert(((cast(*void)(*instance.fontLineGapUsage)) - cast(*void)(*instance)) == 16, "DWRITE_LINE_SPACING.fontLineGapUsage has unexpected offset % instead of 16", ((cast(*void)(*instance.fontLineGapUsage)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_LINE_SPACING.fontLineGapUsage)) == 4, "DWRITE_LINE_SPACING.fontLineGapUsage has unexpected size % instead of 4", size_of(type_of(DWRITE_LINE_SPACING.fontLineGapUsage)));
+        assert(size_of(DWRITE_LINE_SPACING) == 20, "DWRITE_LINE_SPACING has size % instead of 20", size_of(DWRITE_LINE_SPACING));
+    }
+
+    assert(size_of(IDWriteTextFormat2) == 8, "IDWriteTextFormat2 has size % instead of 8", size_of(IDWriteTextFormat2));
+
+    assert(size_of(IDWriteTextLayout3) == 8, "IDWriteTextLayout3 has size % instead of 8", size_of(IDWriteTextLayout3));
+
+    {
+        instance: DWRITE_COLOR_GLYPH_RUN1;
+        assert(((cast(*void)(*instance.glyphImageFormat)) - cast(*void)(*instance)) == 88, "DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat has unexpected offset % instead of 88", ((cast(*void)(*instance.glyphImageFormat)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat)) == 4, "DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat has unexpected size % instead of 4", size_of(type_of(DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat)));
+        assert(((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)) == 92, "DWRITE_COLOR_GLYPH_RUN1.measuringMode has unexpected offset % instead of 92", ((cast(*void)(*instance.measuringMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_COLOR_GLYPH_RUN1.measuringMode)) == 4, "DWRITE_COLOR_GLYPH_RUN1.measuringMode has unexpected size % instead of 4", size_of(type_of(DWRITE_COLOR_GLYPH_RUN1.measuringMode)));
+        assert(size_of(DWRITE_COLOR_GLYPH_RUN1) == 96, "DWRITE_COLOR_GLYPH_RUN1 has size % instead of 96", size_of(DWRITE_COLOR_GLYPH_RUN1));
+    }
+
+    {
+        instance: DWRITE_GLYPH_IMAGE_DATA;
+        assert(((cast(*void)(*instance.imageData)) - cast(*void)(*instance)) == 0, "DWRITE_GLYPH_IMAGE_DATA.imageData has unexpected offset % instead of 0", ((cast(*void)(*instance.imageData)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.imageData)) == 8, "DWRITE_GLYPH_IMAGE_DATA.imageData has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.imageData)));
+        assert(((cast(*void)(*instance.imageDataSize)) - cast(*void)(*instance)) == 8, "DWRITE_GLYPH_IMAGE_DATA.imageDataSize has unexpected offset % instead of 8", ((cast(*void)(*instance.imageDataSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.imageDataSize)) == 4, "DWRITE_GLYPH_IMAGE_DATA.imageDataSize has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.imageDataSize)));
+        assert(((cast(*void)(*instance.uniqueDataId)) - cast(*void)(*instance)) == 12, "DWRITE_GLYPH_IMAGE_DATA.uniqueDataId has unexpected offset % instead of 12", ((cast(*void)(*instance.uniqueDataId)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.uniqueDataId)) == 4, "DWRITE_GLYPH_IMAGE_DATA.uniqueDataId has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.uniqueDataId)));
+        assert(((cast(*void)(*instance.pixelsPerEm)) - cast(*void)(*instance)) == 16, "DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm has unexpected offset % instead of 16", ((cast(*void)(*instance.pixelsPerEm)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm)) == 4, "DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm has unexpected size % instead of 4", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.pixelsPerEm)));
+        assert(((cast(*void)(*instance.pixelSize)) - cast(*void)(*instance)) == 20, "DWRITE_GLYPH_IMAGE_DATA.pixelSize has unexpected offset % instead of 20", ((cast(*void)(*instance.pixelSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.pixelSize)) == 8, "DWRITE_GLYPH_IMAGE_DATA.pixelSize has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.pixelSize)));
+        assert(((cast(*void)(*instance.horizontalLeftOrigin)) - cast(*void)(*instance)) == 28, "DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin has unexpected offset % instead of 28", ((cast(*void)(*instance.horizontalLeftOrigin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin)) == 8, "DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.horizontalLeftOrigin)));
+        assert(((cast(*void)(*instance.horizontalRightOrigin)) - cast(*void)(*instance)) == 36, "DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin has unexpected offset % instead of 36", ((cast(*void)(*instance.horizontalRightOrigin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin)) == 8, "DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.horizontalRightOrigin)));
+        assert(((cast(*void)(*instance.verticalTopOrigin)) - cast(*void)(*instance)) == 44, "DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin has unexpected offset % instead of 44", ((cast(*void)(*instance.verticalTopOrigin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin)) == 8, "DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.verticalTopOrigin)));
+        assert(((cast(*void)(*instance.verticalBottomOrigin)) - cast(*void)(*instance)) == 52, "DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin has unexpected offset % instead of 52", ((cast(*void)(*instance.verticalBottomOrigin)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin)) == 8, "DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin has unexpected size % instead of 8", size_of(type_of(DWRITE_GLYPH_IMAGE_DATA.verticalBottomOrigin)));
+        assert(size_of(DWRITE_GLYPH_IMAGE_DATA) == 64, "DWRITE_GLYPH_IMAGE_DATA has size % instead of 64", size_of(DWRITE_GLYPH_IMAGE_DATA));
+    }
+
+    assert(size_of(IDWriteColorGlyphRunEnumerator1) == 8, "IDWriteColorGlyphRunEnumerator1 has size % instead of 8", size_of(IDWriteColorGlyphRunEnumerator1));
+
+    assert(size_of(IDWriteFontFace4) == 8, "IDWriteFontFace4 has size % instead of 8", size_of(IDWriteFontFace4));
+
+    assert(size_of(IDWriteFactory4) == 8, "IDWriteFactory4 has size % instead of 8", size_of(IDWriteFactory4));
+
+    assert(size_of(IDWriteFontSetBuilder1) == 8, "IDWriteFontSetBuilder1 has size % instead of 8", size_of(IDWriteFontSetBuilder1));
+
+    assert(size_of(IDWriteAsyncResult) == 8, "IDWriteAsyncResult has size % instead of 8", size_of(IDWriteAsyncResult));
+
+    {
+        instance: DWRITE_FILE_FRAGMENT;
+        assert(((cast(*void)(*instance.fileOffset)) - cast(*void)(*instance)) == 0, "DWRITE_FILE_FRAGMENT.fileOffset has unexpected offset % instead of 0", ((cast(*void)(*instance.fileOffset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FILE_FRAGMENT.fileOffset)) == 8, "DWRITE_FILE_FRAGMENT.fileOffset has unexpected size % instead of 8", size_of(type_of(DWRITE_FILE_FRAGMENT.fileOffset)));
+        assert(((cast(*void)(*instance.fragmentSize)) - cast(*void)(*instance)) == 8, "DWRITE_FILE_FRAGMENT.fragmentSize has unexpected offset % instead of 8", ((cast(*void)(*instance.fragmentSize)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FILE_FRAGMENT.fragmentSize)) == 8, "DWRITE_FILE_FRAGMENT.fragmentSize has unexpected size % instead of 8", size_of(type_of(DWRITE_FILE_FRAGMENT.fragmentSize)));
+        assert(size_of(DWRITE_FILE_FRAGMENT) == 16, "DWRITE_FILE_FRAGMENT has size % instead of 16", size_of(DWRITE_FILE_FRAGMENT));
+    }
+
+    assert(size_of(IDWriteRemoteFontFileStream) == 8, "IDWriteRemoteFontFileStream has size % instead of 8", size_of(IDWriteRemoteFontFileStream));
+
+    assert(size_of(IDWriteRemoteFontFileLoader) == 8, "IDWriteRemoteFontFileLoader has size % instead of 8", size_of(IDWriteRemoteFontFileLoader));
+
+    assert(size_of(IDWriteInMemoryFontFileLoader) == 8, "IDWriteInMemoryFontFileLoader has size % instead of 8", size_of(IDWriteInMemoryFontFileLoader));
+
+    assert(size_of(IDWriteFactory5) == 8, "IDWriteFactory5 has size % instead of 8", size_of(IDWriteFactory5));
+
+    {
+        instance: DWRITE_FONT_AXIS_VALUE;
+        assert(((cast(*void)(*instance.axisTag)) - cast(*void)(*instance)) == 0, "DWRITE_FONT_AXIS_VALUE.axisTag has unexpected offset % instead of 0", ((cast(*void)(*instance.axisTag)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_AXIS_VALUE.axisTag)) == 4, "DWRITE_FONT_AXIS_VALUE.axisTag has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_AXIS_VALUE.axisTag)));
+        assert(((cast(*void)(*instance.value)) - cast(*void)(*instance)) == 4, "DWRITE_FONT_AXIS_VALUE.value has unexpected offset % instead of 4", ((cast(*void)(*instance.value)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_AXIS_VALUE.value)) == 4, "DWRITE_FONT_AXIS_VALUE.value has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_AXIS_VALUE.value)));
+        assert(size_of(DWRITE_FONT_AXIS_VALUE) == 8, "DWRITE_FONT_AXIS_VALUE has size % instead of 8", size_of(DWRITE_FONT_AXIS_VALUE));
+    }
+
+    {
+        instance: DWRITE_FONT_AXIS_RANGE;
+        assert(((cast(*void)(*instance.axisTag)) - cast(*void)(*instance)) == 0, "DWRITE_FONT_AXIS_RANGE.axisTag has unexpected offset % instead of 0", ((cast(*void)(*instance.axisTag)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_AXIS_RANGE.axisTag)) == 4, "DWRITE_FONT_AXIS_RANGE.axisTag has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_AXIS_RANGE.axisTag)));
+        assert(((cast(*void)(*instance.minValue)) - cast(*void)(*instance)) == 4, "DWRITE_FONT_AXIS_RANGE.minValue has unexpected offset % instead of 4", ((cast(*void)(*instance.minValue)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_AXIS_RANGE.minValue)) == 4, "DWRITE_FONT_AXIS_RANGE.minValue has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_AXIS_RANGE.minValue)));
+        assert(((cast(*void)(*instance.maxValue)) - cast(*void)(*instance)) == 8, "DWRITE_FONT_AXIS_RANGE.maxValue has unexpected offset % instead of 8", ((cast(*void)(*instance.maxValue)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_FONT_AXIS_RANGE.maxValue)) == 4, "DWRITE_FONT_AXIS_RANGE.maxValue has unexpected size % instead of 4", size_of(type_of(DWRITE_FONT_AXIS_RANGE.maxValue)));
+        assert(size_of(DWRITE_FONT_AXIS_RANGE) == 12, "DWRITE_FONT_AXIS_RANGE has size % instead of 12", size_of(DWRITE_FONT_AXIS_RANGE));
+    }
+
+    assert(size_of(IDWriteFactory6) == 8, "IDWriteFactory6 has size % instead of 8", size_of(IDWriteFactory6));
+
+    assert(size_of(IDWriteFontFace5) == 8, "IDWriteFontFace5 has size % instead of 8", size_of(IDWriteFontFace5));
+
+    assert(size_of(IDWriteFontResource) == 8, "IDWriteFontResource has size % instead of 8", size_of(IDWriteFontResource));
+
+    assert(size_of(IDWriteFontFaceReference1) == 8, "IDWriteFontFaceReference1 has size % instead of 8", size_of(IDWriteFontFaceReference1));
+
+    assert(size_of(IDWriteFontSetBuilder2) == 8, "IDWriteFontSetBuilder2 has size % instead of 8", size_of(IDWriteFontSetBuilder2));
+
+    assert(size_of(IDWriteFontSet1) == 8, "IDWriteFontSet1 has size % instead of 8", size_of(IDWriteFontSet1));
+
+    assert(size_of(IDWriteFontList2) == 8, "IDWriteFontList2 has size % instead of 8", size_of(IDWriteFontList2));
+
+    assert(size_of(IDWriteFontFamily2) == 8, "IDWriteFontFamily2 has size % instead of 8", size_of(IDWriteFontFamily2));
+
+    assert(size_of(IDWriteFontCollection2) == 8, "IDWriteFontCollection2 has size % instead of 8", size_of(IDWriteFontCollection2));
+
+    assert(size_of(IDWriteTextLayout4) == 8, "IDWriteTextLayout4 has size % instead of 8", size_of(IDWriteTextLayout4));
+
+    assert(size_of(IDWriteTextFormat3) == 8, "IDWriteTextFormat3 has size % instead of 8", size_of(IDWriteTextFormat3));
+
+    assert(size_of(IDWriteFontFallback1) == 8, "IDWriteFontFallback1 has size % instead of 8", size_of(IDWriteFontFallback1));
+
+    assert(size_of(IDWriteFontSet2) == 8, "IDWriteFontSet2 has size % instead of 8", size_of(IDWriteFontSet2));
+
+    assert(size_of(IDWriteFontCollection3) == 8, "IDWriteFontCollection3 has size % instead of 8", size_of(IDWriteFontCollection3));
+
+    assert(size_of(IDWriteFactory7) == 8, "IDWriteFactory7 has size % instead of 8", size_of(IDWriteFactory7));
+
+    assert(size_of(IDWriteFontSet3) == 8, "IDWriteFontSet3 has size % instead of 8", size_of(IDWriteFontSet3));
+
+    assert(size_of(IDWriteFontFace6) == 8, "IDWriteFontFace6 has size % instead of 8", size_of(IDWriteFontFace6));
+
+    assert(size_of(IDWriteFontSet4) == 8, "IDWriteFontSet4 has size % instead of 8", size_of(IDWriteFontSet4));
+
+    {
+        instance: DWRITE_BITMAP_DATA_BGRA32;
+        assert(((cast(*void)(*instance.width)) - cast(*void)(*instance)) == 0, "DWRITE_BITMAP_DATA_BGRA32.width has unexpected offset % instead of 0", ((cast(*void)(*instance.width)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.width)) == 4, "DWRITE_BITMAP_DATA_BGRA32.width has unexpected size % instead of 4", size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.width)));
+        assert(((cast(*void)(*instance.height)) - cast(*void)(*instance)) == 4, "DWRITE_BITMAP_DATA_BGRA32.height has unexpected offset % instead of 4", ((cast(*void)(*instance.height)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.height)) == 4, "DWRITE_BITMAP_DATA_BGRA32.height has unexpected size % instead of 4", size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.height)));
+        assert(((cast(*void)(*instance.pixels)) - cast(*void)(*instance)) == 8, "DWRITE_BITMAP_DATA_BGRA32.pixels has unexpected offset % instead of 8", ((cast(*void)(*instance.pixels)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.pixels)) == 8, "DWRITE_BITMAP_DATA_BGRA32.pixels has unexpected size % instead of 8", size_of(type_of(DWRITE_BITMAP_DATA_BGRA32.pixels)));
+        assert(size_of(DWRITE_BITMAP_DATA_BGRA32) == 16, "DWRITE_BITMAP_DATA_BGRA32 has size % instead of 16", size_of(DWRITE_BITMAP_DATA_BGRA32));
+    }
+
+    assert(size_of(IDWriteBitmapRenderTarget2) == 8, "IDWriteBitmapRenderTarget2 has size % instead of 8", size_of(IDWriteBitmapRenderTarget2));
+
+    {
+        instance: DWRITE_PAINT_COLOR;
+        assert(((cast(*void)(*instance.value)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_COLOR.value has unexpected offset % instead of 0", ((cast(*void)(*instance.value)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_COLOR.value)) == 16, "DWRITE_PAINT_COLOR.value has unexpected size % instead of 16", size_of(type_of(DWRITE_PAINT_COLOR.value)));
+        assert(((cast(*void)(*instance.paletteEntryIndex)) - cast(*void)(*instance)) == 16, "DWRITE_PAINT_COLOR.paletteEntryIndex has unexpected offset % instead of 16", ((cast(*void)(*instance.paletteEntryIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_COLOR.paletteEntryIndex)) == 2, "DWRITE_PAINT_COLOR.paletteEntryIndex has unexpected size % instead of 2", size_of(type_of(DWRITE_PAINT_COLOR.paletteEntryIndex)));
+        assert(((cast(*void)(*instance.alphaMultiplier)) - cast(*void)(*instance)) == 20, "DWRITE_PAINT_COLOR.alphaMultiplier has unexpected offset % instead of 20", ((cast(*void)(*instance.alphaMultiplier)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_COLOR.alphaMultiplier)) == 4, "DWRITE_PAINT_COLOR.alphaMultiplier has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_COLOR.alphaMultiplier)));
+        assert(((cast(*void)(*instance.colorAttributes)) - cast(*void)(*instance)) == 24, "DWRITE_PAINT_COLOR.colorAttributes has unexpected offset % instead of 24", ((cast(*void)(*instance.colorAttributes)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_COLOR.colorAttributes)) == 4, "DWRITE_PAINT_COLOR.colorAttributes has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_COLOR.colorAttributes)));
+        assert(size_of(DWRITE_PAINT_COLOR) == 28, "DWRITE_PAINT_COLOR has size % instead of 28", size_of(DWRITE_PAINT_COLOR));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS;
+        assert(((cast(*void)(*instance.childCount)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS.childCount has unexpected offset % instead of 0", ((cast(*void)(*instance.childCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS.childCount)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS.childCount has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS.childCount)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS has size % instead of 4", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LAYERS));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH;
+        assert(((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.glyphIndex has unexpected offset % instead of 0", ((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.glyphIndex)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.glyphIndex has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.glyphIndex)));
+        assert(((cast(*void)(*instance.color)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.color has unexpected offset % instead of 4", ((cast(*void)(*instance.color)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.color)) == 28, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.color has unexpected size % instead of 28", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH.color)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH has size % instead of 32", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SOLID_GLYPH));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT;
+        assert(((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.extendMode has unexpected offset % instead of 0", ((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.extendMode)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.extendMode has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.extendMode)));
+        assert(((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.gradientStopCount has unexpected offset % instead of 4", ((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.gradientStopCount)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.gradientStopCount has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.gradientStopCount)));
+        assert(((cast(*void)(*instance.x0)) - cast(*void)(*instance)) == 8, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x0 has unexpected offset % instead of 8", ((cast(*void)(*instance.x0)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x0)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x0 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x0)));
+        assert(((cast(*void)(*instance.y0)) - cast(*void)(*instance)) == 12, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y0 has unexpected offset % instead of 12", ((cast(*void)(*instance.y0)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y0)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y0 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y0)));
+        assert(((cast(*void)(*instance.x1)) - cast(*void)(*instance)) == 16, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x1 has unexpected offset % instead of 16", ((cast(*void)(*instance.x1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x1)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x1 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x1)));
+        assert(((cast(*void)(*instance.y1)) - cast(*void)(*instance)) == 20, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y1 has unexpected offset % instead of 20", ((cast(*void)(*instance.y1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y1)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y1 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y1)));
+        assert(((cast(*void)(*instance.x2)) - cast(*void)(*instance)) == 24, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x2 has unexpected offset % instead of 24", ((cast(*void)(*instance.x2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x2)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x2 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.x2)));
+        assert(((cast(*void)(*instance.y2)) - cast(*void)(*instance)) == 28, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y2 has unexpected offset % instead of 28", ((cast(*void)(*instance.y2)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y2)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y2 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT.y2)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT has size % instead of 32", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_LINEAR_GRADIENT));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT;
+        assert(((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.extendMode has unexpected offset % instead of 0", ((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.extendMode)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.extendMode has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.extendMode)));
+        assert(((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.gradientStopCount has unexpected offset % instead of 4", ((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.gradientStopCount)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.gradientStopCount has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.gradientStopCount)));
+        assert(((cast(*void)(*instance.x0)) - cast(*void)(*instance)) == 8, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x0 has unexpected offset % instead of 8", ((cast(*void)(*instance.x0)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x0)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x0 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x0)));
+        assert(((cast(*void)(*instance.y0)) - cast(*void)(*instance)) == 12, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y0 has unexpected offset % instead of 12", ((cast(*void)(*instance.y0)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y0)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y0 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y0)));
+        assert(((cast(*void)(*instance.radius0)) - cast(*void)(*instance)) == 16, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius0 has unexpected offset % instead of 16", ((cast(*void)(*instance.radius0)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius0)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius0 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius0)));
+        assert(((cast(*void)(*instance.x1)) - cast(*void)(*instance)) == 20, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x1 has unexpected offset % instead of 20", ((cast(*void)(*instance.x1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x1)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x1 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.x1)));
+        assert(((cast(*void)(*instance.y1)) - cast(*void)(*instance)) == 24, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y1 has unexpected offset % instead of 24", ((cast(*void)(*instance.y1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y1)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y1 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.y1)));
+        assert(((cast(*void)(*instance.radius1)) - cast(*void)(*instance)) == 28, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius1 has unexpected offset % instead of 28", ((cast(*void)(*instance.radius1)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius1)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius1 has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT.radius1)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT has size % instead of 32", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_RADIAL_GRADIENT));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT;
+        assert(((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.extendMode has unexpected offset % instead of 0", ((cast(*void)(*instance.extendMode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.extendMode)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.extendMode has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.extendMode)));
+        assert(((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.gradientStopCount has unexpected offset % instead of 4", ((cast(*void)(*instance.gradientStopCount)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.gradientStopCount)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.gradientStopCount has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.gradientStopCount)));
+        assert(((cast(*void)(*instance.centerX)) - cast(*void)(*instance)) == 8, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerX has unexpected offset % instead of 8", ((cast(*void)(*instance.centerX)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerX)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerX has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerX)));
+        assert(((cast(*void)(*instance.centerY)) - cast(*void)(*instance)) == 12, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerY has unexpected offset % instead of 12", ((cast(*void)(*instance.centerY)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerY)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerY has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.centerY)));
+        assert(((cast(*void)(*instance.startAngle)) - cast(*void)(*instance)) == 16, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.startAngle has unexpected offset % instead of 16", ((cast(*void)(*instance.startAngle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.startAngle)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.startAngle has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.startAngle)));
+        assert(((cast(*void)(*instance.endAngle)) - cast(*void)(*instance)) == 20, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.endAngle has unexpected offset % instead of 20", ((cast(*void)(*instance.endAngle)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.endAngle)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.endAngle has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT.endAngle)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT) == 24, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT has size % instead of 24", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_SWEEP_GRADIENT));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH;
+        assert(((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH.glyphIndex has unexpected offset % instead of 0", ((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH.glyphIndex)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH.glyphIndex has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH.glyphIndex)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH has size % instead of 4", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_GLYPH));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH;
+        assert(((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.glyphIndex has unexpected offset % instead of 0", ((cast(*void)(*instance.glyphIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.glyphIndex)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.glyphIndex has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.glyphIndex)));
+        assert(((cast(*void)(*instance.clipBox)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.clipBox has unexpected offset % instead of 4", ((cast(*void)(*instance.clipBox)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.clipBox)) == 16, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.clipBox has unexpected size % instead of 16", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH.clipBox)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH) == 20, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH has size % instead of 20", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COLOR_GLYPH));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE;
+        assert(((cast(*void)(*instance.mode)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE.mode has unexpected offset % instead of 0", ((cast(*void)(*instance.mode)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE.mode)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE.mode has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE.mode)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE has size % instead of 4", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.PAINT_COMPOSITE));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT.PAINT_UNION;
+        assert(((cast(*void)(*instance.layers)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.layers has unexpected offset % instead of 0", ((cast(*void)(*instance.layers)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.layers)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.layers has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.layers)));
+        assert(((cast(*void)(*instance.solidGlyph)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.solidGlyph has unexpected offset % instead of 0", ((cast(*void)(*instance.solidGlyph)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.solidGlyph)) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.solidGlyph has unexpected size % instead of 32", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.solidGlyph)));
+        assert(((cast(*void)(*instance.solid)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.solid has unexpected offset % instead of 0", ((cast(*void)(*instance.solid)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.solid)) == 28, "DWRITE_PAINT_ELEMENT.PAINT_UNION.solid has unexpected size % instead of 28", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.solid)));
+        assert(((cast(*void)(*instance.linearGradient)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.linearGradient has unexpected offset % instead of 0", ((cast(*void)(*instance.linearGradient)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.linearGradient)) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.linearGradient has unexpected size % instead of 32", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.linearGradient)));
+        assert(((cast(*void)(*instance.radialGradient)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.radialGradient has unexpected offset % instead of 0", ((cast(*void)(*instance.radialGradient)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.radialGradient)) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION.radialGradient has unexpected size % instead of 32", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.radialGradient)));
+        assert(((cast(*void)(*instance.sweepGradient)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.sweepGradient has unexpected offset % instead of 0", ((cast(*void)(*instance.sweepGradient)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.sweepGradient)) == 24, "DWRITE_PAINT_ELEMENT.PAINT_UNION.sweepGradient has unexpected size % instead of 24", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.sweepGradient)));
+        assert(((cast(*void)(*instance.glyph)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.glyph has unexpected offset % instead of 0", ((cast(*void)(*instance.glyph)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.glyph)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.glyph has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.glyph)));
+        assert(((cast(*void)(*instance.colorGlyph)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.colorGlyph has unexpected offset % instead of 0", ((cast(*void)(*instance.colorGlyph)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.colorGlyph)) == 20, "DWRITE_PAINT_ELEMENT.PAINT_UNION.colorGlyph has unexpected size % instead of 20", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.colorGlyph)));
+        assert(((cast(*void)(*instance.transform)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.transform has unexpected offset % instead of 0", ((cast(*void)(*instance.transform)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.transform)) == 24, "DWRITE_PAINT_ELEMENT.PAINT_UNION.transform has unexpected size % instead of 24", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.transform)));
+        assert(((cast(*void)(*instance.composite)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.PAINT_UNION.composite has unexpected offset % instead of 0", ((cast(*void)(*instance.composite)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.composite)) == 4, "DWRITE_PAINT_ELEMENT.PAINT_UNION.composite has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.PAINT_UNION.composite)));
+        assert(size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION) == 32, "DWRITE_PAINT_ELEMENT.PAINT_UNION has size % instead of 32", size_of(DWRITE_PAINT_ELEMENT.PAINT_UNION));
+    }
+
+    {
+        instance: DWRITE_PAINT_ELEMENT;
+        assert(((cast(*void)(*instance.paintType)) - cast(*void)(*instance)) == 0, "DWRITE_PAINT_ELEMENT.paintType has unexpected offset % instead of 0", ((cast(*void)(*instance.paintType)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.paintType)) == 4, "DWRITE_PAINT_ELEMENT.paintType has unexpected size % instead of 4", size_of(type_of(DWRITE_PAINT_ELEMENT.paintType)));
+        assert(((cast(*void)(*instance.paint)) - cast(*void)(*instance)) == 4, "DWRITE_PAINT_ELEMENT.paint has unexpected offset % instead of 4", ((cast(*void)(*instance.paint)) - cast(*void)(*instance)));
+        assert(size_of(type_of(DWRITE_PAINT_ELEMENT.paint)) == 32, "DWRITE_PAINT_ELEMENT.paint has unexpected size % instead of 32", size_of(type_of(DWRITE_PAINT_ELEMENT.paint)));
+        assert(size_of(DWRITE_PAINT_ELEMENT) == 36, "DWRITE_PAINT_ELEMENT has size % instead of 36", size_of(DWRITE_PAINT_ELEMENT));
+    }
+
+    assert(size_of(IDWritePaintReader) == 8, "IDWritePaintReader has size % instead of 8", size_of(IDWritePaintReader));
+
+    assert(size_of(IDWriteFontFace7) == 8, "IDWriteFontFace7 has size % instead of 8", size_of(IDWriteFontFace7));
+
+    assert(size_of(IDWriteFactory8) == 8, "IDWriteFactory8 has size % instead of 8", size_of(IDWriteFactory8));
+
+    assert(size_of(IDWriteBitmapRenderTarget3) == 8, "IDWriteBitmapRenderTarget3 has size % instead of 8", size_of(IDWriteBitmapRenderTarget3));
+}
+
+#import "Windows";
+#import "dxgi";
+
+// Win32 additions:
+
+CLSID :: GUID;
+// PSTR :: LPSTR;
+PCWSTR :: LPCWSTR;
+COLORREF :: DWORD;
+LONG :: s32;
+IStream :: IUnknown;
+
+FONTSIGNATURE :: struct {
+    fsUsb: [4] DWORD;
+    fsCsb: [2] DWORD;
+}
+
+LOGFONTW :: struct {
+  lfHeight: s32;
+  lfWidth: s32;
+  lfEscapement: s32;
+  lfOrientation: s32;
+  lfWeight: LONG;
+  lfItalic: u8;
+  lfUnderline: u8;
+  lfStrikeOut: u8;
+  lfCharSet: u8;
+  lfOutPrecision: u8;
+  lfClipPrecision: u8;
+  lfQuality: u8;
+  lfPitchAndFamily: u8;
+  lfFaceName: [32] u16;
+}
+
+LOGFONT :: LOGFONTW;
+
